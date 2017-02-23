@@ -1,0 +1,339 @@
+Issue Type;Key;Summary;Assignee;Reporter;Priority;Status;Resolution;Created;Updated;Due Date;Story Points;Time Spent
+Story;TAC-366;"Jackson - Convert ""Willing to Relocate To"" filter in v4 Candidate Search to a Multi-Select";Daniel Kunstek;Kevin Capel;Major;Closed;Unresolved;17/Nov/14 12:47 PM;17/Dec/14 4:19 PM;;;
+Bug;TAC-346;Kimco: mblast script uses an http:// address and stops working when erecruit site is switched to https://;Daniel Kunstek;Chris Kang;Major;Closed;Unresolved;02/Oct/14 5:24 PM;12/Dec/14 10:22 AM;;;
+Bug;TAC-279;Cannot link existing addresses on any records under specific company ID 358;Daniel Kunstek;Sam Hoffman;Major;Closed;Unresolved;24/Oct/14 1:07 PM;10/Feb/15 4:14 PM;;;
+Bug;TAC-26;VTS: report_candidatehours_276260838;Daniel Kunstek;Zendesk;Major;Closed;Cannot Reproduce;22/Aug/14 1:35 PM;13/Feb/15 6:12 PM;;;
+Feature;VMS-9;Ability for MSP to limit the number of submittals Vendors can make;Daniel Kunstek;Stephen Graziani;Regular;Closed;Done;11/Nov/14 1:08 PM;06/Mar/15 7:45 AM;;;
+Feature;VMS-88;Parallon Dev: Need ability to make Projected Start Date a required field;Daniel Kunstek;Daniel Klassen;Major;Closed;Done;11/Feb/15 2:00 PM;10/Mar/15 12:03 PM;;2;7200
+Bug;VMS-62;Parallon Dev: Vendor can see Company Comments on a Match;Daniel Kunstek;Daniel Klassen;Regular;Closed;Done;30/Jan/15 1:41 PM;19/Feb/15 4:22 PM;;;7200
+Feature;VMS-56;Parallon Dev: Option to Default Do Not Short List to selected;Daniel Kunstek;Daniel Klassen;Major;Closed;Done;28/Jan/15 5:53 PM;09/Mar/15 5:13 PM;;1;14400
+Feature;VMS-54;Parallon Dev: Add Position Type to Approval Criteria Property Drop down;Daniel Kunstek;Daniel Klassen;Major;Closed;No Longer Applicable;26/Jan/15 10:58 AM;27/Feb/15 8:00 AM;;;
+Bug;VMS-60;Parallon Dev: When Selecting a candidate for a match, shows code;Daniel Kunstek;Daniel Klassen;Major;Closed;Done;17/Jan/15 3:14 PM;17/Feb/15 11:50 AM;;;14400
+Feature;VMS-28;Add Settings/Permissions to control Editing Position as Contact;Daniel Kunstek;Stephen Caldwell;Regular;Closed;Done;11/Dec/14 7:58 AM;03/Mar/15 12:26 PM;;4;
+Bug;TAC-235;BANKWholdings: Company Search: Grouping;Daniel Kunstek;Zendesk;Major;Closed;Unresolved;20/Jan/14 4:40 PM;05/Mar/15 7:53 PM;;2;
+Feature;VMS-113;Parallon Dev: Add Vendor column to Match Search;Daniel Kunstek;Daniel Klassen;Major;Closed;Done;02/Mar/15 7:55 AM;12/Mar/15 11:14 AM;;;18000
+Bug;VMS-25;Daily -- All Vendor Contacts selected on a position where only some are selected;Daniel Kunstek;Connor Briggs;Major;Closed;Done;02/Dec/14 4:27 PM;17/Mar/15 9:37 AM;;;
+Feature;VMS-116;Parallon Dev: Permission for Contacts to edit any position;Daniel Kunstek;Daniel Klassen;Major;Closed;Done;03/Mar/15 12:26 PM;17/Mar/15 8:37 AM;;1;28800
+Feature;VMS-136;Parallon: 2 New Fields on Position Creation Page;Daniel Kunstek;Daniel Klassen;Major;Closed;Done;10/Mar/15 1:34 PM;16/Mar/15 12:02 PM;;;21600
+Feature;VMS-87;Parallon Dev: Approval Process Needs to be available on Matches;Daniel Kunstek;Daniel Klassen;Major;Demo;Unresolved;12/Feb/15 6:00 PM;10/Mar/15 12:19 PM;;8;39600
+Requirement;IM-4719;Parallon eDHP: DHP or Delegate Application and Payment;Daniel Kunstek;Pam Devenish;Major;Open;Unresolved;09/Nov/14 3:37 PM;26/Feb/15 3:26 AM;;;158400
+Bug;VMS-117;Parallon Dev: Published Columns on Position Search are blank;Daniel Kunstek;Daniel Klassen;Major;Resolved Pending Verification on Client;Unresolved;03/Mar/15 1:39 PM;18/Mar/15 3:59 PM;;;14400
+Bug;VMS-47;"3.0 - ""Continue to Review"" link doesn't pull up matches";Daniel Kunstek;Caleb Lilley;Major;Closed;Done;08/Jan/15 12:24 PM;18/Mar/15 4:07 PM;;2;14400
+Bug;VMS-58;Parallon Dev: As a Vendor or Company Contact, I have access to the Calculator on a Match;Daniel Kunstek;Daniel Klassen;Major;Closed;Done;29/Jan/15 9:51 AM;18/Mar/15 4:09 PM;;2;7200
+Bug;VMS-61;Parallon Dev: Logged in as a Contact, can edit match details through Edit all;Daniel Kunstek;Daniel Klassen;Major;Reopened;Unresolved;17/Jan/15 3:32 PM;18/Mar/15 4:10 PM;;;
+Bug;VMS-82;Parallon Dev: Hiring Manager can edit position title or folder group at position creation;Daniel Kunstek;Daniel Klassen;Major;Closed;Done;11/Feb/15 2:13 PM;18/Mar/15 4:13 PM;;;7200
+Story;VMS-36;Interface for adding/modifying static user lists;Daniel Kunstek;Stephen Caldwell;Regular;Closed;Done;17/Dec/14 10:17 AM;10/Mar/15 4:17 AM;;4;
+Feature;VMS-100;Parallon Dev: Add Position ID to Match Widgets;Daniel Kunstek;Daniel Klassen;Major;Closed;Done;23/Feb/15 1:01 PM;18/Mar/15 5:00 PM;;;1800
+Bug;VMS-99;Parallon Dev: No Option to Reject Candidate at present stage;Daniel Kunstek;Daniel Klassen;Major;Closed;Done;23/Feb/15 12:57 PM;18/Mar/15 10:54 AM;;;14400
+Bug;VMS-135;Parallon Dev - All Client Project's Milestones showing on Timesheet;Daniel Kunstek;Kyle Peters;Major;Resolved Pending QA;Unresolved;10/Mar/15 1:05 PM;19/Mar/15 5:05 AM;;;
+Bug;TAC-360;Kimco: Fields hidded via Design Pages are not also hidden in the Create screen for Positions;Drazen Soronda;Chris Kang;Major;Closed;Done;13/Oct/14 12:22 PM;20/Jan/15 9:27 AM;;;
+Bug;TAC-585;Advanced Group: Company Search Duplicate Filters;Drazen Soronda;Moises Silva;Major;Closed;Done;11/Oct/14 10:35 AM;27/Feb/15 2:59 PM;;;108480
+Bug;TAC-704;Parallon Dev and Prod: Required fields from Add Position in Contact Portal do not display in system;Drazen Soronda;Pam Devenish;Major;Closed;Done;17/Nov/14 3:32 PM;09/Mar/15 1:29 PM;;3;43200
+Bug;TAC-383;Kimco: Fields hidded via Design Pages Should be Hidden on Both Manage and Add New for All About Types;Drazen Soronda;Chris Kang;Major;Closed;Done;24/Nov/14 11:35 AM;07/Mar/15 9:32 PM;;;
+Bug;TAC-843;MERGE to Jenga- Unable to parse in a resume from a saved search under menu;Drazen Soronda;Rick Spano;Major;Closed;Done;24/Feb/15 10:22 AM;09/Mar/15 10:10 AM;;1;7200
+Bug;TAC-687;Accessing a blocked field displays login widget instead of permission warning red bar;Drazen Soronda;Molly Hoffman;Major;Closed;Done;04/Nov/14 10:36 AM;06/Mar/15 4:15 PM;;3;82800
+Bug;TAC-425;Candidate seach by owner - Owner's department doesn't work;Drazen Soronda;Zendesk;Major;Closed;Done;10/Sep/14 11:17 AM;23/Feb/15 12:25 PM;;4;160860
+Bug;TAC-647;Filter on Timesheet Processing page barely functional;Drazen Soronda;Sam Hoffman;Major;Closed;Done;19/Dec/14 9:52 AM;17/Mar/15 9:46 AM;;3;46800
+Bug;TAC-822;Saved searches with company filter populate the filters but don't send the call to the database to retrieve the results;Drazen Soronda;Connor Briggs;Major;Open;Unresolved;20/Feb/15 10:31 AM;16/Mar/15 11:50 AM;;8;43200
+Bug;TAC-784;er2.5 - Server Error Adding New Position When Logged In As Contact;Drazen Soronda;John F. Karpenko;Major;Closed;Done;13/Feb/15 2:40 PM;06/Mar/15 4:16 PM;;4;36000
+Subtask;TAC-923;TAC-774 Owner Filter for Right Bar Saved Search;Drazen Soronda;Kevin Capel;Major;Closed;Done;11/Mar/15 2:13 PM;17/Mar/15 4:55 PM;;;7200
+Bug;TAC-874;Greene: New RTI and ILearning Imports not working;Drazen Soronda;Daniel Klassen;Major;Resolved Pending Verification on Client;Unresolved;26/Feb/15 4:11 PM;17/Mar/15 9:47 AM;;;57600
+Bug;TAC-774;Saved Position Search - Position Owners disappearing;Drazen Soronda;Ian Nichols;Major;Peer Review;Unresolved;29/Jan/15 4:30 PM;16/Mar/15 11:50 AM;;5;75600
+Story;TAC-210;BLR: iCAL Integration;Drazen Soronda;John Waite;Major;Resolved Pending Verification on Client;Unresolved;10/Feb/14 5:11 PM;03/Mar/15 5:50 PM;30/Jul/14;11;100800
+Subtask;TAC-919;TAC-774 The Owner filter does not populate with departments when opening it from the quick link menu;Drazen Soronda;Connor Briggs;Major;Open;Unresolved;11/Mar/15 11:50 AM;16/Mar/15 11:38 AM;;;
+Bug;TAC-832;erecruit Mobile- Billable Expenses Entered on Mobile Not Being Marked as Billable;Drazen Soronda;Ryan Collins;Major;Closed;Done;22/Feb/15 7:08 PM;17/Mar/15 5:22 PM;;3;72000
+Bug;TAC-938;TAC-673 Merge/Troubleshooting - Requirements Alerts in Match Process;Drazen Soronda;Kevin Capel;Major;Open;Unresolved;13/Mar/15 3:07 PM;18/Mar/15 10:29 AM;;3;
+Feature;IM-4242;7 - Add 'Employee Feedback Activity' reminder based on Match Duration;Jakov Krolo;Igor Belagorudsky;Major;Resolved Pending Verification on Client;Done;21/Sep/14 10:42 PM;06/Mar/15 4:53 PM;;12;
+Bug;ER-20329;Daily/Weekly -- Options in Primary Department filter are not select-able;Jakov Krolo;Jakov Krolo;Critical;Closed;Done;30/Dec/14 10:58 AM;19/Jan/15 9:59 PM;;3;
+Bug;ER-19197;Daily - Unable to Open Candidate Applications;Jakov Krolo;Jakov Krolo;Regular;Closed;Done;17/Nov/14 4:21 PM;26/Feb/15 2:37 PM;;2;
+Feature;ER-18579;Rename GetUsersInRole transform into GetUsersInDepartmentRole;Jakov Krolo;Fyodor Soikin;Regular;Needs Test Case?;Done;29/Oct/14 11:52 AM;01/Dec/14 9:14 AM;;1;
+Bug;ER-19619;Daily: Logo Menu Search Page Errors;Jakov Krolo;Jakov Krolo;Critical;Closed;Done;05/Dec/14 1:13 PM;12/Dec/14 4:36 PM;;1;
+Feature;ER-19478;Add Tags widget to Candidate applications;Jakov Krolo;Igor Belagorudsky;Regular;Needs Documentation?;Done;01/Dec/14 10:31 AM;26/Feb/15 2:59 PM;;3;
+Bug;ER-18466;Database does not re-enlist into transaction after commit;Jakov Krolo;Jakov Krolo;Critical;Needs Documentation?;Done;23/Oct/14 7:07 PM;20/Feb/15 1:25 PM;;2;
+Feature;ER-17730;Implement two-step transactions;Jakov Krolo;Fyodor Soikin;Regular;Closed;Done;26/Sep/14 5:04 PM;17/Feb/15 2:09 PM;;2;
+Subtask;ER-18276;ER-18159 V4 Candidate Applications: Filters;Jakov Krolo;Igor Belagorudsky;Regular;Resolved Pending QA;Done;16/Oct/14 5:15 PM;21/Jan/15 1:42 PM;;;
+Subtask;ER-18285;ER-18159 V4 Candidate Applications: Sidebar;Jakov Krolo;Igor Belagorudsky;Regular;Needs Test Case?;Done;16/Oct/14 7:03 PM;21/Jan/15 3:27 PM;;;
+Bug;ER-17498;"Candidate Search Filter ""Days Since Last Active Contract"" doesn't work (eTest- Jenga)";Jakov Krolo;Igor Belagorudsky;Critical;Closed;Done;17/Sep/14 4:17 PM;19/Dec/14 10:45 AM;;1;
+Bug;ER-17790;Remove ObjectTypeID from serialized ObjectEventArgs;Jakov Krolo;Fyodor Soikin;Regular;Needs Documentation?;Done;30/Sep/14 2:47 PM;20/Feb/15 9:46 AM;;1;
+Bug;ER-20243;WF2: SendEmail: add parameters for explicit e-mails and distribution lists;Jakov Krolo;Fyodor Soikin;Major;Resolved Pending QA;Done;05/Jan/15 9:28 AM;05/Mar/15 6:17 PM;;2;
+Bug;ER-18432;Database rollback on Exception fails;Jakov Krolo;Fyodor Soikin;Critical;Resolved Pending QA;Done;22/Oct/14 9:32 AM;05/Nov/14 1:18 PM;;2;
+Bug;TAC-151;Kimco: Editing Company\Accounting\Timesheets widget clears out Worker's Comp codes;Jakov Krolo;Igor Belagorudsky;Major;Closed;Done;01/Oct/14 3:48 PM;10/Feb/15 10:29 AM;;1;
+Bug;ER-19802;Custom Fields UniqueName is not really unique;Jakov Krolo;Fyodor Soikin;Major;Needs Test Case?;Done;12/Dec/14 10:09 AM;06/Mar/15 4:13 PM;;5;
+Feature;ER-18284;V4 Candidate Applications: Columns;Jakov Krolo;Igor Belagorudsky;Regular;Closed;Done;16/Oct/14 6:56 PM;06/Mar/15 4:13 PM;;2;
+Bug;ER-20441;All Notes screens not longer display the references;Jakov Krolo;Igor Belagorudsky;Major;Resolved Pending QA;Done;26/Nov/14 10:13 AM;06/Mar/15 4:13 PM;;12;
+Bug;ER-20009;Daily - Relevance Column Not Exporting when Exporting Selected to Excel;Jakov Krolo;Fyodor Soikin;Regular;Needs Documentation?;Done;18/Dec/14 6:09 PM;16/Mar/15 3:09 PM;;4;
+Bug;ER-19204;MessageQueueingService must be an IUoWParticipant;Jakov Krolo;Fyodor Soikin;Regular;Open;Unresolved;17/Nov/14 10:36 PM;12/Mar/15 2:54 PM;;4;
+Feature;ER-6851;V4 Search - Date Parameters - Date Parameters, allow flexibility for both Date Ranges and Relative Dates;Jakov Krolo;Igor Belagorudsky;Regular;Open;Unresolved;16/Aug/13 11:27 AM;02/Mar/15 6:28 PM;;29;
+Feature;ER-18160;Implement Email service as a unit of work participant;Jakov Krolo;Jakov Krolo;Regular;Open;Unresolved;13/Oct/14 11:55 AM;05/Nov/14 7:03 PM;;2;
+Feature;ER-11724;Search: attachment column to every v4 search;Jakov Krolo;Fyodor Soikin;Major;Open;Unresolved;24/Feb/14 2:24 PM;01/Dec/14 6:41 PM;;2;
+Bug;ER-21694;Cannot type to find Departments in 'Owner' filter (Nelson Upgrade);Jakov Krolo;Igor Belagorudsky;Major;Reopened;Unresolved;10/Dec/14 11:13 AM;18/Mar/15 12:33 PM;;8;3600
+Bug;ER-21541;er25rc - Candidate Applications 'Application ID' cooltip doesn't open candidates or positions;Jakov Krolo;Evan Franz;Regular;Closed;Done;17/Feb/15 10:18 AM;18/Mar/15 2:03 PM;;6;
+Feature;ER-18552;Restore external events publishing;Jakov Krolo;Fyodor Soikin;Major;Closed;Done;28/Oct/14 2:21 PM;12/Mar/15 10:39 AM;;4;
+Feature;ER-20774;WF2 UI: Show 'pick value' option for action argument that is a list of some type;Jakov Krolo;Jakov Krolo;Major;Needs Documentation?;Done;22/Jan/15 5:47 AM;18/Mar/15 4:28 PM;;8;
+Feature;ER-21080;Display log of activity on workflows;Jakov Krolo;Fyodor Soikin;Major;Open;Unresolved;02/Feb/15 9:18 AM;16/Mar/15 5:29 PM;;;
+Bug;ER-19807;Match Search: specifying ActiveOnly=1 in querystring also turns on the RequirementsMet filter;Jakov Krolo;Fyodor Soikin;Trivial;Needs Documentation?;Done;12/Dec/14 11:37 AM;18/Mar/15 8:56 PM;;2;
+Feature;ER-22050;Dispatch/ServiceBus Services Control Panel Status Label;Jakov Krolo;Igor Belagorudsky;Major;Paused;Unresolved;09/Mar/15 2:13 PM;18/Mar/15 11:57 AM;;2;
+Bug;ER-19984;"WF2: The ""Equals"" transform should be more flexible in selecting its UI";Jakov Krolo;Fyodor Soikin;Major;In Progress;Unresolved;18/Dec/14 12:44 AM;18/Mar/15 11:35 AM;;4;
+Bug;TAC-352;PO Number(s) Values not automatically being selected on match records from position records;Kresimir Sirovina;Sam Hoffman;Major;Closed;Unresolved;06/Nov/14 3:49 PM;16/Jan/15 3:15 PM;;;
+Bug;VMS-32;Parallon Dev: User Can Manager Vendor Contact Permissions from erecruit front office;Kresimir Sirovina;Caleb Lilley;Regular;Closed;No Fix Needed;13/Dec/14 6:43 PM;29/Dec/14 10:46 AM;;1;
+Bug;ER-20642;PO Values do not carry down to match record on Quick Placement;Kresimir Sirovina;Sam Hoffman;Critical;Reopened;Unresolved;16/Jan/15 3:15 PM;20/Jan/15 12:28 PM;;;14400
+Bug;VMS-26;Daily: When impersonating a vendor (logging in as) it opens their portal within your own;Kresimir Sirovina;Caleb Lilley;Major;Closed;Done;05/Dec/14 8:11 AM;15/Jan/15 1:30 PM;;2;
+Bug;FIN-306;er30 - Invalid column name 'ENTERED_BY';Kresimir Sirovina;Jaymie Martin;Critical;Closed;Done;05/Feb/15 10:53 AM;19/Feb/15 9:46 AM;;;7200
+Bug;TAC-335;Advanced Group Upgrade: Can't login as another recruiter in Firefox;Kresimir Sirovina;Zendesk;Major;Closed;Done;10/Sep/14 7:33 PM;10/Feb/15 1:10 PM;;4;
+Bug;VMS-49;erecruit 3.0 - Internal Server Error When Adding Cost Center to Position in VMS;Kresimir Sirovina;John F. Karpenko;Major;Closed;Done;09/Jan/15 12:35 PM;02/Mar/15 2:07 PM;;2;18000
+Bug;VMS-75;Marchon VMNet: Unable to attach resume to submittal when logged in as vendor;Kresimir Sirovina;Molly Hoffman;Major;Closed;Done;04/Feb/15 5:57 PM;27/Feb/15 4:07 PM;;2;28800
+Feature;VMS-5;Indicate desired match advancement as a Contact (Hiring Manager);Kresimir Sirovina;Stephen Caldwell;Regular;Closed;Done;19/Nov/14 11:20 AM;17/Feb/15 10:52 AM;;;
+Bug;VMS-19;Add new position functionality not available to Vendor Manager (VMS);Kresimir Sirovina;Stephen Graziani;Regular;Closed;Unresolved;20/Nov/14 2:53 PM;09/Mar/15 4:55 PM;;;
+Feature;VMS-14;Edit Position as a Contact;Kresimir Sirovina;Stephen Graziani;Blocker;Closed;Done;05/Nov/14 11:14 AM;06/Mar/15 8:11 AM;;;
+Feature;VMS-23;Disable modifying rates and/or duration on position when those changes cause the rate to exceed the approved dollar amount;Kresimir Sirovina;Kresimir Sirovina;Regular;Closed;Duplicate;01/Dec/14 2:10 PM;11/Dec/14 11:48 AM;;;
+Bug;VMS-57;Parallon Dev: When a vendor creates a new match, position owner is an option;Kresimir Sirovina;Daniel Klassen;Major;Closed;Done;17/Jan/15 2:30 PM;26/Feb/15 12:29 PM;;4;12600
+Bug;VMS-83;Parallon Dev: Hiring Manager can see Position details at creation;Kresimir Sirovina;Daniel Klassen;Major;Closed;Done;11/Feb/15 2:22 PM;09/Mar/15 5:43 PM;;2;
+Bug;VMS-85;Parallon Dev: Hiring manager cannot create offer;Kresimir Sirovina;Daniel Klassen;Major;Closed;Done;12/Feb/15 12:37 PM;24/Feb/15 1:41 PM;;2;7200
+Bug;VMS-59;Parallon Dev: Cannot open a match as a Vendor Manager after a contact requests interview or rejects the match;Kresimir Sirovina;Daniel Klassen;Major;Closed;Done;17/Jan/15 3:25 PM;24/Feb/15 3:32 PM;;2;14400
+Bug;TAC-363;Kimco: 'Object reference not set to an instance of an object' when trying to Edit/Save Requirements General Widget with blank CheckBoxList type Custom Fields;Kresimir Sirovina;Chris Kang;Major;Closed;Done;30/Sep/14 4:32 PM;02/Dec/14 10:17 AM;;;
+Feature;VMS-11;Add a Max Markup attribute to Client Project setup;Kresimir Sirovina;Stephen Graziani;Regular;Closed;Done;24/Aug/12 10:29 AM;13/Feb/15 7:57 AM;;;
+Bug;TAC-299;JENGA (All clients): Contractor Type Filter Does Not Allow You To Select Type;Kresimir Sirovina;Hillary Taverna;Major;Closed;Unresolved;16/Sep/14 9:53 AM;17/Mar/15 12:26 PM;;;
+Bug;VMS-118;Parallon Dev: Position Request Reason is no longer visible;Kresimir Sirovina;Daniel Klassen;Major;Closed;Done;03/Mar/15 1:45 PM;17/Mar/15 2:40 PM;;;36000
+Story;VMS-41;Parallon Dev: Ability to for Supplier to view financial details of offer at the time of the offer;Kresimir Sirovina;Stephen Graziani;Major;Demo;Unresolved;22/Dec/14 3:16 PM;16/Mar/15 10:29 AM;;;
+Story;VMS-42;The ability for the hiring manager to indicate desired rate when creating a new position from a template;Kresimir Sirovina;Stephen Graziani;Regular;Closed;Done;22/Dec/14 3:53 PM;16/Mar/15 3:18 PM;;4;
+Bug;VMS-76;Parallon Dev: Vendor can move status of matches;Kresimir Sirovina;Daniel Klassen;Major;Closed;Done;17/Jan/15 2:55 PM;24/Feb/15 10:34 AM;;2;7200
+Bug;VMS-64;Parallon Dev: Markup rates not working with Vendor;Kresimir Sirovina;Daniel Klassen;Major;Demo;Unresolved;02/Feb/15 1:33 PM;16/Mar/15 8:15 AM;;;86400
+Feature;VMS-103;Parallon Dev: Notification of Interview Request, Rejection or Offer needs more Visibility;Kresimir Sirovina;Daniel Klassen;Major;Demo;Unresolved;25/Feb/15 5:28 PM;17/Mar/15 2:40 PM;;;45000
+Bug;VMS-84;Parallon Dev: Target Bill Rate amount is incorrect;Kresimir Sirovina;Daniel Klassen;Major;Resolved Pending Verification on Client;Unresolved;11/Feb/15 2:48 PM;16/Mar/15 3:22 PM;;;
+Bug;VMS-72;Parallon Dev: Cannot edit approval path;Kresimir Sirovina;Daniel Klassen;Major;Closed;Done;04/Feb/15 2:13 PM;19/Feb/15 3:09 PM;;;14400
+Requirement;IM-4717;Parallon eDHP: Create Delegate User Accounts;Kresimir Sirovina;Pam Devenish;Major;Closed;No Fix Needed;09/Nov/14 3:11 PM;24/Feb/15 5:38 AM;;;115200
+Bug;VMS-122;Parallon Dev: Vendor Manager cannot edit the candidate;Kresimir Sirovina;Daniel Klassen;Major;Closed;Done;03/Mar/15 5:17 PM;18/Mar/15 4:01 PM;;;7200
+Requirement;IM-4714;Parallon eDHP: Create Facility User Accounts;Kresimir Sirovina;Pam Devenish;Major;Reopened;Done;09/Nov/14 1:43 PM;06/Mar/15 5:34 PM;;10;172800
+Bug;VMS-44;3.0 - Error creating position as contact;Kresimir Sirovina;Caleb Lilley;Major;Closed;Done;08/Jan/15 9:08 AM;04/Mar/15 11:18 AM;;;7200
+Bug;VMS-123;Company Contacts cannot see Company Departments on Positions;Kresimir Sirovina;Daniel Klassen;Major;Closed;Done;03/Mar/15 10:23 PM;18/Mar/15 4:03 PM;;;7200
+Bug;VMS-90;Parallon Dev: Vendor cannot edit candidate name;Kresimir Sirovina;Daniel Klassen;Major;Closed;Done;12/Feb/15 12:42 PM;18/Mar/15 4:15 PM;;;10800
+Feature;VMS-31;Overrides for Approval Paths;Kresimir Sirovina;Stephen Caldwell;Major;In Progress;Unresolved;11/Dec/14 8:06 PM;09/Mar/15 6:02 PM;;4;
+Feature;VMS-108;Parallon: Add configuration to Active Milestone widgets to include only Pending Approval (ones where command is not empty);Kresimir Sirovina;J. Danko Fatovic;Major;Demo;Unresolved;26/Feb/15 2:31 PM;18/Mar/15 5:02 PM;;2;
+Feature;VMS-120;Hiring Manager needs to see Matches associated with a position;Kresimir Sirovina;Daniel Klassen;Major;Demo;Unresolved;03/Mar/15 3:33 PM;18/Mar/15 5:06 PM;;;12600
+Feature;VMS-126;Parallon Dev: Active Milestones Widget needs Project Name Column;Kresimir Sirovina;Daniel Klassen;Major;Closed;Done;04/Mar/15 2:33 PM;18/Mar/15 5:23 PM;;;7200
+Feature;VMS-142;Filter side bar requirement counts by Requirement Access;Kresimir Sirovina;Stephen Caldwell;Major;Open;Unresolved;16/Mar/15 8:14 AM;19/Mar/15 5:31 AM;;;
+Feature;ER-18348;ACP -> V4 Columns Batch 2;Kristijan Simunic;Igor Belagorudsky;Regular;Resolved Pending QA;Done;17/Oct/14 5:43 PM;17/Oct/14 6:14 PM;;;
+Feature;ER-18347;ACP -> V4 Columns Batch 1;Kristijan Simunic;Igor Belagorudsky;Regular;Open;Unresolved;17/Oct/14 5:16 PM;27/Oct/14 3:16 PM;;5;
+Bug;FIN-234;"er30rc/Kimco Test: server error after clicking ""Import Timesheets (task)""";Kristijan Simunic;Chris Kang;Critical;Closed;Duplicate;16/Jan/15 5:05 PM;16/Jan/15 6:02 PM;;;
+Task - Technical;FIN-27;DB Script Checker;Kristijan Simunic;John Zabroski;Major;Resolved Pending QA;Done;18/Nov/14 8:07 AM;24/Dec/14 10:24 AM;;;
+Task - Technical;FIN-28;Tear Down Database logic;Kristijan Simunic;John Zabroski;Major;Resolved Pending QA;Done;20/Nov/14 10:20 AM;29/Dec/14 9:46 AM;;;
+Story;FIN-11;Entity Framework Model - DB Mapping Validator;Kristijan Simunic;John Zabroski;Major;Resolved Pending QA;Done;11/Nov/14 9:30 AM;24/Dec/14 10:22 AM;;;
+Bug;ER-18686;Parallon Dev - CandidatesWithRequirements error when logged in as contact;Kristijan Simunic;Hillary Taverna;Major;Closed;Done;31/Oct/14 4:57 PM;03/Nov/14 7:21 PM;05/Nov/14;;
+Task - Technical;FIN-9;Unit Test TimesheetEditService.ApproveAndRejectLineEntries;Kristijan Simunic;John Zabroski;Major;Open;Unresolved;29/Oct/14 11:36 PM;03/Mar/15 5:52 PM;;;
+Bug;FIN-246;er30/Kimco: Advanced Timesheet Import - TargetStatusID column is not assigning correct status to imported hours;Kristijan Simunic;Chris Kang;Critical;Demo;Unresolved;19/Jan/15 1:06 PM;03/Mar/15 5:52 PM;;;
+Bug;FIN-93;BackOffice - Server Error on Contact Timesheet Tab;Kristijan Simunic;John F. Karpenko;Critical;Demo;Unresolved;19/Dec/14 2:33 PM;03/Mar/15 5:52 PM;;;7200
+Bug;FIN-82;Make Post Process Timesheets Task Unit Testable/Safer;Kristijan Simunic;John Zabroski;Critical;In Progress;Unresolved;15/Dec/14 7:40 PM;03/Mar/15 5:52 PM;;4;
+Bug;FIN-169;er30 (RC) - Timesheet Search Red Ribbon Error;Kristijan Simunic;Jonathan Barracato;Major;Demo;Unresolved;07/Jan/15 5:12 PM;03/Mar/15 5:52 PM;;;
+Bug;FIN-241;I can't delete time that I juste entered. I tried moving TS to rejected and still no go.;Kristijan Simunic;Jeanette Dunn;Critical;Closed;No Longer Applicable;19/Jan/15 5:44 PM;06/Feb/15 4:54 PM;;;
+Bug;FIN-124;"Atrium (PROD): Add validation to Advanced Timesheet Import; target Match needs to be in a valid status for timesheet creation";Kristijan Simunic;Chris Kang;Critical;Resolved Pending Verification on Client;Incomplete;21/Jul/14 1:43 PM;24/Dec/14 1:13 PM;;;
+Bug;FIN-229;er30 Can't find Match ID error when attempting Advanced Timesheet Import Task;Kristijan Simunic;Brian Doherty;Critical;Demo;Unresolved;16/Jan/15 11:35 AM;03/Mar/15 5:52 PM;;;
+Feature;FIN-125;Importing timesheets that came in from VMS into erecruit;Kristijan Simunic;Jenn Gorius;Major;Closed;Done;25/Mar/13 4:37 PM;02/Mar/15 5:45 PM;;;
+Bug;FIN-19;Kimco(Test): Advanced Timesheet Import overwrites existing timesheet data instead of adding to;Kristijan Simunic;Chris Kang;Critical;Closed;Done;05/Nov/14 4:23 PM;23/Feb/15 4:51 PM;;;
+Task - Technical;FIN-7;Unit Test TimesheetEditService.UnSubmitTimesheet;Kristijan Simunic;John Zabroski;Major;In Progress;Unresolved;29/Oct/14 7:06 PM;03/Mar/15 5:52 PM;;;
+Task - Technical;FIN-6;Unit Test TimesheetEditService.SubmitTimesheet;Kristijan Simunic;John Zabroski;Major;Open;Unresolved;29/Oct/14 6:58 PM;03/Mar/15 5:52 PM;;;
+Bug;FIN-73;Atrium Prod- Imported Timesheets not updating LastDateWorked on Candidate Record;Kristijan Simunic;Molly Hoffman;Major;Open;Unresolved;20/Nov/14 3:57 PM;03/Mar/15 5:52 PM;;;
+Story;TAC-209;Parallon Testing ID: Need to restrict attachment type extensions;Kristijan Simunic;Pam Devenish;Major;Closed;Done;03/Oct/14 5:04 PM;17/Feb/15 12:23 PM;;4;
+Bug;ER-18567;Kimco TEST - Adding a Candidate without a Resume errors 'Sequence contains no elements';Kristijan Simunic;Ali Virani;Major;Closed;Done;28/Oct/14 6:07 PM;12/Nov/14 12:41 PM;;;
+Bug;ER-18695;Parallon SB - Clicking on Data Export throws a server error.;Kristijan Simunic;Teresa Smith;Major;Closed;Done;02/Nov/14 11:06 AM;22/Nov/14 10:37 AM;;;
+Task - Technical;FIN-8;Unit Test TimesheetEditService.ApproveTimesheets;Kristijan Simunic;John Zabroski;Major;Resolved Pending QA;Done;29/Oct/14 10:14 PM;19/Feb/15 8:43 PM;;;
+Bug;FIN-84;Kimco (Test): Advanced Timesheet Import still not handling hours imported over existing timesheets correctly, plus UI issue with TimesheetDay widgets not displaying;Kristijan Simunic;Chris Kang;Major;Closed;Done;16/Dec/14 12:41 PM;19/Feb/15 12:11 PM;;;
+Story;FIN-508;3 Story Timesheet Import;Kristijan Simunic;Norm Joseph;Major;Closed;Done;16/Mar/15 9:01 AM;16/Mar/15 9:52 PM;;;
+Story;FIN-421;Timesheet Import Enhancements - Import Entries - UI;Kristijan Simunic;Norm Joseph;Regular;Peer Review;Unresolved;26/Feb/15 4:48 PM;18/Mar/15 8:52 AM;;;
+Epic;FIN-419;Timesheet Import - Phase II;Kristijan Simunic;Norm Joseph;Regular;Peer Review;Unresolved;26/Feb/15 4:46 PM;18/Mar/15 8:51 AM;;;
+Bug;FIN-502;Matches without OT rate fail hard if over 40 hours.;Kristijan Simunic;John Zabroski;Major;Open;Unresolved;13/Mar/15 6:01 PM;16/Mar/15 2:26 PM;;;
+Subtask;FIN-243;FIN-228 er30/Kimco: Advanced TImesheet Import - error logging needs to be enhanced;Kristijan Simunic;Chris Kang;Critical;Closed;Done;19/Jan/15 1:10 PM;16/Feb/15 8:57 AM;;;
+Bug;FIN-380;Kimco/PROD: Advanced Timesheet Import creates TimesheetLineEntries with a NULL ProcessingDate, even if they have a valid Match.TimesheetBatch.RangeCalendarPeriod.ProcessingDate;Kristijan Simunic;Chris Kang;Critical;Closed;Done;22/Feb/15 8:54 PM;06/Mar/15 3:46 PM;;;
+Subtask;TAC-231;TAC-230 Add source information to requirement instances;Kristijan Simunic;Igor Belagorudsky;Regular;Closed;Done;14/Oct/14 5:13 PM;05/Feb/15 10:18 AM;;4;
+Feature;FIN-107;File import mapping tool for timesheets;Kristijan Simunic;Kathi Halvorson;Regular;Open;Unresolved;11/Sep/13 9:32 AM;16/Mar/15 10:05 AM;;12;
+Bug;FIN-392;v3 Back Office Tasks Needs Retry Logic;Kristijan Simunic;Chris Kang;Critical;Demo;Unresolved;24/Feb/15 2:14 PM;18/Mar/15 12:53 PM;;;
+Bug;FIN-413;Kimco/PROD: Negative-hour timesheets get processed into 0-hour TimesheetLineAttributions;Kristijan Simunic;Chris Kang;Critical;Demo;Unresolved;26/Feb/15 10:56 AM;18/Mar/15 2:38 PM;;;
+Epic;FIN-443;Timesheet Imports - File Mappings;Kristijan Simunic;Norm Joseph;Major;In Progress;Unresolved;02/Mar/15 5:42 PM;18/Mar/15 10:06 AM;;;
+Feature;FIN-88;Cache client settings;Kristijan Simunic;Kristijan Simunic;Regular;In Progress;Unresolved;19/Dec/14 3:57 AM;09/Mar/15 1:00 PM;;;
+Feature;FIN-228;Enhanced Timesheet Import;Kristijan Simunic;Jessica McNabb;Major;Peer Review;Unresolved;10/Dec/14 5:44 PM;16/Mar/15 10:05 AM;;;
+Story;FIN-422;Timesheet Import Enhancements - Import Entries - Managing, Validation and Processing Services;Kristijan Simunic;Norm Joseph;Regular;Peer Review;Unresolved;26/Feb/15 4:48 PM;18/Mar/15 9:34 PM;;;
+Story;FIN-420;Timesheet Import Enhancements - ITLE Task;Kristijan Simunic;Norm Joseph;Regular;Peer Review;Unresolved;26/Feb/15 4:47 PM;18/Mar/15 9:34 PM;;;
+Story;FIN-505;Fieldglass Timesheet Import;Kristijan Simunic;Norm Joseph;Major;Peer Review;Unresolved;16/Mar/15 9:00 AM;18/Mar/15 9:34 PM;;;
+Story;FIN-509;Guidant Timesheet Import - Match External Reference via Associate Column;Kristijan Simunic;Norm Joseph;Major;Peer Review;Unresolved;16/Mar/15 9:01 AM;18/Mar/15 9:34 PM;;;
+Story;FIN-506;IQ Navigator Timesheet Import;Kristijan Simunic;Norm Joseph;Major;Peer Review;Unresolved;16/Mar/15 9:00 AM;18/Mar/15 9:34 PM;;;
+Story;FIN-510;Beeline Timesheet Import;Kristijan Simunic;Norm Joseph;Major;Peer Review;Unresolved;16/Mar/15 9:01 AM;18/Mar/15 9:34 PM;;;
+Story;FIN-507;Peoplefluent Timesheet Import;Kristijan Simunic;Norm Joseph;Major;Peer Review;Unresolved;16/Mar/15 9:00 AM;18/Mar/15 9:34 PM;;;
+Story;FIN-423;Timesheet Import Enhancements - Import Entries - ArchiveTask;Kristijan Simunic;Norm Joseph;Regular;In Progress;Unresolved;26/Feb/15 4:49 PM;19/Mar/15 5:45 AM;;;
+Bug;TAC-613;Parallon Dev: Can't reject a candidate - Recruiter Dropdown Should Have Default NonSelect Text;Magdalena Juric;Stephen Graziani;Major;Closed;Done;26/Nov/14 11:43 AM;22/Jan/15 9:46 PM;;2;14400
+Bug;TAC-508;Randstad Production- Warning Message Is Pulling Wrong Name;Magdalena Juric;Ryan Collins;Major;Closed;Done;20/Nov/14 4:08 PM;09/Jan/15 10:19 AM;;2;
+Bug;TAC-427;AG: Cannot search notes by inactive recruiters;Magdalena Juric;Stephanie Invernizzi;Major;Closed;Done;03/Nov/14 5:26 PM;18/Dec/14 5:08 PM;;;
+Bug;TAC-679;"Nelson Prod- Changing ""Company Type"" Removes Any Previously Selected Workers Comp on Company Accounting Tab";Magdalena Juric;Ryan Collins;Critical;Closed;Done;29/Jan/15 3:39 PM;06/Feb/15 12:45 PM;;3;18000
+Bug;TAC-547;Agreements - Export to Excel - Owner(s) Columns Should Export Both First and Last Name;Magdalena Juric;Molly Hoffman;Major;Closed;Done;15/Oct/14 6:51 PM;12/Jan/15 11:54 AM;;1;
+Bug;TAC-736;Weekly - Updating schedule using 'Recurring' displays incorrect schedule;Magdalena Juric;Ruth Leary;Regular;Closed;Done;20/Jan/15 10:57 AM;09/Mar/15 3:05 PM;;3;21600
+Bug;TAC-816;MVC error when using Mailing Lists;Magdalena Juric;Molly Hoffman;Major;Closed;Done;19/Feb/15 4:24 PM;09/Mar/15 4:26 PM;;2;3600
+Bug;TAC-507;Past Status filter does not return results;Magdalena Juric;Molly Hoffman;Major;Closed;Done;11/Nov/14 5:33 PM;11/Mar/15 5:28 PM;;3;
+Story;TAC-476;Export to Excel Candidate Columns;Magdalena Juric;Kevin Capel;Regular;Closed;Done;02/Dec/14 9:40 AM;07/Mar/15 10:40 PM;;4;
+Bug;TAC-600;'SMC' (company record) is not returning in 'Company' filter on V4 Searches;Magdalena Juric;Fyodor Soikin;Major;Closed;Done;12/Jan/15 12:56 PM;08/Mar/15 9:47 PM;;2;50400
+Story;TAC-612;Parallon VMS: Need to increase character limit for Client Project Name;Magdalena Juric;Daniel Klassen;Major;Closed;Done;15/Jan/15 12:27 PM;08/Mar/15 10:18 PM;;2;14400
+Bug;TAC-698;Kimco: Add New Position -> Industry always defaults to 'Accounting' even if none exists on Company or Contact;Magdalena Juric;Chris Kang;Regular;Closed;Done;27/Jan/15 10:56 AM;09/Mar/15 12:57 PM;;1;14400
+Bug;TAC-680;Double Time hours not exporting correctly when exporting from candidate's timesheets page (Nelson- PROD);Magdalena Juric;Sam Hoffman;Major;Closed;Done;09/Dec/14 1:16 PM;06/Mar/15 4:15 PM;;2;14400
+Bug;TAC-775;AG (Prod) - Position Primary Owner Column on Position search does not export to Excel;Magdalena Juric;Jim Brady;Regular;Closed;Done;09/Feb/15 6:26 PM;04/Mar/15 12:11 PM;;2;14400
+Bug;TAC-397;Jenga - Daily -- Sort by Contact column sorts by ID's not alphabetically by Contact Name;Magdalena Juric;Zendesk;Major;Closed;Done;22/Oct/14 5:30 PM;03/Mar/15 9:50 AM;;;
+Bug;TAC-574;Status needs to be required on a saved search;Magdalena Juric;Rick Spano;Major;Closed;Done;30/Dec/14 12:52 PM;06/Mar/15 4:14 PM;;2;21600
+Story;TAC-648;"Rename Daxtra to ""Job Boards"" in v4 Search";Magdalena Juric;Kevin Capel;Regular;Closed;Done;20/Jan/15 3:17 PM;08/Mar/15 11:14 PM;;1;14400
+Story;TAC-477;Export to Excel Company Columns;Magdalena Juric;Kevin Capel;Regular;Closed;Done;02/Dec/14 9:45 AM;07/Mar/15 10:42 PM;;4;
+Story;TAC-451;Kimco: need to split out the permission for Bulk Update: Match End Assignment from 'Edit Match Accounting Fields';Magdalena Juric;Chris Kang;Major;Closed;Done;03/Nov/14 7:16 PM;13/Feb/15 1:02 PM;;3;
+Bug;TAC-616;Burden Not Working with Requirements Template;Magdalena Juric;Ian Nichols;Major;Closed;Done;16/Jan/15 2:42 PM;06/Mar/15 4:14 PM;;3;36000
+Story;TAC-629;CoWorx 009.05: Prohibition when selecting Do Not Call;Magdalena Juric;Kevin Capel;Regular;Closed;No Longer Applicable;19/Jan/15 12:51 PM;22/Jan/15 10:45 AM;;4;7200
+Bug;TAC-345;Jenga: Hourly Rate & Annual Rate filter on Position & Match search not performing as expected;Magdalena Juric;Molly Hoffman;Major;Closed;No Fix Needed;09/Oct/14 9:17 AM;24/Feb/15 9:02 AM;;2;14400
+Bug;TAC-550;Odd formatting on 'Leaderboard' widget;Magdalena Juric;Sam Hoffman;Major;Closed;Done;29/Dec/14 12:20 PM;11/Feb/15 5:41 PM;;2;32400
+Bug;TAC-588;Custom fields are not honoring the Visible To setting;Magdalena Juric;Stephen Graziani;Major;Closed;Done;13/Dec/14 7:23 PM;16/Jan/15 10:56 AM;;3;18000
+Task - Technical;TAC-762;Check TAC-550 into Jenga & 2.5;Magdalena Juric;Molly Hoffman;Major;Closed;Done;11/Feb/15 5:41 PM;26/Feb/15 5:58 PM;;1;7200
+Bug;TAC-386;ettain PROD- 'DateCreated' column not exporting to Excel in Company Search. In Contact search, many selected columns do not export;Magdalena Juric;Zendesk;Major;Closed;Done;14/Jul/14 10:01 AM;18/Dec/14 5:10 PM;;;
+Bug;TAC-428;"Parallon Dev: Unable to Harvest Seed as a Contact. Receive ""Object not set to reference of an object"" red bar error.";Magdalena Juric;Pam Devenish;Major;Closed;Done;01/Dec/14 2:48 PM;12/Jan/15 9:17 AM;;2;
+Bug;TAC-546;"Parallon Dev - Missing ""Previous"" and Next"" images on Candidate Schedule";Magdalena Juric;Kyle Peters;Major;Closed;Done;23/Sep/14 3:12 PM;15/Jan/15 12:04 PM;;1;
+Bug;TAC-555;HCTec - Upgrade time sheet messages match - CHECK IN TO JENGA;Magdalena Juric;Jason Simonitis;Major;Closed;No Fix Needed;05/Jun/14 6:17 PM;12/Jan/15 12:51 PM;;1;
+Bug;TAC-465;"Inactive recruiters not shown in the ""Owners"" filter in Candidate search";Magdalena Juric;Molly Hoffman;Major;Closed;Done;11/Dec/14 11:04 AM;12/Dec/14 4:47 PM;;;
+Bug;TAC-514;Status Column is duplicated on the Agreement Search Results page.;Magdalena Juric;Richard Cayonne;Regular;Closed;Done;23/Nov/14 9:51 AM;13/Jan/15 12:05 PM;;1;
+Bug;TAC-398;Contact name isn't split up when exportting;Magdalena Juric;Rick Spano;Major;Closed;Done;13/Oct/14 3:04 PM;12/Dec/14 12:32 PM;;;
+Bug;TAC-730;Company Search Grouping from TAC-235 - merge to Jenga;Magdalena Juric;Connor Briggs;Regular;Closed;Done;06/Feb/15 4:17 PM;10/Feb/15 10:16 AM;;1;3600
+Bug;TAC-696;Working Position field needs to be made consistent throughout the UI;Magdalena Juric;Connor Briggs;Major;Closed;Done;09/Jan/15 11:24 AM;09/Mar/15 12:43 PM;;2;14400
+Bug;TAC-781;HCMC: Saved Candidate Search does not work if using Requirements as a filter;Magdalena Juric;Marcia Adelberg;Regular;Closed;Done;29/Jan/15 7:11 PM;17/Mar/15 4:08 PM;;5;66600
+Task - Technical;TAC-786;Update Credit Distribution Permission Names;Magdalena Juric;Kevin Capel;Regular;Closed;Done;16/Feb/15 1:27 PM;06/Mar/15 4:16 PM;;1;7200
+Subtask;TAC-857;TAC-815 Viewing history tab on agreement after changing status gives Internal Server Error;Magdalena Juric;Magdalena Juric;Major;Closed;Done;26/Feb/15 8:42 AM;06/Mar/15 4:16 PM;;;
+Feature;TAC-852;API: Parameters that are needed for Candidate Record;Magdalena Juric;Erin MacKenzie;Major;Closed;Done;25/Feb/15 9:00 AM;13/Mar/15 4:41 PM;;3;25200
+Bug;TAC-502;erecruit Mobile- Incorrect Password Produces Server Error Instead of Error Message;Magdalena Juric;Ryan Collins;Major;Closed;Done;21/Nov/14 2:06 PM;28/Feb/15 5:11 PM;;3;28800
+Bug;TAC-724;Default Bill To should be made consistent throughout the UI;Magdalena Juric;Connor Briggs;Major;Closed;Done;05/Feb/15 4:59 PM;06/Mar/15 4:16 PM;;2;7200
+Bug;TAC-731;HCMC: Position and Match search, filter for Company filter don't display full company information;Magdalena Juric;Michael Sayer;Regular;Closed;Done;08/Jan/15 2:46 PM;17/Mar/15 11:20 AM;;3;21600
+Bug;TAC-945;Leaderboard widget doesn't display decimal values properly for money;Magdalena Juric;Sean Beck;Regular;Open;Unresolved;17/Feb/15 2:37 PM;16/Mar/15 11:36 AM;;2;
+Bug;TAC-842;Parallon Dev- Cannot Delete Scheduled Item or Task from Candidate Page;Magdalena Juric;Ryan Collins;Major;Closed;Done;25/Sep/14 10:46 AM;18/Mar/15 7:21 PM;;2;28800
+Bug;TAC-661;Jackson: Match search for requirements is looking at candidate requirements;Magdalena Juric;Caleb Lilley;Major;Closed;Done;23/Dec/14 1:39 PM;18/Mar/15 1:39 PM;;4;57600
+Story;TAC-930;HCMC: Item Categories not displaying on My Tasks, Scheduled Item Report;Magdalena Juric;Marcia Adelberg;Major;Open;Unresolved;13/Nov/14 10:13 AM;17/Mar/15 9:55 AM;;4;
+Subtask;TAC-829;TAC-827 Custom Fields for Incidents;Magdalena Juric;Kevin Capel;Regular;Closed;Done;19/Feb/15 1:28 PM;18/Mar/15 8:21 PM;;4;36000
+Bug;TAC-491;Cannot save search with date filter;Magdalena Juric;Daniel Klassen;Major;Closed;Done;14/Oct/14 9:19 AM;18/Mar/15 8:49 PM;;4;28800
+Story;TAC-649;Communication Methods in My Tasks Need to Support Click to Dial and Email Links;Magdalena Juric;Kevin Capel;Regular;Closed;Done;30/Dec/14 11:21 AM;18/Mar/15 8:48 PM;;2;18000
+Bug;TAC-772;Seed Search Missing Ability to Utilize Custom Fields;Magdalena Juric;Kevin Sullivan;Major;Closed;Done;30/Jan/15 8:43 AM;18/Mar/15 8:55 PM;;4;18000
+Bug;TAC-815;Agreements: Client Rejected Agreement step does not reject agreement;Magdalena Juric;Moises Silva;Major;Closed;Done;13/Feb/15 5:48 PM;18/Mar/15 8:54 PM;;2;21600
+Subtask;TAC-858;TAC-815 Rejected status cooltip is missing user and date in Agreements;Magdalena Juric;Magdalena Juric;Regular;Closed;Done;26/Feb/15 8:53 AM;18/Mar/15 8:54 PM;;;
+Bug;TAC-509;Add validation for Client Project Ad Source Additional Info;Marijan Domijan;Kevin Capel;Major;Closed;Done;19/Dec/14 4:05 PM;15/Jan/15 12:24 AM;;1;120
+Bug;TAC-458;Do Not Send Widget - Block Match Creation Through Shifts;Marijan Domijan;Kevin Capel;Major;Closed;Done;11/Dec/14 4:31 PM;09/Jan/15 10:34 AM;;12;54000
+Bug;ER-19169;Cannot save changes made in 'Perm Placement' widget;Marijan Domijan;Sam Hoffman;Major;Closed;Done;17/Nov/14 10:21 AM;15/Jan/15 12:33 AM;;;
+Bug;ER-18018;Globalization settings (culture info) should be defined in *.config files;Marijan Domijan;Vedran Kaldi;Trivial;Resolved Pending QA;Done;08/Oct/14 3:10 PM;19/Dec/14 7:58 AM;;1;
+Bug;TAC-478;Parallon Dev: Unable to create a Match from a shift on a Position;Marijan Domijan;Kasey Jordan;Major;Closed;Done;14/Dec/14 4:14 PM;29/Dec/14 9:56 AM;;2;28800
+Story;TAC-146;Permission to access Candidate Tax Tab (RA6);Marijan Domijan;Jenn Gorius;Major;Closed;Done;24/Oct/13 10:43 AM;13/Feb/15 3:04 PM;;2;
+Story;TAC-130;Kimco: Add 'Default Primary Department' to Company Departments and cascade to Position\Primary Department;Marijan Domijan;Chris Kang;Major;Closed;Done;15/Sep/14 8:24 PM;14/Jan/15 11:52 AM;;;
+Story;TAC-373;RingCentral for erecruit (MRP) - Estimate Only;Marijan Domijan;Rick Lloyd;Major;Closed;Done;07/Nov/14 4:18 PM;03/Feb/15 12:55 PM;;;
+Story;TAC-591;CoWorx 007.01: Make number of positions required with no default;Marijan Domijan;Marcia Adelberg;Regular;Closed;Done;26/Sep/14 1:32 PM;09/Feb/15 12:19 PM;;6;28800
+Bug;TAC-590;"Parallon Dev: Type member ""date"" is not supported in LINQ to Entities";Marijan Domijan;Stephen Graziani;Major;Closed;Done;26/Nov/14 12:43 PM;23/Jan/15 10:58 AM;;3;25200
+Bug;TAC-611;Sorting by 'Relevancy' on 'Search Candidates' page timing out;Marijan Domijan;Sam Hoffman;Critical;Closed;Done;12/Jan/15 1:15 PM;30/Jan/15 5:45 AM;;3;46800
+Bug;TAC-665;ROI Prod - Unable to Create Full Match for PERM placement - Recruiter Available for credit type Candidate Lead does not have a default department;Marijan Domijan;Rohan Gaetani;Critical;Closed;Done;24/Jan/15 5:24 AM;12/Feb/15 10:35 AM;;;50400
+Bug;TAC-222;Daily - Scrabble - Reassigning a seed only works if you refresh page;Marijan Domijan;Hillary Taverna;Major;Closed;Won't Fix;08/Oct/14 3:24 PM;30/Dec/14 10:41 AM;;2;
+Story;TAC-521;Ability to Search Sub-Departments in the Primary Owner Filter;Marijan Domijan;Kevin Capel;Regular;Closed;Done;23/Dec/14 9:58 AM;24/Feb/15 4:37 PM;;3;38280
+Story;TAC-382;BLR: Add a Filter and Column for Primary Department to Position and Match searches;Marijan Domijan;Norm Joseph;Regular;Closed;Done;30/Oct/14 9:28 AM;13/Feb/15 1:44 PM;;8;65160
+Task - Technical;TAC-184;Expose email and phone number on Candidate and Contact manage pages;Marijan Domijan;Sean Beck;Regular;Resolved Pending Verification on Client;Unresolved;07/Oct/14 5:03 PM;03/Mar/15 5:50 PM;;2;16200
+Bug;TAC-737;Parallon Dev: Unable to edit Schedule when trying to access any day shown as working.;Marijan Domijan;Pam Devenish;Major;Closed;Done;03/Feb/15 8:51 AM;09/Mar/15 3:13 PM;;3;18000
+Bug;TAC-674;HCMC: System Freezes when using Folder Group as a filter;Marijan Domijan;Marcia Adelberg;Major;Closed;No Fix Needed;22/Jan/15 3:47 PM;02/Mar/15 5:13 PM;;4;23400
+Bug;TAC-682;Parallon Dev - Generate Document does not save changes in checkboxes;Marijan Domijan;Paul McNally;Major;Closed;Done;14/Oct/14 2:18 PM;06/Mar/15 4:15 PM;;4;32400
+Bug;TAC-347;Required Source Additional Information;Marijan Domijan;Jason Kirkley;Major;Closed;Done;10/Sep/14 8:52 PM;22/Jan/15 11:19 AM;;;
+Story;TAC-618;Break Out Permissions for Editing Match Start Date;Marijan Domijan;Kevin Capel;Major;Closed;Done;15/Jan/15 4:00 PM;08/Mar/15 10:43 PM;;3;64800
+Story;TAC-158;Parallon ID 413 - Ability to clearly document the reason for the creation of a requisition by the client.;Marijan Domijan;Stephen Graziani;Regular;Closed;Done;29/Aug/14 3:07 PM;13/Feb/15 3:03 PM;;6;
+Bug;TAC-695;Requirements ignoring entity rules;Marijan Domijan;Molly Hoffman;Major;Closed;Done;27/Jan/15 4:01 PM;09/Mar/15 12:41 PM;;3;28800
+Bug;TAC-658;MVC Error - The given key was not present in the dictionary;Marijan Domijan;Ian Nichols;Major;Resolved Pending Verification on Client;Unresolved;06/Jan/15 4:44 PM;06/Mar/15 4:15 PM;;;32400
+Bug;TAC-500;"Error on the Manage Recruiters page when I unchecked ""show only active recruiters.";Marijan Domijan;Richard Cayonne;Major;Resolved Pending Verification on Client;Unresolved;04/Dec/14 6:41 PM;03/Mar/15 5:50 PM;;2;43200
+Story;TAC-761;Ability to include Requirements on print templates;Marijan Domijan;Martha Fitch;Major;Closed;Done;14/Jan/15 5:55 PM;09/Mar/15 3:41 PM;;5;219600
+Bug;TAC-557;Recruiter is not populated in BCC field when 'Approving and Email Contact' (eTest- Jenga);Marijan Domijan;Sam Hoffman;Major;Closed;Done;03/Dec/14 10:14 AM;16/Mar/15 11:22 AM;;4;54000
+Bug;TAC-513;BHSG -- Internal server error on history tab;Marijan Domijan;Connor Briggs;Major;Resolved Pending Verification on Client;Unresolved;07/Nov/14 1:19 AM;03/Mar/15 5:50 PM;;2;32400
+Bug;TAC-364;Beacon Hill Production- Clicking Forgot My Password Link Produces Server Error;Marijan Domijan;Ryan Collins;Major;Closed;Done;12/Nov/14 6:52 PM;28/Feb/15 5:12 PM;;;
+Bug;TAC-891;ettain- History/Match timeline not logged appropriately;Marijan Domijan;Molly Hoffman;Major;Reopened;Unresolved;17/Oct/14 10:35 AM;16/Mar/15 11:34 AM;;4;
+Bug;TAC-934;Parallon (Prod) - Error when confirming requirements from Confirm button in requirements widget;Marijan Domijan;Ruth Leary;Major;Open;Unresolved;12/Mar/15 10:20 PM;18/Mar/15 3:28 PM;;2;
+Bug;TAC-646;Tags don't expire;Marijan Domijan;Fyodor Soikin;Major;Closed;Done;28/Oct/14 2:54 PM;18/Mar/15 8:50 PM;;2;21900
+Bug;TAC-814;Match Search results showing incorrect 'Reports To' column data;Marijan Domijan;Zendesk;Major;Closed;Done;20/Oct/14 10:20 AM;18/Mar/15 10:40 AM;;3;32400
+Story;TAC-844;Bulk Update Infrastructure for Candidates;Marijan Domijan;Kevin Capel;Blocker;Peer Review;Unresolved;11/Jan/15 4:36 PM;16/Mar/15 11:50 AM;;;7200
+Bug;TAC-925;er30rc - Requirements required before Full Placement do not block placement when assigning candidate to a shift;Marijan Domijan;Ruth Leary;Critical;Closed;Done;11/Mar/15 1:55 AM;13/Mar/15 3:16 PM;;;18000
+Story;TAC-833;Add Company Bulk Update to v4 Search;Marijan Domijan;Kevin Capel;Blocker;Resolved Pending QA;Unresolved;13/Jan/15 5:02 PM;17/Mar/15 2:39 PM;;12;136800
+Story;TAC-845;CoWorx 004.12 - Ability to Mass Update Candidate and Company Status through v4 Search;Marijan Domijan;Kevin Capel;Major;In Progress;Unresolved;07/Jan/15 4:32 PM;18/Mar/15 12:00 PM;;4;
+Bug;ER-19546;Backoffice - Can't Search Timesheets by Status;Renato Meznaric;Stephanie Papageorgis;Regular;Closed;Done;03/Dec/14 9:45 AM;16/Dec/14 2:49 PM;;;
+Bug;FIN-87;Error opening Bulk Update Match Rates link on a Company;Renato Meznaric;John Zabroski;Major;Resolved Pending QA;Done;18/Dec/14 10:18 PM;15/Jan/15 1:01 AM;;1;
+Bug;FIN-86;Rates widget error Opening Match Manage page;Renato Meznaric;John Zabroski;Major;Peer Review;Done;18/Dec/14 10:15 PM;23/Dec/14 10:22 AM;;2;
+Bug;IM-5202;Parallon Dev: Unable to add new timesheet from Logo Menu;Renato Meznaric;Pam Devenish;Major;Closed;Done;12/Feb/15 6:04 PM;13/Feb/15 9:05 AM;;;
+Bug;FIN-194;er30rc - Overtime not calculating on match creation;Renato Meznaric;Ruth Leary;Major;Closed;No Fix Needed;08/Jan/15 11:04 AM;27/Feb/15 3:50 AM;;2;18000
+Bug;FIN-353;Kimco/PROD: Timesheet Entry (from scans) -> 'Could not find a part of the path' when trying to Save & Attach;Renato Meznaric;Chris Kang;Critical;Closed;No Fix Needed;16/Feb/15 6:18 PM;27/Feb/15 3:56 AM;;;18000
+Bug;FIN-352;Parallon Dev: CreateInvoiceDocuments produces errors;Renato Meznaric;Pam Devenish;Critical;Closed;Done;16/Feb/15 6:06 PM;27/Feb/15 3:56 AM;;;28800
+Bug;TAC-237;"Atrium- Add new Position from Contact Record throws ""Industry is Required"" error message";Renato Meznaric;Molly Hoffman;Major;Closed;Done;29/Aug/14 9:04 AM;24/Oct/14 10:57 AM;;2;18000
+Bug;ER-18671;Parallon (Dev) - PO number not carrying over to Active Contract Placements report;Renato Meznaric;Bernard Ambroseno;Regular;Closed;Done;31/Oct/14 3:27 PM;16/Feb/15 6:48 PM;;;
+Bug;TAC-238;"Atrium ""Link Address"" failing";Renato Meznaric;Molly Hoffman;Major;Closed;Done;11/Sep/14 1:36 PM;12/Nov/14 10:33 AM;;2;
+Feature;ER-18486;'PO Numbers/Billing Groups' widget on company accounting tab needs filter;Renato Meznaric;Sam Hoffman;Major;Open;Unresolved;24/Oct/14 12:35 PM;02/Mar/15 3:37 PM;;;
+Bug;FIN-202;3.0rc Can not Delete a Rate Group;Renato Meznaric;Brian Doherty;Major;Resolved Pending QA;Unresolved;08/Jan/15 10:57 AM;03/Mar/15 5:52 PM;;2;
+Bug;FIN-242;Error clicking Line Entry in TImesheet;Renato Meznaric;John Zabroski;Major;Resolved Pending QA;Unresolved;19/Jan/15 10:17 PM;03/Mar/15 5:52 PM;;2;
+Feature;FIN-25;Control Panel page - Expense Categories - Housing Packages;Renato Meznaric;John Zabroski;Major;Resolved Pending QA;Unresolved;17/Nov/14 10:09 AM;03/Mar/15 5:52 PM;;7;
+Bug;FIN-369;Kimco/PROD: 'Could not generate PDF: Object reference not set to an instance of an object.' error when trying to Print Selected Invoices + Attachments;Renato Meznaric;Chris Kang;Critical;Resolved Pending QA;Unresolved;18/Feb/15 3:01 PM;03/Mar/15 5:52 PM;;;28800
+Bug;FIN-329;er30rc - Could not generate PDF: Process Invoices (Temp);Renato Meznaric;Jim Brady;Critical;Closed;Done;03/Feb/15 3:33 PM;10/Mar/15 6:42 AM;;;28800
+Feature;FIN-10;Timesheet Search - Search For Timesheets With Line Entries in Status;Renato Meznaric;John Zabroski;Major;Resolved Pending QA;Unresolved;31/Oct/14 4:31 PM;03/Mar/15 5:52 PM;;12;
+Bug;ER-19544;Backoffice - Timesheet Status of 0.00% Submitted instead of Draft;Renato Meznaric;Stephanie Papageorgis;Wishlist;Resolved Pending QA;Done;03/Dec/14 9:36 AM;05/Mar/15 5:34 PM;;2;
+Bug;FIN-196;3.0rc Approvers do not show up in the Cost Centers Grid;Renato Meznaric;Brian Doherty;Regular;Closed;Done;08/Jan/15 10:08 AM;27/Feb/15 3:49 AM;;3;28800
+Bug;FIN-361;er30 - Timesheet Processing Not Returning Any Results (but should be);Renato Meznaric;Jonathan Barracato;Critical;Closed;Done;18/Feb/15 8:18 AM;27/Feb/15 3:57 AM;;;18000
+Bug;FIN-387;Kimco/PROD: 'Timesheet Entry' (from scans) creates TimesheetLineEntries with $0 Pay & Bill Rates, but needs to use the correct effective dated RateDetail from Match.;Renato Meznaric;Chris Kang;Critical;Closed;Done;23/Feb/15 7:20 PM;03/Mar/15 3:33 PM;;;28800
+Feature;FIN-257;Add Match ID Column, Work Day & Filter to Timesheet Attributions Grid;Renato Meznaric;Martha Fitch;Major;Closed;Done;21/Jan/15 5:26 PM;05/Mar/15 8:58 PM;;3;28800
+Bug;FIN-280;trustaff - MVC/Application error when creating a match record;Renato Meznaric;Jaymie Martin;Blocker;Closed;Done;28/Jan/15 10:44 AM;27/Feb/15 3:55 AM;;2;18000
+Story;TAC-192;Parallon ID 152: New Match Search Filter/Column For Shifts with Certain Status;Renato Meznaric;Pam Devenish;Major;Resolved Pending QA;Unresolved;28/Jul/14 12:37 PM;06/Mar/15 4:14 PM;;12;
+Task - Technical;TAC-916;Check FIN-18 into RC_2.5;Renato Meznaric;Molly Hoffman;Major;Closed;Duplicate;10/Mar/15 1:27 PM;10/Mar/15 3:27 PM;;;
+Bug;FIN-186;3.0 - Error deleting Rate group on division market;Renato Meznaric;Caleb Lilley;Regular;Resolved Pending QA;Unresolved;09/Jan/15 4:29 PM;03/Mar/15 5:53 PM;;2;
+Feature;FIN-281;Add WorkDate column to Timesheet Attribution search page;Renato Meznaric;John Zabroski;Major;Closed;Duplicate;28/Jan/15 1:30 PM;27/Feb/15 3:51 AM;;1;10980
+Bug;ER-20437;Task Service not functioning;Renato Meznaric;Brendan Stewart;Blocker;Resolved Pending QA;Done;09/Jan/15 12:49 PM;13/Jan/15 5:17 AM;;;
+Feature;FIN-71;Kimco: Quick Manual Time Entry UI from Scanned Timesheets;Renato Meznaric;Chris Kang;Major;Resolved Pending QA;Unresolved;13/Nov/14 2:50 PM;16/Mar/15 10:05 AM;;16;144000
+Story;FIN-111;ettain needs a way to designate when a match's timesheets shouldn't appear in the Candidate and Contact Portals (R34, 34-1);Renato Meznaric;Jenn Gorius;Major;Closed;Done;04/May/14 10:47 AM;27/Feb/15 3:52 AM;;12;108000
+Feature;FIN-18;Newly-created position's Overtime/ Double Time Bill Multipliers need to be set to '1.0x' (eTest- Jenga);Renato Meznaric;Zendesk;Major;Peer Review;Unresolved;10/Sep/14 3:19 PM;16/Mar/15 11:42 AM;;3;28800
+Subtask;FIN-72;FIN-71 MVC API Calls for Scanned Timesheet Data Entry;Renato Meznaric;John Zabroski;Major;Closed;Done;08/Dec/14 5:30 PM;27/Feb/15 3:52 AM;;12;108000
+Bug;FIN-433;Kimco: 'Timesheet Entry' (from scans) - order the Rates in the hours entry section by TRC;Renato Meznaric;Chris Kang;Major;Resolved Pending QA;Unresolved;02/Mar/15 12:27 PM;16/Mar/15 10:06 AM;;;
+Bug;FIN-404;Kimco/PROD: 'Timesheet Entry' (from scans) - spaces in the Folder Name in the ScannedTimesheets folder cause UI & data retrieval issues;Renato Meznaric;Chris Kang;Regular;Resolved Pending QA;Unresolved;25/Feb/15 11:57 AM;18/Mar/15 2:22 PM;;;
+Bug;FIN-410;Kimco/PROD: 'Timesheet Entry' (from scans) - the logic which adds hours to the selected Timesheet does not check the Match's Start-End Date Range but needs to;Renato Meznaric;Chris Kang;Critical;Closed;Done;25/Feb/15 12:53 PM;18/Mar/15 2:35 PM;;;
+Bug;FIN-388;Kimco/PROD: Bill Rate is uneditable when creating a New Match off a position which has only Projected Pay & Bill Rates populated;Renato Meznaric;Chris Kang;Critical;Closed;Done;23/Feb/15 7:45 PM;12/Mar/15 5:59 PM;;;
+Bug;FIN-432;Kimcoo/PROD: 'Timesheet Entry' (from scans) - troubleshoot why Timesheet 2314533 does not allow hours entry in the Timesheet Entry feature;Renato Meznaric;Chris Kang;Critical;Closed;Done;02/Mar/15 12:12 PM;18/Mar/15 2:49 PM;;;
+Subtask;FIN-493;FIN-296 SaveTimesheet has to be moved to TimesheetEditService;Renato Meznaric;Renato Meznaric;Major;Resolved Pending QA;Unresolved;12/Mar/15 5:38 AM;13/Mar/15 5:27 AM;;;
+Subtask;FIN-494;FIN-296 TimesheetLineEntrySaveRequest DTO decimal hours should be replaced with long of seconds;Renato Meznaric;Renato Meznaric;Major;Resolved Pending QA;Unresolved;12/Mar/15 5:38 AM;13/Mar/15 5:27 AM;;;
+Subtask;FIN-497;FIN-296 Security Validation;Renato Meznaric;Jonathan Barracato;Major;In Progress;Unresolved;12/Mar/15 10:34 AM;16/Mar/15 8:36 AM;;;
+Subtask;FIN-498;FIN-296 Date Exception;Renato Meznaric;Jonathan Barracato;Major;Resolved Pending QA;Unresolved;12/Mar/15 10:36 AM;13/Mar/15 11:27 AM;;;
+Bug;FIN-351;Rate Frequency is defaulting from IsDefaultSetForRateGroups as blank;Renato Meznaric;Melynda Cole;Major;Resolved Pending QA;Unresolved;13/Feb/15 2:27 PM;18/Mar/15 12:41 PM;;;36000
+Feature;FIN-479;"Kimco: Timesheet Attribution Search -> ""Pay Record/Invoice Created On"" dates should reflect the date the records were created- not the RangeCalendarPeriod.ProcessingDate";Renato Meznaric;Chris Kang;Major;In Progress;Unresolved;10/Mar/15 9:19 PM;16/Mar/15 10:06 AM;;;
+Subtask;FIN-291;FIN-71 Additional API calls needed for Scanned Timesheet Data Entry;Renato Meznaric;Chris Kang;Major;Resolved Pending QA;Unresolved;30/Jan/15 11:17 AM;18/Mar/15 8:16 PM;;2;18000
+Bug;FIN-411;OtterBase (Prod)- Approving all Timesheets shows errors before approving;Renato Meznaric;Stephanie Invernizzi;Critical;Closed;Done;18/Feb/15 11:44 AM;18/Mar/15 11:08 AM;;;
+Subtask;FIN-516;FIN-296 Add new TimesheetEntryTemplates mode;Renato Meznaric;John Zabroski;Major;Peer Review;Unresolved;17/Mar/15 11:47 PM;18/Mar/15 9:34 PM;;2;
+Subtask;FIN-499;FIN-296 API Call to get Descriptions for LineDescriptionValues;Renato Meznaric;John Zabroski;Major;In Progress;Unresolved;12/Mar/15 12:40 PM;16/Mar/15 7:01 AM;;2;
+Task - Technical;ER-20977;Move BL/Search/*Search;Vedran Kaldi;Vedran Kaldi;Regular;Open;Unresolved;29/Jan/15 6:45 AM;30/Jan/15 11:15 AM;;2;
+Bug;ER-19641;V4 Opportunity search: There are no options in the logo menu for My or My Department.;Vedran Kaldi;Vedran Kaldi;Regular;Closed;Done;08/Dec/14 10:22 AM;15/Dec/14 2:18 PM;;1;
+Feature;ER-18023;HRNetTaskService config moved to external files;Vedran Kaldi;Vedran Kaldi;Regular;Needs Test Case?;Done;08/Oct/14 4:49 PM;09/Oct/14 2:08 PM;;1;
+Task - Technical;ER-17679;Medium - Move BL/*Service classes out of HRNet.Library;Vedran Kaldi;Fyodor Soikin;Regular;Open;Unresolved;25/Sep/14 11:05 AM;30/Jan/15 11:15 AM;;11;
+Bug;ER-18170;ScriptingOrchestrator.GetHost() string.format invalid number of parameters;Vedran Kaldi;Vedran Kaldi;Regular;Needs Test Case?;Done;13/Oct/14 2:20 PM;13/Oct/14 2:31 PM;;1;
+Feature;ER-17978;Redundant script UDPs;Vedran Kaldi;Fyodor Soikin;Regular;Closed;Done;07/Oct/14 12:38 PM;18/Feb/15 10:40 AM;;4;
+Feature;ER-17898;Better API for authoring script UDPs;Vedran Kaldi;Fyodor Soikin;Regular;Closed;Done;03/Oct/14 11:05 AM;20/Feb/15 10:18 AM;;2;
+Task - Documentation;ER-19297;V4 search dev documentation;Vedran Kaldi;Vedran Kaldi;Regular;Closed;Done;20/Nov/14 10:28 AM;23/Feb/15 1:14 PM;;;
+Bug;ER-15019;Find Relevant Candidates button on Position Page;Vedran Kaldi;Igor Belagorudsky;Major;Resolved Pending Verification on Client;Done;11/Jun/14 8:43 PM;25/Feb/15 11:34 AM;;1;36600
+Bug;ER-19587;"erecruit (Weekly) - Opportunity Search missing ""Opportunity"" column (Record ID#)";Vedran Kaldi;Bernard Ambroseno;Major;Closed;Done;04/Dec/14 1:05 PM;15/Dec/14 2:42 PM;;1;
+Feature;ER-7169;Add field to NoteActions for IsAutoOnly;Vedran Kaldi;Igor Belagorudsky;Major;Resolved Pending QA;Done;30/Aug/13 2:15 PM;20/Jan/15 4:45 AM;;2;
+Bug;ER-20535;Daily - Error With Latest Build;Vedran Kaldi;John F. Karpenko;Major;Closed;Done;13/Jan/15 4:28 PM;14/Jan/15 8:22 AM;;;
+Subtask;ER-18290;ER-6286 V4 Opportunity Search: Columns;Vedran Kaldi;Igor Belagorudsky;Regular;Needs Test Case?;Done;16/Oct/14 7:29 PM;20/Nov/14 9:08 AM;;;
+Feature;ER-6286;V4 Search: Opportunities;Vedran Kaldi;Igor Belagorudsky;Major;Reopened;Unresolved;19/Jul/13 4:27 PM;27/Feb/15 6:15 PM;;20;
+Feature;ER-19207;V4 Candidate Applications: Rejection Reason column;Vedran Kaldi;Vedran Kaldi;Regular;Needs Test Case?;Done;18/Nov/14 8:44 AM;06/Jan/15 3:05 PM;;1;
+Bug;ER-19595;erecruit (Weekly) - Refresh button on My Open Opportunities widget not functional;Vedran Kaldi;Liz Zucco;Regular;Open;Unresolved;04/Dec/14 2:59 PM;03/Mar/15 5:44 PM;;;
+Bug;ER-17829;RecordFactory does not detect changes to navigation properties;Vedran Kaldi;Fyodor Soikin;Major;Resolved Pending QA;Done;01/Oct/14 9:13 AM;01/Dec/14 3:34 PM;;2;
+Bug;ER-21456;er30rc - Company and Match search > red ribbon Internal server error;Vedran Kaldi;Vedran Kaldi;Critical;Closed;Done;13/Feb/15 7:21 AM;17/Feb/15 9:40 AM;;1;
+Bug;ER-18942;NullReferenceException in ValueBindingDatabaseHook when deleting a record;Vedran Kaldi;Vedran Kaldi;Major;Resolved Pending QA;Done;07/Nov/14 6:26 PM;19/Nov/14 7:34 AM;;1;
+Bug;ER-21457;er30rc - Company and Matches view my/department > server error /mvc;Vedran Kaldi;Vedran Kaldi;Critical;Closed;Done;13/Feb/15 7:24 AM;23/Feb/15 4:27 PM;;1;
+Feature;ER-18669;Scripting Task should keep running after failures;Vedran Kaldi;Fyodor Soikin;Major;Resolved Pending QA;Done;31/Oct/14 3:22 PM;29/Jan/15 10:00 AM;;2;
+Feature;ER-18553;i18n-lite for record factory properties;Vedran Kaldi;Fyodor Soikin;Regular;Resolved Pending QA;Done;28/Oct/14 2:26 PM;06/Mar/15 4:36 PM;;2;
+Bug;ER-14590;Embedded search not showing columns by default;Vedran Kaldi;Fyodor Soikin;Regular;Needs Documentation?;Done;28/May/14 10:10 AM;02/Mar/15 2:51 PM;;2;
+Bug;ER-18283;on match search, all date columns should be in the Dates category on the sidebar;Vedran Kaldi;Igor Belagorudsky;Major;Closed;Done;16/Oct/14 6:39 PM;04/Mar/15 5:23 PM;;1;
+Subtask;ER-18288;ER-6286 V4 Opportunity Search: Filters;Vedran Kaldi;Igor Belagorudsky;Regular;Needs Test Case?;Done;16/Oct/14 7:20 PM;20/Nov/14 9:08 AM;;;
+Task - Technical;ER-19987;Speed Up Visual Studio Build;Vedran Kaldi;John Zabroski;Major;Open;Unresolved;18/Dec/14 9:24 AM;19/Dec/14 10:49 AM;;;
+Feature;IM-4358;11 - Notify Candidate Compliance when a Candidate with an Unemployment Claim rejects a Match offer;Vedran Kaldi;Igor Belagorudsky;Major;Resolved Pending Verification on Client;Done;01/Oct/14 12:46 PM;05/Feb/15 5:39 PM;;20;
+Bug;ER-19876;Error adding attachments to mass match if a candidate is missing resume;Vedran Kaldi;Igor Belagorudsky;Major;Resolved Pending QA;Done;10/Sep/14 2:02 PM;27/Feb/15 12:21 PM;;2;
+Feature;ER-15283;Track and Save Semantic (and other?) Searches;Vedran Kaldi;Igor Belagorudsky;Major;Open;Unresolved;24/Jun/14 1:41 PM;02/Mar/15 6:29 PM;;;
+Feature;ER-17601;High - Persistent User Settings System: don't require a server-side container type;Vedran Kaldi;Fyodor Soikin;Regular;Needs Scoping;Unresolved;23/Sep/14 1:03 PM;11/Mar/15 11:56 AM;;;
+Bug;ER-18019;File IO related ops do not check if the directory exists;Vedran Kaldi;Vedran Kaldi;Regular;Open;Unresolved;08/Oct/14 2:50 PM;08/Oct/14 3:33 PM;;1;
+Feature;ER-18401;V4 Opportunity Search: Funnel Columns and Filters;Vedran Kaldi;Igor Belagorudsky;Regular;Reopened;Unresolved;21/Oct/14 1:17 PM;17/Mar/15 10:31 AM;;8;
+Feature;ER-18531;Workflow Scripting Host should restart script on crash;Vedran Kaldi;Fyodor Soikin;Major;Resolved Pending QA;Done;27/Oct/14 5:03 PM;29/Jan/15 10:02 AM;;5;
+Feature;ER-21884;LOB Status Column and Cooltip;Vedran Kaldi;Igor Belagorudsky;Major;Peer Review;Done;11/Feb/15 2:32 PM;16/Mar/15 5:25 PM;;10;
+Task - Technical;ER-20021;Figure out how to bypass parts of the build;Vedran Kaldi;Vedran Kaldi;Major;Needs Documentation?;Done;19/Dec/14 10:49 AM;16/Mar/15 3:24 PM;;10;
+Task - Technical;ER-20020;Enable parallelization in project builds;Vedran Kaldi;Vedran Kaldi;Major;Needs Documentation?;Done;19/Dec/14 10:43 AM;16/Mar/15 9:17 AM;;2;
+Bug;ER-21502;er30rc - Candidate view my/department brings back server error in /MVC;Vedran Kaldi;Vedran Kaldi;Critical;Closed;Done;16/Feb/15 11:16 AM;06/Mar/15 4:14 PM;;1;
+Task - Technical;ER-18959;Get rid of dbo.Lists table;Vedran Kaldi;Igor Belagorudsky;Regular;Open;Unresolved;10/Nov/14 11:49 AM;16/Mar/15 5:26 PM;;2;
+Task - Technical;ER-21024;Refactor ClientSettings into a separate Libraries project;Vedran Kaldi;Vedran Kaldi;Regular;Open;Unresolved;30/Jan/15 5:06 AM;16/Mar/15 5:26 PM;;3;
+Bug;ER-9671;RC - NBV - Record does not open automatically when there is only one result in my search.;Vedran Kaldi;Igor Belagorudsky;Regular;Open;Unresolved;11/Dec/13 12:36 PM;27/Feb/15 11:42 AM;;2;
+Feature;ER-22237;Ability to Indicate Candidate Availability via Shifts;Vedran Kaldi;Igor Belagorudsky;Major;Open;Unresolved;26/Feb/15 12:32 PM;17/Mar/15 6:59 PM;;;
+Task - Technical;ER-20019;Set CopyLocal = False in places, in an effort to speed up the build process;Vedran Kaldi;Vedran Kaldi;Major;Needs Test Case?;Done;19/Dec/14 10:38 AM;12/Mar/15 5:24 PM;;10;
+Feature;ER-22223;Shift Search V4;Vedran Kaldi;Igor Belagorudsky;Major;Open;Unresolved;17/Mar/15 3:48 PM;18/Mar/15 7:35 PM;;;
+Feature;ER-21883;Add LOB functionality to Status search filter;Vedran Kaldi;Igor Belagorudsky;Major;In Progress;Unresolved;09/Oct/14 5:02 PM;16/Mar/15 5:25 PM;;10;1800
