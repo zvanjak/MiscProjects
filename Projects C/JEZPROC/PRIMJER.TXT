@@ -1,0 +1,56 @@
+program		primjer;
+
+konstanta	PI=3.14159
+tip		cjelobrojni = integer; realni = real
+varijabla	i:integer; j:integer; k:integer; kolicina:integer;
+			m:real;
+			r : realni; o : cjelobrojni
+
+procedura	sinus;
+pocetak
+	k:=5;
+	ako k=0 tada i:=0
+			inace	i:=1
+kraj
+
+procedura cosinus;
+pocetak
+	m:=PI;
+	r:=-34.98e-20;
+	dok r<20.0 radi
+		r:=r - (m * 1.4 + (r/PI))
+kraj
+
+pocetak
+	kolicina:=0;
+	ako kolicina>20 tada
+		pocetak
+			m := 20.345;
+			k := 0;
+			dok k<5 radi
+				pocetak
+					m := m * PI;
+					k := k + 1
+				kraj;
+			i:=0
+		kraj
+	inace
+		pocetak
+			za i:=20 do 0 radi
+				pocetak
+					m := m / PI;
+					k := k - 1
+				kraj;
+			ako m<234.34 tada
+				pocetak
+					k:=k + 1;
+					i:=i - 1
+				kraj
+			inace
+				pocetak
+					k:=k - 1;
+					i:=i + 1
+				kraj
+		kraj
+kraj
+kraj.

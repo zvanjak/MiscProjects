@@ -1,0 +1,12 @@
+program	primjer;
+
+varijabla i:integer; k:integer
+
+	pocetak
+		k:=0;
+		za i:=0 do 20 radi
+			pocetak
+				k:=k+5
+			kraj
+	kraj
+kraj.

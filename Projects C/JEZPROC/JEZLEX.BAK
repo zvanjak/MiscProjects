@@ -1,0 +1,308 @@
+#include	<stdio.h>
+#include	<string.h>
+#include	<stdlib.h>
+#include	<ctype.h>
+#include	<conio.h>
+
+#include	"jezpro.h"
+
+int		TransitionTable[13][7]= { 2, 1, -1, 2, -1, -1, COND_SPACE,
+			-1, 1, COND_INT_CONST, 5, 3, COND_INT_CONST, COND_INT_CONST,
+			2, 2, COND_IDENTIF, 2, COND_IDENTIF, COND_IDENTIF, COND_IDENTIF,
+			-1, 4, -1, -1, -1, -1, -1,
+			-1, 4, COND_REAL_CONST, 5, COND_REAL_CONST, COND_REAL_CONST, COND_REAL_CONST,
+			-1, 7, -1, -1, -1, 6, -1,
+			-1, 7, -1, -1, -1, -1, -1,
+			-1, 7, COND_REAL_CONST, -1, COND_REAL_CONST, COND_REAL_CONST, COND_REAL_CONST,
+			2, 1, COND_OPER, 2, COND_OPER, COND_OPER, COND_SPACE,
+			2, 1, COND_OPER, 2, COND_OPER, COND_OPER, COND_SPACE,
+			2, 1, COND_OPER, 2, COND_OPER, COND_OPER, COND_SPACE,
+			2, 1, COND_OPER, 2, COND_OPER, COND_OPER, COND_SPACE, 
+			2, 1, COND_OPER, 2, COND_OPER, COND_OPER, COND_SPACE  };
+
+char*	ReservedWords[RES_WORDS_NUM] = { "program", "kraj", "konstanta", "tip",
+			"varijabla", "procedura", "pocetak", "ako", "tada", "inace",
+			"dok", "radi", "ponovi", "svedo", "za", "do" };
+
+char*	Operators = "+-*/()<>;,.=:";
+
+extern ZAVRSNI_SIMBOL			ZSTable[ZS_SIMBOL_NUM];
+extern UNIFORMNI_SIMBOL		**USTable;
+extern IDENTIFIKATOR			**IDNTable;
+extern LITERAL						**LITTable;
+
+extern long		USNum, IDNNum, LITNum;
+extern long		MaxUSNum, MaxIDNNum, MaxLITNum;
+
+extern FILE		*fpReport;
+
+int	Initialize( void )
+{
+	int		i;
+
+	if( (fpReport = fopen("report.txt", "w") ) == NULL )
+	{
+		puts("Ne mogu otvoriti datoteku za izvjestaj");
+		return(0);
+	}
+	
+	MaxUSNum = 300;
+	USTable	= (UNIFORMNI_SIMBOL **)	malloc(MaxUSNum * sizeof(UNIFORMNI_SIMBOL *) );
+	for( i=0; i<MaxUSNum; i++ )
+		if( (USTable[i] = (UNIFORMNI_SIMBOL *) malloc(sizeof(UNIFORMNI_SIMBOL)) ) == NULL )
+		{
+			puts("Nema memorije za US!!!");
+			return(0);
+		}
+
+	MaxIDNNum = 100;
+	IDNTable = (IDENTIFIKATOR **) malloc(MaxIDNNum * sizeof(IDENTIFIKATOR *) );
+	for( i=0; i<MaxIDNNum; i++ )
+		if( (IDNTable[i] = (IDENTIFIKATOR *) malloc( sizeof(IDENTIFIKATOR)) ) == NULL )
+		{
+			puts("Nema memorije za IDN!!!");
+			return(0);
+		}
+
+	MaxLITNum = 100;
+	LITTable = (LITERAL **) malloc(MaxLITNum * sizeof(LITERAL *) );
+	for( i=0; i<MaxLITNum; i++ )
+		if( (LITTable[i] = (LITERAL *) malloc( sizeof(LITERAL)) ) == NULL )
+		{
+			puts("Nema memorije za LIT!!!");
+			return(0);
+		}
+
+	USNum = LITNum = IDNNum = 0;
+	return(1);
+}
+
+
+int		LexAnalyse( void )
+{
+	FILE	*fp;
+	char	strCurrString[80], strFileName[100], chCharacter, strTemp[50], strTemp2[50];
+	int		nCurrCond = COND_S, nOperIndex;
+	int		nNextCond, nCounter=0, nResWordFleg = 0;
+	size_t		j;
+	long			i;
+
+	printf("\n Unesi ime datoteke koju zelis analizirati : " );
+	scanf("%[^\n]", strFileName );
+
+	if( ( fp = fopen(strFileName, "r") ) == NULL )
+	{
+		puts("Datoteka tog imena ne postoji !!!");
+		return(0);
+	}
+
+	chCharacter = fgetc(fp);
+	while( !feof( fp ) )
+	{
+		strCurrString[nCounter++] = chCharacter;
+
+		nNextCond = GetNextCondition( nCurrCond, chCharacter );
+		switch(nNextCond)
+		{
+		case	ERROR_CODE :
+			printf("\n	Greska u ulaznom stringu !!!");
+			exit(0);
+			break;
+
+		case	COND_OPER:
+			nOperIndex = Find(strCurrString[0], Operators, OPER_NUM);
+			strCurrString[1] = 0;
+			nCounter = 0;
+//			printf("\n Unesen prekidni znak : %s", strCurrString );
+			
+			InsertUniformSymbol(TRM, RES_WORDS_NUM + nOperIndex );
+			break;
+		
+		case	COND_IDENTIF :
+			if( strCurrString[nCounter-1] != ' ' )
+				fseek(fp, -1, SEEK_CUR);
+
+			strCurrString[nCounter-1] = 0;
+			nCounter = 0;
+
+			for( j=0; j<RES_WORDS_NUM; j++ )
+				if( strcmp( strCurrString, ReservedWords[j] ) == 0 )
+				{
+//					printf("\n   Unesena rezervirana rijec : %s", ReservedWords[j] );
+					InsertUniformSymbol( TRM, j );
+					nResWordFleg = 1;
+					break;
+				}
+			if( nResWordFleg != 1 )
+			{
+//				printf("\n   Unesena varijabla imena : %s", strCurrString );
+				InsertIdentificator( strCurrString );
+			}
+			nResWordFleg = 0;
+
+			break;
+		
+		case	COND_REAL_CONST :
+			if( strCurrString[nCounter-1] != ' ' )
+				fseek(fp, -1, SEEK_CUR);
+			
+			strCurrString[nCounter-1] = 0;
+//			printf("\n   Unesena realna konstanta : %s", strCurrString );
+			InsertLiteral( strCurrString );
+			nCounter = 0;
+			break;
+		
+		case	COND_INT_CONST :
+			if( strCurrString[nCounter-1] != ' ' )
+				fseek(fp, -1, SEEK_CUR);
+
+			strCurrString[nCounter-1] = 0;
+//			printf("\n   Unesena cjelobrojna konstanta : %s", strCurrString );
+			InsertLiteral( strCurrString );
+			nCounter = 0;
+			break;
+		case	COND_SPACE :
+			nCounter = 0;
+			break;
+		}
+		nCurrCond = nNextCond;
+		chCharacter = fgetc(fp);
+	} 
+
+	printf("\n Uniformni simboli : ");
+	for( i=0; i<USNum; i++ )
+	{
+		switch(USTable[i]->nClass )
+		{
+			case	IDN	:	strcpy(strTemp, "Identifikator");	
+									strcpy(strTemp2, IDNTable[USTable[i]->lIndex]->strName );
+					break;
+			case	LIT	:	strcpy(strTemp, "Literal");	
+									strcpy(strTemp2, LITTable[USTable[i]->lIndex]->strLiteral );
+					break;
+			case	TRM	: strcpy(strTemp, "Zavrsni simbol" );	
+									strcpy(strTemp2, ZSTable[USTable[i]->lIndex].strName );
+					break;
+		}
+		printf("\n %d %-15s  %-20s  -  index %d", i, strTemp, strTemp2, USTable[i]->lIndex );
+		fprintf(fpReport, "\n %d %-15s  %-20s  -  index %d", i, strTemp, strTemp2, USTable[i]->lIndex );
+		if( i%20 == 0 )
+			getch();
+	}
+	getch();
+
+	for( i=0; i<LITNum; i++ )
+	{
+		printf("\n Iznos konstante : %s", LITTable[i]->strLiteral );
+		fprintf(fpReport, "\n Iznos konstante : %s", LITTable[i]->strLiteral );
+	}
+	getch();
+
+	for( i=0; i<IDNNum; i++ )
+	{
+		printf("\n Identifikator : %s", IDNTable[i]->strName );
+		fprintf(fpReport, "\n Identifikator : %s", IDNTable[i]->strName );
+	}
+	getch();
+
+	return(1);
+}
+
+
+int	GetNextCondition( int	nCurrCond, char	nChar )
+{
+	if( tolower(nChar) == 'e' )
+		{
+			return	TransitionTable[nCurrCond][INPUT_E];
+		}
+	else	if( nChar == ' ' || nChar == '\n' || nChar == '\r' || nChar == '\t' )
+	{
+		return	TransitionTable[nCurrCond][INPUT_SPACE];
+	}
+  	else	if( nChar == '+' || nChar == '-' )
+		{
+			return	TransitionTable[nCurrCond][INPUT_SIGN];
+		}
+	else	if( nChar == '.' )
+		{
+			return	TransitionTable[nCurrCond][INPUT_DEC_POINT];
+		}
+	else	if( isdigit(nChar) )
+		{
+			return	TransitionTable[nCurrCond][INPUT_NUM];
+		}
+	else	if( isalpha(nChar) )
+		{
+			return	TransitionTable[nCurrCond][INPUT_CHAR];
+		}
+	else	if( Find(nChar, Operators, OPER_NUM) != -1 )
+		{
+			return	TransitionTable[nCurrCond][INPUT_OPER];
+		}
+	else
+		{
+			printf("\n   Nepoznat ulazni znak !!!");
+			return	ERROR_CODE;
+		}
+}
+
+int	Find( char nChar, char *List, int nListLen )
+{
+	int	ret = -1,i;
+
+	for( i=0; i<nListLen; i++ )
+		if( List[i] == nChar )
+			ret = i;
+
+	return	ret;
+}
+
+void	InsertUniformSymbol( enum KLASA nClass, int nIndex )
+{
+	if( USNum == MaxUSNum )
+		{
+		}
+	else
+		{
+			USTable[USNum]->nClass = nClass;
+			USTable[USNum++]->lIndex = nIndex;
+		}
+}
+
+void	InsertIdentificator( char	*strName )
+{
+	long	i;
+	int		Find = 0, FindAtPos=-1;
+
+	if( IDNNum == MaxIDNNum )
+		{
+		}
+	else
+		{
+			for( i=0; i<IDNNum; i++ )
+				if( strcmp( IDNTable[i]->strName, strName) == 0 )
+				{
+					FindAtPos = i;
+					Find = 1;
+				}
+			
+			if( Find == 0 )
+			{
+				strcpy( IDNTable[IDNNum]->strName, strName );
+				FindAtPos = IDNNum++;
+			}
+			InsertUniformSymbol( IDN, FindAtPos );
+		}
+}
+
+void	InsertLiteral( char *strName )
+{
+	if( LITNum == MaxLITNum )
+		{
+		}
+	else
+		{
+			strcpy( LITTable[LITNum]->strLiteral, strName );
+			InsertUniformSymbol( LIT, LITNum++ );
+		}
+}
