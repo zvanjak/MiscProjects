@@ -1,0 +1,177 @@
+[Root]
+Most Recent Package=leitsys
+
+
+[Package|leitsys|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=C:\Hypo\Paket
+
+[Package|leitsys|Configure DAO ISAMs]
+Applicable=Yes
+Xbase=No
+Excel=No
+Text=No
+Jet 2.x=No
+Lotus=No
+Paradox=No
+
+[Package|leitsys|Configure DAO ODBC]
+JetWorkspace=Yes
+ODBCDirect=Yes
+
+[Package|leitsys|Files Found]
+
+[Package|leitsys|Files Released]
+DBGrdDE.dll=
+
+[Package|leitsys|Missing Dependency Information]
+C:\Office97\Office\MSACC8.OLB=
+C:\WINNT\system32\MSBIND.DLL=
+C:\Programme\Gemeinsame Dateien\System\ADO\MSADO20.TLB=
+
+[Package|leitsys|Out-of-Date Dependency Information]
+C:\WINNT\system32\COMCT332.OCX=
+
+[Package|leitsys|Files Added]
+
+[Package|leitsys|Files Removed]
+c:\vbasic\wizards\pdwizard\redist\mdac_typ.exe=
+
+[Package|leitsys|Files In Project]
+C:\Hypo\HypoBanka.exe=Yes
+C:\WINNT\system32\MSVBVM60.DLL=Yes
+C:\WINNT\system32\OLEAUT32.DLL=Yes
+C:\WINNT\system32\OLEPRO32.DLL=Yes
+C:\WINNT\system32\ASYCFILT.DLL=Yes
+C:\WINNT\system32\STDOLE2.TLB=Yes
+C:\VBasic\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\WINNT\system32\VB6DE.DLL=Yes
+C:\Programme\Gemeinsame Dateien\Microsoft Shared\DAO\DAO2535.TLB=Yes
+C:\Programme\Gemeinsame Dateien\Microsoft Shared\DAO\DAO350.DLL=Yes
+C:\WINNT\system32\MSJET35.DLL=Yes
+C:\WINNT\system32\MSJTER35.DLL=Yes
+C:\WINNT\system32\MSJINT35.DLL=Yes
+C:\WINNT\system32\VBAJET32.DLL=Yes
+C:\WINNT\system32\expsrv.dll=Yes
+C:\WINNT\system32\MSRD2X35.DLL=Yes
+C:\WINNT\system32\MSREPL35.DLL=Yes
+C:\VBasic\Wizards\PDWizard\Redist\MSVCRT40.DLL=Yes
+C:\WINNT\system32\VB5DB.DLL=Yes
+C:\Programme\Gemeinsame Dateien\System\ADO\MSADO20.TLB=Yes
+C:\WINNT\system32\MSBIND.DLL=Yes
+C:\WINNT\system32\COMCT332.OCX=Yes
+C:\WINNT\system32\CMCT3DE.DLL=Yes
+C:\WINNT\system32\MSCHRT20.OCX=Yes
+C:\WINNT\system32\MSCH2DE.DLL=Yes
+C:\WINNT\system32\DBLIST32.OCX=Yes
+C:\WINNT\system32\DBLSTDE.DLL=Yes
+C:\WINNT\system32\MSADODC.OCX=Yes
+C:\WINNT\system32\MSSTDFMT.DLL=Yes
+C:\WINNT\system32\STDFTDE.DLL=Yes
+C:\WINNT\system32\ADODCDE.DLL=Yes
+C:\Office97\Office\MSACC8.OLB=Yes
+C:\WINNT\system32\MSCOMCTL.OCX=Yes
+C:\WINNT\system32\MSCMCDE.DLL=Yes
+C:\WINNT\system32\MSCOMCT2.OCX=Yes
+C:\WINNT\system32\MSCC2DE.DLL=Yes
+C:\WINNT\system32\MSDATGRD.OCX=Yes
+C:\WINNT\system32\DATGDDE.DLL=Yes
+C:\WINNT\system32\MSDATLST.OCX=Yes
+C:\WINNT\system32\DATLSDE.DLL=Yes
+C:\WINNT\system32\DBGRID32.OCX=Yes
+C:\WINNT\system32\Msrdo20.dll=Yes
+C:\WINNT\system32\RDOCURS.DLL=Yes
+C:\WINNT\system32\RDO20DE.DLL=Yes
+C:\VBasic\Wizards\PDWizard\Redist\MDAC_TYP.EXE=No
+C:\VBasic\Wizards\PDWizard\SETUP.EXE=Yes
+C:\VBasic\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\WINNT\system32\VB6STKIT.DLL=Yes
+C:\VBasic\Wizards\PDWizard\ST6UNST.EXE=Yes
+
+[Package|leitsys|Configure Registry Files]
+Applicable=No
+
+[Package|leitsys|Configure Remote Servers]
+Applicable=No
+
+[Package|leitsys|Install Locations]
+C:\Hypo\HypoBanka.exe=$(AppPath)
+C:\WINNT\system32\MSVBVM60.DLL=$(WinSysPathSysFile)
+C:\WINNT\system32\OLEAUT32.DLL=$(WinSysPathSysFile)
+C:\WINNT\system32\OLEPRO32.DLL=$(WinSysPathSysFile)
+C:\WINNT\system32\ASYCFILT.DLL=$(WinSysPathSysFile)
+C:\WINNT\system32\STDOLE2.TLB=$(WinSysPathSysFile)
+C:\VBasic\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\WINNT\system32\VB6DE.DLL=$(WinSysPath)
+C:\Programme\Gemeinsame Dateien\Microsoft Shared\DAO\DAO2535.TLB=$(MSDAOPath)
+C:\Programme\Gemeinsame Dateien\Microsoft Shared\DAO\DAO350.DLL=$(MSDAOPath)
+C:\WINNT\system32\MSJET35.DLL=$(WinSysPathSysFile)
+C:\WINNT\system32\MSJTER35.DLL=$(WinSysPathSysFile)
+C:\WINNT\system32\MSJINT35.DLL=$(WinSysPathSysFile)
+C:\WINNT\system32\VBAJET32.DLL=$(WinSysPathSysFile)
+C:\WINNT\system32\expsrv.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\MSRD2X35.DLL=$(WinSysPathSysFile)
+C:\WINNT\system32\MSREPL35.DLL=$(WinSysPathSysFile)
+C:\VBasic\Wizards\PDWizard\Redist\MSVCRT40.DLL=$(WinSysPathSysFile)
+C:\WINNT\system32\VB5DB.DLL=$(WinSysPath)
+C:\Programme\Gemeinsame Dateien\System\ADO\MSADO20.TLB=$(WinSysPath)
+C:\WINNT\system32\MSBIND.DLL=$(WinSysPath)
+C:\WINNT\system32\COMCT332.OCX=$(WinSysPath)
+C:\WINNT\system32\CMCT3DE.DLL=$(WinSysPath)
+C:\WINNT\system32\MSCHRT20.OCX=$(WinSysPath)
+C:\WINNT\system32\MSCH2DE.DLL=$(WinSysPath)
+C:\WINNT\system32\DBLIST32.OCX=$(WinSysPath)
+C:\WINNT\system32\DBLSTDE.DLL=$(WinSysPath)
+C:\WINNT\system32\MSADODC.OCX=$(WinSysPath)
+C:\WINNT\system32\MSSTDFMT.DLL=$(WinSysPath)
+C:\WINNT\system32\STDFTDE.DLL=$(WinSysPath)
+C:\WINNT\system32\ADODCDE.DLL=$(WinSysPath)
+C:\Office97\Office\MSACC8.OLB=$(WinSysPath)
+C:\WINNT\system32\MSCOMCTL.OCX=$(WinSysPath)
+C:\WINNT\system32\MSCMCDE.DLL=$(WinSysPath)
+C:\WINNT\system32\MSCOMCT2.OCX=$(WinSysPath)
+C:\WINNT\system32\MSCC2DE.DLL=$(WinSysPath)
+C:\WINNT\system32\MSDATGRD.OCX=$(WinSysPath)
+C:\WINNT\system32\DATGDDE.DLL=$(WinSysPath)
+C:\WINNT\system32\MSDATLST.OCX=$(WinSysPath)
+C:\WINNT\system32\DATLSDE.DLL=$(WinSysPath)
+C:\WINNT\system32\DBGRID32.OCX=$(WinSysPath)
+C:\WINNT\system32\Msrdo20.dll=$(WinSysPath)
+C:\WINNT\system32\RDOCURS.DLL=$(WinSysPath)
+C:\WINNT\system32\RDO20DE.DLL=$(WinSysPath)
+C:\VBasic\Wizards\PDWizard\Redist\MDAC_TYP.EXE=$(AppPath)
+C:\VBasic\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\VBasic\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINNT\system32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\VBasic\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+
+[Package|leitsys|Configure Shared Files]
+Applicable=Yes
+C:\Hypo\HypoBanka.exe=No
+C:\VBasic\Wizards\PDWizard\Redist\MDAC_TYP.EXE=No
+
+[Package|leitsys|Distribution]
+Type=single
+Size=
+Title=HypoBanka
+
+[Package|leitsys|Package]
+PackageFolder=C:\Hypo\Paket
+ProjectFolder=C:\Hypo
+ServerSideCab=
+File1=C:\Hypo\Paket\setup.exe
+File2=C:\Hypo\Paket\Setup.Lst
+File3=C:\Hypo\Paket\HypoBanka.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz
+
+[Package|leitsys|IconGroups]
+Group0=HypoBanka
+PrivateGroup0=Falsch
+Parent0=$(Programs)
+
+[Package|leitsys|HypoBanka]
+Icon1=HypoBanka.exe
+Title1=HypoBanka
+StartIn1=$(AppPath)
+Key1=Icon1

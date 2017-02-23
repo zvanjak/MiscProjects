@@ -1,0 +1,11 @@
+Selector = 0, 0, 0, 0, C
+HelpFunctions = 0, 0, 0, 0, C
+GraphModule = 27, 32, 718, 568, C
+SelectLanguage = 23, 5, 708, 647, C, -6, 13, 727, 489, C
+ShowPath = 1, 3, 735, 528, C, -80, 125, 653, 601, C
+ActionSelection = 132, 132, 657, 600, C, -57, 94, 676, 570, C
+SelectRoom = 8, 7, 685, 672, C, -49, 107, 684, 583, C
+SelectEvent = 22, 22, 711, 549, C, 0, 0, 733, 476, C
+SelectDepartment = 30, 12, 689, 597, C, -58, 19, 675, 495, C
+SelectEmployee = 2, 0, 735, 586, C, 20, 73, 753, 549, C
+EmployeeDataModule = 41, 107, 724, 678, 

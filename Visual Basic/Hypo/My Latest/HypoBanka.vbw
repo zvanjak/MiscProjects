@@ -1,0 +1,10 @@
+Selector = 0, 0, 0, 0, C
+HelpFunctions = 0, 0, 0, 0, C
+GraphModule = 0, 0, 0, 0, C
+SelectLanguage = 0, 0, 0, 0, C, 0, 0, 0, 0, C
+ShowPath = 0, 0, 0, 0, C, 0, 0, 0, 0, C
+ActionSelection = 0, 0, 0, 0, C, 0, 0, 0, 0, C
+SelectRoom = 0, 0, 0, 0, C, 0, 0, 0, 0, C
+SelectDepartment = 0, 0, 0, 0, C, 0, 0, 0, 0, C
+SelectEmployee = 0, 0, 0, 0, C, 0, 0, 0, 0, C
+SelectEvent = 0, 0, 0, 0, C, 0, 0, 0, 0, C
