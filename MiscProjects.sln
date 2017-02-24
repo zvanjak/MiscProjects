@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projects C", "Projects C", "{3E33ACB3-71E9-4AE4-B3CD-F3C840915039}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "C++", "C++", "{B4D5FED4-2F1C-4017-B3D3-A324A917F36B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CSharp", "CSharp", "{D24D164F-AE80-43FE-AB58-661604A34DF7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Visual C++", "Visual C++", "{FA53DB99-81D1-4486-A9AA-F2C3792CC985}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "JEZPRO1", "Projects C\JEZPROC\JEZPRO1.vcxproj", "{7B2913D7-E5FB-91DD-7066-524297A12962}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7B2913D7-E5FB-91DD-7066-524297A12962}.Debug|x86.ActiveCfg = Debug|Win32
+		{7B2913D7-E5FB-91DD-7066-524297A12962}.Debug|x86.Build.0 = Debug|Win32
+		{7B2913D7-E5FB-91DD-7066-524297A12962}.Release|x86.ActiveCfg = Release|Win32
+		{7B2913D7-E5FB-91DD-7066-524297A12962}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7B2913D7-E5FB-91DD-7066-524297A12962} = {3E33ACB3-71E9-4AE4-B3CD-F3C840915039}
+	EndGlobalSection
+EndGlobal
