@@ -12,4 +12,5 @@
 #endif // _AFX_NO_AFXCMN_SUPPORT
 
 #include "struct.h"
-#include "d:\users\zvone\projects\mathlib\mathlib.h"
+#include "../../../Mathlib/Mathlib.h"
+

@@ -5,6 +5,9 @@
       <UniqueIdentifier>{84e8b1a0-bdcf-4a7d-b78b-ae355f889ec8}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;hpj;bat;for;f90</Extensions>
     </Filter>
+    <Filter Include="Header files">
+      <UniqueIdentifier>{d8d189be-a8ee-4c7f-9a87-238680be2655}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AdditPointCoord.cpp">
@@ -62,5 +65,55 @@
     <Text Include="ReadMe.txt">
       <Filter>Source Files</Filter>
     </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AdditPointCoord.H">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseZCoord.H">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="DRAWLINE.H">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="DrawLineDoc.H">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="DrawLineView.H">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="JULIADLG.H">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="MAINFRM.H">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="MandelbrotDialog.H">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="MATRIX.H">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="NEWCOORD.H">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="PointCoordDialog.H">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="STRUCT.H">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexCoordDialog.H">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexNumDialog.H">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="WhichPoint.H">
+      <Filter>Header files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

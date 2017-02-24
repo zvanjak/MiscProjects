@@ -2,6 +2,7 @@
 //
 /////////////////////////////////////////////////////////////////////////////
 
+class Matrix;
 CPoint	TransfToPoint( double *point, Matrix *T );
 CPoint	TransfVertexToPoint( VERTEX point, Matrix *T );
 double	Fact( int n );

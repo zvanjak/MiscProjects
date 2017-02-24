@@ -14,6 +14,7 @@
     <ProjectGuid>{CB506C4B-0EC8-49A3-9126-B280EA059A34}</ProjectGuid>
     <RootNamespace>DRAWLINE</RootNamespace>
     <Keyword>MFCProj</Keyword>
+    <ProjectName>DrawLine</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -168,6 +169,24 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AdditPointCoord.H" />
+    <ClInclude Include="BaseZCoord.H" />
+    <ClInclude Include="DRAWLINE.H" />
+    <ClInclude Include="DrawLineDoc.H" />
+    <ClInclude Include="DrawLineView.H" />
+    <ClInclude Include="JULIADLG.H" />
+    <ClInclude Include="MAINFRM.H" />
+    <ClInclude Include="MandelbrotDialog.H" />
+    <ClInclude Include="MATRIX.H" />
+    <ClInclude Include="NEWCOORD.H" />
+    <ClInclude Include="PointCoordDialog.H" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="STRUCT.H" />
+    <ClInclude Include="VertexCoordDialog.H" />
+    <ClInclude Include="VertexNumDialog.H" />
+    <ClInclude Include="WhichPoint.H" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,0 +1,13 @@
+REGEDIT
+; This .REG file may be used by your SETUP program.
+;   If a SETUP program is not available, the entries below will be
+;   registered in your InitInstance automatically with a call to
+;   CWinApp::RegisterShellFileTypes and COleObjectFactory::UpdateRegistryAll.
+
+
+HKEY_CLASSES_ROOT\GravitySimulation.Document = GrvSim Document
+HKEY_CLASSES_ROOT\GravitySimulation.Document\CLSID = {A9D369B6-AACF-417C-8603-C191B9FAD099}
+
+HKEY_CLASSES_ROOT\CLSID\{A9D369B6-AACF-417C-8603-C191B9FAD099} = GrvSim Document
+HKEY_CLASSES_ROOT\CLSID\{A9D369B6-AACF-417C-8603-C191B9FAD099}\ProgId = GravitySimulation.Document
+HKEY_CLASSES_ROOT\CLSID\{A9D369B6-AACF-417C-8603-C191B9FAD099}\LocalServer32 = GRAVITYSIMULATION.EXE

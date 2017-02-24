@@ -13,21 +13,54 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Visual C++", "Visual C++", 
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "JEZPRO1", "Projects C\JEZPROC\JEZPRO1.vcxproj", "{7B2913D7-E5FB-91DD-7066-524297A12962}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "JIRAAnalysis", "C++\JIRAAnalysis\JIRAAnalysis\JIRAAnalysis.vcxproj", "{EBF5E322-51C6-4310-92EF-9E21B74D8FB8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DrawLine", "Visual C++\DRAWLINE\DRAWLINE.vcxproj", "{CB506C4B-0EC8-49A3-9126-B280EA059A34}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GravitySimulation", "Visual C++\GravitySimulation\GravitySimulation.vcxproj", "{6E0533E6-DDC0-43CD-AA7E-16065405CF5B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
 		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7B2913D7-E5FB-91DD-7066-524297A12962}.Debug|x64.ActiveCfg = Debug|Win32
 		{7B2913D7-E5FB-91DD-7066-524297A12962}.Debug|x86.ActiveCfg = Debug|Win32
 		{7B2913D7-E5FB-91DD-7066-524297A12962}.Debug|x86.Build.0 = Debug|Win32
+		{7B2913D7-E5FB-91DD-7066-524297A12962}.Release|x64.ActiveCfg = Release|Win32
 		{7B2913D7-E5FB-91DD-7066-524297A12962}.Release|x86.ActiveCfg = Release|Win32
 		{7B2913D7-E5FB-91DD-7066-524297A12962}.Release|x86.Build.0 = Release|Win32
+		{EBF5E322-51C6-4310-92EF-9E21B74D8FB8}.Debug|x64.ActiveCfg = Debug|x64
+		{EBF5E322-51C6-4310-92EF-9E21B74D8FB8}.Debug|x64.Build.0 = Debug|x64
+		{EBF5E322-51C6-4310-92EF-9E21B74D8FB8}.Debug|x86.ActiveCfg = Debug|Win32
+		{EBF5E322-51C6-4310-92EF-9E21B74D8FB8}.Debug|x86.Build.0 = Debug|Win32
+		{EBF5E322-51C6-4310-92EF-9E21B74D8FB8}.Release|x64.ActiveCfg = Release|x64
+		{EBF5E322-51C6-4310-92EF-9E21B74D8FB8}.Release|x64.Build.0 = Release|x64
+		{EBF5E322-51C6-4310-92EF-9E21B74D8FB8}.Release|x86.ActiveCfg = Release|Win32
+		{EBF5E322-51C6-4310-92EF-9E21B74D8FB8}.Release|x86.Build.0 = Release|Win32
+		{CB506C4B-0EC8-49A3-9126-B280EA059A34}.Debug|x64.ActiveCfg = Debug|Win32
+		{CB506C4B-0EC8-49A3-9126-B280EA059A34}.Debug|x86.ActiveCfg = Debug|Win32
+		{CB506C4B-0EC8-49A3-9126-B280EA059A34}.Debug|x86.Build.0 = Debug|Win32
+		{CB506C4B-0EC8-49A3-9126-B280EA059A34}.Release|x64.ActiveCfg = Release|Win32
+		{CB506C4B-0EC8-49A3-9126-B280EA059A34}.Release|x86.ActiveCfg = Release|Win32
+		{CB506C4B-0EC8-49A3-9126-B280EA059A34}.Release|x86.Build.0 = Release|Win32
+		{6E0533E6-DDC0-43CD-AA7E-16065405CF5B}.Debug|x64.ActiveCfg = Debug|Win32
+		{6E0533E6-DDC0-43CD-AA7E-16065405CF5B}.Debug|x86.ActiveCfg = Debug|Win32
+		{6E0533E6-DDC0-43CD-AA7E-16065405CF5B}.Debug|x86.Build.0 = Debug|Win32
+		{6E0533E6-DDC0-43CD-AA7E-16065405CF5B}.Release|x64.ActiveCfg = Release|Win32
+		{6E0533E6-DDC0-43CD-AA7E-16065405CF5B}.Release|x86.ActiveCfg = Release|Win32
+		{6E0533E6-DDC0-43CD-AA7E-16065405CF5B}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{7B2913D7-E5FB-91DD-7066-524297A12962} = {3E33ACB3-71E9-4AE4-B3CD-F3C840915039}
+		{EBF5E322-51C6-4310-92EF-9E21B74D8FB8} = {B4D5FED4-2F1C-4017-B3D3-A324A917F36B}
+		{CB506C4B-0EC8-49A3-9126-B280EA059A34} = {FA53DB99-81D1-4486-A9AA-F2C3792CC985}
+		{6E0533E6-DDC0-43CD-AA7E-16065405CF5B} = {FA53DB99-81D1-4486-A9AA-F2C3792CC985}
 	EndGlobalSection
 EndGlobal
