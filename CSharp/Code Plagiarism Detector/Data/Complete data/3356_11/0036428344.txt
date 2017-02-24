@@ -1,0 +1,32 @@
+#include <stdio.h>
+int main(){
+	int n, m;
+	int n1, n2, n3, rez;
+	char c;
+	scanf("%d %d %c", &n, &m, &c);
+	n1 = n / 100;
+	n2 = n / 10 % 10;
+	n3 = n % 100 % 10;
+	if( ((n >= 100) && (n <= 999)) &&
+		((m >= 1) && (m <= 3)) &&
+		((c == 'R') || (c == 'L')) )
+	{
+		if( c == 'L' ) {
+			if( m == 1 ) {
+				rez = n2 * 100 + n3 * 10 + n1; }
+			if( m == 2 ) {
+				rez = n3 * 100 + n1 * 10 + n2; }
+			if( m == 3 ) {
+				rez = n; } }
+		if( c == 'R' ) {
+			if( m == 1 ) {
+				rez = n3 * 100 + n1 * 10 + n2; }
+			if( m == 2 ) {
+				rez = n2 * 100 + n3 * 10 + n1; }
+			if( m == 3 ) {
+				rez = n; } }		
+		printf("%d", rez);
+	}
+	else printf("Error\n");
+	return 0;
+}

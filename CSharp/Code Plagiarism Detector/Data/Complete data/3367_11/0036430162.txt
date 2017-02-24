@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <math.h>
+int main ()
+{
+	int z;
+	char a,b;
+	scanf ("%c %c",&a,&b);
+	z=0;
+	if ((a>='0')&&(a<='9'))
+		a=a-48;
+	if ((a>='A')&&(a<='F'))
+        a=a-55;
+    if ((b>='0')&&(b<='9'))
+		b=b-48;
+	if ((b>='A')&&(b<='F'))
+        b=b-55;
+	z=a*16+b;
+	printf (" %d \n", z);
+	return 0;
+}

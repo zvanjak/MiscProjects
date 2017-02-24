@@ -1,0 +1,26 @@
+#include <stdio.h>
+int main(){
+  int a, b, r;
+  char c;
+  scanf (˝%d %d %c˝, &a, &b, &c);
+  if (( a%10==a )&&( b%10==b )) {
+      if (c==´+´) {
+	r=a+b;
+	 printf (˝%d˝, &r);
+      } else if (c==´-´) {
+	r=a-b;
+	 printf (˝%d˝, &r);
+      } else if (c==´*´) {
+	r=a*b;
+	 printf (˝%d˝, &r);
+      } else if (c==´/´) {
+	r=a/b;
+	 printf (˝%d˝, &r);
+      } else if (c==´%´) {
+	r=a%b;
+	 printf (˝%d˝, &r);
+      } else {
+	 printf (˝Neispravna˝);
+      }
+  return 0;
+}

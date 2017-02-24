@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main()
+{
+     int broj, novibroj=0, znam, i=0, potenc=1;
+     
+     scanf("%d",&broj);
+     if (broj<0 || broj>777) return 0;
+     while (broj)
+     {
+           znam = broj%10;
+           if (znam>7) return 0;
+           else
+           {
+               if (i) potenc=potenc*8;
+               novibroj += znam * potenc;
+               broj /= 10;
+               i++;
+           }
+     }
+     
+     printf("%d",novibroj);
+     return novibroj;
+}      

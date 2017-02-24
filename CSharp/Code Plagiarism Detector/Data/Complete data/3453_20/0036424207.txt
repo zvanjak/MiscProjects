@@ -1,0 +1,64 @@
+class SortRazlPolje{
+	int _BrElem;			// Broj elemenata u polju
+	int _MaxElem;			// Max velicina u polju (fleksibilna)
+	int *_p;
+	// sort ubacivanjem (umetanjem)
+	void InsertionSort (int *A, int N);
+	// --------------------
+	public:
+		SortRazlPolje();	// konstruktor
+		int Dodaj(int broj);			
+		int *VratiSortPolje(int &n);	
+		~SortRazlPolje();
+};
+void SortRazlPolje::InsertionSort (int *A, int N) {
+	int i, j;
+	int pom;
+	for (i = 1; i < N; i++) {
+		pom = A[i];
+		for (j = i; j >= 1 && A[j-1] < pom; j--)
+		A[j] = A[j-1];
+		A[j] = pom;
+	}
+}
+SortRazlPolje::SortRazlPolje(){
+	_BrElem = 0;
+	_MaxElem = 1;		
+	_p = NULL;
+}
+
+int SortRazlPolje::Dodaj(int broj){
+	int i;
+	// ima li mjesta
+	if(_p!=NULL && _BrElem != _MaxElem  ){
+		// vec postoji u polju
+		for(i=0; i<_BrElem; i++) if(*(_p+i) == broj) return 1;
+		// stavni na kraj i povecaj BrElem
+		*(_p + _BrElem++) = broj;
+		return 1;
+	}
+	// nema mjesta
+	// pomocno polje
+	int *pom = new int[_MaxElem * 2];
+	if(pom == NULL) return 0;
+	// kopiranje u novo polje
+	memcpy(pom, _p, _BrElem * sizeof(int));
+	delete []_p;
+	// nova inicijalizacija
+	_MaxElem*=2;
+	//_BrElem;		// za sada ostaje isti
+	_p = pom;		// vraćamo prosireno polje
+	return this->Dodaj(broj);	
+	
+}
+int *SortRazlPolje::VratiSortPolje(int &n){
+	if (_BrElem == 0 && _p == NULL){n = 0; return NULL;}
+	
+	// potrebno sortirati polje SILAZNO
+	InsertionSort(_p, _BrElem);
+	n = _BrElem;
+	return _p;
+}
+SortRazlPolje::~SortRazlPolje(){
+	delete []_p;
+}

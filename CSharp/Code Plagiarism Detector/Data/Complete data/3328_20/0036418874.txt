@@ -1,0 +1,13 @@
+int *KreirajAritNiz (int n, int a0, int d){
+	int *polje, i, *temp;
+	
+	polje =(int *) malloc (n*sizeof(int));
+	temp = polje;
+	
+	 for (i= 0; i<n; i++){
+		*temp = a0+(i*d);
+		temp++;
+	}
+
+	return polje;
+}

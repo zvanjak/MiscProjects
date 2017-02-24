@@ -1,0 +1,96 @@
+#include <stdio.h>
+class RazlPolje
+{
+    private:
+        int *_podaci;
+        int _BrojElem;
+
+    public:
+        RazlPolje ();
+        int Dodaj (int Broj);
+        int Izbaci (int Broj);
+        int SumaPolja ();
+        ~RazlPolje();
+};
+
+RazlPolje::RazlPolje(){
+
+    _podaci = new int;
+    _BrojElem = 0;
+
+}
+
+int RazlPolje::Dodaj (int Broj){
+
+    int *temp;
+    int i;
+
+    if (_BrojElem == 0)
+        {
+        _podaci[0] = Broj;
+        _BrojElem = 1;
+        return 1;
+        }
+
+    for (i = 0; i < _BrojElem; i++)
+        if (_podaci[i] == Broj)
+           return 1;
+
+    _BrojElem++;
+
+
+    temp = new int[_BrojElem];
+    if (temp == NULL) return 0;
+    for (i = 0; i < _BrojElem - 1; i++)
+        temp[i] = _podaci[i];
+    temp[_BrojElem - 1] = Broj;
+    delete []_podaci;
+    _podaci = temp;
+
+return 1;
+}
+
+int RazlPolje::Izbaci (int Broj){
+    int *temp;
+    int i,j,k;
+    k=0; j=-1;
+
+    if (_BrojElem == 0) return 0;
+    for (i=0; i < _BrojElem; i++)
+        if (_podaci[i] == Broj) j=i;
+    if ( j != -1)
+     {
+      if (_podaci[j] = Broj)
+         {
+          temp = new int[_BrojElem - 1];
+          for (i=0; i<_BrojElem; i++)
+             {
+             if (_podaci[i] != Broj)
+                temp[k++] = _podaci[i];
+             }
+          delete []_podaci;
+          _podaci = temp;
+         }
+     }
+return 0;
+}
+
+
+
+int RazlPolje::SumaPolja (){
+
+int suma,i;
+    suma = 0;
+    if (_BrojElem == 0)
+        return 0;
+
+    for (i = 0; i < _BrojElem; i++)
+      {
+         suma = suma + _podaci[i];
+      }
+return suma;
+}
+
+RazlPolje::~RazlPolje(){
+    delete []_podaci;
+}

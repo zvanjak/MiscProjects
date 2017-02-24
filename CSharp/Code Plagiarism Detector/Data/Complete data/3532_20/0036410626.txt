@@ -1,0 +1,21 @@
+Stog* noviOdNeparnih( Stog *stog )
+{
+    Stog *tmp, *novi;
+    int a;
+
+    tmp = new Stog();
+    novi = new Stog();
+
+    while( stog->Skini(&a) )
+        tmp->Stavi( a );
+
+    while( tmp->Skini(&a) )
+    {
+        stog->Stavi( a );
+        if( a%2==1 )
+            novi->Stavi( a );
+    }
+
+    delete tmp;
+    return novi;
+}

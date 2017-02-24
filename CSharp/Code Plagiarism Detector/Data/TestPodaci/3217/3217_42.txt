@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<string.h>
+main()
+{
+	int x[256];
+	int pom;
+	int y;
+	int i,j;
+	i=0;
+	do
+	{		
+		scanf("%d",&x[i]);
+		i++;
+	}
+	while (x[i-1]>0);
+	for (j=0;j<i;j++)
+	{		
+		pom=x[j];
+		while (pom>0)
+		{
+			y=pom % 10;		
+			pom=pom/10;
+			printf("%d",y);		
+		}
+		printf(" ");
+	}
+}

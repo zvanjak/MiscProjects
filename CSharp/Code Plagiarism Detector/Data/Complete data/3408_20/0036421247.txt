@@ -1,0 +1,33 @@
+char *Spoji(char *niz1,char *niz2) {
+     char *niz3,z;
+     int j,k,i=0,br1,br2,br3,min;
+          
+     br1=strlen(niz1);
+     br2=strlen(niz2);   
+     br3=br1+br2;
+     
+     if (br1 <= br2) min=br1;
+      else min=br2;
+     if ( ( br1 || br2) == 0 ){
+        niz3=(char *) malloc (1* sizeof (char));
+        *niz3='\0';
+        }
+        
+     else {
+          niz3=(char *) malloc ( (br1+br2+1) * sizeof (char));
+          k=0;
+          for (i=0;i<2*min;i+=2,k++) {              
+          niz3[i]=niz1[k];
+          niz3[i+1]=niz2[k];
+          }
+          i=2*k;       
+          if (min==br1)
+             for (i,j=k;i<br3;i++,j++) niz3[i]=niz2[j];
+             
+          else
+             for (i,j=k;i<br3;i++,j++) niz3[i]=niz1[j]; 
+          niz3[i]='\0';
+     }
+        
+     return niz3;
+     }

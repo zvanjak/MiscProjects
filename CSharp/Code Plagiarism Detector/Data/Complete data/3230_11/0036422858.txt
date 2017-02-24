@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <math.h>
+int main () {
+	int n,i;
+	double b,m,sum=0,g,fakt,p;
+	scanf("%d",&n);
+    if (n<1 || n>30)
+		printf("n nije valjan");
+	else {
+		fakt = 1.;
+		b=n;
+		b=b-1;
+        for (i = 1; i <= b; i = i + 1) {
+			fakt = fakt * i;
+		}
+	    m=1./fakt;
+		sum=m;
+		g=n-1;
+		for (p=1; p<n; p++) {
+			m*=g;
+			sum+=m;
+			g--;
+		}
+		printf("%.12lf",sum);
+
+	}
+	return 0;
+}

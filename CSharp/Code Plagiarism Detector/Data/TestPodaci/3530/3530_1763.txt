@@ -1,0 +1,57 @@
+void izbaciUljeza (char *ulazni) 
+{
+	char br[3]={0};
+	int i,j;
+	for (i=0; i<strlen(ulazni); i++) 
+	{
+		if isdigit(ulazni[i]) br[0]++;
+		if islower(ulazni[i]) br[1]++;
+		if isupper(ulazni[i]) br[2]++;
+	}
+	
+		if (((br[0]>=br[1])&&(br[1]>br[2]))||((br[1]>=br[0])&&(br[0]>br[2])))
+		{
+			for (i=0; i<strlen(ulazni); i++) 
+			{
+				if (isupper(ulazni[i])) ulazni[i]=tolower(ulazni[i]);
+			}
+		}
+		else if (((br[2]>=br[0])&&(br[0]>br[1]))||((br[0]>=br[2])&&(br[2]>br[1])))
+		{
+			for (i=0; i<strlen(ulazni); i++) 
+			{
+				if (islower(ulazni[i])) ulazni[i]=toupper(ulazni[i]);
+			}
+		}
+		else if (((br[2]>=br[1])&&(br[1]>br[0]))||((br[1]>=br[2])&&(br[2]>br[0])))
+		{
+			for (i=0; i<strlen(ulazni); i++) 
+			{
+				if (isdigit(ulazni[i])) 
+				{
+					for (j=i; j<strlen(ulazni)+1; j++) ulazni[j]=ulazni[j+1];
+					i--;
+				}
+			}
+		}
+		else if (((br[0]==br[1])&&(br[1]==br[2])) || 
+				((br[0]==br[1])&&(br[1]<br[2])) || 
+				((br[1]==br[2])&&(br[1]<br[0])) || 
+				((br[0]==br[2])&&(br[0]<br[1]))) 
+		{
+			for (i=0; i<strlen(ulazni); i++) 
+			{
+				if (isdigit(ulazni[i])) 
+				{
+					for (j=i; j<strlen(ulazni)+1; j++) ulazni[j]=ulazni[j+1];
+					i--;
+				}
+			}
+
+			for (i=1; i<strlen(ulazni)-1; i++) ulazni[i]=tolower(ulazni[i]);
+			ulazni[0]=toupper(ulazni[0]);
+			ulazni[strlen(ulazni)-1]=toupper(ulazni[strlen(ulazni)-1]);
+			
+		}
+
+}

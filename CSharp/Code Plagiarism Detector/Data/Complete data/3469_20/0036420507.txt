@@ -1,0 +1,7 @@
+double fun1(Trokut t, Pravokutnik p, Krug k) {
+ 	double povrsina=-1.0;	// nijedna povrsina nece biti manja od nule
+  	if (t.Povrsina()>povrsina) povrsina=t.Povrsina();
+    if (p.Povrsina()>povrsina) povrsina=p.Povrsina();
+    if (k.Povrsina()>povrsina) povrsina=k.Povrsina(); 
+    return povrsina;  
+}    

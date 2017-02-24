@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main ()
+{
+	int br,p,n;
+	p=0;
+	n=0;
+	while (br!=0)
+	{
+		scanf("%d",&br);
+		if (br>0)
+		{
+			if ((br%2)==0)
+			{
+				p=p+1;
+			}
+			else
+			{
+				n=n+1;
+			}
+		}
+	}
+	printf("%d %d",p,n);
+	return 0;
+}

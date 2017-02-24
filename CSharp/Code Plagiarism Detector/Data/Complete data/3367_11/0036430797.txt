@@ -1,0 +1,20 @@
+#include <stdio.h>
+int main (){
+	int a1, b1;
+	char a, b;
+	scanf ("%c %c", &a, &b);
+	if (a >= 'A' && a <= 'F'){
+		a1 = (a - 55) * 16;
+	}
+	if (a >= '0' && a <= '9'){
+		a1 = (a - 48) * 16;
+	}
+	if (b >= 'A' && b <= 'F'){
+		b1 = b - 55;
+	}
+	if (b >= '0' && b <= '9'){
+		b1 = b - 48;
+	}
+	printf ("%d", a1 + b1);
+	return 0;
+}

@@ -1,0 +1,6 @@
+bool fun3(Trokut t, Pravokutnik p){
+if(p.Sadrzi(t.getA())==false) return false;
+if(p.Sadrzi(t.getB())==false) return false;
+if(p.Sadrzi(t.getC())==false) return false;
+return true;
+}

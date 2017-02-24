@@ -1,0 +1,70 @@
+struct tip {
+   char ime[20+1];
+   char prezime[30+1];
+   char jmbag[10+1];
+   int  ocjena;
+   tip () {}
+   tip( int a, char *i ) {
+      ocjena = a;
+      strcpy( ime, i );
+   }
+};
+
+struct atom {
+   tip data;
+   atom *sljed;
+};
+
+int brojElementa(atom *glava) {
+   atom *t;
+   int ret = 0;
+   for( t = glava; t != NULL; t = t->sljed ) ++ret;
+   return ret;
+}
+
+int dodaj (atom **glavap, tip element) {
+   atom *tmp;
+   if( tmp = (atom*) malloc( sizeof( atom ) ) ) {
+      tmp->data = element;
+      tmp->sljed = *glavap;
+      *glavap = tmp;
+      return 1;
+   } else return 0;
+}
+
+int maksOcjena(atom *glava) {
+   int ret = -1;
+   for( ; glava != NULL; glava = glava->sljed )
+      if( (glava->data).ocjena > ret ) ret = (glava->data).ocjena;
+   return ret;
+}
+
+float prosjOcjena(atom *glava) {
+   int n = 0;
+   float sum = 0.0;
+
+   if( glava == NULL ) return -1;
+
+   for( ; glava != NULL; glava = glava->sljed ) sum += (glava->data).ocjena, ++n;
+   return sum / n;
+}
+
+int izbaciImePocinjeS (atom **glavap, char *imePocetak) {
+   int c = 0;
+   atom *last, *tmp, *dumm;
+
+   last = NULL;
+   for( tmp = *glavap; tmp != NULL; tmp = dumm ) {
+      dumm = tmp->sljed;
+      if( strstr( (tmp->data).ime, imePocetak ) == (tmp->data).ime ) {
+         if( last == NULL ) *glavap = dumm;
+         else {
+            last->sljed = dumm;
+            free( tmp );
+         }
+         ++c;
+      } else last = tmp;
+   }
+
+   return c;
+}

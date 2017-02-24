@@ -1,0 +1,14 @@
+int SplitToSentences( char *inputField, char *outputField){
+    int br=0,i,zar=0;
+    for (i=0;i<=strlen(inputField);i++){
+         if (inputField[i]==','){outputField[i]='.';
+                                 zar=1;
+                                 br++;                     
+         }else if (zar && isalpha(inputField[i])){ outputField[i]=toupper(inputField[i]);
+                                                   zar=0;
+               }else outputField[i]=inputField[i];
+      }
+    
+    return br;
+}
+

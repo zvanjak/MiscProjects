@@ -1,0 +1,32 @@
+class Kosarica
+{
+private:
+	float max, sum;
+	
+public:	
+	Kosarica()
+	{
+		max = 0;
+		sum = 0;
+	}
+
+	~Kosarica()
+	{
+	}
+	
+	void DodajProizvod(float cijena)
+	{
+		if (cijena > max)	max = cijena;
+		sum += cijena;
+	}
+	
+	float UkupnaCijena()
+	{
+		return sum;
+	}
+	
+	float NajskupljiProizvod()
+	{
+		return max;
+	}
+};

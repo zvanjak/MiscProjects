@@ -1,0 +1,15 @@
+float prosjek(FILE *f){
+    struct album{
+       char naziv[30+1];
+       char autor[20+1];
+       int prodano;
+       } hmm;
+    int ukupno=0,numero=0;
+    int n=fread(&hmm, sizeof(hmm), 1, f);
+    while(n==1){
+       ukupno+=hmm.prodano;
+       numero++;
+       n=fread(&hmm, sizeof(hmm), 1, f);
+       }
+    return (float)ukupno/numero;
+    }

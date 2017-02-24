@@ -1,0 +1,21 @@
+# include <stdio.h>
+
+int main () {
+
+	int n;
+	float m=0, p, i, sum=0;
+	scanf ("%d", &n);
+	if (n<1 || n>400)
+		printf ("n nije valjan");
+	
+	else {
+		for (i=1; i<=n; i++) {
+			m=1/((4*i-1)*(4*i+1));
+			sum+=m;
+			}
+		p=-8*sum+4;
+		printf ("%.8f", p);
+		}
+	
+	return 0;
+}

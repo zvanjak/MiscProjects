@@ -1,0 +1,56 @@
+#include <stdio.h>
+int main ( ) {
+	int k[100],l[100],z[100], brojac=0, brojac2[100], i, j, s, p, q, t, pom[100], g;
+	do {
+		brojac = brojac + 1;
+		scanf ("%d", &k[brojac] );
+	} while (k[brojac] >= 0); 
+
+	for (s=1; s<brojac; s=s+1) {
+		brojac2[s] = 0;
+		pom[s] = k[s];
+		do {
+		pom[s]=pom[s]/10;
+		brojac2[s] = brojac2[s] + 1;
+		} while (pom[s] > 0);
+	}
+
+	for (p=1; p<brojac; p=p+1) {
+		for (j=1; j<=brojac2[p]; j=j+1) {
+			z[j] = k[p]%10;
+			k[p] = k[p]/10;
+
+		}
+		for (t=1; t<=brojac2[p]; t++) {
+				if (z[t]!=0) {
+					for (g=t; g<=brojac2[p]; g++) {
+					printf ("%d", z[g]);
+					}
+					printf(" ");
+					break;
+				}
+				if ((brojac2[p]==1) && (z[1]==0)) 
+					printf ("%d ", z[1]);
+	
+			
+
+		}
+				
+	}
+	
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

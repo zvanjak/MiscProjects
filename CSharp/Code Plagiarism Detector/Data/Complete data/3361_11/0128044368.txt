@@ -1,0 +1,13 @@
+#include<stdio.h>
+
+void main(){
+	int br ,l, d,suma=0;
+					/*printf("Upisite cetveroznamenkasti broj : ")*/
+	scanf("%4d",&br);
+
+	l=br/100;
+	d=br%100;
+	suma=l+d;
+	if(suma%l) printf ("Nije\n");
+	else printf("Jest\n");
+}

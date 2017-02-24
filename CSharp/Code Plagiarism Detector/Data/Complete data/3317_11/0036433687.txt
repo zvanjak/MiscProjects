@@ -1,0 +1,7 @@
+void brisi(FILE *f, int redni_br);
+void brisi(FILE *f, int redni_br)
+{   
+fseek (f, (long) (redni_br-1)*(sizeof(int)+21*sizeof(char)+sizeof(int)), SEEK_SET);
+redni_br=0;
+fwrite(&redni_br, sizeof(redni_br), 1, f);
+}

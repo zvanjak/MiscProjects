@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+
+
+double fakt (int n)
+{
+ 
+if (n==0) return 1;
+int i;
+double fakt=1;
+
+for (i=1;i<=n;i++)
+{ 
+	fakt *=i;
+}
+
+return fakt;
+}
+
+void main()
+{
+	double x, e;
+	x=0;
+	int i, brcl;
+
+	
+	scanf("%d",&brcl);
+	if(brcl<1 || brcl>30){
+printf ("n nije valjan");		
+exit(1);}
+	for(i=0;i<brcl;i++)
+	{
+		x=x + pow(-1,i)/fakt(i);
+	}
+	
+	e=1./x;
+	printf("\n %.12f\n",e);
+
+	
+}

@@ -1,0 +1,19 @@
+#include <stdio.h>
+int main(){
+    int m,n,i,c,zn;
+    scanf("%d", &n);
+    m=0;c=1;
+    if (n>0){
+       while (n>0){
+             zn=n%10;
+             if (zn%2==1) 
+                {m+=zn*c;
+                 c*=10;
+                }
+             n/=10;      
+                   }
+       printf("%d", m);
+             }
+    else printf("%d", n);
+return 0;
+}

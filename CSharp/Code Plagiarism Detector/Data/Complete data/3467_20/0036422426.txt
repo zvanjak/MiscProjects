@@ -1,0 +1,17 @@
+int igra (Igrac &igrac, Automat& aut, int max, int *broj){
+int poc,j=0,t;
+poc=igrac.TrenutnoStanje(); 
+
+while (j<max){
+if (!(igrac.SkiniSRacuna(1))) break;
+j++; 
+aut.UplatiIznos(1);
+t= aut.Zavrti();
+igrac.UplatiNaRacun(t);
+}
+t=aut.PodigniPreostalo();
+igrac.UplatiNaRacun(t);
+t=igrac.TrenutnoStanje();
+*broj=j;
+return t-poc;
+}

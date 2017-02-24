@@ -1,0 +1,14 @@
+#include<stdio.h>
+int main(){
+	int x,p=0,n=0;
+	do{ 
+	scanf("%d",&x);
+	if (x>0){
+		if (x % 2==0) p=p+1;
+		else n=n+1;
+	}
+	}
+	while (x!=0);
+	printf("%d %d",p,n);
+	return 0;
+}

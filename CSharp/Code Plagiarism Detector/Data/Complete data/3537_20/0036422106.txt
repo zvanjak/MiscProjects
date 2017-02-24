@@ -1,0 +1,14 @@
+int BrojClanova(Red *red) {
+	Red *pomocni = new Red();
+	int brojac = 0;
+	int tmp;
+
+	while (red->SkiniIzReda(&tmp)) {
+		pomocni->DodajURed(tmp);
+		brojac++;
+	}
+	while (pomocni->SkiniIzReda(&tmp)) {
+		red->DodajURed(tmp);
+	}
+	return brojac;
+}

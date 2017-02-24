@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <math.h>
+int isprime(int pr);
+int b,p=0;
+main()
+{
+	do
+	{
+		scanf("%d",&b);
+		(isprime(b) && b>2)?++p:0;
+	}while (b>2);
+	printf("%d",p);
+	return 0;
+}
+int isprime(int pr)
+{
+	int i;
+	for(i=2;i<=sqrt(pr+1.);i++)
+	{
+		if(pr%i==0)
+			return 0;
+	}
+	return 1;
+}

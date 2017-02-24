@@ -1,0 +1,15 @@
+char *StvoriNiz(char *poljeznakova, int duljina, int n)
+{
+char *niz;
+int i;
+niz = (char *) malloc ((n+1) * sizeof (char));
+niz[n] = '\0';
+while (n > 0)
+{
+i = moj_rand()%duljina;
+niz[n-1] = poljeznakova[i];
+n--;
+}
+printf("\n");
+return niz;
+}

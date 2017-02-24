@@ -1,0 +1,10 @@
+#include <stdio.h>
+int main () {
+    int n,lijeva,desna;
+	scanf("%d", &n);
+	lijeva=n/100;
+	desna=n%100;
+	if ( (lijeva+desna)%lijeva==0 ) printf("Jest");
+	else printf("Nije");
+	return 0;
+}

@@ -1,0 +1,35 @@
+void UmetniPrijePrvogNeparnog(Stog * stog, int broj)
+{
+Stog pomSt;
+int vrh;
+int uspio;
+
+if (!stog->Skini(&vrh))
+stog->Stavi(broj);
+else
+{
+stog->Stavi(vrh);
+uspio = 0;
+
+while (stog->Skini(&vrh))
+{
+if (vrh % 2 == 1)
+{
+stog->Stavi(vrh);
+stog->Stavi(broj);
+uspio = 1;
+break;
+}
+else
+{
+pomSt.Stavi(vrh);
+}
+}
+if (!uspio)
+stog->Stavi(broj);
+while (pomSt.Skini(&vrh))
+{
+stog->Stavi(vrh);
+}
+}
+}

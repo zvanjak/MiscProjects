@@ -1,0 +1,47 @@
+class SortRazlPolje{
+public:
+	SortRazlPolje();	
+   	~SortRazlPolje();							
+	int Dodaj (int Broj);
+	int *VratiSortPolje (int &n);
+private:
+	int	*Polje;
+	int	BrojElem;					
+};
+SortRazlPolje::SortRazlPolje(){
+		BrojElem = 0;
+		Polje = new int[0];
+};	
+SortRazlPolje::~SortRazlPolje(){
+		delete []Polje;
+};
+SortRazlPolje::Dodaj(int Broj){
+	int i;
+	for (i=0; i<BrojElem; i++){
+		if (Broj == Polje[i])
+			return 1;
+	}
+	int *Temp = new int[BrojElem+1];
+	if (Temp == NULL)
+		return 0;
+	for (i=0; i <BrojElem; i++)
+		Temp[i] = Polje[i];
+	delete []Polje;
+	Polje = Temp;
+	Polje[BrojElem] = Broj;
+	BrojElem++;
+	return 1;
+};
+int* SortRazlPolje::VratiSortPolje(int &n){
+	int i, j, pom;
+	n = BrojElem;
+	if (BrojElem == 0) 
+		return NULL;	
+	for (i = 1; i < BrojElem; i++) {
+		pom = Polje[i];
+			for (j = i; j >= 1 && Polje[j-1] < pom; j--)
+			Polje[j] = Polje[j-1];
+		Polje[j] = pom;	
+	}
+	return Polje;
+};

@@ -1,0 +1,22 @@
+int jeLiProst(int n)
+{	
+	int i; int prost=1;
+	for(i=2; i<n; i++)
+	{
+		if(n%i == 0) prost=0;		
+	}
+	return prost;
+}
+
+Stog* PrepisiRedUStog(Red *red)
+{
+	int element;
+	if(!red->SkiniIzReda(&element))
+	{	
+		Stog *stog = new Stog();
+		return stog;
+	}
+	Stog *stog = PrepisiRedUStog(red);
+	if(jeLiProst(element)) stog->Stavi(element);
+	return stog;	
+}

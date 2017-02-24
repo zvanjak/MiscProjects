@@ -1,0 +1,76 @@
+class CjelobrojniNiz
+{
+int *cjelobrojniniz;
+int BrojElemenata;
+public:
+bool SviJednaki;
+
+
+CjelobrojniNiz(CjelobrojniNiz &stari)
+{
+int i=0;
+cjelobrojniniz = new int[stari.BrojElemenata];
+for(i=0;i<stari.BrojElemenata;i++)
+cjelobrojniniz[i]=stari.cjelobrojniniz[i]; 
+BrojElemenata=stari.BrojElemenata;
+}
+
+CjelobrojniNiz(int *ncjelobrojniniz,int nBrojElemenata)
+{
+int brojac=0,i,j;
+cjelobrojniniz=new int[nBrojElemenata];
+for(i=0;i<nBrojElemenata;i++)
+cjelobrojniniz[i]=ncjelobrojniniz[i];
+
+BrojElemenata=nBrojElemenata;
+
+i=cjelobrojniniz[0];
+for(j=1;j<BrojElemenata;j++)
+if(i==cjelobrojniniz[j])brojac++;
+
+if(brojac==(BrojElemenata-1)) SviJednaki=1;
+else SviJednaki=0;
+}
+
+
+~CjelobrojniNiz(){
+if (cjelobrojniniz) delete[]cjelobrojniniz;
+}
+
+
+
+int Usporedi(CjelobrojniNiz niz)
+{
+int i;
+if(BrojElemenata!=niz.BrojElemenata) return 0;
+for(i=0;i<BrojElemenata;i++)
+{
+if(cjelobrojniniz[i]!=niz.cjelobrojniniz[i])
+return 0;
+}
+return 1; 
+}
+
+
+int *VratiRazliku(CjelobrojniNiz niz,int *n)
+{
+int brojac=0,broj=0,i,j;
+int *tmp=new int[BrojElemenata];
+for(i=0;i<BrojElemenata;i++){
+if(cjelobrojniniz[i]!=cjelobrojniniz[i-1])
+{
+brojac=0;
+for(j=0;j<niz.BrojElemenata;j++){
+if((cjelobrojniniz[i]!=niz.cjelobrojniniz[j]))
+brojac++;
+}
+if(brojac==niz.BrojElemenata){
+tmp[broj]=cjelobrojniniz[i];
+broj++;
+}
+}
+}
+*n=broj;
+return tmp;
+}
+};

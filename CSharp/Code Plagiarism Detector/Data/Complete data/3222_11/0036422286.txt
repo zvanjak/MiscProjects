@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main()
+{
+	int n;
+	int kol=0;
+	scanf("%d",&n);
+	while(kol<=40)
+	{
+		n=n+(n%10);
+		kol++;
+		printf("%d ",n);
+		if(n%13==0)break;
+	}
+    printf("%d",kol);		
+	return 0;
+}

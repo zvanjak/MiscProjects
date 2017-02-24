@@ -1,0 +1,27 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
+
+#define MAX_ROW 20
+#define MAX_COL 5
+
+int main() {
+	int mr, ms, i, j, maxI = 0, maxJ = 0, m[MAX_ROW][MAX_COL];
+	do {
+		scanf("%d %d", &mr, &ms);
+	} while (mr < 1 || mr > MAX_ROW || ms < 1 || ms > MAX_COL);
+
+	for (i = 0; i < mr; i++) {
+		for (j = 0; j < ms; j++) {
+			scanf("%d", &m[i][j]);
+			if (abs(m[i][j]) > abs(m[maxI][maxJ])) {
+				maxI = i;
+				maxJ = j;
+			}
+		}
+	}
+
+	printf("%d %d", maxI, maxJ);
+
+	return EXIT_SUCCESS;
+}

@@ -1,0 +1,7 @@
+void rStrcpy(char *odrediste, char *izvoriste){
+
+	 strncpy(odrediste,izvoriste,1);
+		if(*odrediste == '\0') return; 
+		 rStrcpy(*(odrediste+1), *(izvoriste+1));
+	
+}

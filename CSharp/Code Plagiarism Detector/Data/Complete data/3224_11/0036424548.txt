@@ -1,0 +1,18 @@
+#include <stdio.h>
+int main () {
+    int i;
+    double zb=0,cl,pi;
+    float n;
+    scanf("%f",&n);
+    if(n<1||n>400||n-(int)n!=0)
+    printf("n nije valjan");
+    else{
+    for(i=1;i<=n;i++){
+        cl=1./((4*i-1)*(4*i+1));
+        zb=zb+cl;}
+    pi=4-8*zb;
+    printf("%.8lf",pi);}
+    return 0;
+    }
+    
+    

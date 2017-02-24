@@ -1,0 +1,25 @@
+#include<stdio.h>
+#define MAX 20
+int main(){
+    int matrica[MAX][MAX], n, i, j,umnozak=1,neparna=0;
+    scanf("%d",&n);
+    
+for(i=0;i<n;i++){
+    for(j=0;j<n;j++){
+                    scanf("%d",&matrica[i][j]); 
+                    }}
+for (i=0;i<n;i=i+2)
+    for (j=0;j<n;j=j+2){
+                      if(matrica[i][j]%2!=0){
+                                             neparna=1;
+                                             }
+        }
+        
+if (neparna==1)for(i=0;i<n;i++){umnozak*=matrica[i][n-1-i];}               
+else for (i=0;i<n;i++){umnozak*=matrica[i][i];}
+
+printf("%d",umnozak);
+                
+return 0;                   
+}
+     

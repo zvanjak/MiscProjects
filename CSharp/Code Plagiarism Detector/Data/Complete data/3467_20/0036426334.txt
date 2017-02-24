@@ -1,0 +1,22 @@
+int igra (Igrac& igrac, Automat& aut, int max, int *broj) {
+    int dobit, pom, pom1, x;
+    bool saldo;
+    pom=igrac.TrenutnoStanje();
+    do {
+        saldo=igrac.SkiniSRacuna(1);
+        if (saldo==true){
+           aut.UplatiIznos(1);
+           dobit=aut.Zavrti();
+           igrac.UplatiNaRacun(dobit);
+           broj++;
+        }
+        else break;
+        }
+    while (*broj<max);
+    x=aut.PodigniPreostalo();
+    igrac.UplatiNaRacun(x);
+    pom1=igrac.TrenutnoStanje();
+    dobit=pom1-pom;
+    return dobit;
+}
+

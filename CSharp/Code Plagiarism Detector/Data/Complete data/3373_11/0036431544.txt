@@ -1,0 +1,26 @@
+#include<stdio.h>
+
+int main () {
+int x, y, a, b, c, d, e, f, g, h;
+scanf("%d %d", &x, &y);
+a = x % 8;
+b = (x / 8) % 8;
+c = ((x / 8) / 8) % 8;
+d = (((x / 8) / 8) / 8);
+e = y % 8;
+f = (y / 8) % 8;
+g = ((y / 8) / 8) % 8;
+h = ((x / 8) / 8) / 8;
+if ((x > 99 && x < 1000) && (y > 99 && y < 1000)) {
+	if (x < y) {
+			if (d != 0) printf("%d%d%d%d", d, c, b, a);
+			else printf("%d%d%d", c, b, a);
+	}
+		if (x >= y) {
+		if (h != 0)	printf("%d%d%d%d", h, g, f, e);
+		else printf("%d%d%d", g, f, e);
+	}
+}
+else 
+return 0;
+}

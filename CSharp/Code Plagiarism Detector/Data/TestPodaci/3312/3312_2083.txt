@@ -1,0 +1,39 @@
+int br_prodanih(FILE *f, char *autor)
+{
+    char naziv[30 + 1];
+    char edo[20 + 1];
+    int prodano;
+    int ret = 0;
+    int van = 0;
+    
+    do
+    {
+      if (fscanf(f, "%s\n", naziv) == 1)
+      {
+        if (fscanf(f, "%s\n", edo) == 1)
+        {
+          if (fscanf(f, "%d\n", &prodano) == 1)
+          {
+             if(strcmp(edo, autor) == 0)
+               ret += prodano;
+          }
+          else
+          {
+            van = 1;
+          }    
+        }
+        else
+        {
+          van = 1;
+        }
+      }
+      else
+      {
+        van = 1;
+      }
+
+    }
+    while (van == 0);
+            
+    return(ret);
+}

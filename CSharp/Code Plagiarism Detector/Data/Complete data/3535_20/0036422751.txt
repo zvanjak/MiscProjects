@@ -1,0 +1,10 @@
+void staviNaDno(Stog *stog, int broj)
+{
+Stog tempostog;
+int tempera;
+while(stog->Skini(&tempera))
+tempostog.Stavi(tempera);
+stog->Stavi(broj);
+while(tempostog.Skini(&tempera))
+stog->Stavi(tempera);
+}

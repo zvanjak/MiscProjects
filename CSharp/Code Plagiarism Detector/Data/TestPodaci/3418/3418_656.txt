@@ -1,0 +1,27 @@
+#include <stdio.h>
+int main ()
+{
+	int n, polje[100]={0},broj=0,i, broj_dijeljenja=0;
+	do {
+		scanf("%d",&n);
+	} while (n < 1 || n > 100);
+	for (i=0; i<n; i++)
+	{ 
+		scanf("%d",&polje[i]);
+	}
+	scanf ("%d%d", &i,&broj);
+	while (i>0&&i<n)
+	{
+		if (broj!=0) {
+			polje[i]/=broj;
+			broj_dijeljenja++;
+		}
+		scanf ("%d%d", &i,&broj);
+	}
+	for(i=0,broj=0;i<n;i++)
+	{
+		if (polje[i]==0)broj++;
+	}
+	printf("%d %d ",broj, broj_dijeljenja);
+	return 0;
+}

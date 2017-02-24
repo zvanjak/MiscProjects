@@ -1,0 +1,16 @@
+#include<stdio.h>
+
+int main()
+{
+	int n = 0, i = 0; 
+	long double zbr = 0, pribr = -2.;
+	scanf("%d", &n);
+	if ((n < 1) || (n > 30)) 
+	{
+		printf("n nije valjan\n");
+		return(0);
+	}
+	while(++i <= n) zbr += pribr /= -2.;
+	printf("%.12Lf\n", zbr);
+	return(0);
+}

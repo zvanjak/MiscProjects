@@ -1,0 +1,21 @@
+#include <math.h>
+#include <stdio.h>
+int main () {
+	int i,n;
+	double p,a,b;
+scanf ("%d",&n);
+b=0;
+if ((n<1) || (n>100))
+	printf ("n nije valjan\n");
+else
+{
+	for (i=1; i<=n; i=i+1)
+	{
+		a=(pow(-1,i+1))*(1./pow(i,2));
+		b=b+a;
+	}
+	p=pow(b*12,1./2);
+	printf ("%.12f\n",p);
+}
+return 0;
+}

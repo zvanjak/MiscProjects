@@ -1,0 +1,41 @@
+char *brojeve_u_znakove(int *polje, int duljina) {
+    int n, temp;
+    int i=0;
+    char niz [100];
+    for (n=0; n < duljina; n++) {
+        temp = *(polje + n);
+        if (temp == 0) niz[i++] = 48;
+        else if (temp/10 == 0) niz[i++] = temp+48;
+        else if (temp/100 == 0) {
+            niz[i++] = temp % 10 + 48;
+            temp /= 10;
+            niz[i++] = temp % 10 + 48;
+        } else if (temp/1000 == 0) {
+            niz[i++] = temp % 10 + 48;
+            temp /= 10;
+            niz[i++] = temp % 10 + 48;
+            temp /= 10;
+            niz[i++] = temp % 10 + 48;
+        } else if (temp/10000 == 0) {
+            niz[i++] = temp % 10 + 48;
+            temp /= 10;
+            niz[i++] = temp % 10 + 48;
+            temp /= 10;
+            niz[i++] = temp % 10 + 48;
+            temp /= 10;
+            niz[i++] = temp % 10 + 48;
+        } else if (temp/100000 == 0) {
+            niz[i++] = temp % 10 + 48;
+            temp /= 10;
+            niz[i++] = temp % 10 + 48;
+            temp /= 10;
+            niz[i++] = temp % 10 + 48;
+            temp /= 10;
+            niz[i++] = temp % 10 + 48;
+            temp /= 10;
+            niz[i++] = temp % 10 + 48;
+        }
+    }
+    niz[i]='\0';
+    return niz;
+}

@@ -1,0 +1,10 @@
+char *Spoji(char *niz1, char *niz2) {
+  char *sol;
+  sol=malloc(strlen(niz1)+strlen(niz2)+1);
+  for(;*niz1||*niz2;) {
+     if(niz1) *(sol++)=niz1;
+     if(niz2) *(sol++)=niz2;
+  }
+  *sol=0;
+  return sol;
+}

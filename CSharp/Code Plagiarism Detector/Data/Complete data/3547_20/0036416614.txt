@@ -1,0 +1,15 @@
+Stog *RedListomUOOPStog (atom2 *glava, atom2 *rep) {
+	int element, ok;
+	Stog *novi;
+
+	ok = SkiniIzReda (&element, &glava, &rep);
+	
+	if (!ok) Stog *novistog = new Stog();
+	
+	if (ok) {
+		novi = RedListomUOOPStog (glava, rep);
+		novi -> Stavi(element);
+	}
+
+	return novi;
+}

@@ -1,0 +1,9 @@
+void rStrncpy(char *odrediste, char *izvoriste, int n) {
+kontrola();
+if (n == 0) return;
+else {
+*odrediste = *izvoriste;
+rStrncpy(odrediste + 1, izvoriste + 1, n - 1);
+}
+return;
+}

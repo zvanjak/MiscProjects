@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include<math.h>
+int main(){
+	int i=0,j;
+	double dx,n[50];
+	float x;
+	scanf("%lf",&dx);
+	do{
+		scanf("%f",&x);
+		n[i]=(pow(cos(exp(-1.)),sin(exp(sin(x+dx+exp(-1.)))))-pow(cos(exp(-1.)),sin(exp(sin(x+exp(-1.))))))/dx;
+		i++;
+	}while(x!=0.0);
+	for(j=0;j<(i-1);j++){
+		printf("%.2lf ",atan(n[j]));
+		}
+	return 0;
+}

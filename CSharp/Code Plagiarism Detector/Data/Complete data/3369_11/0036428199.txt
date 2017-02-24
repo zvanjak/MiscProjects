@@ -1,0 +1,27 @@
+#include<stdio.h>
+
+int main()
+{
+	int a,b,c,d,f,g;
+	scanf("%d",&a);
+	if (a>=512)
+	{
+		 b=a%8;
+	     c=(a/8)%8;
+	     d=(a/64)%8;
+		 g=(a/512)%8;
+	     f=(g*1000)+(d*100)+(c*10)+b;
+		 printf("%d",f);
+	}
+	else
+	{
+         b=a%8;
+	     c=(a/8)%8;
+	     d=(a/64)%8;
+	     f=(d*100)+(c*10)+b;
+		 printf("%d",f);
+	}
+	
+
+	return 0;
+}

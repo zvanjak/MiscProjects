@@ -1,0 +1,18 @@
+char *Spoji(char *niz1, char *niz2) {
+	char *retVal, *noviNiz;
+	
+	noviNiz = (char *) malloc((sizeof (niz1) + sizeof (niz2) -1 ) * sizeof (char));
+	retVal = noviNiz;
+
+	if (noviNiz == NULL) 
+		return (NULL);
+
+	while (*niz1 || *niz2) {
+		if (*niz1)
+			*noviNiz++ = *niz1++;
+		if (*niz2)
+			*noviNiz++ = *niz2++;
+	}
+	*noviNiz = '\0';
+	return (retVal);
+}

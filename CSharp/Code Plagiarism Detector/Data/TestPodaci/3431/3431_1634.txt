@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+int main () {
+	char broj;
+	int i = 0, sumaparnih = 0, sumaneparnih = 0;
+	do {
+		scanf("%c", &broj);
+		if (broj == 10) scanf("%c", &broj);
+		if ((broj >= '0') && (broj <= '9')) {
+			if (broj % 2) {
+				sumaneparnih += broj - '0';
+			}else {
+				sumaparnih += broj - '0';
+			}
+		}
+		else if ((broj >= 'A') && (broj <= 'F')) {
+			if (broj % 2) {
+				sumaparnih += broj - 'A' + 10;
+			}else {
+				sumaneparnih += broj - 'A' + 10;
+			}
+		}
+		else if ((broj >= 'a') && (broj <= 'f')) {
+			if (broj % 2) {
+				sumaparnih += broj - 'a' + 10;
+			}else {
+				sumaneparnih += broj - 'a' + 10;
+			}
+		}
+		else break;
+		i++;
+	} while (i<100);
+	printf("%d", sumaparnih-sumaneparnih);
+return 0;
+}

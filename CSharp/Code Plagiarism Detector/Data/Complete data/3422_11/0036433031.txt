@@ -1,0 +1,24 @@
+#include<stdio.h>
+#define MAXPOLJE 100
+int main() {
+	char polje[MAXPOLJE];
+	int i=0, j = 0, k = 0;
+	do {
+		scanf("%c", &polje[i]);
+	} while (polje[i++]!= '.');
+	while (!(((polje[k] >= 'a' && polje[k] <= 'z') || (polje[k] >= 'A' && polje[k] <= 'Z') || polje[k] == ',') == 1))
+		k++;
+	if (polje[k] >= 'a' && polje[j] <= 'z')
+		polje[k] = polje[k] - 32;
+	for(j = k + 1;j < i; j++) {
+		if (polje[j] >= 'A' && polje[j] <= 'Z')
+			polje[j] = polje[j] + 32;
+	}
+	for(j = k + 1; j < i; j++) {
+		if((polje[j+1] < 'a' || polje[j+1] > 'z' || ((polje[j-1] < 'a' || polje[j-1] > 'z') && (polje[j-1] < 'A' || polje[j-1] > 'Z'))) && polje[j] >= 'a' && polje[j] <= 'z')
+			polje[j] = polje[j] - 32;
+	}
+	for(j = k; j < i; j++)
+		printf("%c", polje[j]);
+	return 0;
+}

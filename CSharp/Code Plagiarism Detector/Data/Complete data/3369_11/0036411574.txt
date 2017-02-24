@@ -1,0 +1,10 @@
+# include <stdio.h>
+
+main()
+
+{
+       int i;
+       scanf ( "%d", &i );
+              if (( i>99)&&( i< 1000))
+       printf ( " %o \n ", i );
+}

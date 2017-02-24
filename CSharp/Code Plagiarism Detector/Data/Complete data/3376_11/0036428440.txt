@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main () {
+	int a,b,c,d,broj,rez;
+	scanf("%d", &broj);
+	a=(broj/1000);
+	b=(broj/100)%10;
+	c=(broj/10)%10;
+	d=(broj%10);
+	rez=broj;
+	if (a%2==0){ 
+		rez=rez-a*1000;
+	}
+
+	if (b%2==0){
+		rez=rez-b*100;
+	}
+
+
+	if (c%2==0){
+		rez=rez-c*10;
+	}
+	
+	if (d%2==0){
+		rez=rez-d;
+	}
+	
+
+	printf("%d\n", rez);
+	return 0;
+}

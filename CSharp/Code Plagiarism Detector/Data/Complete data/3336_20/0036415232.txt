@@ -1,0 +1,13 @@
+int rStrcmp (char *s1, char *s2) {
+	int brjednakih=0, brmanjih=0, brvecih=0;
+	kontrola();
+
+	if (*s1 != '\0' && *s2 != '\0'){
+	if (*s1==*s2) brjednakih++;
+	if (*s1<*s2) brmanjih++;
+	if (*s1>*s2) brvecih++;
+	}
+		rStrcmp(s1+1, s2+1);
+	        if(brmanjih==0 && brvecih==0) return 0;
+		if (brmanjih>brvecih) return -1;
+		if (brmanjih<brvecih) return 1;

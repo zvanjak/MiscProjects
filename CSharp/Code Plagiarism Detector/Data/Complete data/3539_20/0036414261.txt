@@ -1,0 +1,22 @@
+float prosjek(zapis *glava) {
+
+	zapis *pom = glava;
+	float prosj = 0;
+	int brojac=0;
+	
+	while(glava) {
+		brojac++;
+		prosj += glava->pros;
+		glava = glava->sljed;
+	}
+	prosj /= brojac;
+	
+	glava = pom;
+	
+	while(glava) {
+		if (glava->pros < prosj)
+			glava->pros = 0.;
+		glava = glava->sljed;
+	}
+	return prosj;	
+}

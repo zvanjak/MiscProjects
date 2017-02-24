@@ -1,0 +1,22 @@
+int br_prodanih (FILE *f, char *autor) {
+	
+	int n,brprod;
+	struct album {
+		char naziv [30+1];
+		char autorx [20+1];
+		int prodano;
+	} zapis;
+	
+		
+	brprod = 0;
+	while (1) {
+		n = fread (&zapis, sizeof(zapis), 1,f);
+		if (n<1) break;
+		if (!(strcmp (autor,zapis.autorx))) {
+			brprod = zapis.prodano;
+			break;
+		}
+		}
+
+	return (brprod);
+    }

@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <malloc.h>
+void funkcija (char * ulazni, char *izlazni, int *broj) {
+int i, j, k, len, flag=0;
+int num = 0;
+char *pom, *izb;
+
+if(ulazni == NULL) {
+*broj=0;
+return;
+}
+
+len = strlen(ulazni);
+pom = (char *) calloc( len + 1, sizeof(char) );
+izb = (char *) calloc( len + 1, sizeof(char) );
+
+*broj = 0;
+for( i=0; i<len; i++) {
+for( j=i; j<len; j++) {
+for( k=0; k<(int)strlen(izb); k++ )
+if( ulazni[i] == izb[k] ) j=len;
+if( ulazni[i] == ulazni[j] ) num++;
+}
+
+if( num > 1 ) {
+(*broj)++;
+izb[(int)strlen(izb)] = ulazni[i];
+}
+num = 0;
+}
+
+if(izlazni == NULL) {
+return;
+}
+
+
+for( i=0; i<len; i++) {
+for( j=0; j<(int)strlen(izb); j++ ) {
+if( izb[j] == ulazni[i] ) {
+flag=1;
+break;
+}
+}
+
+if(flag==0)
+pom[(int)strlen(pom)] = ulazni[i];
+flag=0;
+}
+
+len = strlen(pom);
+for( i=0; i<len; i++ )
+izlazni[i] = pom[len-i-1];
+izlazni[i] = '\0';
+}

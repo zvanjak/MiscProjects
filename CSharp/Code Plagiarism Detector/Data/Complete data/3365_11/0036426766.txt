@@ -1,0 +1,31 @@
+#include<stdio.h>
+int main ()
+{
+	int a,b,c,broj;
+	broj=0;
+	while(broj<100 || broj>999)
+	scanf("%d", &broj);
+	a=broj/100;
+	b=(broj%100)/10;
+	c=(broj%100)%10;
+	if (broj<250 || broj>950){
+		printf("%d\n", a+b+c);}
+	else if (broj>=250 && broj <=950){
+		if (a%2==0 && b%2==0 && c%2==0)
+			printf("%d", 0);
+		else if (a%2!=0 && b%2==0 && c%2==0)
+			printf("%d", a);
+		else if (a%2==0 && b%2!=0 && c%2==0)
+			printf("%d", b);
+		else if (a%2==0 && b%2==0 && c%2!=0)
+			printf("%d", c);
+		else if (a%2!=0 && b%2!=0 && c%2==0)
+			printf("%d", a+b);
+		else if (a%2!=0 && b%2==0 && c%2!=0)
+			printf("%d", a+c);
+		else if (a%2==0 && b%2!=0 && c%2!=0)
+			printf("%d", b+c);
+		else if (a%2!=0 && b%2!=0 && c%2!=0)
+			printf("%d", a+b+c);}
+	return 0;
+}

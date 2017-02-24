@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <malloc.h>
+
+int *napraviPolje(int *A, int Na, int a, int b, int *Nc){
+	int *p = NULL;
+	int i, k;
+	char djeljiv;
+
+	*Nc = 0;
+
+	if (a > b) return NULL;
+	for (i = 0; i < Na; i++){
+		djeljiv = 1;
+		for (k = a; k <= b; k++) {
+			if (*(A + i) % k != 0) {
+				djeljiv = 0;
+				break;
+			}
+		}
+		if (djeljiv){
+			p = (int *) realloc (p, sizeof(int)*(1 + *Nc));
+			*(p + *Nc) = *(A + i);
+			(*Nc)++;
+		}
+	}
+	return p;
+}
+

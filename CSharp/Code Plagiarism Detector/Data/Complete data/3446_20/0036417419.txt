@@ -1,0 +1,53 @@
+class Kosarica {
+      private:
+              float *_proizvodi;      
+              float *_proizvodiNew;             
+              int _BrojProizvoda;
+              float _cijena;
+      public:
+             Kosarica() {
+                        _BrojProizvoda=0;
+                        _cijena=0;
+             };
+             
+             void DodajProizvod(float cijena){
+                  if (_BrojProizvoda==0) {
+                     _proizvodi=new float[1];
+                     _proizvodi[0]=cijena;
+                     _BrojProizvoda=1;
+                  }
+                  else {     
+                       _proizvodiNew = new float[_BrojProizvoda+1];     
+          
+                       _BrojProizvoda++;  
+                       for (int i=0; i<_BrojProizvoda-1; i++){
+                           _proizvodiNew[i]=_proizvodi[i];          
+                       }
+                       _proizvodiNew[_BrojProizvoda-1]=cijena;          
+                       delete []_proizvodi;
+                       _proizvodi=_proizvodiNew;                     
+                  }
+          };
+          
+             float ProsjecnaCijena(){
+                   float suma=0;
+                   if (_BrojProizvoda==0) return 0;
+                   for (int i=0; i<_BrojProizvoda; i++){
+                       suma=suma+ _proizvodi[i];
+                   }
+                   return suma/_BrojProizvoda;
+             };
+             
+             float NajjeftinijiProizvod(){
+                   float min=_proizvodi[0];
+                   if (_BrojProizvoda==0) return 0;
+                    for (int i=0; i<_BrojProizvoda; i++){
+                        if (_proizvodi[i]<min) min=_proizvodi[i];
+                    }
+                    return min;
+             };
+             
+            ~Kosarica(){
+                        delete []_proizvodi;
+            };
+};

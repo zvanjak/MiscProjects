@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <math.h>
+int main () {
+    int n,i;
+    double pi;
+    pi=0.;
+    scanf("%d",&n);
+    if ((n>0)&&(n<401)){
+      for(i=0;i<n;i++){
+        pi+=8/(pow((2*i+1),2));}
+      pi=sqrt(pi);
+      printf("%.12f",pi);}
+    else{
+      printf("n nije valjan");}
+    return 0;
+}

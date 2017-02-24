@@ -1,0 +1,22 @@
+# include <stdio.h>
+int main() {
+	int x,zdt,zt,zs,zd,zj,sumz,rbs,cdbs;
+	scanf("%d",&x);
+	if(x>9999 && x<100000){
+		zdt=x/10000;
+	    zt=(x%10000)/1000;
+	    zs=(x%1000)/100;
+	    zd=(x%100)/10;
+	    zj=x%10;
+	    sumz=zdt+zt+zs+zd+zj;
+		if(x%sumz==0){
+			rbs=x-sumz;
+			printf("%d",rbs);
+		}
+		else{
+			cdbs=x/sumz;
+			printf("%d",cdbs);
+		}
+	}
+	return 0;
+}

@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main(){
+	int x,k; 
+	int zx01,zx02,zx03,zx04;
+	int zk01,zk02,zk03,zk04;
+	scanf("%d%d",&k,&x);
+	zx01=x%10;	zx02=(x%100)/10;	zx03=(x%1000)/100;	zx04=x/1000;
+	zk01=k%10;	zk02=(k%100)/10;	zk03=(k%1000)/100;	zk04=k/1000;
+
+	x=	   ((zx01+zk01)%10)+
+		10*((zx02+zk02)%10)+
+	   100*((zx03+zk03)%10)+
+	  1000*((zx04+zk04)%10);
+
+	printf("%d \n",x);
+}

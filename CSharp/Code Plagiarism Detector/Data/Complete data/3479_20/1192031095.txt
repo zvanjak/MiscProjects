@@ -1,0 +1,20 @@
+Kalendar* Unesi(MojDatum datumi[], int broj, int *mjesec){
+Kalendar *tmp=new Kalendar;
+int dat[13];
+int max=0,mj=0;
+for (int i=0;i<13;i++)
+dat[i]=0;
+for (i=0;i<broj;i++){
+if (datumi[i].mjesec <1 || datumi[i].mjesec >12) throw
+"Nedozvoljeni mjesec";
+tmp->Dodaj(datumi[i]);
+dat[datumi[i].mjesec]++;
+}
+for(i=12;i>=0;i--)
+if (dat[i]>=max){
+max=dat[i];
+mj=i;
+}
+*mjesec=mj;
+return tmp;
+}

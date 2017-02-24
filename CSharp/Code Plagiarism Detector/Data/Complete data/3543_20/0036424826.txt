@@ -1,0 +1,28 @@
+void obrni(zapis **glava)
+{
+	zapis *pom, *pre, *poc, *kraj;
+
+	pre=poc=*glava;
+	pom=(*glava)->sljed;
+	kraj=NULL;
+
+	
+	while(pre->sljed!=kraj) 
+	{
+		while(pom->sljed!=kraj)
+		{
+			pre=pom;
+			pom=pom->sljed;
+		}
+		if(pom->sljed==NULL)
+		{
+			*glava=pom;
+		}
+		pom->sljed=pre;
+		kraj=pom;
+		pre=poc;
+		pom=pre->sljed;
+	}
+	pre->sljed=NULL;
+
+}

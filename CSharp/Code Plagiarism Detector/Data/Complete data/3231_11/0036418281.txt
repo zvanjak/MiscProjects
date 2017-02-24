@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <math.h>
+int main(){
+	int n,i;
+	double s=0,d=0;
+	scanf("%d",&n);
+	if((n>0)&&(n<31)){
+		for (i=0;i<n;i++){
+		d=1./pow(2,i);
+		if(i%2==0){
+		s+=d;
+		}else{
+		s-=d;
+		}
+		}
+		printf("%.12f",s);
+	}else{
+		printf("n nije valjan");
+	}
+	return 0;
+}

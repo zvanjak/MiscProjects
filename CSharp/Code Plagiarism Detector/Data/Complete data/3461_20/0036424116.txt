@@ -1,0 +1,9 @@
+int JelSeSijeku(Kruznica &k1, Kruznica &k2)
+{
+float d=sqrt(pow(k1.GetCenterX()-k2.GetCenterX(),2)+pow(k1.GetCenterY()-k2.GetCenterY(),2));
+float dist=k1.GetRadius()+k2.GetRadius();
+if (d==0 && k1.GetRadius()==k2.GetRadius()) return 3;
+if (d<dist && d>0) return 2;
+if (d==dist) return 1;
+return 0;
+}

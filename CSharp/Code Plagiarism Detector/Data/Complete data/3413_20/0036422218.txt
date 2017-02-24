@@ -1,0 +1,28 @@
+char *brojeve_u_znakove(int *polje, int duljina) {
+    char *novi_niz,xxx[100];
+    int i;
+    if (duljina==0) {
+        novi_niz = (char *) malloc (2*sizeof(char));
+        strcpy(novi_niz,"\0");
+        return novi_niz;
+    }    
+    novi_niz = (char *) malloc (duljina*sizeof(char)+1);
+    for (i=0; i<duljina; i++) {
+        if (i == (duljina-1)) {
+			 sprintf (xxx, "%d", polje[i]);
+			 if(duljina==1){
+				strcpy(novi_niz, xxx);
+			 }else{
+            strcat (novi_niz, xxx);
+			 }
+            } else {
+         sprintf (xxx, "%d ", polje[i]);
+            if (i == 0) {
+                strcpy (novi_niz, xxx);
+            } else {
+                strcat (novi_niz, xxx);
+            }
+		}    
+	}
+    return novi_niz;
+}

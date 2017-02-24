@@ -1,0 +1,15 @@
+#include<stdio.h>
+
+
+int main ()
+{
+	int A, d, B, i;
+
+	scanf ("%d %d %d", &A, &d, &B);
+	i=0;
+	while (A<B)
+	{ i++; A=A+d; printf ("%d ", A);}
+	printf ("%d", i);
+
+	return 0;
+}

@@ -1,0 +1,16 @@
+int *napraviPolje(int *A,int Na,int a,int b,int *Nc){
+    int i;
+    int *vracam;
+	if (a>b) {
+		return NULL;
+	}
+    *Nc=0;
+    vracam=(int *)malloc(Na*4);
+    for(i=0;i<Na;i++)
+	{
+		if((A[i] >= a) && (A[i] <= b))
+			vracam[(*Nc)++]=A[i];
+    }
+    vracam=(int *)realloc(vracam,(*Nc)*4);
+    return vracam;
+}

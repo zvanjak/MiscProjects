@@ -1,0 +1,19 @@
+int veci_od(FILE *f,int n){
+	int temp;
+
+	struct {
+		int redni_br;
+		char prezime[20+1];
+		int bodovi;
+	} natj;
+
+	temp=0;
+
+	while((fread(&natj,sizeof(natj),1,f))!=0){
+		if (natj.redni_br==0) continue;
+		if (natj.bodovi>=n) temp++;
+	}
+
+	return temp;
+
+}

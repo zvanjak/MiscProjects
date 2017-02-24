@@ -1,0 +1,16 @@
+#include <stdio.h> 
+int main (){
+int n, i;
+double f,z=0;
+/* printf ("ucitajte broj clana reda n= "); */
+scanf ("%d", &n);
+if ((n<1) || (n>400))
+printf ("n nije valjan");
+else {
+for (i=1;i<=n;i++){
+	f=(4*i+1)*(4*i-1);
+	f=1/f;
+z=z+f;}
+printf ("%.8f\n",(4-8*z));}
+return 0;
+}

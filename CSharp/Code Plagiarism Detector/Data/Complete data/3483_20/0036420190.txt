@@ -1,0 +1,27 @@
+class Komprimiranje{
+  private:
+    int _br;
+    int *_p;
+
+  public:
+    Komprimiranje(int *p,int br){
+      _br=br;
+      _p=p;
+    }
+    int UkupnaSuma();
+    int UkupniBrojElemenata(int razlicit);
+  };
+
+int Komprimiranje::UkupnaSuma(){
+  int i, x=0;
+  for (i=0;i<_br;i+=2)
+    x+=_p[i] * _p[i+1];
+  return x;
+}
+
+int Komprimiranje::UkupniBrojElemenata(int uzorak){
+  int y=0, i;
+  for(i=0;i<_br;i+=2)
+    if(_p[i]!=uzorak) y+=_p[i+1];
+  return y;
+}

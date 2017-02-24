@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <math.h>
+
+int  main(){
+	int k,x, i, rez=0;
+	int ka[4], xa[4];
+
+	scanf("%d", &k);
+	scanf("%d", &x);
+	
+	for(i=0; i<4; i++){
+		ka[i]=k%10;
+		k=k/10;
+	};
+	for(i=0; i<4; i++){
+		xa[i]=x%10;
+		x=x/10;
+	};
+	
+	for(i=0; i<4; i++){
+	xa[i]=(xa[i]+ka[i])%10;
+	};
+		
+	for(i=0; i<4; i++)
+	rez=rez + xa[i]*pow(10,i);
+
+	printf("%d", rez);
+
+return 0;
+}

@@ -1,0 +1,29 @@
+# include <stdio.h>
+int main() {
+	int brsati, nominalni, posatu;
+	float posatu2, bplaca, nplaca;
+	scanf("%d %d %d", &brsati, &nominalni, &posatu);
+
+	if (brsati < nominalni)
+	{
+		posatu2=(float)posatu-(float)posatu*0.1;
+	}
+	else if (brsati > nominalni)
+	{
+		posatu2 = (float)posatu+(float)posatu*0.15;
+
+	}	
+
+	bplaca = brsati * posatu2;
+
+	if (bplaca > 6000) 
+	{	
+		nplaca = bplaca*0.7;
+	}
+	else nplaca = bplaca * 0.8;
+	
+	printf("%.2f", nplaca);
+
+	return 0;
+
+}

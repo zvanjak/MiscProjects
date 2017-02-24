@@ -1,0 +1,47 @@
+#include <stdio.h> 
+#define max 100
+int main()
+{
+    int mr, ms, i, j, a[max][max], br_s=0, br_r=0;
+    scanf("%d %d", &mr, &ms);
+    while(mr<1||mr>20||ms<1||ms>5)scanf("%d %d", &mr, &ms);
+    for(i=0;i<mr;i++)
+    {
+        for(j=0;j<ms;j++)
+        {
+            scanf("%d", &a[i][j]);
+        }
+    }
+    for(i=0;i<mr;i++)
+    {
+        int pom=0;
+        for(j=0;j<ms;j++)
+        {
+            int d=2, b=0;;            
+            while(d<=a[i][j])
+            {
+                if(a[i][j]%d==0)b++;
+                d++;
+            }
+            if(b==1)pom++;                
+        }
+        if(pom>=1)br_r++;
+    }
+    for(j=0;j<ms;j++)
+    {
+        int pom=0;
+        for(i=0;i<mr;i++)
+        {
+            int d=2, b=0;
+            while(d<=a[i][j])
+            {
+                if(a[i][j]%d==0)b++;
+                d++;
+            }
+            if(b==1)pom++;
+        }
+        if(pom>=1)br_s++;
+    }            
+    printf("%d %d", br_r, br_s);
+    return 0;
+} 

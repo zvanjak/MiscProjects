@@ -1,0 +1,32 @@
+#include<stdio.h>
+#include<math.h>
+#include<conio.h>
+
+double main()
+{
+
+int n,i,j;
+double p=0, chlan;
+
+
+printf("\nUpishi broj chlanova: ");
+scanf("%d", &n);
+
+if( n<1 || n>30 )
+	printf("\nn nije valjan");
+else
+	{
+
+	for(i=1; i<n+1; i++)
+		{
+      chlan = 1;
+
+		for(j=1; j<i; j++)
+			chlan *= j;
+
+		p += 1/chlan;
+		}
+
+	printf("%.12f", p);
+	}
+}

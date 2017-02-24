@@ -1,0 +1,26 @@
+#include <stdio.h>
+int main () {
+	int a,b,d,e;
+	d = 0;
+    scanf("%i", &a);
+	if ((a >= 100) && (a <=999)) 
+		if ((a >= 250) && (a <=950)) 
+		 
+		{b = a / 100;
+		if ((b % 2) == 1) 
+				d = d + b;
+				 b = (a % 100) / 10;
+		if ((b % 2) == 1) 
+				d = d + b;
+				 b = a % 10;
+		if ((b % 2) == 1) 
+				d = d + b;
+				printf("%i", d);}
+		
+		else
+			{ d = a/100 + (a % 100) / 10 + a % 10;
+			printf ("%f", d);
+			}
+	      
+			return 0;
+}

@@ -1,0 +1,25 @@
+#include <stdio.h>
+int main()
+{ 
+	int n,m,nfak=1,mfak=1,mnfak=1,povrha,i;
+	scanf("%d %d",&n,&m);
+	if((m>0)&&(m!=n))
+	{
+	for(i=1;i<=n;i++)
+	{
+		nfak=nfak*i;
+		if(i<=m)
+		{
+			mfak=mfak*i;
+		}
+		if(i<=(n-m))
+		{
+			mnfak=mnfak*i;
+		}
+	}
+	povrha=(nfak/(mfak*mnfak));
+	}
+	else povrha=0;
+	printf("%d",povrha);
+	return 0;
+}

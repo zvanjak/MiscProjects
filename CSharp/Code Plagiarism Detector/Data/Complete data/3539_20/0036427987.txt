@@ -1,0 +1,23 @@
+float prosjek(zapis *glava){
+	zapis *t=glava;
+	if(glava==NULL)
+		return 0;
+	int studenata=0;
+	float zbroj=0., p;
+	
+	while(t!=NULL){
+		studenata++;
+		zbroj+=t->pros;
+		t=t->sljed;
+	}
+	
+	p=zbroj/studenata;
+	t=glava;
+	while(t!=NULL){
+		if(t->pros<p)
+			t->pros=0.;
+		t=t->sljed;
+	}
+	
+	return p;
+}

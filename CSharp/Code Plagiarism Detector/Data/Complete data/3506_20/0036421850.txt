@@ -1,0 +1,21 @@
+cvor *a_Razina (cvor *glava, int id, int *razina) {
+	int smjer;
+	(*razina)++;
+	if (glava) {
+		if (id < glava->id) {
+			return a_Razina (glava->lijevo, id, razina);
+		} else if (id > glava->id) {
+			return a_Razina (glava->desno, id, razina);
+		}
+	}
+	return glava;
+}
+int Razina(cvor *glava, int id, int *razina) {
+	*razina = 0;
+	if(a_Razina(glava, id, razina) == 0) {
+		*razina = 0;
+		return 0;
+	} else {
+		return 1;
+	}
+}

@@ -1,0 +1,25 @@
+char *SvakiDrugi(char *ulazni_niz){
+	int i=0,j,x;
+	char *p;
+	for(i=0;*(ulazni_niz+i)!='\0';i++);
+	p=(char*) malloc((i/2+1)*sizeof(char));
+    if(*ulazni_niz=='\0')
+		return NULL;
+	else if(*ulazni_niz==NULL)
+		return NULL;
+	else
+		for(j=0;j<i;j++){
+			if(j%2) continue;
+			else {
+                x=j/2;
+				*(p+x)=*(ulazni_niz+j);
+			}
+		}
+		*(p+x+1)='\0';
+		return p;
+	}	     
+
+
+
+	
+

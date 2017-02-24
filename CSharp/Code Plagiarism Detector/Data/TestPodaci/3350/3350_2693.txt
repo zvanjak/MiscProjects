@@ -1,0 +1,18 @@
+int najbolji(FILE *f){
+   struct natjecatelj{
+      int redni_br;
+      char prezime[20+1];
+      int bodovi;
+      } igrac;
+   int naj,brbod=0;
+   int n=fread(&igrac, sizeof(igrac), 1, f);
+   while(n==1){
+	  if (igrac.bodovi>brbod){
+         naj=igrac.redni_br;
+         brbod=igrac.bodovi;
+	  }
+		 n=fread(&igrac, sizeof(igrac), 1, f);
+        
+   }
+   return naj;
+}

@@ -1,0 +1,17 @@
+#include<stdio.h> 
+
+int main(){ 
+  int broj, z1, z2, z3, z4, z5, suma; 
+  scanf("%d", &broj); 
+  z5=broj%10; 
+  z4=broj/10%10; 
+  z3=broj/100%10; 
+  z2=broj/1000%10; 
+  z1=broj/10000%10; 
+  if(z1==z5 && z2==z4) 
+    suma=(z1%2?0:z1) + (z2%2?0:z2) + (z3%2?0:z3) + (z4%2?0:z4) + (z5%2?0:z5); 
+  else 
+    suma=(z1%2?z1:0) + (z2%2?z2:0) + (z3%2?z3:0) + (z4%2?z4:0) + (z5%2?z5:0); 
+  printf("%d", suma); 
+  return 0; 
+}

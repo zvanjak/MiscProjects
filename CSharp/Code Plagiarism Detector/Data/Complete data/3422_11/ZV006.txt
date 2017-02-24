@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <ctype.h>
+
+
+int main(){
+    int i=0,j,br;
+    char x[100],*p;
+
+    p=&x[1];
+    
+    do{
+         i++;
+         scanf("%c",&x[i]);
+         }while(x[i]!='.');
+  
+   i=1;
+ 
+   x[1]=toupper(x[1]);
+   
+   while(x[i]!='.'){   
+   
+   if(*(p+2)!=32) *(p+1)=tolower(*(p+1));    
+    i++;
+    p++;
+    }
+    
+    
+   p=&x[1];
+   i=1; 
+   
+    while(x[i]!='.'){   
+   printf("%c",*p);
+   if(*(p+2)==32 || *(p+2)=='.' || *(p+2)==','){ 
+                  *(p+1)=toupper(*(p+1));
+                  *(p+3)=toupper(*(p+3));                  
+                  
+                  } 
+    i++;
+    p++;
+    }
+    
+    
+    return 0;
+    }

@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int veci_od(FILE *f, int granica) {
+
+	int br, prodano;
+	char naziv[31], autor[21];
+
+	br=0;
+	while(fscanf(f,"%31s %21s %d", naziv, autor, &prodano)==3)
+		if (prodano>=granica) br++; 
+
+	return br;
+}

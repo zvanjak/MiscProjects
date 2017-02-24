@@ -1,0 +1,21 @@
+int* napraviPolje(int *A, int Na, int a, int b, int* Nc){
+	int i,velicina=0,j,pit,*novi_niz;
+	novi_niz=NULL;
+	*Nc=0;
+	if(a>b)
+		return 0;
+	b++;
+	for(i=0;i<Na;i++){
+		pit=1;
+		for(j=a;j<b;j++)
+			if(!(A[i]%j))
+				pit=0;
+		if(pit){
+			velicina++;
+			novi_niz=(int*)realloc(novi_niz,velicina*sizeof(int));
+			novi_niz[velicina-1]=A[i];
+		}
+	}
+	*Nc=velicina;
+	return novi_niz;
+}

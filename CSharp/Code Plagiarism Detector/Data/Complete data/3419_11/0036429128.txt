@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+float abs(float x)
+{
+	if(x < 0) return -x;
+	else return x;
+}
+
+#define MAXR 20
+#define MAXS 5
+
+int main()
+{
+	int i, j, mr, ms, rm = 0, sm = 0;
+	float a[MAXR][MAXS];
+
+	do
+	{
+		scanf("%d %d", &mr, &ms);
+	}
+	while((mr < 1 || mr > 20) || (ms < 1 || ms > 5));
+
+	for(i = 0; i < mr; i++)
+		for(j = 0; j < ms; j++)
+			scanf("%f", &a[i][j]);
+
+	for(i = 0; i < mr; i++)
+		for(j = 0; j < ms; j++)
+			if(abs(a[i][j]) > abs(a[rm][sm]))
+			{
+				rm = i;
+				sm = j;
+			}
+
+	printf("%d %d\n", rm, sm);
+
+	return 0;
+}

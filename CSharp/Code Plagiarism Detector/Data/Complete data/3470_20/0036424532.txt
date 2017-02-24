@@ -1,0 +1,19 @@
+bool fun2( Pravokutnik p1, Krug k1 )
+{
+    if( !k1.Sadrzi(p1.getDLkut()) )
+        return false;
+    Tocka donjilijevi = p1.getDLkut();
+    if( !k1.Sadrzi(
+            Tocka(donjilijevi.X+p1.getSirina(),donjilijevi.Y))
+        )
+        return false;
+    if( !k1.Sadrzi(
+            Tocka(donjilijevi.X,donjilijevi.Y+p1.getVisina()))
+        )
+        return false;
+    if( !k1.Sadrzi(
+            Tocka(donjilijevi.X+p1.getSirina(),donjilijevi.Y+p1.getVisina()))
+        )
+        return false;
+    return true;
+}

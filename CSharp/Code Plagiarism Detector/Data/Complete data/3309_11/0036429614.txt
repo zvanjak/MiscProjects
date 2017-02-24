@@ -1,0 +1,9 @@
+int br_prodanih(FILE *f,char *autor) {
+	int br=0;
+	struct album pom;
+	fseek(f,0L, SEEK_SET);
+	while ((fread(&pom, sizeof(pom), 1,f))>0) {
+		if (!(strcmp(pom.autor,autor))) br+=pom.prodano;
+	}
+	return br;
+}

@@ -1,0 +1,23 @@
+#include <stdio.h>
+void main () {
+	float r, f, g;
+	int i, j, k;   
+	short s;
+	f = 32000.5; g = 1; i = 1; j = 2147483647; s = 32767;
+	r = f + i;					 
+	printf("%f\n", r);
+  k = f + g;					
+	printf("%d\n", k);
+  k = f + i;					
+	printf("%d\n", k);
+  r = i + j;					
+	printf("%f\n", r);
+  r = g + j;					
+	printf("%f\n", r);
+	r = (float) i + j;
+	printf("%f\n", r);
+	r = (float) (i + j);
+	printf("%f\n", r);
+  r = i + s;					
+	printf("%f\n", r);
+}

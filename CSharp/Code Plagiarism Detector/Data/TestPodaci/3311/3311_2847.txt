@@ -1,0 +1,23 @@
+float prosjek(FILE *f) {
+
+	struct album{
+         char naziv[30+1];
+         char autor[20+1];
+		 int prodano;
+	} alb1;
+
+	int n = 0; 
+	int ct = 0;
+	int end;
+	
+	fseek(f, 0L, SEEK_END);
+		end = ftell(f);
+	fseek(f, 0L, SEEK_SET);
+		while (n < end) {
+				fread(&alb1, sizeof(alb1), 1, f);	
+				n += sizeof(alb1);
+				ct += alb1.prodano;
+		}		
+	
+return ( (ct / (end / sizeof(alb1))));		
+}

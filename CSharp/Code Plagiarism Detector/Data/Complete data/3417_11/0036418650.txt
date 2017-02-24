@@ -1,0 +1,42 @@
+#include<stdio.h>
+#include<ctype.h>
+
+int main()
+{
+char m[20+1];
+int i, br;
+i=0;
+br=0;
+	do
+	{
+		scanf(" %c", &m[i]);
+		if(m[0]<'A' || m[0]>'z' || (m[0]>'Z' && m[0]<'a')) printf("-1");
+		++i;
+		++br;
+	} 
+	while((m[i-1]>='A' && m[i-1]<='Z') || (m[i-1]>='a' && m[i-1]<='z'));
+
+    for(i=0; i<br-1; i++) 
+	{
+		if(m[i]!='a' && m[i]!='e' && m[i]!='i' && m[i]!='o' && m[i]!='u')
+		{
+			if(m[i]!='A' && m[i]!='E' && m[i]!='I' && m[i]!='O' && m[i]!='U')
+			{
+             	printf("%c", toupper(m[i]));
+			}
+		}
+	}
+
+	for(i=br-2; i>=0; i--)
+	{
+		if(m[i]!='a' && m[i]!='e' && m[i]!='i' && m[i]!='o' && m[i]!='u')
+		{
+			if(m[i]!='A' && m[i]!='E' && m[i]!='I' && m[i]!='O' && m[i]!='U')
+			{
+             	printf("%c", tolower(m[i]));
+			}
+		}
+	}
+return 0;
+}
+

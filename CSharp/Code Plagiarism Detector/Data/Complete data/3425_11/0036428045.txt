@@ -1,0 +1,35 @@
+#include<stdio.h>
+int y,x,mr,i,j,temp,sum,n,br;
+char gud;
+int fild[10][10];
+int main()
+{
+	gud=0;
+	while (!gud)
+	{
+		scanf("%d",&mr);
+		if ((mr<=10)&&(mr>=1)) gud=1;
+	}
+    for(x=0;x<mr;++x)
+		for(y=0;y<mr;++y)
+			scanf("%d",&fild[x][y]);
+	br=0;
+	while(1)
+	{
+        scanf("%d %d",&i,&j);
+        if ((i<mr)&&(i>=0)&&(j<mr)&&(j>=0))
+        {
+			temp=fild[i][j];
+            fild[i][j]=fild[j][i];
+            fild[j][i]=temp;
+			++br;	
+        }
+        else break;
+	}
+	scanf("%d",&n);
+	sum=0;
+	if ((n>=0)&&(n<mr)) for (x=0;x<mr;++x) sum+=fild[n][x];
+	else sum=-1;
+    printf("%d %d",br,sum);
+	return 0;
+}

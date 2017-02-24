@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <math.h>
+int main () {
+float n;
+int i;
+double suma;
+scanf ("%f", &n) ;
+if (fmod(n, 1))
+{
+printf("n nije valjan");}
+else
+{
+
+if ((n<1)||(n>100))
+{printf("n nije valjan");}
+else
+
+{suma=0;
+ i=1;
+while (i<=n){
+	suma = suma + (1.0/(i*i));
+	i=i++;}
+printf ("%.12lf", sqrt(suma*6) );}}
+
+return 0;
+}

@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <math.h>
+int main () {
+int n,i;
+double rjes,suma,pi;
+suma=0;
+rjes=0;
+scanf("%d",&n);
+if(n<1 || n>100){
+printf("n nije valjan\n");
+}else{
+for(i=1;i<=n;i++){
+if(i%2==0){
+suma=i*i;
+rjes=rjes-1./suma;
+}else{
+suma=i*i;
+rjes+=1./suma;
+}
+}
+pi=sqrt(12*rjes);
+printf("%.12f\n",pi);
+}
+return 0;
+}

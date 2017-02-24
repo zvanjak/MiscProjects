@@ -1,0 +1,12 @@
+float prosjek(FILE *f)
+{
+  struct album a;
+  int br = 0;
+  int suma = 0;
+  while (fscanf(f, "%s %s %d", a.naziv, a.autor, &a.prodano) != EOF)
+  {
+    suma = suma + a.prodano;  
+    br++;
+  }
+  return ((float)suma)/((float)br);
+}

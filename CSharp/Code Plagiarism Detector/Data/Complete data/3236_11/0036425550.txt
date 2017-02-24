@@ -1,0 +1,25 @@
+#include <stdio.h>
+# include <math.h>
+int main () {
+	int i;
+	float n, x;
+	double lnx = 0;
+	scanf ("%f", &n);
+	if ( (n<1) || (n>100) || ((int)n != n)) printf("n nije valjan");
+	else {
+		scanf ("%f", &x);
+
+		if ( (x<=0) || (x>=2) ) printf ("x nije valjan");
+		else {
+			for (i=1; i<=n; i=i+2){
+				lnx = lnx + (pow (x-1, i))/(float)i;
+			}
+			for (i=2; i<=n; i=i+2){
+				lnx = lnx - (pow (x-1, i))/(float)i;
+			}
+		printf("%d %1.5f %1.12f", (int)n, x, lnx);
+		}
+
+	}
+return 0;
+}

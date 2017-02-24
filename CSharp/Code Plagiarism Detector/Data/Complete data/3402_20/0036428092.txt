@@ -1,0 +1,21 @@
+
+int* napraviPolje(int *A, int Na, int a, int b, int* Nc)
+  { int *p,n=0,i,z,c;
+   *Nc=0;
+
+   for(i=0;i<Na;i++) {
+
+    z=a;
+   for(;z<=b;z++)
+     { *Nc++;
+   if(A[i]%z==0)
+   {
+
+    if ((p = (int *) malloc (1*sizeof(int))) == NULL)
+    printf("Nema dovoljno memorije za rezultat");
+  *p=A[i];
+
+    n++;
+    }}}
+return p;
+  }

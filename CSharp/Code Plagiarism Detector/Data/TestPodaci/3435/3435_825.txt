@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+double fakt (int n) {
+int i;
+double f;
+for (f=1,i=1;i<=n;i++)
+f*=i;
+return f;
+}
+
+int main() {
+int m,n;
+double mpovrhn;
+scanf("%d %d", &n, &m);
+
+mpovrhn = fakt(n)/(fakt(m)*fakt(n-m));
+printf ("%g",mpovrhn);
+return 0;
+}

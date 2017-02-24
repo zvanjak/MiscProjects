@@ -1,0 +1,37 @@
+void zamijeni (char *ulazni, int *broj) {
+	int slova=0,brojevi=0,print=0,max;
+	int duljina,i,j,v;
+	duljina=0;
+	while (*(ulazni+duljina)) duljina++;
+
+	for (i=0;i<duljina;i++)
+		if (isalpha(ulazni[i])) {
+			ulazni[i]=toupper(ulazni[i]);
+			v=i+1; 
+			break;}
+	for (i=v;i<duljina;i++) 
+		if (isalpha(ulazni[i])) {
+			ulazni[i]=tolower(ulazni[i]);
+		}
+	for (i=0;i<duljina;i++){
+		if (isdigit(ulazni[i])) {brojevi++;}
+		else if (isalpha(ulazni[i])) {slova++;}
+		else if (isprint(ulazni[i])&&(!(isalnum(ulazni[i])))) {print++;}
+		}
+		max= (print>slova) ? print : slova;
+		max= (max>brojevi) ? max : brojevi;
+	*broj=max;
+
+	for (i=0;i<duljina;i++){
+		if (isprint(ulazni[i])&&(!(isalnum(ulazni[i])))) ulazni[i]='?';
+		if (isdigit(ulazni[i])) ulazni[i]='!';
+	}
+	for (i=0;i<duljina;i++){
+		if ((ulazni[i]=='!')&&(ulazni[i+1]=='!')){ 
+			for (j=i+1;j<duljina;j++) {
+				ulazni[j]=ulazni[j+1];}
+			duljina--;}
+		if ((ulazni[i]=='!')&&(ulazni[i+1]=='!')) i--;
+	
+	}
+}

@@ -1,0 +1,19 @@
+#include <stdio.h>
+int main ()
+{
+    int z, a, b, c, d;
+    scanf ("%d", &z);
+    a = z / 1000;
+    b = z % 1000 / 100;
+    c = z % 100 / 10;
+    d = z % 10;
+    if (a * b * c * d % 2 == 0)
+    {
+                printf ("%d", d);
+    }
+    if (a * b * c * d % 2 != 0)
+    {
+                printf ("%d", a);
+    }
+return 0;
+}

@@ -1,0 +1,33 @@
+class Kosarica{
+ private:	
+	    float _cijena;
+	    float _mincijena;
+	    float _prosjecna;
+	    int _brproizvoda;
+	
+ public:
+		Kosarica(){
+		_cijena=0;
+	    _mincijena=0;
+		_prosjecna=0;
+		_brproizvoda=0;
+		}
+
+void DodajProizvod(float cijena){
+	_cijena=cijena;
+	_brproizvoda++;
+	if(cijena<=_mincijena || (_brproizvoda-1)==0)
+	  _mincijena=cijena;
+      _prosjecna=_prosjecna+cijena;
+}
+	
+float ProsjecnaCijena(){
+	return _prosjecna/_brproizvoda;
+}
+
+float NajjeftinijiProizvod(){
+	return _mincijena;
+}
+
+~Kosarica(){};
+};

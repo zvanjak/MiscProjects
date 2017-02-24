@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+
+void zamijeni(char *ulazni,int *broj){
+	int prvi=0,brzn=0,brsl=0,bros=0,i=0;
+	
+	for(;ulazni[i] != '\0';i++){
+		if(isalpha(ulazni[i])){
+			brsl++;
+		  if(islower(ulazni[i])){
+			  if(prvi==0){
+				ulazni[i]=ulazni[i]-32;
+			 prvi=1;
+			  }
+		  }
+		  else if(isupper(ulazni[i])){
+			  
+			  if(prvi != 0)
+			    ulazni[i]=ulazni[i]+32;
+			  prvi=1;
+		  }
+		}
+		
+		else if(isdigit(ulazni[i])){
+			ulazni[i]='!';
+			i++;
+			brzn++;
+			while(isdigit(ulazni[i])){
+				
+				strcpy(&ulazni[i],&ulazni[i+1]);
+				
+				brzn++;
+			}
+			i--;
+		}
+		else{
+			ulazni[i]='?';
+			bros++;
+		}
+	}
+
+	if((brzn >= brsl) && (brzn >= bros))
+		*broj=brzn;
+	   else if((brsl>=brzn) && (brsl >= bros))
+		   *broj=brsl;
+	   else
+		   *broj=bros;
+		  
+}

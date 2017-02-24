@@ -1,0 +1,21 @@
+#include<stdio.h>
+int main()
+{
+	double rez=0,n,b;
+	scanf("%lf",&n);
+	if(n>=1 && n<=1000)
+	{
+		for(b=1;b<=n;b=b+1)
+		{
+			rez=rez + 1/(b*(b+2));
+		}
+	printf("%.12lf\n",rez);
+	}
+			
+
+	else {
+	
+		printf("n nije valjan");}
+	return 0;
+	
+		}

@@ -1,0 +1,11 @@
+int NadjiRubni(int *mat, int m, int n, int maxstup, int *max, int *min)
+{int i;if(m>0 && n>0)
+*max=*min=*mat;
+for(i=0;i<(m-1)*maxstup+n;i++)
+if((i%maxstup==0)||(i<n)||((i-n+1)%maxstup==0 && i>=n)||(i>=(m-1)*maxstup))
+if(*(mat+i)>*max)
+*max=*(mat+i);
+else if(*(mat+i)<*min)
+*min=*(mat+i);
+return 0;
+}

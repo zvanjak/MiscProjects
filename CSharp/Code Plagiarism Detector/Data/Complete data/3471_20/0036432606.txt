@@ -1,0 +1,11 @@
+bool fun3(Trokut t, Pravokutnik p) {
+      Tocka a, b, c;
+      a=t.getA();
+      b=t.getB();
+      c=t.getC();
+
+      if (p.Sadrzi(a) && p.Sadrzi(b) && p.Sadrzi(c))
+            return true;
+      else 
+            return false;
+}

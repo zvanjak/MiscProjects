@@ -1,0 +1,20 @@
+#include <stdio.h>
+int main () { 
+	int x,i,prost=1,brojac=0;
+	scanf("%d", &x);
+		while (x>2) {
+			for (i=2; i<=x-1; i++) {
+				if (x%i==0) {
+					prost=0;
+				}
+			}
+			if (prost) {
+				brojac=brojac+1;
+			}
+			prost=1;
+			scanf ("%d",&x);
+		}
+		printf("%d", brojac);
+		return 0;
+}
+

@@ -1,0 +1,24 @@
+#include <stdio.h>
+int main () {
+	int n,i,j;
+	double e,raz,naz;
+
+	scanf("%d",&n);
+
+	if((n<1)||(n>30))	{
+		printf("n nije valjan");
+    }
+	else	{
+		e=1;
+			for(i=1;i<n;i++){
+				naz=1;
+				for(j=1;j<=i;j++){
+					naz*=j;
+				}
+				raz=1./naz;
+				e+=raz;
+			}
+			printf("%.12lf",e);
+	}
+	return 0;
+}

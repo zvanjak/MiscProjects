@@ -1,0 +1,16 @@
+int rZamijeni(char *niz, char stariZnak, char noviZnak){
+	int suma=0;
+kontrola();
+	if(*niz==0) return 0;
+			else if (*niz==stariZnak) { 
+				*niz=noviZnak;
+				niz++;
+				suma=1+rZamijeni(niz, stariZnak, noviZnak);
+				}
+				else 
+				{niz++;
+				suma=0+rZamijeni(niz, stariZnak, noviZnak);
+				}
+				
+	return suma;
+	}

@@ -1,0 +1,19 @@
+int BrojClanova (Red *red){
+	int element, brojac=0;
+	Red *novi;
+
+	novi = new Red();
+
+	while (red->SkiniIzReda(&element)){
+		novi->DodajURed(element);
+		brojac++;
+	}
+
+	while (novi->SkiniIzReda(&element)){
+		red->DodajURed(element);
+	}
+
+	delete novi;
+
+	return brojac;
+}

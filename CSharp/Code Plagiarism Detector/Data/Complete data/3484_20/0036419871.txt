@@ -1,0 +1,76 @@
+class CjelobrojniNiz{
+private:
+	int *_polje;
+	int _brcl;
+public:
+	CjelobrojniNiz(int*, int);
+	CjelobrojniNiz (const CjelobrojniNiz &);
+	~CjelobrojniNiz();
+	int VecinaJednaka;
+	int Usporedi (CjelobrojniNiz);
+	int* VratiPresjek (CjelobrojniNiz, int*);
+};
+
+CjelobrojniNiz::CjelobrojniNiz(int *niz, int n): _polje (new int [n]), _brcl(n), VecinaJednaka (0){
+	if(_polje == 0) throw "Neuspjela konstrukcija";
+	int brjed;
+	for (int i=0; i<_brcl; i++){
+		_polje[i] = niz[i];
+		brjed=0;
+		for (int j=0; j<_brcl; j++){
+			if (VecinaJednaka)break;
+			if (_polje[i]==niz[j]) brjed++;
+		}
+		if (brjed > n/2) {
+			VecinaJednaka=1;
+			break;
+		}
+	}
+}
+
+CjelobrojniNiz::CjelobrojniNiz (const CjelobrojniNiz &niz): _polje(new int [niz._brcl]),
+								_brcl (niz._brcl), VecinaJednaka (niz.VecinaJednaka){
+		if (_polje == 0) throw "Neuspjela alokacija u copy-konstruktoru";
+		for (int i=0; i<_brcl; i++)
+			_polje[i] = niz._polje[i];
+}
+
+CjelobrojniNiz::~CjelobrojniNiz(){
+	delete [] _polje;
+}
+
+int CjelobrojniNiz::Usporedi(CjelobrojniNiz niz){
+	if (this->_brcl != niz._brcl) return 0;
+	int zast = 1;
+	for (int i=0; i<niz._brcl; i++){
+		if (this->_polje[i] != niz._polje[i]){
+			zast = 0;
+			break;
+		}
+	}
+	return zast;
+}
+
+
+int* CjelobrojniNiz::VratiPresjek(CjelobrojniNiz niz, int *n){
+	int *pom = new int [this->_brcl > niz._brcl ? niz._brcl : this->_brcl];
+	if (pom == 0) throw "Neuspjelo pomocno polje u presjeku";
+	int npom=0;
+	for (int i=0; i < this->_brcl; i++){
+		while (this->_polje[i] == this->_polje[i+1]) i++;
+		for (int j=0; j<niz._brcl; j++){
+			while (niz._polje[j] == niz._polje[j+1])j++;
+			if ( this->_polje[i] == niz._polje[j]){
+				pom[npom] = this->_polje[i];
+				npom++;
+			}
+		}
+	}
+	*n= npom;
+	int *ret = new int [npom];
+	if (ret == 0)throw "Neuspjela alokacija *ret";
+	for (int i=0; i<npom; i++)
+		ret[i] = pom[i];
+	delete []pom;
+	return ret;
+}

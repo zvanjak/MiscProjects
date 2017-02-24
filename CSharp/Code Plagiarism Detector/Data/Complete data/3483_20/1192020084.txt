@@ -1,0 +1,43 @@
+class Komprimiranje {
+      private:
+              int *polje;
+              int n;
+      public:
+             Komprimiranje();
+             Komprimiranje(int *pok, int BrEl);
+             ~Komprimiranje();
+             int UkupnaSuma();
+             int UkupniBrojElemenata(int vrijednost);
+};
+ 
+Komprimiranje::Komprimiranje() {
+      n=0;
+      polje=(int *)malloc(n*sizeof(int));
+}
+ 
+Komprimiranje::Komprimiranje(int *pok, int BrEl) {
+      n=BrEl;
+      polje=(int *)malloc(n*sizeof(int));
+      for (int i=0; i<n; i++)
+          polje[i]=*(pok+i);
+}
+ 
+Komprimiranje::~Komprimiranje() {
+      n=0;
+      free(polje);
+}
+ 
+int Komprimiranje::UkupnaSuma() {
+    int suma=0;
+    for (int i=0; i<n; i+=2)
+        suma+=polje[i]*polje[i+1];
+    return suma;
+}
+ 
+int Komprimiranje::UkupniBrojElemenata(int vrijednost) {
+    int broj=0;
+    for (int i=0; i<n; i+=2)
+        if (polje[i]!=vrijednost)
+           broj+=polje[i+1];
+    return broj;
+}

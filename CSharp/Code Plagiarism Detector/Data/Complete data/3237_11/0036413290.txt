@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <math.h>
+int main (){
+	int n, i;
+	double a, b, pi;
+	a=0;
+	b=0;
+	scanf("%d", &n);
+	if(n<1 || n>30){
+		printf("\n n nije valjan!!!");}
+	else{
+		for(i=1; i<=n; i++){
+			a= 1. / pow(i,6);
+			b=b+a;
+		}
+	        b=b*945;
+		pi=pow(b,1./6);
+		printf("%1.12f", pi);
+	}
+	return 0;
+}

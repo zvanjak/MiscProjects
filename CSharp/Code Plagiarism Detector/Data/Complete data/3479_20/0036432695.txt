@@ -1,0 +1,24 @@
+Kalendar *Unesi(MojDatum datumi[], int broj, int *mjesec) {
+	Kalendar *kal;
+	kal = new Kalendar();
+	int pojava[13] = {0};
+
+	for (int i=0; i<broj; i++) {
+		MojDatum dat = datumi[i];
+		if (dat.mjesec>12 || dat.mjesec<1) {
+			throw "Nedozvoljeni mjesec";
+		} else {
+			pojava[dat.mjesec]++;
+			kal->Dodaj(dat);
+		}
+	}
+	
+	int best=1;
+	for (int i=2; i<13; i++) {
+		if (pojava[i]>pojava[best])
+			best = i;
+	}
+	*mjesec = best;
+
+	return kal;
+}

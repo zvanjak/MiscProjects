@@ -1,0 +1,18 @@
+int veci_od(FILE *f, int granica)
+	{
+	int brojach = 0;
+	int testna_varijabla;
+	char topovsko_meso;
+	fseek(f, 52 * sizeof(char), SEEK_SET);
+	fscanf(f, "%d", &testna_varijabla);
+	if(testna_varijabla >= granica)
+		brojach++;
+	while (fscanf(f, "%c", &topovsko_meso) != EOF)
+		{
+		fseek(f, 51 * sizeof(char), SEEK_CUR);
+		fscanf(f, "%d", &testna_varijabla);
+		if(testna_varijabla >= granica)
+			brojach++;
+		}
+	return(brojach);
+	}

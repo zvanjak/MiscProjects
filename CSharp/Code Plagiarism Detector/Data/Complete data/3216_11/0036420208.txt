@@ -1,0 +1,17 @@
+#include<stdio.h>
+int main() {
+	unsigned int x,y=0,z;
+	while (1) {
+		scanf("%d", &x);
+		if (x%y==0)
+			break;
+		if (x==z || x==1)
+			z++;
+		if (x<=2)
+			break;
+	}
+	printf("%d",z);
+	
+		
+	return 0;
+}

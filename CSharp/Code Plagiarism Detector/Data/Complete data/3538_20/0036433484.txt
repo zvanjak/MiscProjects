@@ -1,0 +1,18 @@
+#include <math.h>
+Red *VratiBrojeve(Red *red) {
+	Red *novi;
+	int broj, brojZnamenki, element, i;
+
+	novi = new Red();
+
+	while (red->SkiniIzReda(&brojZnamenki)) {
+		broj = 0;
+		for (i = brojZnamenki - 1; i >= 0; i--) {
+			red->SkiniIzReda(&element);
+			broj += element * pow(10, i);
+		}
+		novi->DodajURed(broj);
+	}
+
+	return novi;
+}

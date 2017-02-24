@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+	int n=0, i=0;
+	double rez=0;
+
+	scanf ("%d", &n);
+
+	if (n<1 || n>100)
+	{
+		printf ("n nije valjan");
+	}
+	else
+	{
+		for (i=1; i<=n; i++)
+		{
+			rez = rez + (1. / pow(i, 2));
+		}
+
+		rez = rez * 6;
+		rez = sqrt(rez);
+
+		printf ("%.12f", rez);
+	}
+
+	return 0;
+}

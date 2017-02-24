@@ -1,0 +1,7 @@
+Tocka fun5(Trokut t)
+{
+    Tocka pom;
+    pom.X = (t.getA().X + t.getB().X + t.getC().X ) / 3.;
+    pom.Y = (t.getA().Y + t.getB ().Y + t.getC().Y ) / 3.;
+    return pom;
+}

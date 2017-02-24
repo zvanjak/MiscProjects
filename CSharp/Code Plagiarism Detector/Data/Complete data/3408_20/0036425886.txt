@@ -1,0 +1,21 @@
+char *Spoji(char *niz1, char *niz2)
+{
+	int n1, n2, j=0, i=0;
+	char *novi;
+	n1=(int)strlen(niz1);
+	n2=(int)strlen(niz2);
+	novi=(char*)malloc(n1+n2);
+	while(j<n1 || j<n2)
+	{
+		novi[j]=niz1[i];
+		j++;
+		novi[j]=niz2[i];
+		j++;
+		i++;
+	}
+	if(j<n1)
+		for(j,i;j<n1;j++,i++) novi[j]=niz1[i];
+	if(j<n2)
+		for(j,i;j<n2;j++,i++) novi[j]=niz2[i];
+	return novi;
+}

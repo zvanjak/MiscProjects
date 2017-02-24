@@ -1,0 +1,20 @@
+int izbaciZ(zapis **glava){
+	int br=0, br1=0;
+	float zbroji=0;
+	float ukupan;
+	zapis *pom,*pom1;
+	pom=*glava;
+	while(pom){
+		br++;
+		zbroji+=pom->pros;
+		pom=pom->sljed;
+	}
+	ukupan=zbroji/br;
+
+	for(;*glava && (*glava)->spol=='Z' && (*glava)->pros < ukupan;*glava=(*glava)->sljed){
+		pom1=*glava;
+		free(pom1);	
+		br1++;
+		}
+	return br1;
+}

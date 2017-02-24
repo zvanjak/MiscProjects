@@ -1,0 +1,13 @@
+#include<stdio.h>
+
+int main(){
+    int n=1;
+    int najv=-32768, najm=32767;
+    while(!(n%4==0&&n>0)){
+        scanf("%d",&n);
+        if(n>najv)najv=n;
+        if(n<najm)najm=n;
+    }
+    printf("%d %d",najv, najm);
+}    
+    

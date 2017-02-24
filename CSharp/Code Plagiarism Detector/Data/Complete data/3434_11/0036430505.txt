@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    int x, y, brojac, k1=0, k2=0, k3=0, k4=0;
+    
+    do {
+    scanf("%d %d", &x, &y);
+    
+    if ((x>0)&&(y>0)) k1++;
+    if ((x<0)&&(y<0)) k3++;
+    if ((x>0)&&(y<0)) k4++;
+    if ((x<0)&&(y>0)) k2++;
+    if ((x==0)&&(y>0)) {k1++; k2++;};
+    if ((x>0)&&(y==0)) {k1++; k4++;};
+    if ((x==0)&&(y<0)) {k3++; k4++;};
+    if ((x<0)&&(y==0)) {k2++; k3++;};
+    brojac++;
+    } while (!((x==0)&&(y==0))||(brojac==100));
+    
+    printf("%d %d %d %d",k1, k2, k3, k4);
+
+return 0;
+}

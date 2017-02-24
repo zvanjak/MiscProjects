@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+int veci_od (FILE *f, int granica) {
+	struct album z;
+	int br=0;
+	while(fread(&z,sizeof(z), 1, f)==1) {
+		if(z.prodano >= granica)
+			br++;
+	}
+	return br;
+}

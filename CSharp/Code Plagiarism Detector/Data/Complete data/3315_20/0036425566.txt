@@ -1,0 +1,6 @@
+float prosjek(FILE *f){
+  char naz[30+1],aut[20+1];
+  int prod, suma=0, n=0;
+  while(fscanf(f,"%s %s %d", naz, aut, &prod)!=EOF) {suma+=prod; n++;}
+  return (float)suma/n;
+}

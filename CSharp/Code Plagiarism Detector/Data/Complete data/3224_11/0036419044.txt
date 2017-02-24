@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<math.h>
+
+int main(){
+        float pi, clan, suma=4;
+        int n, i=1;
+
+        scanf("%d",&n);
+
+        if(n<1 || n>400){
+                printf("n nije valjan\n");
+        }else{
+                do{
+            clan=8./((4*i-1)*(4*i+1));
+            suma = suma - clan;
+            i++;
+        }while(i<=n);
+
+                printf("%.8f", suma);
+        }
+
+return 0;
+}

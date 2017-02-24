@@ -1,0 +1,9 @@
+double sumareda (double x, int n){
+       double g;
+       kontrola();
+       if (n==1) return x;
+       if (n!=1){
+       g=(pow(x,2*n-1)/(2*n-1)+sumareda(x,n-1));
+       return g;
+       }
+       }

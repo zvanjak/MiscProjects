@@ -1,0 +1,19 @@
+float prosjek(zapis *glava) {
+      float p=0;
+      int br=0;
+      zapis *pom;
+      pom=glava;
+      if (glava==NULL) return 0;
+      while(pom) {
+                 p=p+(pom->pros);
+                 br=br+1;
+                 pom=pom->sljed;
+                 }
+      p=p/((float)br);
+      pom=glava;
+      while(pom) {
+                   if ((pom->pros)<p) pom->pros=0.0;
+                   pom=pom->sljed;
+                   }
+      return p;
+      }

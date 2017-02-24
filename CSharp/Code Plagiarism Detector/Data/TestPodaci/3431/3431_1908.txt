@@ -1,0 +1,30 @@
+#include <stdio.h>
+#define MAX 100
+int main () {
+	int i=0, j, sumap=0, suman=0, rez;
+	char polje[MAX];
+	do{
+		scanf("%c", &polje[i]);
+		if (polje[i]==10) scanf("%c", &polje[i]);
+		i++;
+	}while((polje[i-1]>=48 && polje[i-1]<=57) || (polje[i-1]>=65 && polje[i-1]<=70) || (polje[i-1]>=97 && polje[i-1]<=102)&& (i<MAX-1));
+		for(j=0; j<i-1; j++){
+		if(polje[j]>=48 && polje[j]<=57){
+			polje[j]-=48;}
+		if(polje[j]>=65 && polje[j]<=70){
+			polje[j]-=55;}
+		if(polje[j]>=97 && polje[j]<=102){
+			polje[j]-=87;}
+		
+	}
+		for(j=0; j<i-1; j++){
+			if(polje[j]%2){
+				suman+=polje[j];
+			}else{
+				sumap+=polje[j];
+			}
+		}
+		rez=sumap-suman;
+	printf("%d", rez);
+	return 0;
+}

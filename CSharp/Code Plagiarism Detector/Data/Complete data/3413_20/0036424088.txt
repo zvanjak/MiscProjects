@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+char *brojeve_u_znakove(int *polje, int duljina){
+     int i,temp,emo=0,emoi=0;
+     char *brojevi;
+     brojevi=malloc(1);
+     
+     if (!duljina){brojevi[0]=0; return brojevi;}
+     
+     for(i=0;i<duljina;i++){
+        temp=polje[i];
+        
+        while(temp){
+           emoi++;
+           temp=temp/10;
+           }
+           
+        brojevi=(char *)realloc(brojevi,emoi+1);     
+        brojevi[emoi]=' ';
+        emo=emoi;
+     
+        while(polje[i]){
+           brojevi[emo-1]=polje[i]%10+48;
+           polje[i]/=10;
+           emo--;
+           }
+        emoi++;
+        }
+        
+     brojevi[emoi-1]=0; 
+     
+     return brojevi;
+}

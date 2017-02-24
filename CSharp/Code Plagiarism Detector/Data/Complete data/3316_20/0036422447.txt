@@ -1,0 +1,11 @@
+void azuriraj(FILE *f, int redni_br, int bodovi)
+{
+struct natjecatelj n;
+while(fread(&n, sizeof(n), 1, f)==1){
+	if(redni_br==n.redni_br)
+		break;
+	else
+		continue;
+}
+}
+

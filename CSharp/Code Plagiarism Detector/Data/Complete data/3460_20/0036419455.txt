@@ -1,0 +1,85 @@
+#include<iostream>
+using namespace std;
+
+class DinamickoPolje {
+public:
+	DinamickoPolje () {
+		_BrojElem = 0;
+		_MaxBrojElemenata = 10;
+		_Podaci = new int[_MaxBrojElemenata];
+	
+		if( _Podaci == NULL )
+			throw "Nema memorije";
+	}
+
+	DinamickoPolje(int inMaxBrojElem) {
+		_BrojElem = 0;
+		_MaxBrojElemenata = inMaxBrojElem;
+		_Podaci = new int[_MaxBrojElemenata];
+
+		if( _Podaci == NULL )
+			throw "Nema memorije";
+	}
+	
+	~DinamickoPolje() {
+		delete [] _Podaci;
+	}
+
+	void PostaviNovuVelicinu(int NoviBrojElem) {
+		int		*Temp = new int[NoviBrojElem];
+		if( Temp == NULL )
+			throw "Nema memorije";
+		for( int i=0; i<_MaxBrojElemenata; i++ )
+			Temp[i] = _Podaci[i];
+		delete []_Podaci;
+		_Podaci = Temp;
+		if( _BrojElem > NoviBrojElem)
+			_BrojElem = NoviBrojElem;
+
+		_MaxBrojElemenata = NoviBrojElem;
+	}
+	
+	void PostaviElement(int Indeks, int Vrijednost) {
+		if( 0 <= Indeks && Indeks < _MaxBrojElemenata )	{
+			_Podaci[Indeks] = Vrijednost;
+			if( Indeks >= _BrojElem ) {
+				_BrojElem = Indeks + 1;
+			}
+		} else	throw "Nema mjesta u polju";
+	}
+	
+	void DodajElementNaKraj(int Vrijednost) {
+		if( _BrojElem == _MaxBrojElemenata ) {
+		PostaviNovuVelicinu(_BrojElem + 1);
+		}
+		PostaviElement(_BrojElem, Vrijednost);
+	}
+
+	int DohvatiElement(int Indeks) {
+		if( 0 <= Indeks && Indeks < _MaxBrojElemenata )	return _Podaci[Indeks];
+		else throw "Krivi indeks elementa !";
+	}
+
+	int BrojElemenata() {
+		return _BrojElem;
+	}
+	
+	void IspisiElemente() {
+		for( int i=0; i<BrojElemenata(); i++ );
+	}
+
+	friend void FuncMinMax(DinamickoPolje &polje, int *Max, int *Min);
+private: 
+	int *_Podaci;
+	int _BrojElem;
+	int _MaxBrojElemenata;
+};
+
+void FuncMinMax(DinamickoPolje &polje, int *Max, int *Min) {
+		*Max = polje._Podaci[0];
+		*Min = polje._Podaci[0];
+		for (int i=1; i < polje._BrojElem; i++) {
+			if (polje._Podaci[i] > *Max) *Max = polje._Podaci[i];
+			if (polje._Podaci[i] < *Min) *Min = polje._Podaci[i];
+		}
+}

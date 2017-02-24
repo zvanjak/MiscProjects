@@ -1,0 +1,15 @@
+Krug fun4(Pravokutnik p)
+{
+		
+		Tocka A,B,C,D,E;
+		p(Tocka origin,double width,double height,char *name):Shape(origin,name);
+		{
+			A=new Tocka(origin.x,origin.y);
+			B=new Tocka(origin.x,origin.y+height);
+			C=new Tocka(origin.x+width,origin.y+height);
+			D=new Tocka(origin.x+width,origin.y);
+		}
+		E=new Tocka(((origin.x+origin.x+width)/2),((origin.y+origin.y+height)/2));
+		Krug:Shape(E,"Krug");
+        Krug->_Radius=sqrt(pow(A->_X-E->_X,2)+pow(A->_Y-E->Y,2));
+}

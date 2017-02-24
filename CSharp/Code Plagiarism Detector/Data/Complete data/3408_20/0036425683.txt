@@ -1,0 +1,40 @@
+char *Spoji(char *niz1, char *niz2)
+{
+	int i=0, j=0, dniz1=0, dniz2=0, dniz=0;
+	char *niz;
+	dniz1=(int)(strlen(niz1));
+	dniz2=(int)(strlen(niz2));
+	dniz=dniz1+dniz2;
+	niz=(char*)(malloc(dniz));
+	if(dniz1>=dniz2)
+	{
+		while(j<dniz2)
+		{
+			if(i%2==0)
+				niz[i]=niz1[j];
+			if(i%2==1)
+				niz[i]=niz2[j];
+			i++;
+			j=i/2;
+		}
+		for(i,j;j<dniz1;i++,j++)
+			niz[i]=niz1[j];
+		niz[i]='\0';
+	}
+	if(dniz1<dniz2)
+	{
+		while(j<dniz1)
+		{
+			if(i%2==0)
+				niz[i]=niz1[j];
+			if(i%2==1)
+				niz[i]=niz2[j];
+			i++;
+			j=i/2;
+		}
+		for(i,j;j<dniz2;i++,j++)
+			niz[i]=niz2[j];
+		niz[i]='\0';
+	}
+	return niz;
+}

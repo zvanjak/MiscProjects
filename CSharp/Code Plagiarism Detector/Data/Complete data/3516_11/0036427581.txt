@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <math.h>
+
+int main ()
+{double a[50]; float x[50]; int i=0;int j=0; double at,b,d,n; 
+	scanf ("%lf",&n);
+
+	do {scanf ("%f",&x[i]); i=i+1;} while (x[i-1]!=0.0);
+
+	for (j=0; j<i; j++) {b=x[j]+n; d=x[j];a[j]=((pow(cos(1./exp(1.)), sin(exp(sin(b+(1./exp(1.))))))) - pow(cos(1./exp(1.)), sin(exp(sin(d+(1./exp(1.))))))/n);}
+
+	for (j=0; j<i-1; j++) {at=atan(a[j]); printf ("%.2lf",at);}
+
+return 0;
+}

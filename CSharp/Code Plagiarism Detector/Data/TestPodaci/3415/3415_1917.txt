@@ -1,0 +1,37 @@
+#include <stdio.h>
+int main (){
+	int a,b,i,suma=0,j;
+	char polje [20];
+	char c;
+	for ( i=0;i<25;i++){
+		scanf ("%d %d %c",&a,&b,&c);
+		if (c =='+'){
+			suma+=a+b;
+			polje [i]='+';}
+		else if (c =='-'){
+			suma+=a-b;
+			polje [i]='-';}
+		else if (c == '*'){
+			suma+=a*b;
+			polje [i]='*';}
+		else if (c =='/'){
+			polje [i]='/';
+		    if (b==0);
+			else suma+=a/b;}
+		else if (c =='%'){
+			polje [i]='%';
+			suma+=a%b;}
+		else break;
+	}
+printf ("%d ",suma);
+for (j=0;j<i;j++)
+printf ("%c ",polje[j]);
+return 0;
+}
+
+
+
+
+	 
+	
+		

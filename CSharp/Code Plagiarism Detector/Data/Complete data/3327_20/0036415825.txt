@@ -1,0 +1,65 @@
+#include <stdio.h>
+
+#include <stdlib.h>
+
+ 
+
+int *Find3Max (int *p, int n){
+
+      int j, i, *novo;
+
+ 
+
+      if (n < 3) return NULL;
+
+ 
+
+      novo = (int*)(malloc (3 * sizeof (int)));
+
+ 
+
+      i = p[0];
+
+ 
+
+      for (j = 0; j < n; j++) if (p[j] <= i) i = p[j];
+
+      for (j = 0; j < 3; j++) novo[j] = i;
+
+ 
+
+      i = 0;
+
+ 
+
+      do{
+
+            for (j = 0; j < n; j++){
+
+                  switch (i)
+
+                  {
+
+                        case 0:
+
+                             if (p[j] > novo[0]) novo[0] = p[j]; break;
+
+                        case 1:
+
+                             if (p[j] < novo[0] && p[j] > novo[1]) novo[1] = p[j]; break;
+
+                        case 2:
+
+                             if (p[j] < novo[1] && p[j] > novo[2]) novo[2] = p[j]; break;
+
+                  }
+
+            }
+
+      }while(++i < 3);
+
+ 
+
+      return novo;
+
+}

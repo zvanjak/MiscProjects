@@ -1,0 +1,21 @@
+#include <stdio.h>
+int main()
+{
+int a[1000]={0},i=0,j,p=0,b=0;
+do{
+i++;
+scanf ("%d",&a[i]);
+}while(a[i]>2);
+for (i=1;i<1000;i++)
+    {
+    for (j=1;j<a[i];j++)
+        {
+        if (a[i]%j==0)p++;
+        if (j<a[i] && p>1) {p=0; break; }
+        }
+    b=b+p;
+    p=0;
+    }
+printf ("%d",b);
+return 0;
+}

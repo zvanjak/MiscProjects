@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main () {
+	int a, prva, druga, treca, suma, paran, neparan;
+		scanf ("%d", &a);
+	if (a<100 || a>999) {
+			}
+	else {
+		prva = a % 10;
+		druga = (a / 10) % 10;
+		treca = (a / 100) % 10;
+		suma = prva + druga + treca;	
+		if (suma % 2 == 0) {
+				paran = treca - druga - prva;
+				printf ("%d", paran);
+			}
+			else {
+				neparan = prva * druga * treca;
+				printf ("%d", neparan);
+			}
+	}
+	return 0;
+}
+
+
+
+	

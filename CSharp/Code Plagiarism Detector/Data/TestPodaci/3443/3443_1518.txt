@@ -1,0 +1,16 @@
+#include <stdio.h>
+int main(){
+	int i,n,u,s=0,p=0;
+	scanf("%d",&n);
+	if (n<2){
+		return 0;}
+	else for(i=2;i<n;i++){
+		p*=(i-1);
+	}
+	for(i=0;i<n;i++){
+		s+=(i*i);
+	}
+	u=s+p;
+	printf("%d",u);
+	return 0;
+}

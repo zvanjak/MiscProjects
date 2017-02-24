@@ -1,0 +1,24 @@
+# include<stdio.h>
+     int main (){
+          int k[100];
+          int brojac,zbroj,z,br,i;
+          
+          brojac=0;
+          zbroj=0;
+ 
+          for (i=0;i<100;i++){
+              scanf("%d",&k[i]);
+			  if (k[i]!=0){
+                  br=k[i];
+                  if(br<0) br=-1*br;
+                   while(br!=0){
+                     z=br%10;
+                     br/=10;
+                     zbroj+=z;
+                     brojac++;
+                   }
+              }else break;
+		  }
+          printf("%d %d ",brojac,zbroj);
+          return 0;
+       }

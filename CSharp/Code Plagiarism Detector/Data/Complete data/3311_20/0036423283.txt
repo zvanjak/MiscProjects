@@ -1,0 +1,16 @@
+float prosjek (FILE *f){
+	float s = 0;
+	long b = 0;
+	struct album a;
+
+	if (!f)
+		return 0;
+
+	while (fread (&a, sizeof (a), 1, f) != 0)
+	{
+		s += a.prodano;
+		b++;
+	}
+
+	return s / b;
+}

@@ -1,0 +1,51 @@
+#include <stdio.h>
+#define MR 20
+#define MS 5
+
+int main()
+
+{
+    int r, s, i, j, fr = 0, fs = 0, blabla;
+	int a[MR][MS];
+
+    for( ; ; )
+	{
+		scanf("%d %d", &r, &s);
+		if((r >= 1 && r <= MR) && (s >= 1 && s <= MS)) break;
+	}
+
+	for(i = 0; i < r; i++)
+		for(j = 0; j < s; j++)
+			scanf("%d", &a[i][j]);
+   
+	for(i = 0; i < r; i++)
+	{
+		blabla = 0;
+
+		for(j = 0; j < s; j++)
+		{
+			if(a[i][j] % 2 == 0) blabla++;
+		}
+
+		if(blabla > 0) fr++;
+	}
+    
+	for(i = 0; i < s; i++)
+	{
+		blabla = 0;
+
+		for(j = 0; j < r; j++)
+		{
+			if(a[j][i] % 2 != 0) blabla++;
+		}
+
+		if(blabla > 0) fs++;
+	}
+
+    printf("%d %d",fr,fs);
+    
+    return 0;
+    
+    
+
+}

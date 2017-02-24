@@ -1,0 +1,31 @@
+#include <stdio.h>
+int main ()
+{
+	char slovo;
+	int brojac[26] = { 0 };
+	int i;
+	do {
+		scanf("%c", &slovo);
+		if (slovo >= 'A' && slovo <= 'Z') {
+			brojac[slovo - 65]++;
+		}
+	} while (slovo >= 'A' && slovo <= 'Z');
+	for (i=0;i<26;i++)
+	{
+		if (brojac[i]!=0)
+		{
+			printf("%c ",i+65);
+			break;
+		}
+	}
+/*	if (i==26) printf ("-1");*/
+	for (i=25;i>=0;i--)
+	{
+		if (brojac[i]!=0)
+		{
+			printf("%c",i+65);
+			break;
+		}
+	}
+	return 0;
+}

@@ -1,0 +1,30 @@
+int veci_od(FILE *f, int n){
+	struct natjecatelj {
+		int redni_br;
+		char prezime[20+1];
+		int bodovi;
+	} nat;
+
+	int ukupno=0,bodovi=0,kraj,j=0;
+
+	fseek(f,0L,SEEK_END);
+	kraj=ftell(f);
+	fseek(f,0L,SEEK_SET);
+	do
+	{
+		j++;
+		fread(&nat, sizeof(nat), 1, f);
+		if (nat.redni_br != 0) 
+		{
+			if (nat.bodovi >= n)
+			{
+				ukupno++;
+			}
+		}
+		else 
+			fseek(f, (j-1)*sizeof(nat),SEEK_SET);
+	}
+	while (ftell(f) < kraj);
+
+	return ukupno;
+}

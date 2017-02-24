@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+class ZatvoreniInterval {
+private: 
+	float _pocetak;
+	float _kraj;
+public:
+	ZatvoreniInterval() {
+		_pocetak = 0;
+		_kraj = 1;
+	}
+
+	ZatvoreniInterval(float pocetak, float kraj) {
+		_pocetak = pocetak;
+		_kraj = kraj;
+	}
+	float Duljina() {
+		if (_kraj >= _pocetak) return _kraj - _pocetak;
+		else return 0;
+	}
+
+	int BrojCijelihTocaka() {
+		int pom = 0;
+		if (_pocetak >= _kraj) return 0;
+		pom = (int)(_kraj) - (int)(_pocetak);
+		if (_pocetak - (int)_pocetak == 0) pom++;
+		return pom;
+	}
+};

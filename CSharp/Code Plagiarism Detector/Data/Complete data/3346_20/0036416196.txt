@@ -1,0 +1,22 @@
+double sumareda (double x, int N)
+{
+	double retval=0,clan;
+	kontrola();
+	
+	if(N<0)
+		exit(1);
+	if(N==0)
+		return 0;
+		
+	if(N==1)
+		return x;
+
+	else
+	{
+		clan=( pow(x,(2*N))*(1/x) )/( (2*N)-1 );
+		retval+=clan+sumareda(x,N-1);	
+	}
+return retval;
+
+
+}

@@ -1,0 +1,14 @@
+Stog* noviOdNeparnih (Stog *stog)
+{	
+	Stog pomocni;
+	int a;
+	Stog *novi=new Stog;
+	while (stog->Skini(&a))
+		pomocni.Stavi(a);
+	while (pomocni.Skini(&a))
+	{
+		stog->Stavi(a);
+		if (a % 2) novi->Stavi(a);
+	}
+	return novi;
+}

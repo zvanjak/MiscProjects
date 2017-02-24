@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <math.h>
+int main (){
+	int i,c;
+	float n;
+	double fakt=1,x[31],pom=0,e;
+	scanf ("%f",&n);
+	c=n;
+	if (n>c) printf ("n nije valjan");
+	else {
+		if (!(c>0&&c<31)) printf ("n nije valjan"); 
+		else {
+			for (i=1; i<=n; i++) {
+				if (i==1)pom=1;
+				else{
+					fakt=fakt*(i-1);
+					x[i]=1./fakt;
+					if ((i%2)==0)pom=pom-x[i];
+					else pom=pom+x[i];
+				}
+			}
+		e=pow(pom,-1);
+		printf ("%.12f",e);}
+	}
+	return 0;
+}

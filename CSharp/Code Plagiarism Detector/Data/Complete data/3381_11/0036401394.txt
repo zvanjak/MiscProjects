@@ -1,0 +1,23 @@
+#include <stdio.h>
+int main () {
+int x1,y1,x2,y2,x3,y3,x4,y4;
+float naze,nazf;
+float k1,k2;
+scanf("%d %d %d %d %d %d %d %d",&x1,&y1,&x2,&y2,&x3,&y3,&x4,&y4);
+naze=x3-x1;
+nazf=x4-x2;
+k1=(y3-y1)/naze;
+k2=(y4-y2)/nazf;
+if(naze!=0 && nazf!=0) {
+  if(k1*k2==-1) {
+  printf("R");
+  }
+  else {
+  printf("C");
+  }
+}
+else {
+  printf("K");
+}
+return 0;
+}      

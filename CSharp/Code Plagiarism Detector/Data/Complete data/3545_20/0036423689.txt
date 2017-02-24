@@ -1,0 +1,11 @@
+void PrepisiStogURed(Stog *stog, Red *red){
+  int x,t;
+  Red *pomRed=new Red();
+  if(stog->Skini(&x)!=0){
+    if(x%2==0) pomRed->DodajURed(x);
+	while(red->SkiniIzReda(&t)!=0) pomRed->DodajURed(t);
+	while(pomRed->SkiniIzReda(&t)!=0) red->DodajURed(t);
+    delete pomRed;
+	PrepisiStogURed(stog, red);
+  }
+}

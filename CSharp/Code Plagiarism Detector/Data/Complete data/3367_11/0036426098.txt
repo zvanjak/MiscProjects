@@ -1,0 +1,31 @@
+#include <stdio.h>
+int main () {
+	char a, b;
+	int c, d;
+	scanf(" %c %c", &a, &b);
+	if ((a>='A') && (b>='A')){
+        c=a & 0x0f;
+	    d=b & 0x0f;
+		c=c+9;
+		d=d+9;
+		printf("%d", c*16+d);
+	}
+	else if((a>='A') && (b<'A')){
+	        c=a & 0x0f;
+	        d=b & 0x0f;
+			c=c+9;
+			printf("%d", c*16+d);
+	 }
+	else if((a<'A') && (b>='A')) {
+		  c=a & 0x0f;
+	      d=b & 0x0f;
+		  d=d+9;
+          printf("%d", c*16+d);
+	}
+	else {
+         c=a & 0x0f;
+	     d=b & 0x0f; 
+         printf("%d", c*16+d);
+	}
+	return 0;
+}

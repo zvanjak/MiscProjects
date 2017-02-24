@@ -1,0 +1,38 @@
+class Predstava{
+	private:
+		float _pocetak;
+		float _kraj;
+		int _maxBrojKarata;
+		int _prodanoKarata;
+	public:
+		Predstava(){ 
+			this->_pocetak=8;
+			this->_kraj=10;
+			this->_maxBrojKarata=100;
+			this->_prodanoKarata=0;
+		}
+		Predstava(float pocetak, float kraj, int maxBrojKarata){ 
+			this->_pocetak=pocetak;
+			this->_kraj=kraj;
+			this->_maxBrojKarata=maxBrojKarata;
+			this->_prodanoKarata=0;
+		}
+		Predstava(const Predstava &other) { 
+			this->_kraj = other._kraj;
+			this->_pocetak = other._pocetak;
+			this->_maxBrojKarata = other._maxBrojKarata;
+			this->_prodanoKarata = other._prodanoKarata;
+		}  
+		float Trajanje(){
+			return this->_kraj - this->_pocetak;
+		}
+		void ProdajKartu(){
+			(this->_prodanoKarata)++;
+		}
+		int ProdanoKarata(){
+			return this->_prodanoKarata;
+		}
+		int PreostaloKarata(){
+			return this->_maxBrojKarata - this->_prodanoKarata;
+		}
+};

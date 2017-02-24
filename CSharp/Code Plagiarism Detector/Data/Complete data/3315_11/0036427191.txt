@@ -1,0 +1,15 @@
+float prosjek(FILE *f){
+      int brPod = 0, suma = 0;
+      float prosjek;
+      struct zapis{
+             char ime[31];
+             char album[21];
+             int broj;
+      } koko;
+      while(fscanf(f, "%s%s%d\n", koko.ime, koko.album, &koko.broj) == 3){
+                      brPod += 1;
+                      suma += koko.broj;
+                      }
+      prosjek = (float)suma / brPod;
+      return prosjek;
+}

@@ -1,0 +1,2 @@
+int rmax (int *polje, int NI{
+}

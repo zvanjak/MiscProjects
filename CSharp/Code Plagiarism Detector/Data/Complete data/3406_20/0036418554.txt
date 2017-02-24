@@ -1,0 +1,24 @@
+char *SamoSuglasnici (char *ulazni_niz){
+	int i=0, k=0;
+	char *p1=NULL;
+	if((strlen(ulazni_niz))==0 || ulazni_niz==NULL)
+		return NULL;
+	else{
+		while(*(ulazni_niz+i)!='\0'){
+		if(isalpha(*(ulazni_niz+i)) && 
+           *(ulazni_niz+i)!='a' && *(ulazni_niz+i)!='e' &&
+		   *(ulazni_niz+i)!='i' &&*(ulazni_niz+i)!='o' &&
+		   *(ulazni_niz+i)!='u' && *(ulazni_niz+i)!='A' &&	
+		   *(ulazni_niz+i)!='E' && *(ulazni_niz+i)!='I' &&  
+           *(ulazni_niz+i)!='O' && *(ulazni_niz+i)!='U'){
+        p1=(char*) realloc(p1, (k+2)*sizeof(char));
+		*(p1+k)=*(ulazni_niz+i);
+		k++;
+		}
+		i++;
+		}
+		*(p1+k)='\0';
+		return p1;
+	
+	}
+}

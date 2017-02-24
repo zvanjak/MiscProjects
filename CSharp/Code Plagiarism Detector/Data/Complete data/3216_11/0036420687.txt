@@ -1,0 +1,26 @@
+#include<stdio.h>
+int main()
+{
+int a,b;                        /*deklaracija varijabli*/
+b=0;
+petlja:
+scanf("%d",&a);              /*unos broja*/
+if(a>2)                         /*provjera za a>2*/
+      {
+      if(a%2==0)                /*provjera je li uneseni broj prost*/
+               {
+               goto petlja;
+               }
+      else
+          {
+          b++;
+          goto petlja;                /*povecanje brojaca prostih brojeva*/
+          }
+      }
+else
+    {
+     /*printf("Broj prostih brojeva je %d\n",b);*/      /*ispis*/
+      printf("%d", b);
+    }
+return 0;
+}

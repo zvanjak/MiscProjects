@@ -1,0 +1,32 @@
+Stog *PrepisiRedUStog(Red *red) {
+
+	int temp;
+
+	Stog *tempStog;
+
+	if (red->SkiniIzReda(&temp)) {
+
+		int pozitivni;
+		if  (temp<0)  pozitivni=-temp; else pozitivni=temp;
+
+		int prost=1;
+		if (!(pozitivni % 2 || pozitivni==2)) prost= 0;
+
+		tempStog = PrepisiRedUStog(red); 
+
+		for (int i=3;i<pozitivni/2;i+=2) 
+
+			if (pozitivni % i == 0) {
+				prost = 0;
+				break;
+			}
+
+		if (prost) tempStog->Stavi(temp);	
+
+
+	} else
+
+		tempStog = new Stog();
+
+	return tempStog;
+}

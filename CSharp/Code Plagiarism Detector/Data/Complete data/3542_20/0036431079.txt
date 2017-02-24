@@ -1,0 +1,45 @@
+int promijenimbr(zapis** glava,int starimbr,int novimbr)
+{
+	zapis* temp;
+	zapis** head = glava;
+
+	while(*head)
+	{
+		if((*head)->matbr == starimbr)
+			break;
+
+		head = &(*head)->sljed;
+	}
+
+	if(!*head)
+		return 0;
+
+	temp = *head;
+
+	temp->matbr = novimbr;
+
+	*head = (*head)->sljed;
+
+	head = glava;
+
+	while(*head)
+	{
+		if((*head)->matbr > temp->matbr)
+		{
+			temp->sljed = *head;
+			*head = temp;
+			break;
+		}
+
+		if(!(*head)->sljed)
+		{
+			temp->sljed = NULL;
+			(*head)->sljed = temp;
+			break;
+		}
+
+		head = &(*head)->sljed;
+	}
+
+	return 1;
+}

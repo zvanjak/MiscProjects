@@ -1,0 +1,23 @@
+#include<stdio.h>
+int main(){
+	int odradeni, nominalni, bruttocijena;
+	float nettoplaca, bruttoplaca, cijena;
+	scanf("%d %d %d", &odradeni, &nominalni, &bruttocijena);
+	if(odradeni<nominalni){
+		cijena=0.9*(float)bruttocijena;
+	}
+	else if(odradeni>nominalni){
+		cijena=1.15*(float)bruttocijena;
+	}
+	else cijena=(float)bruttocijena;
+	bruttoplaca=odradeni*cijena;
+	if(bruttoplaca>6000){
+		nettoplaca=0.7*bruttoplaca;
+	}
+	else{
+		nettoplaca=0.8*bruttoplaca;
+	}
+	printf("%.2f", nettoplaca);
+	return 0;
+}
+

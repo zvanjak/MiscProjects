@@ -1,0 +1,50 @@
+class SortRazlPolje{
+private:
+	int _n;
+	int *_polje;
+
+	void _swi(int &i, int &j){
+		int t;
+		t = _polje[i];
+		_polje[i] = _polje[j];
+		_polje[j] = t;
+	}
+
+	void _sort(){
+		for (int i = 0; i<_n-1; i++)
+			for (int j = i+1; j<_n; j++)
+				if (_polje[i] > _polje[j]) _swi(i, j);
+	}
+
+public:
+	SortRazlPolje(){
+		_n = 0;
+	}
+	~SortRazlPolje(){
+		if (_n > 0) delete []_polje;
+	}
+	int Dodaj(int Broj){
+
+		for (int i = 0; i < _n; i++)
+			if (_polje[i] == Broj) return 1;
+
+		int *_tmp = new int[_n+1], *_old;
+		if (_tmp == NULL) return 0;
+		_old = _polje;
+		for (int i=0; i<_n; i++)
+			_tmp[i] = _polje[i];
+		_tmp[_n++] = Broj;
+		_polje = _tmp;
+		if (_n > 1) delete []_old;
+		return 1;
+	}
+	int *VratiSortPolje(int &n){
+		if (_n == 0) {
+			n = 0;
+			return NULL;
+		}
+		_sort();
+		n = _n;
+		return _polje;
+	}
+};

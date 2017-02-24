@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main ()
+{
+       long d, g;
+       long i;
+       unsigned long suma = 0;
+       long j;
+
+       
+       scanf ("%ld %ld", &d, &g);
+
+       if (d <= 0 || g <= 0 || g < d)
+       {
+               
+               return 1;
+       }
+
+       
+       for (i = d; i <= g; i++)
+       {
+               suma = 0;
+               for (j = 1; j <= i; j++)        
+                       if (j % 2 == 0)
+                               suma += j;
+               if (i != g)     
+                       printf ("%ld ", suma);
+               else
+                       printf ("%ld", suma);
+       }
+
+       return 0;
+}

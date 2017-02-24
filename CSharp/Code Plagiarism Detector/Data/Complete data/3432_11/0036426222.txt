@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+
+	int x,y,i,f=1;
+
+	while (scanf("%d",&x),x!=-1) {
+		scanf("%d",&y);
+		for (i=0;i<y;++i) {
+			if (!f) putchar(' ');
+			printf("%d",x);
+			f = 0;
+		}
+	}
+
+	return 0;
+}

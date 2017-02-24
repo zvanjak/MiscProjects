@@ -1,0 +1,8 @@
+int rBrojParnih(int *polje, int n) {
+	static int broj=0;
+	kontrola();
+	if (n < 0) return broj;
+	else if (*(polje + n)%2 == 0) broj++;
+	broj = rBrojParnih(polje, n-1);
+	return broj;
+}

@@ -1,0 +1,25 @@
+char *SamoDuplikati(char *ulazni_niz) {
+	
+	char slova[256] = {0};
+	int i, br = 1;
+	char *novi;
+
+	novi = (char *) malloc(br);
+
+	if (novi == NULL || ulazni_niz == NULL || strlen(ulazni_niz) == 0) 
+		return NULL;
+
+	novi[0] = 0;
+
+	for (i=0; i<strlen(ulazni_niz); i++) {
+        if (slova[ulazni_niz[i]] > 0) {
+			br++;
+			novi = (char *) realloc(novi, br);
+			novi[br-2] = ulazni_niz[i];
+			novi[br-1] = 0;
+		}
+		else 
+			slova[ulazni_niz[i]] = 1;
+	}
+    return novi;
+}

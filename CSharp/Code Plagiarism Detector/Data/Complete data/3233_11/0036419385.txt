@@ -1,0 +1,14 @@
+#include<stdio.h>
+int main()
+{
+		int i,n;
+		double j=0;
+		scanf("%d",&n);
+		if ((n<1) || (n>200))
+				printf("n nije valjan");
+		else {
+			for(i=1;i<=n;i++)
+				j+=1./(i*(i+1));
+			printf("%.12f",j); }
+return 0;
+}

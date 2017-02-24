@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <math.h>
+
+int main  ()
+{
+int n,i;
+float p=0.;
+scanf ("%i",&n);
+if (n<1 || n>25)
+printf ("n nije valjan \n");
+else {
+for (i=1;i<n+1;i++)
+{
+p+=(1./(pow (i,8)));
+}
+p*=9450.;
+p=pow (p, (1./8.));
+printf ("%1.12f \n",p);
+
+}
+return 0;
+}

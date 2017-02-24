@@ -1,0 +1,41 @@
+class RazlPolje {
+   int *polje, n;
+   
+public:
+   RazlPolje() { polje = new int[100000]; n = 0; }
+
+   int Dodaj(int Broj)
+   {
+      for (int i=0; i<n; ++i)
+         if (polje[i] == Broj)
+            return 1;
+      if (n == 100000)
+         return 0;
+      
+      polje[n++] = Broj;
+      return 1;
+   }
+
+   int Izbaci(int Broj)
+   {
+      for (int i=0; i<n; ++i)
+         if (polje[i] == Broj) {
+            polje[i] = polje[--n];
+            return 1;
+         }
+      return 0;
+   }
+
+   int SumaPolja()
+   {
+      int suma = 0;
+      for (int i=0; i<n; ++i)
+         suma += polje[i];
+      return suma;
+   }
+
+   ~ RazlPolje()
+   {
+      delete[] polje;
+   }
+};

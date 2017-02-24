@@ -1,0 +1,27 @@
+char *BezDuplikata(char *ulazni_niz){
+char *novi_niz, *temp;
+	int n, i ,j ,k=0,l=0, m=0;
+	n=strlen(ulazni_niz);
+	if(n<1) return NULL;
+	temp=ulazni_niz;
+
+novi_niz=(char*) malloc (n*sizeof(char));
+	
+for(i=0; i<n ; i++){
+	for(j=i+1,k=i+1; j<n; j++,k++){
+		if(temp[i]==temp[j]){
+		while(temp[i]==temp[k]){
+			k++;
+		}
+		l=k;
+		m=j;
+		for(; k<n; k++)
+                    temp[j++]=temp[k];
+                    k=l;
+		    temp[j]='\0';
+		    j=m;
+		}
+}}
+strcpy(novi_niz, temp);
+return novi_niz;
+}

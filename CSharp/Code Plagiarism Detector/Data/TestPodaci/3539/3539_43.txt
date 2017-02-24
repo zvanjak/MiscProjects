@@ -1,0 +1,20 @@
+float prosjek(zapis *glava){
+    float prosjek=0;
+    float zbroj=0;
+    int bruc=0;
+    struct z *pom;
+    pom = glava;
+    while(pom){
+        zbroj+=pom->pros;
+        bruc++;
+        pom=pom->sljed;
+    }
+    prosjek=zbroj/bruc;
+    while(glava){
+	if(glava->pros<prosjek){
+		glava->pros=0;
+	}
+	glava=glava->sljed;
+    }
+    return prosjek;
+}

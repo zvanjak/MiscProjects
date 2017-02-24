@@ -1,0 +1,11 @@
+#include <stdio.h>
+#include <malloc.h>
+
+int *KreirajAritNiz (int n, int a0, int d){
+	int i, *niz = (int *) malloc(n * sizeof (int));
+	niz[0] = a0;
+	if (n > 1)
+		for (i = 1; i < n; i++)
+			niz[i] = niz[i-1] + d;
+	return niz;
+}

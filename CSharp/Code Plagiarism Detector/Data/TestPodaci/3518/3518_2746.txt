@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <math.h>
+
+double th( double x ) {
+   return (exp(x)-exp(-x))/(exp(x)+exp(-x));
+}
+
+double f( double x ) {
+   double ret = pow( x, sin(x) );
+   ret *= th( pow( x, exp(x) ) );
+   return ret;
+}
+
+int main(void) {
+   double deltax, x;
+   scanf( "%lf", &deltax );
+   while( scanf( "%lf", &x ) && x != 0.0 )
+      printf( "%.2lf", atan2( f(x+deltax)-f(x), deltax ) );
+   return 0;
+}

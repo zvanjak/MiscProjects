@@ -1,0 +1,7 @@
+float prosjek(FILE *f) {
+  char *a,*b;
+  float sol=0;
+  int i=0,x;
+  for(;fscanf(f,"%s,%s,%d",a,b,x)==3;i++) sol+=x;
+  return sol/i;
+}

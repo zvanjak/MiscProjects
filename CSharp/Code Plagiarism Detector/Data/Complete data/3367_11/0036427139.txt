@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main()
+{
+	char a[2];
+	int dec[2];
+        int i;
+	int rez=0;
+
+	scanf("%c %c", &a[0], &a[1]);
+	for(i=0; i<2; i++)
+		if(a[i] >= 'A' && a[i] <= 'F')
+			dec[i]= (a[i] - 'A') + 10;
+		else if(a[i] >='0' && a[i] <='9')
+			dec[i]=a[i] - '0';
+
+	rez+=(dec[0] * 16) + dec[1];
+	printf("%d", rez);
+	return 0;
+}

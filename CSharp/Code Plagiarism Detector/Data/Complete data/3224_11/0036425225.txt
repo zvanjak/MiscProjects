@@ -1,0 +1,17 @@
+#include<stdio.h>
+int main(){
+float p;
+int n,i;
+double pi,s;
+scanf("%f",&p);
+n=p;
+if((n<1 || n>400)||(p>n))printf("n nije valjan");
+else
+{
+s=0;
+for(i=1;i<=n;i++)s+=1./((4*i-1)*(4*i+1));
+pi=-s*8+4;
+printf("%9.8f",pi);
+}
+return 0;
+}

@@ -1,0 +1,28 @@
+int JelSeSijeku (Kruznica &k1, Kruznica &k2) {
+	float x1,x2,y1,y2,r1,r2,r,udaljenost;
+	
+	x1=k1.GetCenterX();
+	y1=k1.GetCenterY();
+	r1=k1.GetRadius();
+	x2=k2.GetCenterX();
+	y2=k2.GetCenterY();
+	r2=k2.GetRadius();
+	udaljenost= sqrt((x1-x2)*(x1-x2) + (y1-y2)*(y1-y2));
+	r=r1>r2?r1:r2;
+	if (x1==x2 && y1==y2 && r1==r2) return 3;
+	if (x1==x2 && y1==y2) return 0;
+	if (udaljenost<r) {
+		if(fabs(r1-r2)>udaljenost) return 0;
+		else if(fabs(r1-r2)<udaljenost) return 2;
+		else return 1;
+	}
+	else if(udaljenost > r){
+		if (r1+r2>udaljenost) return 2;
+		else if (r1+r2<udaljenost) return 0;
+		else return 1;
+	}
+	else if (udaljenost == r)return 2;
+
+	return 0;
+    
+}

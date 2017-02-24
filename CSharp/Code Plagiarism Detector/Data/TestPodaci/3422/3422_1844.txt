@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <conio.h>
+#include <ctype.h>
+
+#define MAX 100
+
+int main()
+{
+    int i=0,n,j;
+    char a[MAX+1];
+    do
+    {
+         scanf("%c",&a[i]);
+         if(a[i]=='\n' || a[i]=='\r') continue;
+         if(a[i]=='.')
+         {
+                        a[i-1]=toupper(a[i-1]);
+                        break;
+         }
+         i++;
+    } while(i<MAX);
+    a[i]='\0';
+    n=i;
+    for(i=1;i<n+1;i++)
+    {
+         if(a[0]==' ')
+         {         for(j=1;j<n+1;j++) a[j-1]=a[j];
+                   n--;
+                   continue;
+         }
+         if(a[i]==' ' || a[i]==',')
+         {
+                    a[i-1]=toupper(a[i-1]);
+                    a[i+1]=toupper(a[i+1]);
+         }
+    }
+    a[0]=toupper(a[0]);
+    printf("\n%s.",a);
+    getch();
+    return 0;
+}

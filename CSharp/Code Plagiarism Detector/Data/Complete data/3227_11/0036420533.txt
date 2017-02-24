@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+
+double m,pi; 
+float n;
+int i;  
+  scanf("%f",&n);
+  pi=0;
+  
+  if (n>0 && n<501 && n==floor(n))
+  {
+   for (i=1;i<=n;i++) {
+       m=i;
+       if (i%2==0) 
+       pi=pi-1/(2*m-1); 
+       if (i%2==1) 
+       pi=pi+1/(2*m-1);
+      }       
+      pi*=4;
+      printf("%.12f",pi);
+  
+  }   
+  else 
+  {printf("n nije valjan");} 
+        return 0;
+}    

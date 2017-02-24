@@ -1,0 +1,19 @@
+int izbaci (char *ulazni, char *podniz) {
+	int i, broj = 0, j, k = 0;
+	char polje [500];
+	do {
+		j = 0;
+		for (i=0; *(ulazni + i) != '\0'; i++) {
+			if (*(ulazni+i) != *(podniz+k)) {
+				polje[j] = *(ulazni + i);
+				j++;
+			}
+			else broj++;
+		}
+		*ulazni = '\0';
+		polje[j] = '\0';
+		strcat (ulazni, polje);
+		k++;
+	} while (*(podniz + k) != '\0');
+	return broj;
+}

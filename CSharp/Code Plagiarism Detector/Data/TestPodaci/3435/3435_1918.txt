@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main () {
+	int n, m, bro=1, naz1=1, naz2=1, i, npm;
+	scanf("%d %d", &n, &m);
+	if(m==0 || m==n)
+		npm=0;
+	else {
+	for(i=1;i<=n;i++)
+	bro*=i;
+	for(i=1;i<=m;i++)
+		naz1*=i;
+	for(i=1;i<=(n-m);i++)
+		naz2*=i;
+	npm=bro/(naz1*naz2);}
+	printf("%d", npm);
+	return 0;}

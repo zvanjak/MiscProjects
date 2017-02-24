@@ -1,0 +1,16 @@
+Krug fun4(Pravokutnik p) {
+	double visina, sirina, radijus;
+	Tocka dlk;
+
+	dlk = p.getDLkut();
+	sirina = p.getSirina();
+	visina = p.getVisina();
+
+	radijus = sqrt (sirina * sirina + visina * visina) / 2;
+
+	Tocka sred ( (dlk.X + sirina/2), (dlk.Y + visina/2) );
+
+	Krug krug (sred, radijus);
+
+	return krug;
+}

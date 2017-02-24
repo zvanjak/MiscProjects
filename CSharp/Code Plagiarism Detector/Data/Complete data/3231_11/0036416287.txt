@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<math.h>
+int main(){
+     int i,n,predznak;
+     double s,clan;
+     
+/*     printf("Unesi broj članova reda : ");*/
+     scanf("%d",&n);
+
+     if(n<1||n>30)
+         printf("n nije valjan");
+     else{
+              predznak=1;
+              clan=1;
+              s=1;
+              
+              for(i=1;i<n;i++){
+                    clan=(double)1/(pow(2,i));
+                    predznak*=-1;
+                    s+=predznak*clan;
+                    
+               }
+            /*   printf("\n 2/3=%.12g ",s);*/
+                 printf("%.12f", s);
+             }
+    return 0;
+}

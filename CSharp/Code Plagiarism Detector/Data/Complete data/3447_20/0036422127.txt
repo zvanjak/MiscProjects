@@ -1,0 +1,35 @@
+class ZatvoreniInterval{
+private:
+	float _pocetak;
+	float _kraj;
+public:
+	ZatvoreniInterval();
+	ZatvoreniInterval(float pocetak, float kraj);
+	float Duljina();
+	int BrojCijelihTocaka();
+};
+
+
+
+ZatvoreniInterval::ZatvoreniInterval(){
+	_pocetak=0;
+	_kraj=1;
+}
+
+ZatvoreniInterval::ZatvoreniInterval(float pocetak, float kraj){
+	_pocetak=pocetak;
+	_kraj=kraj;
+}
+
+float ZatvoreniInterval::Duljina(){
+	if(_pocetak>_kraj)return 0;
+	return (_kraj-_pocetak);
+}
+
+int ZatvoreniInterval::BrojCijelihTocaka(){
+	int x;
+	if(_pocetak>_kraj)return 0;
+	 x = (int )(_kraj - _pocetak) + 1;
+  
+   return x;
+}

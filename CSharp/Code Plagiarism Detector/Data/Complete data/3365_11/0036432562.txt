@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+	int a,x=0,y=0,z=0,s=0;
+	scanf("%d", &a);
+	if ((a<=999)&&(a>=100)){
+		if ((a>=250)&&(a<=950)){
+			x=a/100;
+			y=(a-100*x)/10;
+			z=a%10;
+			if (x%2==1){s=x;};
+			if (y%2==1){s+=y;};
+			if (z%2==1){s+=z;};
+			printf("%d", s);
+		}else{
+			x=a/100;
+			y=(a-100*x)/10;
+			z=a%10;
+			s=x+y+z;
+			printf("%d", s);
+		}	
+	}
+	return 0;
+}

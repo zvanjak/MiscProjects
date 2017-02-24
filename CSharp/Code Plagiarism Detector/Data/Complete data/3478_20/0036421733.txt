@@ -1,0 +1,13 @@
+Ekipa StvoriISortiraj(char *naziv)
+{
+    int i,j;
+    Ekipa momcad(naziv);
+    momcad.Napuni();
+
+    for (i=0; i<11; i++)
+        for (j=0; j<(10-i); j++)
+            if (momcad[j].VratiBroj() > momcad[j+1].VratiBroj())
+                momcad.Zamijeni(j, j+1);
+
+    return momcad;
+}

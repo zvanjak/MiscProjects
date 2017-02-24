@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+void brisi(FILE *f, int redni_broj){
+	struct natjecatelj{
+		int redni_broj;
+		char prezime [20+1];
+		int bodovi;
+	}
+	zapis;
+	int *ptr;
+	int z=0;
+	ptr=&z;
+	if(fseek(f,(long)(redni_broj-1)*sizeof(zapis),SEEK_SET)==0)
+	{
+		fwrite(ptr, sizeof(int), 1, f);
+	}
+	else 
+	{
+		printf("Pomak nije uspio");
+	}
+}

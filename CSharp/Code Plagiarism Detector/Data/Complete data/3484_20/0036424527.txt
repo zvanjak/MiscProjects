@@ -1,0 +1,147 @@
+class CjelobrojniNiz
+ {
+   public:
+
+    CjelobrojniNiz();
+    CjelobrojniNiz(int* p,int N);
+    int VecinaJednaka;
+    int Usporedi(CjelobrojniNiz niz);
+    int* VratiPresjek(CjelobrojniNiz niz , int* n);
+    ~CjelobrojniNiz();
+    CjelobrojniNiz(const CjelobrojniNiz &orig);
+   private:
+
+    int* pp;
+    int  prN;
+
+
+
+     };
+  CjelobrojniNiz::CjelobrojniNiz()
+   {
+      prN=0;
+      pp=NULL;
+      VecinaJednaka=0;
+    }
+    CjelobrojniNiz::~CjelobrojniNiz()
+     {
+         if(prN!=0)
+          {
+            free(pp);
+          }
+     }
+CjelobrojniNiz::CjelobrojniNiz(int* p,int N)
+   {   int i=0,j=0,T=0,IS1=0,IS2=0;
+       VecinaJednaka=0;
+       pp=(int*)malloc(N*(sizeof(int)));
+       prN=N;
+       for(i=0;i<N;i++)
+        {
+            *(pp+i)=*(p+i);
+
+            }
+       for(i=0;i<N;i++)
+        {
+            IS1=*(pp+i);
+
+           T=1;
+           for(j=0;j<N;j++)
+            {
+               IS2=*(pp+j);
+
+             if(i!=j && IS1==IS2)
+              {T=T+1;}
+             }
+
+           if(T > (N/2) )
+             {
+
+               VecinaJednaka=1;
+               break;
+             }
+         }
+
+
+
+
+
+}
+
+int  CjelobrojniNiz::Usporedi(CjelobrojniNiz niz)
+           {
+              int i=0;
+
+              if(prN!=niz.prN)
+                 {
+                    return 0;
+
+                     }
+              for(i=0;i<prN;i++)
+                   {
+                      if( (*(pp+i)) != (*(niz.pp+i)))
+
+                          {
+                            return 0;
+                              }
+                   }
+        return 1;
+           }
+
+int* CjelobrojniNiz::VratiPresjek(CjelobrojniNiz niz , int* n)
+           {
+             int* np=NULL;
+             int i=0,j=0,PU1=0,PU2=0,SV=0,BRC=0;
+
+
+
+             for(i=0;i<prN;i++)
+               {
+                  PU1=*(pp+i);
+                    SV=0;
+                     if(( (PU1 != *((pp+i)-1)) &&(i))  ||   (!i))
+                      {
+
+
+                        for(j=0;j<(niz.prN);j++)
+                          {
+                            PU2=*(niz.pp+j);
+
+                           if(PU1==PU2)
+                               {
+                                 SV=1;
+                                 break;
+                                }
+                            }
+                        if(SV==1)
+                         {
+                           BRC=BRC+1;
+                           np=(int*)realloc((void*)np,BRC*sizeof(int));
+
+                           *(np+BRC-1)=PU1;
+                             }
+
+                          }
+
+                     }
+
+      *n=BRC;
+      return(np);
+}
+
+
+CjelobrojniNiz::CjelobrojniNiz(const CjelobrojniNiz &orig)
+{
+    prN=orig.prN;
+    int i;
+    VecinaJednaka=orig.VecinaJednaka;
+
+    pp = (int*)malloc (prN*sizeof(int));
+
+    for(i=0;i<prN;i++)
+    {
+        *(pp+i)=*(orig.pp+i);
+        }
+
+
+    }
+

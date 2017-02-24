@@ -1,0 +1,21 @@
+#include<stdio.h>
+int main() {
+    int broj1,broj2,z,v,a1,a2,b1,b2,c1,c2,d1,d2;
+    scanf("%d %d", &broj1, &broj2);
+    a1=broj1/1000;
+    b1=(broj1 -a1*1000)/100;
+    c1=(broj1-a1*1000-b1*100)/10;
+    d1=broj1%10;
+    a2=broj2/1000;
+    b2=(broj2-a2*1000)/100;
+    c2=(broj2-a2*1000-b2*100)/10;
+    d2=broj2%10;
+    if (a1==d2 & b1==c2 & c1==b2 & d1==a2) {
+		z=a1+b1+c1+d1;
+		printf("%d",z);
+	}
+	else {v=broj1-broj2;
+		printf("%d",v);
+	}
+    return 0;
+}

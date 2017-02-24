@@ -1,0 +1,15 @@
+int br_prodanih(FILE *f, char *autor)
+{
+	char u_naziv[30+1];
+	char u_autor[20+1];
+	int u_prodano;
+	
+	int ukupno = 0;
+	fseek (f, (long) 0, SEEK_SET);
+	while(fscanf(f, "%s %s %d\n", u_naziv, u_autor, &u_prodano) == 3)
+    {
+		if(strcmp(u_autor, autor) == 0)
+            ukupno += u_prodano;
+	}
+	return(ukupno);
+}

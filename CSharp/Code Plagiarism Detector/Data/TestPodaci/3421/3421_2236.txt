@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <ctype.h>
+#define MAX 100
+int main() {
+	int n=0, duljina=0, i=0, j=0;
+	char recenica[MAX]={0};
+	do{	
+		scanf("%c", &recenica[n]);
+		n++;
+	}while(recenica[n-1]!='.');
+
+	for(i=0;i<MAX;i++){
+		if (recenica[i]!=0)duljina++;}
+
+	recenica[duljina-1]=0;
+	duljina--;
+	
+	for(i=0;i<duljina;i++){
+		if ((recenica[i]>64)&&(recenica[i]<91)) recenica[i]+=32;}
+
+	for(i=0;i<duljina;i++){
+		if (((recenica[i]==44)||(recenica[i]==32))&&(recenica[i+1]>96)&&(recenica[i+1]<123)) recenica[i+1]-=32;}
+
+	for(i=0;i<duljina;i++){
+		if ((recenica[i]==44)||(recenica[i]==32)){
+			for(j=i;j<duljina;j++){
+				recenica[j]=recenica[j+1];
+				recenica[j+1]=0;}
+			i--;
+			duljina--;
+		}
+	}
+	if (recenica[0]>96)recenica[0]-=32;
+	recenica[duljina]='.';
+	duljina++;
+
+	for(i=0;i<duljina;i++){
+		printf("%c", recenica[i]);}
+
+
+
+	
+	return 0;
+}

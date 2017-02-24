@@ -1,0 +1,24 @@
+Red *VratiBrojeve(Red *red){
+int suma,broj,pot;
+int y,x,i;
+Red pom;
+Red *novi=new Red();
+do{
+suma=0;
+pot=1;
+y=red->SkiniIzReda(&i);
+if(y!=0){
+x=pom.DodajURed(i);
+for(;i>0;i--){
+x=red->SkiniIzReda(&broj);
+x=pom.DodajURed(broj);
+suma=suma*pot + broj;
+pot *= 10;
+}
+x=novi->DodajURed(suma);
+}
+}while(y!=0);
+while(pom.SkiniIzReda(&broj)!=0)
+red->DodajURed(broj);
+return novi;
+}

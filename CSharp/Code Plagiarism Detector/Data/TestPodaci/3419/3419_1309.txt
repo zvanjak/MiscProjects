@@ -1,0 +1,29 @@
+#include<stdio.h>
+#include<math.h>
+int main(){
+int mr,ms,i,j,pozi,pozj;
+float polje[20+1][5+1],x,najveci;
+do{
+scanf("%d %d",&mr,&ms);
+}while(((mr<1) || mr>20) || ((ms<1) || (ms>5)));
+for(i=0;i<mr;i++){
+for(j=0;j<ms;j++){
+scanf("%f",&x);
+polje[i][j]=x;
+}
+}
+najveci=fabs(polje[0][0]);
+pozi=0;
+pozj=0;
+for(i=mr-1;i>=0;i--){
+for(j=ms-1;j>=0;j--){
+if(fabs(polje[i][j])>=fabs(najveci)){
+najveci=fabs(polje[i][j]);
+pozi=i;
+pozj=j;
+}
+}
+}
+printf("%d %d",pozi,pozj);
+return 0;
+}

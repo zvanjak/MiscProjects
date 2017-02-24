@@ -1,0 +1,24 @@
+void brisi(FILE *f, int redni_br)
+{
+	struct natjecatelj n;
+
+	while(!feof(f)) {
+		if(fread(&n, sizeof(n), 1, f) == 0)
+			break;
+
+		if(n.redni_br == redni_br) {
+			fseek(f, -(sizeof(n)), SEEK_CUR);
+			n.redni_br = 0;
+			fwrite(&n, sizeof(n), 1, f);
+			fflush(f);
+		}
+
+		else if(n.redni_br > redni_br) {
+			fseek(f, -(sizeof(n)), SEEK_CUR);
+			n.redni_br--;
+			fwrite(&n, sizeof(n), 1, f);
+			fflush(f);
+		}
+			
+	}
+}

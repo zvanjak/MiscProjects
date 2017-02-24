@@ -1,0 +1,14 @@
+Red *PrepisiStogURed (Stog *stog) {
+    Red *noviRed;
+    int element;
+
+    if (stog->Skini(&element)) {
+       noviRed = PrepisiStogURed(stog);
+       noviRed->DodajURed(element);
+    } else {
+    Red *nRed = new Red();
+    return nRed;
+    }
+
+return noviRed;
+}

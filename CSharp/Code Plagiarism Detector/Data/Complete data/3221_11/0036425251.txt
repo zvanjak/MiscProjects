@@ -1,0 +1,18 @@
+#include <stdio.h>
+void main () {
+	int x,A,B,d,brclanova;
+	scanf("%d", &A);
+	scanf("%d", &d);
+	scanf("%d", &B);
+	brclanova = 0;
+	x = 0;
+	if (A>B) {printf("0"); x = 1;}
+	else 
+		do {
+		A = A + d;
+		printf("%d ", A);
+		brclanova++;}
+		while (A<=B);
+	if (x!=1) printf("%d", brclanova);
+
+return 0;}

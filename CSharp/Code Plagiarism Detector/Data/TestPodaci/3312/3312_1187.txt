@@ -1,0 +1,14 @@
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+int br_prodanih(FILE *f , char *autor)
+{
+    char album[31];
+    char artist[21];
+    int prodano,ukupno=0;
+    while(fscanf(f,"%s %s %d",album,artist,&prodano)==3)
+    {
+       if(!strcmp(autor,artist)) ukupno+=prodano;
+    }
+    return ukupno;
+}

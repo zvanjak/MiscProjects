@@ -1,0 +1,26 @@
+#include<math.h>
+Red *VratiBrojeve(Red *red){
+int broj,suma;
+int y,x,i=0;
+Red pom; 
+Red *novi=new Red();
+do{
+suma=0;
+y=red->SkiniIzReda(&i);
+if(y!=0){
+x=pom.DodajURed(i);
+for(;i>0;i--){
+x=red->SkiniIzReda(&broj);
+x=pom.DodajURed(broj);
+broj=broj*pow(10,(i-1));
+suma=suma+broj;
+}
+x=novi->DodajURed(suma);
+}}while(y!=0);
+while(pom.SkiniIzReda(&broj)!=0)
+red->DodajURed(broj);
+return novi;
+}
+
+
+

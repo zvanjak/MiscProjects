@@ -1,0 +1,45 @@
+#include <stdio.h>
+
+
+int main()
+{
+	int br1, br2, z1, z2, z3, z4, x=-1, y=-2;
+
+	scanf ("%d i %d",&br1,&br2);
+	z2=br1%10;
+	z4=br2%10;
+	z1=(br1-z1)/10;
+	z3=(br2-z3)/10;
+
+	if (z2==z4)
+		x=z2;
+	else if (z2==z1)
+		x=z2;
+	else if (z2==z3)
+		x=z2;
+	else if (z4==z1 && z4!=x)
+		y=z4;
+	else if (z4==z3 && z4!=x)
+		y=z4;
+	else if (z1==z3 && z1!=x && z1!=y)
+		y=z1;
+
+	if (x<0 && y<0)
+		printf ("Nema");
+
+	if (x>0 && y>0){
+		if (x>y)
+			printf ("%d %d",y,x);
+		if (x<y)
+			printf ("%d %d",x,y);
+		if (x==y)
+			printf ("%d",x);}
+
+	if (x>0 && y<0)
+		printf ("%d",x);
+
+	if (x<0 && y>0)
+		printf ("%d",y);
+
+	return 0;
+}

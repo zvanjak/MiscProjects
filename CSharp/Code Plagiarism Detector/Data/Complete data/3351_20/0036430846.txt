@@ -1,0 +1,19 @@
+int info(FILE *f, int redni_br)
+{	
+	struct __natjecatelj
+	{
+		int redni_br;
+		char prezime[20+1];
+		int bodovi;
+	} tmp;
+
+	fseek(f, (long)(redni_br - 1), SEEK_SET);
+
+	fread(&tmp, sizeof(tmp), 1, f);
+
+	if(tmp.redni_br == 0) return -1; //zapis ne postoji
+	
+	if(tmp.bodovi>=100) return 1; // !
+
+	if(tmp.bodovi<100) return 0; // znam da ovaj if netreba, ali ... :)
+}

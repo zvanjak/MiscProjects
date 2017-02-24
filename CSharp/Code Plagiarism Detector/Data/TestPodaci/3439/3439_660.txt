@@ -1,0 +1,65 @@
+/*
+Program treba učitati broj n koji predstavlja veličinu kvadratne matrice dimenzija n
+*n (n je maksimalne veličine 20), te zatim učitati elemente matrice koji su cjelobrojne 
+vrijednosti.  Redoslijed unosa elemenata matrice jest slijedeći: prvo se unosi prvi red, 
+zatim drugi red, ...n-ti red, a unutar reda se unose elementi slijeva na desno od prvog do 
+n-tog stupca. Indeksi elemenata se počinju numerirati od 0, a završavaju sa n-1, 
+t.d. element u gornjem lijevom kutu ima indeks (0, 0), a element u donjem desnom 
+kutu ima indeks (n-1, n-1). Potrebno je provjeriti hipotezu da su svi elementi koji se 
+nalaze na parnim indeksima parni. Ako hipoteza vrijedi, potrebno je ispisati produkt 
+elemenata na glavnoj dijagonali,  a u protivnome ispisati produkt elemenata na 
+sporednoj dijagonali. Indeks elementa matrice (x, y) se smatra parnim ako su i x i y parni. 
+Voditi računa o numeriranju indeksa. Primjer: za učitani niz 2 2 3 4 5, 
+program treba ispisati 10, jer su dimenzije matrice 2*2 (prva učitana dvojka), 
+a na indeksu (0, 0) koji je jedini paran u cijeloj matrici se nalazi paran broj (2).
+Produkt elemenata na dijagonali je 10 ( = 2 * 5).
+*/
+
+#include <stdio.h>
+#define maxstup 20
+
+int main() 
+{
+	int matrica[maxstup][maxstup];
+	int n=0,z=0,umnozak=1, red, stu;
+	scanf("%d", &n);
+	for (red=0; red<n; red++)
+	{
+		for (stu =0; stu <n ; stu++)
+		{
+			scanf("%d",&matrica[red][stu]);
+		}
+	}
+	for (red=0; red<n; red++)
+	{
+		for (stu =0; stu <n ; stu++)
+		{
+			if( red%2==0 && stu%2==0)
+			{
+				if(matrica[red][stu]%2) 
+				{
+					z=1;
+					break;
+				}
+				
+			}
+		}
+		if ( z==1) break;
+	}
+	if ( z==0)
+	{
+		for (red=0; red<n; red++)
+		{
+			umnozak=umnozak * matrica[red][red];
+		}
+	}
+	else 
+	{
+		for(red = 0; red < n; red++)
+		{
+			umnozak= umnozak * matrica[red][n-1-red];
+		}
+	}
+	printf("%d",umnozak);
+	return 0;
+}

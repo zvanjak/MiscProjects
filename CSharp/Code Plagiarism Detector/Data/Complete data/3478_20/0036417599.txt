@@ -1,0 +1,16 @@
+Ekipa StvoriISortiraj(char *naziv) {
+	int i, j, min
+	char ime[];
+	strcpy (ime, *naziv);
+	Ekipa(ime);
+	Napuni ();
+	for (i=0; i<11; i++){
+		min=i;
+		for (j=i+1; j<11; j++){
+			if (igraci[j]<igraci[min]){
+				min=j;
+			}
+			Zamijeni(&igraci[i], &igraci[min]);
+		}
+	}
+};

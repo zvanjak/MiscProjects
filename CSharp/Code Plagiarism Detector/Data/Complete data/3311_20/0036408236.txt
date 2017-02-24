@@ -1,0 +1,21 @@
+float prosjek(FILE *f) {
+	struct album {
+		char naziv[30+1];
+		char autor[20+1];
+		int prodano;
+    } zapis;
+	int zbroj=0, broj_zapisa=0;
+	float prosjek;
+
+	fseek(f, 0L, SEEK_SET);
+	while(fread(&zapis, sizeof(zapis), 1, f)==1) {
+		broj_zapisa++;
+		zbroj+=zapis.prodano;
+	}
+
+	if (broj_zapisa > 0) {
+		prosjek = (float)zbroj / broj_zapisa;
+		return (prosjek);
+	} else 
+		return 0;
+}

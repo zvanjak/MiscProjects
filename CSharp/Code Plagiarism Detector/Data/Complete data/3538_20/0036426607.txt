@@ -1,0 +1,25 @@
+Red* VratiBrojeve(Red *red) {
+	Red* novi = new Red();
+	Red* tmp = new Red();
+	int elem;
+
+	int koliko = -1, trenutni;
+	while( red->SkiniIzReda(&elem) == 1) {
+	  tmp->DodajURed(elem);
+
+	  if (koliko <= 0) {
+		  trenutni = 0;
+		  koliko = elem;
+	  } else {
+		  koliko --;		
+		  trenutni = trenutni * 10 + elem;
+		  if (koliko == 0) novi->DodajURed( trenutni );
+	  }
+	}
+
+	while( tmp->SkiniIzReda(&elem) == 1) 
+	  red->DodajURed(elem);
+
+	delete tmp;
+	return novi;
+}

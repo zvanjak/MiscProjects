@@ -1,0 +1,46 @@
+#include<stdio.h>
+#include<math.h>
+
+double f(double x)
+{
+	double funkcija;
+
+	funkcija=pow(cos(1./exp(1)),sin(pow( exp(1),sin (x+1./exp(1) ) ) ));
+	return funkcija;
+}
+
+double df(double x, double deltax)
+{
+	double df;
+	df=(f(x+deltax)-f(x))/deltax;
+	return df;
+}
+
+int main(void)
+{
+	float x[50],unos;
+	double deltax, dx[50];
+	int i=0,n=0;
+
+	scanf("%Lf",&deltax);
+	
+	do
+	{
+		
+		scanf("%f",&unos);
+		if(unos!=0.0){
+			x[n]=unos;
+			n++;
+		}
+
+	}while(unos!=0.0);
+
+	for(i=0;i<n;i++)
+		dx[i]=df((double)x[i],deltax);
+
+	for(i=0;i<n;i++)
+		printf("%.2lf",atan(dx[i]));
+
+return 0;
+
+}

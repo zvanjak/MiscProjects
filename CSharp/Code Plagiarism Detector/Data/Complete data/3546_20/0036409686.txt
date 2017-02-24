@@ -1,0 +1,17 @@
+Stog* PrepisiRedUStog(Red *red){
+	int a, i, p=0;
+	Stog *stog=new(Stog);
+	Stog *bla;
+	//kontrola();
+	if(!(*red).SkiniIzReda(&a)) return stog;
+	for(i=2;i<=a/2;i++){
+		p=0;
+		if(a%i==0){
+			p++;
+			break;
+		}
+	}
+	stog=PrepisiRedUStog(red);
+	if(!p) (*stog).Stavi(a);
+	return stog;
+}

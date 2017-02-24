@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+    int a, b; 
+    float rez;
+    char c;
+
+    scanf("%d %d %c", &a, &b, &c);
+
+    switch(c) {
+        case '+': rez = a + b;
+                  break;
+        case '-': rez = a - b;
+                  break;
+        case '*': rez = a * b;
+                  break;
+        case '/': rez = a / b;
+                  break;
+        case '%': rez = a % b;
+                  break;
+        
+        default:  printf ("Neispravna");
+    }
+
+    printf(" %g", rez);
+
+
+    return 0;
+    
+    
+}
+

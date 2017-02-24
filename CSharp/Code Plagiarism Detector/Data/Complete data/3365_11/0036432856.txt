@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main () {
+   int x, s, z;
+
+   scanf("%d", &x);
+
+if (x<250 || x>950) {
+     s=x/100 + x%100/10 + x%10;
+     printf("%d", s);
+   } else if (x>=250 && x<=950) {
+     z=((x/100)%2)*(x/100) + ((x%100/10)%2)*(x%100/10) + ((x%10)%2)*(x%10);
+     printf("%d", z);
+   }
+
+return 0;
+
+}
+

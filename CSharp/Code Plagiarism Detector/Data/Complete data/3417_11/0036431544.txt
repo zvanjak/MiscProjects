@@ -1,0 +1,43 @@
+#include <stdio.h>
+int main () { 
+	 char polje[20] = {0}; 
+	 char inv[20] = {0}; 
+	 int p; 
+	 int r;
+
+	 for (p = 0; p < 20; p++) { 
+		 scanf("%c", &polje[p]); 
+		 if (!((polje[p] >= 'A' && polje[p] <= 'Z') || (polje[p] >= 'a' && polje[p] <= 'z')))
+		 {
+			 polje[p] = 0;
+			 break;
+		 }
+	 } 
+
+	 for(r = 0; r <= p-1; r++) {
+		if (polje[r] != 'a' && polje[r] != 'e' && polje[r] != 'i' && polje[r] != 'o' && polje[r] != 'u' &&
+			polje[r] != 'A' && polje[r] != 'E' && polje[r] != 'I' && polje[r] != 'O' && polje[r] != 'U')
+		{
+			if (polje[r] >= 'a' && polje[r] <= 'z') 
+				printf("%c", polje[r]-32);
+			else
+				printf("%c", polje[r]);
+		}
+	 }
+
+	 for(r = p-1; r >=0; r--) {
+		if (polje[r] != 'a' && polje[r] != 'e' && polje[r] != 'i' && polje[r] != 'o' && polje[r] != 'u' &&
+			polje[r] != 'A' && polje[r] != 'E' && polje[r] != 'I' && polje[r] != 'O' && polje[r] != 'U')
+		{
+			if (polje[r] >= 'A' && polje[r] <= 'Z') 
+				printf("%c", polje[r]+32);
+			else
+				printf("%c", polje[r]);
+		}
+	 }
+
+	 if (polje[0] == 0) 
+		 printf("-1");
+
+	 return 0; 
+}

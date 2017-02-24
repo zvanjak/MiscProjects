@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <math.h>
+
+         int main () {
+              int i=0;
+              double x=0;
+              float n;
+             
+             scanf ("%f", &n);
+             if ((n== floor(n)) && (n>0) && (n<31)){
+                while (i<n){
+                x+=pow(-1,i)/pow(2,i);
+                i++;
+                }
+                printf ("%.12f", x);
+                }
+             return 0;
+             }

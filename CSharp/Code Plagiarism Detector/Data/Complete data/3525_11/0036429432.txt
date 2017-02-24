@@ -1,0 +1,31 @@
+void funkcija(char * ulazni, char * izlazni, int * broj){
+	int i, j, pos=0, count, ponav=0;
+	char charz[255]={0};
+	for (i=0; *(ulazni+i); i++){
+		count=0;
+		for (j=0; *(ulazni+j); j++){
+			if(*(ulazni+j)==*(ulazni+i)){
+				count++;
+			}
+		}
+		if (count<2){
+			charz[*(ulazni+i)]='+';
+			pos++;
+		}else{
+			if (!charz[*(ulazni+i)]){
+				ponav++;
+			}
+			charz[*(ulazni+i)]='-';
+		}
+	}
+	count=pos;
+	for (i=0; *(ulazni+i); i++){
+		if (charz[*(ulazni+i)]=='+'){
+			count--;
+			*(izlazni+count)=*(ulazni+i);
+		}
+	}
+	*(izlazni+pos)='\0';
+	*broj=ponav;
+	return;
+}

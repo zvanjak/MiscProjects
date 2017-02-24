@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main()
+{
+	unsigned int a, b, c;
+
+	scanf("%u", &a);
+	scanf("%u", &b);
+
+	if (a <= b)
+	{
+		c = a;
+	} else {
+		c = b;
+	}
+
+	printf("%o", c);
+
+	return 0;
+}

@@ -1,0 +1,26 @@
+#include <stdio.h>
+int main () {
+	int cjelib, cjelib1, cjelib2, cjelib3, cjelib4;
+	scanf ("%d", &cjelib);
+	if(cjelib>999 && cjelib<10000)
+	{
+	cjelib1=cjelib%10;
+	cjelib2=cjelib%100;
+	cjelib2=cjelib2/10;
+	cjelib3=cjelib%1000;
+	cjelib3=cjelib3/100;
+	cjelib4=cjelib%10000;
+	cjelib4=cjelib4/1000;
+		if(cjelib1%2==0)
+			cjelib1++;
+		if(cjelib2%2==0)
+			cjelib2++;
+		if(cjelib3%2==0)
+			cjelib3++;
+		if(cjelib4%2==0)
+			cjelib4++;
+		cjelib=cjelib4*1000+cjelib3*100+cjelib2*10+cjelib1;
+        printf("%d", cjelib);
+	}
+	return 0;
+}

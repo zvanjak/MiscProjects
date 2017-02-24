@@ -1,0 +1,11 @@
+char *SvakiDrugi(char *ulazni_niz){
+	int i, k=0;
+	char niz2[1000];
+	if (*ulazni_niz==NULL) return NULL;
+	if (*ulazni_niz==' ') return NULL;
+	for (i=0; *(ulazni_niz + i )!='\0'; i=i+2){
+		niz2[k]=*(ulazni_niz + i);
+		k++;
+	}
+	return (&niz2[0]);
+}

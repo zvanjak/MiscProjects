@@ -1,0 +1,58 @@
+class SortRazlPolje{
+public:
+	SortRazlPolje()
+	{
+		_BrojElemenata = 0;
+		_MaxBrojElemenata = 10;
+		_Podaci = new int[_MaxBrojElemenata];
+	}
+	~SortRazlPolje()
+	{
+		delete []_Podaci;
+	}
+	int Dodaj(int Broj){
+		int i,flag=1;
+		int *Temp;
+		for( i=0;i < _BrojElemenata; i++ )
+		{
+			if (_Podaci[i] == Broj) flag = 0;
+		}
+		if (flag){
+			if (_BrojElemenata >= _MaxBrojElemenata)
+			{
+				Temp = new int[_BrojElemenata+1];
+				if (Temp == NULL) return 0;
+				for(i=0; i<_BrojElemenata; i++ ) Temp[i] = _Podaci[i];
+				_MaxBrojElemenata = _BrojElemenata + 1;
+				delete []_Podaci;
+				_Podaci = Temp;
+			}
+			_Podaci[_BrojElemenata] = Broj;
+			_BrojElemenata++;
+		}
+		return 1;
+	}
+	int *VratiSortPolje(int &n){
+		int i,j,korak,pom;
+		n=_BrojElemenata;
+		int *Temp = new int[_BrojElemenata]; 
+		for(i=0; i<_BrojElemenata; i++ ) Temp[i] = _Podaci[i];
+		for(korak=_BrojElemenata/2; korak>0;korak/=2){
+
+			for(i=korak;i<_BrojElemenata;i+=korak){
+				pom = Temp[i];
+				for(j = i; j>=korak && Temp[j-korak]>pom; j-=korak){
+					Temp[j]=Temp[j-korak];
+				}
+				Temp[j] = pom;
+			}
+		}
+		return Temp;
+	}
+
+
+private:
+	int *_Podaci;
+	int _BrojElemenata;
+	int _MaxBrojElemenata;
+};

@@ -1,0 +1,51 @@
+void  ConvertFromXML (char * inputField, char * outputField)
+{
+	int i;
+
+	while(1){
+		
+	while(*inputField != '>')
+		if(*inputField==0)
+			return;
+		else inputField++;
+		
+	inputField++;		
+
+	for(i=0;i<3;i++){
+
+	while(*inputField != '>')
+		if(*inputField==0)
+			return;
+		else inputField++;
+		
+	inputField++;
+	*(outputField++)='#';
+			
+	while(*inputField != '<')
+	{
+		if(*inputField==0)
+			return;
+		else
+		*(outputField++) = *(inputField++);
+	}
+	while(*inputField != '>')
+		if(*inputField==0)
+			return;
+		else inputField++;
+		
+	inputField++;
+
+	}
+	*(outputField++)='#';
+	*(outputField++)='\n';
+	
+		
+  while(*inputField != '>')
+		if(*inputField==0)
+			return;
+		else inputField++;
+		
+	inputField++;
+	}
+	
+}

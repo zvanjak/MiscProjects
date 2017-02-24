@@ -1,0 +1,25 @@
+#include<stdio.h>
+
+int main(){
+	char a,b;
+	int rez;
+	scanf("%c %c", &a,&b);
+	if('0' <= a || a <= '9')
+	{
+		a=a-'0';
+	}
+	else{
+		a=a-'A'+10;
+	}
+
+	if('0' <= b || b <= '9')
+	{
+		b=b-'0';
+	}
+	else{
+		b=b-'A'+10;
+	}
+	rez=a*16+b;
+	printf("%d\n",rez);
+	return 0;
+}

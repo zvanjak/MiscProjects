@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <math.h>
+void main ()
+{
+	int n, i;
+	double x;
+	double lnx=0;
+	
+	scanf ("%d", &n);
+	
+	/* while (n<1 || n>100)
+	{
+		printf ("n nije valjan");
+        scanf ("%d", &n);
+	}  */
+	if (n<1 || n>100){
+             printf("n nije valjan");
+             return;
+        }
+	scanf ("%lf", &x);
+         
+	/* while (x < 0 || x > 2)
+	{
+		printf ("x nije valjan");
+		scanf ("%lf", &x);	
+	} */
+        if (x<0 || x>2){
+           printf("x nije valjan");
+           return;
+        }
+
+ 
+	for (i = 1; i <= n; i++)
+	{
+		lnx = lnx + (pow(-1, i+1) * pow((x-1), i))/i;
+	}
+
+	printf ("%d %0.5f %0.12f", n, x, lnx);
+        fflush(stdout);
+	
+}

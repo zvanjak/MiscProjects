@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<math.h>
+int main(){
+	int x,broj,y,i,p,z,br;
+	scanf("%d",&broj);
+	y=0;
+	p=0;
+	br=broj;
+	if (broj<0)
+		printf("%d\n",broj);
+	else{
+		while(broj!=0){
+			x=broj%10;
+			broj=broj/10;
+			y++;
+		}
+		for(i=y; i>0; i--){
+           z=br%(int)(pow(10,i));
+		   z=z/(int)(pow(10,i-1));
+		   if (!((z%2)==0 || z==0)){
+              printf("%d",z);
+		   }else
+			   p++;
+		}if (p==y){
+		printf("0");
+		}}
+return 0; 
+}

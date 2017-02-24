@@ -1,0 +1,21 @@
+#include <stdio.h>
+int main (){
+    int broj, a, b, c, d, e, sum, raz, y;
+    scanf("%d", &broj);
+    if (broj>9999 && broj<100000){
+       a = broj / 10000 ;
+       b = (broj - a*10000) / 1000 ;
+       c = (broj - a*10000 - b*1000) / 100 ;
+       d = (broj - a*10000 - b*1000 - c*100) / 10 ;
+       e = (broj - a*10000 - b*1000 - c*100 - d*10) ;
+       sum = a + b + c + d + e;
+       if (broj%sum == 0){
+                 raz = broj - sum;
+                     printf ("%d", raz);
+                 } else {
+                   y = broj/sum;
+                   printf("%d", y);
+                 }
+       }
+       return 0;  
+}

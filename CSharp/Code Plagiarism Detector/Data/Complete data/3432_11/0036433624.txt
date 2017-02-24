@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+
+int main () {
+	int niz[101], i, j, z;
+	i=0;
+	niz[i]=0;
+	while (niz[i]!=-1) {
+		i++;
+		scanf("%d", &niz[i]);  }
+	for (j=1; j<i; j+=2) for (z=1; z<=niz[j+1]; z++) printf("%d ", niz[j]);  
+
+	return 0;
+}

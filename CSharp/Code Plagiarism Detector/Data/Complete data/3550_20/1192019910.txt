@@ -1,0 +1,62 @@
+int izbacinaj(zapis **glava){
+    float min, max;
+    zapis *p=*glava,*najb, *najl, *r;
+    
+    if (p==NULL) return 0;
+    if (p->sljed==NULL){
+       *glava=NULL;
+       return 1;
+       }
+    
+    min=p->pros;
+    max=p->pros;
+    najb=p;
+    najl=p;
+    p=p->sljed;
+    while(p!=NULL){
+       if (p->pros < min){
+           min=p->pros;
+           najl=p;
+           }
+       if (p->pros >= max){
+           max=p->pros;
+           najb=p;
+           }
+       p=p->sljed;
+       }
+    
+    p=*glava;
+    while(p!=NULL){
+       if (p==najl && najl!=NULL){
+          if (p==*glava){
+             *glava=p->sljed;
+             free(p);
+             p=*glava;
+             }
+          else{
+             for(r=*glava;r->sljed!=p;r=r->sljed);
+             r->sljed=p->sljed;
+             free(p);
+             p=r;
+             }
+          najl=NULL;
+          //continue;
+          }
+       else if (p==najb && najb!=NULL){
+          if (p==*glava){
+             *glava=p->sljed;
+             free(p);
+             p=*glava;
+             }
+          else{
+             for(r=*glava;r->sljed!=p;r=r->sljed);
+             r->sljed=p->sljed;
+             free(p);
+             p=r;
+             }
+          najb=NULL;
+          }
+       else p=p->sljed;
+       }
+    return 2;
+    }

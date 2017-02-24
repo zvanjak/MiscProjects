@@ -1,0 +1,25 @@
+#include<stdio.h>
+
+int main() {
+	int f[50]={0},i,j,umn=1,bp=0,bel=0,sim=1,x,prost;
+	
+	for (i=0;i<50;++i) {
+		scanf("%d", &x);
+		if (x<=0) break;
+		f[i]=x;
+		prost=1;
+		umn*=f[i];
+		for (j=2;j<=f[i]-1;++j) if(f[i] % j == 0) prost=0;
+		if (prost && (f[i] != 1)) ++bp;
+		++bel;
+	}
+	
+	if (bel%2 !=0) {
+		for (i=0;i<bel/2;++i) if (f[i] != f[bel-i-1]) sim=0;
+		if (sim==1) printf("Jest"); else printf("Nije");
+	}
+	else printf("%d %d", umn, bp);
+
+
+	return 0;
+}

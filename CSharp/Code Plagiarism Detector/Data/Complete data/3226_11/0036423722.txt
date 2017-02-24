@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include<math.h>
+
+int main()
+{
+	int n = 0, i = 1; 
+	long double zbr = 0;
+	scanf("%d", &n);
+	if ((n < 1) || (n > 1000)) 
+	{
+		printf("n nije valjan\n");
+		return(0);
+	}
+	while(++i <= n + 1) zbr += 1. / (double)((i - 1) * (i + 1));
+	printf("%.12Lf\n", zbr);
+	return(0);
+}

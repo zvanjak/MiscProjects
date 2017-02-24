@@ -1,0 +1,24 @@
+#include<stdio.h>
+int main() {
+    int broj,a,b,c,d,x,y,z,sum,umn;
+    scanf("%d",&broj);
+    if(broj>999 && broj<=9999)
+        {
+        a=broj/1000;
+        b=(broj/100)%10;
+        c=(broj/10)%10;
+        d=broj%10;
+        x=a*10+b;
+        y=c*10+d;
+        z=b*10+c;
+        if((x*y)%z==0)
+        {
+        sum=d+c;
+        printf("%d",sum);
+        }else{
+        umn=c*d;
+        printf("%d",umn);
+        }
+        }
+        return 0;
+        }

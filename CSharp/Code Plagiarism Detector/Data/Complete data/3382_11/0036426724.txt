@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main () {
+int x,n1,n2,d,i1,i2;
+scanf ("%d",&x);
+n1=x/100;
+n2=x%100;
+d=(x/10)%100;
+i1=(x/1000)+((x/10)%10);
+i2=((x/10)%10)*(x%10);
+
+if ((n1*n2)%d ==0) {
+printf ("%d\n",i1);
+}else{
+printf ("%d\n",i2);
+}
+return 0;
+}

@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main(){
+  char a[100+1];
+  int i=0,j,k=0,t;
+  do {
+      scanf("%c",&a[i]);
+      i++;
+      } while ((i<100) && (a[i-1] != '.'));
+  i--;
+  for (j=0;j<i;j++) if (a[j]>='a') a[j]-=32; 
+  for (j=0;j<i;j++) {
+      t=i-j-1;
+      if (a[t] != a[j]) k=1;
+      }
+  if (k == 0) printf("DA");
+     else printf("NE");	
+  return 0;
+}

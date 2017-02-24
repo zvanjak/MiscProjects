@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main()
+{
+	int n, z, p = 0;
+
+	scanf("%d", &n);
+
+	while(n > 0)
+	{
+		z = n % 10;
+
+		if(z || p)
+		{
+			printf("%d", z);
+			p = 1;
+		}		
+
+		n /= 10;
+	}
+
+	printf("\n");
+
+	return 0;
+}

@@ -1,0 +1,7 @@
+# 1 "G:\\Documents and Settings\\dcihlar\\Local Settings\\Temp\\tmp43E7.tmp"
+# 1 "<built-in>"
+# 1 "<command line>"
+# 1 "G:\\Documents and Settings\\dcihlar\\Local Settings\\Temp\\tmp43E7.tmp"
+int main() {
+ return 0;
+}

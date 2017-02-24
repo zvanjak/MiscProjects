@@ -1,0 +1,33 @@
+#include <stdio.h>
+#define MAX 10
+
+
+int main () {
+	int i, j, mat[MAX], mr, pom, n, suma=0, brzam=0;
+	do{
+		scanf("%d", &mr);
+	} while (mr<1 || mr>MAX);
+	for(i=0; i<mr; i++) {
+		for(j=0; j<mr; j++) {
+			scanf("%d", &mat[i*mr+j]);
+		}
+	}
+	do{
+		scanf("%d %d", &i, &j);
+		if(i>=0 && i<mr && j>=0 && j<mr) {
+			pom=mat[i*mr+j];
+			mat[i*mr+j]=mat[j*mr+i];
+			mat[j*mr+i]=pom;
+			brzam++;
+		}
+	} while (i>=0 && i<mr && j>=0 && j<mr);
+	scanf("%d", &n);
+	if(n>=0 && n<10) {
+		for(j=0; j<mr; j++) {
+			suma+=mat[n*mr+j];
+		}
+	}
+	else suma=-1;
+	printf("%d %d", brzam, suma);
+	return 0;
+}

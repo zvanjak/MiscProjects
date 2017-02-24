@@ -1,0 +1,23 @@
+Kalendar *Unesi(MojDatum datumi[], int broj, int *mjesec) {
+	Kalendar *novi = new Kalendar();
+	int max_ponavljanja = 0;
+	int ponavlja_mjesec[12] = {0};
+	*mjesec = 0;
+	
+	for(int i = 0; i < broj; i++) {
+		if((datumi[i].mjesec > 0) && (datumi[i].mjesec <= 12)) {
+			novi->Dodaj(datumi[i]);
+			(ponavlja_mjesec[datumi[i].mjesec - 1])++;
+		} else {
+			throw "Nedozvoljen mjesec";
+		}
+	}
+	
+	for(int i = 0; i < 12; i++) {
+		if(ponavlja_mjesec[i] > max_ponavljanja) {
+    		max_ponavljanja = ponavlja_mjesec[i];
+    		*mjesec = i + 1;
+		}
+	}
+	return novi;
+}

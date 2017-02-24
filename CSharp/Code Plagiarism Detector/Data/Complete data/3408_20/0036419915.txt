@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+char *Spoji(char *niz1,char *niz2){
+int i=0,k=0,j=0,v,s;
+char *novi;
+int *a;
+if((*niz1=='\0')||(*niz2=='\0')){
+novi =(char *)malloc(0);
+return novi;
+}
+s=strlen(niz1)+strlen(niz2);
+novi=(char *)malloc(s*sizeof(char));
+
+
+if(strlen(niz1)<strlen(niz2))
+	{k=strlen(niz1);v=strlen(niz2);}
+else
+	{k=strlen(niz2);v=strlen(niz1);}
+
+for(i=0;i<k;i++,j+=2){
+*(novi + j)=*(niz1+i);
+*(novi + j + 1)=*(niz2+i);
+}
+
+
+if(strlen(niz1)<strlen(niz2)){
+	for(i=(2*k),j=0;i<(2*k+(v-k));i++,j++){
+		*(novi+ i)=*(niz2+((i-j)/2)+j);
+	}
+}
+
+if(strlen(niz1)>strlen(niz2)){
+	for(i=(2*k),j=0;i<(2*k+(v-k));i++,j++){
+		*(novi+ i)=*(niz1+((i-j)/2)+j);
+	}
+}
+
+return (char *)novi;
+}

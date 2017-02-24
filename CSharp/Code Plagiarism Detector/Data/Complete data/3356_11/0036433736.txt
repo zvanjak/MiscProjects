@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int main(){
+  
+  int n=0, m=0;
+  char c;
+  int b[4];
+  int i;
+  
+  scanf("%d %d %c", &n, &m, &c);
+  
+  if(n<0 || m<1 || m>3 || c!='L' && c!='R'){
+    printf("Error");
+  }
+  else{
+    b[0]=n/100;
+    b[1]=n%100/10;
+    b[2]=n%10;
+    
+    for(i=0; i<m; i++){
+      if(c=='L'){
+        b[3]=b[0];
+        b[0]=b[1];
+        b[1]=b[2];
+        b[2]=b[3];
+      }
+      else{
+        b[3]=b[2];
+        b[2]=b[1];
+        b[1]=b[0];
+        b[0]=b[3];
+      }
+    }
+    
+    printf("%d%d%d", b[0], b[1], b[2]);
+  }
+
+  return 0;
+}

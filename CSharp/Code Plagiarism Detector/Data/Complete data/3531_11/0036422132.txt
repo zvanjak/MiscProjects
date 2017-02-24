@@ -1,0 +1,28 @@
+void zamjeni ( char *ulazni, int *broj)
+{
+  int i,j=0, slova= 0, znamenka= 0, ostalo= 0,kb;
+  char pom[max]={0};
+  for (i = 0 ; i < max ; i ++){
+
+if (isalpha(ulazni[i])) {
+                        slova++;
+                        if (slova > 1) ulazni[i] = tolower(ulazni[i]);
+                        else ulazni[i] = toupper(ulazni[i]);
+                            
+                        }
+else if (isdigit(ulazni[i])){
+     znamenka++;                     
+     ulazni[i] = '!';
+       
+         }     
+          
+else if (isprint (ulazni[i])) {
+     ostalo++;
+     ulazni[i] = '?';
+}
+}
+ 
+if (( slova > znamenka ) && ( slova > ostalo ) ) *broj =  slova;
+else if (( znamenka > slova ) && ( znamenka  > ostalo ) ) *broj = znamenka ;
+else if (( ostalo > slova ) && ( ostalo > znamenka ) ) *broj = ostalo ;
+}

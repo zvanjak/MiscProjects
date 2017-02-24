@@ -1,0 +1,6 @@
+void rStrncpy(char *a, char *b, int n){
+    kontrola();
+    if (n==0) return;
+    b[n-1]=a[n-1];
+    rStrncpy(a,b,n-1);
+    }

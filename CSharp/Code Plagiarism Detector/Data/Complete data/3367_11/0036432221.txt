@@ -1,0 +1,26 @@
+#include <stdio.h> 
+int main () {
+	char a,b,c,d;
+	int x;
+	scanf("%c %c",&a,&b);
+	x=0;
+	c=a;
+	d=b;
+	if (a<=70 && a>=65) {
+		a=a-55;
+	    x=a*16; }
+	else
+	    if (a>=48 && a<=57) {
+		    a=a-48;
+		    x=16*a; }
+	if (b>='A' && b<='F') {
+		b=b-55;
+		x=x+b; }
+	else
+	    if (b>='0' && b<='9') {
+		    b=b-48;
+		    x=x+b; }
+		printf("%i",x);
+
+	return 0;
+}

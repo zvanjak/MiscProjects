@@ -1,0 +1,17 @@
+#include<math.h>
+void AritSred_StdDev(DinamickoPolje &polje, float *ArSred, float *StdDev) {
+	int brEl = polje.BrojElemenata();
+	int i, trenutni;
+	float sred, suma = 0;
+
+	for (i = 0; i < brEl; i++) {
+		suma += polje.DohvatiElement(i);
+	}
+	*ArSred = sred = suma/brEl;
+	suma = 0;
+	for (i = 0; i < brEl; i++) {
+		trenutni = polje.DohvatiElement(i);
+		suma += pow(trenutni - sred, 2);
+	}
+	*StdDev = sqrt(suma/(brEl*(brEl-1)));
+}

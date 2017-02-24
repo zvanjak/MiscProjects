@@ -1,0 +1,29 @@
+int *napraviPolje(int *A, int Na, int *B, int Nb, int *Nc){
+    int *p, i, j , k = 0;
+    if(Na == 0 || Nb == 0){
+          return NULL;
+    }
+    *Nc = 0;
+    p = (int *) malloc(sizeof(int));
+
+    for(i = 0; i < Na; i++){
+    
+          for(j = 0; j < Nb ; j++){
+             if(*(A + i) < *(B + j)){
+                k++;
+             }
+          }
+        if(k == Nb){
+                if(*Nc != 0){
+                realloc(p , ((*Nc)+ 1) * sizeof(int));
+                }
+            *(p + (*Nc)) = *(A + i);
+            *Nc++;
+          }
+        k = 0;
+    }
+    return p;
+}
+ 
+      
+          

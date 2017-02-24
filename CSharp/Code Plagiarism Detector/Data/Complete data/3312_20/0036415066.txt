@@ -1,0 +1,10 @@
+int br_prodanih(FILE *f, char *autor) {
+	char fNaziv[31], fAutor[21];
+	int fProdano, ukProdano=0;
+	
+	while (fscanf (f, "%s %s %d\n", fNaziv, fAutor, &fProdano) == 3) {
+		if (!strcmp (autor, fAutor))
+			ukProdano += fProdano;
+	}
+	return (ukProdano);
+}

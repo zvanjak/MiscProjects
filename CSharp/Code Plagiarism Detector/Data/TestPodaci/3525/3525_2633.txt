@@ -1,0 +1,61 @@
+#include<stdio.h>
+#include<string.h>
+
+void funkcija(char *ulazni,char *izlazni,int *broj)
+{
+   
+    int i=0;
+    int j=0;
+    int k;
+    int l;
+    char c;
+    char temp[50]={'\0'};
+    strcpy(temp,ulazni);
+    (*broj) = 0;
+
+    while(temp[i]!='\0')
+    {
+        j=i+1;
+        while(temp[j]!='\0')
+        {
+            if(temp[i]==temp[j])
+            {
+                (*broj)++;
+               
+                    k=0;
+                    l=0;
+                    c=temp[i];
+                    while(temp[k]!='\0'){
+                        if(temp[k]==c){
+                            l=k;
+                            while(temp[l]!='\0'){
+                                temp[l]=temp[l+1];
+                                l++;
+                            }
+                            k=-1;
+                        }
+                        k++;
+                    }
+
+                i--;
+                break;
+            }
+            j++;
+        }
+        i++;
+    }
+    
+    i=0;
+    while(temp[i]!='\0')
+        i++;
+    j=0;
+    i--;
+    while(i>=0){
+        izlazni[j]=temp[i];
+        j++;
+        i--;
+    }
+    izlazni[j]='\0';
+ }
+
+

@@ -1,0 +1,14 @@
+int zamijeni(char *ulazni, char *prvi, char *drugi){
+	char *i;
+	int j,k,br=0;
+	do{
+		for(k=0;drugi[k]!='\0';k++);
+		i=strstr(ulazni,prvi);
+		if (i!=NULL){
+			for(j=0;j<k;j++)
+				*(i+j)=drugi[j];
+			br++;
+		}
+	}while(i!=NULL);
+	return br;
+}

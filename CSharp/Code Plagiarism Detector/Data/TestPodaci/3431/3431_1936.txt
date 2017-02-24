@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+
+int main()
+{
+    char c;
+    int polje[100],suma=0,i,n;
+    for(i=0;i<100;i++)
+    {
+        scanf(" %c",&c);
+        if( !( (c>='0' && c<='9') || (c>='a' && c<='f') || (c>='A' && c<='F') ) ) break;
+        c-=48;
+        if(c>9) c-=7;
+        if(c>15) c-=32;
+        polje[i]=c;
+        if(polje[i]%2==0) suma+=polje[i];
+        else suma-=polje[i];
+    }
+    printf("%d",suma);
+    
+}

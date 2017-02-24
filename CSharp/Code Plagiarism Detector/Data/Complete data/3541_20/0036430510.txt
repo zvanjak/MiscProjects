@@ -1,0 +1,37 @@
+int izbaciZ(zapis** glava)
+{
+        float pros = 0;
+        long broj = 0;
+        zapis** node = glava;
+
+        while(*node)
+        {
+                pros += (*node)->pros;
+                ++broj;
+
+                node = &(*node)->sljed;
+        }
+
+        pros /= broj;
+
+        node = glava;
+        broj = 0;
+
+        while(*node)
+        {
+                if((*node)->pros < pros && (*node)->spol == 'Z')
+                {
+                        zapis* tmp = *node;
+
+                        *node = (*node)->sljed;
+
+                        free(tmp);
+
+                        ++broj;
+                }
+                else
+                        node = &(*node)->sljed;
+        }
+
+        return broj;
+}

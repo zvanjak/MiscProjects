@@ -1,0 +1,26 @@
+int main() {
+    int a[20][20], hipoteza, glavna=1, sporedna=1,n,i,j;
+    do
+    scanf("%d",&n);
+    while ( (n<0) || (n>20) );
+  
+    for (i=0;i<n;i++) 
+     for (j=0;j<n;j++)
+         scanf("%d",&a[i][j]);
+      hipoteza=1;                 
+    for (i=0;i<n;i++) 
+     for (j=0;j<n;j++)  {
+         if ( (!(i%2)) && (!(j%2)) && (a[i][j]%2) )  
+           hipoteza = 0;
+      if (i==j)  {
+         glavna*=a[i][i];             
+         sporedna*=a[i][n-1-i];          
+                  }
+                               }
+       
+      if ( hipoteza == 1 ) printf("%d",glavna);      
+                                                   
+      else printf("%d",sporedna);                  
+    
+      return 0;
+      }

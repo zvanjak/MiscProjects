@@ -1,0 +1,14 @@
+int Memoriraj(Radio& radio){
+int br=1;
+	Stanica s1;
+	while(br<=6){
+s1=radio.TraziSljedecu();
+if (s1==radio.Dohvati(1))
+			break;
+else if (strlen(s1.RDS())){
+	radio.MemorirajStanicu(s1,br);
+	br++;
+}
+	}
+	return br-1;	
+}

@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <malloc.h>
+
+int main()
+{
+	char *broj = NULL;
+
+	broj = (char*) malloc(128);
+
+	scanf("%s", broj);
+
+	if (broj[0] == '-') 
+	{
+		printf("n nije pozitivan");
+		return 0;
+	}
+
+	while (*broj != NULL)
+	{
+		printf("%c", *broj);
+		broj++;
+		if (*broj != NULL) printf (" ");
+	}
+
+	return 0;
+}

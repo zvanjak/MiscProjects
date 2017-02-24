@@ -1,0 +1,30 @@
+#include<stdio.h>
+
+int mr,i,j,mat[10][10],q,zam,n,suma;
+
+int main(){
+    do
+    scanf("%d",&mr);
+    while ((mr<1) || (mr>10));
+    for(i=0;i<mr;i++)
+        for(j=0;j<mr;j++)
+            scanf("%d",&mat[i][j]);
+    i=0; j=0;
+    do{
+        scanf("%d%d",&i,&j);
+        if (((i>-1)&&(i<mr))&&((j>-1)&&(j<mr))){
+            q=mat[i][j];
+            mat[i][j]=mat[j][i];
+            mat[j][i]=q;
+            zam++;
+        }
+    }while (((i>-1)&&(i<mr))&&((j>-1)&&(j<mr)));
+    scanf("%d",&n);
+    if((n>-1)&&(n<mr))
+        for(i=0;i<mr;i++){
+            suma=suma+mat[n][i];
+        }
+    else suma=-1;
+    printf("%d %d",zam,suma);
+    return 0;
+}

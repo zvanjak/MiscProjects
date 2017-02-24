@@ -1,0 +1,18 @@
+#include <stdio.h>
+int main()
+{
+	int n,m;
+	do{
+		scanf("%d", &n);
+		if (n>0){
+			printf("%d ", n);
+			m=0;
+			while (n>0){
+				m=10*m+n%10;
+				n/=10;
+			}printf("%d\n", m);
+			n=1;
+		}
+	}while (n>0);
+	return 0;
+}

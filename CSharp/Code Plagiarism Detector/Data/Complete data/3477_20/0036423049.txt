@@ -1,0 +1,55 @@
+class Recenica {
+
+private:
+	int broj_znakova;
+	char *recenica;
+	int kraj;
+
+public:
+	Recenica () {
+		this -> broj_znakova = 10;
+		this -> kraj = 0;
+		this -> recenica = (char*) malloc (broj_znakova);
+	}
+
+	Recenica (Recenica &copy){
+		this -> broj_znakova = copy.broj_znakova;
+		this -> kraj = copy.kraj;
+		this -> recenica = new char[broj_znakova];
+		for (int i=0; i<broj_znakova; i++)
+			this -> recenica[i] = copy.recenica[i];
+	}
+
+	void UcitajZnak (char znak) {
+		if ( broj_znakova <= kraj ) {
+			this -> broj_znakova += 10;
+			this -> recenica = (char *) realloc (recenica, broj_znakova);
+		}
+		this -> recenica [kraj] = znak;
+		kraj++;
+	}
+
+	int PrebrojiRijeci () {
+		int brojac=0, prosli=0, i;
+		for ( i=0; i<kraj; i++ ) {
+			if ( (recenica[i]==' ' || recenica[i]==',') && prosli){
+				brojac++;
+				prosli = 0;
+			}
+			if ( !(recenica[i]==' ' || recenica[i]==',') )
+				prosli = 1;
+		}
+		if (prosli)
+			brojac++;
+		return brojac;
+	}
+
+
+	int PrebrojiZareze () {
+		int brojac = 0, i;
+		for ( i=0; i<kraj; i++ )
+			if ( recenica[i]==',') 
+				brojac++;
+		return brojac;
+	}
+};

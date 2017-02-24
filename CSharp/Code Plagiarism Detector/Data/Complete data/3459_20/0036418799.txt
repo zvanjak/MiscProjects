@@ -1,0 +1,33 @@
+void AritSred_StdDev(DinamickoPolje &polje, float *ArSred, float *StdDev) {
+
+	int n, i;
+	float SD=0; // Standardna devijacija
+	float Suma=0; // Suma svih clanova
+	float ArSr=0; // Aritmeticka sredina
+	float tr=0; 
+
+	/* broj elemenata u N */ 
+	int N = polje.BrojElemenata(); 
+
+	/* Suma svih elemenata */ 
+	for (i=0; i<N; i++) 
+		Suma += polje.DohvatiElement(i); 
+
+	/* Aritmeticka Sredina */ 
+	ArSr = Suma/N; 
+
+	/* Racun za Sumu Reda */ 
+	for (i=0; i<N; i++) { 
+		tr = (float) polje.DohvatiElement(i); 
+		SD += (tr - ArSr) * (tr - ArSr); 
+	} 
+
+	/* Dovrsetak racuna Stand. Devijacije */ 
+	SD /= (N*(N-1));
+	SD = sqrt(SD); 
+
+	/* Spremi vrijednosti (call by reference) */ 
+	*ArSred = ArSr; 
+	*StdDev = SD; 
+    
+}

@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <math.h>
+int main ()
+{
+int n,i=1;
+double b;
+double suma=0,pi;
+scanf("%lf",&b);
+n=(int)b;
+if ((n<1)||(n>100)||(b!=(double)n))
+    {printf("n nije valjan");
+    }
+else
+  {
+    for (i=1; i<=n; i=i+1)
+     {
+       suma=(suma+1/float(i*i));
+
+
+
+
+     }
+    pi=sqrt(suma*6);
+    printf("%.12lf",pi);
+  }
+return 0;
+}

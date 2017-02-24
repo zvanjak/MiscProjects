@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+
+int main()
+{static int n,i,a;
+double e, ep;
+
+scanf("%d",&n);
+if(n<1 || n>30) printf("n nije valjan");
+else
+{
+e=0;
+ep=0;
+a=1;
+for(i=1;i<=n;i++)
+{if(i==1)
+ {a=1;
+ ep=1;
+ }
+else {a*=(i-1);
+if(i%2==0) ep-=1./a;
+else ep+=1./a;
+ }
+}
+e=1./ep;
+printf("%.12f",e);
+}
+return 0;
+}

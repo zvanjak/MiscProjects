@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <conio.h>
+
+int a, prvi, drugi, treci, cetvrti;
+
+main()
+{
+	scanf("%d", &a);
+	
+	
+	prvi = a / 1000;
+	drugi = (a % 1000)/100;
+	treci = (a % 100)/10;
+	cetvrti = (a % 10);
+	
+	if((prvi*drugi*treci*cetvrti) % 2 == 0)
+			printf("%d", cetvrti); 
+		else 
+			printf("%d", prvi);
+
+	
+	
+	
+	return 0;
+
+	
+	
+	
+
+}
+
+
+
+
+	
+

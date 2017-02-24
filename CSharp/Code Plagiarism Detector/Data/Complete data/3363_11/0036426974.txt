@@ -1,0 +1,22 @@
+#include <stdio.h>
+int main (){
+	unsigned int a,b;
+	int r=0;
+    char c;
+		scanf ( "%d %d %c",&a,&b,&c );
+        if (c=='+')
+			r=a+b;
+		else if (c=='-')
+			r=a-b;
+		else if (c=='*')
+			r=a*b;
+		else if (c=='/')
+			r=a/b;
+		else if (c=='%')
+			r=a%b;
+		else {
+			printf ("Neispravna");
+			return 0;}
+
+ printf ("%d",r);
+ return 0;}

@@ -1,0 +1,23 @@
+#include <stdio.h>
+int main()
+{
+	int polje [50], element, broj=0, i, ispisano =0,j;
+	for (i=0;i<50;i++){
+		scanf("%d", &element);
+		if (element<0)break;
+		else polje [i]=element;
+		broj++;
+	}
+	for (i=0; i<broj;i++)
+	{
+		for (j=0; j<polje[i];j++)
+		{
+			if (!ispisano) {
+				printf("%d",i);
+				ispisano=1;
+			}
+			else printf (" %d",i);
+		}
+	}
+	return 0;
+}

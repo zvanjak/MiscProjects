@@ -1,0 +1,18 @@
+#include<stdio.h>
+#include<math.h>
+int main () {
+	int n,i=0;
+	double pi,k=0;
+	scanf("%d", &n);
+	if ((n<1)||(n>400)) {
+		printf( "n nije valjan");
+		return 0;
+	}
+	while(i<=n) {
+		k+=pow((i*2.+1.),-2);
+		i++;
+		pi=sqrt(k*8.);
+	}
+	printf("%.12f",pi);
+	return 0;
+}

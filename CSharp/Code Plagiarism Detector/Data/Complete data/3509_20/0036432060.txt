@@ -1,0 +1,83 @@
+struct student{
+char ime[20+1];
+char prezime[30+1];
+char jmbag[10+1];
+int ocjena;
+};
+
+typedef struct student tip;
+
+
+struct lista1 {
+tip stud;
+struct lista1 *sljed;
+};
+
+typedef struct lista1 atom;
+
+int brojElementa(atom *glava);
+
+int dodaj (atom **glavap, tip element);
+
+int minOcjena(atom *glava);
+
+float prosjOcjena(atom *glava);
+
+int izbaciPrezimeSadrzi(atom **glavap, char *prezimePodniz);
+
+
+int brojElementa(atom *glava) {
+	if (glava->sljed) return (1+ brojElementa(glava->sljed));
+	return 1;};
+
+int dodaj (atom **glavap, tip element) {
+	atom *pomocni;
+	pomocni=(atom *)malloc(sizeof(atom));
+	if (pomocni) {pomocni->stud = element;
+			pomocni->sljed = *glavap;
+			*glavap=pomocni;
+			return 1;};
+	return 0;
+	};
+
+int minOcjena(atom *glava) {
+	int min;
+	if (!glava) return -1;
+	min=glava->stud.ocjena;
+	while (glava) {glava=glava->sljed;
+			if ((glava)&&(glava->stud.ocjena <min)) 
+                               min=glava->stud.ocjena;
+			};
+	return min;
+	};
+
+float prosjOcjena(atom *glava){
+	int broj=0;
+	float rez=0;
+	if (!glava) return -1;
+	while (glava) {
+		broj++;
+		rez+=glava->stud.ocjena;
+                glava=glava->sljed;
+		};
+	rez=rez/broj;
+	return rez;
+	};
+
+int izbaciPrezimeSadrzi (atom **glavap, char *prezimepodniz) {
+	atom *pom, *zadnji;
+	int broj=0;
+	zadnji=*glavap;
+	pom= *glavap;
+	while (pom) {
+		if (strncmp(prezimepodniz, pom->stud.prezime, (int)strlen(prezimepodniz))) {
+			if (zadnji==*glavap) {*glavap=pom->sljed;};
+			zadnji->sljed=pom->sljed;
+			free (pom);
+			broj++;
+			};
+		zadnji=zadnji->sljed;
+		pom=pom->sljed;
+		};
+	return broj;
+	};

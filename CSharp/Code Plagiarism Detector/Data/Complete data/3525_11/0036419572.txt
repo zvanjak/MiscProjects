@@ -1,0 +1,42 @@
+void funkcija (char *ulazni, char *izlazni, int *broj) {
+	
+	int i=0, j, k=0;
+	int brojac[300]={0};
+	
+	
+	while (ulazni[i] != '\0') {
+		i++;
+	}
+	
+	for (j = 0; j <= i; j++) {
+		brojac[ulazni[j]]++;
+	}
+	
+	
+	
+	for (j = i; j >= 0; j--) {
+		if (brojac[ulazni[j]] <= 1) {
+			izlazni[k] = ulazni[j];
+			k++;
+		} 
+	}
+	
+	
+	izlazni[k] = '\0';
+	
+	
+	for (j = 0; j < 300; j++) {
+		if (brojac[j] > 1) {
+			(*broj)++;
+		}
+	}
+
+}
+
+
+
+
+		
+
+
+

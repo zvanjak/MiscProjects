@@ -1,0 +1,8 @@
+void PrepisiStogURed( Stog *stog, Red *red ) {
+   int el;
+   if( stog->Skini( &el ) ) {
+      PrepisiStogURed( stog, red );
+      if( el % 2 == 0 ) red->DodajURed( el );
+      else stog->Stavi( el );
+   } 
+}

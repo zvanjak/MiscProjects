@@ -1,0 +1,39 @@
+#include<stdio.h>
+int main(){
+	int a, b, c, i;
+	b=1;
+	i=1000;
+	scanf("%d", &a);
+	if (((a>-10000) && (a<=-1000))||((a>=1000) && (a<10000))){
+			c=a/i;
+			b=c%2;
+			if (b != 0){
+				a=a-(c*i);
+				i=i/10;
+				c=a/i;
+				b=c%2;
+				
+				if (b != 0){
+					a=a-(c*i);
+					i=i/10;
+					c=a/i;
+					b=c%2;
+					
+				
+					if (b != 0){
+						a=a-(c*i);
+						i=i/10;
+						c=a/i;
+						b=c%2;
+						
+						if(b != 0){
+							a=a-(c*i);
+						}
+					}
+				}
+			}
+	printf("%d\n", a);
+	}
+	
+	return 0;
+}

@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int *KreirajAritNiz(int n, int a0, int d) {
+    int *polje, a=a0, i;
+    polje=(int *) malloc(n * sizeof(int));
+    for(i=0; i<n; i++) {
+             polje[i]=a;
+             a+=d;
+             }
+    return polje;
+}

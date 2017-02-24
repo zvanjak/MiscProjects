@@ -1,0 +1,8 @@
+int Sortirano(cvor *glava){
+	if(glava==NULL ||((glava->desno==NULL)&&(glava->lijevo==NULL))) return 1;
+	if((glava->desno)!=NULL){
+		if(((glava->desno)->id)<(glava->id)) return 0;}
+	if((glava->lijevo)!=NULL)
+		if(((glava->lijevo)->id)>(glava->id)) return 0;
+
+	return (Sortirano(glava->desno)*Sortirano(glava->lijevo));}

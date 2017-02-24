@@ -1,0 +1,25 @@
+void ubaci(char *niz, char *podniz, int i){
+   char novi[512];
+   int j,k;
+   
+   if (i>=0 && i<=strlen(niz)){
+   	  for(j=0;j<i;j++)
+         novi[j]=niz[j];
+
+      for(k=j;k-j<strlen(podniz);k++)
+         novi[k]=podniz[k-j];
+
+      for(j=k;niz[j-strlen(podniz)];j++)
+         novi[j]=niz[j-strlen(podniz)];
+      novi[j]=0;
+
+      for(j=0;novi[j];j++)
+         niz[j]=novi[j];
+      niz[j]=0;
+      }
+   else
+      for(j=0;niz[j];j++)
+         if (niz[j]>='a' && niz[j]<='z')
+            niz[j]-=32;
+   return;
+}

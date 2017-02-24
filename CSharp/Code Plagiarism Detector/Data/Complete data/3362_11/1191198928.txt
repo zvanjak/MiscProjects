@@ -1,0 +1,18 @@
+#include <stdio.h>
+int main ()
+{
+int n,a,b,c,d,r;
+scanf("%d",&n);
+n=n%10000;
+
+a=n%10;
+b=(n%100)/10;
+c=(n%1000)/100;
+d=(n%10000)/1000;
+r=a*1000+b*100+c*10+d*1;
+
+printf("%d",r);
+
+return 0;
+
+}

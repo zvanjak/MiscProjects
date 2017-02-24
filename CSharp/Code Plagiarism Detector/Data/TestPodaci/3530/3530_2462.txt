@@ -1,0 +1,55 @@
+void izbaciUljeza (char *ulazni) {
+	int velika = 0, mala = 0, znamenke = 0, duljina = -1;
+	char *temp, *tmp;
+
+	temp = ulazni;
+
+	for (; *temp != 0; temp++){
+		if (*temp >= 'A' && *temp <= 'Z') velika++;
+		if (*temp >= 'a' && *temp <= 'z') mala++;
+		if (*temp >= '0' && *temp <= '9') znamenke++;
+	}
+
+	temp = ulazni;
+
+	if (znamenke < mala && znamenke < velika) {
+		for (; *temp != 0; temp++) {
+			tmp = temp;
+			if (*tmp >= '0' && *tmp <= '9') {
+				do {
+					*tmp = *(tmp+1);
+					tmp++;
+				} while (*tmp != 0);
+				temp--;
+			}
+		}
+	}
+
+	else if (mala < znamenke && mala < velika) {
+		for (; *temp != 0; temp++)
+			if (*temp >= 'a' && *temp <= 'z') *temp = *temp - 32;
+	}
+
+	else if (velika < znamenke && velika < mala) {
+		for (; *temp != 0; temp++)
+			if (*temp >= 'A' && *temp <= 'Z') *temp = *temp + 32;
+	} 
+	else {
+		for (; *temp != 0; temp++) {
+			tmp = temp;
+			if (*tmp >= '0' && *tmp <= '9') {
+				do {
+					*tmp = *(tmp+1);
+					tmp++;
+				} while (*tmp != 0);
+				temp--;
+			}
+		}
+		tmp = ulazni;
+		for (; *tmp != 0; tmp++, duljina++)
+			if (*tmp >= 'A' && *tmp <= 'Z') *tmp = *tmp + 32;
+		tmp = ulazni;
+		if (*tmp >= 'a' && *tmp <= 'z') *tmp = *tmp - 32;
+		if (*(tmp+duljina) >= 'a' && *(tmp+duljina) <= 'z') *(tmp+duljina) = *(tmp+duljina) - 32;
+	}
+}

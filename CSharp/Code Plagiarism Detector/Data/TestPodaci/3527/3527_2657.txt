@@ -1,0 +1,15 @@
+#include <string.h>
+
+int izbaciDuplikate (char *ulazni) {
+	int brojac=0, i;
+	char *c;
+
+	for (i=0;ulazni[i]!=0;i++) {
+		while (c=strchr ((ulazni+i+1), *(ulazni+i))) {
+			brojac++;
+			do c[0]=c[1]; while (*(c++)!=0);
+		}
+	}
+
+	return brojac;
+}

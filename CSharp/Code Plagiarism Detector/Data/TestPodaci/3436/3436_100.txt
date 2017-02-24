@@ -1,0 +1,94 @@
+/*
+Tko je pobijedio u igri križić/kružić na polju dimenzija n*n? 
+Napisati program koji prvo učitava prirodni broj n koji određuje veličinu kvadratne matrice
+dimenzija n*n, te zatim za svaki element matrice učitava znak koji je iz skupa 
+{'X', 'O' (slovo O), '-' (označava da element matrice nije popunjen)}. 
+Redoslijed unosa elemenata matrice jest slijedeći: 
+prvo se unosi prvi red, zatim drugi red, ...n-ti red,
+a unutar reda se unose elementi slijeva na desno od prvog do n-tog stupca. 
+Ishodi igre su slijedeći: pobijedio je križić ili je pobijedio 
+kružić ili je ishod igre neriješen, te program u skladu s tim treba ispisati 'X' ili 'O' 
+(slovo O) ili '-'. Pobjednik je onaj znak ('X' ili 'O')  koji ispunjava u 
+potpunosti bilo koji redak, bilo koji stupac ili bilo koju dijagonalu matrice. 
+Primjer: za ulazni niz 3\nXOX-XOXOO program kao izlaz treba ispisati znak 'X' 
+(jer su svi elementi na sporednoj dijagonali matrice jednaki 'X', 
+a za ulazni niz 2 --XO, treba ispisati "-"
+jer nije pobijedio niti 'X' niti 'O'.*/
+#include <stdio.h>
+#define maxstup 20
+char checkRedak(int index, int n, char *matrica)
+{
+	int i;
+	char rez = matrica[index*maxstup+0];
+	for(i = 0; i<n; i++)
+	{
+		if( rez != matrica[index*maxstup+i])
+			return '-';
+	}
+	return rez;
+}
+char checkStupac(int index,int n, char *matrica)
+{
+	int i;
+	char rez = matrica[0* maxstup+index];
+	for(i = 0; i<n; i++)
+	{
+		if( rez != matrica[i*maxstup+index])
+			return '-';
+	}
+	return rez;
+}
+char checkGlavnaDijagonala(int n, char *matrica)
+{
+	int i;
+	char rez = matrica[0];
+	for(i = 0; i<n;i++)
+	{
+		if(rez != matrica[i*maxstup+i]) return '-';
+	}
+	return rez;
+}
+char checkSporednaDijagonala(int n, char *matrica)
+{
+	int i;
+	char rez = matrica[0* maxstup+n-1];
+	for(i = 0; i<n;i++)
+	{
+		if(rez != matrica[i*maxstup+(n-1-i)]) return '-';
+	}
+	return rez;
+}
+int main() 
+{
+	char matrica[maxstup][maxstup];
+	int n=0, j,red, stu;
+	char c,p, rez ='-';
+	scanf("%d\n", &n);
+	for (red=0; red<n; red++)
+	{
+		for (stu =0; stu <n ; stu++)
+		{
+			scanf("%c",&matrica[red][stu]);
+		}
+	}
+	for(j =0; j<n;j ++)
+	{
+		if(checkRedak(j, n, matrica) != '-') 
+		{
+			rez = checkRedak(j, n, matrica);
+			break;
+		}
+	}
+	for(j =0; j<n;j ++)
+	{
+		if(checkStupac(j, n, matrica) != '-') 
+		{
+			rez = checkStupac(j,n,  matrica);
+			break;
+		}
+	}
+	if(checkGlavnaDijagonala(n, matrica) != '-') rez = checkGlavnaDijagonala(n, matrica);
+	if(checkSporednaDijagonala(n, matrica) != '-') rez = checkSporednaDijagonala(n, matrica);
+	printf("%c", rez);
+	return 0;
+}

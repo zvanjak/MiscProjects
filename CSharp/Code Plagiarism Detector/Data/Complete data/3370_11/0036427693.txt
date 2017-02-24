@@ -1,0 +1,54 @@
+#include <stdio.h>
+int main () 
+ { int a, b;
+   int x, y, z, w, k, l;
+   
+   scanf("%d %d",&a, &b);
+   {if ((a<=99 && a>=10)&& (b<=99 && b>=10))
+    
+     {y=(a % 10);
+      x=(a / 10);
+      w=(b % 10);
+      z=(b / 10);
+	  k=0;
+	  l=0;
+	  if (x<y){
+     if ((x==z) || (x==w))
+         k=x;
+     if ((y==z) || (y==w))
+		 l=y;  }
+     }           	
+
+
+     {if (x>y) {
+     if ((x==z) || (x==w))
+         l=x;
+     if ((y==z) || (y==w))
+		 k=y; }
+     }
+
+     {if ((x==y) && (z!=w))
+     if ((x==z) || (x==w))
+         k=x;
+     }
+
+
+     {if ((x==y) && (z==w))
+     if ((x==z) || (x==w))
+         {k=x;
+         }  
+     }
+     
+     if ((k!=0) && (l!=0)) 
+		 printf("%d %d",k, l);
+     if ((k!=0) && (l==0))
+		 printf("%d",k); 
+     if ((k==0) && (l!=0))
+		 printf("%d",l);  
+     if ((k==0) && (l==0))
+         printf("Nema");
+
+}
+return 0;
+}
+     	  

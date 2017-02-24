@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int br_prodanih (FILE *f, char *autor)
+{
+int broj=0, b;
+char ime [30+1], autor2 [30+1]; 
+while ((fscanf (f, "%s[^ ] %s[^ ] %d[^ ] %*c", ime, autor2, &b)==3))
+	if (strcmp (autor2, autor)==0) 
+              broj+=b;
+return broj;
+}

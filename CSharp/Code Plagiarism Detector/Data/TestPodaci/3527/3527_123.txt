@@ -1,0 +1,19 @@
+int izbaciDuplikate (char * ulazni)     {
+        char *temp=(char *)malloc(sizeof(ulazni));
+        int duljina = strlen(ulazni);
+        int i,j,k,br=0;
+        strcpy(temp,ulazni);
+        for (i = 0; i < duljina - 1 ; ++i){
+                for (j = i+1 ; j < duljina ; ++j)
+                        if ( temp[j] == temp[i] ) {
+                                duljina--;
+                                for (k = j; k < duljina ;++k)
+                                        temp[k]=temp[k+1];
+                        j=j-1;
+                        }
+        }
+        br = strlen(ulazni) - duljina;
+        temp[duljina]='\0';
+        strcpy(ulazni,temp);
+        return br;
+}

@@ -1,0 +1,38 @@
+#include<stdio.h>
+#include<math.h>
+#define max 50
+
+double funkcija1 (double x){
+double y;
+y= (pow(x,sinh(x))*cosh(x*x));
+return y;
+}
+
+int main(){
+	int i=0, j;
+	double dx, y,  polje[max+1], kut[max+1];
+	float niz[max+1], a, x;
+	scanf("%lf", &dx);
+	while(1){
+		scanf("%f", &a);
+		if(((int)a >= 0 && a<= 1 && a!=0.0)){
+			niz[i] = a;
+			i++;
+		}else{
+			break;
+		}
+	}
+	for (j=0; j<i; j++){
+		x=niz[j];
+		polje[j]=((funkcija1(x+dx)-funkcija1(x))/(dx));
+		printf("%lf ", polje[j]); 
+	}
+	for (j=0; j<i; j++){
+		x=niz[j];
+		kut[j]=(atan(polje[j]/x));
+		printf("%.2lf ", kut[j]);
+	}
+	return 0;
+}
+   
+

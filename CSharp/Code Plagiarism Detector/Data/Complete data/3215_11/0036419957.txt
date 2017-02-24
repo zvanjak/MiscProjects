@@ -1,0 +1,19 @@
+#include<stdio.h>
+int main(){
+	int a,brojparnih,brojneparnih;
+	brojparnih=0;
+	brojneparnih=0;
+		do	{	
+			//printf("unesite broj a: ");
+			scanf("%d", &a);
+			
+				if(a%2==0 && a>0)
+					brojparnih++;
+				else if(a>0)
+					brojneparnih++;}
+		while(a!=0);
+												
+	printf("%d %d", brojparnih, brojneparnih);
+	//system("pause");
+	return 0;
+}

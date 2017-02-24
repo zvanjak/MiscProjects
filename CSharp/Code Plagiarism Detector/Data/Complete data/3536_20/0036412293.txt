@@ -1,0 +1,20 @@
+void UmetniPrijePrvogNeparnog(Stog *stog,int broj)
+{
+        Stog *pom= new Stog();
+        int el;
+        do{
+        if(stog->Skini(&el)==0)
+          {stog->Stavi(broj);
+          break;}
+        else{
+                if((el%2)==0) pom->Stavi(el);
+                else{
+                     stog->Stavi(el);
+                     stog->Stavi(broj);
+                     break;}
+                }
+                } while(1);
+        while(pom->Skini(&el))
+                stog->Stavi(el);
+        delete pom;
+}

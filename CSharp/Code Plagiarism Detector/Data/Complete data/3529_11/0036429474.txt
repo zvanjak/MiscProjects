@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <string.h>
+
+void spoji(char *ime, char *prezime, char *JMBAG, char *izlazni) {
+	int br;
+	
+	while (*prezime) {
+		if (*prezime != ' ') strncat(izlazni, prezime, 1);
+		prezime++;
+	}
+	strcat(izlazni, ", ");
+
+	while (*ime) {
+		if (*ime != ' ') strncat(izlazni, ime, 1);
+		ime++;
+	}
+	strcat(izlazni, ": ");
+	
+	/*	Pomicem pokazivac na prvi znak razlicit od ' ' */
+	while (*JMBAG == ' ' && *JMBAG) JMBAG++;
+	
+	/*	Prebrojavam znakove niza razlicite od ' ' */
+	br = 0;
+	while (*(JMBAG + br) != ' ' && *(JMBAG + br)) br++;
+	
+	if (br < 6) {
+		while (br < 6) {
+			strcat(izlazni, "0");
+			br++;
+		}
+	} else {
+		JMBAG += br - 6;
+	}
+	
+	while (*JMBAG) {
+		if (*JMBAG != ' ') strncat(izlazni, JMBAG, 1);
+		JMBAG++;
+	}
+	
+	strcat(izlazni, "\0");
+
+	return;
+}

@@ -1,0 +1,29 @@
+int najbolji(FILE *f){
+
+struct natjecatelj{
+int redni_br;
+char prezime[20+1];
+int bodovi;
+}a;
+int z,i,l,n;
+fseek(f,0,SEEK_END);
+
+z=ftell(f)/sizeof(struct natjecatelj);
+fseek(f,0,SEEK_SET);
+
+for(i=0;i<1;i++){
+fread(&a,sizeof(struct natjecatelj),1,f);
+n=a.bodovi;}
+
+for(i=1;i<z;i++){
+fread(&a,sizeof(struct natjecatelj),1,f);
+if(a.redni_br!=0){
+
+if(a.bodovi>n){
+n=a.bodovi;
+l=a.redni_br;
+}
+}
+}
+return l;
+}

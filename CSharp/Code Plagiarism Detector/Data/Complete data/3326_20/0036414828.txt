@@ -1,0 +1,10 @@
+void AritSred_StdDev(float *p, int n, float *ArSred, float *StdDev){
+	int i;
+	float zbroj=0;
+	*ArSred=0;
+	for(i=0;i<n;i++)	*ArSred += p[i];	*ArSred = *ArSred / (float)n;
+	for(i=0;i<n;i++){
+		zbroj = zbroj + ((float)pow((p[i]-(*ArSred)),2));
+		*StdDev = (float)sqrt(zbroj/(n*(n-1)));
+	}
+}

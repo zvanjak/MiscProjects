@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <math.h>
+
+int main (){
+
+int i;
+float n,x,p;
+double log=0,s=0;
+
+scanf("%f",&n);
+
+   if ( (n<1) || (n>100) || (n!=(int)(n)) )
+       printf ("n nije valjan");
+
+   else{
+       scanf("%f",&x);
+       p=x-1;
+
+    if ( (x>0) && (x<2) ){
+         for(i=1;i<=n;i++){
+
+    if (i%2==0) s=-(pow(p,i))/i;
+
+    else s=(pow(p,i))/i;
+        log=log+s;
+     }
+    printf("%.0f %1.5f %1.12f",n,x,log);
+     }
+   else printf("x nije valjan");
+     }
+   scanf("%d",&i);
+
+   return 0;
+}
+
+

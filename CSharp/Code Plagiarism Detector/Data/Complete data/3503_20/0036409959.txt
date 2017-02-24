@@ -1,0 +1,8 @@
+int ModElementa(cvor *glava, char *naziv){
+int i; i=0; 
+
+if (glava->lijevo != NULL) i=ModElementa ( glava->lijevo, naziv);
+if (glava->desno != NULL) i=ModElementa ( glava->desno, naziv);
+if (glava->naziv == naziv) i+=1;
+return i;
+}

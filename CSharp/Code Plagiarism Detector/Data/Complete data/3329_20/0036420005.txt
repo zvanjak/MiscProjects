@@ -1,0 +1,9 @@
+float *KreirajGeomNiz(int n,float q0,float q) {
+	float *polje;
+	int i;
+	polje=(float*)malloc(n*sizeof(float));
+	for(i=0;i<n;i++) {
+		polje[i]=q0*pow(q,i);
+	}
+	return polje;
+}

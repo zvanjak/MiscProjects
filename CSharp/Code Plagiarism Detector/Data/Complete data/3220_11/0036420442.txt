@@ -1,0 +1,20 @@
+#include <stdio.h>
+int main ()
+{
+    int x,z,y,p;
+    scanf("%d",&x);
+    if(x>0) {
+            y=0; p=1;
+            while (x>0){
+                  z=x%10;
+                  if(z%2 != 0) {
+                               y=y + p*z;
+                               p=p*10;
+                               }
+                  x=x/10;
+                      }
+            printf("%d",y);
+            }
+    else printf("%d", x);
+    return 0;
+}

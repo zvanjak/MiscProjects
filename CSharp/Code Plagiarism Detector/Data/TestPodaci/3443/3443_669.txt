@@ -1,0 +1,25 @@
+/*
+Program treba ucitati prirodni broj n >= 2, 
+te zatim izračunati izraz i ispisati dobivenu vrijednost. Izraz je slijedeci: 
+n             n
+? (i-1) + ? i2  
+i=2          i=0
+Primjer: za ucitani broj 3 program treba ispisati 16 
+
+*/
+#include <stdio.h>
+int main() 
+{
+	int n,i, umn1=1, suma2=0;
+	scanf("%d", &n);
+	for (i=0; i<=n; i++)
+	{
+		suma2 = suma2 + (i*i);
+	}
+	for (i=2; i<=n; i++)
+	{
+		umn1 = umn1 * (i-1);
+	}
+	printf("%d",umn1+suma2);
+	return 0;
+}

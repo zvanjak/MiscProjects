@@ -1,0 +1,89 @@
+class CjelobrojniNiz
+{
+public:
+int *polje;
+int br_elem;
+int VecinaJednaka;
+
+CjelobrojniNiz(const CjelobrojniNiz &copy)
+{ 
+	int i;
+	br_elem = copy.br_elem;
+	polje = (int*) malloc (br_elem*sizeof(int));
+	if( polje == NULL ) throw "Nema memorije";
+	for(i=0; i < br_elem; i++) 
+		polje[i] = copy.polje[i];
+	VecinaJednaka = copy.VecinaJednaka;
+}
+
+CjelobrojniNiz::CjelobrojniNiz(int *adresa, int n)
+{
+	int i, j, jednaki;
+	br_elem = n;
+	polje = (int *)malloc(br_elem*sizeof(int));
+	for(i = 0; i < n; i++)
+	{
+		polje[i] = adresa[i];
+	}
+	VecinaJednaka=0;
+	for(i = 0; i < n; i++)
+	{
+		jednaki=0;
+		for(j = 0; j < n; j++)
+			if(polje[i] == polje[j])
+				jednaki++;
+		if(jednaki > br_elem/2)
+			VecinaJednaka=1;
+	}   
+}
+
+int CjelobrojniNiz::Usporedi(CjelobrojniNiz niz)
+{
+	int i, jednaki = 1;
+	if(niz.br_elem != br_elem)  return 0;
+	for(i = 0; i < niz.br_elem; i++)
+		if(polje[i] != niz.polje[i])
+			jednaki = 0;
+	return jednaki;
+}
+
+int * VratiPresjek(CjelobrojniNiz niz,int *n)
+{
+	int i=0,j=0,k=0;
+	int *novi=NULL;
+	while (i<br_elem && j<niz.br_elem)
+	{
+		if (polje[i]==niz.polje[j])
+		{		
+			if (i>0 && j>0)
+			{
+				if ( (polje[i]==polje[i-1]) && (niz.polje[j]==niz.polje[j-1]))
+				{
+					i++;
+					j++; 
+					continue;
+				}
+			}
+			novi=(int*)realloc(novi,(k+2)*sizeof(int));
+			if( novi == NULL ) throw "Nema memorije";
+			novi[k]=polje[i];
+			k++;
+			i++;
+			j++;
+		}
+		else
+		{
+			if (polje[i]>niz.polje[j]) j++;
+			if (polje[i]<niz.polje[j]) i++;
+		}
+	}
+*n=k;
+return novi;
+}
+
+~CjelobrojniNiz() 
+{
+free(polje);
+}
+
+};

@@ -1,0 +1,29 @@
+#include <stdio.h>
+int main () {
+	int broj;
+    int broj_znamenaka=0;
+    int zbroj_znamenaka=0;
+ponovo :
+	scanf ("%d",&broj);
+	if (broj != 0) {
+		if (broj > 0) {
+			do {
+				zbroj_znamenaka+=broj%10;
+                broj/=10;
+                broj_znamenaka++;
+			}while (broj);
+			goto ponovo;
+		}else {
+			broj = -broj;
+			do {
+				zbroj_znamenaka+=broj%10;
+                broj/=10;
+                broj_znamenaka++;
+			}while (broj);
+			goto ponovo;
+		}
+	}
+	printf ("%d ",broj_znamenaka);
+	printf ("%d",zbroj_znamenaka);
+	return 0;
+}

@@ -1,0 +1,36 @@
+#include <stdio.h>
+#define MAX 100
+
+int main() {
+	int n, i, br=0, j=0, brnula=0;
+	int polje[MAX], brdijeljenja=0;
+
+	do {
+		printf("Upisi broj elemenata polja: ");
+		scanf("%d", &n);
+	} while (n<1 || n>100);
+
+	for (i=0; i<n; i++) {
+		printf("\npolje[%d]= ", i);
+		scanf("%d", &polje[i]);
+	}
+
+	while (1) {
+		printf("\nUpisi indeks nekog clana polja: ");
+		scanf("%d", &j);
+		if(j<0 || j>i || j==n) break;
+		printf("\nUpisi cijeli broj: ");
+		scanf("%d", &br);
+
+		if(j<0 || j>i || j==n) break;
+		else {
+			polje[j]/=br;
+			brdijeljenja++;
+		}
+
+		if (polje[j]==0) brnula++;
+	}
+	printf("%d %d", brnula, brdijeljenja);
+
+	return 0;
+}

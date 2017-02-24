@@ -1,0 +1,7 @@
+int br_prodanih(FILE *f, char *autor) {
+struct album t;
+int ret = 0;
+while( fread( &t, sizeof t, 1, f ) )
+if( !strcmp( t.autor, autor ) ) ret += t.prodano;
+return ret;
+}

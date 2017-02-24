@@ -1,0 +1,6 @@
+int niz (int i)
+{
+	kontrola();
+	if (i<=2) return i;
+	return niz(i-1) + 2*niz(i-2) - niz(i-3);
+}

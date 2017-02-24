@@ -1,0 +1,29 @@
+#include<stdio.h>
+#include<math.h>
+void maxaps(int *prvamat,int *drugamat,int brRedPrva,int brStupPrva,int maxStupPrva,int brRedDruga,int brStupDruga,int maxStupDruga,int niz[]){
+	int a,b,c,max,d,umn=0,kontrola=0;
+	if(brStupPrva==brRedDruga){
+	for(a=0;a<brRedPrva;a++){
+		for(b=0;b<brStupDruga;b++){
+                for(c=0;c<brStupPrva;c++){
+					umn+=(*(prvamat+maxStupPrva*a+c))*(*(drugamat+b+c*maxStupDruga));}
+				if(umn!=1) kontrola++;
+				umn=0;
+		}
+	}
+	}
+	if((brStupPrva==brRedDruga)&&(kontrola==0)){
+		for(a=0;a<brRedPrva;a++){
+			d=(*(prvamat+a*maxStupPrva));
+			for(b=0;b<brStupPrva;b++){
+				max=*(prvamat+a*maxStupPrva+b);
+				if (abs(max)>abs(d))d=max;}
+			niz[a]=d;}
+	}else {
+		for(a=0;a<brStupPrva;a++){
+			d=*(prvamat+a);
+			for(b=0;b<brRedPrva;b++){
+				max=(*(prvamat+a+b*maxStupPrva));
+				if (max<d)d=max;}
+			niz[a]=d;}
+	}}

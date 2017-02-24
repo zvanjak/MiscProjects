@@ -1,0 +1,61 @@
+#include <stdio.h>
+
+#define maxred 20
+#define maxst 5
+
+int main () {
+	int mr, ms;
+	int i, j, control, umnozak;
+    	int mat[maxred][maxst];
+
+	do {
+		scanf("%d %d", &mr, &ms);
+	} 
+	while(mr < 1 || mr > 20 || ms < 1 || ms > 5);
+
+	for(i=0; i<mr; i++)
+	{
+		for(j=0; j<ms; j++)
+		{
+			scanf("%d", &mat[i][j]);
+		}
+	}
+	
+	control = 1;
+	if (mr%2)
+	{
+		for(i=0; i<(mr/2); i++)
+		{ 
+	      		for(j=0; j<ms; j++)
+			{ 
+				if (mat[i][j] != mat[mr-i-1][j])
+				{ 
+					control = 0; 
+				} 
+      			} 
+		} 
+
+
+		if (control) 
+			printf("Jest"); 
+		else
+			printf("Nije");
+
+	} else {
+
+		umnozak = 1;
+		for(i=0; i<mr; i++)
+		{
+			for(j=0; j<ms; j++)
+			{
+				if (i%2==0 && j%2==0)
+				{
+					umnozak*=mat[i][j];
+				}
+			}
+		}
+		printf("%d", umnozak);
+	}
+
+	return 0;
+}

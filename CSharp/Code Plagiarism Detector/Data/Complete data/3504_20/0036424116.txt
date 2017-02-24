@@ -1,0 +1,89 @@
+typedef struct
+{
+	char ime[20+1];
+	char prezime[30+1];
+	char jmbag[10+1];
+	int ocjena;
+} tip;
+
+typedef struct at
+{
+	tip element;
+	struct at *sljed;
+} atom;
+
+int brojElementa(atom *glava)
+{
+	int n=0;
+	while (glava)
+	{
+		n++;
+		glava = glava->sljed;
+	}
+	return n;
+}
+
+int dodaj (atom **glavap, tip element)
+{
+	atom *novi;
+	if (novi = (atom *) malloc(sizeof(atom)))
+	{
+		novi->element = element;
+		novi->sljed = *glavap;
+		*glavap = novi;
+		return 1;
+	}
+	return 0;
+}
+
+int minOcjena(atom *glava)
+{
+	int min;
+	if (glava==NULL) return -1;
+	min = glava->element.ocjena;
+	while (glava->sljed)
+	{
+		glava = glava->sljed;
+		if (glava->element.ocjena < min) min = glava->element.ocjena;
+	}
+	return min;
+}
+
+float prosjOcjena(atom *glava)
+{
+	int s=0, br=0;
+	if (glava==NULL) return -1;
+	while (glava)
+	{
+		br++;
+		s += glava->element.ocjena;
+		glava = glava->sljed;
+	}
+	return (float) s / br;
+}
+
+int izbaciImeSadrzi (atom **glavap, char *imePodniz)
+{
+	int n=0;
+    atom *p1, *p2;
+    while (1)
+	{
+		for (p1=*glavap;(p1)&&(!strstr(p1->element.ime, imePodniz)); p1=p1->sljed);
+		if (p1==NULL) return n;
+		if (p1==*glavap)
+		{
+			p2 = (*glavap)->sljed;
+			free(*glavap);
+			*glavap = p2;
+			n++;
+		}
+		else 
+		{
+			for (p2=*glavap; p2->sljed!=p1; p2=p2->sljed);
+			p2->sljed = p1->sljed;
+			free(p1);
+			n++;
+		}
+	}
+	return n;
+}

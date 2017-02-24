@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <math.h>
+
+void main() {
+	int n, i;
+	double pi, suma=0.0;
+
+	scanf ("%d", &n);
+	if (n<1 || n>30) printf("n nije valjan");
+	else {
+		for(i=1; i<=n; i++)
+		suma += (double) 1./pow(i,6);
+		
+		pi = pow(945*suma,1./6);
+		printf ("%.12f", pi);
+
+	}
+}

@@ -1,0 +1,22 @@
+# include <stdio.h>
+int main (){
+	int d, g, n, i, suma=0;
+	
+	scanf ("%d %d", &d, &g);
+	if (d>0 && g>0 && g>d){
+		do {
+		
+		scanf ("%d", &n);
+		}while (d<n && n<g);
+		for (i=1; i<=n; i++){
+				if (i%2 ==0){
+					suma = suma + i;}}
+		/*printf ("%d", suma);*/
+                printf ("%d ", suma);
+
+                }
+	else 
+		/*printf ("d i g nisu valjani");*/
+                printf ("D i G nisu valjani");
+return 0;		
+}

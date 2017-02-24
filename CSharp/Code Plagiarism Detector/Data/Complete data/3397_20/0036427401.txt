@@ -1,0 +1,14 @@
+int* napraviPolje(int *A, int Na, int a, int b, int* Nc) {
+   int i, j, *novopolje;
+   if( a > b ) return NULL;
+
+   for( i = *Nc = 0; i < Na; ++i )
+      if( A[i] >= a && A[i] <= b ) (*Nc)++;
+
+   novopolje = (int *) malloc( (*Nc) * sizeof(int) );
+
+   for( i = j = 0; i < Na; ++i )
+      if( A[i] >= a && A[i] <= b ) novopolje[j++] = A[i];
+
+   return novopolje;
+}

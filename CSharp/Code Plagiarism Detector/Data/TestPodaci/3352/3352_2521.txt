@@ -1,0 +1,22 @@
+int veci_od(FILE *f, int n)
+{
+         int br=0;
+         struct natjecatelj{
+               int redni_br;
+               char prezime[21];
+               int bodovi;
+         } nat;
+         fread(&nat, sizeof(nat), 1, *f);
+         if(nat.bodovi>n)
+         br++;
+         while(nat.redni_br!=EOF)
+         {
+               fread(&nat, sizeof(nat), 1, *f);
+               if(nat.redni_br=='0')
+               continue;
+               else if(nat.bodovi>n)
+               br++;
+         }
+         return br;
+}
+                

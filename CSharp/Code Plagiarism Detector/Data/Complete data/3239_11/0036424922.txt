@@ -1,0 +1,17 @@
+     #include <stdio.h>
+main (){
+	int d, g, n, suma=0, i;
+	scanf("%d %d", &d, &g);
+	if (d>0 && g>0 && g>d) {
+          for (n = d; n <=g; n++) { suma = 0;
+				for (i = 1; i <=n; i++)
+					if(i % 2 == 0) suma += i;
+                    if( n == d ) printf("%d", suma); else printf(" %d", suma);
+                                  }
+                           
+                           }
+	else printf("D i G nisu valjani");
+ 
+
+ return 0;
+ }

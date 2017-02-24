@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <conio.h>
+int main()
+{int A,B,C,d,E;
+    scanf ("%i,%i,%i",&A,&B,&d);
+    if (A>B) /*printf ("\nbroj članova niza je nula");*/
+           printf("0");
+    else if (A>0)&&(B>0) 
+    do {A=A+d; 
+        printf ("%i ",A);}
+    while (A<B);
+
+    C=A+d;
+    printf ("%i ",C);
+    E=(B/d);
+
+    /*printf("\nbroj clanova niza je %i",E);*/
+    printf("%i", E);
+
+    else if (A<0)&&(B>0) 
+    do {A=A+d; 
+    printf ("%i ",A);}
+    while (A<B);
+    C=A+d;
+    printf ("%i ",C);
+    A=-A; 
+    E=(A+B)/d;
+
+/*    printf("\nbroj clanova niza je %i",E);*/
+    printf("%i", E);
+
+    else (A<0)&&(B<0) 
+    do {A=A+d; 
+    printf ("%i ",A);}
+    while (A<B);
+    C=A+d;
+    printf ("%i ",C);
+    A=-A; 
+    B=-B; 
+    E=(A-B)/d; 
+/*    printf("\nbroj clanova niza je %i",E);     */
+    printf("%i", E);
+/*getche ();*/
+return 0;
+}
+
+

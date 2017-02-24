@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <math.h>
+int main (){
+	float n;
+	int n1, i;
+	double a, niz;
+	scanf("%f", &n);
+	n1 = n;
+	if (n<1 || n>30 || n!=n1){
+		printf("n nije valjan");
+	}else{
+		niz = 1;
+		a = 1;
+		for (i=2; i<=n; i++){
+			niz = niz + pow(-1, i-1)/a;
+			a = a*i;
+		}printf("%.12lf", 1/niz);
+	}return 0;
+}

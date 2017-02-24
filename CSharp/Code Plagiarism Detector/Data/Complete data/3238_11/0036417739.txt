@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <math.h> 
+
+
+
+int main() 
+{ 
+ int n,i; 
+
+ double sum = 0,pi; 
+ 
+
+
+ 
+ scanf("%d",&n); 
+ 
+ if (n<1 || n >25) { 
+  printf("n nije valjan"); 
+  return 0; 
+ } 
+
+for(i=1;i<=n;i++){
+
+                 sum=sum+1./pow(i,8);
+                      
+                 } 
+          
+                 pi=9450*sum;
+                 pi=pow(pi,1./8);
+                 
+ 
+ printf("%16.16f",pi); 
+ 
+ return 0; 
+ 
+}                      

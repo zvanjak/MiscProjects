@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main() {
+	int par=0, nep=0, n;
+
+	while(n!=0){
+		scanf("%d",&n);
+		if(n%2==0 && n>=1) par++;
+		else if(n%2!=0 && n>=1) nep++;
+	}
+	printf("%d %d",par, nep);
+	return 0;
+}

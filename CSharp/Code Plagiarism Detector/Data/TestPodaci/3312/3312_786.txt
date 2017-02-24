@@ -1,0 +1,13 @@
+int br_prodanih(FILE *f, char *autor){
+
+	char naz[30+1], aut[20+1];
+	int prod, suma = 0;
+
+	while(fscanf(f, "%s%*c%s%*c%d", aut, naz, &prod) != EOF){
+
+		if (strcmp(aut, autor) == 0) suma += prod;
+	}
+
+	return suma;
+
+}

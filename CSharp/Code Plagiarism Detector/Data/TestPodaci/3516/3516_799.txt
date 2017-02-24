@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <math.h>
+
+#define E 2.7182818284590452353602874713527
+
+double funkc (double x) {
+
+	double temp;
+
+	temp = pow (E, sin (x + 1 / E));
+
+	return cos ( pow (1 / E, sin (temp)));
+}
+
+int main () {
+
+	int i;
+	int brojac = 0;
+	double deltaX;
+	float x;
+	double derivacija[50];
+	
+	scanf ("%lf", &deltaX);
+
+
+	for (i = 0; i < 50; i++) {
+
+		scanf ("%f", &x);
+
+		if (x == 0)
+			break;
+
+		derivacija[i] = (funkc (x + deltaX) - funkc (x)) / deltaX;
+	}
+
+	brojac = i;
+
+	for (i = 0; i < brojac; i++) {
+		
+		printf ("%.2lf", atan (derivacija[i]));
+	
+	}
+return 0;
+}

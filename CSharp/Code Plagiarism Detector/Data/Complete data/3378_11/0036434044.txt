@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+	int br_odr_sati, br_nom_sati, bruto_cij; 
+    double netto_placa, bruto_placa;
+
+	scanf("%d %d %d", &br_odr_sati, &br_nom_sati ,&bruto_cij); 
+
+	if ((br_odr_sati > 0) && (br_nom_sati > 0) && (bruto_cij > 0)) 
+
+	{
+
+		if (br_odr_sati==br_nom_sati) 
+					bruto_placa = br_odr_sati*bruto_cij;
+		else if (br_odr_sati<br_nom_sati)
+					bruto_placa = br_odr_sati*bruto_cij*0.9;
+		else 
+					bruto_placa = br_odr_sati*bruto_cij*1.15;
+			
+	
+		if (bruto_placa>6000) 
+					netto_placa = 0.7*bruto_placa;
+		else 
+					netto_placa = 0.8*bruto_placa;
+
+		printf("%.2f",netto_placa);	
+	}
+		
+
+return(0);
+}

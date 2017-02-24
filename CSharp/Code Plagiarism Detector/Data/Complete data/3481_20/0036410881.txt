@@ -1,0 +1,14 @@
+int Memoriraj(Radio& radio){
+Stanica pocetna;
+Stanica stana;
+int brojac=1;
+pocetna=stana=radio.TraziSljedecu();
+do{
+if(stana.RDS()[0]!=0){
+radio.MemorirajStanicu(stana,brojac);
+brojac++;
+}
+stana=radio.TraziSljedecu();
+}while(brojac<7&&pocetna!=stana);
+return brojac--;
+}

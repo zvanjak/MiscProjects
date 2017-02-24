@@ -1,0 +1,16 @@
+#include<stdio.h>
+#include<math.h>
+int main(){
+int n, i;
+double broj=0, pi;
+scanf("%d",&n);
+if(n>=1 && n<=100){
+for(i=0; i<n; i++){
+broj+=pow(-1,i)*(1/pow(i,2));
+}
+pi=sqrt(12*broj);
+printf("%.12d",pi);
+}
+else printf("n nije valjan");
+return 0;
+}

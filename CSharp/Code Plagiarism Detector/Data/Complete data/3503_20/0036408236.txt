@@ -1,0 +1,15 @@
+#include <stdlib.h>
+
+int ModElementa (cvor *glava, char *naziv) {
+	int retval_1, retval_2;
+	if (glava != NULL) {
+		if (strcmp(glava->naziv, naziv) == 0) {
+			retval_1 = ModElementa (glava->lijevo, naziv) + 1 + ModElementa (glava->desno, naziv);
+			return retval_1;
+		} else {
+			retval_2 = ModElementa (glava->lijevo, naziv) + ModElementa (glava->desno, naziv);
+			return retval_2;
+		}
+	}
+	else return 0;
+}

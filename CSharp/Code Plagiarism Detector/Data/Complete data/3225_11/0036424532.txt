@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<math.h>
+main()
+{
+	int n,i,b=1;
+	double pi,naz,raz,sum=0;
+	scanf("%d",&n);
+	if(n>=1&&n<=400)
+	{
+		for(i=1;i<=n;i++)
+		{
+			naz=b*b;
+			raz=1./naz;
+			sum=sum+raz;
+			b=b+2;
+		}
+		pi=sqrt(8*sum);
+		printf("%.12f",pi);
+	}
+	else
+		printf("n nije valjan");
+	return(0);
+}

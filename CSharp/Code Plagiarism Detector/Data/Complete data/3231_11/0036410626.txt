@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <math.h>
+
+
+void main()
+{
+
+	float n, broj = 1;
+	int i;
+
+	scanf( "%f", &n );
+
+	if( (( (int) n) != n)  || ( (n<=0) || (n>30) ) ) 
+	{
+		printf("n nije valjan");
+		return;
+	}
+
+	for( i = 1; i<=n; i++ )
+	{
+		broj += pow( -1, i ) / pow( 2, i );
+
+	}
+
+
+	printf( "%13.12f", broj);
+
+
+
+}

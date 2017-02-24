@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<math.h>
+
+#define MAX 100
+#define MIN 1
+
+void main ()
+{
+	int n;
+        int i;
+	double pi=0;
+	scanf("%d", &n);
+	if(n<MIN || n>MAX)
+	{
+		printf("n nije valjan");
+	}
+	else
+	{
+		for(i=1;i<=n;i++)
+		{
+			pi+=pow(-1,(i%2)+1)*(1/pow((double)i,2));
+		}
+		pi=sqrt(12*pi);
+		printf("%.12f",pi);
+	}
+}

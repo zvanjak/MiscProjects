@@ -1,0 +1,28 @@
+#include <stdio.h>
+int main() {
+	int i=0,x,y,a=0,b=0,c=0,d=0;
+	int k=2;
+	do{
+		scanf ("%d %d",&x,&y);
+		if (x || y){
+		
+			if (x>=0 && y>=0){
+			a++;
+			}
+			if (x<=0 && y>=0){
+			b++;
+			}
+			if (x<=0 && y<=0){
+			c++;
+			}
+			if (x>=0 && y<=0){
+			d++;
+			}
+			i++;
+		}else{
+			k=0;
+		}
+	} while((x!=0 || y!=0)&&(i<100));
+	printf ("%d %d %d %d\n", a, b, c, d);
+	return 0;
+}

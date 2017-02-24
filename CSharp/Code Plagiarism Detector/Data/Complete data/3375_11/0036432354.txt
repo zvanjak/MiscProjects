@@ -1,0 +1,38 @@
+#include <stdio.h>
+int main()
+{
+	int broj,brojp,x=0;
+	scanf ("%d",&broj);
+	if (broj<=0)
+	{
+		x=1;
+		broj=-broj;
+	}
+	brojp=broj/1000;
+	if (brojp%2==1)
+	{
+		broj-=brojp*1000;
+		brojp=broj/100;
+		if (brojp%2==1)
+		{
+			broj-=brojp*100;
+			brojp=broj/10;
+			if (brojp%2==1)
+			{
+				broj-=brojp*10;
+				if (broj%2==1)
+				goto van;
+			}
+		}
+
+
+	}
+	{
+		if (x>0)
+			broj=-broj;
+	}
+	printf("%d",broj);
+van:
+	return 0;
+
+}

@@ -1,0 +1,116 @@
+typedef struct {
+    char ime[20+1];
+    char prezime[30+1];
+    char jmbag[10+1];
+    int ocjena;
+} tip;
+
+typedef struct zapis {
+    struct zapis *sljed;
+    tip element;
+}atom;
+
+int brojElementa(atom *glava) {
+    atom *tmp;
+    int i;
+    for (i=0,tmp=glava; tmp!=NULL; tmp=tmp->sljed,i++);
+    return i;
+
+
+}
+
+int dodaj (atom **glavap, tip element) {
+    atom *tmp;
+    tmp=(atom*)malloc(sizeof(atom));
+    if (tmp==NULL) 
+        return 0;
+    else {
+        tmp->element.ocjena = element.ocjena;
+        strcpy (tmp->element.ime,element.ime);
+        strcpy (tmp->element.prezime,element.prezime);
+        strcpy (tmp->element.jmbag,element.jmbag);
+        tmp->sljed=*glavap;
+        *glavap=tmp;
+        return 1;
+    }
+}
+
+int minOcjena (atom *glava) {
+    atom *tmp;
+    int min;
+    if (glava==NULL)
+        return -1;
+    else {
+        min=glava->element.ocjena;
+        for (tmp=glava; tmp!=NULL; tmp=tmp->sljed) {
+            if (tmp->element.ocjena <= min)
+                min=tmp->element.ocjena;
+        }
+        return min;
+    }
+}
+
+
+int izbaciPrezimePocinjeS (atom **glavap, char * prezimePocetak)
+{
+ atom *p, *pp;
+ int i = 0;
+ 
+ for (p = *glavap; p != NULL; ) {
+ 
+     if ((strncmp ((p->element).prezime, prezimePocetak, strlen (prezimePocetak)) == 0) &&
+         (strlen ((p->element).prezime) >= strlen (prezimePocetak))) {
+         
+         if (p == *glavap) {
+               pp = (*glavap)->sljed;
+               free (*glavap);
+       *glavap = pp;
+       p = pp;
+       i++;
+         }
+         
+          else {   
+       for (pp = *glavap; pp->sljed != p; pp = pp->sljed);
+       pp->sljed = p->sljed;
+       free (p);
+       p = pp->sljed;
+       i++;
+          }
+     }
+     
+     else p = p->sljed;
+ }
+
+ return i;
+} 
+
+int izbaciPrezimeSadrzi (atom **glavap, char *prezimePodniz)
+{
+ atom *p, *pp; int i = 0;
+ 
+ for (p = *glavap; p != NULL; ) {
+ 
+     if (strstr ((p->element).prezime, prezimePodniz)) {
+         
+         if (p == *glavap) {
+               pp = (*glavap)->sljed;
+               free (*glavap);
+       *glavap = pp;
+       p = pp;
+       i++;
+         }
+         
+          else {   
+       for (pp = *glavap; pp->sljed != p; pp = pp->sljed);
+       pp->sljed = p->sljed;
+       free (p);
+       p = pp->sljed;
+       i++;
+          }
+     }
+     
+     else p = p->sljed;
+ }
+
+ return i;
+} 

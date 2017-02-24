@@ -1,0 +1,25 @@
+int Memoriraj (Radio & radio) {
+	Stanica a,b;
+	int i=0;
+	float frek;
+	const char *rds;
+	a=radio.TraziSljedecu();
+		rds=a.RDS();
+		frek=a.Frekvencija();
+		if (rds[0]!=0) {
+			radio.MemorirajStanicu(a, i+1);
+			i++;
+		}
+	b=a;
+	do {
+		a=radio.TraziSljedecu();
+		rds=a.RDS();
+		frek=a.Frekvencija();
+		if (b==a) break;
+		if (rds[0]!=0) {
+			radio.MemorirajStanicu(a, i+1);
+			i++;
+		}
+	} while (i<6);
+	return i;
+}

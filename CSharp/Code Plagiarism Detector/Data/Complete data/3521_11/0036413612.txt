@@ -1,0 +1,27 @@
+void ConvertToXML (char * inputField, char * outputField){
+	char novi[100]={0};
+	int i, j, br=0, brnovi=0;
+      for(i=0; inputField[i]!='\0'; i=i+1){
+		if(inputField[i]=='#'){
+			strcat(outputField, novi);
+			for(j=0;j<brnovi;j=j+1)
+				novi[j]=0;
+			brnovi=0;
+			br=br+1;
+			if(br==1){
+				strcat(outputField, "<osoba>\n<ime>");
+			}else if(br==2){
+				strcat(outputField, "</ime>\n<prezime>");
+			}else if(br==3){
+				strcat(outputField, "</prezime>\n<jmbg>");
+		      }else{
+				strcat(outputField, "</jmbg>\n</osoba>");
+				br=0;
+			}
+		}else if(inputField[i]!='#'){
+			novi[brnovi]=inputField[i];
+			brnovi=brnovi+1;
+			}	
+	}
+	strcat(outputField,novi);
+}

@@ -1,0 +1,32 @@
+#include <stdio.h>
+int main () {
+	int i,k,n;
+	double f,e,p;
+	scanf("%d",&n);
+	if ((n>0)&&(n<31)) {
+		p=1;
+		for (i=1; i<n; i++) {
+			f=1;
+			if ((i%2)==1){				
+				for (k=1; k<=i; k++){
+					f=f*k;
+				}
+				p=p-1/f;
+			} else {
+				for (k=1; k<=i; k++){
+					f*=k;
+				}
+				p=p+1/f;
+			}
+		}
+		e=1/p;
+		printf("%.12f\n", e);
+	} else {
+		printf("n nije valjan\n");
+	}
+	return 0;
+}
+
+
+			
+

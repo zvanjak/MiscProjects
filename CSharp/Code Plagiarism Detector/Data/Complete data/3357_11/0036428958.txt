@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <math.h>
+int main()
+{int x,y,z1,z2,z3,z4,z5,z6,z7,z8,sum=0,p,q;
+ float raz;
+
+ scanf("%d%d",&x,&y);
+
+
+p=x;
+q=y;
+
+z1=p%10;
+p=p/10;
+z2=p%10;
+p=p/10;
+z3=p%10;
+p=p/10;
+z4=p;
+
+z5=q%10;
+q=q/10;
+z6=q%10;
+q=q/10;
+z7=q%10;
+q=q/10;
+z8=q;
+
+if((z1==z8)&&(z2==z7)&&(z3==z6)&&(z4==z5))
+{sum=z1+z2+z3+z4;
+printf("%d",sum);}
+
+else
+{raz=x-y;
+printf("%f",raz);}
+
+
+return 0;
+}

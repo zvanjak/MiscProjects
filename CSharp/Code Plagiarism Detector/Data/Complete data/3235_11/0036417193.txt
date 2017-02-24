@@ -1,0 +1,24 @@
+#include<stdio.h>
+#include<math.h>
+
+int main (){
+
+	double s,ln=0;
+	int n,i;
+
+	scanf("%d",&n);
+
+	if ( (n<1) || (n>100) ){
+		
+		printf("n nije valjan");
+	}
+
+	else {
+		for(i=1;i<=n;i++){
+			s= (pow(-1,i+1))*1./i;
+			ln=ln+s;
+		}
+		printf("%.12f",ln);
+	}
+	return 0;
+}

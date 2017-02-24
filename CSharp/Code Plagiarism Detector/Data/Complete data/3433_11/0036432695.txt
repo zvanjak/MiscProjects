@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+	char komp[250],znak,broj;
+	int puta,max=0,i,j;
+	while (scanf("%c%c",&znak,&broj)) {
+		if (broj=='-') {
+			scanf("%c",&broj);
+			break;
+		}
+		komp[max++]=znak;
+		komp[max++]=broj;
+	}
+	for (i=0; i<max; i+=2) {
+		if (i!=0) printf(" ");
+		znak=komp[i];
+		puta=komp[i+1]-'0';
+		for (j=0; j<puta; j++)
+			if (j==0) printf("%c",znak); 
+			else printf(" %c",znak);
+	}
+	return 0;
+}
+					
+

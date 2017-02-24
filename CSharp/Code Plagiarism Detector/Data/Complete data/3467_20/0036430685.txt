@@ -1,0 +1,22 @@
+int igra (Igrac& igrac, Automat& aut, int max, int* broj) {
+	int poc_saldo;
+	int dobitak;
+	poc_saldo = igrac.TrenutnoStanje();
+	*broj = max;
+	while (max) {
+		aut.UplatiIznos( igrac.TrenutnoStanje() );
+		igrac.SkiniSRacuna( igrac.TrenutnoStanje() );
+		try {
+			dobitak = aut.Zavrti();
+		}
+		catch (char* pogreska) {
+			printf("%s", pogreska);
+			break;
+		}
+		igrac.UplatiNaRacun(dobitak);
+		max--;
+	}
+	igrac.UplatiNaRacun( aut.PodigniPreostalo() );
+	*broj -= max;
+	return poc_saldo - igrac.TrenutnoStanje() ;
+}

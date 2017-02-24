@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main(){
+	int broj, i, n, poz, zn;
+	poz=1; n=0;
+	scanf("%d", &broj);
+	if (broj>0){
+		while(broj){
+			zn=broj%10;
+			if((zn%2)!=0){
+				n+=poz*zn;
+				poz*=10;
+			}
+		broj/=10;
+		}
+	printf("%d", n);
+	}
+	else printf("%d", broj);
+return 0;
+}

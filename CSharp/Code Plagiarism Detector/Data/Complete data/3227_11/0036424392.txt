@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main(){
+	int n, br, predznak=1;
+	double red=0, clan;
+	scanf("%d",&n);
+	if (!(n>=1) || !(n<=500)) {printf("n nije valjan");}	
+        else {
+		for (br=1; br<=n; br=br+1){
+		clan=1./(2*br-1)*predznak;
+		predznak=-predznak;
+		red=red+clan;};
+		red=red*4.;
+        printf("%1.12f",red);
+	}
+return 0;
+}

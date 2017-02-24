@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+float niz(int i) {
+	float i1, i3;
+	
+	kontrola();
+	
+	if (i < 0)
+		return 0;
+	
+	if (i < 3)
+		return (float) (i + 1);
+	
+	i1 = niz(i - 1);
+	i3 = niz(i - 3);
+	
+	return (i1 - i3) / (i1 + i3);
+}

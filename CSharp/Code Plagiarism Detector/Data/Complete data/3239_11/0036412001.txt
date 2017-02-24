@@ -1,0 +1,20 @@
+#include "stdio.h"
+
+int main()
+{
+	int D, G, N, suma=0, i, x;
+	scanf("%d %d", &D, &G);
+	if(D<0 || G<0 || D>G) {
+		printf("D i G nisu zadovoljeni");
+}else{
+	for(N=D ; N<=G ; N++){
+		for(i=1 ; i<=N ; i++){
+			;
+			if(i % 2 == 0){
+			i=x
+			}suma=suma + x
+	printf("%d ", suma);}}
+}
+
+	return 0;
+}

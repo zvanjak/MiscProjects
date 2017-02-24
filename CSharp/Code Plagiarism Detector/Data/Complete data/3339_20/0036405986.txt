@@ -1,0 +1,12 @@
+int rBrojParnih(int *polje,int n){
+
+    int suma;
+    suma=!(polje[n-1]%2);
+    kontrola();
+    if(n==1)
+
+        return suma;
+
+    return suma + rBrojParnih(polje,n-1);
+
+}

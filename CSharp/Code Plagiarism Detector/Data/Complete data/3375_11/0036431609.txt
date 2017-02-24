@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+int main () {
+
+int a,x;
+
+scanf ("%d",&a);
+
+x=a / 1000;
+
+if (x % 2!=0) {
+
+x=a % 1000 / 100; 
+
+if (x % 2!=0) {
+
+x=a % 100 / 10;
+
+if (x % 2!=0) {
+
+x=a % 10;
+
+if (x % 2==0) printf ("%d\n",x); 
+
+else printf ("0\n");
+
+}
+
+else printf ("%d\n",a % 100);
+
+}
+
+else printf ("%d\n", a % 1000);
+
+} 
+
+else printf ("%d\n",a);
+
+return 0;
+
+}

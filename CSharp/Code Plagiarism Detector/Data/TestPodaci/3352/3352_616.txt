@@ -1,0 +1,16 @@
+int veci_od(FILE *f, int n) {
+    int zapis, broj=0,k=0;
+    struct natjecatelj osoba;
+    
+    fseek(f, 0L, SEEK_END);
+    zapis = ftell(f) / sizeof(osoba);
+    fseek(f, 0L, SEEK_SET);
+    
+    for (k = 0; k < zapis; k++) {
+        fread(&osoba, sizeof(osoba), 1, f);
+        if (osoba.bodovi > n && osoba.redni_br != 0) {
+                         broj = broj+1;
+                         }
+        }
+    return broj;
+} 

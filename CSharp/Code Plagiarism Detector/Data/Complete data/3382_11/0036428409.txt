@@ -1,0 +1,22 @@
+#include <stdio.h>
+int main () {
+int broj, x, y, s, rez, prva, treca, cetvrta;
+scanf("%d", &broj);
+if (broj>999 && broj<10000) {
+	x = broj/100;
+	y = broj % 100;
+	s = (broj/10) % 100;
+	prva = broj/1000;
+	treca = (broj % 100)/10;
+	cetvrta = broj %10;
+	if (((x*y)%s)==0) {
+			rez= prva + treca;
+			printf("%d\n", rez); 
+			}
+		else {
+			rez = treca * cetvrta;
+			printf("%d\n", rez);
+			}
+	}
+return 0;	  
+}

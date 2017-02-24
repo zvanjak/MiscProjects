@@ -1,0 +1,7 @@
+int zamijeni (char *ulazni, char *prvi, char *drugi) {
+int broj;
+broj:=0;
+while (strstr(ulazni,prvi)!=NULL){
+strcpy (strstr(ulazni,prvi),drugi);
+broj++;}
+return broj;}

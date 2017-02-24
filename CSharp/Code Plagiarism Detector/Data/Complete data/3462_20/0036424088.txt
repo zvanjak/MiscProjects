@@ -1,0 +1,14 @@
+#include <math.h>
+
+int KolikoUnutar(Kruznica &kruz, Tocka poljeTocaka[], int n){
+    int i,broj=0;
+    float x,y,r,d;
+    x=kruz.GetCenterX();
+    y=kruz.GetCenterY();
+    r=kruz.GetRadius();
+    for(i=0;i<n;i++){
+       d=sqrt(pow(x-poljeTocaka[i].GetX(),2)+pow(y-poljeTocaka[i].GetY(),2));  //formula za udaljenost
+       if(d<r) broj++;
+       }
+    return broj;
+}

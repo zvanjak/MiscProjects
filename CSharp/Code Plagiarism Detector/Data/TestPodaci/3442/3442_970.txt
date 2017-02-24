@@ -1,0 +1,26 @@
+/*
+Program treba učitati prirodni broj n>1,
+te zatim izračunati izraz i ispisati dobivenu vrijednost. Izraz je slijedeći: 
+n        n-1
+? i2  -  ? 2*i 
+i=0     i=1
+Primjer: za učitani broj 2, program treba ispisati 3  
+
+*/
+//
+#include <stdio.h>
+int main() 
+{
+	int n,i, suma1=0, suma2=0;
+	scanf("%d", &n);
+	for (i=0; i<=n; i++)
+	{
+		suma1 = suma1 + (i*i);
+	}
+	for (i=1; i<=n-1; i++)
+	{
+		suma2 = suma2 + (2*i);
+	}
+	printf("%d",suma1-suma2);
+	return 0;
+}

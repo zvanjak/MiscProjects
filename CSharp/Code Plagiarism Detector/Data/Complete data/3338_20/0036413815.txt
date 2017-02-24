@@ -1,0 +1,11 @@
+int rZamijeni(char *niz,char stariZnak,char noviZnak){
+int broj=0;
+kontrola();
+for(;*niz != '\0';niz++)
+        if(*niz == stariZnak)
+                {
+                *niz = noviZnak;
+                broj++;
+                }
+return broj;
+}

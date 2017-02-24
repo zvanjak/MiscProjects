@@ -1,0 +1,24 @@
+#include<stdio.h>
+#include<math.h>
+int main(){
+	float mat[20][5],maks;
+	int m,n,i,j;
+	do{
+		scanf("%d %d",&m,&n);}
+	while(m<1||m>20||n<1||n>5);
+	for(i=0;i<m;i++)
+		for(j=0;j<n;j++)
+			scanf("%f",&mat[i][j]);
+	maks=fabs(mat[0][0]);
+	for(i=0;i<m;i++)
+		for(j=0;j<n;j++)
+			if(fabs(mat[i][j])>maks)
+				maks=fabs(mat[i][j]);
+	for(i=0;i<m;i++)
+		for(j=0;j<n;j++)
+			if(fabs(mat[i][j])==maks){
+				m=i;
+				n=j;
+				break;}
+	printf("%d %d",m,n);
+	return 0;}

@@ -1,0 +1,17 @@
+int JeLiUnutra (Kruznica &kruz, Kvadrat &kvad)
+{
+	float x1,y1,x2,y2,r,a;
+
+		x1=kvad.GetX();
+		y1=kvad.GetY();
+		x2=kruz.GetCenterX();
+		y2=kruz.GetCenterY();
+		r=kruz.GetRadius();
+		a=kvad.GetDuljinaStranice();
+
+	if (x2-x1<r) return 0;
+	if (y1-y2<r) return 0;
+	if (x1+a-x2<r) return 0;
+	if (y2-y1+a<r) return 0;
+	return 1;
+}

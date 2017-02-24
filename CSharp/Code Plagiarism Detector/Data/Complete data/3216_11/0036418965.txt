@@ -1,0 +1,20 @@
+#include<stdio.h>
+int main(){
+	int i, n, p, prost=0;
+	do {
+		p=0;
+		scanf("%d", &n);
+		if (n>2) {
+			for ( i=2 ; i<n ; i=i+1 ) {
+			if (n%i==0) {
+				p=1;
+			} 
+			}	
+		if (!p){
+			prost=prost+1;
+		}
+		}
+	} while ( n>2 );
+	printf("%d",prost);
+	return 0;
+}

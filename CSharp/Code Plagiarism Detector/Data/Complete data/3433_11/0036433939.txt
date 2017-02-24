@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main () {
+	int d[100], i, j, k;
+	char c[100];
+	i=0; 
+    do {
+        scanf("%c %d", &c[i], &d[i]);
+        i=i+1;}
+    while (d[i-1]!=-1);
+          
+    for (j=0; j<i; j++) {
+        for (k=0; k<d[j]; k++){
+        printf("%c ", c[j]);
+        }
+        }     
+   return 0;       
+}

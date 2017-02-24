@@ -1,0 +1,57 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+
+#define EL(m, y, x, n, t) *((t*)m+y*n+x)
+
+void loadmat(void *m, int elsz, int n) {
+	int a, x, y;
+
+	for(y=0;y<n;++y) {
+		for(x=0;x<n;++x) {
+			scanf("%d", &a);
+			memcpy((char*)m+(elsz*(y*n+x)), &a, elsz);
+		}
+	}
+}
+
+void dumpmat(void *m, int elsz, int n) {
+	int x,y,a;
+	for(y=0;y<n;++y) {
+		for(x=0;x<n;++x) {
+			a=0;
+			memcpy(&a, (char*)m+(elsz*(y*n+x)), elsz);
+			printf("%d ", a);
+		}
+		/*printf("\n");*/
+	}
+}
+
+int main() {
+	int n, x, y;
+	char *mm;
+	int *dm;
+
+	scanf("%d", &n);
+
+	mm=(char*)malloc(n*n);
+	dm=(int*)malloc(n*n*sizeof(int));
+
+	loadmat(mm, sizeof(char), n);
+	loadmat(dm, sizeof(int), n);
+
+	for(y=0;y<n;++y) {
+		for(x=0;x<n;++x) {
+			if (EL(mm, y, x, n, char)) {
+				EL(dm, y, x, n, int) = x+y;
+			}
+		}
+	}
+
+	dumpmat(dm, sizeof(int), n);
+
+	free(dm);
+	free(mm);
+
+	return 0;
+}

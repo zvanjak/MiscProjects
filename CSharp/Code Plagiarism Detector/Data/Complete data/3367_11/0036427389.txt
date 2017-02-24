@@ -1,0 +1,15 @@
+#include <stdio.h>
+int main () {
+	char a, b;
+	int n;
+	scanf("%c %c", &a, &b);
+	if (a=='A'|| a=='B'|| a=='C'|| a=='D'|| a=='E'|| a=='F') 
+		if (b=='A'|| b=='B'|| b=='C'|| b=='D'|| b=='E'|| b=='F'){
+			n=(a-55)*16+(b-55);}
+		else n=(a-55)*16+(b-48);
+	else if (b=='A'|| b=='B'|| b=='C'|| b=='D'|| b=='E'|| b=='F'){
+		n=(a-48)*16+(b-55);}
+		else n=(a-48)*16+(b-48);
+	printf("%d" ,n);
+	return 0;
+}

@@ -1,0 +1,70 @@
+#include <iostream>
+using namespace std;
+
+class Recenica{
+private:
+char *c;
+long s;
+long ri;
+public:
+Recenica();
+~Recenica();
+void UcitajZnak(char znak);
+int PrebrojiRijeci();
+int PrebrojiZareze();
+};
+
+
+Recenica::Recenica(){
+s=1;
+c=(char *)malloc(s);
+c[0]=' ';
+}
+
+Recenica::~Recenica(){
+free(c);
+}
+void Recenica::UcitajZnak(char znak){
+if (znak==' ') {
+if (c[s-1]!=' ' && c[s-1]!=','){
+s++;
+c=(char *)realloc(c,s);
+c[s-1]=znak; //stavljam razmak
+}
+}
+else if (znak==','){
+if (c[s-1]==' ') c[s-1]=znak;
+else {
+s++;
+c=(char *)realloc(c,s);
+c[s-1]=znak;
+}
+}
+else { //nije ni ' ' ni ',' pa a dodajem
+s++;
+c=(char *)realloc(c,s);
+c[s-1]=znak;
+}
+}
+
+int Recenica::PrebrojiRijeci(){
+int i=0, p=0,k=0, r=0;
+this->UcitajZnak(' ');
+while(i<s) {
+if ((c[i]==' ' || c[i]==',') && (c[i+1]!=' ' && c[i+1]!=',' && c[i+1]!='\0') ) p=1;
+if (p==1 && (c[i+1]==' ' || c[i+1]==',' || c[i+1]=='\0')) k=1;
+if (p*k) { r++; p=k=0; }
+i++;
+}
+
+return r;
+}
+
+int Recenica::PrebrojiZareze(){
+int i=0, z=0;
+while(i!=s) {
+if (c[i]==',') z++;
+i++;
+}
+return z;
+}

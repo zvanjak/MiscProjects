@@ -1,0 +1,12 @@
+#include <stdio.h>
+int main(){
+int x,n,nb=0,pot=1;
+scanf("%d",&x);
+if (x<0) printf("%d",x);
+else {
+while (x>0){
+n=x%10;
+if (n%2!=0) {nb+=n*pot; pot*=10;}
+x/=10;}
+printf("%d",nb);}
+return 0;}

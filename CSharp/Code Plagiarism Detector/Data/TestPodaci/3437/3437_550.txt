@@ -1,0 +1,25 @@
+#include<stdio.h>
+
+
+int main()
+{
+	int x[42], br=0, i;
+	i=0;
+	do
+	{
+		scanf("%d %d",&x[i],&x[i+1]);
+		br++;
+		i+=2;
+	}while(x[i-2]!=50);
+
+	for(i=1;i<2*br-1;i+=2)
+	{
+		if(x[i]>x[i+2])
+			printf("Pada ");
+		else if(x[i]==x[i+2])
+			printf("Ravan ");
+		else if(x[i]<x[i+2])
+			printf("Raste ");
+	}
+	return 0;
+}

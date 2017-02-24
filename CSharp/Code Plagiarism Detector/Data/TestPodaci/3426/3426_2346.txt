@@ -1,0 +1,42 @@
+#include <stdio.h>
+int main(){
+	int mr,ms;
+	int p,q,i,j;
+	int ponr,pons,stupci=0,nema_nulu=0;
+	int matrica[20][5]={0};
+	int brojac=0;
+ 	do{
+		scanf("%d %d",&mr,&ms);
+	}while((mr<1 || mr>20)||(ms<1 || ms>5));
+	scanf ("%d %d",&p,&q);	
+	for(ponr=0;ponr<mr;ponr++){
+		if(ponr%2==0){
+			for(pons=0;pons<ms;pons++){
+				matrica[ponr][pons]=p;
+			}
+		}else{
+			for(pons=0;pons<ms;pons++){
+				matrica[ponr][pons]=q;
+			}
+		}
+	}
+	do{
+		scanf("%d %d",&i,&j);
+		if(i>=0 && i<mr && j>=0 && j<ms){
+		matrica[i][j]=0;
+		brojac++;
+		}
+	}while(i>=0 && i<mr && j>=0 && j<ms);
+	for (pons=0;pons<ms;pons++){
+		for(ponr=0,nema_nulu=0;ponr<mr;ponr++){
+			if(matrica[ponr][pons]!=0){
+				nema_nulu++;
+			}
+		}	
+		if(mr%nema_nulu==0){
+		stupci++;
+		}
+	}
+	printf("%d %d",brojac,stupci);
+	return 0;
+}

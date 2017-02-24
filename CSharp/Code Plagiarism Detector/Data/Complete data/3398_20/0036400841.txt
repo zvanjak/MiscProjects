@@ -1,0 +1,22 @@
+int* napraviPolje(int *A, int Na, int a, int b, int* Nc) {
+	int i, n = 0;
+	static int* polje;
+
+	if (a >= b) return 0;
+	else {
+		for (i = 0; i < Na; i++) {
+			if (A[i] < a || A[i] > b) n++;
+		}
+		polje = (int *) malloc(sizeof(int)*n);
+		n = 0;
+		for (i = 0; i < Na; i++) {
+			if (A[i] < a || A[i] > b) {
+				polje[n]= A[i];
+				n++;
+			}
+		}
+		*Nc = n;
+	}
+	
+	return polje;
+}

@@ -1,0 +1,13 @@
+float prosjek( FILE *f )
+{
+	char buff1[35], buff2[35];
+	int n = 0, suma = 0, tmp;
+
+	while( fscanf(f, "%s %s %d", buff1, buff2, &tmp ) == 3 )
+	{
+		++n;
+		suma += tmp;
+	}
+
+	return (float)suma/n;
+}

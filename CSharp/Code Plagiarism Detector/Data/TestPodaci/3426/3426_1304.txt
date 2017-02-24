@@ -1,0 +1,30 @@
+#include<stdio.h>
+int main(){
+	int mr,ms,p,q,i,j,x[20][5],bz=0,bs=0;
+
+	do{scanf("%d %d",&mr,&ms);
+	}while(mr<1||mr>20||ms<1||ms>5);
+	
+	scanf("%d %d",&p,&q);
+	for(i=0;i<mr;i++)
+	{if(i%2==0)
+		{for(j=0;j<ms;j++)
+			{x[i][j]=p;}}
+	 if(i%2!=0) 
+		{for(j=0;j<ms;j++)
+			{x[i][j]=q;}}}
+
+	
+	scanf("%d %d",&i,&j);
+	while(i>=0&&i<mr&&j>=0&&j<ms){
+		x[i][j]=0;
+		bz++;
+		scanf("%d %d",&i,&j);
+		}
+	bs=ms;
+	for(i=0;i<ms;i++)
+		{for(j=0;j<mr;j++){
+			if(x[j][i]==0) {bs--; i++;}
+		}}
+	printf("%d %d",bz,bs);
+}

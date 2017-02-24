@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <math.h>
+
+#define MAXN 80
+#define E 2.7182818284590452353602874713527
+
+double f(double x) {
+	return pow(x,sin(x))*tanh(pow(x,pow(E,x)));
+}
+double df(double x, double dx) {
+	return (f(x+dx)-f(x))/dx;
+}
+
+int main() {
+	
+	double dx,niz[MAXN];
+	float x;
+	int i,n;
+	
+	scanf("%lf",&dx);
+	
+	n=0;
+	while (scanf("%f",&x),(x!=0.0f)) {
+		niz[n++]= atan(df(x,dx));
+	}
+	for (i=0;i<n;++i)
+		printf("%.2lf",niz[i]);
+	
+	return 0;
+}

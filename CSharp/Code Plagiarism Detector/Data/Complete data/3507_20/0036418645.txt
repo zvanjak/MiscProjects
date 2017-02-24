@@ -1,0 +1,27 @@
+int Sortirano(cvor *glava)
+{
+int l, d, lrek, drek;
+if(!glava) return 1;
+if(glava->lijevo)
+{
+ l = (glava->id) > (glava->lijevo->id);
+ lrek = Sortirano(glava->lijevo);
+}
+else
+{
+ l = 1;
+ lrek = 1;
+}
+if(glava->desno)
+{
+ d = (glava->id) < (glava->desno->id);
+ drek = Sortirano(glava->desno);
+}
+else
+{
+ d = 1;
+ drek = 1;
+}
+
+return l & d & lrek & drek;
+}

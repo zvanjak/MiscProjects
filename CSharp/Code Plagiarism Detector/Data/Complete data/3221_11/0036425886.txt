@@ -1,0 +1,13 @@
+#include <stdio.h>
+int main ()
+{
+int a,d,b,brojac=0;
+scanf("%d %d %d", &a,&d,&b);
+while(a + d <= b) {
+a+=d;
+brojac++;
+printf("%d ", a);
+}
+printf("%d\n", brojac);
+return 0;
+}

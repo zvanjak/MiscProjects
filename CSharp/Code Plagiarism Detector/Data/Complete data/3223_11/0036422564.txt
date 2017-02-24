@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main () {
+	int br,max,min;
+	scanf("%d",&br);
+	max=br;
+	min=br;
+	while ((br%4!=0) || (br<=0)){
+		scanf("%d",&br);
+		if (br<min) min=br;
+		if (br>max) max=br;
+	}
+	printf("%d %d",max,min);
+	return 0;
+}

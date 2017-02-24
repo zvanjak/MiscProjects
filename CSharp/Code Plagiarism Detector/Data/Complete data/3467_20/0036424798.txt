@@ -1,0 +1,18 @@
+int igra(Igrac &igrac,Automat &aut,int max, int *broj){
+	int iznos1;
+	*broj=0;
+	iznos1=igrac.TrenutnoStanje();
+	igrac.SkiniSRacuna(igrac.TrenutnoStanje());
+	aut.UplatiIznos(iznos1);
+	while(max>0){
+		max--;
+		if(aut.TrenutnoStanje()>0){
+			(*broj)++;
+			igrac.UplatiNaRacun(aut.Zavrti());
+		}
+		else break;
+	}
+	igrac.UplatiNaRacun(aut.TrenutnoStanje());
+	
+	return (igrac.TrenutnoStanje()-iznos1);
+}

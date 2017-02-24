@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <math.h>
+int main() {
+int n,i;
+double pi,rez=0;
+scanf("%d",&n);
+if ((n<1)||(n>400)) printf ("n nije valjan");
+else {
+for (i=0; i<n; i++) rez=rez+1./pow(2*i+1,2);
+pi=8*rez;
+pi=sqrt(pi);
+printf("%1.13g",pi);
+}
+return 0;
+}

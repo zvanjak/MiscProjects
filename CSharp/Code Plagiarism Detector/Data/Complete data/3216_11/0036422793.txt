@@ -1,0 +1,19 @@
+#include <stdio.h>
+int main () {
+	int br, i, p, np, z;
+	np=0;
+	z=0;
+	scanf("%d", &br);
+	while (br > 2) {
+	    z = z +1;
+		for (i=2; i<= br-1; i++) {
+			if (br % i==0) {
+				np = np +1;
+				break;
+			}
+		}
+	scanf("%d", &br);
+	}
+	printf ("%d", p = z -np);
+	return 0;
+}

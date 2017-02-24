@@ -1,0 +1,12 @@
+int br_prodanih(FILE *f, char *autor)
+{
+    char ime[20+1];
+    int br = 0;
+    int prodano;
+    while ( fscanf(f,"%*s %s %d",ime,&prodano) > 0 )
+    {
+          if ( strcmp(autor,ime) == 0 )
+               br += prodano;
+    }
+    return br;
+}

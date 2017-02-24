@@ -1,0 +1,19 @@
+int najbolji(FILE *f){
+	struct natjecatelj{
+	     int redni_broj;
+		 char prezime [20+1];
+		 int bodovi;
+	};
+	int i=0,j=0,b=0;
+	struct natjecatelj osoba;
+	f=fopen("rez.bin","r+b");
+	while(fread(&osoba,sizeof(osoba),1,f)==1){
+		if (osoba.redni_broj==0) continue;
+		if (osoba.bodovi>i) {
+			i=osoba.bodovi;
+			j=osoba.redni_broj;
+		}
+	}
+		
+return j;
+}

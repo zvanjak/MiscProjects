@@ -1,0 +1,30 @@
+int izbaci(zapis **glava){
+	int br=0;
+	zapis *stari, *p;
+
+	stari=*glava;
+
+	while(stari!=NULL)
+	{
+		if (((stari)->pros)<2.0) 
+		{
+			br++;
+			if(stari==*glava)
+			{
+				*glava=stari->sljed;
+				free (stari);
+				stari=*glava;
+			}
+			else
+			{
+				for(p=*glava;p->sljed!=stari;p=p->sljed);
+				p->sljed=stari->sljed;
+				free(stari);
+				stari=p->sljed;
+			}
+		}
+		else stari=stari->sljed;
+	}
+
+return br;
+}

@@ -1,0 +1,68 @@
+typedef struct {
+	char ime[21];
+	char prezime[31];
+	char jmbag[11];
+	int ocjena;
+} tip;
+
+struct atom {
+	tip element;
+	struct atom *sljed;
+};
+
+int brojElementa(struct atom *glava) {
+	struct atom *temp;
+	int i;
+	for (temp = glava, i=0; temp!=NULL; i++, temp = temp->sljed);
+	return i;
+}
+
+int minOcjena(struct atom *glava) {
+	struct atom *temp;
+	int mn = glava->element.ocjena;
+
+	if (glava == NULL) return -1;
+
+	for (temp = glava; temp!=NULL; temp = temp->sljed)
+		if (temp->element.ocjena < mn) mn = temp->element.ocjena;
+	return mn;
+}
+
+float prosjOcjena(struct atom *glava) {
+	struct atom *temp;
+	int n, sum;
+	if (glava == NULL) return -1;
+
+	n = sum = 0;
+	for (temp = glava; temp!=NULL; temp = temp->sljed)
+		n++, sum += temp->element.ocjena;
+	return (float) sum/n;
+}
+
+int dodaj(struct atom **glavap, tip element) {
+	struct atom *temp = (struct atom *) malloc( sizeof(struct atom) );
+	if (temp == NULL) return 0;
+
+	temp->element = element;
+	temp->sljed = *glavap;
+	*glavap = temp;
+	return 1;
+}
+
+int izbaciImeSadrzi(struct atom **glavap, char *imePodniz) {
+	struct atom **temp,*fr;
+	int cnt=0;
+
+	for (temp = glavap; (*temp) != NULL ; )
+		if( strstr( (*temp)->element.ime, imePodniz) != NULL ) {
+			fr = *temp;
+			*temp = (*temp)->sljed;
+			free (fr);
+			cnt++;
+		}
+		else
+			temp = &(**temp).sljed;
+		
+	return cnt;
+}
+

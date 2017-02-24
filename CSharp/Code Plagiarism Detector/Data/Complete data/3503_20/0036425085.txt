@@ -1,0 +1,8 @@
+int ModElementa(cvor *glava, char *naziv){
+    if (glava != NULL) {
+        int a  = 0;
+		if (! strcmp(naziv, glava->naziv)) a++;
+		return ModElementa(glava->lijevo, naziv) + ModElementa (glava->desno, naziv) + a;
+	}   
+	return 0;
+ }

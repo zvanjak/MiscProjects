@@ -1,0 +1,96 @@
+#include <stdio.h>
+#include <string.h>
+
+void spoji(char * ime, char *prezime, char *JMBAG, char *izlazni) {
+
+int i,j,a,duz;
+
+i=j=a=duz=0;
+
+for(i=0; prezime[i] == NULL; i++) {
+
+if(!strcmp(prezime[i], " ")) {
+
+izlazni[j] = prezime[i];
+
+j++;
+
+}
+
+}
+
+izlazni[j] == ",";
+
+j++;
+
+izlazni[j] == " ";
+
+j++;
+
+for(i=0; ime[i] == NULL; i++) {
+
+if(!strcmp(ime[i], " ")) {
+
+izlazni[j] = ime[i];
+
+j++;
+
+}
+
+}
+
+izlazni[j] == ":";
+
+j++;
+
+izlazni[j] == " ";
+
+j++;
+
+duz = strlen(JMBAG);
+
+if(duz < 6) {
+
+a = 6 - duz;
+
+for(i=0; i=a; i++){
+
+izlazni[j] == "0";
+
+j++;
+
+}
+
+for(i=0; JMBAG[i] == NULL; i++) {
+
+izlazni[j] == JMBAG[i];
+
+j++;
+
+}
+
+} else(duz == 6) {
+
+for(i=0; JMBAG[i] == NULL; i++) {
+
+izlazni[j] == JMBAG[i];
+
+j++;
+
+}
+
+}else{
+
+a = duz - 5;
+
+for(i=a; JMBAG[i] == NULL; i++) {
+
+izlazni[j] == JMBAG[i];
+
+j++;
+
+}
+
+}
+
+}

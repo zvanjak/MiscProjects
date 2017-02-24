@@ -1,0 +1,10 @@
+int br_prodanih (FILE *f, char *autorzad) {
+  int zbroj=0;
+  char naziv [30+1];
+  char autor [20+1];
+  int prodano;
+  while (fscanf (f, "%s %s %d", naziv, autor, &prodano)==3) {
+	  if (strcmp (autor, autorzad) == 0) zbroj = zbroj + prodano;
+  }
+  return zbroj;
+}

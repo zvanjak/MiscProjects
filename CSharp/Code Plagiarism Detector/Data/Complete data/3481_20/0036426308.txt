@@ -1,0 +1,28 @@
+#include <cmath>
+
+#define MAX_STANICA 6
+int Memoriraj(Radio &radio) {
+    Stanica s;
+    float   spremljene[] = { -1, -1, -1, -1, -1, -1 };
+    int     i, num = 0;
+         
+    while (num < 6) {
+        int nadjeno = 0;
+
+        s = radio.TraziSljedecu();
+        if (*(s.RDS()) == '\0') continue;
+
+        for (i = 0; i < MAX_STANICA; ++i)
+            if (fabs(spremljene[i] - s.Frekvencija()) < 1e-9) {
+                nadjeno = 1;
+                break;
+            }
+
+        if (nadjeno) break;
+
+        spremljene[num++] = s.Frekvencija();
+        radio.MemorirajStanicu(s, num);
+    }
+
+    return num;
+}

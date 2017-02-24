@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+#define MAX 100
+
+int main()
+{
+	char komp[MAX] = {0}, kod[MAX] = {0};
+	char znak;
+	int broj, i = 0;
+
+	scanf("%c%d", &znak, &broj);
+
+	while(broj != -1)
+	{
+		komp[i] = znak;
+		kod[i] = broj;
+		i++;
+		scanf("%c%d", &znak, &broj);
+	}
+
+	i = 0;
+
+	while(komp[i] != 0 && kod[i] != 0)
+	{
+		int j;
+		for(j = 0; j < kod[i]; j++)
+			printf("%c ", komp[i]);
+		i++;
+	}
+
+	return 0;
+}

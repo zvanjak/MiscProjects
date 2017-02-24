@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main () {
+	char x,y,c;
+	int x1,y1,z;
+	scanf ("%c %c %c", &x, &y, &c);
+	x1= x-48;
+	y1=y-48;
+	if ( c== '+' || c=='-' || c=='*' || c=='/' || c=='%') {
+		if (c== '+')  {
+			z=x1+y1;
+			printf ("%d", z);  }
+		else if (c=='-') {
+			z=y1-x1;
+			printf ("%d", z);}
+		else if (c=='/'){
+			z=x1/y1;
+			printf("%d", z);}
+		else if (c=='*') {
+			z=x1*y1;
+			printf ("%d%", z); }
+		else {
+			z=x1%y1;
+			printf("%d", z);}
+
+	}
+	else {
+		printf ("Neispravna"); }
+
+
+return 0;
+	}

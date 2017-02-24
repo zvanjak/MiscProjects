@@ -1,0 +1,39 @@
+#include <stdio.h>
+#define MAXRED 20
+#define MAXSTUP 5
+
+int main (){
+	int mat [MAXRED][MAXSTUP];
+    int brred, brstup;
+	int y=1;
+	int i,j;
+
+	do{
+	 scanf ("%d %d",&brred, &brstup);
+	} while ((brred <= 1 || brred >=20) && (brstup <= 1 || brstup >= 5));
+
+	for (i=0;i<brred;i++){
+		for (j=0;j<brstup;j++){
+			
+			scanf ("%d", &mat[i][j]);
+		}
+	}
+	if (i%2==1){
+
+		if ((i==j)&&((mat[0][1]==mat[2][1]) && (mat[0][0]==mat[2][0]) &&(mat[0][2]==mat[2][2]))) {
+			printf ("Jest");
+		}else{
+			printf ("Nije");
+		}
+	}else{
+		for (i=0;i<brred;i=i+2){
+			for (j=0;j<brstup;j=j+2){
+				y = y * mat[i][j];
+			}
+			
+		}
+    printf ("%d",y);
+		
+	}
+return 0;
+}

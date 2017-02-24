@@ -1,0 +1,36 @@
+#include <stdio.h>
+int main()
+{
+	int i, j, mr, ms, m[21][6], t, br,par,nep;
+	t=1;
+	while (t==1){
+		t=0;
+		scanf("%d %d", &mr, &ms);
+		if(mr<1 || mr>20) t=1;
+		if(ms<1 || ms>5) t=1;
+	}
+	for(i=0;i<mr;i++)
+		for(j=0;j<ms;j++)
+			scanf("%d", &m[i][j]);
+	par=0;
+	for(i=0;i<mr;i++)
+	{
+			br=0;
+			for(j=0;j<ms;j++)
+				if(m[i][j]%2==0) br++;
+			if(br) par++;
+	}
+	printf("%d ", par);
+	nep=0;
+	for(j=0;j<ms;j++)
+	{
+			br=0;
+			for(i=0;i<mr;i++)
+				if(m[i][j]%2==0) br++;
+			if(br) nep++;
+	}
+	printf("%d", nep);
+	
+
+	return 0;
+}

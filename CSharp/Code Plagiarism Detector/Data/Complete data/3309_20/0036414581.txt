@@ -1,0 +1,9 @@
+int br_prodanih (FILE *f, char *autor){
+int prodano=0;
+struct album a;
+	rewind(f);
+	while (fread(&a,sizeof(a),1,f)){
+		if (strcmp(a.autor,autor)==0) prodano+=a.prodano;
+	}
+    return prodano;
+}

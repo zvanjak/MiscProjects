@@ -1,0 +1,65 @@
+int izbacinaj (zapis **glava)
+{
+  zapis *pom,*min,*max,*prmin,*prmax,*prosli;
+  float pmin,pmax,br;
+  br=0;
+  min=NULL;
+  max=NULL;
+  prmin=NULL;
+  prmax=NULL;
+  pom=*glava;
+  pmin=5;
+  pmax=0;
+  while (pom!=NULL)
+  {
+    if (pom->pros<pmin)
+    {
+      prmin=prosli;
+      pmin=pom->pros;
+      min=pom;
+    }
+    if (pom->pros>pmax)
+    {
+      prmax=prosli;
+      pmax=pom->pros;
+      max=pom;
+    }
+    prosli=pom;
+    pom=pom->sljed;
+  }
+  if (min==max&&min!=NULL)
+  {
+    *glava=NULL;
+    delete min;
+    br++;
+  }
+  else
+  {
+      if (min!=NULL&&prmin!=NULL)
+      {
+         prmin->sljed=min->sljed;
+         delete min;
+         br++;
+      }
+      else if (min!=NULL)
+      {
+           *glava=min->sljed;
+           delete min;
+           br++;
+      }
+      if (max!=NULL&&prmax!=NULL)
+      {
+        prmax->sljed=max->sljed;
+        delete max;
+        br++;
+      }
+      else if (max!=NULL)
+      {
+        *glava=max->sljed;
+        delete max;
+        br++;
+      }
+  }
+  return br;
+}
+

@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int veci_od( FILE *f, int n )
+{
+  int rez = 0;
+  struct {
+   int redni_br;
+   char prezime[20+1];
+   int bodovi;
+  } nat;
+
+  fseek( f, 0, SEEK_SET );
+
+  while ( fread( &nat, sizeof nat, 1, f ) == 1 ) {
+     if ( nat.redni_br != 0 && nat.bodovi >= n )
+        ++rez;
+  }
+
+  return rez;
+}

@@ -1,0 +1,20 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(){
+    int n;
+    int najveci,najmanji;
+    scanf("%d",&n);
+    najveci=najmanji=n;
+    if(n>0&&n%4==0) {
+        printf("%d %d",najveci,najmanji);
+        exit(0);
+    }    
+    while(!(n>0&&n%4==0)){
+        scanf("%d",&n);
+        if(n>najveci) najveci=n;
+        if(n<najmanji) najmanji=n;
+    }
+    printf("%d %d",najveci, najmanji);
+}        
+        

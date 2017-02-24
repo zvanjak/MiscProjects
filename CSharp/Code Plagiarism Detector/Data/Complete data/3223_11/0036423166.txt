@@ -1,0 +1,20 @@
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+
+int main(){
+int n, max, min;
+
+scanf("%d",&n);
+max=n;
+min=n;
+
+while(n<=0 || (n%4)!=0 )
+{
+scanf("%d",&n);
+if(n<min) min=n;
+if(n>max) max=n;
+}
+printf("%d %d",max,min);
+return 0;
+}	

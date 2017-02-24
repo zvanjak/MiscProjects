@@ -1,0 +1,39 @@
+#include <stdio.h>
+#define MAXR 10
+#define MAXS 10
+
+int main () {
+	int mat[MAXR][MAXS];
+	int mr, k, i, j, n, suma = 0, br_zamjena = 0;
+	
+	do {
+		scanf("%d", &mr);
+	} while (mr < 1 || mr > 10);
+	
+	for (i = 0; i < mr; i++)
+		for (j = 0; j < mr; j++)
+			scanf("%d", &mat[i][j]);
+
+	scanf("%d %d", &i, &j);
+	while ( (i >= 0 && i < mr) && (j >= 0 && j < mr) ) {
+		k = mat[i][j];
+		mat[i][j] = mat[j][i];
+		mat[j][i] = k;
+		
+		br_zamjena++;
+
+		scanf("%d %d", &i, &j);
+	}
+
+	scanf("%d", &n);
+	if (n < 0 || n >= mr)
+		suma = -1;
+	else {
+		for (k = 0; k < mr; k++)
+			suma += mat[n][k];
+	}
+	
+	printf("%d %d", br_zamjena, suma);
+
+	return 0;
+}

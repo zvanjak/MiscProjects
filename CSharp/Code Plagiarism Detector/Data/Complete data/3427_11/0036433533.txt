@@ -1,0 +1,30 @@
+#include <stdio.h>
+#define MAX_POLJE 50
+int main () {
+	int polje[MAX_POLJE], umnozak=1, b_prostih = 0, prost, i, j, broj_polja, simetricna;
+	for (i=0, j=0; i<MAX_POLJE, j!=1; i++){ /*j -> jeli prirodan broj*/
+		scanf("%d", &polje[i]);
+		broj_polja = i;
+		if (polje[i]<0) j=1;
+	}
+	if (!(broj_polja%2)) {					/*paran*/
+		for (i=0; i<broj_polja; i++) {
+			umnozak *= polje[i];			/*umnozak*/
+			for (j=2, prost=1; j<polje[i]; j++){  /*za prost*/
+				if (!(polje[i]%j)) prost = 0;
+			};
+			if (prost==1&&polje[i]!=1) b_prostih++;
+		}
+		printf("%d %d", umnozak, b_prostih);
+	}
+	else {										/*neparan*/
+		for (i=0, simetricna = 1 ; i<(broj_polja/2)&&simetricna==1; i++){
+			if (polje[i] != polje[(broj_polja-1)-i]) {
+				simetricna = 0;
+			};
+		}
+		if (simetricna) printf("Jest");
+		else printf("Nije");
+	}
+	return 0;
+}  

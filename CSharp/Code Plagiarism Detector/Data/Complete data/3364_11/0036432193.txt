@@ -1,0 +1,12 @@
+#include <stdio.h>
+int main () {
+	char znak1, c, znak2, rez;
+	scanf("%c %c %c", &znak1, &znak2, &c);
+	rez=0;
+	if (c=='+') {rez=znak1+znak2; printf("%d", rez);}
+	else if (c=='-') {rez=znak1-znak2; printf("%d", rez);}
+	else if (c=='*') {rez=znak1*znak2; printf("%d", rez);}
+	else if (c=='/') {rez=znak1/znak2; printf("%d", rez);}
+	else if (c=='%') {rez=znak1%znak2; printf("%d", rez);}
+	else printf("Neispravna");
+}

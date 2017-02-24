@@ -1,0 +1,29 @@
+int izbaciZ(zapis **glava){
+    zapis *pom=*glava;
+    int br=0;
+    int brizb=0;
+    float prosjek, sum;
+    for(;pom;pom=pom->sljed){
+                             sum+=pom->pros;
+                             br++;
+                             }
+    prosjek=sum/br;
+    while (*glava){
+                if(((*glava)->spol)=='Z' && ((*glava)->pros)<prosjek){
+                pom=*glava;
+                glava=&((*glava)->sljed);
+                free(pom);
+                brizb++;
+                }
+                else break;
+                }
+    for(;*glava;*glava=(*glava)->sljed){
+                                        if(((*glava)->sljed->pros)<prosjek && ((*glava)->sljed->spol)=='Z'){
+                                                                           pom = (*glava)->sljed;
+                                                                           (*glava)->sljed=(*glava)->sljed->sljed;
+                                                                           free(pom);
+                                                                           br++;
+                                                                           }
+                                                                           }
+    return brizb;
+}

@@ -1,0 +1,15 @@
+double sumareda (double X, int N) {
+	double c = 0;
+
+	kontrola();
+
+	if (N <= 0)	{
+
+		return 0;
+
+	} else { 
+
+		c += pow (-1, N-1) * pow (X, N) / N;
+
+	return sumareda (X, N - 1) + c;
+}}

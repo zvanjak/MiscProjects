@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+
+int main (void) {
+	int o, n, c;
+	float x, bp, np;
+	
+	scanf ("%d %d %d", &o, &n, &c);
+
+	if (o < n)
+		x = (float)c * 0.9;	
+	if (o > n)
+		x = (float)c * 1.15; 	
+	if (o == n)
+		x = (float)c;
+
+	bp = o * x;
+	if (bp > 6000) {
+		np = bp * 0.7;
+	} else {
+		np = bp * 0.8;
+	}
+	printf ("%.2f", np);
+	
+	return 0;
+}

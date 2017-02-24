@@ -1,0 +1,12 @@
+int veci_od(FILE *f, int granica){
+  int br=0;
+  char naz[31];
+  char aut[21];
+  int prod;
+  
+  while(fscanf(f, "%s%s%d", naz, aut, &prod) != EOF)
+    if(prod>=granica)
+      br++;
+  
+  return br;
+}

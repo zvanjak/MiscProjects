@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+int broj, najveci=0, prost, i;
+do{
+  scanf("%d",&broj);
+  if(broj>2){
+    prost=1;
+    for(i=2;i<=(int)(ceil(sqrt(broj)));i++){
+     if(broj%i==0){
+       prost=0;
+       break;}
+    }
+  if((prost)&&(broj>najveci)) najveci=broj;}
+  else if(broj==2){
+    prost=1;
+    if((prost)&&(broj>najveci)) 
+      najveci=broj;}
+  }
+while(broj>2);
+if(najveci>2)
+  printf("Najveci je %d\n",najveci);
+else
+  printf("0\n");
+return 0;
+}

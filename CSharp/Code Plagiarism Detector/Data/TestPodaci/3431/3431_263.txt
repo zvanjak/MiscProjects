@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int val(char c){
+	if ( isdigit(c) ) return c - '0';
+	return c - 'A' + 10;
+}
+
+int main(){
+	int sa = 0, sb = 0, tmp;
+	char c;
+	
+	while(scanf("%c", &c) == 1){		
+		if ( !isxdigit(c) ) break;
+		
+		c = toupper(c);
+		tmp = val(c);
+		if ( tmp&1 ) sb += tmp;
+		else sa += tmp;
+	}
+	printf("%d\n", sa - sb);
+	
+	return 0;
+}

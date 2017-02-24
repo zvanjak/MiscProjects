@@ -1,0 +1,54 @@
+#include <stdio.h>
+
+int main () {
+	int i, j, n, x=0, o=0, brx=0, bro=0;
+	char mat[20][20];
+	scanf("%d", &n);
+	for(i=0; i<n; i++) {
+		for(j=0; j<n; j++) {
+			scanf("%c", &mat[i][j]);
+		}
+	}
+	for(i=0; i<n; i++) {
+		for(j=0; j<n; j++) {
+			if(mat[i][j]=='X') brx++;
+			if(mat[i][j]=='O') bro++;
+		}
+		if(brx==n) x=1;
+		if(bro==n) o=1;
+		brx=0;
+		bro=0;
+	}
+	for(i=0; i<n; i++) {
+		for(j=0; j<n; j++) {
+			if(mat[j][i]=='X') brx++;
+			if(mat[j][i]=='O') bro++;
+				}
+		if(brx==n) x=1;
+		if(bro==n) o=1;
+		brx=0;
+		bro=0;
+	}
+	for(i=0; i<n; i++) {
+		for(j=0; j<n; j++) {
+			if(i==j){
+				if(mat[i][j]=='X') brx++;
+				if(mat[i][j]=='O') bro++;
+			}
+		}
+	}
+	if(brx==n) x=1;
+	if(bro==n) o=1;
+	brx=0;
+	bro=0;
+	for(i=0; i<n; i++) {
+		if(mat[i][n-i-1]=='X') brx++;
+		if(mat[i][n-i-1]=='O') bro++;
+	}
+	if(brx==n) x=1;
+	if(bro==n) o=1;
+	if((x==1 && o==1) || (x==0 && o==0)) printf("-");
+	if(x==1 && o==0) printf("X");
+	if(x==0 && o==1) printf("O");
+	return 0;
+}

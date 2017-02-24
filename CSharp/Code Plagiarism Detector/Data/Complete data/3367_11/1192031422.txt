@@ -1,0 +1,45 @@
+#include <stdio.h>
+int main(){
+    char a,b;
+    int rez,znak0,znak1;
+scanf("%c %c",&a,&b);
+
+if((a>='0'&&a<='9')&&(b>='0'&&b<='9')){
+   rez=(a-'0')*16+b-'0';
+   }
+   else if((a>='A'&&a<='F')&&(b>='0'&&b<='9')){
+        if (a=='A') znak0=10;
+        if (a=='B') znak0=11;
+        if (a=='C') znak0=12;
+        if (a=='D') znak0=13;
+        if (a=='E') znak0=14;
+        if (a=='F') znak0=15;
+        rez=znak0*16+b-'0';
+        }
+        else if ((a>='0'&&a<='9')&&(b>='A'&&b<='F')){
+             if (b=='A') znak1=10;
+             if (b=='B') znak1=11;
+             if (b=='C') znak1=12;
+             if (b=='D') znak1=13;
+             if (b=='E') znak1=14;
+             if (b=='F') znak1=15;
+             rez=(a-'0')*16+znak1;
+             }
+             else if((a>='A'&&a<='F')&&(b>='A'&&b<='F')){
+                  if (a=='A') znak0=10;
+                  if (a=='B') znak0=11;
+                  if (a=='C') znak0=12;
+                  if (a=='D') znak0=13;
+                  if (a=='E') znak0=14;
+                  if (a=='F') znak0=15;
+                  if (b=='A') znak1=10;
+                  if (b=='B') znak1=11;
+                  if (b=='C') znak1=12;
+                  if (b=='D') znak1=13;
+                  if (b=='E') znak1=14;
+                  if (b=='F') znak1=15;
+             rez=znak0*16+znak1;
+             }
+        printf("%d\n",rez);	
+  return 0;
+}

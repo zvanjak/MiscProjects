@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main(){
+
+	int br;
+	int a, b, c;
+
+	scanf( "%d", &br );
+	
+	if ( br < 0 ) br *= -1;
+	
+	if ( br < 100 || br > 999 ) return 0;
+
+	a = br % 10;
+	br /= 10;
+	b = br % 10;
+	br /= 10;
+	c = br % 10;
+
+	if ( ( a + b + c ) % 2 ) printf( "%d\n", a*b*c );
+	else  printf ( "%d\n", c - a -b );
+
+	return 0;
+}

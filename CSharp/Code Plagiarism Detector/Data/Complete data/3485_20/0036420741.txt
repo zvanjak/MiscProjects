@@ -1,0 +1,92 @@
+class CjelobrojniNiz {
+public:
+	CjelobrojniNiz (int*, int);
+	CjelobrojniNiz (CjelobrojniNiz&);
+	~CjelobrojniNiz();
+
+	int *polje;
+	int brcl;
+
+	int SviJednaki;
+	int IsSviJednaki();
+	int Usporedi (CjelobrojniNiz);
+	int* VratiRazliku (CjelobrojniNiz, int*);
+};
+
+CjelobrojniNiz::CjelobrojniNiz(int *niz, int n) {
+	int i;
+
+	brcl = n;
+	polje = new int[brcl];
+
+	for (i = 0; i < brcl; i++)
+		polje[i] = niz[i];
+
+	SviJednaki = IsSviJednaki();
+}
+
+CjelobrojniNiz::CjelobrojniNiz(CjelobrojniNiz& obj) {
+	int i;
+
+	brcl = obj.brcl;
+	polje = new int[brcl];
+
+	for (i = 0; i < brcl; i++)
+		polje[i] = obj.polje[i];
+
+	SviJednaki = IsSviJednaki();
+}
+
+CjelobrojniNiz::~CjelobrojniNiz() {
+	delete [] polje;
+}
+
+int CjelobrojniNiz::IsSviJednaki() {
+	int i;
+
+	for (i = 1; i < brcl; i++)
+		if (polje[i] != polje[i-1])
+			return (0);
+
+	return (1);
+}
+
+int CjelobrojniNiz::Usporedi(CjelobrojniNiz niz) {
+	int i;
+
+	if (niz.brcl != brcl)
+		return (0);
+
+	for (i = 0; i < brcl; i++)
+		if (niz.polje[i] != polje[i]) return (0);
+
+	return (1);
+}
+
+
+int* CjelobrojniNiz::VratiRazliku(CjelobrojniNiz niz, int *n) {
+	int i, j, nbrcl;
+
+	int *npolje = new int[brcl];
+
+	nbrcl = 0;
+	for (i = j = 0; ;) {
+		while (polje[i] > niz.polje[j])
+			if (++j >= niz.brcl) goto bk;
+		if (polje[i] < niz.polje[j])
+			npolje[nbrcl++] = polje[i];
+		do {
+			if (++i >= brcl) goto bk;
+		} while (polje[i] == polje[i-1]);
+	}
+bk:	do {
+	if (++i >= brcl) break;
+		} while (polje[i] == polje[i-1]);
+		while (i < brcl) {	
+			npolje[nbrcl++] = polje[i++];
+		}
+
+		*n = nbrcl;
+
+		return (npolje);
+}

@@ -1,0 +1,23 @@
+int izbaci(zapis **glava)
+{
+	int broj=0;
+	zapis *temp;
+
+	while(*glava)
+	{
+		if((*glava)->pros<2.0)
+		{
+			temp=*glava;
+			*glava=(*glava)->sljed;
+			delete temp;
+
+			broj++;
+		}
+		else
+		{
+			glava=&((*glava)->sljed);
+		}
+	}
+
+	return broj;
+}

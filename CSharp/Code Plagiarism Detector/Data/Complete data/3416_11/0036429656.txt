@@ -1,0 +1,25 @@
+#include<stdio.h>
+int main()
+{
+	char a[200]={0};
+	int min,max,i=0,j=0;
+	gets(a);
+	for(i=0;i<200;i++)
+	{
+	
+		if (a[i]<64 || a[i]>91) i=200;
+		j=j+1;
+	}
+	min=a[0];
+	max=a[0];
+	if ((j-1)==0) printf("-1");
+	else {
+		    for (i=0;i<(j-1);i++)
+		    {
+			  if (a[i]>max) max=a[i];
+			  if (a[i]<min) min=a[i];
+		    }
+	          printf("%c %c",min,max);
+	     }
+	 return 0;
+}

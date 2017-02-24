@@ -1,0 +1,39 @@
+char *Spoji(char *niz1,char *niz2){
+	int a=0,b=0,c=0,d=0,i=0,p=0;
+	char *noviniz;
+	while (*(niz1+a)!='\0'){
+		a++;
+	}
+	while (*(niz2+b)!='\0'){
+		b++;
+	}
+	noviniz=(char*) malloc((a+b+1)*sizeof(char));
+	for (i=0;i<(a+b);i++){
+		if((i+p)%2==0)
+		{
+			if (c<a){
+				*(noviniz+i)=*(niz1+c);
+				c++;
+			}
+			else {
+				i--;
+				p++;
+			}
+			
+		}
+		if((i+p)%2)
+		{
+			if (d<b){
+				*(noviniz+i)=*(niz2+d);
+				d++;
+			}
+			else {
+				i--;
+				p++;
+			}
+		}
+			
+	}
+	*(noviniz+a+b)='\0';
+	return noviniz;
+}

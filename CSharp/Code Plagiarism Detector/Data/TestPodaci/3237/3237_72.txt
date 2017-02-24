@@ -1,0 +1,19 @@
+#include<stdio.h>
+#include<math.h>
+int main(){
+	int i;
+	double naz,pi,raz,broj;
+	scanf("%lf",&broj);
+    if(!(broj>=1 && broj<=30 && (int)broj==broj))
+		printf("n nije valjan");
+	else {
+		raz=0;
+		for (i=1;i<=broj;i++){
+			naz=pow(i,6);
+			raz+=pow(naz,-1);
+		}
+		pi=pow((945*raz),(1./6));
+		printf("%.12lf",pi);
+	}
+	return 0;
+}

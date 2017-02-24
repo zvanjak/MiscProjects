@@ -1,0 +1,14 @@
+int main(){
+	int broj;
+	int c1,c2;
+	scanf("%d",&broj);
+	if (broj<16||broj>255) {
+		printf("Izvan intervala");
+		return 0;}
+	else
+	{
+		c1=broj%16;
+		c2=broj/16;
+	}
+	printf("%c%c",c2<10?c2+'0':('A'+c2-10),c1<10?c1+'0':('A'+c1-10));
+	return 0;}

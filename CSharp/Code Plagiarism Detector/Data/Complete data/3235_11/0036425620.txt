@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main()
+{
+	double ln2=0.0, x;
+	int n, i, p=1;
+
+	scanf("%lf", &x);
+
+	n=x;
+
+	if( (n==x) && (n<=100) && (n>=1) )
+	{
+		for(i=1;i<=n;i++)
+		{
+			ln2 += (double)p/i;
+			p=-p;
+		}
+		printf("%.12lf", ln2);
+	}
+
+	else
+		printf("n nije valjan");
+
+	return 0;
+}

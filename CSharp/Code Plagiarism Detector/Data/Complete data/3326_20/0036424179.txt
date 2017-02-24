@@ -1,0 +1,18 @@
+void AritSred_StdDev ( float *p, int n, float *ArSred, float *StdDev ) {
+
+    int i;
+    if ( n ==1 ) { *ArSred = p[0]; *StdDev = 0; 
+    return; }
+    *ArSred = 0;
+    *StdDev = 0;
+    if ( n == 0 ) return;
+    for ( i=0; i<n; ++i ) *ArSred += p[i];
+    
+    *ArSred /= n;
+
+    for ( i=0; i<n; ++i ) *StdDev += pow(( p[i] - *ArSred ), 2 );
+
+    *StdDev /= n*(n-1);
+
+    *StdDev = sqrt ( *StdDev );
+}

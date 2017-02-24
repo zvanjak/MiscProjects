@@ -1,0 +1,16 @@
+float prosjek (FILE *f) {
+	struct zapis {
+        char naziv [30+1];
+	char autor [20+1];
+        int prodano;
+	};
+	struct zapis p; char buf [65];
+	int n=0, s=0; float r;
+	while ((fgets(buf,65,f)!=NULL)) {
+            sscanf(buf,"%s %s %d",p.naziv,p.autor,&p.prodano);
+			s=s+p.prodano;
+			n++;
+	}
+	r=(float) s/n;
+    return r;
+}

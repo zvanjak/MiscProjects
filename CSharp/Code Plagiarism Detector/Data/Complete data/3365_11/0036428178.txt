@@ -1,0 +1,26 @@
+#include<stdio.h>
+int main()
+{
+	int x,s;
+	s=0;
+	scanf("%d", &x);
+	if (x>0 && x>99 && x<1000)
+	{
+		if (x>=250 && x<=950)
+		{
+			if (x%10%2==1)
+				s=s+x%10;
+			if ((x%100/10)%2==1)
+				s=s+x%100/10;
+			if ((x/100)%2==1)
+				s=s+x/100;
+			printf("%d",s);
+		}
+		else
+		{
+			s=x/100+(x/10)%10+x%10;
+			printf("%d",s);
+		}
+	}
+	return 0;
+}

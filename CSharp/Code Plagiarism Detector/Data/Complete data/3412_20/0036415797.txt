@@ -1,0 +1,30 @@
+char *SamoDuplikati(char *ulazni_niz){
+	int i=0,j,k=0;
+	int n;
+	char *pom;
+	char *novi,*izlaz;
+
+	pom=ulazni_niz;
+
+	if((pom=='\0')||(pom==NULL)) return NULL;
+	n= strlen(pom);
+	novi=(char*)malloc(n*sizeof(char));
+	n--;
+	for(i=n;i>=0;i--){
+		for(j=i-1;j>=0;j--){
+			if(pom[i]==pom[j]){
+				k++;
+				novi[n-k]=pom[i];
+				break;
+			}
+
+		}
+
+	}
+
+	novi[n]=0;
+	izlaz=(char*)malloc((k+1)*sizeof(char));
+	strcpy(izlaz,&novi[n-k]);
+	free(novi);
+	return izlaz;
+}

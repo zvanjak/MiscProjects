@@ -1,0 +1,27 @@
+#include <stdio.h>
+#define MAX 20
+int main(){
+	int k,i=0,suma=0,a,b;
+	char operacija[MAX];
+	do{
+		scanf("%d %d %c",&a,&b,&operacija[i]);
+		if(operacija[i]=='+'){
+			suma+=a+b;
+		}else if(operacija[i]=='-'){
+			suma+=a-b;
+		}else if(operacija[i]=='*'){
+			suma+=a*b;
+		}else if(operacija[i]=='/' && b!=0){
+			suma+=a/b;
+		}else if(operacija[i]=='%' && b!=0){
+			suma+=a%b;
+		}else{
+			suma=suma;
+		}
+		i++;
+	}while(operacija[i-1]=='+' || operacija[i-1]=='-' || operacija[i-1]=='*' || operacija[i-1]=='/' || operacija[i-1]=='%');
+	printf("%d ",suma);
+	for(k=0;k<(i-2);k++) printf("%c ",operacija[k]);
+	if(i>=2) printf("%c",operacija[i-2]);
+	return 0;
+}

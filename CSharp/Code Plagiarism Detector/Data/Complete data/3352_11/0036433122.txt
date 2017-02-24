@@ -1,0 +1,19 @@
+int veci_od(FILE *f,int n){
+	int i,j,x,y,br=0;
+	struct natjecatelj{
+	   int redni_br;
+	   char prezime[20+1];
+	   int bodovi;
+   };
+	fseek(f,0L,SEEK_END);
+	for (i=1,j=0;i<=((ftell(f))/29);i++,j++){
+        fseek(f,29*j+1,SEEK_SET);
+        fread(&y,sizeof(br),1,f);
+		if (y==0) continue;
+		fseek(f,26+29*j,SEEK_SET);
+		fread(&x,sizeof(br),1,f);
+		if (x>=n) br++;
+		else continue;
+	}
+	return br;
+}

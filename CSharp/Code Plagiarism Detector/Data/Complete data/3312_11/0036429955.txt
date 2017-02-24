@@ -1,0 +1,12 @@
+int br_prodanih(FILE *f, char *autor){
+  int br=0;
+  char naz[31];
+  char aut[21];
+  int prod;
+
+  while(fscanf(f, "%s%s%d", naz, aut, &prod) != EOF)
+    if(!strcmp(autor, aut))
+      br=br+prod;
+
+  return br;
+} 

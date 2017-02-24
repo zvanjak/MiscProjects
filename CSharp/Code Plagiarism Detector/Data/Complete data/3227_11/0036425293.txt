@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <math.h>
+int main (){
+	int n,i;
+	double x,z=0;
+	scanf ("%d",&n);
+	if ((n<1)||(n>500))
+		printf("n nije valjan");
+	else{ 
+	for (i=1;i<=n;i++){
+		x=(2*i-1);
+        x=1/x;
+	x=x*(pow((-1),i+1));
+	z=z+x;
+	x=0;}
+	printf ("%.12lf",(4*z));}
+return 0;} 

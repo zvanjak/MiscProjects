@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+void main()
+{
+	int d,g,i,suma=0;
+	scanf("%d %d",&d,&g);
+	if(d<=0 || g<=0 || d>g) printf("D i G nisu valjani");
+	else
+	{
+		for(i=0;i<d;i++)
+		{
+			if(i%2==0) suma+=i;
+		}
+		for(i=d;i<=g;i++)
+		{
+			if(i%2==0)
+			{
+				suma+=i;
+				printf("%d ",suma);
+			}
+		}
+	}
+}

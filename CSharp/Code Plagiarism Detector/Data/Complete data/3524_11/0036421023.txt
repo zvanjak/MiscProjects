@@ -1,0 +1,30 @@
+void ubaci (char niz[], char podniz[], int i){
+	char red[4096];
+	int x,y,n,j,z;
+	x=strlen(niz);
+	y=strlen(podniz);
+	if(i>=0 && i<=x){
+		if(i==x){
+			strcat(niz,podniz);
+			printf("%s\n",niz);
+		}
+		else{
+		for(n=i,j=0;n<x;n++,j++){
+			red[j]=niz[n];
+			red[j+1]='\0';
+		}
+		for(n=i,j=0;j<y;n++,j++){
+			niz[n]=podniz[j];
+			niz[n+1]='\0';
+		}
+		z=strlen(red);
+		for(n=(i+y),j=0;j<z;n++,j++) {
+			niz[n]=red[j];
+			niz[n+1]='\0';
+		}
+		}
+	}else{
+		for(n=0;n<x;n++)
+			niz[n]=toupper(niz[n]);
+	}
+}

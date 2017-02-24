@@ -1,0 +1,14 @@
+float* KreirajMatricu(int n, float* p, int m)
+{
+	float *p1, pot;
+	int i,j,k;
+	p1= (float*) malloc (m*n*sizeof(float));
+	for (i=0; i<m; i++)
+		for (j=0; j<n; j++)
+		{
+			pot=1;
+			for (k=1; k<=i; k++) pot *= p[j];
+			p1[i*n+j]=pot;
+		}
+	return p1;
+}

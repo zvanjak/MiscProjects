@@ -1,0 +1,13 @@
+#include<stdio.h>
+int main () {
+	int n,x,brojkoraka=0;
+	scanf("%d", &n);
+	do {
+		x=n%10;
+		n=n+x;
+		printf("%d ",n);
+		brojkoraka++;
+	}while((n%13!=0) || (brojkoraka== 40));
+	printf("%d ",brojkoraka);
+	return 0;
+}

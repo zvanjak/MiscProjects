@@ -1,0 +1,16 @@
+int* napraviPolje(int *A,int Na,int a,int b,int* Nc)
+{
+int i;
+int *niz=NULL;
+*Nc=0;
+if(a>b)return 0;
+for(i=0;i<Na;i++)
+{
+if((A[i]>b) || (A[i]<a))
+{
+niz=(int *)realloc(niz,(*Nc+1)*sizeof(int));
+*Nc++;
+}
+}
+return niz;
+}

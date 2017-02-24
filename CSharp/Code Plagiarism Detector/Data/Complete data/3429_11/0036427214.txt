@@ -1,0 +1,19 @@
+#include <stdio.h>
+#define max1 20
+#define max2 5
+int main () {
+int p[max1][max2]={0},mr,ms,i,j,br=0,bs=0,n;
+do scanf("%d %d", &mr, &ms);
+while ((mr<1) || (mr>max1) || (ms<1) || (ms>max2));
+	
+for(i=0; i<mr; i++) for(j=0; j<ms; j++) scanf("%d", &p[i][j]);
+for(i=0;i<mr;i++) for(j=0;j<ms;j++) if (p[i][j]%2==0) {br++; break;}
+			                       
+       
+
+for(j=0;j<ms;j++) for(i=0;i<mr;i++) if (p[i][j]%2) {bs++; break;}
+                                    
+printf("%d %d",br,bs);
+scanf("%*s");
+return 0;
+}

@@ -1,0 +1,13 @@
+int *napraviPolje(int *A, int na, int a, int b, int *nc) {
+    int i;
+    int *vracam;
+    if (a>b) return 0;
+    *nc=0;
+    vracam=(int *) malloc(na*4);
+    for(i=0; i<na; i++) {
+		if(A[i]>= a && A[i]<=b) {
+			vracam[(*nc)++]=A[i];
+		}
+	}
+	return vracam;
+}

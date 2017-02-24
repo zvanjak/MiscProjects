@@ -1,0 +1,31 @@
+#include<stdio.h>
+int main()
+{int mr,ms,i,j,p[20][5],pom,n=0,s[20]={0};
+ do{ 
+ scanf("%d %d", &mr,&ms);
+ }while(mr<1 || mr>20 || ms<1 || ms>5);
+ for(i=0;i<mr;i++)
+	for(j=0;j<ms;j++)
+		{scanf("%d ",&p[i][j]);
+		}
+	 
+do
+	{scanf("%d %d",&i,&j);
+	 if(i<0 || i>mr || j<0 || j>mr)
+		break;
+	 for(n=0;n<mr;n++)
+		{pom=p[i][n];
+		 p[i][n]=p[j][n];
+		 p[j][n]=pom;
+		}
+	}while(1);
+
+for(i=0;i<mr;i++)
+	{for(j=0;j<ms;j++)
+		s[i]+=p[i][j];
+	 printf("%d",s[i]);
+	 if(i<(mr-1))
+		printf(" ");
+	}
+return 0;
+}

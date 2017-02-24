@@ -1,0 +1,28 @@
+#include <stdio.h>
+#define MAX 100
+int main(){
+	int i=0, brojac=0,n;
+	char polje[MAX];
+	for(i=0; i<MAX; i++){
+		polje[i]=getchar();
+		++brojac;
+		if(polje[i]=='.')
+			break;
+	}
+	--brojac;
+	for(i=0; i<brojac; i++){
+		if((polje[0]>=97)&&(polje[0]<=122))
+		    polje[0]-=32;
+		if((polje[brojac-1]>=97)&&(polje[brojac-1]<=122))
+		    polje[brojac-1]-=32;
+		if((polje[i-1]>=97)&&(polje[i-1]<=122)&&(i<brojac-1)&&(i>0)&&(polje[i]==' '))
+			polje[i-1]-=32;
+		if((i<brojac-1)&&(i>0)&&(polje[i]==' ')&&(polje[i+1]>=97)&&(polje[i+1]<=122))
+		    polje[i+1]-=32;
+		}
+	polje[brojac]='.';
+	for(i=0; i<brojac+1; i++){
+		printf("%c", polje[i]);
+	}
+return 0;
+}

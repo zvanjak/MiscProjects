@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main()
+{
+double pi=0;
+int n,i;
+scanf("%d",&n);
+if (n>=1 && n<=500)
+{
+for (i=1;i<=n;++i)
+pi+=((i%2)? 1.: -1.)/(2*i-1);
+pi*=4;
+printf("%.12lf",pi);
+
+}
+else printf("n nije valjan");
+
+return 0;
+}

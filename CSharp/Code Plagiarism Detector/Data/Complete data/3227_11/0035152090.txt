@@ -1,0 +1,18 @@
+#include<stdio.h>
+#include<math.h>
+int main(){
+int n,a,g;
+double m1,m2,rez=0,pi;
+scanf("%d",&n);
+if( (n<=500) && (n>=1)){
+for(a=n;a!=0;a--){             
+g=a+1;
+m1=pow(-1,g);
+m2=m1/(2*a-1);   
+rez=m2+rez;
+}}                
+pi=4*rez;
+/*printf("\n rezultat je: %.12g",pi);*/
+printf("%.12f", pi);
+return 0;
+}

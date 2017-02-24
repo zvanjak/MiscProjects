@@ -1,0 +1,99 @@
+typedef struct {
+	char ime[20+1];
+	char prezime[30+1];
+	char jmbag[10+1];
+	int ocjena;
+} tip;
+
+typedef struct atom {
+	tip podatak;
+	atom *sljed;
+	atom(tip novi) {
+		podatak = novi;
+		sljed = NULL;
+	}
+	atom() {
+		sljed = NULL;
+	}
+} atom;
+
+
+int brojElementa(atom *glava) {
+	int rjesenje = 0;
+	while( glava != NULL ) {
+		rjesenje ++;
+		glava = glava->sljed;
+	}
+	return rjesenje;
+}
+
+int dodaj(atom **glavap, tip element) {
+	atom* pamti = *glavap;
+	*glavap = new atom(element);
+	if (*glavap == NULL) return 0;
+	(*glavap)->sljed = pamti;
+	return 1;
+}
+
+int minOcjena(atom *glava) {
+	if (glava == NULL) return -1;
+	int rjesenje = glava->podatak.ocjena;
+	while(glava != NULL) {
+		if (rjesenje > glava->podatak.ocjena)
+			rjesenje = glava->podatak.ocjena;
+		glava = glava->sljed;
+	}
+	return rjesenje;
+}
+
+float prosjOcjena(atom *glava) {
+	if (glava == NULL) return -1;
+	int suma = 0, br = 0;
+	while(glava != NULL) {
+		br ++;
+		suma += glava->podatak.ocjena;
+		glava = glava->sljed;
+	}
+	return (float) suma / br;
+}
+
+bool sadrzi(atom *data, char imePodniz[]) {
+	char *ime = &(data->podatak.ime[0]);
+	int j;
+
+	for (int i=0; i<strlen(ime); i++) {
+		for (j=0; j<strlen(imePodniz); j++)
+			if (ime[i+j] != imePodniz[j]) break;
+		if (j == strlen(imePodniz)) return true;
+	}
+	return false;
+}
+
+int izbaciImeSadrzi(atom **glavap, char *imePodniz) {
+	int broji = 0;
+	atom *prev, *glava, *tmp;
+
+	while( sadrzi(*glavap, imePodniz) )  {
+		tmp = *glavap;
+		*glavap = (*glavap)->sljed;		
+		delete tmp;
+		broji ++;
+		if (*glavap == NULL) return broji;
+	}
+
+	prev = *glavap;
+	glava = *glavap;
+	while( glava != NULL ) {
+		if ( sadrzi(glava, imePodniz) ) {
+			(prev)->sljed = (glava)->sljed;
+			broji++;
+			tmp = glava;
+			glava = glava->sljed;
+			delete tmp;
+		} else {
+		  prev = glava;
+		  glava = glava->sljed;
+		}
+	}
+	return broji;
+}

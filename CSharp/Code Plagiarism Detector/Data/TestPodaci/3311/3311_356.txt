@@ -1,0 +1,13 @@
+float prosjek(FILE *f)
+{
+	float zbroj = 0, p;
+	long brojac = 0;
+	struct album a;	
+	while (fread (&a, sizeof (a), 1, f) != 0)
+	{
+		zbroj += a.prodano;
+		brojac++;
+	}
+	p = zbroj/brojac;
+	return p;
+}

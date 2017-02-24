@@ -1,0 +1,19 @@
+int izbaciDuplikate (char *ulazni){
+int brojac [150] = { 0 };
+int br,i,j,zbroj,izbaceni=0;
+br = 0;
+ zbroj = 0;
+ while (*(ulazni+br)) br++;
+ for ( i = 0; i < br; i++)
+ {  brojac [ulazni [i] ]++;
+    if (brojac [ulazni [i] ] > 1)
+    {   for (j=i; j<br; j++)
+        { ulazni [j] = ulazni [j+1]; }
+        i = i - 1;
+        br = br - 1;
+        ulazni [br] = ' \0 ';
+                izbaceni++;
+    }
+ }
+return izbaceni;
+}

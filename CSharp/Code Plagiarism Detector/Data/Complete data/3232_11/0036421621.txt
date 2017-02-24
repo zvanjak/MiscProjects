@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <math.h>
+int main(){ 
+ int n,i;
+ double x=1,y;
+ scanf("%d", &n);
+ if (n<1 || n>30)
+   printf("n nije valjan");
+ else {
+  for (i=1; i<=n; i++) {
+   y=pow(2,i);
+   x+=1./y;
+   }
+ printf("%13.12f", x);
+ }
+return 0;
+}

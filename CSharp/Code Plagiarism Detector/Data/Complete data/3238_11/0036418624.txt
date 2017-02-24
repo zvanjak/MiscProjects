@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include<math.h>
+int main (){
+    int i,n;
+    double pom,pi,s=0;
+    scanf ("%d",&n);
+    if (n<1 ||n>25)
+    {
+    printf ("n nije valjan");
+    }
+    else {
+    for (i=1; i<=n; i++)
+    {
+    s=s+(1./(pow(i,8)));
+    }
+    pom=s*9450;
+    pi=pow(pom,0.125);
+    printf ("pi=%1.12f",pi);
+    }
+return 0;
+}

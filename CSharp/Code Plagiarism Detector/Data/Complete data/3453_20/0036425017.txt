@@ -1,0 +1,57 @@
+class SortRazlPolje{
+	int *polje, brele,maxele;
+	void Insertion(int *a,int n);
+public:
+	SortRazlPolje();
+	int Dodaj(int Broj);
+	int *VratiSortPolje(int &n);
+	~SortRazlPolje();
+};
+void SortRazlPolje::Insertion(int *a,int n){
+	int i,j,tmp;
+	for(i=1;i<n;i++)
+	{
+		tmp=a[i];
+		for(j=i;j>0 && a[j-1]<tmp; j--)
+			a[j]=a[j-1];
+		a[j]=tmp;
+	}
+}
+SortRazlPolje::SortRazlPolje(){
+
+	brele=0;
+	maxele=10;
+	polje= new int[maxele];
+}
+
+int SortRazlPolje::Dodaj(int Broj){
+	int i;
+	if(polje!=NULL && brele!=maxele){
+		for(i=0; i<brele;i++){
+			if(polje[i]==Broj) return 1;
+		polje[brele]=Broj;
+		brele++;
+		return 1;
+			}
+		}
+	int* tmp= new int[maxele+10];
+	if(tmp!=NULL){
+		for(i=0;i<brele;i++) tmp[i]=polje[i];
+		delete []polje;
+		polje=tmp;
+		maxele+=10;
+		return this->Dodaj(Broj); 
+	}
+	return 0;
+}
+
+int * SortRazlPolje::VratiSortPolje(int &n){
+	if(brele==0 && polje==NULL){n=0; return NULL;}
+
+	Insertion(polje,brele);
+	n=brele;
+	return polje;
+}
+SortRazlPolje::~SortRazlPolje(){
+	delete []polje;
+}

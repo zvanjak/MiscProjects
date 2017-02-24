@@ -1,0 +1,43 @@
+#include<stdio.h>
+int main(){
+	int i=0,niz[50],br=0,n,m=-1;
+	int j, umnozak=1;
+	int l,k,x,y,z,prost=0;
+	do{	scanf("%d", &n);
+		niz[i]=n;
+		i++;
+}while (n>0);
+
+	n=i-1;
+	if((i-1)%2!=0){
+		do{m++;
+		n--;
+		if(niz[m]==niz[n])
+			br++;}
+		while(m!=n);
+	if(br*2==i)
+	printf("Jest");
+	else printf("Nije");}
+
+	else if((i-1)%2==0){
+		for(m=0;m<i-1;m++)
+			umnozak*=niz[m];
+
+		for(k=0;k<i-1;k++){
+			for(l=3;l<=niz[k];l=+2){
+				if(niz[k]%l!=0)
+					prost++;
+				break;}}
+		for(x=0;x<i-1;x++){
+			if((niz[x]==3)||(niz[x]==2))prost++;}
+
+	for(y=0;y<i-1;y++){
+			if((niz[y]>2)&&(niz[y]%2==0))prost--;}
+		for(z=0;z<i-1;z++){
+			if((niz[z]%3==0)&&(niz[z]%2==0))prost++;}
+
+	
+
+		printf("%d %d", umnozak, prost);}
+	return 0;
+}

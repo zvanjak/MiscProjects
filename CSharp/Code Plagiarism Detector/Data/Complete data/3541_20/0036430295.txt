@@ -1,0 +1,25 @@
+int izbaciZ(zapis **glava) {
+	zapis *tmp = *glava;
+	float avg=0;
+	int num=0;
+	
+	if (!tmp) return 0;
+	while (tmp) {
+		avg += tmp->pros;
+		num++;
+		tmp = tmp->sljed;
+	}
+	avg /= (float)num;
+	
+	num = 0;
+	while (*glava) {
+		if ((*glava)->pros < avg && (*glava)->spol == 'Z') {
+			tmp = *glava;
+			*glava = (*glava)->sljed;
+			free(tmp);
+			num++;
+		} 
+		else glava = &((*glava)->sljed);
+	}
+	return num;
+}

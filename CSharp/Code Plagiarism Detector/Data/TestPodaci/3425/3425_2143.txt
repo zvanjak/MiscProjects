@@ -1,0 +1,38 @@
+#include<stdio.h>
+int main(){
+int i,j,mat[10][10],a,b,mr,zam,br_zam=0,zbroj=0,n;
+do {
+   scanf("%d",&mr);
+}  while(mr<1||mr>10);
+
+for(a=0;a<mr;a++) {
+   for(b=0;b<mr;b++) {
+       scanf("%d",&mat[a][b]); 
+   }
+}
+do {
+    scanf("%d %d",&i,&j);
+    if(i>=0&&i<mr&&j>=0&&j<mr){
+        zam=mat[i][j];
+        mat[i][j]=mat[j][i];
+        mat[j][i]=zam;
+        br_zam++;
+    }
+}   while(i>=0&&i<mr&&j>=0&&j<mr);
+
+scanf("%d",&n);
+
+if(n<0||n>=mr)
+zbroj=-1;
+
+else {
+    for(a=0;a<mr;a++){
+        for(b=0;b<mr;b++){
+            if(a==n)
+            zbroj+=mat[a][b];
+        }
+    }
+}
+printf("%d %d", br_zam, zbroj);
+return 0;
+}

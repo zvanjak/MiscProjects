@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <math.h>
+int main ( ){
+int x [50];
+int rj[10000];
+int i,j,k,a,b;
+int z,y;
+b=1;
+while(1) {
+scanf("%d" , &x[0]);
+if (x[0]>0) {
+	for (i=1;i<=11;i++) {
+		if ((x[0] >= pow(10,i-1))&& (x [0]< pow(10,i) )) {
+			j=i;
+		}
+	}
+	for (i=j; i>=1; i--) {
+			x[i]=x[0]%10; 
+	x[0]=x[0]/10;
+	}
+		x[0]=0;
+		for (i=1; i<=j; i++) 
+			x[0]=x[i]*pow(10,i-1)+x[0];
+		rj[b]=x[0];
+		b++;
+}
+else  break;
+}
+for (i=1; i<b; i++)
+if (i!=(b-1))
+printf("%d ",rj[i]);
+else printf("%d",rj[i]);
+return 0;
+}

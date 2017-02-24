@@ -1,0 +1,14 @@
+int rmax(int p[], int N) {
+	int m;
+kontrola ();
+	if (N == 1) {
+		return p[0];
+	}
+	else {
+		m = rmax(p, N - 1);
+		if (m < p[N - 1]) {
+			m = p[N - 1];
+		}
+		return m;
+	}
+}

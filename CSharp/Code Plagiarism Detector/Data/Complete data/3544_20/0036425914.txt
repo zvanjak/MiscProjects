@@ -1,0 +1,16 @@
+Red *PrepisiStogURed(Stog *stog)
+{
+ Stog *temp=new Stog();
+ Red *red=new Red();
+ int numb;
+ 
+ while(stog->Skini(&numb)) temp->Stavi(numb);
+ 
+ while(temp->Skini(&numb))
+ {
+  stog->Stavi(numb);
+  red->DodajURed(numb);
+ }
+ delete(temp);
+ return red;  
+}

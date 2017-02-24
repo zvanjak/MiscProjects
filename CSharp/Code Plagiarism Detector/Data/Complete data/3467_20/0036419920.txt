@@ -1,0 +1,45 @@
+int igra(Igrac& igrac, Automat& aut, int max, int *broj)
+{
+	int i;
+	int pre,post;
+
+	pre=igrac.TrenutnoStanje();
+
+	for(i=0;i<max;i++)
+	{
+		try
+		{	
+			igrac.UplatiNaRacun(aut.Zavrti());
+		}
+		catch(char *err)
+		{
+			
+			
+			if(igrac.TrenutnoStanje()==0)
+				break;
+
+
+			if(igrac.SkiniSRacuna(max-i)==false)
+			{
+				aut.UplatiIznos(igrac.TrenutnoStanje());
+				igrac.SkiniSRacuna(igrac.TrenutnoStanje());
+			}
+			else
+			{
+				aut.UplatiIznos(max-i);
+			}
+
+			i--;
+
+			
+		}
+	}
+
+	igrac.UplatiNaRacun(aut.PodigniPreostalo());
+
+	*broj=i;
+
+	post=igrac.TrenutnoStanje();
+
+	return post-pre;
+}

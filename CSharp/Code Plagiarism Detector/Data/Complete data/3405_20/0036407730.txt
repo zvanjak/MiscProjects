@@ -1,0 +1,12 @@
+char *SvakiDrugi (char *ulazni_niz){
+	int i = 0, j = 0;
+	char *niz = NULL;
+	do{
+		niz = (char *) realloc (niz, (i+2) * sizeof(char));
+		niz[i] = ulazni_niz[j];
+		i++;
+		j += 2;
+	}while (ulazni_niz[j] && ulazni_niz[j-1]);
+	niz[i] = '\0';
+	return niz;
+}

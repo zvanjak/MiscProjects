@@ -1,0 +1,32 @@
+#include<stdio.h>
+int main()
+{
+	int br, znam, i;
+	int z[10];
+	
+	do
+	{
+		scanf("%i", &br);
+		i = 0;
+		if (br < 0);
+		else if (br < 10)
+			printf("%d", br);
+		else
+		{
+			znam = 1;
+			for (i = 100; i <= 1000000000; i *= 10) /* milijarda */
+			if (br >= i)
+				++znam;
+			for (i = 0; i < znam + 1; ++i)
+			{
+				z[i] = br % 10;
+				br /= 10;
+			}
+			for (i = 0; i < znam + 1; ++i)
+				printf("%d", z[i]);
+                        /* printf(" ");  dodao Igor nije pomoglo */
+		}
+	}
+	while (br >= 0);
+	return 0;
+}

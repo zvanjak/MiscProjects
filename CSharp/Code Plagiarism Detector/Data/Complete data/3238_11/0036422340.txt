@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <math.h>
+int main () {
+ int n,i,p;
+ double s,pi;
+ scanf("%i",&n);          
+ if (!(n>0 && n<26)) printf("n nije valjan");
+ else {
+  s=0;
+  for (i=1;i<n+1;i++){
+     p=pow(i,8);   
+     s=s+1.0/p;    
+  }
+  s=s*9450;                            
+  pi=sqrt(s);
+  pi=sqrt(pi);
+  pi=sqrt(pi);
+  printf("%.12f",pi);
+ }
+ return 0;
+}
+

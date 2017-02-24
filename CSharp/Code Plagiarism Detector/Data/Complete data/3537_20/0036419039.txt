@@ -1,0 +1,17 @@
+int BrojClanova (Red *red) {
+  int koliko = 0;
+  int temp;
+  Red *pomocni = new Red;
+  
+  while (red -> SkiniIzReda (&temp) == 1) {
+    pomocni -> DodajURed (temp);
+    koliko++;
+  }
+  
+  while (pomocni -> SkiniIzReda (&temp) == 1)
+    red -> DodajURed (temp);
+  
+  delete pomocni;
+  
+  return koliko;
+}

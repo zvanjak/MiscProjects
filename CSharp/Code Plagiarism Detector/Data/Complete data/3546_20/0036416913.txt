@@ -1,0 +1,19 @@
+Stog* PrepisiRedUStog(Red *red){
+int i,prost=1,el;
+Stog *temp;
+  if ((red->SkiniIzReda(&el))==0) return NULL;
+  temp=PrepisiRedUStog(red);
+  if (el<0) el=0-el;
+	  for (i=2;i<=el/2;i++){
+		  if (el%i==0){
+		  prost=0;
+		  break;} 
+	  }
+  if (prost) {
+	  if (temp==NULL) {
+	  temp = new Stog();
+	  }
+  temp->Stavi(el);
+  }	
+return temp;
+}

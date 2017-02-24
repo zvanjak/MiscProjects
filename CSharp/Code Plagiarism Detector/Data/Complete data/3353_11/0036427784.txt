@@ -1,0 +1,25 @@
+#include <stdio.h>
+int main(){
+	int a,b,c,d,n; 
+	float m;
+	scanf("%d %f",&n,&m);
+	a=n%10;
+	b=(n%100-a)/10;
+	c=(n%1000-10*b-a)/100;
+	d=n/1000;
+	if (n/1000!=0 && n>0){
+	if (m==1){
+		printf("%d%d%d",d,c,b);
+	}else if (m==2){
+		printf("%d%d%d",d,c,a);
+	}else if (m==3){
+		printf("%d%d%d",d,b,a);
+	}else if (m==4){
+		printf("%d%d%d",c,b,a);
+	}else{
+		printf("%d",a+b+c+d);
+	}
+	}
+	return 0;
+}
+

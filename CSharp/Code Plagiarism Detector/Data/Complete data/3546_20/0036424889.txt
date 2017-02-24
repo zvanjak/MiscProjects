@@ -1,0 +1,21 @@
+Stog *PrepisiRedUStog(Red *red) 
+{
+	int pom1=0,pom2=0,prim=0;
+	Stog *pomStog;
+	if (red->SkiniIzReda(&pom1)) 
+	{
+		pom2 = (pom1>0) ? pom1 : -pom1; 
+		prim = (pom2 % 2 || pom2==2) ? 1 : 0; 
+		pomStog = PrepisiRedUStog(red); 
+		for (int i=3;i<pom2/2;i+=2) 
+			if (pom2 % i == 0) 
+			{
+				prim = 0;
+				break;
+			}
+		if (prim) pomStog->Stavi(pom1);	
+	} 
+	else pomStog = new Stog();
+	return pomStog;
+}
+

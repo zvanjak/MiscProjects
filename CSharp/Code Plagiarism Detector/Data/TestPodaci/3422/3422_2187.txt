@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <ctype.h>
+
+
+main(){
+    char x[100];
+    int i=0, j;
+    
+    do{
+        scanf("%c", &x[i]);
+    }while(x[i++]!='.');  
+      
+    i=0;
+    while(x[i]==' '){
+        i++;}
+        
+    for(j=i; j<100; j++)
+    {
+        if(x[j]==' ' || x[j]==',')
+        {
+            if(x[j+1]=='.')
+                        continue;
+            else if(x[j-1]!=' ')
+                printf("%c",x[j]);
+            }    
+        else if(x[j]=='.')
+        {
+            printf("%c", x[j]);
+            break;
+        }
+        else
+        {
+            if(j==0)
+            {
+                printf("%c", toupper(x[j]));
+            }
+            else if(x[j-1]==',' || x[j-1]==' ')
+            {
+                printf("%c", toupper(x[j]));
+            }  
+            else if(x[j+1]==',' || x[j+1]==' ' || x[j+1]=='.')
+            {
+                printf("%c", toupper(x[j]));
+            }
+            
+            else
+            {
+                printf("%c", tolower(x[j]));
+            }
+        }
+    }
+    
+              return 0;
+            }                
+            

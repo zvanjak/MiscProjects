@@ -1,0 +1,6 @@
+int niz(int i){
+  int retval;
+  kontrola();
+  retval=(i<3) ? 1 : (niz(i-1) + niz(i-2) + niz(i-3));
+  return (retval);
+}

@@ -1,0 +1,16 @@
+void AritSred_StdDev(float *p, int n,   float *ArSred, float *StdDev)
+{
+float suma=0, temp=0;
+int i;
+for (i=0; i<n; i++)
+{
+suma+= *(p+i);
+}
+*ArSred=suma/n;
+for (i=0; i<n; i++)
+{
+temp+=pow((*(p+i)-*ArSred), 2);
+}
+*StdDev = pow((temp/(float)(n*(n-1))), (0.5));
+
+}

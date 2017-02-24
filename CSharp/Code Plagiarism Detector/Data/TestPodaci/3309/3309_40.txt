@@ -1,0 +1,15 @@
+int br_prodanih(FILE *f, char *autor){
+    struct album {
+        char naziv[30+1];
+        char autor[20+1];
+        int prodano;
+    } zap;
+    int i;
+    i=0;
+    while (fread(&zap, sizeof(zap), 1, f)==1){
+        if ((strcmp(zap.autor, autor))==0){
+            i+=zap.prodano;
+        }
+    }
+    return i;
+}

@@ -1,0 +1,36 @@
+int izbaci (char *ulazni, char *podniz){
+	int brojac, x,y,z;
+	char prvi1,prvi2,reorder;
+	x=0;
+	y=0;
+	z=0;
+	brojac=0;
+	prvi1=*(ulazni+x);
+	prvi2=*(podniz+y);
+	while (!(prvi1==0)){
+		while (!(prvi2==0)){
+			if (prvi1==prvi2){
+				brojac+=1;
+				z=x;
+				reorder='b';
+				while (!(reorder)==0){
+					reorder=*(ulazni+z+1);
+					*(ulazni+z)=reorder;
+					z+=1;
+					x-=1;
+				}
+				break;
+			}
+			y+=1;
+			prvi2=*(podniz+y);
+		}
+		y=0;
+		prvi2=*(podniz+y);
+		x+=1;
+		if (x<0){
+			x=0;
+		}
+		prvi1=*(ulazni+x);
+	}
+	return brojac;
+}

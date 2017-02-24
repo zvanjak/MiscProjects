@@ -1,0 +1,49 @@
+#include <stdio.h>
+#define MAX_BR 100
+
+int x, y, i, prvi = 0, drugi = 0, treci = 0, cetvrti = 0;
+
+main()
+{
+	do{
+		scanf("%d %d", &x, &y);
+		if(x || y){
+			
+			if(x>0 && y>0)
+				prvi++;
+			
+			if(x<0 && y>0)
+				drugi++;
+			
+			if(x<0 && y<0)
+				treci++;
+			
+			if(x>0 && y<0)
+				cetvrti++;
+
+			if(x==0 && y>0){
+				prvi++;
+				drugi++;}
+
+			if(x==0 && y<0){
+				treci++;
+				cetvrti++;}
+			if(x>0 && y==0){
+				prvi++;
+				cetvrti++;}
+
+			if(x<0 && y==0){
+				drugi++;
+				treci++;}
+
+		}
+	}while(x || y && (prvi+drugi+treci+cetvrti)<=MAX_BR );
+
+	printf("%d %d %d %d", prvi, drugi, treci, cetvrti);
+
+	return 0;
+}
+
+
+		
+

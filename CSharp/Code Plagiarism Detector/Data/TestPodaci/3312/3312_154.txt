@@ -1,0 +1,14 @@
+int br_prodanih(FILE *f, char *autor) {
+	int prodano = 0;
+	char naziv[40];
+	char aut[40];
+	int bro;
+	
+	while (fscanf(f, "%s %s %d", naziv, aut, &bro) == 3) {
+		if (!strcmp(autor, aut)) {
+			prodano += bro;
+		}
+	}
+	
+	return prodano;
+}

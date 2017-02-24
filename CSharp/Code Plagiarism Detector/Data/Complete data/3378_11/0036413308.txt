@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main () {
+int odradjeni, nominalni, brutto;
+float b_cijena, b_placa, n_placa;
+scanf("%d %d %d", &odradjeni, &nominalni, &brutto);
+if (odradjeni<nominalni) b_cijena=0.9*brutto;
+if (odradjeni>nominalni) b_cijena=1.15*brutto;
+if (odradjeni==nominalni) b_cijena=brutto;
+b_placa=odradjeni*b_cijena;
+if(b_placa>6000) n_placa=0.7*b_placa;
+if(b_placa<=6000) n_placa=0.8*b_placa;
+printf("%.2f", n_placa);
+}
+

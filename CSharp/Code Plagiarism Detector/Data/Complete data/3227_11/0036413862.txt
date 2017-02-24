@@ -1,0 +1,20 @@
+#include <stdio.h>
+int main() {   
+int n, i;
+    double pi=0,k;
+    scanf("%d", &n);
+    if (!((n>=1)==(n<=500))) {
+        printf("n nije valjan");
+        return 0;
+    }else{
+        for(i=1; i<(n+1); i++) {
+            if (i%2==1)k=(double) 4/(2*i-1);
+            if (i%2==0)k=(double) -4/(2*i-1);
+            pi=pi+k;
+        }
+    }
+    printf ("%.12lf",pi);           
+    scanf("%d", &n);
+    return 0;
+    
+}

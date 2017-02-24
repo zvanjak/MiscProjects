@@ -1,0 +1,13 @@
+void obrni(zapis **glava){
+	int i;
+	zapis *pom, pomocni[10000];
+	for (i = 0, pom = *glava; pom; pom = (pom->sljed), i++){
+		pomocni[i] = *pom;
+	}
+	*glava = &pomocni[i - 1];
+	while(i){
+		pomocni[i].sljed = &pomocni[i - 1];
+        i--;
+	}
+	pomocni[i].sljed = NULL;
+}

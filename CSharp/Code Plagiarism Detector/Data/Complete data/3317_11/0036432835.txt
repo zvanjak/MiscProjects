@@ -1,0 +1,13 @@
+void brisi(FILE *f, int redni_br) {
+	struct natjecatelj {
+		int redni_br;
+		char prezime[20+1];
+		int bodovi;
+	} el;
+	if (fseek(f,(long)(redni_br-1)*sizeof(el),SEEK_SET)==-1) return;
+	if (fread(&el,sizeof(el),1,f)!=1) return;
+	el.redni_br=0;
+	fseek(f,(long)(-1*sizeof(el)),SEEK_CUR);
+	fwrite(&el,sizeof(el),1,f);
+	return;
+}

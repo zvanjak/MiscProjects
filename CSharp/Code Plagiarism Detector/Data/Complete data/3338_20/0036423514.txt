@@ -1,0 +1,21 @@
+int rZamijeni(char *niz, char stariZnak, char noviZnak)
+{
+int static br = 0;
+int static i=0;
+
+kontrola();
+                     
+while(niz[i] != stariZnak && niz[i] != '\0')
+	i++;
+
+if(niz[i] == stariZnak)
+	{
+	niz[i] = noviZnak;
+	br++;
+	i++;
+	rZamijeni(niz, stariZnak, noviZnak);
+	}
+
+if(niz[i] == '\0')
+	return br;
+}

@@ -1,0 +1,98 @@
+#include <stdio.h> 
+#include <conio.h> 
+#define MAX 20 
+void main () { 
+	int n, i, j; 
+	char mat[MAX][MAX]; 
+	int krizhich = 1 , kruzhich = 1; 
+	char pobjednik = '-'; 
+
+	scanf ("%d", &n); 
+	
+	for(i=0; i<n; i++){
+		for(j=0; j<n; j++){
+			scanf("\n%c",&mat[i][j]);
+		}
+	}
+
+	krizhich = 1; 
+	kruzhich = 1; 
+	
+	
+
+	for (i=0; i<n; i++) 
+	{ 
+		if(mat[i][i] != 'X') 
+			krizhich = 0; 
+		if(mat[i][i] != 'O') 
+			kruzhich = 0; 
+	} 
+	if(krizhich == 1) 
+		pobjednik = 'X'; 
+	if(kruzhich == 1) 
+		pobjednik = 'O'; 
+	krizhich = 1; 
+	kruzhich = 1; 
+
+	for (i=0; i<n; i++) 
+	{ 
+		if(mat[i][n-i-1] != 'X') 
+			krizhich = 0; 
+
+		if(mat[i][n-i-1] != 'O') 
+			kruzhich = 0; 
+	} 
+
+	if(krizhich == 1) 
+		pobjednik = 'X'; 
+
+	if(kruzhich == 1) 
+		pobjednik = 'O'; 
+	
+	for(i=0; i<n; i++) 
+	{ 
+		krizhich = 1; 
+		kruzhich = 1; 
+
+		for(j=0; j<n; j++) 
+		{ 
+			if(mat[i][j] != 'X') 
+				krizhich = 0; 
+
+			if(mat[i][j] != 'O') 
+				kruzhich = 0; 
+		} 
+
+		if(krizhich == 1) 
+			pobjednik = 'X'; 
+
+		if(kruzhich == 1) 
+			pobjednik = 'O'; 
+	} 
+
+	for(j=0; j<n; j++) 
+	{ 
+		krizhich = 1; 
+		kruzhich = 1; 
+
+		for(i=0; i<n; i++) 
+		{ 
+			if(mat[i][j] != 'X') 
+				krizhich = 0; 
+
+			if(mat[i][j] != 'O') 
+				kruzhich = 0; 
+		} 
+
+		if(krizhich == 1) 
+			pobjednik = 'X'; 
+
+		if(kruzhich == 1) 
+			pobjednik = 'O'; 
+	} 
+	printf("%c", pobjednik); 
+}
+
+
+
+ 

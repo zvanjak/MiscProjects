@@ -1,0 +1,18 @@
+double sumared( double x, int N) {
+       double p;
+	   int kontrola();
+	   if (N>0)
+	   {
+	      if(N%2==0)
+		  {
+	         p=-(pow(x,N)/N);
+		  } else  p=pow(x,N)/N;
+
+	    return p + sumared(x,N-1);
+	   }
+else return 0;
+}
+
+
+
+

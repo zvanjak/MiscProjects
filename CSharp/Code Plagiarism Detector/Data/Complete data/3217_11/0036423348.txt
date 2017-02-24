@@ -1,0 +1,21 @@
+#include <stdio.h>
+int okreni(long k)
+{while (k>0)
+{printf("%d", k%10);
+k/=10;}
+return 0;}
+
+int main()
+{ long a;
+
+scanf("%d", &a);
+if (a<=0) return 0;
+okreni (a);
+do 
+{
+scanf("%d", &a);
+if (a>0){
+printf(" ");
+okreni (a);}}
+while (a>0);
+return 0;}

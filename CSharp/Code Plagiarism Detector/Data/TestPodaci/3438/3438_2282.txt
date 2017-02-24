@@ -1,0 +1,29 @@
+#include <stdio.h>
+#define DIM 100
+
+int main () {
+    char a[DIM], tmp;
+    int i,j,n;
+
+    for(n=0; n<100; n++) { 
+		scanf(" %c", &a[n]);
+        if (a[n] == '.') break;
+
+	}
+
+    while (1) {
+        scanf("%d %d", &i,&j);
+        if ((i < 1) || (i > n) || (j < 1) || (j > n)) {
+            break;
+		}
+
+        tmp=a[i-1];
+        a[i-1]=a[j-1];
+        a[j-1]=tmp;
+	}
+
+    for(i=0;i<n;i++) printf("%c ", a[i]);
+
+return 0;
+
+}

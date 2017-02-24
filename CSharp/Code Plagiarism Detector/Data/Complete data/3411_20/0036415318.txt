@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+char *BezDuplikata (char *ul_niz) {
+	char novi[255]="";
+	int k,i,j,ima;
+
+	k=1;
+	novi[0]=ul_niz[0];
+	for (i=1; i<strlen(ul_niz); i++){
+	ima=0;
+		for (j=0; j<k; j++) 
+			if (ul_niz[i]==novi[j]) {
+				ima=1;
+				break;
+			}
+		if (ima==0) 
+			
+				novi[k++]=ul_niz[i];
+		
+	}
+	return (&novi[0]);
+}

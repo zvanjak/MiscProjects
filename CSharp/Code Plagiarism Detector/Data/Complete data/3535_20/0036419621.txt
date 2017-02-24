@@ -1,0 +1,10 @@
+void staviNaDno(Stog *stog,int broj){
+    Stog temp;
+    int elem;
+
+    while (stog->Skini(&elem))
+        temp.Stavi(elem);
+    stog->Stavi(broj);
+    while (temp.Skini(&elem))
+        stog->Stavi(elem);
+    }

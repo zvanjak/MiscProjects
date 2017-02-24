@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <math.h>
+double E;
+#define N 1000
+
+double izracunaj(double x) {
+  return pow( cos(1/E), sin( exp(sin(x + 1/E) )  ) );
+}  
+
+double derivacija[N];
+
+int main(void) {
+  double dx;
+  float x;
+  int i = 0, j;
+  
+  E = exp(1.);
+  
+  scanf("%lf", &dx);
+  while( scanf("%f", &x) != 0 && x != 0. ) 
+    derivacija[i ++ ] = ( izracunaj(x + dx) - izracunaj(x) ) / dx ;
+  
+  for (j=0; j<i; j++) 
+    printf("%.2lf ", atan( derivacija[j] ) );
+  
+  
+  return 0;
+}  

@@ -1,0 +1,19 @@
+#include<string.h>
+#include<stdio.h>
+#include<stdlib.h>
+char *BezDuplikata(char *ulazni_niz){
+    int i,j,k=0,a=0;
+    char *niz1;
+    niz1=malloc(strlen(ulazni_niz));
+    for (i=0;i<strlen(ulazni_niz);i++)
+    niz1[i]=0;
+    if ((ulazni_niz==NULL)||(strlen(ulazni_niz)==0)) return NULL;
+     for (i=0;i<strlen(ulazni_niz);i++){
+         for (j=0;j<strlen(ulazni_niz);j++){
+         if (niz1[j]==ulazni_niz[i])a=1;}
+         if (a!=1){niz1[k]=ulazni_niz[i];
+         k++;
+       }    a=0;    }
+       niz1[k]='\0';
+       niz1=realloc(niz1,strlen(niz1));
+        return niz1;}

@@ -1,0 +1,49 @@
+class Kosarica {
+public:
+	int brpr;
+	float *proizvodi;
+public:
+	Kosarica(){
+		brpr=0;
+		proizvodi=(float *)malloc ((brpr+1)*sizeof(float));
+	}
+
+	void DodajProizvod(float cijena){
+		proizvodi[brpr]=cijena;
+		brpr++;
+		proizvodi=(float *)realloc (proizvodi, (brpr+1)*sizeof(float));
+	}
+
+	float UkupnaCijena(){
+		int i;
+		float s=0;
+		if(brpr==0)
+			return 0;
+		else{
+			for(i=0;i<brpr;i++){
+				s=s+proizvodi[i];
+			}
+			return s;
+		}}
+
+	float NajskupljiProizvod(){
+		float max;
+		int i;
+		if (brpr==0)
+			return 0;
+		else{
+			max=proizvodi[0];
+			for(i=0;i<brpr;i++){
+				if(proizvodi[i]>max)
+					max=proizvodi[i];
+			}
+			return max;
+		}
+	}
+	~Kosarica(){
+		if (brpr!=0){
+			free (proizvodi);
+		}
+	}
+
+};

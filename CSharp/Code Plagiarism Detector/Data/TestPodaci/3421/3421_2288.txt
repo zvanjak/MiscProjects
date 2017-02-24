@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+#define MAX 100
+
+int main() {
+	int i, j;
+	char znak, niz[MAX], noviniz[MAX];
+
+	i=0;
+	do {
+		znak=getchar();
+		if ((!islower(znak))&&(!isupper(znak))&&(znak!=',')&&(znak!=' ')&&(znak!='.')) break;
+		niz[i]=znak;
+		i++;
+		if(znak=='.') break;
+	} while (i<MAX);
+	
+	niz[i]='\0';
+	j=0;
+	if(islower(niz[0])) niz[0]=toupper(niz[0]);
+	i=0;
+
+	while(niz[i]!='\0') {
+		if((niz[i]!=' ') && (niz[i]!=',')) {
+			if (i!=0 && isupper(niz[i])) niz[i]=tolower(niz[i]);
+			noviniz[j++]=niz[i];
+			i++;
+		} else {
+			if((niz[i]==' ') || (niz[i]==',')){
+				do {
+					i++;
+				} while ((niz[i]==' ') || (niz[i]==','));
+				if(islower(niz[i])) niz[i]=toupper(niz[i]);
+			}
+			noviniz[j++]=niz[i];
+			i++;
+		}
+	}
+	noviniz[j]='\0';
+
+	puts(noviniz);
+	return 0;
+}

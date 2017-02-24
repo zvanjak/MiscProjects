@@ -1,0 +1,24 @@
+ int najbolji(FILE *f) {
+	
+	natjecatelj n;
+	int najvise_bodova_natjecatelj;
+	int i;
+	i = 1;
+	najvise_bodova_natjecatelj = 0;
+	
+	
+	fseek(f, 0L, SEEK_SET);
+	fread(&n, sizeof(natjecatelj), 1, f);
+	if (n.redni_br != 0) {
+		najvise_bodova_natjecatelj = n.redni_br;
+	}
+		i++;
+
+	do {
+		if (n.redni_br != 0) {
+			if (n.bodovi > najvise_bodova_natjecatelj) najvise_bodova_natjecatelj = n.redni_br;
+		fseek(f, sizeof(natjecatelj)*i, SEEK_SET);
+		}
+		i++;
+	} 
+	while (fread(&n, sizeof(natjecatelj), 1, f) == 1);

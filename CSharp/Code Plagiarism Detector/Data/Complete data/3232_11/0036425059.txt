@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <math.h>
+int main()
+
+
+{
+	int n;
+	double b;
+
+	scanf ("%d", &n);
+
+	if ((n<1) || (n>30)) 
+		printf ("n nije valjan");
+	else
+	{
+		b= ((1/pow(2,n))-1) /(-1./2.);
+        printf ("%.12lf", b);
+	}
+			return 0;
+}
+
+	

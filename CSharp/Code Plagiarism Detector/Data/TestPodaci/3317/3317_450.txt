@@ -1,0 +1,13 @@
+void brisi(FILE *f, int redni_br){
+  struct natjecatelj{
+	  int redni_br;
+	  char prezime[20+1];
+	  int bodovi;}upis;
+ while (fread(&upis, sizeof(upis), 1, f) == 1) {
+	 if(upis.redni_br==redni_br) 
+	 {
+		 upis.redni_br=0;
+		 fwrite(&upis, sizeof(upis), 1, f);
+	 }
+ }
+}

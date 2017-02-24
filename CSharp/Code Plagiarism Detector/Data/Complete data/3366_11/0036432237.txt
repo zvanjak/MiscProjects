@@ -1,0 +1,14 @@
+int main()
+{
+int i, a, b, c;
+while(1)
+{
+if(!(i/1000 || i>777 || i<0))
+break;
+}
+a=i/100;
+c=i%10;
+b=(i/10)%10;
+i=a*64+b*8+c;
+printf("%d\n", i);
+}

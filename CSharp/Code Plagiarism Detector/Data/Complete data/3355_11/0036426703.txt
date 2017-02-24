@@ -1,0 +1,46 @@
+#include <stdio.h>
+
+int main()
+{
+	char c1,c2,c3,c4,c5,c6;
+    int controlB=0,controlS=0,controlP=0;
+
+	scanf("%c %c %c %c %c %c",&c1,&c2,&c3,&c4,&c5,&c6);
+
+	if( (c1>64 && c1<91) || (c1>96 && c1<122) )
+	{
+		controlP=1;
+		
+	    	if( (c2>64 && c2<91) || (c2>96 && c2<122) )
+			controlS=1;
+	        if( c2>47 && c2<58)
+			controlB=1;
+	        if( (c3>64 && c3<91) || (c3>96 && c3<122) )
+			controlS=1;
+        	if( c3>47 && c3<58)
+	 		controlB=1;
+	    	if( (c4>64 && c4<91) || (c4>96 && c4<122) )
+			controlS=1;
+		if( c4>47 && c4<58)
+			controlB=1;
+	     	if( (c5>64 && c5<91) || (c5>96 && c5<122) )
+			controlS=1;
+	     	if( c5>47 && c5<58)
+			controlB=1;
+		if( (c6>64 && c6<91) || (c6>96 && c6<122) )
+			controlS=1;
+		if( c6>47 && c6<58)
+			controlB=1;
+	}
+
+	if(controlP == 1 && controlB == 1 && controlS == 1)
+		printf("Jest\n");
+	else 
+		printf("Nije\n");
+
+	return 0;
+	
+}
+
+
+	

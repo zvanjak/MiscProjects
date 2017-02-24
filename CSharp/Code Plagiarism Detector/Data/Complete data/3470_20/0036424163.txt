@@ -1,0 +1,18 @@
+bool fun2 ( Pravokutnik p, Krug k ){
+
+     bool rez = false;
+     Tocka *dd, *gl, *gd;
+
+     dd = new Tocka ( p.getDLkut().X + p.getSirina(), p.getDLkut().Y  );
+     gl = new Tocka ( p.getDLkut().X , p.getDLkut().Y + p.getVisina());
+     gd = new Tocka ( p.getDLkut().X + p.getSirina(), p.getDLkut().Y + p.getVisina() );
+
+     if ( k.Sadrzi ( p.getDLkut() ) && k.Sadrzi ( *dd ) && k.Sadrzi ( *gl )
+          && k.Sadrzi ( *gd ) ) rez = true;
+
+     delete dd;
+     delete gl;
+     delete gd;
+
+     return rez;
+}

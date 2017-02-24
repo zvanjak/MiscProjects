@@ -1,0 +1,16 @@
+# include <stdio.h>
+int main (){
+    int n,i;
+    double suma=0;
+    scanf("%d",&n);
+    if ((n>0)&&(n<101)){
+        for (i=1;i<n+1;i++){
+             if(i%2==0) suma=suma-(1./i);
+             else suma=suma+(1./i);
+             }
+        printf("%.12lf",suma);
+    }
+    else printf("n nije valjan");
+return 0;
+}
+    

@@ -1,0 +1,28 @@
+void spoji( char *ime, char *prezime, char *JMBAG, char *izlazni ) {
+   int i, j = 0, k, l, bljak1, bljak2;
+
+   for( i = 0; prezime[i] == ' '; i++ );
+   for( ; prezime[i] && prezime[i] != ' '; izlazni[j++] = prezime[i++] );
+
+   izlazni[j++] = ',';
+   izlazni[j++] = ' ';
+
+   for( i = 0; ime[i] == ' '; i++ );
+   for( ; ime[i] && ime[i] != ' '; izlazni[j++] = ime[i++] );
+
+   izlazni[j++] = ':';
+   izlazni[j++] = ' ';
+
+   for( i = 0; JMBAG[i] == ' '; i++ );
+   for( k = i; JMBAG[k] && JMBAG[k] != ' '; k++ );
+
+   bljak1 = 6-k+i;
+   if( bljak1 < 0 ) bljak1 = 0;
+   bljak2 = k-6;
+   if( bljak2 < i ) bljak2 = i;
+
+   for( l = 0; l < bljak1; l++ ) izlazni[j++] = '0';
+   for( l = bljak2; l < k; l++ ) izlazni[j++] = JMBAG[l];
+
+   izlazni[j] = '\0';
+}

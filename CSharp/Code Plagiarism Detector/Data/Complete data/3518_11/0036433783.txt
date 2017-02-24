@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <math.h>
+#define max 50
+double dx;
+double fun(double x){
+	double b;
+	b= (pow(x,sin(x))*(tanh(pow(x,exp(x)))));
+	return b;
+}
+double der(double x){
+	double q;
+	q= (fun(x + dx) - fun (x)) / dx;
+	return q;
+}
+int main (){
+	double nizd[max]={0};
+	float nizu[max]={0};
+	int i;
+	scanf ("%lf",&dx);
+	if (dx==0) exit(123); 
+	for (i=0;i<50;i++){
+		scanf ("%f",&nizu[i]);
+		while(nizu[i]<0 || nizu [i]>10){
+			scanf ("%f",&nizu[i]);
+			if (nizu [i]>=0 && nizu[i]<=10)break;
+		}
+		if (nizu[i]==0.0)
+			break;
+	}
+	i=0;
+	while(nizu[i]!=0.0){
+			nizd[i]=der(nizu[i]);
+			printf ("%.2lf",atan(nizd[i]));
+			i++;
+		}
+	return 0;
+}

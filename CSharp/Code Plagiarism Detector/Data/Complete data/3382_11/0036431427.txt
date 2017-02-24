@@ -1,0 +1,19 @@
+#include <stdio.h>
+int main(){
+    int br,z1,z2,z3,z4,b1,b2,b3;
+    
+    scanf("%d", &br);
+    if (br>=1000 && br<=9999){
+                 z4=br%10;
+                 z3=br/10%10;
+                 z2=br/100%10;
+                 z1=br/1000;
+                 b1=z1*10+z2;
+                 b2=z3*10+z4;
+                 b3=z2*10+z3;
+                 
+                 if (b1*b2%b3==0) printf("%d", z1+z3);
+                 else printf("%d", z3*z4);
+                 }
+    return 0;
+}

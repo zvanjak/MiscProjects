@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main () {
+
+	int n=0,i;
+	double pi=0,x=0;
+
+	scanf("%d",&n);
+
+	if ((n<1) || (n>400)) {
+		printf("n nije valjan");
+		return 1;
+	}
+	else {
+		for (i=1; i<=n; ++i) {
+			x=x+(1./(((4*i)-1)*((4*i)+1)));
+		}
+
+	pi=4-x*8;
+
+	printf("%.8lf",pi);
+
+	}
+
+	return 0;
+
+}

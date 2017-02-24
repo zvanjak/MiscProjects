@@ -1,0 +1,21 @@
+int JelSeSijeku(Kruznica &k1,Kruznica &k2){
+	float d,x1,x2,y1,y2,r1,r2;
+	
+	x1=k1.GetCenterX();
+	y1=k1.GetCenterY();
+	r1=k1.GetRadius();
+
+	x2=k2.GetCenterX();
+	y2=k2.GetCenterY();
+	r2=k2.GetRadius();
+
+	d=sqrt((x1-x2)*(x1-x2) + (y1-y2)*(y1-y2));
+	//printf("%f %f %f\n",d,r1,r2);
+	
+	if      (r1==r2 && x1==x2 && y1==y2)                return 3; // iste kruznice
+	else if (r1+r2==d || (r1-r2==d) || (r2-r1==d))      return 1; // jedna u drugoj,diraju se ili jedna izvan druge
+	else if (sqrt((r1+r2)*(r1+r2))<d || ((sqrt((r1-r2)*(r1-r2)) >d)))   return 0;       // ne sijeku se
+	else return 2;
+	return 6; // :)
+
+}

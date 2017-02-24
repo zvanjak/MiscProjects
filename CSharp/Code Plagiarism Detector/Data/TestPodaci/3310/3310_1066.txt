@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct album {
+	char naziv [30+1];
+	char autor [20+1];
+	int prodano;
+}; typedef struct album struktura;
+
+int veci_od (FILE *f, int granica) {
+	int br_vecih=0;
+	struktura a;
+	
+	f=fopen("datoteka.txt","rb");
+	fseek(f,0,SEEK_SET);
+
+	while (fread(&a, sizeof(struktura),1,f) == 0) {
+		if(a.prodano >= granica) br_vecih++;
+	}
+	fclose(f);
+	return br_vecih;
+}

@@ -1,0 +1,70 @@
+#include<stdio.h>
+int main() {
+	int n, i, j, b=0, d=0;
+	int brs=0, brr=0, te, t=0,ce, c=0;
+	char mat[20][20],pe,de;
+	scanf("%d",&n);
+	if(n>0 && n<21) {
+		brs=n;
+		brr=n;
+		for(i=0;i<brr;i++)
+			for(j=0;j<brs;j++) 
+				scanf("%c",&mat[i][j]);
+			
+	}
+	for(i=0;i<brr;i++) {
+		pe=mat[i][0];
+		b=0;
+		for(j=0;j<brs;j++) 
+			{
+				if(mat[i][j]==pe) b++;
+				else break;
+			}
+			
+			if (b==brs && pe!='-')
+			{
+				printf("%c",pe);
+				return(0);
+			}
+	}
+			
+	for(j=0;j<brs;j++) {
+			de=mat[0][j];
+			d=0;
+			for(i=0;i<brr;i++) 
+			{
+				if(mat[i][j]==de) d++;
+				else break;
+			}
+			if (d==brs && de!='-')
+			{
+				printf("%c",de);
+				return(0);
+			}
+	}
+	te=mat[0][0];
+	t=0;
+	for(i=0;i<brr;i++) {
+		if(mat[i][i]==te) t++;
+		else break;
+	}
+	if (t==n && te!='-')
+	{
+			printf("%c",te);
+			return(0);
+	}
+	ce=mat[0][n-1];
+	c=0;
+	for(i=0;i<brr;i++) {
+			 
+		if(mat[i][n-i-1]==ce) c++;
+			else break;
+	}
+	if (c==n && ce!='-')
+		{
+			printf("%c",ce);
+			return(0);
+		}
+	printf("-");
+	return(0);
+}

@@ -1,0 +1,16 @@
+#include <stdio.h>
+int main () {
+	int x, y;
+	scanf("%d", &x);
+	if ((x>=1000)&&(x<=9999)) {
+		if ((((x/100)*(x%100))%((x/10)%100))) {
+			y = ((x%100)/10)*(x%10);
+			printf("%d", y);
+		}
+		else {
+			y = (x/1000)+((x%100)/10);
+			printf("%d", y);
+		}
+		return 0;
+	}
+}

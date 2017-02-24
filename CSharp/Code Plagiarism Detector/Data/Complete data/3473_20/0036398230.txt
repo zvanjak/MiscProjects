@@ -1,0 +1,16 @@
+Krug fun4(Pravokutnik p)
+{
+	Tocka srediste();
+
+	double a = p.getSirina();
+	double b = p.getVisina();
+
+	double radijus = sqrt(a*a + b*b)/2;
+
+	srediste.x = a/2;
+	srediste.y = b/2;
+
+	Krug opisnik(srediste, radijus);
+	return opisnik;
+	
+};

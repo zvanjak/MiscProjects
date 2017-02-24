@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+void ubaci (char *niz, char *podniz, int i) {
+     int j1=0, j2=0, m;
+     do{
+        *niz++;
+        j1++;
+        } while (*niz!='\0');
+     do{
+        *podniz++;
+        j2++;
+     } while (*podniz!='\0');
+     if (i>=0 && i<=j1) {
+          niz+=j2;
+          for (m=0; m<=(j1-i); ++m) {
+              *niz=*(niz-j2);
+              *niz--;
+              }
+          *podniz--;
+          for (m=0; m<j2; ++m) {
+              *niz=*podniz;
+              *niz--;
+              *podniz--;
+              }
+           niz-=(j1-(j1-i+1));
+     } else {
+            for (m=0; m<=j1; ++m) {
+             if (*niz>=97 && *niz<=122)
+           *niz-=32;
+           *niz--;}
+         }
+}

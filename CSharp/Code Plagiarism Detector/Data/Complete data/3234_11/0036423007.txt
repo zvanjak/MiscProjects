@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <math.h>
+
+int main () {
+    
+    int n, i;
+    double suma_clanova=0., pi=0.;
+    
+    scanf("%d", &n);
+      
+    if(n<1 || n>100) {printf("n nije valjan"); } else 
+    { 
+      for (i=1; i<=n; i++)
+          suma_clanova = suma_clanova + 1.0/(i*i);
+    
+          pi = sqrt( 6 * suma_clanova);
+          
+          printf("%.12lf", pi);
+    }
+
+ return 0;   
+}
+

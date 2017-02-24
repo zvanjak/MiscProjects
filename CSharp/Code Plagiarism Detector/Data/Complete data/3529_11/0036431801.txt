@@ -1,0 +1,51 @@
+void spoji (char *ime, char *prezime, char *JMBAG, char *izlazni) {
+	int n,i,z,h,t;
+	
+	
+
+	for (;*prezime==' ';prezime++){
+	}
+	for(t=0; *(prezime+t)!='\0'; t++)
+	{
+	if (*(prezime + t)==' ') *(prezime+t)='\0';
+
+	}
+	strcpy(izlazni,prezime);
+	strcat(izlazni, ", ");
+	for (;*ime==' ';ime++){
+	}
+	for(t=0; *(ime+t)!='\0'; t++)
+	{
+	if (*(ime + t)==' ') *(ime+t)='\0';
+
+	}
+
+	strcat(izlazni,ime);
+	strcat(izlazni,": "); n=0; i=0; z=0;
+	
+	for (;*JMBAG==' ';JMBAG++){
+	}
+	for(t=0; *(JMBAG+t)!='\0'; t++)
+	{
+	if (*(JMBAG + t)==' ') *(JMBAG+t)='\0';
+
+	}
+	
+	
+	
+	
+	
+	for (;*(JMBAG+n)!='\0'; n++) {
+	}
+	
+
+
+	if (n==6) {
+		strcat(izlazni, JMBAG);} 
+	if (n>6) { 
+		for(;i<6;i++,n++) {JMBAG[i]=JMBAG[n-6];} JMBAG[i]='\0'; strcat(izlazni,JMBAG); }
+	if (n<6) {  h=n;
+	   for (;n>=0;n--) {JMBAG[n+(6-h)]=JMBAG[n];} 
+	   for (t=0;t<(6-h);t++) {JMBAG[t]='0';}
+	   strcat(izlazni,JMBAG); }
+	return;}

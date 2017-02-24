@@ -1,0 +1,14 @@
+int veci_od(FILE *f, int n){
+struct natjecatelj osoba;    
+int i,br=0,t;
+
+fseek(f, 0L, SEEK_END);
+t = ftell(f) / sizeof(osoba);
+fseek(f, 0L, SEEK_SET);
+
+for(i=0;i<t;i++){
+fread(&osoba,sizeof(osoba),1,f);
+if ((osoba.redni_br!=0) && (osoba.bodovi >=n ))
+br+=1;}
+
+return br;}

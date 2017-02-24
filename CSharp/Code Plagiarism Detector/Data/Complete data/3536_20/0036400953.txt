@@ -1,0 +1,24 @@
+void UmetniPrijePrvogNeparnog (Stog *stog, int broj){
+	int tempStog[1000], i=0;
+
+	if(Stog::Skini(&tempStog[i])==0){
+		Stog::Stavi(broj);
+	}else{
+		do{
+			if ((tempStog[i])%2){
+				Stog::Stavi(tempStog[i]);
+				Stog::Stavi(broj);
+				for(; i>=0; i--){
+					Stog::Stavi(tempStog[i]);
+				}
+				break;
+			}
+			i++;
+			}while(Stog::Skini(&tempStog[i]);
+		Stog::Stavi(broj);
+		i--;
+		for(; i>=0; i--){
+			Stog::Stavi(tempStog[i]);
+		}
+	}
+}

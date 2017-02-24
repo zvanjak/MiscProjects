@@ -1,0 +1,37 @@
+# include <stdio.h>
+# include <stdlib.h>
+# include <string.h>
+
+char* Spoji ( char *niz1, char *niz2){
+char *n;
+int j, i;
+n = (char *)malloc (2 * sizeof (char));
+n* = '\0';
+
+if (!strlen (niz1)&& !strlen(niz2)){
+return n;
+}
+
+n = (char *)realloc (n, (strlen (niz1) + strlen (niz2))* sizeof(char));
+j = 0;
+for (i = 0; i < strlen (niz1); i++){
+*(n + j) = niz1[i];
+if (i >= (strlen(niz2))){
+j++;
+}else {j += 2;
+}
+}
+j = 1;
+for (i = 0; i< strlen (niz2); i++){
+*(n + j) = niz2[i];
+if (i >= (strlen (niz1) - 1)){
+j++;
+}else {j += 2;
+}
+}
+*(n + strlen(niz1) + strlen(niz2)) = '\0';
+return n;
+}
+ 
+
+

@@ -1,0 +1,17 @@
+int LijevoDesno (cvor *glava, int id, int *lijevo,int *desno){
+	if(glava->id==id) return 1;
+	else{
+		if(glava->id>id){
+			if(glava->lijevo){
+				(*lijevo)++;
+				return LijevoDesno(glava->lijevo, id, lijevo, desno);
+			}
+		}
+		if(glava->id<id){
+			if(glava->desno){
+				(*desno)++;
+				return LijevoDesno(glava->desno, id, lijevo, desno);
+			}
+		}
+	}return 0;
+}

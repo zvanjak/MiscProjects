@@ -1,0 +1,91 @@
+#include <stdio.h>
+#include <string.h>
+
+void main()
+{
+    char niz[100+1], slovo;
+    int i, kraj_unosa, j, k, malo_slovo, veliko_slovo;
+    i = 0;
+    kraj_unosa = 0;
+    malo_slovo = 0;
+    veliko_slovo = 0;
+
+    do {
+        scanf("%c", &slovo);
+
+        if (slovo == '.')
+        {
+            kraj_unosa = 1;
+        }
+
+        if (kraj_unosa == 0)
+        {
+            niz[i] = slovo;
+            i++;
+        }
+    } while (!(slovo == '\n'));
+    niz[i] = '\0';
+    
+
+    for(j = 0, k = 0; k < i; k++)
+    {
+        if(j == 0)
+        {
+            if((niz[k] >= 65) & (niz[k] <= 90))
+            {
+                niz[j] = niz[k];
+                j++;
+                malo_slovo = 1;                
+            }
+            else if((niz[k] >= 97) & (niz[k] <= 126))
+            {
+                niz[j] = niz[k] - 32;
+                j++;
+                malo_slovo = 1;
+            }
+        }
+        else if (malo_slovo == 1)
+        {
+            if((niz[k] >= 65) & (niz[k] <= 90))
+            {
+                niz[j] = niz[k] + 32;
+                j++;
+                malo_slovo = 1;                
+            }
+            else if((niz[k] >= 97) & (niz[k] <= 126))
+            {                
+                niz[j] = niz[k];
+                j++;
+                malo_slovo = 1;
+            }
+            else
+            {
+                malo_slovo = 0;
+                veliko_slovo = 1;
+            }
+        }
+        else if (veliko_slovo == 1)
+            {
+            if((niz[k] >= 65) & (niz[k] <= 90))
+            {
+                niz[j] = niz[k];
+                j++;
+                malo_slovo = 1;
+            }
+            else if((niz[k] >= 97) & (niz[k] <= 126))
+            {                
+                niz[j] = niz[k] - 32;
+                j++;
+                malo_slovo = 1;                
+            }
+            else
+            {
+                malo_slovo = 0;
+                veliko_slovo = 1;
+            }
+        }
+    }
+    niz[j] = '.';
+    niz[j+1] = '\0';
+    printf("%s",niz);
+}

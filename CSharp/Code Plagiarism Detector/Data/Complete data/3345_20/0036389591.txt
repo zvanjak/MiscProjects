@@ -1,0 +1,16 @@
+/* Racunanje sume prvih N clanova reda..
+ * Rekurzivna funkcija.
+ */
+double sumareda(int N)
+{
+	/* lokalne varijable */
+	double suma;
+
+	kontrola();	/* ne treba primati povratnu vrijednost */
+
+	/* ostatak funkcije */
+	if (N < 1) return 0;
+	suma = (double) (1 / pow(N, 4)) + sumareda(N - 1);
+
+	return suma;
+}

@@ -1,0 +1,39 @@
+// 343.cpp : Defines the entry point for the console application.
+//
+
+# include <stdio.h>
+
+int brojac1, brojac2, broj;
+int main ()
+{
+	brojac1=0;
+	brojac2=0;
+
+	do {
+
+		
+		scanf ("%d",&broj);
+
+		if (broj > 0){
+			
+			if ((broj %2)==0) {
+
+			brojac1=brojac1 + 1;
+			} 
+			else {
+
+			brojac2=brojac2 + 1;
+			}
+		}
+		else if (broj < 0)
+			continue;
+		
+	}
+		while (broj!=0);
+
+		printf ("%d %d", brojac1  ,brojac2);
+
+	return 0;
+}
+
+	

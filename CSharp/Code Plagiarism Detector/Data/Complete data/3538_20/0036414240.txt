@@ -1,0 +1,23 @@
+Red *VratiBrojeve(Red *red)
+{
+   Red pamti;
+   Red *vrati = new Red();
+
+   int koliko;
+   while (red->SkiniIzReda(&koliko)) {
+      pamti.DodajURed(koliko);
+      int x = 0;
+      for (int i=0; i<koliko; ++i) {
+         int z;
+         red->SkiniIzReda(&z);
+         pamti.DodajURed(z);
+         x = x*10 + z;
+      }
+      vrati->DodajURed(x);
+   }
+
+   int t;
+   while (pamti.SkiniIzReda(&t))
+      red->DodajURed(t);
+   return vrati;
+}

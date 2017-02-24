@@ -1,0 +1,54 @@
+void izbaciUljeza (char *ulazni) {
+	int mal=0, vel=0, znam=0, i=0, j=0;
+
+	for (i=0; *(ulazni+i)!='\0'; i++) {
+		if (*(ulazni+i)>='0' && *(ulazni+i)<='9')
+			znam++;
+		if (*(ulazni+i)>='a' && *(ulazni+i)<='z')
+			mal++;
+		if (*(ulazni+i)>='A' && *(ulazni+i)<='Z')
+			vel++; }
+
+	if ((vel==mal && vel==znam) || (vel>mal && vel>znam && mal==znam)
+		|| (mal>vel && mal>znam && vel==znam) || (znam>vel && znam>mal && vel==mal)) {
+		for (i=0; *(ulazni+i)!='\0'; i++) {
+			if (*(ulazni+i)>='0' && *(ulazni+i)<='9')
+				continue;
+			*(ulazni+j)=*(ulazni+i);
+			j++; }
+		for (i=0; i<j; i++) {
+			if (i==0 || i==j-1) {
+				if (*(ulazni+i)>='A' && *(ulazni+i)<='Z')
+					continue;
+				*(ulazni+i)-=32; }
+			else {
+				if (*(ulazni+i)>='a' && *(ulazni+i)<='z')
+					continue;
+				else
+					*(ulazni+i)+=32; } } }
+
+	else if (mal<znam && mal<vel) {
+		for (i=0; *(ulazni+i)!='\0'; i++) {
+			if (*(ulazni+i)>='a' && *(ulazni+i)<='z')
+				*(ulazni+j)=*(ulazni+i)-32;
+			else
+				*(ulazni+j)=*(ulazni+i);
+			j++; } }
+
+	else if (vel<znam && vel<mal) {
+		for (i=0; *(ulazni+i)!='\0'; i++) {
+			if (*(ulazni+i)>='A' && *(ulazni+i)<='Z')
+				*(ulazni+j)=*(ulazni+i)+32;
+			else
+				*(ulazni+j)=*(ulazni+i);
+			j++; } }
+
+	else if (znam<mal && znam<vel) {
+		for (i=0; *(ulazni+i)!='\0'; i++) {
+			if (*(ulazni+i)>='0' && *(ulazni+i)<='9')
+				continue;
+			*(ulazni+j)=*(ulazni+i);
+			j++; } }
+
+	*(ulazni+j)='\0';
+}

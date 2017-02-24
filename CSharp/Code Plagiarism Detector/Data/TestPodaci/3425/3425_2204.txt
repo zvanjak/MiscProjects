@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main () {
+	int n, i, j, x, y, pom;
+	int br=0, sum=0, mr=0;
+	int a[10][10]={0};
+	do {
+		scanf("%d", &mr);
+	} while (mr<=0||mr>10);
+	for (x=0; x<mr; x++){
+		for (y=0; y<mr; y++){
+			scanf("%d", &a[x][y]);
+		}
+	}
+	do {
+		scanf("%d %d", &i,&j);
+		if ((i<mr&&i>=0)&&(j<mr&&j>=0)){
+			br++; 
+			pom=a[i][j]; a[i][j]=a[j][i]; a[j][i]=pom;
+		}
+	} while ((i<mr&&i>=0)&&(j<mr&&j>=0));
+	scanf("%d", &n);
+	if (n<mr&&n>=0){
+		for (x=0; x<mr; x++)
+			sum+=a[n][x];
+	} 
+	else
+		sum=-1;
+	printf("%d %d", br, sum);
+	return 0;
+}

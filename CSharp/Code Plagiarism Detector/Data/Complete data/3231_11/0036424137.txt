@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+int n,i,pot=1;
+double red=0;
+scanf ("%d",&n);
+if (n<1 || n>30) {printf ("n nije valjan"); return 0;}
+for (i=0;i<n;i++)
+    {
+    pot=pow(2,i);
+    if (i%2==0) red=red+1./pot;
+    else red=red-1./pot;
+    }
+printf ("%.12lf",red);
+return 0;
+}

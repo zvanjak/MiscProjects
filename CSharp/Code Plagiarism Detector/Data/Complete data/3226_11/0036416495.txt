@@ -1,0 +1,15 @@
+#include <stdio.h>
+int main(){
+ int n, i;
+ float suma=0, b;
+ scanf("%d", &n);
+ if((n<1)II(n>1000)){printf("n nije valjan);}
+ else{
+  for(i=2;i<=n+1;i++){
+   b=1./((i-1)*(i+1));
+   suma+=b;
+  }printf("%13.12f", suma);
+ }
+ return 0;
+}
+   

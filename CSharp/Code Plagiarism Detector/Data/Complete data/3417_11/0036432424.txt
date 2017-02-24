@@ -1,0 +1,17 @@
+#include<stdio.h>
+int main (){
+	int i,j;
+	char a[20];
+	for (i=0; i<20; i++){
+		scanf("%c", &a[i]);
+		if (a[i]<65 || a[i]>122 || (a[i]>90 && a[i]<97)) break;
+		else if (a[i]>90) a[i]-=32;
+		if (a[i]==65 || a[i]==69 || a[i]==73 || a[i]==79 || a[i]==85) i--;
+	}
+	if (i==0) printf("-1");
+	else { 
+		for (j=0; j<i; j++) printf("%c", a[j]);
+		for (j=i-1; (j>0 || j==0); j--) printf("%c", a[j]+32);
+	}
+return 0;
+}

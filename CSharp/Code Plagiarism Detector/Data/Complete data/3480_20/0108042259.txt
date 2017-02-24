@@ -1,0 +1,35 @@
+class Komprimiranje
+{
+public:
+	Komprimiranje(int *p, int br)
+	{
+		_p = p;
+		_br = br;
+	}
+	int BrojRazlicitihElemenata()
+	{
+		int *temp, i, sum = 0;
+		temp = new int[100];
+		for(i=0;i<100;i++)
+			temp[i] = 0;
+		for(i=0;i<_br;i+=2)
+			temp[_p[i]] = 1;
+		for(i=0;i<100;i++)
+			sum += temp[i];
+		delete []temp;
+		return sum;
+	}
+	int UkupniBrojElemenata(int vrijednost)
+	{
+		int sum = 0, i;
+		for(i=0;i<_br;i+=2)
+		{
+			if(vrijednost == _p[i])
+				sum += _p[i+1];
+		}
+		return sum;
+	}
+private:
+	int *_p;
+	int _br;
+};

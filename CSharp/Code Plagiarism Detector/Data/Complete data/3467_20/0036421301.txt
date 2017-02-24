@@ -1,0 +1,15 @@
+int igra(Igrac& igrac, Automat& aut, int max, int *broj){
+	int pSaldo, kSaldo;
+	(*broj)=0;
+	pSaldo=igrac.TrenutnoStanje();
+	while((igrac.TrenutnoStanje()>0) && ((*broj)<max)){
+		aut.UplatiIznos(igrac.TrenutnoStanje());
+		igrac.SkiniSRacuna(igrac.TrenutnoStanje());		
+		while ((aut.TrenutnoStanje()>0) && ((*broj)<max)){
+			igrac.UplatiNaRacun(aut.Zavrti());
+			(*broj)++;
+		}
+	}
+	kSaldo=igrac.TrenutnoStanje()+aut.PodigniPreostalo();
+	return pSaldo-kSaldo;
+}

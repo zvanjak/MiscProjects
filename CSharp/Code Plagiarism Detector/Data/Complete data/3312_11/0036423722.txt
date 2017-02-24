@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include <stdlib.h>
+#include<string.h>
+#include<conio.h>
+
+void fatal (char *poruka) {
+	fputs (poruka, stderr);
+	fputs ("\n", stderr);
+	exit (1);}
+
+int br_prodanih(FILE *f,char *autor){
+	char naziv[30+1],autor1[20+1];
+	int prodano,ukupno=0;
+	while(1) {
+		fseek (f, 0L, SEEK_SET);
+		while (fscanf (f, "%s %s %d",naziv,autor1,&prodano) == 3) {
+			if (!strcmp(autor,autor1)) ukupno=ukupno+prodano;
+		}
+		break;
+  }	
+	return ukupno;
+}

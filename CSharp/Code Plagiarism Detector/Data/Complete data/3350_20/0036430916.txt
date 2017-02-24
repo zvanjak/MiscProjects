@@ -1,0 +1,24 @@
+int najbolji(FILE *f) {
+    int max,koji,i = 0;
+    
+    struct natjecatelj {
+           int redni_br;
+           char prezime[20+1];
+           int bodovi;
+    } t;
+    
+    while(fread(&t,sizeof(t),1,f) == 1) {
+           if(t.redni_br == 0) continue;
+           
+           if(i == 0) {koji = t.redni_br; max = t.bodovi;}
+           
+           if(t.bodovi > max) {
+                      max = t.bodovi;
+                      koji = t.redni_br; 
+           }        
+           
+           i+=1;
+    }
+    
+    return koji  ;
+}

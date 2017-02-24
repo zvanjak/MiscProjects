@@ -1,0 +1,15 @@
+int veci_od(FILE *f, int n)
+{
+	int br = 0;
+	struct natjecatelj nat;
+	if(f == NULL) return(0);
+	fseek(f, 0L, SEEK_SET);
+	while(fread(&nat, sizeof(nat), 1, f) == 1)
+	{
+		if(nat.redni_br)
+		{
+			if(nat.bodovi >= n) br++;
+		}
+	}
+	return(br);
+}

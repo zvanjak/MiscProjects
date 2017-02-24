@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<math.h>
+int main () {
+	int n;
+	double a,b,ln2,i,j;
+	double suma1=0.,suma2=0.;
+	scanf("%d", &n);
+	if(n<1 || n>100)
+		printf("n nije valjan");
+	else  {
+		for(i=1; i<=n; i=i+2){
+	    a=1/i;
+		suma1=suma1+a;
+		}
+		for(j=2; j<=n; j=j+2){
+		b=1/(-j);
+		suma2=suma2+b;
+		ln2=suma1+suma2;
+		}
+		printf("%.12f", ln2);
+		}
+return 0;
+}

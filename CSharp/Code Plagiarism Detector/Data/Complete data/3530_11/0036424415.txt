@@ -1,0 +1,60 @@
+#include <stdio.h>
+#include <ctype.h>
+void izbaciUljeza (char *ulazni)
+{
+	int i=0,brojac1=0,brojac2=0,brojac3=0,brojac4=0;
+	for(i=0;ulazni[i]!='\0';i++)
+	{
+		if(ulazni[i]>='0' && ulazni[i]<='9')
+			brojac1++;
+		else if(ulazni[i]>='a' && ulazni[i]<='z')
+			brojac2++;
+		else if(ulazni[i]>='A' && ulazni[i]<='Z')
+			brojac3++;
+	}
+	
+		if(brojac1<brojac2 && brojac1<brojac3)
+		{
+			for(i=0;ulazni[i]!='\0';i++)
+			{
+				if(ulazni[i]>='0' && ulazni[i]<='9')
+					brojac4++;
+				else
+				{
+					ulazni[i-brojac4]=ulazni[i];
+				}
+
+			}
+			ulazni[i-brojac4]='\0';
+
+	    }
+	    else if(brojac2<brojac1 && brojac2<brojac3)
+	    {
+		    for(i=0;ulazni[i]!='\0';i++)
+		    {
+			    ulazni[i]=toupper(ulazni[i]);
+			}
+		}
+		else if(brojac3<brojac1 && brojac3<brojac2)
+		{
+			 for(i=0;ulazni[i]!='\0';i++)
+		    {
+			    ulazni[i]=tolower(ulazni[i]);
+			}
+		}	
+		else
+		{
+			for(i=0;ulazni[i]!='\0';i++)
+			{
+				if(ulazni[i]>='0' && ulazni[i]<='9')
+					brojac4++;
+				else
+				{
+					ulazni[i-brojac4]=tolower(ulazni[i]);
+				}
+			}
+			ulazni[i-brojac4]='\0';
+			ulazni[0]=toupper(ulazni[0]);
+			ulazni[i-brojac4-1]=toupper(ulazni[i-brojac4-1]);
+		}
+}

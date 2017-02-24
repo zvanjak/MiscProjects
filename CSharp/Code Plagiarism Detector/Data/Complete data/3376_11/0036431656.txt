@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main () {
+	int a,b,c,d,broj;
+	scanf("%d", &broj);
+	b=(broj/1000);
+	a=(broj/100)%10;
+	c=(broj/10)%10;
+	d=(broj%10);
+	if (a%2==0) {
+		a=0;
+	} else {
+		a=a;
+	}
+	if (b%2==0) {
+		b=0;
+	} else {
+		b=b;
+	}
+		if (c%2==0) {
+		c=0;
+	} else {
+		c=c;
+	}
+	if (d%2==0) {
+		d=0;
+	} else {
+		d=d;
+	}
+	printf("%d%d%d%d\n", b,a,c,d);
+	return 0;
+}

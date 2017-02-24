@@ -1,0 +1,23 @@
+#include<stdio.h>
+#define MAX 100
+void main (){
+        int m[MAX], n=1, y ,v, i=0, j,t;
+        while(n>0){
+                scanf("%d",&n);
+                if(n>0){
+                y=0;
+                v=0;
+		t=n;
+                        while(n!=0){
+                                y=n%10;
+                                v=v*10+y;
+                                n=n/10;
+                                }
+                       m[i]=v;
+                       i++;
+		 n=t;
+	      }
+        }for(j=0; j<=i ;j++){
+        printf("%d ",m[j]);
+        }
+}

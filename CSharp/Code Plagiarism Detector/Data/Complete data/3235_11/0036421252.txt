@@ -1,0 +1,24 @@
+#include<stdio.h>
+#include<math.h>
+
+int main (){
+	 int i,n;
+	 double ln2;
+	 /*printf("Unesi broj clanova reda n: ");*/
+     scanf("%d",&n);
+	 
+	 if(!(n>=1 && n<=100))           
+	  /*printf("\nn nije valjan");*/
+          printf("n nije valjan");
+	 
+	 else {
+		 ln2=0;                    
+		 for (i=1; i<=n; i++){
+			 ln2+=pow(-1,i+1)*(1./i);   
+				 }
+		 /*printf("Izracunata vrijednost ln2 je %0.12f\n",ln2);*/
+                 printf("%0.12f", ln2);
+	 }
+	return 0;
+		
+}

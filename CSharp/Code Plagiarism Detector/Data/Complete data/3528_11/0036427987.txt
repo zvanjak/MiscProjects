@@ -1,0 +1,17 @@
+int zamijeni(char* ulazni, char *prvi, char *drugi){
+  int i, j, k, strp, strd, brz=0;
+  for(strp=0; prvi[strp]; strp++);
+  for(strd=0; drugi[strd]; strd++);
+  for(i=0; ulazni[i]; ++i){
+	for(j=0; ulazni[j+i]==prvi[j]; ++j);
+	    if(!prvi[j]){
+		  brz++;
+		  for(j=0; drugi[j]; ++j)
+		    ulazni[i+j]=drugi[j];
+          for(k=0; k<(strp-strd); ++k)
+		    for(j=i+strd; ulazni[j]; ++j)
+			  ulazni[j]=ulazni[j+1];
+		}
+	    }
+  return brz;
+}

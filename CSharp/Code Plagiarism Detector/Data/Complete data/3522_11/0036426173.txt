@@ -1,0 +1,23 @@
+void ConvertFromXML( char * inputField, char * outputField)
+{
+char polje[100];
+int i,j=0,k,rc=0;
+for(i=0; *(inputField+i)!='\0';++i){
+if(*(inputField+i-1)=='>' && isalnum(*(inputField+i))){
+for(k=0;*(inputField+i+k);++k)
+{ if(*(inputField+i+k)=='<') break;
+polje[k]=*(inputField+i+k);
+}
+polje[k]='\0';
+if(rc%3==0 && rc!=0)
+sprintf(outputField+strlen(outputField),"%c%c",35, 10);
+sprintf(outputField+strlen(outputField),"%c",35);
+strcat(outputField,polje);
+i+=k;
+rc++;
+}
+}
+sprintf(outputField+strlen(outputField),"%c%c%c",35,10,0);
+return;
+}
+

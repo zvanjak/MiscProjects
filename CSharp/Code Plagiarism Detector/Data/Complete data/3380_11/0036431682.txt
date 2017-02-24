@@ -1,0 +1,19 @@
+#include <stdio.h>
+int main () {
+	int a,b,c,zb,x;
+	scanf("%d",&x);
+	if ((x>=100) && (x<=999)) {c=x % 10;
+							   x=x/10;
+							   b=x % 10;
+							   x=x/10;
+							   a=x % 10;
+							   
+							   if ((a*a)==((b*10)+c)) {x=(c*100)+(b*10)+a; printf("%d",x);}
+							   else {x=(100*a)+(10*b)+c;
+								     if ((x>=150)&&(x<=450)) printf("1");
+									 if ((x>=451)&&(x<=700)) printf("7");
+									 if ((x<150)||(x>700)) {zb=a+b+c; printf("%d",zb);}
+							         }
+
+							  }
+}

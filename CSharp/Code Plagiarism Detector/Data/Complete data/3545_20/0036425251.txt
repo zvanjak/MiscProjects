@@ -1,0 +1,13 @@
+void PrepisiStogURed (Stog *stog, Red *red)
+{
+	// rekurzivna fja koja sve parne elemente sa stoga prebacuje u red
+	int i, r;
+	r = stog->Skini (&i);
+	if (!r)
+		return;
+	PrepisiStogURed (stog, red);
+	if (!(i % 2))
+		red->DodajURed (i);
+	else
+		stog->Stavi (i);
+}

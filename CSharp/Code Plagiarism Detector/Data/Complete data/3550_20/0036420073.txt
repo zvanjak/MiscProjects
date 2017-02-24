@@ -1,0 +1,57 @@
+int izbacinaj (zapis **glava)
+{
+    float min, max;
+    zapis *pom, *pom2;
+    if (*glava==NULL) return 0;
+    if ((*glava)->sljed==NULL)
+    {
+        pom = *glava; 
+        *glava = (*glava)->sljed;
+        free(pom);
+        return 1;
+    }
+    pom = *glava;
+    min = max = pom->pros;
+    for (pom=pom->sljed; pom; pom=pom->sljed)
+    {
+        if ((pom->pros)>max) 
+            max = pom->pros;
+        if ((pom->pros)<min)
+            min = pom->pros;
+    }
+    if ((*glava)->pros == min)
+    {
+        pom = *glava;
+        while (pom->sljed->pros!= max) pom=pom->sljed; 
+        pom2 = pom->sljed;
+        pom->sljed = pom->sljed->sljed;
+        free(pom2);
+        pom2 = *glava;
+        *glava = (*glava)->sljed;
+        free(pom2);
+        return 2;
+    }
+    if ((*glava)->pros == max)
+    {
+        pom = *glava;
+        while (pom->sljed->pros!= min) pom=pom->sljed;
+        pom2 = pom->sljed;
+        pom->sljed = pom->sljed->sljed; 
+        free(pom2);
+        pom2 = *glava;
+        *glava = (*glava)->sljed;
+        free(pom2);
+        return 2;
+    }
+    pom = *glava;
+    while (pom->sljed->pros!= min) pom=pom->sljed; 
+    pom2 = pom->sljed;
+    pom->sljed = pom->sljed->sljed;
+    free(pom2);
+    pom = *glava;
+    while (pom->sljed->pros!= max) pom=pom->sljed;
+    pom2 = pom->sljed;
+    pom->sljed = pom->sljed->sljed; 
+    free(pom2);
+    return 2;
+}

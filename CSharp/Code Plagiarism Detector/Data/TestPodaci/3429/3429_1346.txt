@@ -1,0 +1,28 @@
+#include<stdio.h>
+int main () {
+	int matrica[20][5];
+	int i,j,a,b, broj_redaka=0, broj_stupaca=0,  max_broj_stupaca=0, red;
+	do {
+		scanf("%d %d",&a,&b);
+	}
+	while(a<1 || a>20 || b<1 || b>5);
+	for (i=0; i<a; i++) {
+		red = 0;
+		broj_stupaca=0;
+		for (j=0; j<b; j++) {
+			scanf("%d", &matrica[i][j]);
+			if (matrica[i][j] % 2 == 0) {
+				if (!red){
+					broj_redaka++;
+					red=1;
+				}
+			}
+			else {
+				broj_stupaca++;
+			}
+		}
+		if (broj_stupaca > max_broj_stupaca) max_broj_stupaca=broj_stupaca;
+	}
+	printf("%d %d", broj_redaka,max_broj_stupaca);
+	return 0;
+}

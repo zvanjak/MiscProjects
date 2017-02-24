@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    int odradjeno, nominalno, brutosat;
+    float blabla,bruto,neto;    
+    scanf("%d %d %d", &odradjeno, &nominalno, &brutosat);   
+    if (odradjeno < nominalno) {
+       blabla = (float)brutosat - ((float)brutosat*0.1);
+    } else if (odradjeno > nominalno) {
+       blabla = (float)brutosat + ((float)brutosat*0.15);              
+    } else {
+       blabla = (float)brutosat;
+    }
+    bruto=blabla*odradjeno;
+    if (bruto > 6000) {
+       neto=(float)bruto*0.7;
+    } else if (bruto <= 6000) {
+       neto=(float)bruto*0.8;
+    }
+          
+    printf("%.2f",neto);
+
+ return 0;   
+}

@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main(){
+int n, i, j, m1[20][20], m2[20][20];
+do{ 
+	scanf("%d", &n);
+} while(n<1 || n>20);
+for(i=0; i<n; i++){
+	for(j=0; j<n; j++){
+		do{
+		scanf("%d", &m1[i][j]);
+		}while(m1[i][j]<0 || m1[i][j]>1);
+	}
+}
+for(i=0; i<n; i++){
+	for(j=0; j<n; j++){
+		scanf("%d", &m2[i][j]);
+	}
+}
+for(i=0; i<n; i++){
+	for(j=0; j<n; j++){
+		if(m1[i][j]==1){
+			m2[i][j]=i+j;
+		}
+		printf("%d ", m2[i][j]);
+	}
+}
+return 0;
+}
+

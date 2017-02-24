@@ -1,0 +1,12 @@
+double sumareda (int N) {
+	double suma;
+	kontrola ();
+	if(N==1)
+		return suma =(1./((4*N-1)*(4*N+1)));
+	else if (N>1){
+	suma=1./((4*N-1)*(4*N+1))+ sumareda(N-1);
+	return suma;
+	}
+	else return 0;
+	
+}

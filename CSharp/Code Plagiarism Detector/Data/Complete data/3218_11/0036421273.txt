@@ -1,0 +1,15 @@
+# include <stdio.h>
+int main () {
+	int broj, najveci=0, i, prost;
+	do {
+		scanf ("%d", &broj);
+		prost=1;
+		for (i=2; i<broj; i++)
+			if (broj % i==0) prost=0;
+		if (prost)
+			if (broj>najveci)
+				najveci=broj;
+			}while (broj>2);
+		printf ("%d\n",najveci);
+	return 0;
+}

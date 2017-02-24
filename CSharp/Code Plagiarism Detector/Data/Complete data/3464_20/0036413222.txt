@@ -1,0 +1,43 @@
+class Kartica
+{
+private:
+
+     int _ukupniIznos;
+     int _dozvoljeniMinus;
+
+public:
+
+     Kartica();
+     Kartica(int ukupniIznos, int dozvoljeniMinus);
+
+     int  MaxIznosZaDignuti();
+     void StaviNovac(int iznos);
+     int  DigniNovac(int iznos);
+};
+
+Kartica::Kartica()
+: _ukupniIznos(0), _dozvoljeniMinus(0) {}
+
+Kartica::Kartica(int ukupniIznos, int dozvoljeniMinus)
+: _ukupniIznos(ukupniIznos), _dozvoljeniMinus(dozvoljeniMinus) {}
+
+
+void Kartica::StaviNovac(int iznos)
+{
+    _ukupniIznos += iznos;
+}
+
+int Kartica::DigniNovac(int iznos)
+{
+    if (_ukupniIznos - iznos < _dozvoljeniMinus) return 0;
+
+    _ukupniIznos -= iznos;
+
+    if (_ukupniIznos >= 0) return 1;
+    else                   return 2;
+}
+
+int Kartica::MaxIznosZaDignuti()
+{
+    return _ukupniIznos - _dozvoljeniMinus;
+}

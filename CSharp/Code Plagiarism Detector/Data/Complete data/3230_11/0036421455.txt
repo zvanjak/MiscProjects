@@ -1,0 +1,21 @@
+#include <stdio.h>
+int main () {
+	int n,i,f;
+	float p,e=0;
+	scanf ("%d", &n);
+	if (n<1 || n>30) {
+		printf ("n nije valjan");
+	}
+	else {
+		f=1;
+		for (i=1; i<=n; i++) {
+			f=f*i;
+			p=1./f;
+			e=e+p;
+		}
+		e=e+1;
+		printf ("%.12f", e);
+	}
+	return 0;
+}
+

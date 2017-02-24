@@ -1,0 +1,129 @@
+class CjelobrojniNiz {
+public:
+	// default konstruktor
+	CjelobrojniNiz()
+	{
+	}
+
+
+	CjelobrojniNiz(int *niz, int n) 
+	{
+	int i, j, k;
+	int *polje1, *polje2, br;
+
+	_n=n;
+
+	_niz= new int[_n*sizeof(int)];
+	
+	for(i=0; i<_n; i++)
+		_niz[i]=niz[i];
+
+	/* ispitivanje jednakosti */
+
+	br=0; 
+	
+	polje1=(int *)malloc(br*sizeof(int));
+	polje2=(int *)malloc(br*sizeof(int));
+
+	for(i=0; i<n; i++) {
+		k=1;
+		for(j=0; j<br; j++) 
+		{ 
+			if(polje1[j]==_niz[i]) 
+			{
+				k=0;
+				polje2[j]++;
+			}
+		}
+		if(k)
+		{
+			br++;
+			polje1=(int *)realloc(polje1, br*sizeof(int));
+			polje2=(int *)realloc(polje2, br*sizeof(int));
+			polje1[br-1]=_niz[i];
+			polje2[br-1]=1;
+		}
+	}
+	
+	VecinaJednaka=0;
+
+	for(i=0; i<br;i++)
+		if(polje2[i]>=_n/2)
+			VecinaJednaka=1;
+
+	free(polje1);
+	free(polje2);
+	}
+
+
+	~CjelobrojniNiz() 
+	{
+		delete []_niz;
+	}		
+
+
+	int CjelobrojniNiz::Usporedi(CjelobrojniNiz niz)
+	{
+		int i;
+
+		if(_n!=niz._n) return 0;
+	
+		for(i=0; i<_n; i++)
+			if(_niz[i]!=niz._niz[i]) 
+				return 0;
+
+		return 1;
+	}
+
+	int *VratiPresjek(CjelobrojniNiz niz, int *n)
+	{
+		int a,b,i,j,br;
+		int *polje, naso;
+
+		br=0; a=-1;
+
+		for(i=0; i<_n; i++)
+		{
+			b=_niz[i];
+			naso=1;
+
+			for(j=0; j<niz._n; j++)
+			{
+				if(niz._niz[j]==_niz[i]) naso = 0;
+
+				if((niz._niz[j]>a) && (niz._niz[j]<b)) 
+				{
+					br++;
+					polje=(int *)realloc(polje, br*sizeof(int));
+					polje[br-1]= niz._niz[j];
+				}
+			}
+
+			if(naso)
+			{
+				br++;
+				polje=(int *)realloc(polje, br*sizeof(int));
+				polje[br-1]=_niz[i];
+			}
+		}
+
+		for(i=0; i<niz._n; i++)
+		{
+			if(niz._niz[i]>b) 
+			{
+				br++;
+				polje=(int *)realloc(polje, br*sizeof(int));
+				polje[br-1]=niz._niz[i];
+			}
+		}
+		(*n)=br;
+
+		return polje;
+	}
+
+	int *_niz;
+	int _n;
+	int VecinaJednaka;
+
+
+};

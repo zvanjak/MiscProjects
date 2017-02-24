@@ -1,0 +1,18 @@
+int izbaci(zapis **glava){
+	zapis *pom;
+	int brojac=0;
+	zapis **pok;
+	pok=glava;
+	while (*pok) {
+		if ((*pok)&&((*pok)->pros<2)){
+			brojac++;
+			pom=*pok;
+			*pok=(*pok)->sljed;
+			free(pom);
+		}
+		else{
+			*pok=(*pok)->sljed;
+		}
+	}
+	return brojac;
+};

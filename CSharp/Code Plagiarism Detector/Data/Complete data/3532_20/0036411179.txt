@@ -1,0 +1,19 @@
+Stog* noviOdNeparnih(Stog *stog){
+	Stog *novi = new Stog();
+	
+	int stari, i=0, *polje;
+	polje=(int*)malloc(10*sizeof(int));
+
+	while (stog->Skini(&stari)){
+		if (i>=10) polje=(int*)realloc(polje,(i+1)*sizeof(int));
+		polje [i]=stari;
+		i++;
+	}
+
+	for (i-=1; i>=0; i--) {
+		stog->Stavi(polje[i]);
+		if (polje[i]%2)
+			novi->Stavi(polje[i]);
+	}
+	return novi;
+}

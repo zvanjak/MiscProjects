@@ -1,0 +1,39 @@
+void izbaciUljeza (char * ulazni) {
+  int znamenke=0,velika_slova=0,mala_slova=0,i;
+  char *p;
+  for(i=0;*(ulazni+i);i++) 
+    if(*(ulazni+i)>='0'&&*(ulazni+i)<='9') znamenke++;
+    else if(*(ulazni+i)>='a'&&*(ulazni+i)<='z') mala_slova++;
+    else if(*(ulazni+i)>='A'&&*(ulazni+i)<='Z') velika_slova++;
+  
+  if(znamenke<mala_slova && znamenke<velika_slova) {
+    for(i=0;*(ulazni+i);i++) 
+      if(*(ulazni+i)<'0'||*(ulazni+i)>'9') {
+        *(ulazni)=*(ulazni+i--); ulazni++; }
+    *ulazni='\0';
+  }
+  else if(mala_slova<velika_slova && mala_slova<znamenke) { 
+    for(i=0;*(ulazni+i);i++)
+      if(*(ulazni+i)>='a'&& *(ulazni +i)<='z')
+        *(ulazni+i)+= 'A'-'a';
+  }
+  else if(velika_slova<znamenke && velika_slova<mala_slova) {
+    for(i=0;*(ulazni+i);i++)
+      if(*(ulazni+i)>='A'&& *(ulazni +i)<='Z')
+        *(ulazni+i)+= 'a'-'A';
+  }
+  else {
+  p=ulazni;
+  for(i=0;*(ulazni+i);i++) 
+      if(*(ulazni+i)<'0'||*(ulazni+i)>'9') {
+        *(ulazni)=*(ulazni+i--); ulazni++; }
+    *ulazni='\0';
+  if(*p>='a'&&*p<='z') *p+='A'-'a';
+  p++;
+  for(;*p;p++) 
+    if(*p>='A'&& *p<='Z')
+      *p+= 'a'-'A';
+  
+  if(*(ulazni-1)>='a'&& *(ulazni-1)<='z') *(ulazni-1)+= 'A'-'a';
+  }
+}

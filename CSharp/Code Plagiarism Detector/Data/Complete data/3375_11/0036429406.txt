@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+	int broj, br, znam, tezina;
+	scanf ("%d", &br);
+	broj=br;
+	tezina=1000;
+	znam=broj / tezina;
+	while ((znam % 2 != 0)&&(broj / 10 != 0)){
+		broj=broj % tezina;
+		tezina=tezina / 10;
+		znam=broj/tezina;
+	}
+	if ((broj % 2 != 0)&&(abs(broj) < 10)) broj=0;
+	printf("%d",broj);
+	return 0;
+}

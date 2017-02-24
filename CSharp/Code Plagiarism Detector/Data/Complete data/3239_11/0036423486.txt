@@ -1,0 +1,17 @@
+/*zadatak 2*/
+#include<stdio.h>
+int main () {
+	int d,g,s,i,j;
+	scanf("%d %d", &d, &g); 
+	if ((d>0) && (g>0) && (g>d)) {
+		for (i=d; i<=g; i=i+1) {/*vrti sve brojeve od d do g - N brojevi*/
+			s=0;
+			for (j=1; j<=i; j=j+1) {/*vrti brojeve od 1 do trenutacnog N broja*/
+				if (j%2==0) s=s+j;
+			}
+			printf("%d ",s);
+		}
+	}
+	else printf("D i G nisu valjani \n");
+	return 0;
+}

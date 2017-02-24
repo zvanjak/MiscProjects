@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <math.h>
+int main () {
+	double rjesenje;
+	int n, i;
+	scanf("%d",&n);
+	if (n < 1 || n > 100) {
+		printf ("n nije valjan\n");
+		return 0;}
+	for (i =1; i<n+1; i++)
+		rjesenje+=1./(pow(-1.,i+1)*pow((double)i,2));
+	
+	printf("%.12g",sqrt(rjesenje*12));
+	return 0;
+}

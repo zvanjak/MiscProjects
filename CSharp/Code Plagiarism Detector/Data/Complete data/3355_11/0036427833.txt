@@ -1,0 +1,15 @@
+#include <stdio.h>
+int main () {
+char a,b,c,d,e,f;
+scanf ("%c %c %c %c %c %c", &a, &b, &c, &d, &e, &f);
+if (a>='A' && a<='z'){
+if ((b>='0' && b<='9' || c>='0' && c<='9' || d>='0' && d<='9' || e>='0' && e<='9' || f>='0' && f<='9') && (!(b>='0' && b<='9') || !(c>='0' && c<='9') || !(d>='0' && d<='9') || !(e>='0' && e<='9') || !(f>='0' && f<='9')))
+printf("Jest");
+else 
+printf("Nije");
+}
+else
+printf("Nije");
+
+return 0;
+}

@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include<math.h>
+
+int main() {
+	int broj[100];
+	int i=0;
+	int j,k,brznam,pom;
+	while(1) {
+		scanf("%d",&broj[i]);
+		if(broj[i]<0) break;
+		i++;
+		if(i>=100) break;
+	}
+	for(j=0;j<i;j++) {
+		pom=broj[j];
+		brznam=1;
+		while(1) {
+			broj[j]/=10;
+			if(broj[j]==0) break;
+			brznam++;
+		}
+		for(k=0;brznam>0;k++) {
+			broj[j]+=pow(10,(brznam-1))*(pom%10);
+			brznam--;
+			pom/=10;
+		}
+	}
+	for(j=0;j<(i-1);j++) {
+		printf("%d ",broj[j]);
+	}
+	printf("%d",broj[j]);
+	return 0;
+}

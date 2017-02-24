@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <math.h>
+
+#define MAX 50
+
+double f(double x)
+{
+	return pow(x, sin(x)) * tanh(pow(x, exp(x)));
+}
+
+int main()
+{
+	double dfdx[50];
+	double dx;
+	float x;
+	int n = 0, i;
+
+	scanf("%lf", &dx);
+
+	scanf("%f", &x);
+
+	while(x != 0.0)
+	{
+		dfdx[n++] = (f(x+dx)-f(x)) / dx;
+
+		scanf("%f", &x);
+	}
+
+	for(i = 0; i < n; i++)
+		printf("%.2lf", atan(dfdx[i]));
+
+	return 0;
+}

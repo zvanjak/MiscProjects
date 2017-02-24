@@ -1,0 +1,12 @@
+double sumareda(double x, int N) {
+    double nti = 0;
+
+    kontrola();
+
+    if (N == 0) return 0.0;
+
+    nti = pow(x, N)/(double)N;
+    if (N % 2 == 0) nti *= -1;
+
+    return nti + sumareda(x, N-1);
+}

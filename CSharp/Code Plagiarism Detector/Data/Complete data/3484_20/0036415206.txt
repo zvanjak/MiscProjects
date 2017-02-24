@@ -1,0 +1,61 @@
+class CjelobrojniNiz{
+      public:
+             CjelobrojniNiz(int *adresa, int broj_elem){
+                                adr=adresa;
+                                br_elem=broj_elem;
+                                VecinaJednaka=0;
+                                int brojac=0;
+                                for(int i=0;i<broj_elem;i++){
+                                        for (int j=i;j<broj_elem;j++){
+                                            if ((*(adresa+i)) == ((*(adresa+i+j)))
+                                               brojac++;
+                                        }
+                                            if (brojac > (broj_elem/2))
+VecinaJednaka=1;
+                                            brojac=0;
+                                }
+             }
+                                        
+                                
+                                                 
+             ~CjelobrojniNiz(){
+                               free(adr);
+             }
+             CjelobrojniNiz(CjelobrojniNiz &rhs){
+                                           VecinaJednaka=rhs.VecinaJednaka;
+                                           br_elem=rhs.br_elem;
+                                           adr=(int*) malloc(sizeof(int)*br_elem);
+                                           for (int i = 0; i<br_elem; i++){
+                                               *(adr+i) = *(rhs.adr+i);
+                                           }
+             int VecinaJednaka;
+             int *adr;
+             int br_elem;
+             int Usporedi(CjelobrojniNiz niz){
+                 for (int i=0;i<niz.br_elem;i++){
+                     if ((*(niz.adr+i)) != (*(adr+i))) return 0;
+                     }
+                 return 1;
+             }
+             int *VratiPresjek(CjelobrojniNiz niz, int* n){
+                 int *presjek;
+                 if (niz.br_elem > br_elem) presjek = (int *)
+malloc(sizeof(int)*niz.br_elem);
+                 else presjek = (int *) malloc(sizeof(int)*br_elem);
+                 int brojac=0;
+                 for (int i=0;i<niz.br_elem;i++){
+                     if ((*(niz.adr+i)!=(*(niz.adr+i+1))){
+                        for (int j=0;j<br_elem;j++){                         
+                         if ((*(niz.adr+i) == (*(adr+j)) {
+                                           (*(presjek+brojac))=(*(niz.adr+i);
+                                           brojac++;
+                                           }
+                         }
+                        }
+                 }
+                 presjek= (int *) realloc(sizeof(int)*brojac);
+                 *n=brojac;
+                 return presjek;
+             } 
+      }
+             

@@ -1,0 +1,29 @@
+#include <stdio.h>
+#define NR 20
+#define NS 5
+int main(){
+	int mr, ms, i, j, max_i=0,max_j=0;
+	float max=0, a[NR][NS];
+	do {
+  	scanf("%d %d", &mr, &ms);
+	} while ( mr < 1 || mr > NR ||ms < 1 || ms > NS);
+	for (i = 0; i < mr ; i++) {
+		for (j = 0; j < ms; j++) {
+			scanf("%f", &a[i][j]); 
+			if (a[i][j]>max)
+			{
+				max = a[i][j];
+				max_i=i;
+				max_j=j;
+			}
+			if(-a[i][j]>max)
+			{
+				max=-a[i][j];
+				max_i=i;
+				max_j=j;
+			}
+		}
+	}
+	printf ("%d %d", max_i,max_j);
+	return 0;
+}

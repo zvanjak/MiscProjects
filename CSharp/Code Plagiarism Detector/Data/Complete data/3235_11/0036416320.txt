@@ -1,0 +1,30 @@
+/*neznam kaj da tu napišam*/
+
+
+#include<stdio.h>
+#include<math.h>
+
+int main () {
+ float x,y,z,k;
+ printf("Unesi broj clanova:\n                    n=");
+ scanf("%f",&x);
+ y=0;
+ z=0;
+
+ if ((x>0) && (x<101)) {
+
+	   while (y<x) {
+
+         y=y+1;
+		 z=z + ((-1)*(pow((-1),y)))/y;
+		 k=y; 
+	   }
+ }
+ else
+        printf("Broj clanova n nije ispravan!\n");
+ if (x==k)
+        printf("Rezultat je: ln2=%0.12f\n",z);
+
+
+ return 0;
+}

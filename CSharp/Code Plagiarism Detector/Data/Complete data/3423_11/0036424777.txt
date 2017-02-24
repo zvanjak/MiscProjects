@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+int main(){
+    int i,j,broj,pr=0,ps=0,n,mr,ms,mat[100][100];
+  do {
+          scanf("%d %d", &mr, &ms);}
+             while (mr<1 || mr>20 || ms<1 || ms>5)   ;                    
+    for(i=0;i<mr;i++){
+        for(j=0;j<ms;j++){
+            
+            scanf ("%d", &mat[i][j]);}}
+            
+            
+    for(i=0;i<mr;i++)
+        for(j=0;j<ms;j++) 
+          for(n=2;n<=mat[i][j];n++){
+          if(mat[i][j]!=1 && mat[i][j]!=0){
+            if((mat[i][j]%n)==1)continue;
+                if((mat[i][j]%2)==0) break;
+                
+                pr++;break; }}
+                
+                
+               
+                
+                      
+   for(i=0;i<mr;i++) 
+       for(j=0; j<ms;j++)
+        for(n=2; n<=mat[j][i];n++){
+                 if(mat[j][i]!=1 && mat[i][j]!=0){
+            if(1==mat[j][i]%n) continue;
+            if ((mat[j][i]%2)==0)break;
+            
+            ps++;break;}
+            
+        }
+    printf("%d %d", pr, ps);
+    return 0;
+}
+                  

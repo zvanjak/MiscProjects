@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+	
+int rez,b[10],i,z[10],n,a;
+
+/* printf("\nUpisi broj: "); */
+scanf("%d",&n);
+
+if(n<0) {printf("%d",n); }
+
+else {
+for(i=0;i<10;i++) 
+{
+	a=n/10;
+	a=a*10;
+	a=n-a;
+	z[i]=a;
+	n=n/10;
+}
+
+
+for(i=9;i>=0;i--) 
+{	
+	b[i]=fmod(z[i],2);
+
+	rez = rez + z[i]*pow(10,0); 
+}
+printf("%d",rez);
+}}
+

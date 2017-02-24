@@ -1,0 +1,43 @@
+#include<stdio.h>
+#define MAX 21
+int main()
+{
+	int i,j,ms,mr;
+	int polje[MAX][MAX];
+	int pom1,pom2,pom3;
+	int suma=0;
+	do{
+		scanf("%d %d",&ms,&mr);
+	}while((mr<1)||(mr>20)||(ms<1)||(ms>5));
+	for(i=0;i<mr;i++)
+	{
+		for(j=0;j<ms;j++)
+		{
+			scanf("%d",&polje[i][j]);
+		}
+
+	}
+	do{
+		scanf("%d %d",&i,&j);
+		pom1=ms;
+		pom2=0;
+		for(;pom2<=pom1;pom2++)
+		{
+			pom3=polje[i][pom2];
+			polje[i][pom2]=polje[j][pom2];
+			polje[j][pom2]=pom3;
+		}
+	}while((i>=0)&&(i<mr)&&(j>=0)&&(j<ms));
+	pom1=ms;
+	pom2=mr;
+	for(i=0;i<mr;i++)
+	{
+		for(j=0;j<ms;j++)
+		{
+			suma+=polje[i][j];
+		}
+		printf("%d ",suma);
+		suma=0;
+	}
+	return 0;
+}

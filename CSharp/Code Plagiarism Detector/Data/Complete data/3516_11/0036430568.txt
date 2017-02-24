@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<math.h>
+double f(double x){
+	double y;
+	y=pow(cos(exp(-1)), sin(exp(sin(x+exp(-1)))));
+	return y;
+}
+int main() {
+	int i,n;
+	float a[50];
+	double h,b[50];
+	scanf("%lf",&h);
+	for(i=0;i<50;i++){
+		scanf("%f",&a[i]);
+		if(a[i]==0) break;
+	}
+	n=i;
+	for(i=0;i<n;i++){
+		b[i]=(f(a[i]+h)-f(a[i]))/h;
+		 printf("%.2lf ",atan(b[i]));
+	}
+	return 0;
+}

@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include<math.h>
+int main(){
+	int i,j,n;
+	double p,s=0;
+	scanf("%d",&n);
+	if ((n>=1)&&(n<=25)){
+		for(i=1;i<=8;i++){
+			j=pow((double)i,8.);
+			s+=1./j;
+		}
+		p=pow(s*9450,1./8);
+		printf("%.12f",p);
+	}
+	else printf("n nije valjan");
+	return 0;
+}

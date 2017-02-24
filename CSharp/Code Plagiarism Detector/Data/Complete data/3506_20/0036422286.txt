@@ -1,0 +1,17 @@
+int Razina (cvor *glava, int id, int *razina)
+{
+	int d=0;
+	if(glava==NULL) return 0;
+	else if(glava->id==id) return 1;
+	else if(id>glava->id)
+	{
+               (*razina)++;
+		Razina(glava->desno , id , razina);
+	}
+	else if(id<glava->id)
+	{       
+                 (*razina)++;
+		 Razina(glava->lijevo , id , razina);
+	}
+	
+}

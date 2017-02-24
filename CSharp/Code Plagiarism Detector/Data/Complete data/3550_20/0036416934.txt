@@ -1,0 +1,55 @@
+int izbacinaj (zapis **glava) {
+	zapis *najlos, *najbolj;
+	zapis *pomocni = *glava;
+	float min;
+	float max;
+	int k = 0;
+	min = max = pomocni->pros;
+	najlos = pomocni;
+	najbolj = pomocni;
+	while ( pomocni != NULL ) {
+		
+		if ( pomocni->pros < min ) {
+			min = pomocni -> pros;
+			najlos = pomocni;
+		}
+		if ( pomocni -> pros > max ) {
+			max = pomocni->pros;
+			najbolj = pomocni;
+		}
+		pomocni = pomocni -> sljed;
+	}
+	pomocni = *glava;
+	while ( pomocni != NULL ) {
+		
+		
+		if (pomocni == najlos) {
+			*glava = najlos->sljed;
+			pomocni = *glava;
+			free(najlos);
+			k++;
+		}
+				
+		if (pomocni -> sljed == najlos) {
+				pomocni ->sljed = najlos->sljed;
+				free (najlos);
+				k++;
+		}
+		
+		if ((pomocni == najbolj)) {
+			*glava = najbolj->sljed;
+			free(najbolj);
+			k++;
+		}
+		
+		if (pomocni -> sljed == najbolj) {
+				pomocni ->sljed = najbolj->sljed;
+				pomocni = *glava;
+				free (najbolj);
+				k++;
+		}
+		
+		pomocni = pomocni->sljed;
+	}
+	return k;
+}

@@ -1,0 +1,14 @@
+int br_prodanih(FILE *f, char *autor){
+	int i, uku=0;
+	struct s{
+		char naziv[30+1];
+		char autor[20+1];
+		int prodano;
+	}t;
+	while(fread(&t, sizeof(t), 1, f)){
+		for(i=0; autor[i]==t.autor[i]; ++i);
+		if(!autor[i-1] && !t.autor[i-1]) uku+=t.prodano;
+	}
+	return uku;
+
+}

@@ -1,0 +1,11 @@
+int br_prodanih(FILE *f, char *autor) {
+	char n[30+1], a[20+1];
+	int p, ps=0;
+	while(fscanf(f, "%s %s %d%*c", n, a, &p)==3) {
+		if(!(strcmp(a, autor))){
+			ps+=p;
+		}
+	}
+	fclose (f);
+	return ps;
+}

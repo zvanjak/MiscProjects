@@ -1,0 +1,32 @@
+class Kosarica {
+	private:
+	float *kosara;
+	int velKosare;
+	float ukCijena;
+	float najCijena;
+	
+	public:
+		Kosarica() {
+			velKosare = 0;
+			ukCijena = 0.0;
+			najCijena = 0.0;
+		}
+	
+		void DodajProizvod (float cijena) {
+			kosara = (float *)realloc(kosara, (velKosare + 1)* sizeof(float));
+			velKosare++;
+			kosara[velKosare] = cijena;
+			ukCijena += cijena;
+			if (cijena > najCijena) najCijena = cijena;
+		}
+	
+		float UkupnaCijena() {
+			return ukCijena;
+		}
+	
+		float NajskupljiProizvod() {
+			return najCijena;
+		}
+	
+		~Kosarica() {}
+};

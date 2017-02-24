@@ -1,0 +1,35 @@
+# include <stdio.h>
+# define MRMAX 20
+# define MSMAX 5
+int main(){
+      int mr,ms,i,j,polje[MRMAX][MSMAX];
+      int zastavica,produkt=1;
+      do{
+          scanf("%d %d",&mr,&ms);
+      }while( mr<1 || mr> MRMAX || ms<1 || ms>MSMAX );
+
+      for (i=0; i<mr; i++){
+          for (j=0; j<ms; j++)
+              scanf ("%d",&polje[i][j]);
+      }
+      
+	  if(mr % 2){
+          zastavica=1;
+		  for(i=0; i<mr/2 ; i++){
+			  for (j=0; j<ms ; j++){
+				  if(polje [i][j]!=polje[mr-1][j]) zastavica=0;
+			  }
+		  }
+          if(zastavica) printf ("Jest");
+          else printf ("Nije");
+	  }
+	  else{
+        for(i=0; i<mr;i++){
+			for(j=0; j<ms;j++){
+				if ((i%2==0)&&(j%2==0)) produkt*=polje[i][j];
+			}
+		}
+        printf("%d", produkt);
+	  }
+      return 0;
+}

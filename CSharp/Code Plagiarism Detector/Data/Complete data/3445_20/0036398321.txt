@@ -1,0 +1,59 @@
+class Kosarica
+{
+private:
+	float *cijene;
+	int max;
+	int n;
+
+public:
+	Kosarica()
+	{
+		max = 10;
+		cijene = new float[max];
+		n = 0;
+	}
+
+	void DodajProizvod(float cijena)
+	{
+		if(n>=max)
+		{
+			max*=2;
+			float *temp = new float[max];
+			for(int i=0;i<n;i++)
+			{
+				temp[i] = cijene[i];
+			}
+			delete [] cijene;
+			cijene = temp;
+		}
+		cijene[n++] = cijena;
+	}
+
+	float UkupnaCijena()
+	{
+		float retval = 0;
+		for(int i=0;i<n;i++)
+		{
+			retval+=cijene[i];
+		}
+		return retval;
+	}
+
+	float NajskupljiProizvod()
+	{
+		float retval = 0;
+		for(int i=0;i<n;i++)
+		{
+			if(cijene[i]>retval)
+			{
+				retval = cijene[i];
+			}
+		}
+		return retval;
+	}
+
+	~Kosarica()
+	{
+		delete [] cijene;
+	}
+};

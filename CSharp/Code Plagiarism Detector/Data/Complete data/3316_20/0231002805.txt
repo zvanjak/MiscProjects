@@ -1,0 +1,13 @@
+struct {
+       int redni_br;
+       char prezime [20+1];
+       int bodovi;
+} natjecatelj;
+
+void azuriraj (FILE *z, int redni_br, int bodovi) {
+     fseek (z, 1L*(redni_br-1)*sizeof (natjecatelj), SEEK_SET);
+     fread (&natjecatelj, sizeof(natjecatelj), 1, z);
+     natjecatelj.bodovi=bodovi;
+     fseek(z, -1L*sizeof(natjecatelj), SEEK_CUR);
+     fwrite (&natjecatelj, sizeof(natjecatelj), 1, z);
+}

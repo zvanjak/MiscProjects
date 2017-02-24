@@ -1,0 +1,15 @@
+int info(FILE *f, int redni_br){
+	struct natjecatelj{
+		int redni_b;
+		char prezime[20+1];
+		int bodovi;
+	}zapis;
+	if (redni_br<1) return -1;
+		else {
+			fseek(f, (redni_br-1)*sizeof(zapis), SEEK_SET);
+			fread(&zapis, sizeof(zapis), 1, f);
+			if (zapis.redni_b==0) return -1;
+			if (zapis.bodovi<100) return 0;
+			if (zapis.bodovi>=100) return 1;
+		}
+}

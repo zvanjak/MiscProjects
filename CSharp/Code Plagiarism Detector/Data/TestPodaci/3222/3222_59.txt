@@ -1,0 +1,15 @@
+#include<stdio.h>
+int main()
+{
+	int n,brojac=0,a;
+	scanf("%d",&n);
+	if(n<=0)return 0;
+	do{
+		a=n%10;
+		printf("%d ",n);
+		if(n%13==0)break;
+		n=n+a;
+		brojac++;
+	}while(brojac<40);
+	printf("%d", brojac);
+}

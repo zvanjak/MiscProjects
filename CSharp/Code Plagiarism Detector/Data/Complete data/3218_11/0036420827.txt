@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main () {
+    int i,n,nmax,np;
+    nmax=0;
+    scanf("%d",&n);
+    while(n>2){
+      np=0;
+      for(i=2;i<n;i++){
+        if(n%i==0){
+          np=1;}}
+      if((!np)&&(n>nmax)){
+        nmax=n;}
+      scanf("%d",&n);
+      }
+    printf("%d",nmax);
+    return 0;
+}

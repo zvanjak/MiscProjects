@@ -1,0 +1,26 @@
+typedef struct{
+int redni_br;
+char prezime[20+1];
+int bodovi;
+} Snatjecatelj;
+
+int veci_od (FILE *f, int n) {
+int brojac=0;
+int i=0;
+Snatjecatelj natjecatelj;
+printf("\n U funkciji");
+fseek(f, 0L, SEEK_SET);
+while ( fread(&natjecatelj, sizeof(natjecatelj),1,f) > 0)
+{
+printf("\n U while");
+printf("\n redni broj %d.\n", natjecatelj.redni_br);
+if (natjecatelj.redni_br ==++i) {
+printf("\n i= %d.\n", i);
+printf("\n redni broj %d.\n", natjecatelj.redni_br);
+i=i+1;
+
+if (natjecatelj.bodovi >= n) brojac++;
+}
+}
+return brojac;
+}

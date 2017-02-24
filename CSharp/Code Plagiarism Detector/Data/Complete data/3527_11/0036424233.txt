@@ -1,0 +1,21 @@
+
+int izbaciDuplikate(char *ulazni){
+    int n=0,i=0,ptr=0,postoji,br=0;
+	char *novi=(char*)malloc(0);
+    do{
+        postoji=0;
+        for(i=0;i<n;i++)
+		if ((*(ulazni+ptr))==(*(novi+i))){
+			postoji=1;
+			br++;
+		}
+        if (postoji==0){
+            realloc(novi,++n);
+            *(novi+n-1)=*(ulazni+ptr);
+            }
+      }
+    while (*(ulazni+ptr++)!='\0');
+	for(i=0;i<n;i++)
+	*(ulazni+i)=*(novi+i);
+return br;
+}

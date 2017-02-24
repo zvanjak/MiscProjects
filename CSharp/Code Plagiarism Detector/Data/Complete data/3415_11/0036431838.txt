@@ -1,0 +1,31 @@
+#include <stdio.h>
+int main () {
+    int a,b,i,n,suma;
+    char niz[20], c;
+    n=0;
+    suma=0;
+    while (n<21) {
+          scanf("%d %d %c", &a, &b, &c);
+          if ((c=='+') || (c=='-') || (c=='*') || (c=='/') || (c=='%')) {
+                       switch (c)
+                       {
+                              case '+': suma += a+b;
+                                        break;
+                              case '-': suma += a-b;
+                                        break;
+                              case '*': suma += a*b;
+                                        break;
+                              case '/': if (c!=0) suma += a/b;
+                                        break;
+                              case '%': if (c!=0) suma += a%b;
+                                        break;
+                                        }
+                       niz[n]=c;
+                       n++;
+                       }
+          else break;
+          }
+    printf("%d ", suma);
+    for (i=0; i<=(n-1); ++i)
+        printf("%c ", niz[i]);
+}

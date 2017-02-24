@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+
+   int n, i;
+   double x, sum = 0;
+
+   scanf("%d", &n);
+   if (n > 0 && n < 101){
+	   scanf("%lf", &x);
+	   if (x > 0.&&x < 2.){
+		   for (i = 1; i <= n; i++)
+              if (i%2 == 1) sum = sum+pow(x-1,(double)i)/i;
+		               else sum = sum-pow(x-1,(double)i)/i;
+		   printf("%d %.5lf %.12lf", n, x, sum);
+	   } else printf("x nije valjan");
+   } else printf("n nije valjan");
+   
+
+   return 0;
+}

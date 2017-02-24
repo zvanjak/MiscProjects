@@ -1,0 +1,26 @@
+void dodaj(FILE *f) {
+	int maxbod,poc=1,rbr,cntr=0;
+	struct natjecatelj temp;
+	fseek(f,0,SEEK_SET);
+	while (fread(&temp,sizeof(temp),1,f)==1) {
+		cntr++;
+		if (temp.redni_br!=0) {
+			if (poc) {
+				maxbod=temp.bodovi;
+				poc=0;
+				rbr=cntr;
+			};
+			if ((!(poc)) && (temp.bodovi>maxbod)) {
+				maxbod=temp.bodovi;
+				rbr=cntr;
+			};
+		};
+	};
+	if (!poc) {
+		fseek(f,sizeof(temp)*(rbr-1),SEEK_SET);
+		fread(&temp,sizeof(temp),1,f);
+		temp.bodovi+=10;
+		fseek(f,sizeof(temp)*(rbr-1),SEEK_SET);
+		fwrite(&temp,sizeof(temp),1,f);
+	};
+};

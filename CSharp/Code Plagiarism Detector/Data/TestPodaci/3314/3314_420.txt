@@ -1,0 +1,12 @@
+int veci_od(FILE *f,int granica){
+    char pomstr[31];
+    int brojac=0,prodano;
+    
+    fseek(f,0L,SEEK_SET);
+    
+    while(fscanf(f,"%s %s %d",pomstr,pomstr,&prodano)>0){
+       if(prodano>=granica) brojac++;
+       }
+       
+    return brojac;
+}

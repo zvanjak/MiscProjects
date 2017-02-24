@@ -1,0 +1,29 @@
+#include <stdio.h>
+int main ()
+{
+	int a[20]={0}, b[20]={0};
+	int rez = 0, n = -1, i;
+	char c[20]={0};
+
+	do
+	{
+		n++;
+		scanf("%d %d %c",&a[n],&b[n],&c[n]);
+
+		switch (c[n])
+		{
+			case '+':rez += a[n] + b[n]; break;
+			case '-':rez += a[n] - b[n]; break;
+			case '*':rez += a[n] * b[n]; break;
+			case '/':if (b[n] != 0) rez += a[n]/b[n]; break;
+			case '%':if (b[n] != 0) rez += a[n]%b[n]; break;
+		}
+	}
+	while ( (c[n]=='+') || (c[n]=='-') || (c[n]=='*') || (c[n]=='/') || (c[n]=='%') );
+
+	printf("%d",rez);
+	
+	for (i=0; i<n; i++) if ((c[i]=='+') || (c[i]=='-') || (c[i]=='*') || (c[i]=='/') || (c[i]=='%')) printf(" %c",c[i]);
+	return 0;
+}
+				

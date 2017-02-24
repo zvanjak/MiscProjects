@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+int main()
+{
+
+    unsigned long int n,s;
+    scanf("%d",&n);
+    s=(2*n*n*n-3*n*n+7*n)/6;
+    printf("%d",s);
+    return 0;
+
+}

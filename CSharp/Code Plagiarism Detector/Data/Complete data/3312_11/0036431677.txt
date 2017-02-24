@@ -1,0 +1,15 @@
+ int br_prodanih(FILE *f, char *autor)
+ {
+	 struct album {
+		 char naziv[30+1] ;
+		char autor[20+1];
+		int prodan; }x;
+		int br=0;
+
+		while(fscanf(f,"%s %s %d\n",x.naziv,x.autor,&x.prodan)!=EOF)
+		{ 
+			if(strcmp(autor,x.autor)==0)
+				br+=x.prodan;}
+		return br;
+
+ }

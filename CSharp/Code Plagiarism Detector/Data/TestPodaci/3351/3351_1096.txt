@@ -1,0 +1,17 @@
+int info(FILE *f, int redni_br)
+{
+    struct natjecatelj podatak;
+    int i;
+    if (redni_br == 0)
+    return -1;
+    for(i=0; i<redni_br; i++)
+    fread(&podatak, sizeof(struct natjecatelj), 1, f);
+    if(podatak.bodovi > 99)
+    {
+    return 1;
+    }
+    else if((podatak.bodovi < 100) && (podatak.bodovi !=0))
+    {
+    return 0;
+    }
+}

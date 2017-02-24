@@ -1,0 +1,15 @@
+#include<stdio.h>
+int main() {
+	int broj,c0,c1;
+	scanf("%d", &broj);
+	if (broj>=16 && broj<=255) {
+		c1 = broj % 16;
+		c0 = broj / 16;
+		if (c0<=9) c0 = c0 + '0'; else c0 = c0 + ('A' - 10);
+		if (c1<=9) c1 = c1 + '0'; else c1 = c1 + ('A' - 10);
+		printf("%c%c", c0, c1);
+	} else {
+		printf("Izvan intervala");
+	}
+	return 0;
+}

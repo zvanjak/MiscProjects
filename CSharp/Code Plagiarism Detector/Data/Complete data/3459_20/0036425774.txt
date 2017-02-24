@@ -1,0 +1,14 @@
+void AritSred_StdDev(DinamickoPolje &polje, float *ArSred, float *StdDev){
+	int i,
+	float suma= 0.0;
+	float suma1= 0.0;
+	for(i=0 ; i< polje._BrojElem ; i++){
+		suma += polje._Podaci[i];
+	}
+	*ArSred = suma / i;
+	
+	for(i=1 ; i< polje._BrojElem ; i++){
+		suma1 += pow((polje._Podaci[i]- *ArSred),2);
+	}
+	*StdDev = sqrt(suma1/((polje._BrojElem-1)*polje._BrojElem));
+}

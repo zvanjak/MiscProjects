@@ -1,0 +1,44 @@
+#include <stdio.h>
+#define MAXR 21
+#define MAXS 6
+
+int apsolutno(int a) {
+	if (a<0)
+		return -a;
+	else
+		return a;
+}
+
+int main() {
+	int i, j;
+	int mr, ms, naj;
+	int mat[MAXR][MAXS];
+
+	do {
+		scanf("%d %d", &mr, &ms);
+	} while (mr<1 || mr>20 || ms<1 || ms>5);
+
+	for (i=0; i<mr; i++) {
+		for (j=0; j<ms; j++)
+			scanf("%d", &mat[i][j]);
+	}
+
+	naj=0;
+
+	for (i=0; i<mr; i++) {
+		for (j=0; j<ms; j++){
+			if (apsolutno(mat[i][j])>naj) {
+				naj=apsolutno(mat[i][j]);
+			}
+		}
+	}
+
+	for (i=0; i<mr; i++)
+		for (j=0; j<ms; j++)
+			if (apsolutno(mat[i][j])==naj){
+				printf("%d %d", i, j);
+				return 0;
+			}
+
+	return 0;
+}

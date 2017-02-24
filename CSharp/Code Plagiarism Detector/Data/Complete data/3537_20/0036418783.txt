@@ -1,0 +1,17 @@
+int BrojClanova(Red *red){
+	int element,pom,max=50,i=0;
+	int *polje;
+	if (polje=(int*)(malloc(max*sizeof(int)))){
+		do{
+			i++;
+			if(i==max-1){ max=max+10;
+			polje=(int*)(realloc(polje,max));}
+			pom=red->SkiniIzReda(&element);
+			polje[i]=element;
+		} while(pom!=0);
+		pom=i-1;  //u  i je broj clanova
+		for(i=0;i<pom;i++)
+			red->DodajURed(polje[i]);
+		return pom;
+	}
+}

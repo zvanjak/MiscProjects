@@ -1,0 +1,32 @@
+#include <stdio.h>
+int main (void){
+	int x, a, b, c, d;
+	scanf("%d", &x);
+	a = x / 1000;
+	b = (x - a * 1000) / 100;
+	c = (x - a * 1000 - b * 100) / 10;
+	d = (x - a * 1000 - b * 100 - c * 10);
+	if (x >= 1000 && x <= 9999){
+		if ((a%2 || b%2 || c%2 || d%2) ==  0){
+			printf("%d", x);
+		}else{
+			if (a%2!=0){
+				a = a + 1;}
+			if (b%2!=0){
+				b = b + 1;}
+			if (c%2!=0){
+				c = c + 1;}
+			if (d%2!=0){
+				d = d + 1;}
+			if (a>9){
+				a = 0;}
+			if (b>9){
+				b = 0;}
+			if (c>9){
+				c = 0;}
+			if (d>9){
+				d = 0;}
+			printf("%d", a*1000 + b*100 + c*10 + d );
+		}}
+	return 0;
+}

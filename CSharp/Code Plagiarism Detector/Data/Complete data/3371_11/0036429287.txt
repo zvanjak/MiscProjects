@@ -1,0 +1,23 @@
+#include <stdio.h>
+int main() {
+int x,a,b,c,d;
+scanf("%d", &x);
+if ((x>=1000) && (x<=9999)) {
+d=x%10;
+x=x/10;
+c=x%10;
+x=x/10;
+b=x%10;
+x=x/10;
+a=x%10;
+
+if (a%2==0) a=a+1;
+if (b%2==0) b=b+1;
+if (c%2==0) c=c+1;
+if (d%2==0) d=d+1;
+}
+x=(1000*a) + (100*b) + (10*c) + (d);
+printf("%d",x);
+return 0;
+}
+

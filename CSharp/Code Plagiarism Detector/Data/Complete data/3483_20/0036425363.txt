@@ -1,0 +1,25 @@
+class Komprimiranje {
+private:
+	int *_pokel;
+	int _brel;	
+public:
+	Komprimiranje(int *niz, int brel) {
+		_brel=brel;
+		_pokel=niz;
+	}
+	int UkupnaSuma();
+	int UkupniBrojElemenata(int vrijednost);
+};
+int Komprimiranje::UkupnaSuma() {
+	int i, suma=0;
+	for (i=0;i<_brel;i+=2)
+		suma+=_pokel[i] * _pokel[i+1];
+	return suma;
+}
+int Komprimiranje::UkupniBrojElemenata(int vrijednost) {
+	int i, ukbr=0;
+	for (i=0;i<_brel;i+=2)
+		if (_pokel[i]!=vrijednost)
+			ukbr+=_pokel[i+1];
+	return ukbr;
+}

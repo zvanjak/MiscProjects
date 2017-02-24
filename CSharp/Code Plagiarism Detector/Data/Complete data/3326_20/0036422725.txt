@@ -1,0 +1,14 @@
+void AritSred_StdDev(float*p, int n, float *ArSred, float *StdDev){
+	int i;
+	float pom1, pom2; 
+	float pom3=0;
+	float brojnik=0, nazivnik;
+	for(i=0; i<n; i++){
+		pom3+=p[i];}
+	*ArSred=pom3/n;
+	for (i=0; i<n; i++){
+		pom1=p[i]-*ArSred;
+		pom2=pom1*pom1;
+		brojnik+=pom2;}
+	nazivnik=(float)n*(n-1);
+	*StdDev=sqrt(brojnik/nazivnik);}

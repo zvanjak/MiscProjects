@@ -1,0 +1,21 @@
+MjeracProsjecneTemperature::MjeracProsjecneTemperature(Termometar *t) {
+    this->t = t;
+}
+
+double MjeracProsjecneTemperature::Prosjek(int n, int *min, int *max) {
+    int ocitano;
+    int suma = 0;
+    
+    for(int i = 0; i < n; i++) {
+        ocitano = t->Ocitaj();
+        if((i == 0) || (ocitano < *min)) {
+            *min = ocitano;
+        }
+        if((i == 0) || (ocitano > *max)) {
+            *max = ocitano;
+        }
+        suma += ocitano;
+    }
+    
+    return (double)suma / n;
+}

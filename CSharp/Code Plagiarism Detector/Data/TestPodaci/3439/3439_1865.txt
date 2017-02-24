@@ -1,0 +1,31 @@
+#include<stdio.h>
+#define MAX 20
+int main(){
+    int n;
+    int  i, j, produkt=1, mat [MAX][MAX];
+     broj:
+    scanf("%d",&n);
+    if (n>20 || n<1) goto broj;
+    for(i=0;i<n;i++){
+                     for(j=0;j<n;j++){
+                                      scanf("%d",&mat[i][j]);}
+                                      }
+    for(i=0;i<n;i++){
+                     for(j=0;j<n;j++){
+                                      if (i%2==0 && j%2==0){
+                                                 if(mat[i][j]%2==1) goto nepar;
+                                                                         }                 
+                                                   }
+                     produkt*=mat[i][i];
+                     }
+    goto kraj;
+    nepar:
+    produkt=1;
+    for(i=0;i<n;i++){
+                     produkt *= mat[i][n-1-i];
+                     }
+    kraj:
+    printf("%d",produkt);
+    return 0;
+}
+                                      

@@ -1,0 +1,23 @@
+int izbaci (char * ulazni, char * podniz){
+int i,j,k,izb;
+
+izb=0;
+j=0;
+while (podniz[j]!='\0') {
+	i=0;
+	while (ulazni[i]!='\0') {
+		if (ulazni[i]==podniz[j]){
+			izb +=1;
+			k=i;
+			i-=1;
+			while (ulazni[k]!='\0') {
+				ulazni[k]=ulazni[k+1];
+				k+=1;
+			}
+		}
+		i+=1;
+	}
+	j+=1;
+}
+return (izb);
+}

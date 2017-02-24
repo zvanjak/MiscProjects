@@ -1,0 +1,10 @@
+int rBrojParnih(int *polje,int n)
+{
+int br=0;
+kontrola();
+if(n>0)
+{
+if(*polje % 2 == 0) br++;
+return br+rBrojParnih(++polje,--n);
+}
+}

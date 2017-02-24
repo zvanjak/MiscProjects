@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+
+char *IzbaciPresjek(char *niz1, char *niz2)
+{
+	char *ret=NULL;
+	int i=0, j=0, n=0;
+	int je=0;
+
+	if (!niz1 || strlen(niz1) == 0) return ret;
+	if (!niz2 || strlen(niz2) == 0)
+	{
+		ret = (char *) malloc (sizeof(char) * (strlen(niz1) + 1));
+		sprintf (ret, "%s", niz1);
+		return ret;
+	}
+
+	ret = (char *) malloc (sizeof(char) * 1);
+
+	for (i=0; i<strlen(niz1); i++)
+	{
+		je = 0;
+		for (j=0; j<strlen(niz2); j++)
+		{
+			if (niz1[i] == niz2[j])
+			{
+				je = 1;
+				break;
+			}
+		}
+		
+		if (je == 0)
+		{
+			ret[n] = niz1[i];
+			n += 1;
+			ret = (char *) realloc (ret, sizeof(char) * (n+1));
+		}
+	}
+
+	ret[n] = '\0';
+
+	return ret;
+}

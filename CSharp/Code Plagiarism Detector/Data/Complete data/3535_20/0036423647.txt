@@ -1,0 +1,7 @@
+void staviNaDno(Stog *stog, int broj) {
+	Stog pom;
+	int x;
+	while(stog->Skini(&x))	 pom.Stavi(x);
+	pom.Stavi(broj);
+	while(pom.Skini(&x))  stog->Stavi(x);
+}

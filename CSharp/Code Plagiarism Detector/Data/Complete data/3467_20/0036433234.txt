@@ -1,0 +1,21 @@
+#include<string.h>
+int igra(Igrac& igrac, Automat& automat, int max, int *broj){
+  int poc=igrac.TrenutnoStanje();
+  if(poc){
+    automat.UplatiIznos(poc);
+	igrac.SkiniSRacuna(poc);
+  }
+  for(*broj=0;(*broj)<=max; (*broj)++){
+    int t=0;
+	try { t=automat.Zavrti(); }
+	catch(const char* err) {
+	  if(strcmp(err, "Nedovoljan iznos")==0)
+	    break; 
+	}
+	automat.UplatiIznos(t);
+  }
+  (*broj)--;
+  igrac.UplatiNaRacun(automat.PodigniPreostalo());
+  return igrac.TrenutnoStanje()-poc;
+  
+}

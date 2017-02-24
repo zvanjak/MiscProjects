@@ -1,0 +1,23 @@
+#include <stdio.h> 
+#include <math.h> 
+ 
+main() 
+{  
+int n,i; 
+long double x, a; 
+a=0; 
+scanf ("%d",&n); 
+if ( (n>=1) && (n<=100) ) 
+{ 
+for ( i = 0; i<n ; i++) 
+{ 
+a = a + (1/(pow (i,2))); 
+} 
+a= a*6; 
+x = sqrt (a); 
+printf ("%.12Lf", x); 
+} 
+else 
+printf ("n nije valjan"); 
+return 0; 
+} 

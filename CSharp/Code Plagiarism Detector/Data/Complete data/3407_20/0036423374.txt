@@ -1,0 +1,26 @@
+char *SamoSamoglasnici(char *ulazni_niz)
+  {
+     char *string,*samogl;
+     int i,j,a;
+     samogl="AEIOUaeiou";
+	 a=strlen(ulazni_niz);
+     string = (char *)malloc(a);
+	 string="";
+	 if(a==0)return(NULL);
+     if(ulazni_niz == NULL) return(NULL);
+     for(i=0;i<a;i++)
+		 {
+			 for(j=0;j<10;j++)
+				 {
+					 if(ulazni_niz[i]==samogl[j])
+						 {
+
+							 strncat(string,&samogl[j],1);
+							 break;
+					     }
+				}
+		}
+
+
+	 return(string);
+	 }

@@ -1,0 +1,23 @@
+#include<math.h>
+int JelSeSijeku(Kruznica &k1, Kruznica &k2)
+{
+float pom1,pom2;
+if(((k1.GetCenterX() == k2.GetCenterX())&&(k1.GetCenterY() == k2.GetCenterY()))&&(k1.GetRadius() == k2.GetRadius()))
+{
+      return 3;
+}
+pom1 = sqrt(pow((k2.GetCenterX()-k1.GetCenterX()),2)+pow((k2.GetCenterY()-k1.GetCenterY()),2)); 
+pom2 = k1.GetRadius() + k2.GetRadius();
+if(pom1<pom2)
+{
+      return 2;
+}
+else if(pom1 == pom2)
+{
+      return 1;
+}
+else
+{
+      return 0;
+}
+}

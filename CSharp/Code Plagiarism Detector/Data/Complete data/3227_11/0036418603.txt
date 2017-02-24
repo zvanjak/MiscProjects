@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <math.h>
+main () {
+	int n, i;
+	float suma= 0, rez, pi;
+	
+	scanf("%d", &n);
+	if (n<1||n>500){
+		printf("n nije valjan!\n");
+	}
+	else{
+		for (i=1;i<=n;i++){
+		rez = pow(-1, i-1)/(2*i-1);
+		suma+=rez;
+			}
+			
+			pi = suma*4;
+				printf("%1.12f", pi);
+	
+	return 0;
+	}
+}

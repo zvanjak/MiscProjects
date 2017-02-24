@@ -1,0 +1,22 @@
+int najbolji(FILE *f){
+	struct natjecatelji {
+	int redni_br;
+	char prezime[20+1];
+	int bodovi;
+	} zapis;
+	int x,max_bod=0,max_broj=1;
+	fread(&x,sizeof(int),1,f);
+	if(x==0) {
+		printf("datoteka prazna!!");
+		return 0;
+	}
+	fseek(f,0,SEEK_SET);
+	while(!feof(f)) {
+		fread(&zapis,sizeof(zapis),1,f);
+		if(zapis.bodovi>max_bod) {
+			max_bod=zapis.bodovi;
+			max_broj=zapis.redni_br;
+		}
+	}
+	return max_broj;
+}

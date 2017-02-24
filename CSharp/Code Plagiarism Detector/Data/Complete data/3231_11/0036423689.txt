@@ -1,0 +1,16 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+	int n,i;
+	double b=0;
+	scanf("%d",&n);
+	if (n>=1 && n<=30){
+		for(i=0;i<=n;i++){
+			b=b+1/(pow(-2,i));
+		}
+		printf("%1.12f",b);
+	}
+	else
+		printf("n nije valjan");
+}

@@ -1,0 +1,21 @@
+char *SamoSuglasnici(char *ulazni_niz){
+	int i,x=0;
+	char *novi_niz;
+	if(*ulazni_niz==NULL || *ulazni_niz=='\0')
+		return NULL;
+	novi_niz=(char *)malloc(sizeof(char));
+	for(i=0;*(ulazni_niz+i)!='\0';i++){
+		if(isalpha(*(ulazni_niz+i))){
+			if((*(ulazni_niz+i)!='a') && (*(ulazni_niz+i)!='e') && (*(ulazni_niz+i)!='i') && (*(ulazni_niz+i)
+!='o') && (*(ulazni_niz+i)!='u')
+				&& (*(ulazni_niz+i)!='A') && (*(ulazni_niz+i)!='E') && (*(ulazni_niz+i)!='I') && (*(ulazni_niz+i)!='O') && (*(ulazni_niz+i)!='U'))
+					*(novi_niz+(i-x))=*(ulazni_niz+i);
+			else 
+				x++;
+			continue;
+		}
+		else x++;
+	}
+	*(novi_niz+(i-x))='\0';
+	return novi_niz;
+}

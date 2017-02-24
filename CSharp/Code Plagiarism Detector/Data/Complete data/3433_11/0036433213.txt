@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+      int i=0;
+      int j;
+      char znakovi[100];
+      int brojevi[100];
+
+      do
+      {
+          scanf ("%c %d", &znakovi[i], &brojevi[i]);
+          i++;
+      }   while (brojevi[i-1] != -1);
+
+      i=0;
+      while (brojevi[i]!= -1)
+      {
+          for (j=0; j<brojevi[i]; j++)
+              printf ("%c ", znakovi[i]);
+          i++;
+      }
+
+      return 0;
+}

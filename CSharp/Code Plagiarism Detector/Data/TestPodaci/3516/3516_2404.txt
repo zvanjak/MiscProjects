@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <math.h>
+
+double dx;
+double f(double x){
+	return pow(cos(exp(-1.0)), sin(exp(sin(x + exp(-1.0)))));
+}
+
+double deriviraj(double x){
+	return (f(x + dx) - f(x)) / dx;
+}
+
+double r[52];
+int i, j;
+
+int main(){
+	double x = -1.0;
+	
+	scanf("%lf", &dx);
+	while ( fabs(x) != 0.0 ){
+		scanf("%lf", &x);
+		if ( fabs(x) == 0.0 ) break;
+		r[i++] = deriviraj(x);
+	}
+	
+	for ( j = 0; j < i; j++ )
+		printf("%.2lf\n", atan(r[j]));
+	return 0;
+}

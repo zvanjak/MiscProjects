@@ -1,0 +1,22 @@
+void dodaj(FILE *f){
+   struct natjecatelj zapis;
+   int i,n,max=0,brojilo=1;
+   fseek(f,0L,SEEK_SET);
+   for(n=0;fread(&zapis,sizeof(zapis),1,f)==1;n++);
+   fseek(f,0L,SEEK_SET);
+   for(i=0;i<n;i++){
+      fread(&zapis,sizeof(zapis),1,f);
+      
+      if(!i) max=zapis.bodovi;
+
+      if (zapis.bodovi>max && zapis.redni_br!=0){
+         max=zapis.bodovi;
+         brojilo=zapis.redni_br;
+      }
+   }
+   fseek(f,(brojilo-1)*sizeof(zapis),SEEK_SET);
+   fread(&zapis,sizeof(zapis),1,f);
+   zapis.bodovi+=10;
+   fseek(f,(-1)*(int) sizeof(zapis),SEEK_CUR);
+   fwrite(&zapis,sizeof(zapis),1,f);
+}

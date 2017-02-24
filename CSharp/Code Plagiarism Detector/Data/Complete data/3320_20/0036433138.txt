@@ -1,0 +1,9 @@
+int rmax(int *polje,int N) {
+	int v1;
+	kontrola();
+	if(N-1<=0) return *(polje+N-1);
+    v1=rmax(polje,N-1);
+	if(v1 > *(polje+N-1))
+		return v1;
+	return *(polje+N-1);
+}

@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <math.h>
+int main () {
+	unsigned long n, m, k, b;
+	long double pi, a, d;
+	scanf("%d", &n);
+	if((n < 1) || (n > 25)) {
+		printf("n nije valjan\n");
+	}else {
+		m = 1;
+		k = 1;
+		a = 0;
+		for((n >=1) && (n <= 25); m <=n; m++, k++) {
+			b = k * k * k * k * k * k * k * k;
+			pi = 9450.0 / b + a;
+			a = pi;
+		}
+		d = pow(a, 1./8);
+		
+			printf("%.13g\n", d);
+	}
+	return 0;
+}

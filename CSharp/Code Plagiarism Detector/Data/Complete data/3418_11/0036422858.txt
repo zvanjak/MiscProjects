@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main () {
+	int i, j, m, n, a, brojac=0, brojac2=0, polje[100];
+	do {
+		scanf("%d", &n);
+	} while (n<1 || n>100);
+
+	for (j=0; j<n; j++){
+		scanf("%d", &m);
+		polje[j]=m;
+	}
+
+	do {
+		scanf("%d %d", &i, &a);
+		if (i>=0 && i<=n-1){
+			polje[i]=polje[i]/a;
+			brojac++;
+		}
+	} while (i>=0 && i<=n-1);
+
+	for (j=0; j<n; j++) {
+		if(polje[j]==0) brojac2++;
+	}
+	printf("%d %d", brojac2, brojac);
+	
+	return 0;
+}

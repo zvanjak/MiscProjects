@@ -1,0 +1,23 @@
+#include <stdio.h>
+int main(){
+        int A,d,B,brojac,i;
+        scanf ("%d %d %d", &A, &d, &B);
+        brojac=0;
+        i=A;
+        if (d>0){
+		 if (A<=B){
+			while (i<=B){
+				brojac+=1;
+				i=i+d;
+				printf ("%d ",i);
+				}
+			printf ("%d",brojac);
+			}
+		 else
+		        printf ("%d",brojac);
+	       }
+		
+	return 0;
+
+
+}

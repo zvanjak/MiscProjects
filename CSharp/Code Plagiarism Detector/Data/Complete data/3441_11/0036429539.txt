@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main (){
+	int broj,x,brojac=0,suma=0;
+	do {
+		scanf("%d",&broj);
+		if (broj<0) broj=-broj;
+		if (broj == 0) break;
+		x=broj;
+		while (x!=0) {
+			suma+=x%10;
+			x=x/10;
+			brojac+=1;
+		}
+}while (broj!=0);
+printf("%d %d",brojac,suma);
+return 0;
+}

@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+//using namespace std;
+
+int main(int argc, char *argv[])
+{
+int i,n;
+double suma=0;
+double clan=1;
+scanf("%d",&n);
+ 
+    if (n<1 || n>30) {
+          printf("n nije valjan");
+       /* printf("Krivi n. n mora biti unutar intervala 1 do 30 incl.");*/
+            goto kraj;
+    };
+
+    for(i=0;i<n; i++){
+        suma=suma+clan;
+        clan=clan/2;
+    }    
+
+    printf("%.12f",suma);
+
+kraj:      
+  return 0;
+}

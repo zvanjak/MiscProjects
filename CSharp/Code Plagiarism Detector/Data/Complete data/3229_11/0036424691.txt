@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <math.h>
+
+int main () {
+	int k = 1, n, i;
+	double suma = 1, e;
+	scanf ("%d", &n);
+	if (n < 1 || n > 30)
+		printf ("n nije valjan ");
+	else {
+		for (i=1; i <= n - 1; i++){
+			k *= i;
+            suma += pow(-1, i) / k;
+		}
+		e = 1. / suma;
+		printf ("%.12lf ", e);
+	}
+return 0;
+}

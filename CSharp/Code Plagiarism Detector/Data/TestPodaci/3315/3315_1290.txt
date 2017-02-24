@@ -1,0 +1,10 @@
+float prosjek(FILE *f){
+char naziv[30+1];
+char autor[20+1];
+int  prodano;
+float albumi=0, ukupno=0;
+while (fscanf (f, "%[^ ] %[^ ] d%*c", naziv, autor, &prodano)==3){
+albumi ++;
+ukupno+=prodano;}
+return ukupno/albumi;
+}

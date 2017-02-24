@@ -1,0 +1,25 @@
+Stog *PrepisiRedUStog(Red *red){
+	Stog *a = new Stog;
+	Stog pom;
+	int br;
+	int k  = 0;
+
+	while (red->SkiniIzReda(&br)){
+		k = 0;
+		if (br == 1 || br == 2 || br == 3) k =1;
+		for (int i = 3; i <= br/2; i++){
+			if (!(br % i)) break;
+			if (br % i) {
+				k = 1;
+				break;
+			}
+		}
+		if (k == 1) pom.Stavi(br);
+	}
+
+	while (pom.Skini(&br))
+		a->Stavi(br);
+
+	return a;
+
+}

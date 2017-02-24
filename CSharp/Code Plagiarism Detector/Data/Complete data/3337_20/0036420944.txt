@@ -1,0 +1,7 @@
+int rStrncmp(char *s1, char *s2, int n)
+{
+kontrola();
+if(n==0)  return (int)(s1[n-1]-s2[n-1]) ;
+
+return (int)((s1[n-1]-s2[n-1])+rStrncmp(s1,s2,--n));
+}

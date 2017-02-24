@@ -1,0 +1,12 @@
+double sumareda (int n){
+    int i = n;
+    double suma = 0;
+    kontrola();
+
+    if (i < 1) return 0;
+
+    suma = (double) (1) / ((double)((i*i*i*i)));
+    if (i == 1) return suma;
+    suma += sumareda (--i);
+    return suma;
+}

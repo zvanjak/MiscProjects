@@ -1,0 +1,12 @@
+int zamijeni(char *ulazni, char *prvi, char *drugi){
+	int brojzamijena=0;
+	char *p;
+	p=strstr(ulazni,prvi);
+		while (p!=NULL){
+		     strncpy(p,drugi,strlen(drugi));
+		     p++;
+		     p=strstr(p,prvi);
+             brojzamijena++;
+		}
+		return brojzamijena;
+}

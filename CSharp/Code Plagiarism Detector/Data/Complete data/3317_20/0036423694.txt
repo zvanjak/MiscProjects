@@ -1,0 +1,14 @@
+void brisi(FILE *f, int redni_br)
+{
+	struct natjecatelj nat;
+	struct natjecatelj *np;
+	nat.redni_br = 0;
+	strcpy(nat.prezime, "");
+	nat.bodovi = 0;
+	np = &nat;
+
+	
+	fseek(f, (long)((redni_br - 1)*sizeof(struct natjecatelj)), SEEK_SET);
+	fwrite(np, sizeof(struct natjecatelj), 1, f);		
+
+}

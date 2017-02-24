@@ -1,0 +1,52 @@
+class Recenica{
+  private:
+    char *_pod;
+    int _brElem;
+    char *_polje;
+    int _temp;
+  
+  public:
+    Recenica(){
+      _brElem = 0;
+      _polje = new char[512];
+      _pod = _polje;
+      _temp = 1;
+    }
+
+    void UcitajZnak(char znak){
+      if(_temp){
+        _temp = 0;
+        Exit();
+      }
+      *(_polje++) = znak;
+      _brElem++;
+    }
+    
+    int PrebrojiRijeci(){
+      int m, i = 0, rijeci = 0;
+      while(i < _brElem){
+        for(m = i; *(_pod+m) != ' ' && m  < _brElem; m++, i++);
+        i++;
+        if(*(_pod+m-1) != ' ')
+          rijeci++;
+      }
+      _temp = 1;
+      return rijeci;
+    }
+    
+    int PrebrojiZareze(){
+      int i, br = 0;
+      for(i = 0; i < _brElem; i++){
+        if(*(_pod+i) == ',')
+          br++;
+      }
+      _temp = 1;
+      return br;
+    }
+    
+    void Exit(){
+      _brElem = 0;
+      _polje = new char[512];
+      _pod = _polje;
+    }
+};

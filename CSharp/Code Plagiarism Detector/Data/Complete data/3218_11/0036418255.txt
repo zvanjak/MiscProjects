@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main(){
+	int input,i;
+	int prost=0;
+	int brojac;
+
+do {
+	scanf("%d",&input);
+	brojac = 0;
+	
+for(i=1;i<input;i++){
+	if (input % i == 0) brojac++;
+}
+
+if (brojac == 1) {
+	if (input > prost) prost = input;
+}
+	
+} while (input >2);
+
+if (prost <= 2) printf("0");
+else {
+printf("%d", prost);
+}
+return 0;
+}

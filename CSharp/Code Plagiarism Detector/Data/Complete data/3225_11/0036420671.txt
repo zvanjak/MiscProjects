@@ -1,0 +1,19 @@
+#include  "stdio.h"
+#include  "math.h"
+int main()
+{
+   int i,n=0;
+   double  suma,pi=0,a=1,b=8;
+   scanf ("%d",&n);
+   if (n<1 || n>400)  printf ("n nije valjan");
+   
+   else {
+	--n;
+	   for (i=0;i<=n;i++)
+	{suma = 1/((2*i+a)*(2*i+a));
+	pi = pi + suma;
+	}
+	pi = sqrt(pi*b);
+	printf ("%.12lf",pi);
+   }
+}

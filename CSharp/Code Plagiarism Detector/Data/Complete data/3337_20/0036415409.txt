@@ -1,0 +1,15 @@
+int rStrncmp(char *s1, char* s2, int n){
+	int raz;
+	kontrola();
+	while(n>=0){
+		if((*s1)==(*s2)) return 0 + rStrncmp((s1+1), (s2+1), n-1);
+		else{
+			raz=(*s1)-(*s2);
+			if (raz>0) return 1;
+			else return -1;
+		}
+	}
+        if (n<0){
+           return 0;
+        }
+}

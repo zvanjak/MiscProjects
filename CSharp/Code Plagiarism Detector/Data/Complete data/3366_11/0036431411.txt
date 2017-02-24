@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main () {
+        int i, x1, x2, x3;
+        scanf("%d", &i);
+
+        x1 = i / 100;
+        x2 = (i / 10) % 10;
+        x3 = i % 10;
+
+        x1 *= 64;
+        x2 *= 8;
+
+        printf("%d", x1 + x2 + x3);
+        return 0;
+}

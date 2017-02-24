@@ -1,0 +1,23 @@
+#include<stdio.h>
+
+int main()
+
+{
+  int d=0,g=0,x=0,y=0;
+  scanf("%d %d",&d,&g);
+
+    if((d>0)&&(g>0)&&(g>d))
+           {
+                 for(x=g;x>=d;x=x-1)
+                     {
+                            if((x%2)==0)
+                                  {
+                                        y=y+x;
+                                  }
+                     }   
+             printf("%d ",y);
+           }  else printf("D i G nisu valjani");
+
+     return 0;
+}
+                          

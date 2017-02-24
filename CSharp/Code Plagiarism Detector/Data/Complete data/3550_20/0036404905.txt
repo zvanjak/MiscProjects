@@ -1,0 +1,62 @@
+int izbacinaj(zapis **glava){
+    zapis *z, *tren, *pret, *pretTren;
+    float pros;
+    int ret = 0;
+
+    if(*glava == NULL)
+        return 0;
+
+    z = *glava;
+    pros = z->pros;
+    tren = z;
+    pret = NULL;
+    pretTren = NULL;
+
+    while(z != NULL){
+        if(pros < z->pros){
+            pretTren = pret;
+            tren = z;
+        }
+        if(z->sljed == NULL){
+            if(pretTren != NULL){
+                pretTren->sljed = tren->sljed;
+                ret++;
+                /////+ otpuštanje iz memorije zapisa tren
+            }
+            else{
+                ////ukoliko je početak liste
+                *glava = tren->sljed;
+            }
+        }
+        pret = z;
+        z = z->sljed;
+    }
+
+    z = *glava;
+    pros = z->pros;
+    tren = z;
+    pret = NULL;
+    pretTren = NULL;
+
+    while(z != NULL){
+        if(pros > z->pros){
+            pretTren = pret;
+            tren = z;
+        }
+        if(z->sljed == NULL){
+            if(pretTren != NULL){
+                pretTren->sljed = tren->sljed;
+                ret++;
+                /////+ otpuštanje iz memorije zapisa tren
+            }
+            else{
+                ////ukoliko je početak liste
+                *glava = tren->sljed;
+            }
+        }
+        pret = z;
+        z = z->sljed;
+    }
+
+    return ret;
+}

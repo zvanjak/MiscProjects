@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main ()
+    {
+        int n,t,k,j,i=0,br=0,a[10],b[10];
+        scanf("%d", &n);
+        if (n<=0)  printf("");
+        else{                        
+                while(n!=0){         
+                            t=n/10;      
+                            a[i]=n%10;   
+                            i++;
+                            n=t;
+                }
+        }
+        for(j=0;j<i;j++){                  
+                if((a[j]!=0)&&(a[j]%2!=0)) {   
+                    b[br]=a[j];
+                    br++;
+                }
+            }
+        for(k=br-1;k>=0;k--){  
+            printf("%d",b[k]);
+            }
+        
+        
+        return 0;
+    }                               
+

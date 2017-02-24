@@ -1,0 +1,52 @@
+#include <stdio.h>
+#define MAX 100
+int main() {
+	char c, niz[MAX];
+	int i=0,j,br=0, istina=1,izbaci,br2;
+	do{
+		scanf("%c",&c);
+		if (c!='.'){ 
+			niz[i]=c;
+			i++;
+		}
+	} while (c!='.');
+	i--;
+	
+	do{
+		if (niz[br]!=' ' && niz[br]!=','){
+			if (niz[br]<='Z' && niz[br]>='A') printf("%c", niz[br]);
+			else printf("%c", niz[br]-'a'+'A');
+			istina=0;
+		} else br++;
+	} while (istina);
+
+    istina=1; br2=i;
+	do{
+		if (niz[br2]==' ' || niz[br2]==',')	br2--;
+		else istina=0;
+	} while (istina);
+
+	for (j=br+1;j<=br2;j++){
+		izbaci=0;
+		if (niz[j]==' ' || niz[j]==',') izbaci=1;
+		if (izbaci){
+			if (niz[j+1]<='Z' && niz[j+1]>='A'){
+				printf("%c",niz[j+1]);
+				j++;
+			}
+			else if (niz[j+1]<='z' && niz[j+1]>='a'){
+				printf("%c", niz[j+1]-'a'+'A');
+				j++;
+			}
+		} else {
+			if (niz[j]<='z' && niz[j]>='a') printf("%c",niz[j]);
+			else printf("%c", niz[j]+'a'-'A');	
+		}
+	}
+
+	printf(".");
+
+
+	
+	return 0;
+}

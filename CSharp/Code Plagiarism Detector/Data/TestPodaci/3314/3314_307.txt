@@ -1,0 +1,9 @@
+#include <stdio.h>
+
+int veci_od(FILE *f,int granica){
+int prodanih,broj=0;
+char niz[31];
+while(fscanf(f,"%s %s %d",niz,niz,&prodanih)==3)
+if(prodanih>=granica)broj++;
+return broj;
+}

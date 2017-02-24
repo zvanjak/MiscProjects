@@ -1,0 +1,4 @@
+double sumareda(double x, int N) 
+{     
+    return((N == 0) ? 0 : pow(-1., (double)(N % 2 + 1)) * pow(x, (double)N) / (double)N + sumareda(x, N - 1)); 
+}

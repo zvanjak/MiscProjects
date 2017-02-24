@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <math.h>
+int main () {
+    int n,i=0;
+    double a=0,sum=0,d;
+	/* printf("\n Unesi broj clanova reda n: \n"); */
+	scanf("%d",&n);
+	if (n<1 || n>30)
+		printf("n nije valjan");
+	else {
+		while (i<n) {
+			++i;
+            d=(1/(pow(i,2)));
+			sum+=d;
+        }
+        a=sum;
+		printf("%.12lf",a);
+    }
+	return 0;
+}

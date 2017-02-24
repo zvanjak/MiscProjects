@@ -1,0 +1,32 @@
+#include<stdio.h>
+
+void dodaj(FILE *f)
+{
+	struct natjecatelj{
+	int redni_br;
+	char prezime[20+1];
+	int bodovi;
+}x;
+int max,b=0,c=0;
+while(fread(&x,sizeof(x),1,f)!=EOF)
+{
+	if(x.redni_br!=0&&b==0)
+	{
+		max=x.bodovi;b++;
+	}
+	if(x.bodovi>max)
+		{
+			max=x.bodovi;
+			c=x.redni_br;
+		}
+	
+}
+if(c!=0)
+{
+fseek(f,(c-1)*sizeof(x),SEEK_SET);
+fread(&x,sizeof(x),1,f);
+x.bodovi+=10;
+fseek(f,-1,SEEK_CUR);
+fwrite(&x,sizeof(x),1,f);
+}
+}

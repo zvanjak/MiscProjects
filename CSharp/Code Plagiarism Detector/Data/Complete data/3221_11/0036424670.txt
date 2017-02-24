@@ -1,0 +1,15 @@
+#include<stdio.h>
+main() {
+	int A,B,d,br=0;
+	scanf("%d",&A);
+	scanf("%d",&d);
+	scanf("%d",&B);
+	if(d>0)
+		while(A<=B){
+			A+=d;
+			printf("%d ",A);
+			br++;
+		}
+		printf("%d",br);
+		return 0;
+}

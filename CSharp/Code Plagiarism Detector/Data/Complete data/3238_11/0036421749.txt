@@ -1,0 +1,23 @@
+#include <math.h>
+#include <stdio.h>
+
+int main() {
+	int i, n;
+	double pi = 0;
+	
+	scanf("%d", &n);
+	
+	if (n < 1 || n > 25) {
+		printf("n nije valjan\n");
+		return (0);
+	}
+	
+	for (i = 1; i <= n; i++)
+		pi += 1. / pow(i, 8);
+	
+	pi = pow(9450 * pi, 1. / 8);
+	
+	printf("%0.12lf\n", pi);
+	
+	return (0);
+}

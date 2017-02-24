@@ -1,0 +1,21 @@
+float prosjek (FILE *f)
+{
+	struct album 
+	{
+		char naziv [30+1];
+		char autor [20+1];
+		int prod;
+	};
+	struct album a;
+	float pr = 0;
+	int br = 0;
+	while((fread(&a, sizeof(struct album), 1, f)) == 1)
+	{
+        pr += (float)a.prod;
+		printf("%s\n", a.naziv);
+		printf("%d\n", a.prod);
+		++br;
+	}
+	pr /= br;
+	return pr;
+}

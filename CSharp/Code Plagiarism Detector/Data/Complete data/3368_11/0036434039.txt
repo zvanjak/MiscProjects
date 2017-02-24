@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main()
+{
+	int n;
+	char z1, z2;
+
+	scanf("%d", &n);
+
+	if(n >= 16 && n <= 255)
+	{
+		z1 = n / 16;
+		z2 = n % 16;
+
+		if(z1 > 9) z1 = z1 - 10 + 'A';
+		else z1 += '0';
+
+		if(z2 > 9) z2 = z2 - 10 + 'A';
+		else z2 += '0';
+
+		printf("%c%c\n", z1, z2);
+	}
+	else
+		printf("Izvan intervala\n");
+
+	return 0;
+}

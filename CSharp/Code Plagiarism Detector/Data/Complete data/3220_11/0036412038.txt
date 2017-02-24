@@ -1,0 +1,33 @@
+
+#include <stdio.h>
+int main(){
+int n,suma,i,b,a,y,x;
+b=0;
+i=0;
+y=10;
+x=0;
+suma=0;
+scanf("%d",&n);
+if(n<=2147482647){
+if(n>0){
+while(n>0){
+a=n%10;
+n=n/10;
+if(a%2!=0){
+suma+=a*(y/10);
+y*=10;
+}else{
+++b;
+}
+++i;
+}
+if(b==i)
+printf("%d\n",x);
+else
+printf("%d\n",suma);
+}else{
+printf("%d\n",suma);
+}
+}
+return 0;
+}

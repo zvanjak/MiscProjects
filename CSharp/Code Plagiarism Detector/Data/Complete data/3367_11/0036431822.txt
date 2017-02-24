@@ -1,0 +1,12 @@
+#include <stdio.h>
+int main()
+{
+	int x;
+	char a,b;
+	scanf("%c %c", &a, &b);
+	a = (a >= 48 && a <= 57) ? a-48:a-55;
+	b = (b >= 48 && b <= 57) ? b-48:b-55;
+	x=(a*16)+b;
+	printf("%d",x);
+	return 0;
+}

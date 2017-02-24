@@ -1,0 +1,90 @@
+void ConvertToXML(char *inputField,char *outputField)
+{
+	char *xml1,*xml2,*xml3,*xml4,*kraj; 
+	char *ime,*prez,*jmbg;
+	int i,br=0,br2=0,br3=0,br4=0,prviput=1;
+	
+	xml1 =(char *) malloc(14*sizeof(char));
+	xml2 =(char *) malloc(16*sizeof(char));
+	xml3 =(char *) malloc(17*sizeof(char));
+	xml4 =(char *) malloc(18*sizeof(char));
+	kraj =(char *) malloc(2*sizeof(char));
+	ime =(char *) malloc(20*sizeof(char)); 
+	prez =(char *) malloc(30*sizeof(char));
+	jmbg =(char *) malloc(13*sizeof(char));
+	
+	if(xml1 && xml2 && xml3 && xml4 && kraj && ime && prez && jmbg){
+		xml1="<osoba>\n\n<ime>";
+		xml2="</ime>\n\n<prezime>";
+		xml3="</prezime>\n\n<jmbg>";
+		xml4="</jmbg>\n\n</osoba>\n\n";
+		kraj="\n\0";
+				
+		while(*inputField){		
+			if(*inputField=='#') {
+				br++;
+				inputField++;
+				continue;
+			}
+			if(*inputField=='\n') {
+				inputField++;
+				continue;
+			}
+			if(br==1){
+				*ime=*inputField;
+				ime++;
+				br2++;
+			}else if(br==2){
+				*prez=*inputField;
+				prez++;
+				br3++;
+			}else if(br==3){ 
+				*jmbg=*inputField;
+				jmbg++;
+				br4++;
+			}else if(br==4 && prviput==1){
+				outputField=strcpy(outputField,xml1);
+				outputField=strcat(outputField,ime);
+				outputField=strcat(outputField,xml2);
+				outputField=strcat(outputField,prez);
+				outputField=strcat(outputField,xml3);
+				outputField=strcat(outputField,jmbg);
+				outputField=strcat(outputField,xml4);
+				for(i=0;i<br2;i++) ime--;
+				for(i=0;i<br3;i++) prez--;
+				for(i=0;i<br4;i++) jmbg--;
+				
+				br2=0;br3=0;br4=0;
+				prviput++;
+				br=0;
+			}else if(br==4 && prviput!=1){
+				outputField =strcat(outputField,xml1);
+				outputField=strcat(outputField,ime);
+				outputField=strcat(outputField,xml2);
+				outputField=strcat(outputField,prez);
+				outputField=strcat(outputField,xml3);
+				outputField=strcat(outputField,jmbg);
+				outputField=strcat(outputField,xml4);
+				for(i=0;i<br2;i++) ime--;
+				for(i=0;i<br3;i++) prez--;
+				for(i=0;i<br4;i++) jmbg--;
+				
+				br2=0;br3=0;br4=0;				
+				br=0;
+			}
+			inputField++;
+		}
+		strcat(outputField,kraj);
+			xml1 =NULL;
+			xml2 =NULL;
+			xml3 =NULL;
+			xml4 =NULL;
+			kraj =NULL;
+			ime  =NULL;
+			prez =NULL;
+			jmbg =NULL;
+		
+		free(xml1);free(xml2);free(xml3);free(xml4);free(kraj);
+		free(ime);free(prez);free(jmbg);	
+	}else return;
+}

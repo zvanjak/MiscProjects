@@ -1,0 +1,20 @@
+int Memoriraj(Radio &x) {
+	
+	int sol=0;
+	Stanica s,f;
+	
+	f = x.TraziSljedecu();
+	if (strcmp("",f.RDS())!=0) {
+		sol++;
+		x.MemorirajStanicu(f,sol);
+	}
+	while (sol<6) {
+		s = x.TraziSljedecu();
+		if (f==s) break;
+		if (strcmp("",s.RDS())!=0) {
+			sol++;
+			x.MemorirajStanicu(s,sol);
+		}
+	}
+	return sol;
+}

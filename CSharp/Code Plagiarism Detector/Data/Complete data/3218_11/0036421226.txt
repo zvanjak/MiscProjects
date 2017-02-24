@@ -1,0 +1,20 @@
+#include<stdio.h>
+int main() {
+	int b, max, p, i;
+	max=0;
+	do {
+		scanf("%d",&b);
+		if (b>2) {
+			p=1;
+			for (i=2;i<b;i++) {
+				if (b%i==0) p=0;
+			}
+			if (p) {
+				if (b>max) max=b;
+			}
+		}
+	}
+	while (b>2);
+	printf("%d",max);
+	return 0;
+}

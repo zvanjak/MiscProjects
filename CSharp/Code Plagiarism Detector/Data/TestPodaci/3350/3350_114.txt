@@ -1,0 +1,18 @@
+int najbolji(FILE *f){
+    struct {
+         int redni_br;
+         char prezime[20+1];
+         int bodovi;
+         }natjecatelj;
+         
+    int max=0,broj=0;
+    fseek(f,0L,SEEK_SET);                                       
+    while(fread(&natjecatelj,sizeof(natjecatelj),1,f)){
+                                                       
+         if(natjecatelj.bodovi>max&&natjecatelj.redni_br){      
+            max=natjecatelj.bodovi;                             
+            broj=natjecatelj.redni_br;
+            }
+         }
+    return broj;
+}

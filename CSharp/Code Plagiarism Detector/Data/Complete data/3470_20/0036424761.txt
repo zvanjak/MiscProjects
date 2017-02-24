@@ -1,0 +1,19 @@
+bool fun2(Pravokutnik p, Krug k)
+{
+	double radius = k.getRadius();
+	Tocka srediste = k.getSrediste();
+	Tocka dl = p.getDLkut();
+	Tocka dd = p.getDLkut();
+	Tocka gl = p.getDLkut();
+	Tocka gd = p.getDLkut();
+
+	dd.X += p.getSirina();
+	gl.Y += p.getVisina();
+	gd.X += p.getSirina();
+	gd.Y += p.getVisina();
+
+	if(k.Sadrzi(dl) && k.Sadrzi(dd) && k.Sadrzi(gl) && k.Sadrzi(gd))
+		return true;
+	else
+		return false;
+}

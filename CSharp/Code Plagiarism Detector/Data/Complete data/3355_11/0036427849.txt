@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int main(){
+    char a,b,c,d,e,f;
+    int prvojeslovo=0, imaslovo=0, imaznamenka=0;
+    scanf("%c %c %c %c %c %c", &a, &b, &c, &d, &e, &f);
+
+    if (isalpha(a)) prvojeslovo=1;
+    if (isalpha(b)|| isalpha(c) ||isalpha(d) || isalpha(e) || isalpha(f) )    imaslovo=1;
+    if (isdigit(b) || isdigit(c) || isdigit(d) || isdigit(e) || isdigit(f) )  imaznamenka=1;
+
+    if (imaslovo && imaznamenka && prvojeslovo) {
+       printf("Jest");
+       }
+	else{
+		printf("Nije");
+    }
+	return 0;
+}

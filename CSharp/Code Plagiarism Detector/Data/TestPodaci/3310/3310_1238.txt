@@ -1,0 +1,4 @@
+int veci_od(FILE *f, int granica)
+{
+return 1;
+}

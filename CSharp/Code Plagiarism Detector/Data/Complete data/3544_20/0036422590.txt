@@ -1,0 +1,15 @@
+Red *PrepisiStogURed(Stog *stog){
+	Stog pom;
+	Red *b=new Red;
+	int x,y;
+	//while (stog->Skini(&x)) pom.Stavi(x);
+
+	if (!stog->Skini(&y)) {
+		return b;
+	}
+		//ELSE			
+	//while (pom.Skini(&x)) stog->Stavi(x);
+	b=PrepisiStogURed(stog);
+	b->DodajURed(y);
+	return b;
+	}

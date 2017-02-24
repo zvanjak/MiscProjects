@@ -1,0 +1,12 @@
+#include<stdio.h>
+void azuriraj(FILE *f,int br,int bod){
+     struct natjecatelj{
+       int br,bod;
+       char ime[21];       
+     }ime;
+     fseek(f,sizeof(ime)*(br-1),SEEK_SET);
+     fread(&ime,sizeof(ime),1,f);
+     ime.bod=bod;
+     fseek(f,-sizeof(ime),SEEK_CUR);
+     fwrite(&ime,sizeof(ime),1,f);     
+}

@@ -1,0 +1,13 @@
+float *KreirajTablicuMnozenja(int n){
+	int i,j;
+	float *mat;
+	mat=(float*)malloc(n*n*sizeof(float));
+	if(mat){
+		for(i=1;i<=n;i++){
+			for(j=1;j<=n;j++){
+				mat[i*n+j]=i*j;
+			}
+		}
+	}
+	return mat;
+}

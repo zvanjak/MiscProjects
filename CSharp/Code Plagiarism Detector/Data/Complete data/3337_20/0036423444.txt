@@ -1,0 +1,13 @@
+int rStrncmp(char *S1,char *S2,int n){
+
+    int a;
+    kontrola();
+    a=S1[n]-S2[n];
+    if(a||!n)
+
+        return a;
+
+
+    return rStrncmp(S1,S2,n-1);
+
+}

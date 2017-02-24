@@ -1,0 +1,16 @@
+char *SvakiDrugi(char *ulazni_niz){
+char *p,*pom;
+int i=0,j=0,n;
+pom=ulazni_niz;
+if((pom=='\0')||(pom==NULL)) return NULL;
+n = strlen(pom);
+p = (char *) malloc (sizeof(char));
+for(i,j;i<n;i++){
+if((i%2)==0){
+p=(char*)realloc(p,sizeof(char)*n);
+p[j]=pom[i];
+j++;
+}
+}p[j]='\0';
+return p;
+}

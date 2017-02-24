@@ -1,0 +1,43 @@
+#include<stdio.h>
+#include<math.h>
+#define MAX 10
+
+void maxaps(int *prvamat, int *drugamat,int brRedPrva,int brStupPrva,int maxStupPrva,int brRedDruga,int brStupDruga,int maxStupDruga,int niz[])
+{
+	int a,b,c,suma=0,naj,min;
+	int pomocna[MAX][MAX]={0};
+	for(a=0;a<brRedPrva;a++){
+		for(b=0;b<brStupPrva;b++){
+			for(c=0;c<brStupPrva;c++){
+				suma+=*(prvamat+a*maxStupPrva+c)*(*(drugamat+c*maxStupDruga+b));
+			}
+			pomocna[a][b]=suma;
+			suma=0;
+
+		}
+	}
+	for(a=0;a<brRedPrva;a++){
+		for(b=0;b<brRedPrva;b++){
+			suma+=pomocna[a][b];}}
+	if(suma==brRedPrva){
+		for(a=0;a<brRedPrva;a++){
+			naj=abs(*(prvamat+a*maxStupPrva+0));
+			for(b=1;b<brRedPrva;b++){
+				if(naj<abs(*(prvamat+a*maxStupPrva+b))){
+					naj=abs(*(prvamat+a*maxStupPrva+b));}
+				if(naj==abs(*(prvamat+a*maxStupPrva+b))){
+					if((*(prvamat+a*maxStupPrva+0))>(*(prvamat+a*maxStupPrva+b))){
+						naj=(*(prvamat+a*maxStupPrva+0));
+					}else{
+						naj=(*(prvamat+a*maxStupPrva+b));
+					}}}
+		*(niz+a)=naj;
+		}}else{
+						for(b=0;b<brRedPrva;b++){
+							min=*(prvamat+0*maxStupPrva+b);
+							for(a=0;a<brRedPrva;a++){
+								if(min>*(prvamat+a*maxStupPrva+b)){
+									min=*(prvamat+a*maxStupPrva+b);}}
+							*(niz+b)=min;}}
+
+}

@@ -1,0 +1,28 @@
+/*#include <stdio.h>
+
+struct album{
+	char naziv[30+1];
+	char autor[20+1];
+	int prodano;
+};*/
+
+int veci_od(FILE *f,int granica)
+{
+	int broj_albuma = 0;
+	struct album zapis;
+
+	fseek(f,0,SEEK_SET);
+
+	while(feof(f) == 0)
+	{
+		fread(&zapis,sizeof(struct album),1,f);
+		if(zapis.prodano >= granica)
+			broj_albuma ++;
+	}
+	return broj_albuma;
+}
+
+/*int main(void)
+{
+
+}*/

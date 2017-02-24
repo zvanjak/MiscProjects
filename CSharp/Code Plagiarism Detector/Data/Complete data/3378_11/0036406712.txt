@@ -1,0 +1,20 @@
+     #include <stdio.h>
+
+            void main ()   {
+
+          int i, j, k;
+          float pn, pb, bcs;
+ 
+           scanf("%d %d %d", &i, &j, &k);
+
+      if(i<j)   bcs=0.9*k;
+       else if (i>j)   bcs=1.15*k;
+         else   bcs=k;
+
+    pb=bcs*i;
+
+if(pb>6000)  pn=0.7*pb;
+         else pn=0.8*pb;
+
+     printf("%.2f", pn);
+}

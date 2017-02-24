@@ -1,0 +1,89 @@
+class CjelobrojniNiz {
+	private:
+		int *polje;
+		int _brojelem;
+
+	public:
+		int SviJednaki;
+
+CjelobrojniNiz(const CjelobrojniNiz &copy)
+ {
+		int i;
+		_brojelem = copy._brojelem;
+                polje = (int*) malloc(sizeof(int)*_brojelem);
+		for (i = 0; i < _brojelem; i++) polje[i] = copy.polje[i];
+			SviJednaki = copy.SviJednaki;
+}
+
+CjelobrojniNiz(int *adresa, int broj)
+{
+		int i,j, brojac=0;
+		_brojelem = broj;
+		SviJednaki = 1; 
+		polje = (int*) malloc(sizeof(int)*_brojelem);
+		for (i=0;i<_brojelem;i++) 
+		{
+			polje[i] = adresa[i];
+		}
+		
+		for (i=0;i<_brojelem;i++)
+		{for (j=0;j<_brojelem;j++)
+			{if (polje[i]!=polje[j])
+				{SviJednaki=0;break;}
+		}}
+}
+int vratielement(int m)
+{
+	return *(polje+m);
+}
+int Usporedi (CjelobrojniNiz niz)
+{	int i; 
+	if (_brojelem != niz._brojelem)
+		return 0;
+
+	for (i=0;i<_brojelem;i++)
+		if(polje[i]!=niz.polje[i])
+			return 0;
+		
+return 1;
+
+}
+int vratibroj()
+{
+	return _brojelem;
+}
+
+int *VratiRazliku(CjelobrojniNiz niz, int *n)
+{
+	int i=0,j=0,k,*niz2,n2=0,var=0;
+	niz2=(int*)malloc(sizeof(int));
+	while(i<_brojelem && j<niz.vratibroj())
+	{
+		if (*(polje+i)==niz.vratielement(j))
+			{ var=1;
+			for(k=0;k<n2;k++)
+				if(*(polje+i)==*(niz2+k))
+				{
+				var=0;
+				break;
+				}
+			if(var){
+				*(niz2+n2)=*(polje+i);
+				n2++;
+				niz2=(int *)realloc(niz2,sizeof(int));
+
+				}				
+			i++;j++;
+		}
+		else if (*(polje+i)<niz.vratielement(j)) i++;
+		else j++;
+	}
+	*n=n2;
+return niz2;
+}
+
+~CjelobrojniNiz()
+{
+	free (polje);
+}
+};

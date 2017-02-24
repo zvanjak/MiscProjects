@@ -1,0 +1,15 @@
+#include<stdio.h>
+#include<math.h>
+int main(){
+int i,j,polje[100],br=0;
+for(i=0;i<100;i++){
+scanf("%d",&polje[i]);
+if(polje[i]<0)
+break;
+br++;
+}
+for(i=0;i<br;i++){
+for(j=0;j<polje[i];j++)
+printf("%d ",i);
+}
+}

@@ -1,0 +1,53 @@
+class CjelobrojniNiz{
+    private:
+        int n;
+        int *niz;
+    public:
+        int VecinaJednaka;
+        void vecina(){VecinaJednaka=0;
+            for(int i=0;i<=(this->n-1)/2;i++)
+            if(this->niz[i]==this->niz[i+this->n/2])
+            VecinaJednaka=1;
+            };
+        int Usporedi(CjelobrojniNiz niz){
+            int pov;
+            if(niz.n=this->n)
+            pov=1;
+            for(int i=0;i<this->n;i++)
+            if(niz.niz[i]!=this->niz[i])
+            pov=0;
+            return pov;
+            };
+        int* VratiPresjek(CjelobrojniNiz niz, int* n){
+            int* vrati; int k=0;
+            vrati=new int[niz.n];
+            for(int i=0,j=0;i<niz.n;){
+                if(this->niz[i]==niz.niz[j]){//[1]
+                       if(k==0 || vrati[k-1]!=niz.niz[j++])
+                         vrati[k++]=this->niz[i++];} //[`1]
+                         else {
+                             if(this->niz[i]>niz.niz[j])
+                             j++; else i++;
+                             }
+                    }*n=k;
+            return vrati;
+            };
+    CjelobrojniNiz(int *polje,int n){
+        niz=new int[n];
+        this->n=n;
+       
+        for(int i=0;i<n;i++)
+        niz[i]=polje[i];
+         vecina();
+        }
+    CjelobrojniNiz(const CjelobrojniNiz& CNiz){
+        niz=new int[CNiz.n];
+        for(int i=0;i<CNiz.n;i++)
+        niz[i]=CNiz.niz[i];
+		this->n = CNiz.n;
+
+        }
+    ~CjelobrojniNiz(){
+        delete []niz;
+        }
+    };

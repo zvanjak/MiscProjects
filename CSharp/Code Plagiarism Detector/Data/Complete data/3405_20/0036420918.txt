@@ -1,0 +1,18 @@
+char *SvakiDrugi(char *ulazni_niz) { 
+      char *niz; 
+      int i,n,m; 
+      niz=NULL; 
+      if ((ulazni_niz!=NULL)&&(strlen(ulazni_niz)!=0)) { 
+      m=0; 
+      n=strlen(ulazni_niz); 
+      niz=(char*)realloc((void*)niz,n/2+1); 
+      for (i = 0; i < n; i++){ 
+               if ((i)%2==0){ 
+               *(niz+m)=*(ulazni_niz+i); 
+               m++; 
+               } 
+              } 
+      *(niz+m)='\0'; 
+       } 
+      return niz; 
+      }

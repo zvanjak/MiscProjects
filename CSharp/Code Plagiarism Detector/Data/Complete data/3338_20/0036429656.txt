@@ -1,0 +1,11 @@
+#include <stdio.h>
+int rZamijeni(char *niz, char stariZnak, char noviZnak){
+	int v1;
+	kontrola();
+	if (*niz== '\0') return v1=0;
+	if (*niz!= '\0') v1=rZamijeni(++niz,stariZnak,noviZnak);
+	niz--;
+	if (*niz==stariZnak){
+		*niz=noviZnak;
+		v1++;}
+	return v1;}

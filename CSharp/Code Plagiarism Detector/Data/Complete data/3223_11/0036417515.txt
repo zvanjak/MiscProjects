@@ -1,0 +1,10 @@
+#include <stdio.h>
+int main () {
+short int x, max=-32768, min=32767;
+do {
+   scanf("%d",&x);
+     if (x>max) max=x;
+     if (x<min) min=x; }
+while(!((x>0)&&(x%4==0)));
+printf("%d %d",max,min);
+return 0;}

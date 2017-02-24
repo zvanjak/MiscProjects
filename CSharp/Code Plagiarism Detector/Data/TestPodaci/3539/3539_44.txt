@@ -1,0 +1,26 @@
+float prosjek (zapis *glava)
+{
+  if (glava == NULL) return 0;
+
+  zapis *x = new zapis;
+  int i;
+  float z = 0.f, p;
+
+  x = glava;
+  while(x != NULL)
+  {
+    z = z + x->pros;
+    i++;
+    x = x->sljed;
+  }
+
+  p = (float) z/i;
+
+  x = glava;
+  while(x != NULL)
+  {
+    if (x->pros < p) x->pros = 0.f;
+  }
+
+  return p;
+}

@@ -1,0 +1,22 @@
+#include<stdio.h>
+main() 
+{
+	int n, ucitani[100], i=0, j;
+	while(1) {
+		    scanf("%d",&n);
+			if(n>0){ 
+			        ucitani[i]=n;
+			        i++;
+                   }
+			else break;
+		    }
+    for(j=0;j<i;j++) 
+                    {
+					 while(ucitani[j]!=0){
+                                   printf("%d",(ucitani[j]%10));
+			                       ucitani[j]/=10;
+                                   }
+					 printf(" ");
+		    }
+                    
+}

@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main () {
+	int n, i;
+	float x=0, suma=0;
+	scanf("%d", &n);
+	if ((n<1) || (n>200))
+		printf ("n nije valjan\n");
+	else {
+		for (i=1;i<=n;i++){
+		x=(float)1/(i*(i+1));
+		suma=suma+x;
+		}
+	printf ("%16.12f\n", suma);
+	}
+	
+return 0;
+}

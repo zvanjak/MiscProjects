@@ -1,0 +1,32 @@
+int zamijeni (char *ulazni, char *prvi, char *drugi) {
+	int br_zamijena = 0, i;
+	char *niz = ulazni, *c;
+	
+	while (strstr(niz, prvi) != NULL) {
+		niz = strstr(niz, prvi);
+		br_zamijena++;
+		
+		c = niz;
+		if (strlen(prvi) > strlen(drugi)) {
+			while (*(c + (strlen(prvi) -  strlen(drugi)))) {
+				*c = *(c + (strlen(prvi) -  strlen(drugi)));
+				c++;
+			}
+			*c = '\0';
+		}
+		
+		
+		if (strlen(drugi) > strlen(prvi)) {
+			while (*c) c++;
+			while (c != niz) {
+				*(c + (strlen(drugi) -  strlen(prvi))) = *c;
+				c--;
+			}	
+		}
+		
+	
+		for (c = drugi; *c; c++, niz++)	*niz = *c;
+	}
+
+	return br_zamijena;
+}

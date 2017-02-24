@@ -1,0 +1,29 @@
+void povecaj(FILE *f){
+struct natjecatelj {
+    int redni_broj;
+    char prezime[20+1];
+    int bodovi;
+} nekaj;
+int kraj,bodovi=0,br=0,naj=0;
+fseek(f,0L,SEEK_END);
+kraj=ftell(f);
+fseek(f,0L,SEEK_SET);
+do{
+	br++;
+	fread(&nekaj,sizeof(nekaj),1,f);
+	if((nekaj.redni_broj)!=0){
+		if(nekaj.bodovi>bodovi){
+			bodovi=nekaj.bodovi;
+			naj=br;
+		}
+	}else{
+		fseek(f,(br-1)*sizeof(nekaj),SEEK_SET);
+	}
+  }while(ftell(f)<kraj);
+bodovi+=10;
+fseek(f,(naj-1)*sizeof(nekaj),SEEK_SET);
+fread(&nekaj,sizeof(nekaj),1,f);
+nekaj.bodovi=bodovi;
+fseek(f,(naj-1)*sizeof(nekaj),SEEK_SET);
+fwrite(&nekaj,sizeof(nekaj),1,f);
+}

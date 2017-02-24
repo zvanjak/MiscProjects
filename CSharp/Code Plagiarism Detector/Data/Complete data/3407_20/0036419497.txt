@@ -1,0 +1,42 @@
+char *SamoSamoglasnici(char *ulazni_niz)
+{
+	char *izlazni; 
+	int k=0,l=0,i;
+
+	if(*ulazni_niz=='\0' || ulazni_niz==NULL)
+		return NULL;
+	else
+	{
+		for(i=0;i<(signed)strlen(ulazni_niz);i++)
+		{
+			if(ulazni_niz[i]=='a' || ulazni_niz[i]=='e' || 
+ulazni_niz[i]=='i'  || ulazni_niz[i]=='o' || ulazni_niz[i]=='u' || 
+ulazni_niz[i]=='A' || ulazni_niz[i]=='E' || ulazni_niz[i]=='I' || 
+ulazni_niz[i]=='O' || ulazni_niz[i]=='U')
+			{
+				k++;
+			}
+		}
+		
+		if((izlazni=(char *)malloc((k+1)*sizeof(char)))==NULL)
+		{
+			printf("Greska pri zauzimanju memorije!");
+			return NULL;
+		}
+
+
+		for(i=0;i<(signed)strlen(ulazni_niz);i++)
+		{
+			if(ulazni_niz[i]=='a' || ulazni_niz[i]=='e' || 
+ulazni_niz[i]=='i' || ulazni_niz[i]=='o' || ulazni_niz[i]=='u' || 
+ulazni_niz[i]=='A' || ulazni_niz[i]=='E' || ulazni_niz[i]=='I' || 
+ulazni_niz[i]=='O' || ulazni_niz[i]=='U')
+			{
+				izlazni[l]=ulazni_niz[i];
+				l++;
+			}
+		}
+		izlazni[l]='\0';
+		return izlazni;
+	}
+}

@@ -1,0 +1,31 @@
+Kalendar *Unesi (MojDatum datumi[],int broj, int *mjesec)
+{
+	int mj[12]={0};
+	Kalendar *k;
+	
+	for (int i=0;i<broj;i++)
+	{
+		*mjesec=1;
+		for (int j=0;j<i;j++)
+		   if (datumi[i]==datumi[j]) *mjesec=0;
+           if (*mjesec)
+		   {
+		      if ((datumi[i].mjesec>12)||(datumi[i].mjesec<1)) throw "Nedozvoljeni mjesec";
+		          else
+				  {	
+			         (*k).Dodaj(datumi[i]);
+			         mj[datumi[i].mjesec]++;
+				  }
+		   }
+	
+
+	}
+	*mjesec=1;
+	int max=mj[0];
+	for (i=1;i<12;i++)
+			if (mj[i]>max) {*mjesec=i+1;max=mj[i];};
+
+			return k;
+}
+
+

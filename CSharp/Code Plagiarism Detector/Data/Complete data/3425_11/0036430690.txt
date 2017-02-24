@@ -1,0 +1,47 @@
+#include <stdio.h>
+#define MAX 10
+
+int main(){
+  int a[MAX][MAX];
+  int mr,i,j,x,y,tm,n,zamjena=0,suma=0;
+    
+    do{
+         scanf("%d",&mr);
+         if (mr>=1 && mr<=10)
+	     break;
+	}while (1);
+
+	for (i=0;i<mr;i++){
+		for (j=0;j<mr;j++){
+		 scanf("%d",&a[i][j]);
+		}
+	}
+
+	do{
+       scanf("%d %d",&x,&y); 
+
+	   if (x<0 || x>=mr || y<0 || y>=mr)
+	    	break;
+	   else{
+	        tm= a[x][y];
+	        a[x][y]=a[y][x];
+	        a[y][x]=tm;
+			zamjena++;
+	   }
+	
+	}while(1);
+	
+	scanf("%d",&n);
+	
+	if (n<0 || n>=mr){
+	    suma=-1;
+	}else{
+		for (i=0;i<mr;i++){
+		suma=suma+a[n][i];
+		}
+	}
+	
+	printf("%d %d",zamjena,suma);
+
+return 0;
+}

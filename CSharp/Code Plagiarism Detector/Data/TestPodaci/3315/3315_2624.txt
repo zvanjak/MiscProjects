@@ -1,0 +1,84 @@
+// zadaća5.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+// zadatak.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+//#include <iostream> 
+#include <fstream> 
+using namespace std; 
+     
+
+
+
+int prosjek(FILE *f);
+string baza="baza";
+FILE *fp;
+int counter;
+int suma;
+float average;
+
+
+
+
+
+
+int main(int argc, char  *argv[])
+{
+	register FILE *fp;
+	//errno_t err;
+
+		
+
+  	if(argc!=2) 
+	{
+    	cout << "Pokretanje: zadatak  <baza_filename>\n";
+   	 return 1;
+  	}
+//(err  = fopen_s(  &fp, argv[1], "r" ));
+ 	fp=fopen(argv[1], "r");
+	baza=argv[1];
+//cout << baza  << "11";
+	prosjek(fp);
+
+	return 0;
+}
+
+
+
+
+int prosjek(FILE *f)
+{
+ char naziv[31];
+ char autor[31];
+ int prodano;
+
+ifstream in(baza.c_str());
+
+while ((!in.eof()) && (!in.fail()))
+  {
+
+	counter++;
+	in >> naziv;
+	in >> autor;
+	in >> prodano;
+	suma=suma+prodano;
+
+	cout << counter << ")" << naziv <<  " " << autor << " " << prodano << " suma= "<< suma << "\n";
+
+
+ }
+
+cout << "KRAJ . ";
+average= suma/counter;
+cout << "Prosjecna prodaja albuma =" << average << "\n";
+printf("%f", average);;
+return 0;
+
+
+
+	
+	
+}

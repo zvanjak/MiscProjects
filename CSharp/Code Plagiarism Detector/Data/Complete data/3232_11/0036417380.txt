@@ -1,0 +1,15 @@
+#include<stdio.h>
+#include<math.h>
+int main(){
+int i, n;
+double p;
+scanf("%d",&n);
+if(n>=1 && n<=30){
+for(i=0; i<n; i++){
+p=p+(1/pow(2,i));
+}
+printf("%.12d",p);
+}
+else printf("n nije valjan");
+return 0;
+}

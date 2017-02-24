@@ -1,0 +1,17 @@
+int veci_od(FILE *f, int n)
+{
+struct natjecatelj
+{
+int redni_br;
+char prezime[20+1];
+int bodovi;
+} zapis;
+
+int br = 0;
+fseek(f, 0L, SEEK_SET);
+while(fread(&zapis, sizeof(zapis), 1, f) == 1)
+if((zapis.bodovi>=n) && (zapis.redni_br != 0))
+br++;
+
+return(br);
+}

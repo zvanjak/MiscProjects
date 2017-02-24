@@ -1,0 +1,14 @@
+Red *PrepisiStogURed(Stog *stog) {
+    Red *novi;
+    int n;
+    
+    if(stog->Skini(&n)) {
+       novi = PrepisiStogURed(stog);
+       novi->DodajURed(n);
+    } else {
+       Red *prazan = new Red();
+       return prazan;
+    }
+    
+    return novi;
+}

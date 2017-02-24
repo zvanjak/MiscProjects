@@ -1,0 +1,15 @@
+int JeLiUnutra(Kruznica &kruz, Kvadrat &kvadr) {
+	
+	float r = kruz.GetRadius();
+	float x1 = kruz.GetCenterX();
+	float y1 = kruz.GetCenterY();
+
+	float a = kvadr.GetDuljinaStranice();
+	float x2 = kvadr.GetX();
+	float y2 = kvadr.GetY();
+
+	if (((x1+r)<=(x2+a)) && ((x1-r)>=x2) && ((y1+r)<=y2) && ((y1-r)>=(y2-a)))
+		return 1;
+	else
+		return 0;
+}

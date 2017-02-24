@@ -1,0 +1,36 @@
+#include <string.h>
+
+void dodaj(FILE *f)
+{
+	struct natjecatelj
+	{
+		int redni_br;
+		char prezime[20 + 1];
+		int bodovi;
+	};
+
+    struct natjecatelj n;
+	struct natjecatelj max;
+
+	max.bodovi = 0;
+
+	while (fread(&n, sizeof(n), 1, f) == 1)
+	{
+		if (n.redni_br == 0)
+			continue;
+		else
+		{
+			if (n.bodovi > max.bodovi)
+			{
+				max.bodovi = n.bodovi;
+				max.redni_br = n.redni_br;
+				strcpy(max.prezime, n.prezime);
+			}
+		}
+	}
+
+	max.bodovi += 10;
+
+	fseek(f, sizeof(n) * (max.redni_br - 1), SEEK_SET);
+	fwrite(&max, sizeof(max), 1, f);
+}

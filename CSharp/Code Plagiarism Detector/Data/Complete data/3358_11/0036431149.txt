@@ -1,0 +1,27 @@
+#include<stdio.h>
+int main () {
+	int a,b,c,d,e,f,x,y,z,u,t,s;
+	scanf ("%d",&a);
+	if (a>9999 && a<100000)
+	{{b=a%10;
+	c=(a%100-b)/10;
+	d=(a%1000-b-10*c)/100;
+	e=(a%10000-b-10*c-100*d)/1000;
+	f=a/10000;}
+	if (b==f && e==c)
+	{ if (b%2==0)x=b;else x=0;
+	  if (c%2==0)y=c;else y=0;
+      if (d%2==0)z=d;else z=0;
+      if (e%2==0)u=e;else u=0;
+      if (f%2==0)t=f;else t=0;
+	  s=x+y+z+u+t;
+	  printf ("%d",s);}
+	else  {if (b%2!=0)x=b;else x=0;
+           if (c%2!=0)y=c;else y=0;
+           if (d%2!=0)z=d;else z=0;
+           if (e%2!=0)u=e;else u=0;
+           if (f%2!=0)t=f;else t=0;
+	       s=x+y+z+u+t;
+	       printf ("%d",s);}
+	return 0;
+	}}

@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+	int a,b,x,c,o,p,r,s;
+	scanf("%d %d",&a,&b);
+	x=0;
+	o=b%10;
+	p=(b%100)-o;
+	r=(b%1000)-p-o;
+	s=(b%10000)-r-p-o;
+	p=p/10;
+	r=r/100;
+	s=s/1000;
+	x=x+1000*o+100*p+10*r+s;
+	if (x==a)
+		c=o+p+r+s;
+	else
+		c=a-b;
+	printf("%d",c);
+}

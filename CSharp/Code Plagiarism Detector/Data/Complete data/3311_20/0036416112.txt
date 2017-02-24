@@ -1,0 +1,22 @@
+float prosjek(FILE *f)
+{
+    struct zapis
+    {
+        char naziv[30+1];
+        char autor[20+1];
+        int prodano;
+    } z;
+    
+    int br_albuma = 0;
+    float prosjek = 0;
+
+    while(fread(&z, sizeof(z), 1, f) == 1)
+    {
+        prosjek= prosjek + z.prodano;
+        br_albuma++;
+    }
+    if(br_albuma > 0)
+        return(prosjek / br_albuma);
+    else
+        return(0);
+}

@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <math.h>
+main(){
+int i,n;
+long double PI,red,x;
+scanf("%d", &n);
+red = 0.;
+if ((n<1) || (n>400) ) printf("n nije valjan");
+else {
+	for (i=0; i < n; i++) red = red + 1./((2.*i+1.)*(2.*i+1.));
+	PI = sqrt(8.*red); 
+	printf("%.12f", PI);}
+return 0;}

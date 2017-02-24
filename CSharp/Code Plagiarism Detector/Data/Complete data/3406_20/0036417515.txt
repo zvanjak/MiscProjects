@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <ctype.h>
+
+char *SamoSuglasnici(char *ulazni_niz)
+{
+	char *novi;
+	int br;
+
+	novi=NULL;
+	if(ulazni_niz==NULL || *ulazni_niz=='\0')
+		return novi;		
+
+	br=0;
+	while(*ulazni_niz!='\0')
+		if(isalpha(*ulazni_niz)!=0)
+			if(*ulazni_niz!='a' && *ulazni_niz!='A' && *ulazni_niz!='e' && *ulazni_niz!='E' && *ulazni_niz!='i' && *ulazni_niz!='I' && *ulazni_niz!='o' && *ulazni_niz!='o' && *ulazni_niz!='u' && *ulazni_niz!='U')
+			{
+				br++;
+				novi=(char*)realloc(novi, br*sizeof(char));
+				*(novi+br-1)=*ulazni_niz;
+				ulazni_niz++;
+			}
+	novi=realloc(novi, (br+1)*sizeof(char));
+	*(novi+br)='\0';
+	return novi;
+}

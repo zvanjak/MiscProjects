@@ -1,0 +1,17 @@
+#include<stdio.h>
+int main() {
+
+	int broj,i;double f,z;
+	
+	scanf("%d",&broj);
+	z=0;
+
+	if((broj>=1)&&(broj<=1000)){
+
+		for(i=2;i<=broj;i++){
+			f=(1./((i-1)*(i+1)));
+			z=z+f;}
+		printf ("%1.12f",z);}
+	else printf("n nije valjan");
+return 0;
+}

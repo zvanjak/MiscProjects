@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<conio.h>
+
+int main(){
+	
+	int a,b,x,x1,y,y1,z,z1;
+	scanf("%d", &a);
+	
+if((a>999)&&(a<10000)||(a<-999)&&(a>-10000)){
+		x=a/1000;
+		x1=a%1000;
+		y=x1/100;
+		y1=x1%100;
+		z=y1/10;
+		z1=y1%10;
+		if(x%2){
+			if(y%2){
+				if(z%2){
+					if(z1%2)
+						printf("0");
+					else
+						b=z1;}
+				else
+					b=z*10+z1;}
+			else
+				b=y*100+z*10+z1;}
+		else
+			b=a;
+	printf("%d",b);}
+	return 0;
+}

@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <math.h>
+
+#define FUNK(A) pow( (A),sin(A) ) * tanh( pow( (A), exp(A) ) )
+
+int main(void) {
+    double delta;
+    float a;
+    int n = 0,i;
+    double derivacija;
+    double polje[50];
+    
+    scanf("%lf",&delta);
+    
+    do {
+       scanf("%f",&a);
+       if(a == 0.0) break;
+       derivacija = (FUNK(a + delta) - FUNK(a)) / delta;
+       polje[n++] = atan(derivacija);
+    } while(1);
+         
+    for(i=0; i<n; i++) 
+             printf("%.2lf",polje[i]);
+             
+    return 0;
+}

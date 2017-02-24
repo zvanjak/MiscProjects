@@ -1,0 +1,9 @@
+Krug fun4(Pravokutnik p) {
+ 	Tocka sredina = p.getDLkut();
+ 	sredina.X+=p.getSirina()/2;
+ 	sredina.Y+=p.getVisina()/2;
+
+ 	double rad = hypot( p.getSirina()/2, p.getVisina()/2 );	
+ 	Krug k(sredina,rad);
+ 	return k;
+}    

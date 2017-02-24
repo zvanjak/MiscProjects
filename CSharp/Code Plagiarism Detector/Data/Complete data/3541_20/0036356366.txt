@@ -1,0 +1,39 @@
+int izbaciZ(zapis **glava){
+
+    float prosjek=0;
+    float zbroj=0;
+    int bruc=0;
+    int brojac=0;
+    zapis *pom=*glava;
+    zapis *pom1;
+
+    while(pom){
+        zbroj+=pom->pros;
+        bruc++;
+        pom=pom->sljed;
+    }
+
+    prosjek=zbroj/bruc;
+
+    while(*glava && (*glava)->pros<prosjek && (*glava)->spol=='Z'){
+        pom=*glava;
+        *glava=(*glava)->sljed;
+        free(pom);
+        brojac++;
+    }
+
+    if(*glava){
+        pom=*glava;
+        while(pom->sljed){
+            if(pom->sljed->pros<prosjek && pom->sljed->spol=='Z'){
+                pom1=pom->sljed;
+                pom->sljed=pom->sljed->sljed;
+                free(pom1);
+                brojac++;
+            }
+            else pom=pom->sljed;
+        }
+
+    }
+    return brojac;
+}

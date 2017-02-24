@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+int main (){
+	int br1, br2, suma=0, sumauk=0, i=0;
+	char znak, niz[20];
+
+	while (i<20) {
+		scanf("%d %d %c", &br1, &br2, &znak);
+
+		if(znak!='+' && znak!='-' && znak!='*' && znak!='/' && znak!='%') break;
+
+		switch (znak) {
+			case '+': suma=br1+br2; break;
+			case '-': suma=br1-br2; break;
+			case '*': suma=br1*br2; break;
+			case '/': if(br2==0) suma=0;
+					  else suma=br1/br2; break;
+			case '%': if(br2==0) suma=0;
+					  else suma=br1%br2; break;
+			default: break;
+		}
+	
+		sumauk+=suma;
+		niz[i++]=znak;
+		suma=0;
+	}
+	niz[i]='\0';
+	i=0;
+	printf("%d ", sumauk);
+	while(niz[i]!='\0') {
+		printf("%c ", niz[i++]);
+	}
+
+	return 0;
+}

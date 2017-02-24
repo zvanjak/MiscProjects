@@ -1,0 +1,31 @@
+int SplitToSentences(char *inputField, char *outputField)
+{
+	int i = 0, br = 0;
+
+	while(inputField[i] != '\0')
+	{
+		if(inputField[i] == ',')
+		{
+			br++;
+
+			outputField[i] = '.';
+			i++;
+
+			while(!isalpha(inputField[i]))
+			{
+				outputField[i] = inputField[i];
+				i++;
+			}
+
+			outputField[i] = toupper(inputField[i]);
+		}
+		else
+			outputField[i] = inputField[i];
+
+		i++;
+	}
+
+	outputField[i] = '\0';
+
+	return br;
+}

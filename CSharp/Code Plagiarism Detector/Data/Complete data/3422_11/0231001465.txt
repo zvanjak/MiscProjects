@@ -1,0 +1,46 @@
+#include <string.h> 
+#include <stdio.h> 
+
+int main() 
+{ 
+char niz[100]; 
+int brojacPraznina=0,j,i=0; 
+while(1) 
+{ 
+scanf("%c",&niz[i]); 
+if(niz[i]=='.') 
+{ 
+niz[++i]=0; 
+break; 
+} 
+i++; 
+} 
+for(j=0; j<i;j++) 
+{ 
+if(niz[j]==' ') brojacPraznina++; 
+else break; 
+} 
+if(niz[j]>='a') niz[j]=niz[j]-32; 
+j++; 
+for(;j<i;j++) 
+{ 
+if(niz[j+1]==' ' || niz[j+1]==',' || niz[j+1]=='.') 
+{ 
+if(niz[j]>='a') niz[j]=niz[j]-32; 
+} 
+else if(niz[j-1]==' ' || niz[j-1]==',') 
+{ 
+if(niz[j]>='a') niz[j]=niz[j]-32; 
+} 
+else 
+{ 
+if(niz[j]<='Z' && niz[j]!=' ' && niz[j]!= ',' && niz[j]!='.') niz[j]=niz[j]+32; 
+} 
+
+} 
+for(j=brojacPraznina;j<i;j++) 
+{ 
+printf("%c",niz[j]); 
+} 
+return 0; 
+} 

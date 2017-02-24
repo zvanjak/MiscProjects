@@ -1,0 +1,42 @@
+
+
+#include <stdio.h>
+#include <conio.h>
+
+main()
+{
+int n,i,p;
+float x;
+double b,lnx;
+
+printf("\nUpisi broj n [1..100]:");
+scanf("%d",&n);
+
+if((n>0)&&(n<=100))
+{
+printf("\nUpisi broj x <0..2>:");
+scanf("%f",&x);
+
+if((x>0)&&(x<2))
+{
+b=x-1;
+lnx=b;
+p=1;
+for(i=2;i<=n;i++)
+{
+b*=b;
+p*=-1;
+lnx+=p*b/i;
+}
+printf("\nn=%d x=%.5f ln(x)=%.12f",n,x,lnx);
+}
+else
+printf("\n**** x nije valjan broj ****");
+}
+else
+printf("\n**** n nije valjan broj ****");
+
+
+getch();
+return 0;
+}

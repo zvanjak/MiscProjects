@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main(){
+	int broj, broj_2, broj_pom, i;
+	
+	i=1;
+	scanf("%d", &broj);
+	broj_pom=broj;
+	if(broj<0){
+		broj=-broj;
+	}
+	if( broj>=1000 && broj<=9999){
+		broj_2=broj/1000;
+			if(broj_2%2==1){
+				broj=broj-broj_2*1000;
+				broj_2=broj/100;
+				if(broj_2%2==1){
+					broj=broj-broj_2*100;
+					broj_2=broj/10;
+					if(broj_2%2==1){
+						broj=broj-broj_2*10;
+						if(broj%2==1){
+							i=0;
+						}
+					}
+				}
+			}
+			if(i!=0){
+				if(broj_pom>0){
+					printf("%d\n", broj);
+				}else{
+					printf("-%d\n", broj);
+				}
+			}
+	}
+		
+	return 0;
+}

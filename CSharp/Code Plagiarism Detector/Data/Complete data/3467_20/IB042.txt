@@ -1,0 +1,17 @@
+int igra(Igrac& igrac, Automat& aut, int br, int *brojigranja){
+	int pocetno_stanje = igrac.TrenutnoStanje();
+	*brojigranja=0;
+	for(int i=0 ; i<br ; i++){
+		if (aut.TrenutnoStanje()==0){
+			int iznos = igrac.TrenutnoStanje();
+			if (iznos==0) 
+				return -pocetno_stanje;			
+			igrac.SkiniSRacuna(iznos);
+			aut.UplatiIznos(iznos);
+		}			
+		(*brojigranja)++;
+		igrac.UplatiNaRacun(aut.Zavrti());
+	}
+	igrac.UplatiNaRacun(aut.PodigniDobitak());
+	return igrac.TrenutnoStanje() - pocetno_stanje;
+}

@@ -1,0 +1,13 @@
+int Sortirano(cvor *glava) {
+	static int lastid = -2147483648;
+
+	if(glava == NULL)
+		return 1;
+
+	if(!Sortirano(glava->lijevo)) return 0;
+	if(!(glava->id >= lastid)) return 0;
+	lastid = glava->id;
+	if(!Sortirano(glava->desno)) return 0;
+
+	return 1;
+}

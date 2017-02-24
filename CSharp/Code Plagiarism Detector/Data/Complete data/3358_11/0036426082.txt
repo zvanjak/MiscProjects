@@ -1,0 +1,48 @@
+#include <stdio.h>
+int main (){
+	int br,sum,a,b,c,d,e;
+	scanf("%d", &br);
+	a=(br/10000);
+	b=(br/1000)%10;
+	c=(br/100)%10;
+	d=(br/10)%10;
+	e=br%10;
+	sum=0;
+		if ((a==e)&&(b==d)){
+			if (a%2==0){
+				sum+=a;
+			}
+			if (b%2==0){
+				sum+=b;
+			}
+			if (c%2==0){
+				sum+=c;
+			}
+			if (d%2==0){
+				sum+=d;
+			}
+			if (e%2==0){
+				sum+=e;
+			}
+		}
+		else {
+				if (a%2!=0){
+					sum+=a;
+				}
+				if (b%2!=0){
+					sum+=b;
+				}
+				if (c%2!=0){
+					sum+=c;
+				}
+				if (d%2!=0){
+					sum+=d;
+				}
+				if (e%2!=0){
+					sum+=e;
+				}
+		}
+		printf("%d",sum);
+		return 0;
+}
+

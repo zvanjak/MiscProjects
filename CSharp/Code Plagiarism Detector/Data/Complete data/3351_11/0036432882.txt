@@ -1,0 +1,18 @@
+#include<stdio.h>
+
+int info(FILE *f, int redni_br)
+{
+    struct natjecatelj s;
+    fseek(f, 0L, SEEK_SET);
+    while(fread(&s, sizeof(s), 1, f) == 1)
+    {
+        if(s.redni_br == redni_br)
+        {
+            if(s.bodovi >= 100)
+                return(1);
+            else
+                return(0);
+        }
+    }
+    return(-1);
+}

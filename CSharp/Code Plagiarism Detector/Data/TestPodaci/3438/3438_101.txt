@@ -1,0 +1,45 @@
+/*
+Program treba učitati niz znakova dok se ne učita znak "." (točka koju valja ignorirati) 
+te nakon toga učitavati parove indeksa učitanog niza (i, j) po formatu "%d %d" 
+dok su oba indeksa valjana i paralelno izvršavati zamjenu znakova na i-tom mjestu i j-tom
+mjestu. Indeksi se numeriraju od 1, t.d. prvi element niza ima indeks 1. 
+Potrebno je ispisati tako dobiven niz. Primjer: za ulazni niz  
+ABC123ghi. 1 3 3 4 5 1 67 4 izlazni niz je 2 2 1 A C 3 g h i 
+(znakovi su razdvojeni razmakom).  Iz primjera je vidljivo da iako 67 nije valjani indeks,
+program je svejedno učitao 4, budući da se učitavaju parovi indeksa.
+*/
+
+#include <stdio.h>
+int main ()
+{
+	char polje[100];
+	
+	char c;
+	int i,j,k, br=0, z=0;
+	for( i=0; i<100; i++)
+	{
+		scanf("%c",&c);
+		if ( c=='.') break;
+		else
+		{
+			polje[i] = c;
+			br++;
+		}
+	}
+	while(z==0)
+	{
+		scanf("%d %d",&j,&k);
+		if (j<1 || j>br || k<1 || k>br) z=1;
+		if( z==0)
+		{
+			c = polje[k-1];
+			polje[k-1]=polje[j-1];
+			polje[j-1] = c;
+		}
+	}
+	for (i=0; i<br; i++)
+	{
+		printf("%c ",polje[i]);
+	}
+	return 0;
+}

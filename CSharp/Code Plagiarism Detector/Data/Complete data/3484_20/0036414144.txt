@@ -1,0 +1,103 @@
+class CjelobrojniNiz { 
+    private:
+       int  *_nizcb;
+       int  _broj;
+
+    public: 
+        int  VecinaJednaka;
+        CjelobrojniNiz() {
+	   _broj=10;
+           _nizcb = (int*) malloc(sizeof(int)*_broj);;
+           VecinaJednaka=0;      
+         }
+
+CjelobrojniNiz(const CjelobrojniNiz &copy)
+
+{
+
+      _broj = copy._broj;
+
+ 
+
+      _nizcb = (int*) malloc(sizeof(int)*_broj);
+
+ 
+
+      if( _nizcb == NULL )
+
+            throw "Nema memorije";
+
+ 
+
+    //kopiraj vrijednosti
+
+      for( int i=0; i<_broj; i++ )
+
+            _nizcb[i] = copy._nizcb[i];
+
+}
+
+
+        CjelobrojniNiz(int *niz, int br ){
+             int i,j, brojac=0;
+             _broj = br;
+             _nizcb = (int*) malloc(sizeof(int)*_broj);
+             VecinaJednaka=0;
+             
+	    for(i=0; i<_broj; i++) _nizcb[i]=niz[i];
+                
+	    
+             for (i=0; i<_broj; i++) {
+		 brojac = 0;
+		 for (j=0; j<_broj; j++)
+		 if (_nizcb[i]==_nizcb[j]) brojac++; 
+		  if (brojac > (_broj/2)) {
+		  VecinaJednaka = 1; break;
+				 } 
+			 } 
+		 }
+
+          
+
+		 int Usporedi(CjelobrojniNiz niz){
+			 int i,ret;
+			 ret=1;
+			 if(this->_broj != niz._broj) ret = 0;
+			 else {    
+				for (i=0; i<_broj; i++){ 
+				 if (this->_nizcb[i] != niz._nizcb[i]) ret=0;
+				   }
+			 }
+			 return ret;
+		 }
+
+		 int* VratiPresjek(CjelobrojniNiz niz, int *n){
+		     int *presjek;
+		     int i,j,k,ima, br=1;
+		     presjek = (int*) malloc(sizeof(int));
+
+		     for (i=0;i<_broj;i++) {
+			  for (j=0;j<niz._broj;j++){ 
+			    if (_nizcb[i]==niz._nizcb[j]){
+			    for(k=0; k<br; k++){
+						  
+				if(presjek[k]==_nizcb[i]) { ima=1; break; }
+				 else ima = 0;
+				}
+			    if(!ima){
+				 presjek[br-1]=_nizcb[i];
+				 br++;
+				 presjek = (int*) realloc(presjek,br*sizeof(int));	
+					   }
+					}
+				 }
+			 }
+	      *n=(br-1);	  
+             presjek = (int*) realloc(presjek,(br-1)*sizeof(int));  
+	     return presjek; 
+		 }
+
+	~CjelobrojniNiz(){
+		free (_nizcb);
+	}
+};

@@ -1,0 +1,10 @@
+int niz(int i) {
+
+	int m=0;
+
+	kontrola();
+
+	if(i>3) {
+		return 2*pow(2,i-3) + 1;			
+	} else return 3;
+}

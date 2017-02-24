@@ -1,0 +1,18 @@
+void obrni(zapis **glava){
+	zapis *sljedeci,*trenutni,*pomocni;
+	trenutni=*glava;
+	if(!(trenutni)||!(trenutni->sljed))
+		return;
+	
+	sljedeci=trenutni->sljed;
+	trenutni->sljed=NULL;
+
+	while(sljedeci->sljed){
+		pomocni=sljedeci->sljed;
+		sljedeci->sljed=trenutni;
+		trenutni=sljedeci;
+		sljedeci=pomocni;
+	}
+	sljedeci->sljed=trenutni;
+	*glava=sljedeci;
+}

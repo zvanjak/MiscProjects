@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+typedef struct stru {
+	int a, b;
+} struktura;
+
+typedef struct stru * pstruktura;
+
+int main(int argn, char *argv[]) {
+	int varija;
+	struktura a = {1, 2};
+
+	if (argn < 2) {
+		printf("Premalo argumenata!\n");
+		return 1;
+	}
+
+	return 0;
+}

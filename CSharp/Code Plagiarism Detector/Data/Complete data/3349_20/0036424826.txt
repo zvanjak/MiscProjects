@@ -1,0 +1,20 @@
+double sumareda(double x, int n) 
+{
+	double rez=1;
+	int i;
+
+	kontrola();
+
+	if(n<1) return 0;
+
+	
+	for(i=0; i<n; i++)
+	   rez *= (x-1);
+
+
+	rez /=n;
+
+	if(n % 2==0) rez *= -1;
+
+	return rez+sumareda(x,n-1);
+}

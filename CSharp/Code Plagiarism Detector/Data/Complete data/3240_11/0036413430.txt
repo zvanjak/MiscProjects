@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <math.h>
+
+
+int main ()
+{
+
+	int n,k,i=0,t,p;
+
+
+
+	scanf ("%d",&n);
+	if (n>=0)
+	{
+		 k=n;
+		 do
+			{
+				k=k/10;
+				i++;
+			} while (k>0);
+		 for (k=0;k<=i-1;k++)
+		 {
+			 p=1;
+			 for (t=1;t<i-k;t++) p=p*10;
+             printf ("%d ",n/p);
+			 n=n%p;
+		 }
+	}
+	else
+	{
+		printf ("n nije pozitivan");
+	}
+
+	return 0;
+
+}

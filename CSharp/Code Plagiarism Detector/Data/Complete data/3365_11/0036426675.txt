@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main(void)
+{
+	int broj,troz,z3,z2,z1;
+	int suma=0;
+
+	scanf("%d",&broj);
+    troz=broj;
+
+	if(broj > 0)
+	{
+		z1=troz/100;
+		troz=troz%100;
+		z3=troz%10;
+		z2=troz/10;
+
+    		
+		if(broj>=250 &&  broj<=950)
+		{
+			if(z1%2!=0)
+				suma+=z1;
+			if(z2%2!=0)
+				suma+=z2;
+			if(z3%2!=0)
+				suma+=z3;
+		
+			printf("%d",suma);
+		}
+		else 
+			printf("%d",z1+z2+z3);
+	}
+
+	return 0;
+}
+

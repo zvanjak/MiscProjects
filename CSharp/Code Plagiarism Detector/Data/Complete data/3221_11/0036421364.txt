@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main () {
+int a,d,b,i=0;
+ scanf ("%d %d %d",&a,&d,&b);
+
+ do 
+ { 
+	 if (d==0 || d<0) {printf("0\n"); return(0);}
+	 (a = a + d); 
+     (i++); 
+	 printf (" %d", a);
+	
+ }while (a<b && d!=0);
+	/*printf (" %d",b);*/
+	printf (" %d\n",i);
+
+}

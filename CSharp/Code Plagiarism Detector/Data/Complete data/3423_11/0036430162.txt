@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <math.h>
+int main() {
+int a[20][5],i,j,k,mr,ms,u,b,z,f,p,s,h;
+u=z=f=s=0;
+p=1;
+b=1;
+do
+  scanf("%d %d",&mr,&ms);
+while ((mr<1||mr>20) || (ms<1 || ms>5));
+for (i=0;i<mr;i++)
+  for (j=0;j<ms;j++)
+  scanf ("%d", &a[i][j]);
+for (i=0;i<mr;i++){
+z=0;
+	for (j=0;j<ms;j++){
+		for (k=2; k<=(a[i][j]-1);k++){
+			if (a[i][j]%k==0)
+				p=0;}
+	if ((p==1) && (a[i][j]!=1))
+    z=z+1;
+	p=1;}
+if (z>0)
+f=f+1;
+}
+for (j=0;j<ms;j++){
+s=0;
+	for (i=0;i<mr;i++){
+		for (k=2; k<=(a[i][j]-1);k++){
+			if (a[i][j]%k==0)
+				b=0;}
+    if ((b==1) && (a[i][j]!=1))
+    s=s+1;
+	b=1;}
+if (s>0)
+u=u+1;
+}
+printf ("%d %d",f,u);
+return 0;
+}

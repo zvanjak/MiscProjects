@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main(){
+	
+	int number,suma,x,t;
+
+	do{
+		scanf("%d",&number);
+	}while(10000>number||number>99999);
+
+	
+	
+	suma=0,t=10;
+	
+	for(x=1;x<=5;x++){
+	    suma+=(number%t)/(t/10);
+	    t*=10;
+	}
+
+	if(number%suma==0){
+	    printf("%d",number-suma);
+	}
+	else{
+	    printf("%d",number/suma);
+	}
+
+	return 0;
+}

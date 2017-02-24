@@ -1,0 +1,13 @@
+#include <stdio.h>
+int main() {
+	int a,b,c;
+	scanf ("%d",&a);
+	if ((a<1000) || (a>9999));
+	else {
+		b = a / 100;
+		c = a % 100;
+		if ((b+c) % b) printf("Nije\n");
+		else printf("Jest\n");
+	}
+	return 0;
+}

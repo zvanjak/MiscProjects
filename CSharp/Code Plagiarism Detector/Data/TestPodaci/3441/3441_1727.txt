@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <math.h>
+
+int main () {
+int brZnam = 0, broj, zbroj = 0, t, i = 0;
+do {
+scanf ("%d", &broj);
+t=broj;
+broj=abs(broj);
+
+while (broj!=0) {
+i = broj % 10;
+zbroj+=i;
+broj = broj/10;
+brZnam++; 
+} 
+
+} while (t !=0);
+
+printf ("%d %d", brZnam, zbroj);
+
+return 0;
+}

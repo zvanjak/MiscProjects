@@ -1,0 +1,122 @@
+typedef struct{
+	char ime[20+1];
+	char prezime[30+1];
+	char jmbag[10+1];
+	int ocjena;
+}tip;
+typedef struct at{
+	tip element;
+	struct at* sljed;
+}atom;
+
+int brojElementa(atom *glava)
+{
+	int i=0;
+	for(;glava;glava=glava->sljed)
+		i++;
+	return i;
+}
+int dodaj (atom** glavap,tip element)
+{
+	atom* pom;
+	pom = new atom;
+	if(pom==NULL) return 0;
+	
+	strcpy(pom->element.ime,element.ime);
+	strcpy(pom->element.prezime,element.prezime);
+	strcpy(pom->element.jmbag,element.jmbag);
+	pom->element.ocjena=element.ocjena;
+	pom->sljed=*glavap;
+	*glavap=pom;
+	return 1;
+}
+int minOcjena(atom *glava)
+{
+	int min;
+	if(glava==NULL) return -1;
+	min=glava->element.ocjena;
+	glava=glava->sljed;
+	for(;glava;glava=glava->sljed)
+	{
+		if(glava->element.ocjena<min)
+			min=glava->element.ocjena;
+	}
+	return min;
+}
+int izbaciPrezimeSadrzi(atom** glavap,char* prezimePodniz)
+{
+	int i=0;
+	atom *pom,*pom2,*stari=NULL;
+	if(*glavap==NULL) 
+		return 0;
+	for(pom=*glavap; pom; pom = pom->sljed)
+	{
+		if(stari)
+		{
+			delete stari;
+			stari=NULL;
+		}
+			if(strstr(pom->element.prezime,prezimePodniz)!=NULL)
+		{
+			if(pom==*glavap)
+			{
+				*glavap=(*glavap)->sljed;
+				stari=pom;
+				i++;
+			}
+			else
+			{
+				for(pom2=*glavap; pom2->sljed!=pom;pom2=pom2->sljed);
+				pom2->sljed=pom->sljed;
+				stari=pom;
+				i++;
+			}
+		}
+	}
+	if(stari) 
+	{
+		delete stari;
+		stari=NULL;
+	}
+return i;
+}
+int izbaciPrezimePocinjeS(atom **glavap,char * prezimePocetak)
+{
+	int i=0;char poc[31];
+	atom *pom,*pom2,*stari=NULL;
+	if(*glavap==NULL) return 0;
+	
+
+	for(pom=*glavap; pom; pom = pom->sljed)
+	{
+		if(stari) 
+		{
+			delete stari;
+			stari=NULL;
+		}
+		strncpy(poc,pom->element.prezime,strlen(prezimePocetak));
+		poc[strlen(prezimePocetak)]='\0';
+		if(strcmp(poc,prezimePocetak)==0)
+		{
+			if(pom==*glavap)
+			{
+				*glavap=(*glavap)->sljed;
+				stari=pom;
+				i++;
+			}
+			else
+			{
+				for(pom2=*glavap; pom2->sljed!=pom;pom2=pom2->sljed);
+				pom2->sljed=pom->sljed;
+				stari=pom;
+				i++;
+			}
+		}
+	}
+	if(stari) 
+	{
+		delete stari;
+		stari=NULL;
+	}
+return i;
+}

@@ -1,0 +1,27 @@
+void ubaci(char *niz, char *podniz,int i)
+{
+    int j=0,f;
+    char niz1[100]={},niz2[100]={};
+    
+    if(i==0) puts(strcat(podniz,niz));
+    else if(i==strlen(niz)) puts(strcat(niz,podniz));       
+    else if(i>strlen(niz)) {
+         for(i=0;i<strlen(niz);i++)
+         if(islower(niz[i])) niz[i]=toupper(niz[i]);
+         puts(niz);
+         }
+     else {
+          for(j=0;j<i;j++)
+          niz1[j]=niz[j];
+          
+          
+         for(j=i,f=0;j<strlen(niz);j++,f++)
+         niz2[f]=niz[j];
+         
+         
+         strcat(niz1,podniz);
+         strcat(niz1,niz2);
+         puts(niz1);
+          } 
+     return;
+     }

@@ -1,0 +1,37 @@
+void funkcija (char *ulazni, char *izlazni, int *broj){
+  char a[256]={};
+  char text[strlen(ulazni)+1];
+  char text2[strlen(ulazni)+1];
+  int i=0, j=0;
+
+  sprintf(text, ulazni);
+  memset(text2, '\0', strlen(text2));
+
+  while(text[i]!='\0'){
+    if(isprint(text[i]))
+      a[text[i]]++;
+    i++;
+  }
+
+  for(i=0;i<256;i++)
+    if(a[i]>1){
+      *broj=*broj+1;
+    }
+    
+  for(i=0;i<strlen(text);i++)
+    if(a[text[i]]>1)
+      for(j=i;j<strlen(text);j++){
+        text[j]=text[j+1];
+        if(text[j]=='\0'){
+          i--;
+          break;
+        }
+      }
+      
+  for(i=0;i<strlen(text);i++)
+    text2[i]=text[strlen(text)-i-1];
+    
+  sprintf(izlazni, text2);
+
+  return;
+}

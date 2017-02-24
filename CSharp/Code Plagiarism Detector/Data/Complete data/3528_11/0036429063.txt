@@ -1,0 +1,22 @@
+int zamijeni(char *ulazni, char *prvi, char *drugi){
+char niz[1000];
+char *p,*pn;
+int i,izlaz=0;
+pn=niz;
+p=strstr(ulazni,prvi);
+
+while(p!=NULL){
+for(i=0;i<strlen(drugi);i++)
+*(p+i)=drugi[i];
+if (strlen(prvi)>strlen(drugi)){
+for(i=strlen(drugi);p[i+strlen(prvi)-strlen(drugi)];i++)
+*(p+i)=*(p+i+strlen(prvi)-strlen(drugi));
+*(ulazni +strlen(ulazni)-strlen(prvi)+strlen(drugi))= '\0';
+
+}
+izlaz++;
+p=strstr(ulazni,prvi);
+}
+
+return izlaz;
+}

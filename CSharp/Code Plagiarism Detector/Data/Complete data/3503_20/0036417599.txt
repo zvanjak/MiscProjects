@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <string.h>
+
+
+int ModElementa (cvor *glava, char *naziv) {
+
+	int brlijevo, brdesno;
+	
+	if (glava==NULL)
+		return 0;
+	
+	brlijevo=ModElementa (glava->lijevo, naziv);
+	brdesno=ModElementa (glava->desno, naziv);
+
+	if (strcmp(glava->naziv, naziv)==0)
+		return brlijevo+brdesno+1;
+	else
+		return brlijevo+brdesno;
+}

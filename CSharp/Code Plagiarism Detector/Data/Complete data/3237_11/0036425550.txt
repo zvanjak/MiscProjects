@@ -1,0 +1,23 @@
+#include <stdio.h>
+# include <math.h>
+int main () {
+
+	float n;
+	double zbroj=0;
+	int i;
+
+	scanf ("%f", &n);
+	
+	if (((int)n != n) || (n <1) || (n>30))
+		printf ("n nije valjan");
+	
+	else {
+		for(i=1; i<=n; i++)
+			zbroj = zbroj + ((float)1/(i*i*i*i*i*i));
+		
+		printf ("%1.12f", pow(zbroj*945, 1./6));
+	}
+
+
+	return 0;
+}

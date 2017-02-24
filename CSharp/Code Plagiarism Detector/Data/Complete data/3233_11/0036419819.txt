@@ -1,0 +1,16 @@
+#include <stdio.h>
+int main()
+{
+	int n, i;
+	float rez;
+	scanf("%d", &n);
+	if(n>0 && n<201){
+		rez=0;
+	for(i=1; i<=n; i++){
+		rez=rez+1.f/(i*(i+1));
+	}
+	printf("%.12f", rez);
+	}else
+	printf("n nije valjan");
+	return 0;
+}

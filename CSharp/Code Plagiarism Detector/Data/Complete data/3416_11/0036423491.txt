@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main(){
+	char slovo;
+	char min;
+	char max;
+	scanf("%c",&slovo);
+	if ((slovo<65)||(slovo>90))printf("%d",-1);
+	else {
+			min=slovo;
+			max=slovo;
+			while((slovo>=65)&&(slovo<=90)){
+				if (slovo<=min)min=slovo;
+				if (slovo>=max)max=slovo;
+				scanf("%c",&slovo);
+			} 
+			printf("%c %c",min,max);
+	}
+	return 0;
+}

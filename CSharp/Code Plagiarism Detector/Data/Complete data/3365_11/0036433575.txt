@@ -1,0 +1,28 @@
+#include <stdio.h>
+int main() {
+
+	int x,a,b,c,p,r;
+	scanf("%d",&x);
+	r=0;
+	if ((x>=100)&&(x<=999)){
+		a=x/100;
+		b=(x-a*100)/10;
+		c=(x-a*100-b*10);
+		
+
+		if ((x<=250)&&(x>=950)) 
+		{
+			printf("%d\n",a+b+c);
+		} 
+		
+		else if ((x>=250)&&(x<=950))
+		{
+				if ((a%2)==0) a=0;
+				if ((b%2)==0) b=0;
+				if ((c%2)==0) c=0;
+				printf("%d\n",a+b+c);
+			}
+		 
+	}
+return 0;
+}

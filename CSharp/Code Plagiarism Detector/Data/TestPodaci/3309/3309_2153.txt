@@ -1,0 +1,10 @@
+int br_prodanih(FILE * f, char *autor){
+	int zbroj=0;
+	fseek(f, 0L, SEEK_SET);
+	while (!feof(f)){
+		fread(&album, sizeof(album), 1, f);
+		if (!strcmp(autor, album.autor)) zbroj += album.prodano;
+	}
+	return zbroj;
+}
+	

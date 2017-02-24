@@ -1,0 +1,30 @@
+#include <stdio.h>
+#define MAX 10
+int main () {
+	int x[MAX][MAX],a,b,i,j,n,mr,suma,pom,brojac;
+	do {
+		scanf ("%d", &mr);
+	}
+	while ((mr<1)||(mr>10));
+	for (a=0;a<mr;a++) {
+		for (b=0;b<mr;b++){
+			scanf ("%d" ,&x[a][b]);		
+		}
+	}
+	brojac=0;
+	do {
+		scanf ("%d %d", &i, &j);
+		if ((i>=0)&&(i<=mr-1)&&(j>=0)&&(j<=mr-1)) {pom=x[i][j];x[i][j]=x[j][i];x[j][i]=pom;brojac++;}
+	}
+	while ((i>=0)&&(i<=mr-1)&&(j>=0)&&(j<=mr-1));
+	suma=0;
+	
+	scanf ("%d",&n);
+	if ((n<0)||(n>(mr-1))) suma=-1;
+	else {
+		for (a=0;a<mr;a++){
+		suma+=x[n][a];	}
+	}
+printf ("%d %d", brojac,suma);
+
+}

@@ -1,0 +1,37 @@
+int* napraviPolje(int *A, int Na, int *B, int Nb, int* Nc)
+{
+	int i, j, k=0, uk=0;
+	int p_size=50;
+	int *ptr=(int*)malloc(p_size * sizeof(int));
+	int temp=0;
+	for(i=0; i<Na; i++)
+	{
+		temp=abs(A[i]);
+		if(temp>=10 && temp<=99)
+		{
+			ptr[k]=temp;
+			k++;
+		}
+		if(k>=p_size)
+		{
+			ptr=(int*)realloc(ptr, k*2*sizeof(int));
+			p_size=k*2;
+		}
+	}
+	for(j=0; j<Nb; j++)
+	{
+		temp=abs(B[j]);
+		if(temp>=10 && temp<=99)
+		{
+			ptr[k]=temp;
+			k++;
+		}
+		if(k>=p_size)
+		{
+			ptr=(int*)realloc(ptr, k*2*sizeof(int));
+			p_size=k*2;
+		}
+	} 
+	*Nc=k;
+	return ptr;
+}

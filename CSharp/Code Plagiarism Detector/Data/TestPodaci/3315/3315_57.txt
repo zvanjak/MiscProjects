@@ -1,0 +1,18 @@
+float prosjek(FILE *f)
+{
+	char naziv[30+1];
+	char autor[20+1];
+	int prodano;
+	int br_albuma=0;
+	float prosjek=0.0;
+
+	while(fscanf(f,"%[^ ]%*c%[^ ]%*c%d%*c", naziv, autor, &prodano)>1)
+	{
+		prosjek+=prodano;
+		br_albuma++;
+	}
+	if(br_albuma)
+		return prosjek/br_albuma;
+	else
+		return 0;
+}

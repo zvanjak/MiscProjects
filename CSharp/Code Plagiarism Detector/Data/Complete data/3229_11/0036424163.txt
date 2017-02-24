@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main()
+{
+      float tmp;
+      int n, i;
+      double e=0, fakt=1.;
+      scanf( "%f", &tmp );
+      if ( tmp < 1 || tmp > 30 || tmp != ( int )tmp  ){
+         printf( "n nije valjan" );
+         return 0;
+      }
+
+      n = ( int )tmp;
+
+      for( i = 0; i < n; i++ ) {
+
+           if ( i > 0 ) fakt *= i;
+           if ( i % 2 ) e -= 1. / fakt;
+              else e += 1. / fakt;
+      }
+
+      e=1./e;
+      printf( "%.12lf", e );
+
+      return 0;
+}

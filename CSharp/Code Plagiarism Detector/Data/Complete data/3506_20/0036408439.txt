@@ -1,0 +1,19 @@
+int Razina(cvor *glava,int id,int *razina){
+	if(glava==NULL){
+		 return 0;
+	}
+
+	if((glava->id)==id) return 1;//razina je u mainu vec na 1
+
+	if(id<(glava->id)){
+		(*razina)++;
+		if(glava->lijevo==NULL)return 0;
+		Razina(glava->lijevo,id,razina);
+	}
+	else if(id>(glava->id)){
+		(*razina)++;
+		if(glava->desno==NULL)return 0;
+		Razina(glava->desno,id,razina);
+}
+
+}

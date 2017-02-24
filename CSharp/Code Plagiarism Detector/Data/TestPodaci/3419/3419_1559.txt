@@ -1,0 +1,75 @@
+#include <stdio.h>
+#define N 20
+#define M 5
+int main ()
+{
+	int i,j,brred,brstup, mat[N][M],aps,pom;
+	do{
+		scanf ("%d %d", &brred, &brstup);
+	}while ((brred<1||brred>20)||(brstup<1||brstup>5));
+	for (i=0; i<brred; i++){
+		for (j=0; j<brstup; j++)
+			scanf ("%d", &mat[i][j]);
+	}
+	aps=mat[0][0];
+	if (aps<0)
+		aps=-aps;
+	for (i=0; i<brred; i++){
+		for(j=0; j<brstup; j++){
+			pom=mat[i][j];
+			if (pom<0)
+				pom=-pom;
+			if (pom>aps)
+				aps=pom;
+			}
+	}
+	for (i=0; i<brred; i++){
+		for (j=0; j<brstup; j++){
+			if (aps==mat[i][j]||aps==-mat[i][j]){
+				printf ("%d %d", i,j);
+				break;}
+		}
+		if (aps==mat[i][j]||aps==-mat[i][j])
+			break;	
+	}
+	return 0;
+}
+
+			
+		
+
+	
+	
+	
+
+
+	
+	
+
+
+
+
+		
+		
+
+	
+	
+
+		
+
+	
+
+	
+
+
+
+
+
+
+
+
+
+					
+	
+
+

@@ -1,0 +1,11 @@
+ float prosjek(FILE *f)
+ {
+	 int suma=0;int br=0;int i=0;
+	 char m[52];
+	 while(fscanf(f,"%[^ ]%*c%d",&m,&i)>0)
+	 {
+		 suma=suma+i;
+		 br++;
+	 }
+	 return (float)suma/br;
+ }

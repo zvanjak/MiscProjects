@@ -1,0 +1,19 @@
+#include <stdio.h>
+int main () {
+	int d,g,n,s;                                                                     
+	scanf ("%d",&d);
+	scanf ("%d",&g);
+ 	if (d>0 && g>0 && g>d) 
+	{
+		for (n=d;n<=g;n++) {
+			if (n%2==0){			
+		    s=n*(2+n)/4;
+			printf ("%d ",s);}
+		    else{
+		    s=(n-1)*(2+n-1)/4;
+			printf ("%d ",s);}
+	}}
+	else
+		printf ("D i G nisu valjani");			
+	return 0;
+}

@@ -1,0 +1,22 @@
+void brisi(FILE *f, int redni_br)
+{
+	struct natjecatelj
+	{
+		int redni_br;
+		char prezime[20+1];
+		int bodovi;
+	}zapis;
+	
+	fseek(f, 0L, SEEK_SET);
+    while(fread(&zapis, sizeof(zapis), 1, f) == 1)
+    {
+        if(zapis.redni_br == redni_br)
+        {
+            zapis.redni_br = 0;
+            break;
+        }
+    }
+    
+    fseek(f, -1L * sizeof(zapis), SEEK_CUR);
+    fwrite(&zapis, sizeof(zapis), 1, f);
+}

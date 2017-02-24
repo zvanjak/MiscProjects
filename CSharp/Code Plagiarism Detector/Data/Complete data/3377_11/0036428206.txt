@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main(){
+	unsigned int k;
+	unsigned int x;
+	
+
+	scanf("%4u\n", &k);
+	scanf("%4u", &x );
+	x += k;
+	if (x > 10000)
+		x = x - 10000;
+	if (k < 1111)
+	printf("%u", x);
+}

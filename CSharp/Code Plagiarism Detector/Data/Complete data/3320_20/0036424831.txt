@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+int rmax (int *polje, int N)
+{
+	kontrola();
+	if (N==0) return polje[N];
+
+	if (polje[N]>polje[N-1])
+		polje[N-1]=polje[N];
+		
+	rmax (&polje[0], N-1);
+}

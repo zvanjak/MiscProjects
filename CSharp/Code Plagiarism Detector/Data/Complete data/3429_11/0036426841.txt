@@ -1,0 +1,33 @@
+#include <stdio.h>
+int main(){
+	int polje[20][5];
+	int a, b, c, mr, ms, i, j;
+	do {
+		scanf("%d %d", &mr, &ms);
+	}
+	while(mr<1 || mr>20 || ms<1 || ms>5);
+		for (i=0; i<mr; i++){
+			for (j=0; j<ms; j++){
+				scanf("%d", &a);
+				polje[i][j]=a;
+			}
+		}
+	b=0;
+	for (i=0; i<mr; i++){
+		for(j=0; j<ms; j++){
+			if(polje[i][j]%2==0){
+				b=b+1;
+				break;}
+		}
+	}
+	c=0;
+	for (i=0; i<ms; i++){
+		for(j=0; j<mr; j++){
+			if (polje[j][i]%2!=0){
+				c=c+1;
+				break;}
+		}
+	}
+	printf("%d %d", b, c);
+	return 0;
+}

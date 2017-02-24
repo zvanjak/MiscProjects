@@ -1,0 +1,62 @@
+#include<stdio.h>
+
+#define MAXRED 20
+#define MAXSTUP 5
+
+int main(){
+	int i,j,mr,ms;
+	int prost=1,brred=0,brstup=0;
+	int mat[MAXRED][MAXSTUP];
+	int k;
+
+	do{
+		scanf("%d %d",&mr,&ms);
+	}while((mr<1 || mr>MAXRED) || (ms<1 || ms>MAXSTUP));
+
+	for(i=0;i<mr;i++){
+		for(j=0;j<ms;j++){
+			scanf("%d",&mat[i][j]);
+		}
+	}
+
+	for (i=0;i<mr;i++){
+		for(j=0;j<ms;j++){
+			if(((mat[i][j])==1) || (((mat[i][j])%2)==0)){
+				prost=0;
+			}
+			else{
+				prost=1;
+				for(k=2;k<(mat[i][j]/2);k+=1){
+					if(((mat[i][j])%k)==0)
+						prost=0;
+				}
+			}
+			if(prost){
+				brred++;
+				break;
+			}
+		}
+	};
+
+
+	for(j=0;j<ms;j++){
+		for(i=0;i<mr;i++){
+			if(((mat[i][j])==1) || (((mat[i][j])%2)==0)){
+				prost=0;
+			}
+			else{
+				prost=1;
+				for(k=2;k<(mat[i][j]/2);k+=1){
+					if(((mat[i][j])%k)==0)
+						prost=0;
+				}
+			}
+			if(prost){
+				brstup++;
+				break;
+			}
+		}
+	}
+	printf("%d %d",brred,brstup);
+	return 0;
+}

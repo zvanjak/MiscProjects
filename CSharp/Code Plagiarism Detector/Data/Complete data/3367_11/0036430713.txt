@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+
+	char x,y;
+
+	int z;
+
+	scanf ("%c %c", &x, &y);
+
+	if (y>=65 && y<=70)
+
+		z=(y-55);
+
+	else
+
+		z=(y-48);
+
+	if (x>=65 && x<=70)
+
+		z=z+(x-55)*16;
+
+	else
+
+		z=z+(x-48)*16;
+
+	printf("%d",z);
+
+	return 0;
+
+}

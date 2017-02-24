@@ -1,0 +1,18 @@
+ #include <stdio.h>
+  void main() {
+	int a,d,b,k,i;
+	int br;
+	br=0;
+	scanf("%d %d %d", &a , &d , &b );
+	if ((d>0) && (a<b)) {
+	a=a+d;
+	k=b+d;
+	for( i=a; i<=k; i=i+d ) {
+	br=br+1;	
+        printf("%d ",i);
+	}
+	printf("%d",br);  
+	}
+else 
+printf("0 ");
+}

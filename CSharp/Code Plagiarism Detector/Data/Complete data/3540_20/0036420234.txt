@@ -1,0 +1,24 @@
+int izbaci (zapis **glava) {
+  zapis *x, *y;
+  int b=0;
+  x=*glava;
+  y=(*glava)->sljed;
+  while(y!=NULL){
+	  if(y->pros<2.0){
+	    x->sljed=y->sljed;
+	    free(y);
+	    y=x->sljed;
+	    b++;
+	  } else {
+	    x=x->sljed;
+	    y=y->sljed;
+	  }
+  }
+  if((*glava)->pros<2.0){
+        x=(*glava)->sljed;
+	free(*glava);
+	*glava=x;
+	b++;
+  }
+  return b;
+}

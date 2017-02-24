@@ -1,0 +1,90 @@
+#include<stdio.h>
+#include<string.h>
+#include<ctype.h>
+
+
+
+
+void ubaci (char *niz, char *podniz, int i) { 
+
+char novi_niz [50];
+int DuzNiz, duzPodNiz,duz2,duz3,duz4;
+int k,j,m,f,p,z,b;
+char pom_niz[50];
+
+
+DuzNiz = strlen(niz);
+duzPodNiz=strlen(podniz);
+if ( i >= 0  &&  i <= DuzNiz ) { 
+
+ k=0;
+ for (j=i; niz[j];j++) { 
+ pom_niz[k] = niz[j];
+ k++;
+}
+ 
+
+ pom_niz[k]='\0';
+ 
+duz2 = strlen (pom_niz);
+
+
+
+strncpy (novi_niz,niz,i);
+
+novi_niz[i]='\0';
+duz4 = strlen (novi_niz);
+
+
+
+
+
+ strcat(novi_niz,podniz);
+ 
+
+novi_niz[duz4+duzPodNiz]='\0';
+
+ duz3= strlen(novi_niz);
+
+
+ strcat(novi_niz,pom_niz);
+
+
+novi_niz[duz3+duz2]='\0';
+
+
+
+for (f=0;niz[f];f++) {
+	niz[f]=' ';
+}
+niz[f+1]='\0';
+
+for (m=0;novi_niz[m];m++) {
+niz[m]=novi_niz[m];
+}
+niz[m]='\0';
+
+
+
+
+}
+else {
+
+        for( p=0;niz[p];p++) {
+
+               if( isalpha (niz[p])) {
+                  if ( islower(niz[p]) ) {
+                       niz[p] = toupper(niz[p]);
+        }
+    }
+}
+
+
+
+   }
+
+
+  return; 
+}
+
+

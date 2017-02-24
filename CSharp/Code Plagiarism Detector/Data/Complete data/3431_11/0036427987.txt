@@ -1,0 +1,57 @@
+#include <stdio.h>
+#define MAX 100
+int main () {
+	int i = 0, j, suma_p = 0, suma_np = 0;
+	char p[MAX], c;
+
+	scanf ("%c", &c);
+	while ((c >= '0' && c <= '9') || (c >= 'a' && c <= 'f') || (c >= 'A' && c <= 'F')) {
+		p[i] = c;
+		i++;
+
+		scanf ("%c", &c);
+	}
+	
+	for (j = 0; j < i; j++) {
+		switch (p[j]) {
+			case '1':
+			case '3':
+			case '5':
+			case '7':
+			case '9':
+				suma_np += p[j] - '0';
+				break;
+			case 'B':
+			case 'D':
+			case 'F':
+				suma_np += p[j] - 'A' + 10;
+				break;
+			case 'b':
+			case 'd':
+			case 'f':
+				suma_np += p[j] - 'a'+ 10;
+				break;
+
+			case '2':
+			case '4':
+			case '6':
+			case '8':
+				suma_p += p[j] - '0';
+				break;
+			case 'A':
+			case 'C':
+			case 'E':
+				suma_p += p[j] - 'A' + 10;
+				break;
+			case 'a':
+			case 'c':
+			case 'e':
+				suma_p += p[j] - 'a' + 10;
+				break;
+		}
+	}
+	
+	printf("%d", suma_p - suma_np);
+	
+	return 0;
+}

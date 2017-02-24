@@ -1,0 +1,22 @@
+void main(){
+	int polje[100];
+	int i=0,j,a;
+	int br,ind;
+	scanf("%d", &a);
+	if(a >= 0){
+		polje[0]=a;
+		do{
+			++i;
+			scanf("%d", &polje[i]);
+		} while(polje[i] >= 0);
+		j=i;
+		for(i=0;i<j;i++){
+			ind=i;
+			br=polje[i];
+			do{
+				printf("%d ", ind);
+				br--;
+			}while(br > 0);
+		}
+	}
+}

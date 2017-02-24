@@ -1,0 +1,14 @@
+int br_prodanih(FILE*f,char*autor)
+{
+    int kol=0;
+    int broj;
+    struct album
+          {  
+               char naziv[31];
+               char autor[21];
+               int prodano;
+          }al;
+    while((broj=fread(&al,sizeof(al),1,f))==1)
+         if(!(strcmp(al.autor,autor))) kol+=al.prodano;
+    return kol;
+    }

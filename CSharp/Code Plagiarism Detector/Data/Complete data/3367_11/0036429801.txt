@@ -1,0 +1,20 @@
+#include <stdio.h>
+int main () {
+	char a, b;
+	int broj;
+	scanf ("%c %c", &a, &b);
+	if (a >= '0' && a <= '9'){ 
+		a = a - 48;
+	}else
+		if (a >= 'A' && a <= 'F'){
+			a = a - 55;
+		}if (b >= '0' && b <= '9'){
+				b = b - 48;
+			}else
+				if (b >= 'A' && b <= 'F'){
+					b = b - 55;
+				}
+				broj = 16*a + b;
+				printf ("%d\n", broj);
+	return 0;
+}

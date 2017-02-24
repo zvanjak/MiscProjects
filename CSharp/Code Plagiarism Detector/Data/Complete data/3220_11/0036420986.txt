@@ -1,0 +1,20 @@
+#include<math.h>
+int main (){
+	int n,b,zb,i;
+	scanf("%d", &n);
+	i=0;
+	zb=0;
+	if( n>0) {
+		do {
+			b= n % 10;
+			if(b % 2){
+				zb=zb+b*pow(10,i);
+				i=i+1;
+			}n= n/10;         
+		}while(n>0);
+		printf("%d",zb);
+	} else {
+		printf("%d",n);
+	}
+	return 0;
+}

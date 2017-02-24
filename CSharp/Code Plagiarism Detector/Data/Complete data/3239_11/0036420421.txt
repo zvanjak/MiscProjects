@@ -1,0 +1,26 @@
+#include <stdio.h>
+int main () {
+	int d, g, s, i, j;
+	scanf ("%d %d",&d,&g);
+	if ((d<0) || (g<0) || (g<=d)) {
+		printf ("D i G nisu valjani");
+	} else {
+		s=0;
+		for (i=d; i<=g; i=i+1) {
+			for (j=1; j<=i; j=j+1) {
+				if (j%2==0) {
+					s=s+j;
+				}
+				if (i==j) {
+					if (i==g) {
+						printf ("%d",s);
+					} else {
+					printf ("%d ",s);
+					}
+					s=0;
+				}
+			}
+		}
+	}
+	return 0;
+}

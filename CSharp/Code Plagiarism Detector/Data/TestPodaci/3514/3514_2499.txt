@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <math.h>
+
+struct tocka {
+	double x;
+	double y;
+};
+
+int main() {
+	struct tocka dot[4];
+	int i;
+	double povrsina, x, y, r, fi;
+
+	for(i=0; i<4; i++) {
+		
+		scanf("%lf %lf", &dot[i].x, &dot[i].y);
+	}
+
+	if((dot[0].y==dot[1].y)&&(dot[2].y==dot[3].y)) {
+		if((dot[0].x==dot[3].x)&&(dot[1].x==dot[2].x)) {
+			povrsina=(dot[1].x-dot[0].x)*(dot[0].y-dot[2].y);
+			printf("%.2lf", povrsina);
+		}
+	} else {
+		x=(dot[0].x+dot[1].x+dot[2].x+dot[3].x)/4;
+		y=(dot[0].y+dot[1].y+dot[2].y+dot[3].y)/4;
+		r=pow(x,2)+pow(y,2);
+		r=pow(r,0.5);
+		fi=atan(y/x);
+		printf("%.2lf %.2lf",r, fi);
+	}
+	return 0;
+}

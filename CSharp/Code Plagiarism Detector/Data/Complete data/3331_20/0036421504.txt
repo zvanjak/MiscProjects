@@ -1,0 +1,15 @@
+float *KreirajMatricu(int n,float *p,int m){
+
+int i,j;
+float *polje;
+polje=(float*)malloc(n*m*sizeof(float));
+for(i=0;i<n;i++)
+
+polje[i]=1;
+for(i=1;i<m;i++)
+
+for(j=0;j<n;j++)
+
+polje[i*n+j]=polje[(i-1)*n+j]*p[j];
+return polje;
+}

@@ -1,0 +1,34 @@
+char *SamoSuglasnici( char *ulazni_niz )
+{
+    char *novi, znak;
+    int duljina_novog = 0, i;
+
+    if( ulazni_niz == NULL )
+        return NULL;
+
+    if( strlen( ulazni_niz ) == 0 )
+        return NULL;
+
+    novi = (char*)malloc( sizeof(char) * ( strlen( ulazni_niz ) + 1 )  );
+
+    for( i=0 ; i < strlen( ulazni_niz ) ; ++i )
+    {
+        if( isalpha( ulazni_niz[i] ) )
+        {
+            znak = toupper( ulazni_niz[i] );
+
+            if( (znak!='A') && (znak!='E') && (znak!='O') && (znak!='U') && (znak!='I') )
+            {
+                novi[ duljina_novog ] = ulazni_niz[ i ];
+                ++duljina_novog;
+            }
+        }
+    }
+
+    novi[ duljina_novog ] = '\0';
+    ++duljina_novog;
+
+    novi = (char*)realloc( novi, duljina_novog*sizeof(char) );
+
+    return novi;
+}

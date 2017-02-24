@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main(){
+
+int broj;
+int prva,druga,treca,cetvrta;
+int rezultat=0;
+
+
+scanf("%d",&broj);
+
+prva=broj/1000;
+druga=(broj/100)%10;
+treca=(broj/10)%10;
+cetvrta=broj%10;
+
+if(!(prva%2)){rezultat+=prva*1000;rezultat+=druga*100;rezultat+=treca*10;rezultat+=treca*10;}
+else if(!(druga%2)){rezultat+=druga*100;rezultat+=treca*10;rezultat+=cetvrta;}
+else if(!(treca%2)){rezultat+=treca*10;rezultat+=cetvrta;}
+else if(!(cetvrta%2)){rezultat+=cetvrta;}
+
+
+printf("%d",rezultat);
+
+return 0;
+}

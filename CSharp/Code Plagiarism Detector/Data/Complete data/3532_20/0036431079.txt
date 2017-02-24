@@ -1,0 +1,21 @@
+Stog* noviOdNeparnih(Stog* stog)
+{
+	Stog* novi = new Stog;
+	Stog temp;
+	int data;
+
+	while(stog->Skini(&data))
+	{
+		if(data % 2)
+			novi->Stavi(data);
+
+		temp.Stavi(data);
+	}
+
+	while(temp.Skini(&data))
+	{
+		stog->Stavi(data);
+	}
+
+	return novi;
+}

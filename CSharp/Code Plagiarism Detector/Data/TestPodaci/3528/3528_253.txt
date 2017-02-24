@@ -1,0 +1,14 @@
+int zamijeni(char *ulazni, char *prvi, char *drugi) {
+	char pomak[512];
+  	int br=0, Poda, Podb;
+	Poda=strlen(prvi);
+	Podb=strlen(drugi);
+	while( ulazni = strstr(ulazni, prvi) ) {
+		strcpy(pomak, ulazni + Poda);	
+		strcpy(ulazni, drugi);
+		strcat(ulazni, pomak);
+		ulazni += Podb;
+		++br;
+	}
+		return br;
+	}

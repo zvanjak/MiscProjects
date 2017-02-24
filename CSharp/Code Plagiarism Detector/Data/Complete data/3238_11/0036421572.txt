@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <math.h>
+
+
+void main ()
+{
+	int n;
+	double k,s;
+
+	s=0;
+	//printf("Broj n iz intervala [1,25]-->");
+	scanf("%d", &n);
+
+
+	if(n>=1){
+		if(n<=25){
+			for(k=1;k<=n;k++){
+			   s=s+1.0/(k*k*k*k*k*k*k*k);
+			}
+			s=s*9450.0;
+			s= pow(s,1.0/8.0);
+		   printf("\n%13.12f\n", s);
+		}else{
+			printf("\n Broj nije valjan \n");
+		}
+	}else{
+		printf("\n Broj nije valjan \n");
+	}
+}

@@ -1,0 +1,17 @@
+double fun1(Trokut t, Pravokutnik p, Krug k) {
+
+double pt,pp,pk;
+
+pt = t.Povrsina();
+pp = p.Povrsina();
+pk = k.Povrsina();
+
+if (pt>pp) {
+	if (pt>pk) return pt;
+	else return pk;
+}
+else { if (pp>pk) return pp;
+else return pk;}
+
+
+}

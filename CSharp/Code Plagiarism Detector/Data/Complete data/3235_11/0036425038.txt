@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main()
+{
+    int n, i, predznak;
+    double ln_2;
+    
+    predznak = 1;
+    ln_2 = 0.;
+    
+    scanf("%d", &n);
+    
+    if((n < 1) || (n > 100))
+          printf("n nije valjan");
+    else
+    {
+        for(i=1; i <= n; i++)
+        {
+                 ln_2 += predznak*1./i;
+                 predznak *= -1;
+        }
+        printf("%1.12f", ln_2);
+    }    
+    
+    return 0;
+}

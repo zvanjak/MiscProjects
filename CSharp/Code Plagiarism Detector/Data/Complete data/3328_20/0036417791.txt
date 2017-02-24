@@ -1,0 +1,25 @@
+#include <stdlib.h>
+#include <stdio.h>
+
+int rekurzija (int n, int a, int d, int *p){
+	if (n == 0){
+		*p = a;
+		return *p;
+	}
+	else {
+		*p = d + rekurzija (n - 1, a, d, p + 1);
+		return *p;
+	}
+}
+
+int *KreirajAritNiz (int n, int a0, int d){
+	int *p;
+
+	p = (int *) malloc (n * sizeof (int));
+	if (p == 0)
+		exit (1);
+
+	n = n - 1;
+	rekurzija (n, a0, d, p);
+	return (p - n);
+}

@@ -1,0 +1,23 @@
+void dodaj (FILE *f) {
+struct natjecatelj temp, najbolji;
+int koliko_ih_je = 0;
+
+if (fread (&temp, sizeof (struct natjecatelj), 1, f) == 1) {
+koliko_ih_je++;
+najbolji = temp;
+}
+
+while (fread (&temp, sizeof (struct natjecatelj), 1, f) == 1) {
+koliko_ih_je++;
+if (temp.bodovi > najbolji.bodovi)
+najbolji = temp;
+}
+
+if (koliko_ih_je > 0) {
+najbolji.bodovi += 10;
+fseek (f, sizeof (struct natjecatelj) * (najbolji.redni_br - 1), SEEK_SET);
+fwrite (&najbolji, sizeof (struct natjecatelj), 1, f);
+}
+
+return;
+}

@@ -1,0 +1,17 @@
+Red *PrepisiStogURed(Stog *stog) {
+	int tmp;
+	Stog pomStog;
+	Red *izlazniRed = new Red;
+
+	while (stog->Skini(&tmp)) {
+		printf("\nSkidam:%d", tmp);
+		pomStog.Stavi(tmp);
+	}
+	while (pomStog.Skini(&tmp)) {
+		printf("\nStavljam:%d", tmp);
+		stog->Stavi(tmp);
+		izlazniRed->DodajURed(tmp);
+	}
+
+	return izlazniRed;
+}

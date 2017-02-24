@@ -1,0 +1,28 @@
+#include <stdio.h>
+int main ()
+{
+	int broj, znam1, znam2, znam3, znam4, znam5, suma, razlika, kolicnik;
+		
+	scanf("%d", &broj);
+
+	if (broj>=10000 && broj<=99999) 
+	{
+		znam1=broj/10000;
+		znam2=(broj/1000)%10;
+		znam3=(broj/100)%10;
+		znam4=(broj/10)%10;
+		znam5=broj%10;
+		suma=znam1+znam2+znam3+znam4+znam5;
+
+		if (broj%suma==0)
+		{
+			razlika=broj-suma;
+		    printf ("%d", razlika);
+		} else {
+			kolicnik=broj/suma;
+			printf ("%d", kolicnik);
+		}
+	}
+	else
+	return 0;
+}

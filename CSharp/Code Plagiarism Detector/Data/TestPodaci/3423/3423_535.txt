@@ -1,0 +1,78 @@
+#include<stdio.h>
+void main(void)
+{int mr, ms,pero[20][5],i ,j , brojac1=0, brojac2=0,x ,flag ;
+
+do
+	{
+	scanf("%d %d",&mr, &ms);
+	}
+	while( (mr<1 || mr>20) || (ms<1 || ms>5 ) );
+
+for (i=0;i<mr;i++)
+	  {
+	  for(j=0;j<ms;j++)
+		  {
+		  scanf("%d",&pero[i][j]);
+		  }
+	  }
+
+for (i=0;i<mr;i++)
+	{
+	for(j=0;j<ms;j++)
+		{
+
+		flag=0;
+
+		if(pero[i][j] == 1)
+			{
+			pero[i][j] = 20;
+			}
+
+		for (x=2; x<pero[i][j]; x++)
+			{
+
+			if(pero[i][j]%x == 0)
+				{
+				flag=1;
+				}
+			}
+
+		if(flag == 0)
+			{
+			brojac1++;
+			break;
+			}
+		}
+	}
+
+
+for (j=0;j<ms;j++)
+	{
+	for(i=0;i<mr;i++)
+		{
+
+		flag = 0;
+
+		if(pero[i][j] == 1)
+			{
+			pero[i][j] = 20;
+			}
+
+		for (x=2;x<pero[i][j];x++)
+			{
+			if( pero[i][j]%x == 0 )
+				{
+				flag=1;
+				}
+			}
+
+		if(flag == 0)
+			{
+			brojac2++;
+			break;
+			}
+		}
+	}
+
+printf("%d %d",brojac1 ,brojac2);
+}

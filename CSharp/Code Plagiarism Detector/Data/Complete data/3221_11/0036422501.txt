@@ -1,0 +1,17 @@
+#include<stdio.h>
+
+int main()
+{
+   int x,d,b,br,n;
+   scanf("%d %d %d", &x,&d,&b);	
+   n=0;
+   while (x<=b)
+      {
+		x=x+d;
+		printf("%d ",x);
+		n++;
+		
+      }
+printf("%d",n);
+return 0;
+}

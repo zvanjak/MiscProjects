@@ -1,0 +1,42 @@
+int izbaciZ(zapis **glava)
+    {
+        float prosjek=0;
+        int broj=0, izbaceni=0;
+        zapis *p=NULL,*r=NULL;
+        p=*glava;
+        if(*glava==NULL)
+        return(0);
+        while(p!=NULL)
+            {
+            prosjek=prosjek+p->pros;
+            p=p->sljed;
+            broj++;
+            }
+        prosjek=prosjek/broj;
+        p=*glava;
+    while(p!=NULL)
+        {
+        p=*glava;
+        r=NULL;
+        do
+            {
+            if((p->pros<prosjek)&&(p->spol==2))
+            break;
+            r=p;
+            p=p->sljed;
+            }
+        while(p!=NULL);
+        if(p==NULL)
+            return(izbaceni);
+        if(r==NULL)
+            {
+            *glava=p->sljed;
+            izbaceni++;
+            }
+        else
+            {
+            r->sljed=p->sljed;
+            izbaceni++;
+            }
+        }
+    }

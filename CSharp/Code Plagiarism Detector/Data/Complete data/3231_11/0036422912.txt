@@ -1,0 +1,23 @@
+#include <stdio.h>
+int main () {
+	int n, i, z=1;
+	double x=0;
+
+	scanf("%d", &n);
+	if ((n<1) || (n>30)) {
+		printf("n nije valjan");
+	}
+	else {
+		for (i=1; i<=n; i++) {
+			if (i%2==1) {
+				x=x+1./z;
+			}
+			else {
+				x=x-1./z;
+			}
+			z=z*2;
+		}
+		printf("%.12f", x);
+	}
+	return 0;
+}

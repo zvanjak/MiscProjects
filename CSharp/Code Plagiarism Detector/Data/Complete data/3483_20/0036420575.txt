@@ -1,0 +1,35 @@
+class Komprimiranje
+{
+  private:
+  int broj;
+  int *niz;
+
+  public:
+  Komprimiranje(int *pok, int brelem)
+  {
+    broj=brelem;
+    niz=pok;
+  }
+
+  int UkupnaSuma()
+  {
+    int j, S=0;
+    for (j=0; j<broj; j+=2)
+   	 S += niz[j]*niz[j+1];
+
+    return S;
+   }
+
+
+  int UkupniBrojElemenata(int vrijednost)
+  {
+    int x=0, j;
+
+    for(j=0; j<broj; j+=2)
+      if(niz[j] != vrijednost)
+        x += niz[j+1];
+
+    return x;
+   }
+
+};

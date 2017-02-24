@@ -1,0 +1,31 @@
+#include <stdio.h>
+#define MAX 100
+int main ()
+{
+	char niz[MAX];
+	int rez,i,brojac=0,var,sumap=0,suman=0,broj,polje[MAX];
+	gets(niz);
+	for (i=0;i<MAX;i++){
+		var=niz[i];
+		if (var>='0'&&var<='9'||var>='A'&&var<='F'||var>='a'&&var<='f') brojac++;
+		else break;
+	}
+	for (i=0;i<brojac;i++){
+		broj=niz[i];
+		if(broj>='0'&&broj<='9') polje[i]=(broj-48);
+		if(broj>='A'&&broj<='F') polje[i]=(broj-55);
+		if(broj>='a'&&broj<='f') polje[i]=(broj-87);
+	}
+	for(i=0;i<brojac;i++){
+		if((polje[i]%2)==0)sumap+=polje[i];
+		if((polje[i]%2)!=0)suman+=polje[i];
+	}
+	rez=sumap-suman;
+	printf("%d",rez);
+	return 0;
+}
+
+
+
+
+

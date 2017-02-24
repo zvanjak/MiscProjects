@@ -1,0 +1,11 @@
+#include <stdio.h>
+#include <conio.h>
+main()
+{int a;
+scanf ("%d",&a);
+if (a%2==0)
+printf ("%d",(a%10));
+else 
+printf ("%d",(int)(a/1000));
+
+return 0;}

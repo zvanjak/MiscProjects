@@ -1,0 +1,22 @@
+#include <stdio.h>
+#define MAX 20
+
+int main () {
+	int n, mat[MAX][MAX], i, j, hipoteza=1, glavnad=1, sporednad=1;
+	do {
+		scanf("%d", &n);
+	}while (n<1 || n>20);
+	for(i=0; i<n; i++) {
+		for(j=0; j<n; j++) {
+			scanf("%d", &mat[i][j]);
+			if(i%2==0 && j%2==0){
+				if(mat[i][j]%2==1) hipoteza=0;
+			}
+			if(i==j) glavnad*=mat[i][j];
+			if(i==(n-j-1)) sporednad*=mat[i][j];
+
+		}
+	}
+	if(hipoteza==1) printf("%d", glavnad);
+	else printf("%d", sporednad);
+}

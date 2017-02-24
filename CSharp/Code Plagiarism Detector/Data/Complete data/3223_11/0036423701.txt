@@ -1,0 +1,17 @@
+#include<stdio.h>
+int main() {
+	int najveci=0,najmanji=0,broj,kontrola;
+	do {
+		scanf("%d",&broj);
+		if	(broj>najveci)
+			 najveci=broj;
+		else if (broj<najmanji)
+			najmanji=broj;
+		
+		if (broj>0 && broj%4==0)
+			kontrola=0;
+		else kontrola=1;
+	}	while (kontrola);
+	printf("%d %d\n", najveci,najmanji);
+	return 0;
+}

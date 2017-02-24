@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main()
+{	
+	char a,b,c;
+	int r;
+	scanf("%c %c %c", &a, &b, &c);
+	a=a-48;
+	b=b-48;
+	if (c=='+' || c=='-' || c=='*' || c=='/' || c=='%') {
+		if (c=='+') 
+			r=a+b;
+		if (c=='-') 
+			r=a-b;
+		if (c=='*') 
+			r=a*b;
+		if (c=='/') 
+			r=a/b;
+		if (c=='%') 
+			r=a%b;
+		printf("%d", r);
+
+	} else { 
+		printf("Neispravna");
+	}
+	return 0;	
+}

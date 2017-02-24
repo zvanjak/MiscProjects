@@ -1,0 +1,44 @@
+int* napraviPolje (int *A, int Na, int a, int b, int*Nc)
+{
+	int i, j, k, vecPostoji;
+	int *C = NULL;
+
+	*Nc = 0;
+
+	if (b < a)
+		return 0;
+
+	for (i = a; i <= b; i++)
+	{
+		if (i == 0)
+			continue;
+
+
+		for (j = 0; j < Na; j++)
+		{
+			if (A[j] % i == 0)
+			{
+				vecPostoji = 0;
+				for (k = 0; k < *Nc; k++)
+				{
+					if (C[k] == A[j])
+					{
+						vecPostoji = 1;
+						break;
+					}
+				}
+
+				if (vecPostoji == 0)
+				{
+					C = (int *) realloc (C, (*Nc + 1) * sizeof(int));
+					C[*Nc] = A[j];
+					*Nc += 1;
+				}
+				
+			}
+		}
+	}
+
+	return &C[0];
+
+}

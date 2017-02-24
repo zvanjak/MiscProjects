@@ -1,0 +1,29 @@
+#include<stdio.h>
+int main()
+{
+char polje[20+1];
+int i=0, broj_slova=0;
+	do
+	{
+	scanf(" %c", &polje[i]);
+	if(polje[0]<'A' || polje[0]>'z' || (polje[0]>'Z' && polje[0]<'a')) printf("-1");
+	i++;
+	} 
+	while((polje[i-1]>='A' && polje[i-1]<='Z') || (polje[i-1]>='a' && polje[i-1]<='z'));
+	broj_slova=i;
+    for(i=0; i<broj_slova-1; i++) 
+	{
+	if(polje[i]!='a' && polje[i]!='e' && polje[i]!='i' && polje[i]!='o' && polje[i]!='u')
+		{
+		if(polje[i]!='A' && polje[i]!='E' && polje[i]!='I' && polje[i]!='O' && polje[i]!='U') printf("%c", toupper(polje[i]));
+		}
+	}
+	for(i=broj_slova-2; i>=0; i--)
+	{
+	if(polje[i]!='a' && polje[i]!='e' && polje[i]!='i' && polje[i]!='o' && polje[i]!='u')
+		{
+		if(polje[i]!='A' && polje[i]!='E' && polje[i]!='I' && polje[i]!='O' && polje[i]!='U') printf("%c", tolower(polje[i]));
+		}
+	}
+return 0;
+}

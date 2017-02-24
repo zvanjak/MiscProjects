@@ -1,0 +1,20 @@
+void AritSred_StdDev(float *p, int n, float *ArtSred, float *StdDev){
+
+	float suma = 0;
+	int i, nazivnik;
+	double nsuma = 0;
+
+
+
+	if (n==0) return;
+	for(i=1;i<n;i++)
+		suma += p[i];
+	*ArtSred = suma/n;
+
+	for (i = 0; i<n; i++)
+		nsuma += pow ((double)(p[i]-*ArtSred),(double)2 );
+	nazivnik = n*(n-1);
+
+	*StdDev = (float) sqrt(suma/nazivnik);
+
+}

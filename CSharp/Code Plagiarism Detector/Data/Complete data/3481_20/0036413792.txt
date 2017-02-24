@@ -1,0 +1,37 @@
+int Memoriraj(Radio& radio)
+{Stanica test[19];
+int i,brojac=0;
+for (i=0;i<7; i++)
+{
+//printf("\n");
+test[i]=radio.TraziSljedecu();
+//printf("\n %d--- %s ->", i, test[i].RDS());
+//printf("%f", test[i].Frekvencija());
+//printf("    duzina :%d", strlen(test[i].RDS()));
+if (strlen(test[i].RDS())!=0) brojac++;
+if (strlen(test[i].RDS())!=0) radio.MemorirajStanicu(test[i], brojac);
+//if (test[i].Frekvencija()==0) printf("\nKRAJ!!!");
+
+//printf("brojac=%d", brojac);
+
+
+}   
+//printf("\n GOTOVO :-)\n");
+for(i=0;i<7;i++)
+{
+test[1]=radio.Dohvati(i);    
+//printf("\n %d--- %s ->", i, test[1].RDS());
+//printf("%f", test[1].Frekvencija());
+return brojac;
+}
+
+
+    
+    
+    
+}
+
+    
+
+
+

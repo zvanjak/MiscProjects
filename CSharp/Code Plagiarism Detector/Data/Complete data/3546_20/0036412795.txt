@@ -1,0 +1,20 @@
+Stog* PrepisiRedUStog(Red *red)
+{
+   Stog pom;
+   int x;
+   while (red->SkiniIzReda(&x)) {
+      bool prost = true;
+      for (int i=2; i<x; ++i)
+         if (x%i == 0) {
+            prost = false;
+            break;
+         }
+      if (prost)
+         pom.Stavi(x);
+   }
+   
+   Stog *vrati = new Stog();
+   while (pom.Skini(&x))
+      vrati->Stavi(x);
+   return vrati;
+}

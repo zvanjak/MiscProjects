@@ -1,0 +1,20 @@
+#include <stdio.h>
+int main () {
+	int i, h1, h2;
+	scanf ("%d", &i);
+	if ((i < 16) || (i > 255))
+		printf ("Izvan intervala");
+	else {
+		h2 = i % 16;
+		i = i / 16;
+		h1 = (i %= 16);
+		if (h2 > 9) {
+			h2 += 55;
+		}	else h2 += 48;
+		if (h1 > 9) {
+			h1 += 55;
+		}	else h1 += 48;
+        printf ("%c%c", h1, h2);
+		}
+	return 0;
+}

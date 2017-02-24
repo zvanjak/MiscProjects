@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+#define MAX_CHARS_COUNT		100
+
+int main () {
+
+	char chars[MAX_CHARS_COUNT], char_tmp;
+	int i, j;
+	int chars_count = 0;
+
+	for(chars_count = 0; chars_count <= 100; chars_count++) {
+
+		scanf(" %c", &chars[chars_count]);
+		
+		if (chars[chars_count] == '.') break;
+
+	}
+	
+	
+	while (1) {
+
+		scanf("%d %d", &i, &j);
+		
+		if ((i < 1) || (i > chars_count) ||
+			(j < 1) || (j > chars_count)) {
+				break;	
+		}
+	
+		char_tmp = chars[i - 1];
+		chars[i - 1] = chars[j - 1];
+		chars[j - 1] = char_tmp;
+	
+	}
+	
+	for(i = 0; i < chars_count; i++) printf("%c ", chars[i]);
+	
+	return 0;
+
+}
+

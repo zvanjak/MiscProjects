@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<math.h>
+int main(){
+        float pi, clan, suma;
+        int n, predznak ,i;
+        scanf("%d",&n);
+        if(n<1 || n>100){
+                /*printf("n nije valjan\n");*/
+                printf ("n nije valjan");
+        }else{
+                clan = 1.0;
+                predznak = -1;
+                suma = 1.0;
+                i=2;
+                do{
+					clan = (float)predznak/(i*i);
+					suma = suma + clan;
+					predznak = -predznak;
+					i++;
+				}while(i<=n);
+
+				pi = sqrt(suma*12);
+                /*printf("pi je %.12f",pi);*/
+                printf("%.12f", pi);
+        }
+
+        return 0;
+}

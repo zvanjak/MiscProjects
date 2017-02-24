@@ -1,0 +1,34 @@
+int *napraviPolje(int *A,int Na,int a, int b,int *Nc){
+	
+	int *novopolje=NULL;
+	int i;
+	int tvrdnja=1;
+	int brojac_elem=0;
+	int br_iz_intervala;
+	
+	if(a==0||b==0){
+		*Nc=0;
+		return NULL;
+	}
+	if(a>b){
+		*Nc=0;
+		return NULL;
+	}
+	
+
+	for(i=0;i<Na;i++){	
+		for(br_iz_intervala=a;br_iz_intervala<=b;br_iz_intervala++){            
+			if((*(A+i)%br_iz_intervala)!=0)
+				tvrdnja=0;
+		}
+		if(tvrdnja==1){
+			brojac_elem++;
+			novopolje=(int *) realloc(novopolje,brojac_elem*sizeof(int));
+			*(novopolje+brojac_elem-1)=*(A+i);
+		}
+		tvrdnja=1;
+	}
+	*Nc=brojac_elem;
+
+	return novopolje;
+}

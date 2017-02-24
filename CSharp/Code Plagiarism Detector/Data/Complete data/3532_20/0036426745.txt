@@ -1,0 +1,12 @@
+Stog* noviOdNeparnih(Stog *stog){
+      Stog pomocna;
+      Stog *p=new Stog();
+      int element;
+while(stog->Skini(&element)){
+  pomocna.Stavi(element);
+  if(element%2) p->Stavi(element);}
+  
+while(pomocna.Skini(&element))
+  stog->Stavi(element);
+
+return p;}

@@ -1,0 +1,49 @@
+#include<stdio.h>
+int main()
+{
+int a,j,n;
+scanf("%d",&a);
+if(a<16||a>255)
+	printf("Izvan intervala");
+else 
+{
+	j=a/16%16;
+	if(j==10)
+		j='A';
+	else if(j==11)
+		j='B';
+	else if(j==12)
+		j='C';
+        else if(j==13)
+		j='D';
+	else if(j==14)
+		j='E';
+        else if(j==15)
+		j='F';
+	else
+		j=(char)((a/16)%16+48);
+	    
+	n=a%16;
+	if(n==10)
+		n='A';
+	else if(n==11)
+		n='B';
+        else if(n==12)
+	        n='C';
+        else if(n==13)
+		n='D';
+	else if(n==14)
+		n='E';
+        else if(n==15)
+		n='F';
+	else
+		n=(char)((a%16)+48);
+		
+	printf("%c%c",j,n);
+}
+return 0;
+}
+
+
+
+

@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main () {
+	long int broj,min,max;
+	scanf("%d",&broj);
+	min=max=broj;
+	while (((broj%4)!=0)||(broj<=0)){
+			scanf("%d",&broj);
+		if(broj<min){
+			min=broj;
+		}
+		else if(broj>max){
+			max=broj;
+		}
+	}
+	printf("%d %d",max,min);
+	return 0;
+}

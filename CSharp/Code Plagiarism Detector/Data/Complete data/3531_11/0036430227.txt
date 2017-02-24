@@ -1,0 +1,35 @@
+#include <ctype.h>
+
+void zamijeni (char * ulazni, int *broj) {
+		int a=0, b=0, c=0;
+		int maxbslova=0, maxbb=0, maxbznak=0;
+
+		while (*(ulazni+a)!=0) {
+
+			if (isdigit(*(ulazni+a))) {
+				if (*(ulazni+b-1)!='!') {
+					*(ulazni+b)='!'; 
+					b++;  
+					a++; continue;} 
+				    maxbb++;}
+
+			if (isalpha( *(ulazni+a) ) ) {
+				if (!c) {*(ulazni+b)=toupper(*(ulazni+a)); 
+				c=1; a++; b++; maxbslova++;
+				continue;}
+				*(ulazni+b)=tolower(*(ulazni+a)); 
+				maxbslova++; 
+				b++;}
+
+			if (!(isalpha( *(ulazni+a)) || isdigit(*(ulazni+a)) ) ) {
+				*(ulazni+b)='?'; 
+				maxbznak++;
+				b++;}
+			    a++;}
+
+*(ulazni+b)='\0';
+
+if (maxbslova>=maxbb && maxbslova>=maxbznak) *broj=maxbslova;
+if (maxbb>=maxbslova && maxbb>=maxbznak) *broj=maxbb;
+if (maxbznak>=maxbslova && maxbznak>=maxbb) *broj=maxbznak;
+}

@@ -1,0 +1,9 @@
+void staviNaDno (Stog *stog, int broj)
+{ Stog pomocni;
+ int elem;
+ while (stog->Skini(&elem))
+	 pomocni.Stavi(elem);
+ stog->Stavi(broj);
+ while (pomocni.Skini(&elem))
+	stog->Stavi(elem);
+}

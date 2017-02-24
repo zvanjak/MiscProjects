@@ -1,0 +1,95 @@
+typedef struct {
+        char ime [20 + 1];
+        char prezime [30 + 1];
+        char jmbag [10 + 1];
+        int ocjena;
+} tip;
+
+typedef struct n {
+        tip element;
+        struct n *sljed;
+} atom;
+
+int dodaj (atom **glavap, tip element)
+{
+  atom *novi;
+  
+  if ((novi = (atom *) malloc(sizeof(atom))) == NULL) return 0;
+  
+  strcpy ((novi->element).ime, element.ime);
+  strcpy ((novi->element).prezime, element.prezime);
+  strcpy ((novi->element).jmbag, element.jmbag);
+  (novi->element).ocjena = element.ocjena;
+  
+  novi->sljed = *glavap;
+  *glavap = novi;
+  
+  return 1;
+}
+
+int brojElementa (atom *glava)
+{
+  atom *pom; int BrElem = 0;
+  for (pom = glava; pom != NULL; pom = pom->sljed) BrElem++;
+  
+  return BrElem;
+}
+
+int maksOcjena (atom *glava)
+{
+  atom *pom; int maks;
+  
+  if (glava == NULL) return -1;
+  
+  maks = (glava->element).ocjena;
+  for (pom = glava; pom != NULL; pom = pom->sljed) 
+      if ((pom->element).ocjena > maks) maks = (pom->element).ocjena;
+  
+  return maks;
+}
+
+float prosjOcjena (atom *glava)
+{
+  atom *pom; int suma = 0; int broj = 0;
+  
+  if (glava == NULL) return -1;
+  
+  for (pom = glava; pom != NULL; pom = pom->sljed) {
+      broj++; suma += (pom->element).ocjena;
+  }
+  
+  return ((float) suma / broj);
+
+}
+
+int izbaciImePocinjeS (atom **glavap, char *imePocetak)
+{
+ atom *pom, *ppom; int broj = 0;
+ 
+ for (pom = *glavap; pom != NULL; ) {
+ 
+     if ((strncmp ((pom->element).ime, imePocetak, strlen (imePocetak)) == 0) &&
+         (strlen ((pom->element).ime) >= strlen (imePocetak))) {
+         
+         if (pom == *glavap) {
+               ppom = (*glavap)->sljed;
+               free (*glavap);
+		       *glavap = ppom;
+		       pom = ppom;
+		       broj++;
+         }
+         
+          else {		   
+		       for (ppom = *glavap; ppom->sljed != pom; ppom = ppom->sljed);
+		       ppom->sljed = pom->sljed;
+		       free (pom);
+		       pom = ppom->sljed;
+		       broj++;
+          }
+     }
+     
+     else pom = pom->sljed;
+ }
+
+ return broj;
+}

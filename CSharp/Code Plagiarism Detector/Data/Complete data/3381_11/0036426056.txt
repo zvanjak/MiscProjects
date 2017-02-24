@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main ()
+{
+	/* Zadatak se inače treba provjeravati pomoću formule za udaljenost stranica,
+	a ne dijagonalama jer se zaboravlja na deltoid čije su dijagonale također okomite
+	*/
+	int x1,x2,x3,x4,y1,y2,y3,y4;
+	int k1,k2,b1,n1,b2,n2,r;
+		/* učitavanje koordinata točaka */
+	scanf ("%d %d %d %d %d %d %d %d", &x1, &y1, &x2, &y2, &x3, &y3, &x4, &y4);
+	b1=y3-y1;
+	b2=y4-y2;
+	n1=x3-x1;
+	n2=x4-x2;
+	if((n1==0)||(n2==0)){
+		printf("K\n");
+	}
+	else {
+		k1=b1/n1;
+		k2=b2/n2;
+		r=k1*k2;
+			if(r==-1){
+				printf("R\n");
+			}
+			else {
+				printf("C\n");
+			}
+	}
+
+	return 0;
+
+}

@@ -1,0 +1,23 @@
+int SplitToSentences (char * inputField, char * outputField)
+{
+	int i,n,brojac=0,j;
+	strcpy(outputField, inputField);
+    n=strlen(outputField);
+	for(i=0;i<n;i++)
+	{
+		if(strchr(outputField,',')!=NULL)
+		{
+			for(j=0;j<n;j++)
+			{
+				if(isalpha(*(strchr(outputField,',')+j)))
+				{
+					*(strchr(outputField,',')+j)=toupper(*(strchr(outputField,',')+j));
+					break;
+				}
+			}
+			*(strchr(outputField,','))='.';
+			brojac++;
+		}
+	}
+	return brojac;
+}

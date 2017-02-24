@@ -1,0 +1,22 @@
+int Memoriraj (Radio& radio){
+
+	int i = 1;
+	Stanica s, prva;
+	
+	prva = radio.TraziSljedecu();
+    s = prva;
+
+	do {
+	
+		if (s.RDS()[0] != 0)
+		{
+			radio.MemorirajStanicu(s, i);
+			i++;
+		}
+		s = radio.TraziSljedecu();
+	} 
+	
+	while ((prva != s) && (i != 7));
+
+	return i - 1;
+}

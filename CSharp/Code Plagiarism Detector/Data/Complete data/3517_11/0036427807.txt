@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+	double z, y[50];
+	float x[50];
+	int i=-1,j;
+
+
+scanf("%lf",&z);
+do
+{
+	i++;
+	scanf("%f", &x[i]);
+}while(x[i]!=0.0);
+
+
+for(j=0;j<=i-1;j++)
+{
+y[j]=((pow((x[j]+z),sinh(x[j]+z))*cosh((x[j]+z)*(x[j]+z)))-(pow(x[j],sinh(x[j]))*cosh(x[j]*x[j])))/z;
+
+}
+for(j=0;j<=i-1;j++)
+{
+	printf("%.2lf ",atan(y[j]));
+
+
+}
+return(0);
+} 
+

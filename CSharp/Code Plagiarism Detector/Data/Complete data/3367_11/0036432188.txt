@@ -1,0 +1,25 @@
+#include <stdio.h>
+int main(){
+char a,b;
+int rez,c,d;
+rez=0;
+scanf("%c %c",&a,&b);
+	
+	if ((a>='A')&&(a<='F')){
+	  c=a-55;
+	}
+	if ((b>='A')&&(b<='F')){
+	  d=b-55;
+	}
+
+	if ((a>='0')&&(a<='9')){
+	  c=a-48;
+	}
+	if ((b>='0')&&(b<='9')){
+	  d=b-48;
+	}
+
+	rez=c*16+d;
+printf("%d",rez);
+return 0;
+}

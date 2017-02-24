@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+char *SamoSamoglasnici(char *ulaz_niz){
+	
+	char *samoglasnici;
+	int i=0, n=0; 
+	
+	while(ulaz_niz[i]!=0){
+		if(ulaz_niz[i] == 'a' || ulaz_niz[i] == 'A' || ulaz_niz[i] == 'E' || ulaz_niz[i] == 'e' || ulaz_niz[i] == 'I' || ulaz_niz[i] == 'i' || ulaz_niz[i] == 'O' || ulaz_niz[i] == 'o' || ulaz_niz[i] == 'U' || ulaz_niz[i] == 'u')
+			n++;
+		i++;
+	}
+
+	samoglasnici = (char *) malloc (sizeof(char)*(n + 1));
+	
+	i=0;
+	n=0;
+	
+	while (ulaz_niz[i]!=0){
+		if(ulaz_niz[i] == 'a' || ulaz_niz[i] == 'A' || ulaz_niz[i] == 'E' || ulaz_niz[i] == 'e' || ulaz_niz[i] == 'I' || ulaz_niz[i] == 'i' || ulaz_niz[i] == 'O' || ulaz_niz[i] == 'o' || ulaz_niz[i] == 'U' || ulaz_niz[i] == 'u') {
+			samoglasnici[n] = ulaz_niz[i];
+			n++;
+		}
+		i++;
+	}
+	samoglasnici[n] = '\0';
+	
+	return samoglasnici;
+}

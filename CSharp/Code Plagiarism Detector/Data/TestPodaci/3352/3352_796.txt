@@ -1,0 +1,12 @@
+int veci_od(FILE *f, int n)
+{
+        struct natjecatelj temp;
+        int i=0;
+        while(!EOF)
+        {
+                fread(&temp , sizeof(struct natjecatelj),1,f);
+                if(temp.redni_br>0&&temp.bodovi>=n)
+                        i++;
+        }
+        return i;
+}

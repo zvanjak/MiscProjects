@@ -1,0 +1,26 @@
+#include<stdio.h>
+
+int main()
+{
+
+ char a,b;
+ int x,y;
+
+  scanf("%c %c",&a,&b);
+ 
+   if(a>=48 && a<=57)
+      x=a-48;
+
+   if(a>=65 &&a<=70)
+      x=a-55;
+
+   if(b>=48 &&b<=57)
+      y=b-48;
+
+   if(b>=65 && b<=70)
+      y=b-55;
+
+  printf("%d",x*16+y);
+
+ return 0;
+}

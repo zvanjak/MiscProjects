@@ -1,0 +1,15 @@
+void obrni(zapis **glava){
+ if(*glava==0) return;
+ zapis *a,
+       *be,
+       *ce;
+ a=0;
+ be=*glava;
+  while(be){
+  ce=be->sljed;
+  be->sljed=a;
+  a=be;
+  be=ce;
+ }
+ *glava=a;
+}

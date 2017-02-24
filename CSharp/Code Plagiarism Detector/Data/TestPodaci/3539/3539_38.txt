@@ -1,0 +1,29 @@
+float prosjek (zapis *glava)
+{
+	int n;
+	float s, prosjek;
+	zapis *list;
+	list = glava;
+
+	n = 0; s = 0;
+	if (list == NULL)
+		return 0;
+	else
+	{
+		do
+		{
+			s += list->pros;
+			n++;
+			list = list->sljed;
+		} while (list != 0);
+		prosjek = (float)(s)/n;
+		list = glava;
+		do
+		{
+			if (list->pros < prosjek)
+				list->pros = 0.0;
+			list = list->sljed;
+		} while (list != 0);
+		return prosjek;
+	}
+}

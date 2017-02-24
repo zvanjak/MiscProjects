@@ -1,0 +1,20 @@
+#include<stdio.h>
+int main()
+{
+	float S=0;
+	int i,n;
+	scanf("%d",&n);
+	if(n>0&&n<1001)
+	{
+		for(i=2;;i++)
+		{
+			S=S+1./((i-1)*(i+1));
+			if(S>=(3./4-0.0002))
+				break;
+		}
+		printf("%.12f",S);
+	}
+	else
+		printf("n nije valjan");
+	return(0);
+}

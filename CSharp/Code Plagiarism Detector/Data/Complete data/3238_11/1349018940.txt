@@ -1,0 +1,20 @@
+#include<stdio.h>
+int main()
+{
+    int i,n;
+    float suma=0,pi;
+    scanf("%d",&n);
+    if(n<1||n>25){
+                  printf("n nije valjan");
+                  }
+    else{
+         for(i=1;i<=n;i++)
+         {
+                          suma+=1/(int)pow(i,8);
+         }
+         pi=sqrt(sqrt(sqrt(suma*9450)));
+         printf("%13.12f",pi);
+         }
+    
+    return 0;
+}

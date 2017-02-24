@@ -1,0 +1,27 @@
+#include <stdio.h>
+	int main()
+	{
+	int t=0,a,k,br1=0,z,s=0,d[1000] ,i=0  ;
+	do{ scanf ("%d",&a);
+     if ( a !=0)                                                                        
+	{   if ( a>0)
+	{ a=a;}
+	else 
+	{ a=-a;}
+	 d[i]=a;
+		 i++ ;
+	}}
+	while ( a!=0) ;
+		k=i;
+		for (t=0;t<k ;t++)
+			{do
+		{ ++br1;
+		  z= d[t]%10;
+          d[t]=d[t]/10;
+		  s=s+z;}
+		while(d[t]!=0);}
+
+
+			printf("%d %d",br1, s);
+
+			return 0;}

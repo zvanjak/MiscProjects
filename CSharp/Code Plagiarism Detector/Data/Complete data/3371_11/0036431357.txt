@@ -1,0 +1,59 @@
+#include <stdio.h>
+
+int main ( ) {
+	int a,k,b,c,d,z;
+	scanf("%i",&k);
+	if (k>=1000 && k<=9999)
+		a=k;
+		if ((a%10000)/1000==0) a=a+1000;
+		else a=a;
+		if ((a%10000)/1000==2) a=a+1000;
+		else a=a;
+		if ((a%10000)/1000==4) a=a+1000;
+		else a=a;
+		if ((a%10000)/1000==6) a=a+1000;
+		else a=a;
+		if ((a%10000)/1000==8) a=a+1000;
+		else a=a;
+
+		b=k;
+		if ((b%1000)/100==0) b=b+100;
+		else b=b;
+		if ((b%1000)/100==2)b=b+100;
+		else b=b;
+		if ((b%1000)/100==4)b=b+100;
+		else b=b;
+		if ((b%1000)/100==6)b=b+100;
+		else b=b;
+		if ((b%1000)/100==8)b=b+100;
+		else b=b;
+		
+		c=k;
+		if ((c%100)/10==2) c=c+10;
+		else c=c;
+		if ((c%100)/10==4) c=c+10;
+		else c=c;
+		if ((c%100)/10==6) c=c+10;
+		else c=c;
+		if ((c%100)/10==8) c=c+10;
+		else c=c;
+		if ((c%100)/10==0) c=c+10;
+		else c=c;
+		d=k%10;
+		if ((d%10)==0) d=d+1;
+		else d=d;
+		if ((d%10)==2) d=d+1;
+		else d=d;
+		if ((d%10)==4) d=d+1;
+		else d=d;
+		if ((d%10)==6) d=d+1;
+		else d=d;
+		if ((d%10)==8) d=d+1;
+		else d=d;
+			
+
+		z=((a)-(a%1000))+((b%1000)-(b%100))+((c%100)-(c%10))+((d%10));
+
+		printf("vrijednost broja je  %i\n",z);
+	return 0;
+}

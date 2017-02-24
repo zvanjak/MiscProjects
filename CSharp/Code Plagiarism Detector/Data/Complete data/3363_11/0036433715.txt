@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main() {
+    
+    int a,b,rez;
+    char op;
+    
+    scanf("%d %d %c",&a,&b,&op);
+    
+    if(op=='+'){
+         rez=a+b;
+         printf("%d",rez);
+         }
+    else if(op=='-'){
+         rez=a-b; 
+         printf("%d",rez);
+         }
+    else if(op=='*'){
+         rez=a*b; 
+         printf("%d",rez);
+         }
+    else if(op=='/'){
+         rez=a/b; 
+         printf("%d",rez);
+         }
+    else printf("Neispravna");
+      
+    return 0;
+    }

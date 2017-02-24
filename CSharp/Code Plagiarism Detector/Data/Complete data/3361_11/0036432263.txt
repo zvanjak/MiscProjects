@@ -1,0 +1,26 @@
+#include <stdio.h> 
+int main () 
+{ 
+int broj; 
+int Ldio; 
+int Ddio; 
+int x, y, z, d; 
+int suma; 
+int ostatak; 
+scanf("%d", &broj); 
+x=broj/1000; 
+y=broj%1000/100; 
+z=broj%100/10; 
+d=broj%10; 
+Ldio=10*x+y; 
+Ddio=10*z+d; 
+suma=Ldio+Ddio; 
+ostatak=suma%Ldio; 
+if (ostatak>0) 
+printf("Nije"); 
+else 
+printf("Jest"); 
+return 0; 
+
+
+}

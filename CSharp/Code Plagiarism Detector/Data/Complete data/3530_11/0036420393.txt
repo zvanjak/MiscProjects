@@ -1,0 +1,103 @@
+void izbaciUljeza (char * ulazni) {
+	int br=0;
+	int tbr = 0;
+	int vslova=0;
+	int mslova=0;
+	int i;int j=0;int k=0;
+	for (i=0;ulazni[i]!='\0';i++){
+		if (isdigit(ulazni[i])) ++br;
+		if (isupper(ulazni[i])) ++vslova;
+		if (islower(ulazni[i])) ++mslova;
+	}//najmanje znamenaka
+	if ((br<vslova)&&((br<mslova))){
+/*
+		for (i=0;ulazni[i]!='\0';i++){
+			j=i;
+			if (isdigit(ulazni[j])){
+
+				do{ 
+					if (ulazni[j+1]=='\0'){
+						ulazni[j]='\0';
+						break;
+					}
+					else {
+						ulazni[j]=ulazni[j+1];
+					}
+				}while (ulazni[++j]!='\0');
+			}
+		}
+*/
+		tbr = 0;
+		for (i=0; ulazni[i] != '\0'; i++)
+		{
+			if (isdigit(ulazni[i]))
+				tbr += 1;
+			else
+				ulazni[i-tbr] = ulazni[i];
+		}
+		ulazni[i-tbr] = '\0';
+	}
+	else if ((mslova<vslova)&&(mslova<br)){
+		for (i=0;ulazni[i]!='\0';i++){
+			if (islower(ulazni[i])){
+				ulazni[i]= toupper (ulazni[i]);
+			}
+		}
+	}
+	
+	else if ((vslova<mslova)&&(vslova<br)){
+		for (i=0;ulazni[i]!='\0';i++){
+			if (isupper(ulazni[i])){
+				ulazni[i]= tolower (ulazni[i]);
+			}
+		}
+	}
+	else {
+/*		
+		for (i=0;ulazni[i]!='\0';i++){
+			j=i;
+			if (isdigit(ulazni[j])){
+				do{ 
+					if (ulazni[j+1]=='\0'){
+						ulazni[j]='\0';
+						break;
+					}
+					else {
+						ulazni[j]=ulazni[j+1];
+					}
+				}while (ulazni[++j]!='\0');
+			}
+		}
+
+		for (i=0; ulazni[i]!='\0'; i++)
+			ulazni[i] = tolower(ulazni[i]);
+*/
+
+		tbr = 0;
+		for (i=0; ulazni[i] != '\0'; i++)
+		{
+			if (isdigit(ulazni[i]))
+				tbr += 1;
+			else
+				ulazni[i-tbr] = tolower(ulazni[i]);
+		}
+		ulazni[i-tbr] = '\0';
+/*	
+		for (i=1;ulazni[i+1]!='\0';i++){
+				k=i;
+			
+			if (islower(ulazni[i])){
+				ulazni[i]= toupper (ulazni[i]);
+			}
+		}
+*/
+
+		ulazni[0]=toupper (ulazni[0]);
+		ulazni[i-tbr-1]=toupper (ulazni[i-tbr-1]);
+	}
+
+
+}
+
+
+

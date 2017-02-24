@@ -1,0 +1,20 @@
+#include <stdio.h>
+int main()
+{
+  unsigned int n=0,i=0;
+  double pi=0;
+  scanf("%d",&n);
+  if(n<1 || n>400)
+  {
+    printf("n nije valjan\n");
+    return 0;
+  }
+  for (i=1;i<(n+1);i++)
+    pi+=1./((4*i-1)*(4*i+1));
+
+  pi*=8;
+  pi-=4;
+  pi=-pi;
+  printf("%.8f\n",pi);
+  return 0;
+}

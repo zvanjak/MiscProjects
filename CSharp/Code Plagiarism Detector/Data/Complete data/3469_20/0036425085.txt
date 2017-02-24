@@ -1,0 +1,3 @@
+double fun1(Trokut t, Pravokutnik p, Krug k){
+	return (t.Povrsina() > p.Povrsina()) ? (t.Povrsina() > k.Povrsina()) ? t.Povrsina() : k.Povrsina() : (p.Povrsina() > k.Povrsina()) ? p.Povrsina(): k.Povrsina() ;
+}

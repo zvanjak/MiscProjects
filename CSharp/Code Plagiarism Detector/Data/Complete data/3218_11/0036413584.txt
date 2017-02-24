@@ -1,0 +1,21 @@
+#include<stdio.h>
+void main(){
+int a, b, max, i, j;
+max=0;
+do{
+	j=0;
+	scanf ("%d",&a);
+	for (i=2;i<(a/2);i++){
+		if (a%i==0)
+		j+=1;
+		else b=a;
+		}
+	if (b > max)
+		if (j==0)
+		max=b;
+	} while (a>2);
+if (max==0)
+printf("0");
+else printf ("%d", max);
+return;
+}

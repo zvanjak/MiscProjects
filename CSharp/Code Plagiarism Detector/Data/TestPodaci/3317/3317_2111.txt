@@ -1,0 +1,1 @@
+void brisi(FILE *f, int redni_br){}

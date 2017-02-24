@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <string.h>
+
+void spoji(char *ime, char *prezime, char *JMBAG, char *izlazni) {
+	int br;
+	
+	*izlazni = '\0';
+
+	while (*prezime) {
+		if (*prezime != ' ') strncat(izlazni, prezime, 1);
+		prezime++;
+	}
+	strcat(izlazni, ", ");
+
+	while (*ime) {
+		if (*ime != ' ') strncat(izlazni, ime, 1);
+		ime++;
+	}
+	strcat(izlazni, ": ");
+	
+	
+	while (*JMBAG == ' ' && *JMBAG) JMBAG++;
+	
+	
+	br = 0;
+	while (*(JMBAG + br) != ' ' && *(JMBAG + br)) br++;
+	
+	if (br < 6) {
+		while (br < 6) {
+			strcat(izlazni, "0");
+			br++;
+		}
+	} else {
+		JMBAG += br - 6;
+	}
+	
+	while (*JMBAG) {
+		if (*JMBAG != ' ') strncat(izlazni, JMBAG, 1);
+		JMBAG++;
+	}
+	
+	strcat(izlazni, "\0");
+
+	return;
+}

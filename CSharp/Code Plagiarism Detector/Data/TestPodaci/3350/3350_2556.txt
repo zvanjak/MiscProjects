@@ -1,0 +1,20 @@
+#include<stdio.h>
+int najbolji(FILE *f) {
+struct natjecatelj{
+	int redni_br;
+	char prezime[20+1];
+	int bodovi;
+}nat;
+        int max=0;
+	int rbr;
+	fseek(f,0L,SEEK_SET);
+	while(fread(&nat,sizeof(nat),1,f)==1) {
+	if(nat.redni_br!=0) {
+		if(nat.bodovi>max) {
+		max=nat.bodovi;
+		rbr=nat.redni_br;
+		}		
+	}
+}
+return rbr;
+}

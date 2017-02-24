@@ -1,0 +1,46 @@
+#include <stdio.h>
+
+int main(){
+  
+  char r[20], x;
+  int i, k=0;
+  
+  for(i=0; i<20; i++){
+      scanf("%c", &x);
+      if(x>='A' && x<='Z' || x>='a' && x<='z'){
+         getchar();
+         r[i]=x;
+         k++;
+      }            
+      else 
+          break;           
+  }       
+      
+  if(r[0]<'A' || r[0]>'Z' && r[0]<'a' || r[0]>'z')
+      printf("%d", -1);
+  else{
+      for(i=0; i<k; i++){
+          if(r[i]!='A' && r[i]!='a' && r[i]!='E' && r[i]!='e' && r[i]!='I' 
+             && r[i]!='i' && r[i]!='O' && r[i]!='o' && r[i]!='U' && r[i]!='u'){
+                 if(r[i]>='a' && r[i]<='z')
+                    printf("%c", r[i] - ('a' - 'A'));
+                 else 
+                    printf("%c", r[i]);
+          }
+          else continue;
+      }        
+         
+      for(i=k-1; i>=0; i--){
+          if(r[i]!='A' && r[i]!='a' && r[i]!='E' && r[i]!='e' && r[i]!='I' 
+             && r[i]!='i' && r[i]!='O' && r[i]!='o' && r[i]!='U' && r[i]!='u'){
+                 if(r[i]>='A' && r[i]<='Z')
+                     printf("%c", r[i] + ('a' - 'A'));
+                 else 
+                     printf("%c", r[i]);
+          }
+          else continue;
+      }
+  }
+         
+  return 0;
+}

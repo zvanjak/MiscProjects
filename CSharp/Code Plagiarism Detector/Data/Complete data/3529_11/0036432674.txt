@@ -1,0 +1,20 @@
+void spoji(char *ime, char *prezime, char *JMBAG, char *izlazni) {
+ 
+int i,n;
+char x;
+
+strcat(izlazni,prezime);
+strcat(izlazni,',');
+strcat(izlazni,' ');
+strcat(izlazni,ime);
+strcat(izlazni,':');
+strcat(izlazni,' ');
+
+for(i=0;i<strlen(JMBAG);i++) n=i;
+for(i=0;i<strlen(JMBAG);i++) {
+	if isdigit(JMBAG[n+i-5]) then x=JMBAG[n+i-5]
+        else x='0';
+strcat(izlazni,x)
+}
+return;
+}

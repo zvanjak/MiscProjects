@@ -1,0 +1,18 @@
+  #include <stdio.h>
+int main (){
+    int n, t = 0 ;
+    double pi, s=0., m=0. ;
+    scanf ("%d", &n);
+        if ( (n < 1) || (n > 400)) printf ("n nije valjan");
+        else { while (t < n) { 
+            t= t + 1;
+            m=(4*t-1)*( 4*t+1);
+            s= s + 1./m ;}
+        
+        pi = -1*(8*s - 4);
+            printf ("%1.8f", pi);}
+        return 0;
+}
+
+
+ 

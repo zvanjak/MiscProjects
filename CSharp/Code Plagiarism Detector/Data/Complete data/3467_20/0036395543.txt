@@ -1,0 +1,38 @@
+int igra (Igrac& igrac, Automat& aut, int max, int *broj)
+{
+  int pocetnoStanje = igrac.TrenutnoStanje (); //pocetni saldo igraca
+
+  aut.UplatiIznos (igrac.TrenutnoStanje ()); //na automat uplacujemo sav novac igraca
+  if (igrac.SkiniSRacuna (igrac.TrenutnoStanje ()) == false) //skidamo taj novac sa igracevog racuna
+  {
+    *broj = 0;
+    return 0;
+  }
+
+  *broj = 0;
+  while (*broj < max) //sve dok je broj odigranih partija < max broja partija koji se smije odigrati
+  {
+    if (aut.TrenutnoStanje () == 0) //ako na automatu nema novca provjeri da li igrac ima jos novca - ako nema prekini igru, ako ima uplati na automat i skini s njegovog racuna
+    {
+      if (igrac.TrenutnoStanje () == 0)
+        break;
+      else
+      {
+        aut.UplatiIznos (igrac.TrenutnoStanje ());
+        if (igrac.SkiniSRacuna (igrac.TrenutnoStanje ()) == false)
+        {
+          *broj = 0;
+          return 0;
+        }
+      }
+    }
+
+    igrac.UplatiNaRacun (aut.Zavrti ()); //odigraj igru i uplati rezultat na igracev racun
+
+    (*broj)++; //povecaj broj odigranih partija
+  }
+
+  igrac.UplatiNaRacun (aut.PodigniPreostalo ()); //uplati na igracev racun preostali novac iz automata (ako ga ima)
+
+  return igrac.TrenutnoStanje () - pocetnoStanje; //vrati krajnje stanje racuna - pocetno stanje - znaci gubitak/dobitak
+}

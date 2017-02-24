@@ -1,0 +1,20 @@
+int main () {
+	int a;
+    int z1, z2, z3, z4;
+	int broj1;
+
+	scanf("%d", &a);
+
+		if (a>999 && a < 10000){
+			z1= a / 1000;
+			z2= (a / 100) % 10;
+			z3= a / 10 % 10;
+			z4=a % 10;
+
+			broj1 = z4*1000 + z3 * 100 + z2 * 10 + z1;
+
+			printf("%d", broj1);
+	}
+
+		return 0;
+	}

@@ -1,0 +1,22 @@
+int najbolji(FILE *f)
+{
+	int broj=0,max=0,i=0;
+	struct natjecatelj 
+		{
+			int redni_br;
+			char prezime[20+1];
+			int bodovi;
+		}ucenik;
+	fseek(f, 0, SEEK_SET);
+	while (fread(&ucenik, sizeof(ucenik), 1, f)==1)
+		{
+			i++;
+			fseek(f, sizeof(ucenik)*i,SEEK_SET); 
+			if ((ucenik.bodovi >= max) && (ucenik.redni_br != 0))
+			{
+				max=ucenik.bodovi;
+				broj=ucenik.redni_br;
+			}
+		}
+	return broj;
+}

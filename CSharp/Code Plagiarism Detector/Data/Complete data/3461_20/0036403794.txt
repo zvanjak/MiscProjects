@@ -1,0 +1,38 @@
+ int JelSeSijeku(Kruznica &k1, Kruznica &k2){
+ double ex1,ey1,R1,ex2,ey2,R2, daljina,Radij;
+ ex1=k1.GetCenterX();
+ ex2=k2.GetCenterX();
+ ey1=k1.GetCenterY();
+ ey2=k2.GetCenterY();
+ R1=k1.GetRadius();
+ R2=k2.GetRadius();
+
+ daljina=sqrt((ex1-ex2)*(ex1-ex2)+(ey1-ey2)*(ey1-ey2));
+ Radij=(R1+R2);
+ if ((R1==R2)&&(0==daljina)) return 3; 
+
+ if ((0==R1)||(0==R2)){
+  if ((R1==daljina) || (R2==daljina)) return 1;
+  return 0;
+ }
+
+ if ((daljina < R1) && (daljina < R2)) {
+  if (((R1+ daljina)>R2) && ((R2+ daljina)>R1)) return 2;
+  if (((R1+ daljina)==R2)||((R2+ daljina)==R1)) return 1;
+  return 0;
+ }
+ if (daljina < R1) {
+  if ((R2+daljina)==R1) return 1;
+  if ((R2+daljina)>R1) return 2;
+  return 0;
+ }
+ if (daljina < R2) {
+  if ((R1+daljina)==R2) return 1;
+  if ((R1+daljina)>R2) return 2;
+  return 0;
+ }
+ if (Radij<daljina) return 0; 
+ if (Radij==daljina) return 1;
+ if (Radij>daljina) return 2;
+ return 0;
+}

@@ -1,0 +1,18 @@
+#include <stdio.h>
+int main() {
+int a,b,d;
+char c;
+scanf("%d %d %c",&a,&b,&c);
+if !(c==37 || c==42 || c==43 || c==45 || c==47) 
+ {printf("Neispravna");
+ } else {
+         if (c==37) {d=a%b; printf("%d",d);}
+         if (c==42) {d=a*b; printf("%d",d);}
+         if (c==43) {d=a+b; printf("%d",d);}
+         if (c==45) {d=a-b; printf("%d",d);}
+         if (c==47) {d=a/b; printf("%d",d(;}
+        }
+return 0;
+  }
+
+      

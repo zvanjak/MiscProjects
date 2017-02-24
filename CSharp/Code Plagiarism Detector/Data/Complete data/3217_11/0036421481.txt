@@ -1,0 +1,23 @@
+#include <stdio.h>
+#define MAX 20
+void main()
+  {
+     int znamBr[MAX] = {0};
+     int i=0, a,z=0,Br;
+     do {
+          scanf("%d",&znamBr[i]);
+          a=znamBr[i];
+          ++i;
+        }
+     while ((a>=0) && (i<20));
+     Br=i-1;
+     for (i=0;i<=Br;i++)   {
+             if(i!=0 && i!=Br)
+               printf(" ");
+             while(znamBr[i]>0) {
+                   z=znamBr[i]%10;
+                   znamBr[i]=znamBr[i]/10;
+                   printf("%d",z);
+                 }
+             }
+  }

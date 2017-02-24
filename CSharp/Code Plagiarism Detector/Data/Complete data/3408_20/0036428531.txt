@@ -1,0 +1,31 @@
+# include <stdio.h>
+# include <string.h>
+char *Spoji(char *niz1,char *niz2){
+	int i;
+	char x,y;
+	char *polja;
+	x=strlen(niz1);
+	y=strlen(niz2);
+;
+	if (x>y){
+		for(i=0;i<y;i++){
+if(i%2==0)
+polja[i]=niz1[i];
+else{polja[i]=niz2[i];}
+for(i=y;i<x;i++)
+polja[i]=niz1[i];}
+else if(x=y){
+for(i=0;i<y;i++){
+if(i%2==0)
+polja[i]=niz1[i];
+else polja[i]=niz2[i]}
+}	
+else{for(i=0;i<x;i++){
+if(i%2==0)
+poja[i]=niz1[i];
+else
+polja[i]=niz2[i];
+for(i=x;i<y;i++)
+polja[i]=niz2[i];}}		
+strcat(polja,"\0");
+return polja;}

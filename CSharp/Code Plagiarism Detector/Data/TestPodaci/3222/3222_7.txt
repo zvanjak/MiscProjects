@@ -1,0 +1,51 @@
+#include <stdio.h>
+
+	
+int main()
+{
+	
+	int n, i, k, j, dod;
+	unsigned int br=0;
+	//printf("\n");
+	for(i=0; i<40; i++)
+	{
+	scanf ("%d", &n);
+	if(n<0)
+	{
+		i--;
+		continue;
+	}
+		if (i==39)
+		{
+			printf("\n %d, %d", i+1, br);
+			break;
+		}
+	dod=n;
+	k=1;
+	do
+	{
+		if (dod/10==0)
+			break;
+		dod/=10;
+    	k++;
+		
+	}
+	while(1);
+	
+	for(j=0; j<k; j++)
+	{
+		br*=10;
+	}
+	br+=n;
+	if(i>0)
+		printf(" %d", br);
+	if (br%13==0)
+	{
+		printf(" %d ", i+1);
+		break;
+	}
+	
+	}
+	
+return 0;
+}

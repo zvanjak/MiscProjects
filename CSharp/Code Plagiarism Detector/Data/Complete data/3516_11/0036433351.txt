@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <math.h>
+#define e 2.7182818284
+int main ()
+{
+	double dx,fx[50];
+	float x[50];
+	int i=0;
+
+	scanf ("%lf",&dx);
+	scanf("%f",&x[i]);
+	while (x[i]!=0.0)
+	{
+		i++;
+		scanf("%f",&x[i]);
+		
+	}
+	i=0;
+	while (x[i]!=0.0)
+	{
+		fx[i]=(double) atan((pow(cos(1/e),sin(pow(e,sin(x[i]+dx+(1/e)))))-pow(cos(1/e),sin(pow(e,sin(x[i]+(1/e))))))/dx);
+		printf ("%.2lf ",fx[i]);
+	i++;
+	}
+	
+	return 0;
+}

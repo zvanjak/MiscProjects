@@ -1,0 +1,26 @@
+#include<stdio.h>
+int main()
+{
+	int n,z,p=1,pn;
+	scanf("%d",&n);
+	if(n>0)
+	{
+		pn=n;
+	while(pn>0)
+	{
+		p=p*10;
+		pn=pn/10;
+	}
+    p=p/10;
+	printf("%d ",n/p);
+	while(p>0)
+	{
+		p=p/10;
+		z=(n/p)%10;
+		printf("%d ",z);
+	}
+	}
+	else
+	printf("n nije pozitivan");
+	return 0;
+}

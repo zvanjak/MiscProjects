@@ -1,0 +1,24 @@
+int NadjiRubni(int *mat, int m, int n, int maxstup, int *max, int *min)
+{	
+	int i;
+	*max=*mat;
+	*min=*mat;
+
+	for(i=0; i<n; i++)
+		{	if (*max<mat[i]) *max=mat[i];
+			if (*min>mat[i]) *min=mat[i];
+		}
+	for(i=0; i<n; i++)
+		{	if (*max<mat[(m-1)*maxstup+i]) *max=mat[(m-1)*maxstup+i];
+			if (*min>mat[(m-1)*maxstup+i]) *min=mat[(m-1)*maxstup+i];
+		}
+	for(i=0; i<m; i++)
+		{	if (*max<mat[i*maxstup]) *max=mat[i*maxstup];
+			if (*min>mat[i*maxstup]) *min=mat[i*maxstup];
+		}
+	for(i=0; i<m; i++)
+		{	if (*max<mat[i*maxstup+(n-1)]) *max=mat[i*maxstup+(n-1)];
+			if (*min>mat[i*maxstup+(n-1)]) *min=mat[i*maxstup+(n-1)];
+		}
+	return 1;
+}

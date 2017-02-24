@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <math.h>
+int main () {
+	long int broj,broj1,broj2,broj3,broj4,brojznam,j,n,brojbrojeva=0,x=0;
+	long int polje[50000]={0};
+	do{ 
+		broj4=0;
+		broj3=0;
+		broj2=0;
+		broj1=0;
+        brojznam=1;
+	    scanf("%d",&broj);
+		/*if (broj<0)*/
+                  if(broj<=0) 
+			break;
+        ++brojbrojeva;
+		broj1=broj;
+        while ((broj2=(broj1/10))>0){
+			broj1=broj2;
+            ++brojznam;
+		}
+		n=brojznam-1;
+		for(j=0; j<brojznam; j++) {
+			broj3=((broj/(long int)(pow(10,j))%10));
+			broj4=broj4+(broj3*(long int)pow(10,n));
+		    --n;
+            }
+            polje[brojbrojeva-1]=broj4;     
+	}
+	while(broj>=0);
+	for (x=0; x<brojbrojeva;x++)
+	printf ("%d ",polje[x]);
+	return 0;
+}

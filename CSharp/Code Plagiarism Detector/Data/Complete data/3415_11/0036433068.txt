@@ -1,0 +1,22 @@
+#include <stdio.h>
+int main(){
+	int a,b,suma,sumau=0,i=0,j;
+	char c;
+	char niz[20];
+	do{
+		suma=0;
+		scanf("%d %d %c",&a,&b,&c);
+		if (c=='+') suma=a+b;
+		else if (c=='-') suma=a-b;
+		else if (c=='*') suma=a*b;
+		else if (c=='/') suma=a/b;
+		else if (c=='%') suma=a%b;
+		sumau+=suma;
+        if (c=='+' || c=='-' || c=='*' || c=='/' || c=='%') niz[i]=c;
+		i++;}
+	while (c=='+' || c=='-' || c=='*' || c=='/' || c=='%');
+	printf("%d ",sumau);
+	for (j=0;j<i-1;j++)
+		printf("%c ",niz[j]);
+	return 0;
+	}

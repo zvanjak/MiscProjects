@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main (){
+int mr,i,j,pomoc,n, suma, brojac;
+int x[10][10];
+
+do {
+scanf("%d", &mr);
+}while ((mr<1)||(mr>10));
+
+for (i=0; i<mr; i++) {
+	for (j=0; j<mr; j++){
+		scanf("%d", &x[i][j]);}}
+
+brojac=0;
+
+while (1){
+scanf("%d %d", &i,&j);
+
+if (((i>=0)&&(i<=(mr-1)))&&((j>=0)&&(j<=(mr-1)))) {
+	pomoc= x[i] [j];
+	x[i][j]= x[j][i];
+	x[j][i]=pomoc;
+	brojac++;}
+else break;}
+
+scanf("%d", &n);  
+suma=0;
+
+if ((n>=0)&&(n<=(mr-1))){
+for (j=0; j<mr; j++){
+	suma=suma + x[n][j];}}
+else suma=-1;
+printf ("%d %d" , brojac, suma);
+return 0;
+}

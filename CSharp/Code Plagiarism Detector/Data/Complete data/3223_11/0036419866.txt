@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int min=32000,c,max=-32000;
+
+int main(int argc, char *argv[])
+{
+	for (;;)
+	{
+		scanf("%i",&c);
+		if (c < min) min=c;
+		if (c > max) max=c;
+		if (c > 0 && c%4 == 0) break;
+	}
+	printf("%i %i",min,max);
+
+  	return 0;
+}

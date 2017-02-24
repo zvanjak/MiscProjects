@@ -1,0 +1,22 @@
+int SplitToSentences(char *InputField, char *OutputField){
+int i=0;
+int velslovo=0;
+int brpromjena =0;
+while (i <strlen(InputField)){
+    if(InputField[i]==','){
+        OutputField[i]='.';
+        velslovo =1;
+        brpromjena++;
+    }
+    else if (velslovo==1 && InputField[i]>='a' && InputField[i]<='z'){
+        OutputField[i]=InputField[i]-32;
+        velslovo=0;
+    }
+    else{
+        OutputField[i]=InputField[i];
+    }
+    ++i;   
+}
+OutputField[i]=0;
+return brpromjena;
+}

@@ -1,0 +1,11 @@
+#include <stdio.h>
+int main () {
+int broj1, broj2;
+scanf("%d %d", &broj1, &broj2);
+ if ((broj1<=999 && broj1>=100) && (broj2<=999 && broj2>=100));{
+  if (broj1<broj2) {printf("%o", broj1);}
+   else if (broj1==broj2) {printf("%o", broj1);}
+    else {printf("%o", broj2);}}
+return 0;
+} 
+   

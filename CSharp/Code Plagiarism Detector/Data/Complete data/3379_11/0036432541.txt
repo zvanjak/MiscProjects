@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main (void) 
+{
+            int suma=0, broj, x;
+
+            scanf("%d", &broj);
+            x=broj;
+            while (broj)
+            {
+                  suma +=broj%10;
+                  broj/=10;
+            }
+
+            if (!(x % suma))
+               printf("%d", (x-suma));
+            else
+                printf("%d", (x/suma));
+
+            return 0;
+}

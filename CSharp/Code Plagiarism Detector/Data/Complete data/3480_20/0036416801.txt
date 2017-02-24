@@ -1,0 +1,91 @@
+class Komprimiranje
+{
+public:
+	Komprimiranje();
+	Komprimiranje(int *A, int N);
+	~Komprimiranje();
+
+	int BrojRazlicitihElemenata();
+	int UkupniBrojElemenata(int Vrijednost);
+	int *Dekomprimacija();
+
+	int DohvatiVelDekNiza ();
+	int DohvatibrElem();
+	int *DohvatiDekNiz();
+	int *DohvatiNeDekNiz();
+
+private:
+	int *_Polje, *_DekPolje;
+	int _VelDekNiza, _brElem;
+};
+
+Komprimiranje::Komprimiranje() {
+	_VelDekNiza=0; _brElem=0;
+}
+
+Komprimiranje::Komprimiranje(int *A, int N) {
+	_Polje=A;
+	_brElem=N;
+	_VelDekNiza=0;
+	_DekPolje=Dekomprimacija();
+	
+}
+
+Komprimiranje::~Komprimiranje() {
+	delete []_DekPolje;
+}
+
+int *Komprimiranje::Dekomprimacija() {
+	int i, j, *pom, brStav=0, k;
+	for (i=1; i<_brElem; i+=2) _VelDekNiza+=_Polje[i];
+	pom = new int[_VelDekNiza];
+	for (i=1; i<_brElem; i+=2) {
+		k=brStav;
+		for (j=brStav; j<(_Polje[i]+k); j++) {
+			pom[j]=_Polje[i-1];
+			brStav++;
+		}
+	}
+	return pom;
+}
+
+int Komprimiranje::BrojRazlicitihElemenata() {
+	int *p, i, j, br, k=0;
+	p = new int[_brElem/2];
+	for (i=0; i<_VelDekNiza; i+=br) {
+		p[k]=_DekPolje[i];
+		br=0;
+		if (k==_brElem/2) break;
+		k++;
+		for (j=i+1; j<_VelDekNiza; j++) {
+			if (_DekPolje[i]==_DekPolje[j]) {
+				br++;
+				continue;
+			}
+			if (_DekPolje[i]!=_DekPolje[j]) {
+				br++;
+				break;
+			}
+		}
+	}
+	br=0;
+	for (i=0; i<(_brElem/2-1); i++) {
+		for (j=i+1; j<(_brElem/2); j++) {
+			if (p[i]==p[j]) br++;
+		}
+	}
+	return (_brElem/2-br);
+}
+
+int Komprimiranje::UkupniBrojElemenata(int Vrijednost) {
+	int brJed=0, i;
+	for (i=0; i<_VelDekNiza; i++) {
+		if (_DekPolje[i]==Vrijednost) brJed++;
+	}
+	return brJed;
+}
+
+int Komprimiranje::DohvatibrElem() { return _brElem; }
+int Komprimiranje::DohvatiVelDekNiza() { return _VelDekNiza; }
+int *Komprimiranje::DohvatiDekNiz() { return _DekPolje; }
+int *Komprimiranje::DohvatiNeDekNiz() { return _Polje; }

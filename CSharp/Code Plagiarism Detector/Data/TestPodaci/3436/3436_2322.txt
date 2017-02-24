@@ -1,0 +1,51 @@
+#include <stdio.h>
+int main() {
+	char a[20][20],prvi,drugi,treci,cetvrti;
+	int i,j,n,d,f,m,h,t;
+	d=0;
+	f=0;
+	m=0;
+	h=0;
+	t=0;
+
+	
+	do {
+		scanf("%d",&n); }
+	while (n<1 || n>20);
+	 
+	for (i=0; i<n; i++){
+		for (j=0; j<n; j++){
+		   scanf("%c",&a[i][j]);
+		}}
+	 
+	for (i=0; i<n; i++){
+		if (m==1) break;
+		 prvi=a[i][0]; d=0;
+	  for (j=0; j<n; j++)
+	  {if (a[i][j]==prvi) d=d+1; 
+	  if (d==n && prvi!='-') { printf("%c",prvi); m=1; break; } }}
+
+	for(j=0; j<n; j++){
+		if (m==1) break;
+		 drugi=a[0][j]; f=0;
+	  for (i=0; i<n; i++) 
+	  { if (a[i][j]==drugi) f=f+1;
+	  if (f==n && drugi!='-') { printf("%c",drugi); m=1; break; } }}
+      
+	  treci=a[0][0]; 
+	  for (i=0; i<n; i++)
+		  { if (m==1) break;
+		  if (a[i][i]==treci) h=h+1;
+	  if (h==n && treci!='-'){ printf("%c",treci);m=1;  } }
+      
+      cetvrti=a[0][n-1];
+	  for (i=0; i<n; i++)
+		 { if (m==1) break;
+	   if (a[i][n-1-i]==cetvrti) t=t+1;
+	  if (t==n && cetvrti!='-'){ printf("%c",cetvrti);m=1;  } }
+	 
+	  if (m==0) printf("-");
+	  return 0;
+}
+	   
+      

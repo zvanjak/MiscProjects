@@ -1,0 +1,57 @@
+int *Find3Max (int *p, int n){
+int *ret,i,j,max1, max2, max3, pom;
+if(n<3)
+return NULL;
+ret=(int*)malloc(3*sizeof(int));
+
+*ret=p[0];
+*(ret+1)=p[1];
+*(ret+2)=p[2];
+
+if (*(ret+1)>*ret) {
+pom=*(ret+1);
+*(ret+1)=*ret;
+*ret=pom;
+}
+
+
+if (*(ret+2)>*ret) {
+pom=*(ret+2);
+*(ret+2)=*ret;
+*ret=pom;
+}
+
+if (*(ret+2)>*(ret+1)) {
+pom=*(ret+2);
+*(ret+2)=*(ret+1);
+*(ret+1)=pom;
+}
+
+
+for(i=3;i<n;i++){
+
+if (p[i]>*(ret+2)) *(ret+2)=p[i];
+
+if (*(ret+1)>*ret) {
+pom=*(ret+1);
+*(ret+1)=*ret;
+*ret=pom;
+}
+
+
+if (*(ret+2)>*ret) {
+pom=*(ret+2);
+*(ret+2)=*ret;
+*ret=pom;
+}
+
+if (*(ret+2)>*(ret+1)) {
+pom=*(ret+2);
+*(ret+2)=*(ret+1);
+*(ret+1)=pom;
+}
+
+}
+
+return ret;
+}

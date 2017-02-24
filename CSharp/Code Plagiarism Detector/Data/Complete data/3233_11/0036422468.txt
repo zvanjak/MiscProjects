@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+	double f=0,s=0;
+	int i=0,j=0,n=0;
+
+	scanf("%d",&n);
+	if ((n<1)||(n>200))
+		printf("n nije valjan");
+	else
+	{
+		for (i=1; i<=n; i++)
+		{
+			j=i+1;
+			f=i*j;
+		//	printf("%1.12f\n",f);
+			s+=(1/f);
+		}
+		printf("%1.12f\n",s);
+	}
+	return(0);
+}

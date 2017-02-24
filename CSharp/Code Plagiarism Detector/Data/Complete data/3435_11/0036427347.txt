@@ -1,0 +1,38 @@
+
+#include <stdio.h>
+
+int main() {
+
+int m, n, razlika;
+
+int kor1=1, kor2=1, kor3=1;
+
+long fakt;
+
+scanf("%d %d", &n, &m);
+
+razlika=n-m;
+
+
+if (m==0||m==n) {fakt=0;} else {
+
+for (n; n>0; n--)
+
+kor1*=n;
+
+
+for (m; m>0; m--)
+
+kor2*=m;
+
+for (razlika; razlika>0; razlika--)
+
+kor3*=razlika;
+
+fakt=kor1/(kor2*kor3);
+
+printf("%d", fakt); }
+
+return 0;
+
+}

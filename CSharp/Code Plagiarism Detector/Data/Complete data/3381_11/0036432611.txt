@@ -1,0 +1,15 @@
+#include <stdio.h>
+int main () {
+        int x1, y1, x2, y2, x3, y3, x4, y4;
+        scanf ("%d %d %d %d %d %d %d %d", &x1, &y1, &x2, &y2, &x3, &y3, &x4, &y4);
+        if ( (y3==y1) || (x3==x1) || (y4==y2) || (x4==x2) ) {
+		printf ("K");
+	} else {
+	        if (((float)(y3-y1)/(x3-x1)*(float)(y4-y2)/(x4-x2)==-1) && ((x1!=x4)||(y1!=y2))){
+		        printf("R");
+		} else {
+			printf("C");
+		}
+	}
+	return 0;
+}

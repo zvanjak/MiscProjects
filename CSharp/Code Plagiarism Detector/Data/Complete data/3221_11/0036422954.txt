@@ -1,0 +1,18 @@
+#include <stdio.h>
+int main() {
+int a,d,b,brojac=0;
+scanf("%d",&a);
+scanf("%d",&d);
+scanf("%d",&b);
+if (a>b) printf ("0");
+	else {
+		while (a<=b){
+			a=a+d;
+			if (brojac==0) printf("%d",a);
+			else printf(" %d",a);
+			brojac++;
+					}
+			printf(" %d",brojac);
+			}
+return 0;
+}

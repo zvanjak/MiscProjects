@@ -1,0 +1,21 @@
+int zamijeni (char *ulazni, char *prvi, char *drugi) {
+	char pom[512];
+  	int br=0, duzPrvi, duzDrugi;
+
+	duzPrvi=strlen(prvi);
+	duzDrugi=strlen(drugi);
+
+	while( ulazni = strstr(ulazni, prvi) ) { 	
+		
+		strcpy(pom, ulazni + duzPrvi);	
+		
+		strcpy(ulazni, drugi);
+		
+		strcat(ulazni, pom);
+		
+		ulazni += duzDrugi;
+		br++;
+	}
+
+	return br;
+}

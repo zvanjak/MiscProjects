@@ -1,0 +1,38 @@
+#include <stdio.h>
+int main() {
+	int broj, a, b, c, d, e, paran = 0, neparan = 0;
+	scanf ("%d", &broj);
+	a = broj % 10;
+	broj = broj / 10;
+	b = broj % 10;
+	broj = broj / 10;
+	c = broj % 10;
+	broj = broj / 10;
+	d = broj % 10;
+	e = broj / 10;
+	if (e % 2 == 0)
+		paran = e;
+	else
+		neparan = e;
+	if (d % 2 == 0)
+		paran = paran + d;
+	else 
+		neparan = neparan + d;
+	if (c % 2 == 0)
+		paran = paran + c;
+	else 
+		neparan	= neparan + c;
+	if (b % 2 == 0)
+		paran = paran + b;
+	else 
+		neparan = neparan + b;
+	if (a % 2 == 0)
+		paran = paran + a;
+	else 
+		neparan = neparan + a;
+	if ((e==a) && (d==b))
+		printf ("%d\n", paran);
+	else
+		printf ("%d\n",neparan);
+	return 0;
+}

@@ -1,0 +1,21 @@
+int Razina(cvor *glava, int id, int *razina) {
+	int temp = *razina;
+	if (glava == NULL) {
+		*razina = 0;
+		return 0;
+	}
+	
+	while(glava){
+		
+		if (id < glava->id)
+			glava = glava->lijevo;
+		else if (id > glava->id)
+			glava = glava->desno;
+		else if (id == glava->id)
+			return 1;
+		
+		(*razina)++;
+	}
+	*razina = temp;
+	return 0;	
+}

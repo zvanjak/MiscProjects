@@ -1,0 +1,63 @@
+int zamijeni (char *ulazni, char *prvi, char *drugi)
+{
+	char string[80]={0},stringi[80]={0};
+	char mjnjs[50]={0},stoups[50]={0},pom[50]={0};
+	int br=0,i=0,k;
+	while (*(ulazni+i)!=0)
+	{
+		string[i]=*(ulazni+i);
+		i++;
+	}
+	i=0;
+	while (*(prvi+i)!=0)
+	{
+		mjnjs[i]=*(prvi+i);
+		i++;
+	}
+	i=0;
+	while (*(drugi+i)!=0)
+	{
+		stoups[i]=*(drugi+i);
+		i++;
+	}
+
+	for (i=0;i<=(signed)strlen(string);i++)
+	{
+		strncpy(&pom[0],&string[i],strlen(&mjnjs[0]));
+		k=(signed)strlen(&mjnjs[0])-(signed)strlen(&stoups[0]);
+		if (k==0)
+			if (strcmp( &pom[0], &mjnjs[0] )==0) 
+			{
+				strncpy (&stringi[i],&stoups[0],strlen(&stoups[0]));
+				br++;
+				i=i+1;
+			}
+			else
+			{
+				stringi[i]=string[i];
+
+			}
+		else
+		{
+			if (strcmp( &pom[0], &mjnjs[0] )==0) 
+			{
+				strncpy (&stringi[i+k-1],&stoups[0],strlen(&stoups[0]));
+				br++;
+				i=i+k;
+			}
+			else
+			{
+				stringi[i-br]=string[i];
+
+			}
+		}
+	}
+	i=0;
+	while (stringi[i]!=0)
+	{
+		*(ulazni+i)=stringi[i];
+		i++;
+	}
+	*(ulazni+i)=0;
+	return br;
+}

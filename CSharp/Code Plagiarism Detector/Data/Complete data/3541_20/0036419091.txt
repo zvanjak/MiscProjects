@@ -1,0 +1,33 @@
+int izbaciZ(zapis **glava)
+{
+zapis *pomocni=*glava;
+zapis *ocisti,*prosli=NULL;
+float prosjek=0;
+int brojac=0;
+if (pomocni==NULL) return 0;
+for (;pomocni!=NULL;pomocni=pomocni->sljed)
+{
+  prosjek+=pomocni->pros;
+  brojac++;
+}
+prosjek/=brojac;
+pomocni=*glava;
+brojac=0;
+while (pomocni!=NULL)
+{
+  ocisti=NULL;
+  if (pomocni->spol=='Z' && pomocni->pros<prosjek)
+  {
+    brojac++;
+    if (pomocni==*glava)
+      *glava=(*glava)->sljed;
+    else
+      prosli->sljed=pomocni->sljed;
+    ocisti=pomocni;
+  }
+  if (ocisti==NULL) prosli=pomocni;
+  pomocni=pomocni->sljed;
+  if (ocisti!=NULL) free(ocisti);
+}
+return brojac;
+}

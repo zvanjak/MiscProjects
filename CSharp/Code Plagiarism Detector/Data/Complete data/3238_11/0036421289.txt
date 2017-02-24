@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <math.h>
+int main (){
+	int n1,i;
+	float n;
+	double p;
+	scanf("%f", &n);
+	n1 = n;
+	if (n<1 || n>25 || n1!=n){
+		printf("n nije valjan");
+	}else{
+		p = 0;
+		for (i=1; i<=n; i++){
+			p = p + 9450./pow(i,8);
+		}
+		printf("%.12lf", pow(p, 1./8));
+	}return 0;
+}

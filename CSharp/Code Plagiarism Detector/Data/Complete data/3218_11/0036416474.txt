@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main () {
+   int n, i, prost = 0, c;
+      do {
+	c = 0;
+	scanf("%d", &n);
+	if (n <= 2) break;
+	for (i = 2; i < n; i++)
+	   if (n % i == 0)
+	   c++;
+	if (c == 0 && n > prost)
+	   prost = n;
+	} while (1);
+   printf ("%d", prost);
+   return 0;
+}

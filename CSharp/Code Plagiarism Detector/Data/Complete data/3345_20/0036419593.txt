@@ -1,0 +1,8 @@
+double sumareda(int n) {
+	double s, naz;
+	kontrola();
+	if (n<=1) return 1;
+	naz = n*n*n*n;
+	s = 1 / naz;
+	return (s + sumareda(n-1));
+}

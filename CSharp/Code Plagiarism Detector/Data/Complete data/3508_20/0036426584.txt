@@ -1,0 +1,7 @@
+int Najgore( cvor *glava ) {
+   int a = 1, b = 0;
+   if( glava == NULL ) return 0;
+   if( glava->lijevo != NULL ) a = Najgore( glava->lijevo ), ++b;
+   if( glava->desno  != NULL ) a = Najgore( glava->desno  ), ++b;
+   return b < 2 && a;
+}

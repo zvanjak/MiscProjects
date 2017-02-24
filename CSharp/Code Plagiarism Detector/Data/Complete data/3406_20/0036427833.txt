@@ -1,0 +1,19 @@
+char *SamoSuglasnici(char *ulazni_niz){
+    char *p;
+    int i,j=0,l;
+    char a;
+    if (ulazni_niz==NULL) return NULL;
+    l=strlen(ulazni_niz);
+    if (!l) return NULL;
+    p=malloc(l);
+    for(i=0;i<l;i++){
+      if (isalpha(ulazni_niz[i])){
+         a=tolower(ulazni_niz[i]);
+         if (a=='a' || a=='e' || a=='i' || a=='o' || a=='u')
+           continue;
+         p[j++]=ulazni_niz[i];
+         }
+      }
+    p[j]=0;
+    return p;
+    }

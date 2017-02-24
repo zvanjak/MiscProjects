@@ -1,0 +1,23 @@
+#include <stdio.h>
+int main(){
+int n,m,i;
+double a=1,b=1,c=1,rez;
+scanf ("%d %d",&n, &m);
+if (m==0 || m==n){
+rez=0;
+printf ("%d",rez);
+goto kraj;}
+if (m!=0){
+	for (i=1; i<=n; i=i+1)
+	a=a*i;
+	for (i=1; i<=m; i=i+1)
+	b=b*i;
+	for (i=1; i<=(n-m); i=i+1)
+	c=c*i;
+	rez=a/(b*c);
+printf ("%g",rez);}
+kraj:
+return 0;
+}
+
+

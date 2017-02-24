@@ -1,0 +1,67 @@
+#include <conio.h>
+#include <stdio.h>
+#define polje(i,j) polje[i*n+j]
+
+int main()
+{
+	char polje[400];
+	int n,i,j,x=0,o=0,xc,oc;
+	
+	scanf("%d",&n);
+    scanf("%s",polje);
+
+	for(i=0;i<n;i++)	{
+		xc=oc=0;
+		for(j=0;j<n;j++) {
+			if(polje(i,j)=='X')
+				xc++;
+			if(polje(i,j)=='O')
+				oc++; }
+	
+	if(xc==n) x++;
+	if(oc==n) o++;}
+	
+
+
+
+    for(j=0;j<n;j++)	{
+		xc=oc=0;
+		for(i=0;i<n;i++) {
+			if(polje(i,j)=='X')
+				xc++;
+			if(polje(i,j)=='O')
+				oc++; }
+		if(xc==n) x++;
+     	if(oc==n) o++;
+	}
+
+
+        xc=oc=0;
+    for(i=0;i<n;i++)	{
+		j=i;
+		
+		if(polje(i,j)=='X')  
+			xc++; 
+		if(polje(i,j)=='O')
+			oc++; }
+    if(xc==n) x++;
+	if(oc==n) o++;
+
+
+        xc=oc=0;
+	for(i=0;i<n;i++)	{
+		j=n-i-1;
+		if(polje(i,j)=='X')
+			xc++;
+		if(polje(i,j)=='O')
+			oc++; }
+    if(xc==n) x++;
+	if(oc==n) o++;
+
+    
+	if(x&&o) printf("-");
+	else if(!x&&!o) printf("-");
+	else if(x) printf("X");
+	else if(o) printf("O");
+
+	return 0; }

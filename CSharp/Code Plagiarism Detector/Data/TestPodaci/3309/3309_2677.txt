@@ -1,0 +1,15 @@
+int br_prodanih(FILE *f, char *autor){
+  int i, br=0;
+  struct albumi{
+    char naziv[30+1];
+    char autor[20+1];
+    int prodano;
+  } t;
+  if(!f) return 0;
+  while(fread(&t, sizeof(t), 1, f)==1){
+    printf("%s %s %d\n", t.naziv, t.autor, t.prodano);
+    for(i=0; *(autor+i) && *(autor+i)==t.autor[i]; ++i);
+    if(*(autor+i)==0 && t.autor[i]==0) br+=t.prodano;
+  }
+  return br;
+}

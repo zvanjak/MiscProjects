@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <math.h>
+main(){
+int n,i;
+long double PI, a, c;
+scanf("%d", &n);
+a=0;
+
+if ((n<1) || (n>400)) printf("n nije valjan");
+else if (n==1) {PI = pow (8.,0.5); printf("%.12f", PI);}
+else {
+	for (i=0; i <= n; i++)
+		 a = a + 1./(pow(2.*i + 1.,2));
+	c=a*8.;
+	PI = sqrt (c);
+	printf("%.12f", PI);}
+return 0;}

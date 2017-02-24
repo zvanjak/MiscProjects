@@ -1,0 +1,19 @@
+#include <stdio.h>
+int main ()	{
+	int i,n,umnozak = 1 ,suma = 0,izraz;
+
+	do	{
+			scanf("%d",&n);
+	}
+			while (n < 2);
+	
+	for(i=2; i<=n; i++)	{
+	umnozak *= (i-1);
+	}
+	for(i=0; i<=n; i++)	{
+	suma += i*i;
+	}
+izraz = umnozak + suma;
+printf("%d", izraz);
+return 0;
+}

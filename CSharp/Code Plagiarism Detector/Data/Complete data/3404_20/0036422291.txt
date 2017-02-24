@@ -1,0 +1,28 @@
+int* napraviPolje(int *A, int Na, int a, int b, int* Nc)
+{int *p;
+int pom;
+int djeljiv;
+int i,br=0;
+pom=a;
+p=NULL;
+	if(a>b)
+		return 0;
+for (i=0;i<Na;i++)
+{	djeljiv=0;
+	
+	for(pom=a;pom<=b;pom++)
+	{	if(A[i]%pom==0)
+		{	djeljiv = 1;
+	break;}
+	}
+	
+	if (djeljiv==0)
+		{	
+			p=(int *) realloc (p,(br+1) * sizeof (int));
+			p[br++]=A[i];
+						
+	}
+}
+*Nc=br;
+return p;
+}

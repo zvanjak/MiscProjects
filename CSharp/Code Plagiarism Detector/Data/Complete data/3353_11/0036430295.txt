@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <conio.h>
+#include <math.h>
+
+int main(void)
+{
+    int n, m;
+    scanf("%d", &n);
+    scanf("%d", &m);
+    
+    if (m>4 || m<1)
+            printf("%d", (n/1000) + ((n/100)%10) + ((n/10)%10) + (n%10));
+    
+        
+    else
+        {
+            if (m==1)
+                        printf("%d", (n/10));
+            else if (m==2)
+                        printf("%d", (n/100)*10 + (n%10));
+            else if (m==3)
+                        printf("%d", (n/1000)*100 + ((n/10)%10)*10 + (n%10));
+            else if (m==4)
+                        printf("%d", ((n/100)%10)*100 + (n%100));
+        }
+        
+    return 0;
+}        
+                    
+    

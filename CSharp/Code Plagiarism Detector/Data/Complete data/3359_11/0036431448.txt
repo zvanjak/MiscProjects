@@ -1,0 +1,16 @@
+#include <stdio.h>
+int main()
+{
+    int broj, t, sto, deset, jedan;
+    scanf("%d", &broj);
+    t=broj/1000;
+    sto=(broj%1000)/100;
+    deset=((broj%1000)%100)/10;
+    jedan=broj%10;
+    if (((t*sto*deset*jedan)%2)==0)
+    {
+       printf("%d", jedan);}
+       else printf("%d", t);
+       return 0;
+}
+    

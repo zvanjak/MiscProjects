@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <math.h>
+
+int main ()
+
+{
+int i;
+float n;
+double s=0,pi=0;
+
+scanf("%f",&n);
+if ((n<1) || (n>25) || (n!=(int)(n))) printf("n nije valjan");
+
+else {
+for(i=1;i<=n;i++) s+=(1/pow(i,8));
+s=s*9450;
+pi=pow(s,1./8.);
+printf("%.12lf",pi);
+}
+return(0);
+}

@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <math.h>
+int main(){
+int i,n;
+double y,suma;
+scanf("%d",&n);
+suma=0;
+y=0;
+if (n>=1&&n<=25){ 
+    for(i=1;i<=n;i=i+1){
+      y=1./pow(i,8);
+      suma=suma+y;
+      }
+    printf("%.12lf",suma);
+    }
+else printf("n nije valjan");
+return 0;
+}

@@ -1,0 +1,26 @@
+float prosjek (zapis *glava){
+	zapis *next;
+	float zbroj=0;
+	float rez;
+	int brojac=0;
+	
+	if (glava == NULL) return 0.;
+	next = glava;
+	while (next != NULL){
+		zbroj += next->pros;
+		brojac++;
+		next = next->sljed; 
+	};
+
+	rez = zbroj / brojac;
+
+	next = glava;
+	while (next !=NULL){
+		if (next->pros < rez )
+			next->pros = 0.;		
+		next = next->sljed; 
+	};
+	
+	return rez;
+
+}

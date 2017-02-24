@@ -1,0 +1,18 @@
+void AritSred_StdDev(float *p, int n, float *ArSred, float *StdDev)
+{
+	int i,brojac=0;
+	float zbroj=0.0;
+	double brojnik=0,pom;
+	for(i=0;i<n;i++)
+	{
+		zbroj+=p[i];
+		brojac++;
+	}
+	*ArSred=zbroj/brojac;
+	for(i=0;i<n;i++)
+	{
+		brojnik+=pow((double)p[i]-*ArSred,2);
+	}
+	pom=brojnik/(n*(n-1));
+	*StdDev=(float)sqrt((double)pom);
+}

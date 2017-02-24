@@ -1,0 +1,18 @@
+float prosjek (FILE *f)
+{
+	struct album{
+		char naziv [30+1];
+		char autor [20+1];
+		int prodano;
+	} alb;
+	int a,i=0;
+	float zbroj=0.f;
+	do{
+		i++;
+		a=fread(&alb,sizeof(alb),1,f);
+		if (a==1) zbroj+=alb.prodano;
+	}while (!(a<1));
+	i--;
+	zbroj=zbroj/i;
+	return zbroj;
+}

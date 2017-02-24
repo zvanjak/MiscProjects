@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+	double z=0;
+	int i,n;
+	scanf("%i",&n);
+	if ((n>0)&&(n<=25)) {
+		for (i=1;i<=n;i++) z=z+1/pow(i,8);
+		z=pow(z*9450,1./8);
+		printf("%.12lf",z);
+	} 
+	else printf("n nije valjan");
+	return 0;
+}

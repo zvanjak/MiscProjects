@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <math.h>
+int main()
+{	int n, i=0;
+	double dvtr=0;
+	scanf ("%d", &n);
+	if (n>=1 && n<=30) { 
+		do 
+		{
+			if (i%2) dvtr-=(1./pow(2,i)); else dvtr+=(1./pow(2,i));	
+			i++;
+		}
+		while (i<n);
+	printf ("%.12f", dvtr);
+	} else printf ("n nije valjan");
+return 0;
+}

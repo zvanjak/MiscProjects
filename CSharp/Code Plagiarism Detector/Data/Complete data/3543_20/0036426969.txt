@@ -1,0 +1,12 @@
+void obrni(zapis **glava) {
+	zapis *pom = NULL;
+	zapis *pomSljedeci;
+if (*glava == NULL) return;
+	while (true) {
+		pomSljedeci = (*glava)->sljed;
+		(*glava)->sljed = pom;
+		pom = *glava;
+		if (pomSljedeci) *glava = pomSljedeci;
+		else break;
+	}
+}

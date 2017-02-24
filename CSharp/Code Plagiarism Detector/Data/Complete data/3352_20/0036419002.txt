@@ -1,0 +1,12 @@
+int veci_od (FILE *f, int n){
+	struct natjecatelj s;
+	int br=0;
+
+	rewind(f);
+
+	while(fread(&s, sizeof(struct natjecatelj), 1, f)==1){
+		if (s.redni_br!=0){
+		if (s.bodovi>=n) br++;
+		}}
+	return br;
+}

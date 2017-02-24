@@ -1,0 +1,19 @@
+#include "stdio.h"
+
+int main()
+{
+	int intUcitani, inti, prost , intBrojProstih,i;
+	intBrojProstih=0;
+	do {
+		scanf("%d" , &intUcitani);
+		if(intUcitani<=2)goto kraj;
+		prost=1;
+		for(i=2; i<(intUcitani/2);i++){
+			if((intUcitani%i)== 0){
+				prost=0;
+			}}
+		if(prost!=0){intBrojProstih=intBrojProstih+1;}
+			}while (intUcitani>2);
+kraj:	printf("%d",(intBrojProstih));
+	return 0;
+}

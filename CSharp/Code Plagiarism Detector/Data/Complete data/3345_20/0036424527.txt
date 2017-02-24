@@ -1,0 +1,8 @@
+double sumareda(int n)
+{   
+    double a;
+    kontrola();
+    if(n==1) return 1;
+    a=1./(n*n*n*n);
+    return(a+sumareda(n-1));
+}   

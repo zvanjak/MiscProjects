@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <math.h>
+
+int main () {
+
+		int c=1,i,n;
+		double s=0, pi;
+
+		scanf ("%d", &n);
+
+		if ((n > 0) && ( n < 501 )) {
+		
+			for (i=1; i <= n; i++) {
+				s += (pow (-1,i+1))/c;
+				c += 2;
+			}
+		
+			pi = 4 * s;
+			printf ("%.12f", pi);
+		}
+
+		else printf ("n nije valjan");
+		return 0;
+
+}

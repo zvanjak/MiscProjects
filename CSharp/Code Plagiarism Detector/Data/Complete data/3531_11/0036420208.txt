@@ -1,0 +1,43 @@
+void zamijeni (char *ulazni, int *broj){
+int j=0,brS=0,brZ=0,brO=0,br=0,k=0,max = 0;
+int i=0;
+while (ulazni[i]!= '\0') {
+if (ulazni[i] >= 'A' && ulazni[i] <= 'z') {
+brS++;
+if (ulazni[i]>='a' && brS==1) {
+ulazni[i]=ulazni[i]-32;
+}
+else if (ulazni[i]<='Z' && brS>1){
+ulazni[i]=ulazni[i]+32;
+}
+} 
+else if (ulazni[i] >= '0' && ulazni[i] <= '9'){
+k=i;
+j=i;
+br=0;
+while (ulazni[j] >= '0' && ulazni[j] <= '9'){
+brZ++;
+br++;
+j++;
+}
+ulazni[i]='!';
+while (ulazni[k]!= '\0') {
+ulazni[k+1]=ulazni[k+br];
+k++;
+}
+}
+else {
+brO++;
+ulazni[i]='?';
+}
+i++;
+}
+if (brZ>max){
+max=brZ;}
+if (brO>max){
+max=brO;}
+if (brS>max){
+max=brS;}
+*broj=max;
+return;
+}

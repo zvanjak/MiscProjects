@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+int p[50], br=-1,paran=0,i,j,umn=1,prost=0,brprost=0,srednji,ind=1;
+
+do{
+    br++;
+    scanf("%d", &p[br]);
+}while(p[br]>0);
+if(br%2==0)  paran++;
+if (paran) {
+             for(i=0;i<br;i++){ 
+                                 umn=umn*p[i];
+                                 for(j=1;j<p[i];j++) {if(p[i]%j==0)prost++;}
+                                 if(p[i]==1) brprost--;
+                                 if(prost<=1) brprost++;
+                                 prost=0;
+           
+           
+           }     
+           printf("%d %d",umn,brprost);
+}
+else{
+     srednji=br/2;
+     for(i=1;i<=srednji;i++){
+                             if(p[srednji-i]!=p[srednji+i]) ind=0;
+                             }
+     if(ind==0) printf("Nije");
+     else printf("Jest");   
+}
+return 0;
+}

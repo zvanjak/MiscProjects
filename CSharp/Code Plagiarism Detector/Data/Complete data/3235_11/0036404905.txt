@@ -1,0 +1,20 @@
+#include<stdio.h>
+#include<math.h>
+int main() {
+	int n,i;
+	float ln2,Ln2=0;
+
+	scanf("%d",&n);
+
+	if(n<=100 && n >=1) {
+		for(i=1;i<=n;i++){
+				ln2=pow(-1,i+1)/i;
+				Ln2=Ln2+ln2;
+		}
+			
+			printf("%.12f",Ln2);
+	} else 
+			 
+	
+	return 0; 
+}

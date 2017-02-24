@@ -1,0 +1,15 @@
+Stog *noviOdNeparnih (Stog *stog)
+{
+	int *el;
+	el=(int*)malloc(sizeof(int));
+	Stog *novi=new Stog();
+	Stog *pomocni=new Stog();
+	while (stog->Skini(el))
+		pomocni->Stavi(*el);
+	while (pomocni->Skini(el))
+	{
+		stog->Stavi(*el);
+		if (*el%2==1) novi->Stavi(*el);
+	};
+	return novi;
+}

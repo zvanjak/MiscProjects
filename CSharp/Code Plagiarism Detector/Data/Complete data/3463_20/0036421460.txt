@@ -1,0 +1,18 @@
+int JeLiUnutra(Kruznica &kruz, Kvadrat &kvad){
+    double pomx, pomy, zbrojx, zbrojy;
+        
+	 
+
+	pomx= kvad.GetX()+ (kvad.GetDuljinaStranice()/2);
+
+	pomy= kvad.GetY()-(kvad.GetDuljinaStranice()/2);
+
+	zbrojx=abs(pomx - kruz.GetCenterX())+ kruz.GetRadius();
+
+	zbrojy=abs(pomy - kruz.GetCenterY())+ kruz.GetRadius();
+
+
+	if (zbrojx<=(kvad.GetDuljinaStranice()/2) && zbrojy <= (kvad.GetDuljinaStranice()/2))   return 1;
+	else return 0;
+
+}

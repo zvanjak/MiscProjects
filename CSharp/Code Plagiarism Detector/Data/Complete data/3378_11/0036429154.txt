@@ -1,0 +1,30 @@
+#include <stdio.h>
+int main ()
+{
+	int bos, bns, bcs;
+	float bcsp, bp, np;
+	scanf ("%d %d %d", &bos, &bns, &bcs);
+	if (bos<bns)
+	{
+		bcsp=bcs*0.9;
+	}
+	if (bos>bns)
+	{
+		bcsp=bcs*1.15;
+	}
+	if (bos==bns)
+	{
+		bcsp=bcs;
+	}
+	bp=bos*bcsp;
+	if (bp>6000)
+	{
+		np=bp*0.7;
+	}
+	else
+	{
+		np=bp*0.8;
+	}
+	printf ("%.2f", np);
+	return 0;
+}

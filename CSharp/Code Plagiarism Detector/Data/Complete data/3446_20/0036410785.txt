@@ -1,0 +1,66 @@
+class Kosarica {
+public:
+	Kosarica();
+	void DodajProizvod(float cijena);
+	float ProsjecnaCijena();
+	float NajjeftinijiProizvod();
+	~Kosarica();
+private:
+	struct proizvod {
+		float cijena;
+		struct proizvod *sljedeci;
+	};
+	void Brisi(proizvod *lokvrh);
+	proizvod *vrh;
+};
+
+Kosarica::Kosarica() {
+	vrh=NULL;
+}
+
+void Kosarica::DodajProizvod(float cijena) {
+	proizvod *novi;
+	novi = new proizvod;
+	if (novi != NULL) {
+		novi->cijena=cijena;
+		novi->sljedeci=vrh;
+		vrh=novi;
+	}
+}
+
+float Kosarica::ProsjecnaCijena() {
+	proizvod *tab=vrh;
+	int n=0;
+	float suma=0;
+	while (tab!=NULL) {
+		suma+=tab->cijena;
+		n++;
+		tab=tab->sljedeci;
+	}
+	if (n!=0) return (suma/n); else return 0;
+}
+
+float Kosarica::NajjeftinijiProizvod() {
+	proizvod *tab=vrh;
+	float najjeftiniji;
+	if (tab==NULL) return 0; else {
+		najjeftiniji=tab->cijena;
+		tab=tab->sljedeci;
+		while (tab!=NULL) {
+			if (tab->cijena<najjeftiniji) najjeftiniji=tab->cijena;
+			tab=tab->sljedeci;
+		}
+	return najjeftiniji;
+	}
+}
+
+void Kosarica::Brisi(proizvod *lokvrh) {
+	if (lokvrh!=NULL) {
+		Brisi(lokvrh->sljedeci);
+		free (lokvrh);
+	}
+}
+
+Kosarica::~Kosarica() {
+	Brisi(vrh);
+}

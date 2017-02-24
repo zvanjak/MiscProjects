@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main () {
+	int br,a, b, c, d, e, s;
+	scanf("%d",&br);
+    e = br % 10 ;
+	br = br / 10 ;
+	d = br % 10 ;
+	br = br / 10 ;
+	c = br % 10 ;
+	br = br / 10 ;
+	b = br % 10 ;
+	br = br / 10 ;
+	a = br % 10 ;
+	s = 0 ;
+	if ((a == e) && (b == d)) {
+		if ((a%2) == 0) s=s+a;
+		if ((b%2) == 0) s=s+b;
+		if ((c%2) == 0) s=s+c;
+		if ((d%2) == 0) s=s+d;
+		if ((e%2) == 0) s=s+e;
+		} 
+	else {
+		if ((a%2) == 1) s=s+a;
+		if ((b%2) == 1) s=s+b;
+		if ((c%2) == 1) s=s+c;
+		if ((d%2) == 1) s=s+d;
+		if ((e%2) == 1) s=s+e;
+		}
+	printf("%d",s);
+	return 0;
+}

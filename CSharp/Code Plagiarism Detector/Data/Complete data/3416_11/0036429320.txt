@@ -1,0 +1,27 @@
+#include<stdio.h>
+int main () {
+    char p1[100+1]={0}, max='A', min='Z', x;
+    int i;
+    for(i=0; i<=100; i++){
+             scanf("%c", &x);
+             p1[i]=x;
+             if (x<'A' || x>'Z')
+                break;
+             }
+    if (p1[0]<'A' || p1[0]>'Z')
+       printf("-1");
+    else {
+         for (i=0; i<=100; i++) {
+             if (p1[i]>='A' && p1[i]<='Z'){
+                            if (p1[i]<min)
+                               min=p1[i];
+                            if (p1[i]>max)
+                               max=p1[i];
+                               }
+             else break;
+             }
+            
+    printf("%c %c", min, max);
+}
+return 0;
+}

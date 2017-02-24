@@ -1,0 +1,17 @@
+int Memoriraj(Radio& radio) {
+int broj=0,br=0;
+Stanica stan, prva;
+while(broj<6){
+if (br==0)
+prva=stan=radio.TraziSljedecu();
+else
+stan=radio.TraziSljedecu();
+if(br>0 && stan==prva) {break;}
+else {
+if(strncmp(stan.RDS(),"",1)) {
+broj=broj+1;
+radio.MemorirajStanicu(stan,broj);}}
+br++;
+}
+return broj;
+}

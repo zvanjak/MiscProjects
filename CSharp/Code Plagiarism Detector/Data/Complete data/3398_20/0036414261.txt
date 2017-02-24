@@ -1,0 +1,25 @@
+int *napraviPolje(int *A, int Na, int a, int b, int *Nc)
+{
+	int br, i;
+	int *polje, *novo_p;	
+
+	if(a>b)
+		return 0;
+
+	br=0;
+	polje=A;
+	novo_p=NULL;
+	for(i=0;i<Na;i++)
+	{
+		if((*polje)>=a && (*polje)<=b)
+		{
+			br++;
+			novo_p=(int*)realloc(novo_p, br*sizeof(int));
+			*(novo_p+br-1)=*polje;
+			polje++;
+		}
+	}
+
+	*Nc=br;
+	return novo_p;
+}

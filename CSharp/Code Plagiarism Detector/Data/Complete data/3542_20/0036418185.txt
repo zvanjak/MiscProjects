@@ -1,0 +1,52 @@
+#include <string.h>
+
+int promijenimbr(zapis **glava, int starimbr, int novimbr){
+  int flag = 0;
+  zapis *p, *pret, *novi;
+  
+  novi = (zapis *) malloc(sizeof(zapis));
+  if(*glava == NULL || novi == NULL) return 0;
+  
+  novi->matbr = novimbr;
+  
+  for(p = *glava; p; p = p->sljed)
+    if(p->matbr == novimbr)
+      return 0;
+  
+  if((*glava)->matbr == starimbr){
+    strcpy(novi->imepr, (*glava)->imepr);
+    novi->spol = (*glava)->spol;
+    novi->pros = (*glava)->pros;
+    
+    p = *glava;
+    (*glava) = (*glava)->sljed;
+    free(p);
+    flag = 1;
+  }else{
+    for(pret = *glava, p = (*glava)->sljed; p != NULL; p = p->sljed, pret = pret->sljed){
+      if(p->matbr == starimbr){
+        strcpy(novi->imepr, p->imepr);
+        novi->spol = p->spol;
+        novi->pros = p->pros;
+        
+        pret->sljed = p->sljed;
+        free(p);
+        flag = 1;
+        break;
+      }
+    }
+  }
+
+  if(flag){
+    if(*glava == NULL || (*glava)->matbr > novimbr){
+      novi->sljed = *glava;
+      *glava = novi;
+    }else{
+      for(p = *glava; p->sljed && (p->sljed)->matbr < novimbr; p = p->sljed);
+          novi->sljed = p->sljed;
+          p->sljed = novi;
+    }
+    return 1;
+  }
+  return 0;
+}

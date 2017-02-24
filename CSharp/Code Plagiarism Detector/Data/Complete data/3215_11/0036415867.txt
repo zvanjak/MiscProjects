@@ -1,0 +1,16 @@
+#include <stdio.h>
+int main () {
+	int broj, brp=0,brn=0;
+	scanf("%d", &broj);
+	while (broj != 0) {
+		if (broj > 0){
+			if (broj%2 == 0)
+				brp++;
+			else if (broj%2 != 0)
+				brn++;
+			}
+                scanf("%d",&broj);
+	}
+	printf ("%d %d",brp,brn);
+return 0;
+}

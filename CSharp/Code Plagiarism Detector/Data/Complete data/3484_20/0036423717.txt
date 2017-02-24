@@ -1,0 +1,34 @@
+class CjelobrojniNiz {
+private:
+	int *_cNiz, _N;
+public:
+	CjelobrojniNiz (int polje[], int BrElem)  {
+		int i; 
+		_cNiz = (int *) malloc(BrElem*sizeof(int));
+		for (i=0; i<BrElem; ++i) _cNiz[i] = polje[i];
+		_N = BrElem;
+	}
+	
+	CjelobrojniNiz (const CjelobrojniNiz &copy) {
+		int i;
+		_N = copy._N;
+		_cNiz = (int *) malloc(_N*sizeof(int));
+		for (i=0; i<_N; ++i) _cNiz[i] = copy._cNiz[i];
+	}
+	
+	~CjelobrojniNiz () {
+		delete _cNiz;
+	}
+
+	int Usporedi(CjelobrojniNiz niz) {
+		int i; 
+		for (i=0; i<_N; ++i) {
+			if (_cNiz[i] != niz._cNiz[i]) return 0;
+		}
+		return 1;
+	}
+	int VecinaJednaka();
+	int *VratiPresjek(CjelobrojniNiz niz, int* n);
+
+};
+

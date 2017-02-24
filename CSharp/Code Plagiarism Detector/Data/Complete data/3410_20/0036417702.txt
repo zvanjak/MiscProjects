@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+char *StvoriNiz(char *poljeznakova, int duljina, int n) {
+	char *niz;
+	int i;
+
+	niz = (char *) malloc (sizeof(char)*(n + 1));
+
+	for (i = 0; i < n; i++) {
+		*(niz + i) = *(poljeznakova + moj_rand() % duljina);
+	}
+	*(niz + i) = '\0';
+
+	return niz;
+}

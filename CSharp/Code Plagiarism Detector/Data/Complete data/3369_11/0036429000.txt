@@ -1,0 +1,38 @@
+#include <stdio.h>
+int main () {
+	int broj, a, b, c, d, e, f, g, h;
+	scanf("%d", &broj);
+	if ( (broj<100 || broj>999) ) {
+		return 0;
+	}
+	else {
+		if ( broj > 0 ) {
+			a=broj / 8;
+			b=broj % 8;
+			if (a > 0) {
+				c=a / 8;
+				d=a % 8;
+				if (c > 0) {
+					e=c / 8;
+					f=c % 8;
+					if (broj > 511) {
+						printf("%d%d%d%d", 1, f, d, b);
+					}
+					else {
+						printf("%d%d%d", f, d, b);
+					}
+				}
+				else {
+					return 0;
+				}
+			}
+			else {
+				return 0;
+			}
+		}
+		else {
+			return 0;
+		}
+	}
+	return 0;
+}

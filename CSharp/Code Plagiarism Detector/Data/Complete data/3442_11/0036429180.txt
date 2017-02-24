@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main(){
+int i,j,n, suma=0, sum1=0, reza=0;
+scanf("%d", &n);
+if(n>1)  {
+for (i=0;i<=n;i++) suma+=i*i;
+for (i=1;i<n;i++) sum1+=2*i;
+}
+reza=suma-sum1;
+printf("%d", reza);        
+return 0;
+}

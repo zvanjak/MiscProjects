@@ -1,0 +1,32 @@
+class Kartica 
+{
+private:
+	int _ukupniIznos;
+	int _dozvoljeniMinus;
+	
+public:
+	Kartica(){
+		_ukupniIznos=0;
+		_dozvoljeniMinus=0;
+	};
+
+	Kartica(int ukupniIznos, int dozvoljeniMinus){
+		_ukupniIznos = ukupniIznos;
+		_dozvoljeniMinus = dozvoljeniMinus;
+	};
+
+	int MaxIznosZaDignuti(){
+		return (_dozvoljeniMinus + _ukupniIznos);
+	};
+	void StaviNovac(int iznos){
+		_ukupniIznos+=iznos;
+	};
+	int DigniNovac(int iznos){
+		if(iznos > MaxIznosZaDignuti()) return 0;
+		else if ((MaxIznosZaDignuti() - iznos) >= 0){
+			_ukupniIznos-=iznos;
+			return 1;
+		}_ukupniIznos = MaxIznosZaDignuti() - iznos;
+		return 2;
+	};
+};

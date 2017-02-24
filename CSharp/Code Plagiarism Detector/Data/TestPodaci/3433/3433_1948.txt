@@ -1,0 +1,21 @@
+#include <stdio.h>
+#define MAX 200
+int main ()
+{
+	char znak;
+	int broj, br=0, niz[MAX]={0}, i=0, j=0;
+	while(i<200)
+	{
+		scanf("%c%d",&znak,&broj);
+		if (broj==-1) break;
+		niz[i++]=znak;
+		niz[i++]=broj;
+		br++;
+	}
+	for (i=0;i<br*2;i+=2)
+	{
+		for (j=0;j<niz[i+1];j++)
+			printf("%c ",niz[i]);
+	}
+	return 0;
+}

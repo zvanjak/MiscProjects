@@ -1,0 +1,66 @@
+#include <stdio.h>
+
+int main()
+{
+  /*
+  učitavamo dva cijela broja i znak c
+  potrebno je pamtiti kumulativni zbroj rezultata pojedinih operacija te najviąe 20 operacija
+  */
+
+  char op, ops[20] = {0};
+  int a, b, end = 0, sum = 0, i = 0, run = 1;
+
+  while (run && i < 20)
+  {
+    scanf ("%d %d %c", &a, &b, &op);
+
+    switch (op)
+    {
+      case '+':
+      {
+        sum += a + b;
+        ops[i] = op;
+        break;
+      }
+      case '-':
+      {
+        sum += a - b;
+        ops[i] = op;
+        break;
+      }
+      case '*':
+      {
+        sum += a * b;
+        ops[i] = op;
+        break;
+      }
+      case '/':
+      {
+        if (b)
+          sum += a / b;
+        ops[i] = op;
+        break;
+      }
+      case '%':
+      {
+        if (b)
+          sum += a % b;
+        ops[i] = op;
+        break;
+      }
+      default:
+        run = 0;
+    }
+
+    i++;
+  }
+
+  end = i;
+
+  printf ("%d", sum);
+
+  for (i = 0; i < end - 1; i++)
+    printf (" %c", ops[i]);
+
+	return 0;
+}

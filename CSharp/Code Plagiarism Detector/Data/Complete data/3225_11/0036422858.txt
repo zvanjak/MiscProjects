@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <math.h>
+int main () {
+	int n;
+	double sum=0,d,m,i,rez,rez1;
+	scanf("%d",&n);
+	if (n<1 || n>400)
+		printf("n nije valjan");
+	else {
+		for (i=0; i<n; i++) {
+			d=2*i+1;
+			m=1/(pow(d,2));
+			sum+=m;
+		}
+	    rez=sum*8;
+		rez1=pow(rez,0.5);
+		printf("%.12lf",rez1);
+
+	}
+	return 0;
+}

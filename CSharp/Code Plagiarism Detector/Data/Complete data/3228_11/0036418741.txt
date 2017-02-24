@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include<math.h>
+int main(){
+	int n,i;
+	double pi,x=1,y;
+	scanf("%d", &n);
+	if ((n<1) || (n>100))
+		printf("n nije valjan");
+	else{
+		for(i=2;i<=n;i++){
+			if(i%2==0)
+				x=x-1/(float)(i*i);
+			else
+				x=x+1/(float)(i*i);
+		}
+		y=12*x;
+		pi=sqrt(y);
+		printf("%1.12lf",pi);
+	}
+	return 0;
+}

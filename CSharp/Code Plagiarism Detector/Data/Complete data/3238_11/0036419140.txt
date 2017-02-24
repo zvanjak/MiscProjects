@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    double pi; 
+    float n;
+    int i;
+    scanf("%f",&n);
+    pi=0;
+    if (n>=1 && n<=25 && n==floor(n)) {
+    
+    for (i=1;i<=n;i++) {    
+    pi+=1/pow(i,8);      
+         
+            }    
+     pi=pi*9450;     
+     pi=pow(pi,0.125);     
+     printf("%.12f",pi);     
+          } 
+          else      
+    {
+     printf("n nije valjan");   
+    }    
+    
+    
+    return 0;
+    }

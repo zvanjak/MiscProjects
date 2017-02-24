@@ -1,0 +1,147 @@
+typedef struct
+{
+  char ime[20+1];
+  char prezime[30+1];
+  char jmbag[13];
+  int  ocjena;
+} tip;
+
+struct atom
+{
+  tip element;
+  struct atom *sljed;
+};
+
+typedef struct atom atom;
+
+int brojElementa (atom *glava)
+{
+  int brEl;
+  atom *p;
+  
+  if (glava == NULL)
+    return 0;
+
+  p    = glava;
+  brEl = 0;
+  while (p != NULL)
+  {
+    brEl++;
+    p = p->sljed;
+  }
+
+  return brEl;
+}
+
+int dodaj (atom **glavap, tip element)
+{
+  atom *novi;
+
+  novi = (atom *) malloc (sizeof (atom));
+
+  if (novi == NULL)
+    return 0;
+
+  novi->element = element;
+  novi->sljed   = NULL;
+
+  if (*glavap == NULL)
+    *glavap = novi;
+  else
+  {
+    novi->sljed = *glavap;
+    *glavap     = novi;
+  }
+  
+  return 1;
+}
+
+int maksOcjena (atom *glava)
+{
+  int mOcjena;
+  atom *p;
+
+  if (glava == NULL)
+    return -1;
+
+  p = glava;
+  mOcjena = -1;
+  while (p != NULL)
+  {
+    if (mOcjena < p->element.ocjena)
+      mOcjena = p->element.ocjena;
+
+    p = p->sljed;
+  }
+
+  return mOcjena;
+}
+
+float prosjOcjena (atom *glava)
+{
+  float sOcjena;
+  int   bOcjena;
+  atom *p;
+
+  if (glava == NULL)
+    return -1;
+
+  p = glava;
+  sOcjena = 0;
+  bOcjena = 0;
+  while (p != NULL)
+  {
+    sOcjena += p->element.ocjena;
+    bOcjena++;
+
+    p = p->sljed;
+  }
+
+  return sOcjena / bOcjena;
+}
+
+int izbaciImePocinjeS (atom **glavap, char *imePocetak)
+{
+  int brIzb;
+  atom *p, *pp, *pom;
+
+  p  = *glavap;
+  pp = NULL;
+  brIzb = 0;
+  while (p != NULL)
+  {
+    if (strstr (p->element.ime, imePocetak) != NULL)
+    {
+      if (strstr (p->element.ime, imePocetak) == p->element.ime)
+      {
+        if (pp == NULL)
+        {
+          pp = p;
+          p  = p->sljed;
+
+          free (pp);
+
+          pp = NULL;
+          *glavap = p;
+        }
+        else
+        {
+          pom       = p;
+          pp->sljed = p->sljed;
+          p         = p->sljed;
+
+          free (pom);
+        }
+
+        brIzb++;
+      }
+    }
+    else
+    {
+      pp = p;
+      p  = p->sljed;
+    }
+  }
+
+  return brIzb;
+}

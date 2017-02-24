@@ -1,0 +1,31 @@
+int info (FILE *f, int redni_br){
+    
+	struct natjecatelj {
+		int redni_br;
+		char prezime[20+1];
+		int bodovi;} *p_podatak, podatak ={0};
+		
+		int duljina, br;
+		FILE *dat;
+    
+	p_podatak = &podatak;
+	dat = f;
+	br = redni_br - 1;
+	if (redni_br <= 0) return -1;
+	duljina = sizeof (struct natjecatelj);
+	
+	fseek (dat, br*duljina, SEEK_SET);
+	fread (p_podatak, 1, duljina, dat);
+	podatak.prezime[20]='\0';
+	
+	fclose(dat);
+	
+	if (p_podatak -> redni_br == 0)
+		return -1;
+	if (p_podatak -> bodovi >= 100)
+		return 1;
+	if (p_podatak -> bodovi < 100)
+		return 0;
+
+	return -1;
+}

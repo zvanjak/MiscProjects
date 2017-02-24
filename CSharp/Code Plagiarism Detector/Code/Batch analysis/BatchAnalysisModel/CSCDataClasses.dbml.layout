@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="CSCDataClasses">
+  <DataContextMoniker Name="/CSCDataClassesDataContext" />
+  <nestedChildShapes>
+    <classShape Id="91c17e95-17f7-4b42-bd02-88774f8ad5ff" absoluteBounds="0.75, 0.75, 2, 1.4248478190104166">
+      <DataClassMoniker Name="/CSCDataClassesDataContext/Pitanje" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6fd78080-77ae-4a6b-974a-dec2d64b862f" absoluteBounds="0.765, 1.21, 1.9700000000000002, 0.86484781901041674" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c22a4808-e2df-41f5-9275-a5d8158ac888" absoluteBounds="3.75, 0.75, 2, 1.5891951497395831">
+      <DataClassMoniker Name="/CSCDataClassesDataContext/Student" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e01d12d4-6233-42e8-b265-106669aeca02" absoluteBounds="3.765, 1.21, 1.9700000000000002, 1.0291951497395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="91a6d789-e7c8-4450-a7c0-3b7f9e34dc34" absoluteBounds="0.75, 3.75, 2, 2.2465844726562505">
+      <DataClassMoniker Name="/CSCDataClassesDataContext/StudentskoRjesenje" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0fae3a91-10bf-4e8d-b81c-5bbda81602cd" absoluteBounds="0.765, 4.21, 1.9700000000000002, 1.68658447265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

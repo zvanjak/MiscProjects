@@ -1,0 +1,25 @@
+int info(FILE *f,int redni_br){
+
+    struct nat{
+           int redni_br;
+           char prezime[21];
+           int bodovi;
+    }x;
+
+    int brojac,i=0;
+    
+    while(1){
+        i++;
+        fread(&x,sizeof(x),1,f);
+        if(i==x.redni_br){
+            if(x.redni_br==0){
+                brojac=-1;
+                break;
+            }
+            if(x.bodovi>=100) brojac=1;
+            if(x.bodovi<100) brojac=0; 
+            break;
+        }
+    }
+    return brojac;   
+}

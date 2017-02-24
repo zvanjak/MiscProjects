@@ -1,0 +1,28 @@
+#include <stdio.h>
+ 
+
+int main () {
+
+	float i;
+        double suma1, suma2;
+	float n;
+	int n1;
+
+	scanf("%f", &n);
+	
+	n1=n;
+	if (n<1 || n>400 || n1 != n) {
+		printf("n nije valjan");
+		return 0;
+	}
+	    suma1=0;
+	    for(i=1 ; i<=n ; i++) {
+	 	suma1 =  suma1 + 1/((4*i-1)*(4*i+1));
+	    }
+	    suma2 = -(suma1*8 - 4);
+
+	    printf("%9.8lf", suma2);
+        
+	
+	return 0;
+}

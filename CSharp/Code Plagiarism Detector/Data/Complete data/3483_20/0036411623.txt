@@ -1,0 +1,25 @@
+class Komprimiranje{
+private:
+    int *pok;
+    int brCl;
+public:
+    Komprimiranje(int *ipok, int ibrCl){
+        pok=ipok;
+        brCl=ibrCl;
+    }
+	int UkupnaSuma (){
+		int i, pom=0;
+		for (i=0; i<brCl; i+=2){
+			pom+=pok[i]*pok[i+1];
+		}
+		return pom;
+	}
+	int UkupniBrojElemenata(int vrijednost){
+        int i, pom=0;
+        for(i=0; i<brCl; i+=2){
+            if(pok[i]==vrijednost) continue;
+            pom+=pok[i+1];
+		}
+		return pom;
+	}
+};

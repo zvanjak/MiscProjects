@@ -1,0 +1,20 @@
+int NadjiNaGlavnoj(int*mat, int m, int n, int maxstup, int*max, int*min){
+    int i,j;
+    int MAX,MIN;
+
+    MAX=MIN=*mat;
+    for(i=1;i<m;i++){
+        for(j=1;j<n;j++){
+            if(j==i){
+                if (MAX<mat[i*maxstup+j])
+                    MAX=mat[i*maxstup+j];
+                if (MIN>mat[i*maxstup+j])
+                    MIN=mat[i*maxstup+j];
+			}
+		}
+	}
+
+    *max=MAX;
+    *min=MIN;
+    return 0;
+}

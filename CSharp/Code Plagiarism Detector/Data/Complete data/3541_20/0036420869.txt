@@ -1,0 +1,55 @@
+int izbaciZ(zapis **glava)
+{
+	zapis *pom, *pom1, *pom2;
+	float ukpros = 0;
+	long cvorova = 0;
+	int izbacenih = 0;
+	
+	pom = *glava;
+
+	while(pom)
+	{
+		cvorova++;
+		ukpros += pom->pros;
+
+		pom = pom->sljed;
+	}
+
+	ukpros = ukpros / cvorova;
+
+	pom = *glava; 
+
+	while(pom)
+	{
+		pom2 = pom;
+
+		if (pom2->spol == 'Z')
+		{    
+			if (pom2->pros < ukpros)
+			{
+				izbacenih++; 
+
+				if (*glava == pom2)
+				{
+					pom1 = (*glava)->sljed;
+					free(*glava);
+					*glava = pom1;
+					pom=*glava;
+					
+				}
+				else
+				{
+					for (pom1 = *glava; pom1->sljed != pom2; pom1 = pom1->sljed);
+
+					pom1->sljed = pom2->sljed;
+					free(pom2);
+					pom=pom1;
+				}
+
+			}
+		}
+		pom = pom->sljed;
+	}
+
+	return izbacenih;
+}

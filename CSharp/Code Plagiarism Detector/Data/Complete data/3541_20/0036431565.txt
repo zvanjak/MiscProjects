@@ -1,0 +1,29 @@
+int izbaciZ(zapis **glava){
+	zapis *p, *pom;
+	float pros = 0.0;
+	int i = 0;
+	for (p = *glava; p != NULL; p = p->sljed){
+		pros += p->pros;
+		i++;
+	}
+	pros /= i;
+	//printf("prosjek = %f\n", pros);
+	i = 0;
+	if ((*glava)->spol == 'Z' && (*glava)->pros < pros){
+		pom = *glava;
+		*glava = (*glava)->sljed;
+		free(pom);
+		i++;
+	}
+	p = *glava;
+	while (p != NULL)
+		if (p->sljed && p->sljed->spol == 'Z' && p->sljed->pros < pros){
+			pom = p->sljed;
+			p->sljed = p->sljed->sljed;
+			free(pom);
+			i++;
+		}
+		else
+			p = p->sljed;
+	return i;
+}

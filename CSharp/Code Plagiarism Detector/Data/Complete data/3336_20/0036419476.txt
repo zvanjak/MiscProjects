@@ -1,0 +1,15 @@
+int rStrcmp( char *s1, char *s2);
+int i,
+int n=0; 
+
+
+kontrola()
+while s1 != '\0'{
+a= s1(n)-s2(n)
+if (a=0)
+{
+n++;
+rStrcmp (s1[n], s2[n]);
+else reutrn a}
+}
+  

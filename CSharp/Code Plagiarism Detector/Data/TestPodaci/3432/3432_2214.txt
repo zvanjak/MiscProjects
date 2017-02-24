@@ -1,0 +1,24 @@
+#include <stdio.h>
+#define DUZINA 100
+
+int main() {
+	int i, j;
+	int a, b, temp, brojac=0;
+	int komp[DUZINA];
+
+	do {
+		scanf("%d", &temp);
+		if (temp==-1) break;
+		komp[brojac]=temp;
+		++brojac;
+	} while(1);
+
+	for (i=0; i<brojac; i=i+2) {
+		a=komp[i];
+		b=komp[i+1];
+		for (j=0; j<b; j++)
+			printf ("%d ", a);
+	}
+
+	return 0;
+}

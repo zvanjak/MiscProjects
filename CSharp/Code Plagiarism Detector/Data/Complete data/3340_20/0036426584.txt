@@ -1,0 +1,4 @@
+int niz( int i ) {
+   kontrola();
+   return i<3? i: niz(i-1)+2*niz(i-2)-niz(i-3);
+}

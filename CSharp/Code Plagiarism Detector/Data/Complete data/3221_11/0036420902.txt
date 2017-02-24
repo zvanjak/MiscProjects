@@ -1,0 +1,24 @@
+#include <stdio.h>
+int main()
+{
+        int b1=0,b3=0,tmp=0;
+        unsigned int d=0, i=0;
+
+        scanf("%d %d %d",&b1,&d,&b3);
+
+        if(b1>b3)
+        {
+                printf("0\n");
+                return 0;
+        }
+        tmp=b1+d;
+        i++;
+        while(tmp<=b3)
+        {
+        printf("%d ",tmp);
+        tmp+=d;
+        i++;
+        }
+        printf("%d %u\n",tmp, i);
+        return 0;
+}

@@ -1,0 +1,80 @@
+typedef struct {
+        char ime[20+1];
+        char prezime[30+1];
+        char jmbag[10+1];
+        int ocjena;
+} tip;
+
+typedef struct x {
+        tip element;
+        struct x *sljed;
+} atom;
+
+int dodaj (atom **glavap, tip element){
+  atom *noviclan;
+  if ((noviclan = (atom *) malloc (sizeof (atom))) == NULL) return 0;
+  (noviclan->element).ocjena = element.ocjena;
+  strcpy ((noviclan->element).ime, element.ime);
+  strcpy ((noviclan->element).prezime, element.prezime);
+  strcpy ((noviclan->element).jmbag, element.jmbag);  
+  noviclan->sljed = *glavap;
+  *glavap = noviclan;
+  return 1;
+}
+
+int brojElementa (atom *glava){
+  atom *i; 
+  int brelem = 0;
+  for (i = glava; i != NULL; i = i->sljed) brelem++;
+  return brelem;
+}
+
+int maksOcjena (atom *glava){
+  atom *j; 
+  int maksimum;
+  if (glava == NULL) return -1;
+  maksimum = (glava->element).ocjena;
+  for (j = glava; j != NULL; j = j->sljed) 
+      if ((j->element).ocjena > maksimum) 
+		  maksimum = (j->element).ocjena;
+  return maksimum;
+}
+
+float prosjOcjena (atom *glava){
+  atom *k; 
+  float prosjek;
+  int suma = 0; 
+  int kom = 0;
+  if (glava == NULL) return -1;
+  for (k = glava; k != NULL; k = k->sljed){
+      kom++; 
+	  suma += (k->element).ocjena;
+  }
+  prosjek = (float) suma / kom;
+  return prosjek;
+}
+
+int izbaciImePocinjeS (atom **glavap, char *imePocetak){
+ atom *p, *pp; 
+ int broj = 0;
+ for (p = *glavap; p != NULL; ){
+	 if ((strncmp ((p->element).ime, imePocetak, strlen (imePocetak)) == 0) &&
+		 (strlen ((p->element).ime) >= strlen (imePocetak))){
+         if (p == *glavap){
+               pp = (*glavap)->sljed;
+               free (*glavap);
+			   *glavap = pp;
+			   p = pp;
+			   broj++;
+		 }else{
+			 for (pp = *glavap; pp->sljed != p; pp = pp->sljed);
+			 pp->sljed = p->sljed;
+			 free (p);
+			 p = pp->sljed;
+			 broj++;
+		 }
+		 }
+ else p = p->sljed;
+ }
+ return broj;
+}

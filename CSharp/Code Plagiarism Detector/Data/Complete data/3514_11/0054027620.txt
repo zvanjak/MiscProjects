@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <math.h>
+
+struct tocka {
+	double x;
+	double y;
+} t[4];
+int main () {
+double r,fi,p,x1,y1,a,b,d1,d2;
+int i,c=1;
+for (i=0; i<4;i++)
+ scanf("%lf %lf", &t[i].x, &t[i].y);
+for (i=0; i<2;i++) {
+ a=sqrt(pow(t[i].x-t[i+1].x,2)+pow(t[i].y-t[i+1].y,2));
+ b=sqrt(pow(t[i+1].x-t[i+2].x,2)+pow(t[i+1].y-t[i+2].y,2));
+ if (!(a==b)) c=0;
+}
+d1=sqrt(pow(t[0].x-t[2].x,2)+pow(t[0].y-t[2].y,2));
+d2=sqrt(pow(t[1].x-t[3].x,2)+pow(t[1].y-t[3].y,2));
+if ((c==1) && (d1==d2))
+printf("%.21f",a*a);
+else {
+	x1=(t[0].x+t[1].x+t[2].x+t[3].x)/4;
+	y1=(t[0].y+t[1].y+t[2].y+t[3].y)/4;
+	r=sqrt(x1*x1 + y1*y1);
+	fi=atan(y1/x1);
+	printf("%.21f %.21f", r, fi);
+}
+
+return 0;
+}

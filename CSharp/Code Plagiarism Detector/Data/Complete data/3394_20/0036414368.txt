@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <malloc.h>
+int* napraviPolje(int *A, int Na, int *B, int Nb, int *Nc){
+     int min,i,*C,b;
+     *Nc=0;
+     b=0;
+     min=B[0];
+     for(i=1;i<Nb;i++){
+                       if(B[i]<min) min=B[i];}
+     for(i=0;i<Na;i++){
+                       if(min<A[i]) *Nc=*Nc+1;}
+     C=(int *) malloc (*Nc * sizeof (int));
+     for(i=0;i<Na;i++){
+                       if(min<A[i]) {
+                                    C[b]=A[i];
+                                    b++;}
+                                    }
+     return C;}

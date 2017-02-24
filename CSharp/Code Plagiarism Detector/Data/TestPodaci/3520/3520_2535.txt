@@ -1,0 +1,18 @@
+ int RemoveAllDigits (char *inputField, char *outputField, int *number)
+    {
+        int i=0, duljinaniza =0, brizbacenih;
+      
+        while (inputField[i])
+        {
+         if (inputField[i]<48 || inputField[i]>57) 
+         { 
+         outputField[duljinaniza]=inputField[i];
+         duljinaniza++;
+         }
+         i++;
+        }
+        outputField[duljinaniza]='\0';
+        brizbacenih=i-duljinaniza;
+        *number=brizbacenih;
+        return duljinaniza;
+    }

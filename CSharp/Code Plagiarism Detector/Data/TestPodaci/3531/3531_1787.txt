@@ -1,0 +1,58 @@
+void zamijeni(char *ulazni, int *broj){
+	int i=0, j=0, k=0, proslo=0, slo=0, bro=0, zna=0;
+
+	//nadji najvecega
+	for(i=0; i<(signed)strlen(ulazni); i++){
+		if (isalpha(ulazni[i])){slo++;}
+		else if (isdigit(ulazni[i])){bro++;}
+		else zna++;
+	}
+		
+	if ((slo>=bro)&&(slo>=zna)){*broj=slo;}
+	else if ((bro>=slo)&&(bro>=zna)){*broj=bro;}
+	else *broj=zna;
+
+
+	//Prvo veliko, ostalo malo
+	for(i=0; i<(signed)strlen(ulazni); i++){
+		if ((isalpha(ulazni[i]))&&(proslo==0)){
+			if ((ulazni[i]>96)&&(ulazni[i]<123)){
+				ulazni[i]-=32;
+			};
+			proslo=1;
+			i++;
+		};
+		if ((proslo==1)&&(isalpha(ulazni[i]))){
+			if ((ulazni[i]>64)&&(ulazni[i]<91)){
+				ulazni[i]+=32;
+			}
+		}
+	}
+
+	//ostali znakovi = ?
+	for(i=0; i<(signed)strlen(ulazni); i++){
+		if ((!isalpha(ulazni[i]))&&(isprint(ulazni[i]))&&(!isdigit(ulazni[i]))){
+			ulazni[i]='?';
+		};
+	};
+
+	//brojevi = !
+	for(i=0; i<(signed)strlen(ulazni); i++){
+		if (isdigit(ulazni[i])){
+			ulazni[i]='!';
+			for(j=i+1;j<=(signed)strlen(ulazni);j++){
+				if (isdigit(ulazni[j])){
+					for (k=j; k<=(signed)strlen(ulazni);k++){
+						ulazni[k]=ulazni[k+1];
+					};
+					j--;
+				}else{
+					break;
+				}
+			};
+		};
+	};
+	
+//KRAJ
+
+}

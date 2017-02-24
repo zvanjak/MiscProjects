@@ -1,0 +1,26 @@
+#include <stdio.h>
+int main(){
+	int n,m,i;
+	double npovrh,mpovrh,npovm,rez;
+	scanf("%d %d",&n,&m);
+	if (n>0 && m>0 && n>=m && n!=m)
+	{
+	npovrh=1;
+	for(i=1;i<=n;i++){
+		npovrh*=i;
+	}
+	mpovrh=1;
+	for(i=1;i<=m;i++){
+		mpovrh*=i;
+	}
+	npovm=1;
+	for(i=1;i<=n-m;i++){
+		npovm*=i;
+	}
+	rez=npovrh/(mpovrh*npovm);
+	printf("%g",rez);
+	}
+	else
+		printf("0");
+	return 0;
+}

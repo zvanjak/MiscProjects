@@ -1,0 +1,19 @@
+#include<stdio.h>
+int main(){
+	int i,n,kol=0,prost=0;
+	while(1){
+		scanf("%d", &n);
+		if(n<3)break;
+		for(i=2;i<=n-1;i++){
+			if((n%i)==0){
+					prost=0;
+					break;
+			}
+			else
+				prost++;
+		}if(prost!=0)
+			kol++;
+	}
+	printf("%d",kol);
+	return 0;
+}

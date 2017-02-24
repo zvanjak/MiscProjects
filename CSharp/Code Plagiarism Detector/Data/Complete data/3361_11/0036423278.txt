@@ -1,0 +1,13 @@
+#include<stdio.h>
+int main(){
+	int a,l,d;
+	scanf("%d",&a);
+	l=a/100;
+	d=a%100;
+	if((l+d)%l==0)
+		printf("\nJest");
+	else{
+		printf("\nNije");
+	}
+	return 0;
+}

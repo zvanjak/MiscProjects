@@ -1,0 +1,15 @@
+int najbolji(FILE *f) {
+    int rbr = 0, bodovi = 0, brzap, pr = 0;
+    struct natjecatelj osoba; 
+    fseek(f, 0L, SEEK_END);
+    brzap = ftell(f) / sizeof(osoba); 
+	fseek(f, 0L, SEEK_SET); 
+    for (pr = 0; pr < brzap; pr++) { 
+        fread(&osoba, sizeof(osoba), 1, f);
+        if (osoba.bodovi > bodovi && osoba.redni_br != 0) { 
+                       bodovi = osoba.bodovi;  
+					   rbr = osoba.redni_br;
+                         }
+        }
+    return rbr;
+} 

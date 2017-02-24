@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+	long int n,b,i,x,g,y=0,j=10;
+	scanf("%d",&b);
+	if (b>0) {
+	i=10;
+	while ((b%i)!=b) {
+		i*=10;
+		}
+	g=i;
+	for (;i>=10;i/=10) {
+	x=(b%i)/(i/10);
+	if ((x%2)==0) b=b-x*(i/10);
+	}
+	for (i=10;i<=g;i*=10) {
+		x=(b%i)/(i/10);
+		if (x==0) j/=10; 
+		else y+=x*(j/10);
+		j*=10;}
+	printf("%d",y);}
+	else printf("%d",b);
+	return 0;
+}

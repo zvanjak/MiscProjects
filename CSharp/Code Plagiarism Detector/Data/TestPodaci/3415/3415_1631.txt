@@ -1,0 +1,33 @@
+#include <stdio.h>
+int main ()
+{
+int a[20],b[20],i,s,f=0,g=0;
+char c[21];
+do
+{
+    scanf("%d %d %c",&a[g],&b[g],&c[g]);
+	g++;
+}
+while(c[g-1]== '+' || c[g-1]== '-' || c[g-1]== '*' || c[g-1]== '/' || c[g-1]== '%' );
+
+for(i=0;i<g-1;i++)
+{
+	if(c[i]=='+')
+		s=a[i]+b[i];
+	if(c[i]=='-')
+		s=a[i]-b[i];
+	if(c[i]=='*')
+		s=a[i]*b[i];
+	if(c[i]=='/')
+		if(b[i]!=0)
+			s=a[i]/b[i];
+	if(c[i]=='%')
+		if(b[i]!=0)
+			s=a[i]%b[i];
+f+=s;
+}
+printf("%d",f);
+for(i=0;i<g-1;i++)
+printf(" %c", c[i]);
+return 0;
+}

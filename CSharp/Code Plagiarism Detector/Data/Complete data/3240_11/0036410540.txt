@@ -1,0 +1,17 @@
+#include <stdio.h>
+void main (){
+	int n=0,i=0,p[20]={0};
+	scanf("%d",&n);
+	if(n>=0){
+	while (n>0)
+	{
+			p[i]=n%10;
+			n=n/10;
+			i++;
+	}
+		for (i=i-1; i>=0; i--)
+			printf("%d ",p[i]);
+	}
+	else
+		printf("n nije pozitivan");
+}

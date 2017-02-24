@@ -1,0 +1,27 @@
+#include <stdio.h>
+int main () {
+	int i, j, suma = 0, brzamjena = 0, pom, n, x[10][10], mr;
+	scanf ("%d", &mr);
+	if (mr < 1 || mr > 10)
+		return 0;
+	for (i = 0; i < mr; i++)
+		for (j = 0; j < mr ; j++)
+			scanf ("%d", &x[i][j]);
+	scanf ("%d %d", &i, &j);
+	while (i < mr && j < mr) {
+			pom = x[i][j];
+			x[i][j] = x[j][i];
+			x[j][i] = pom;
+			brzamjena++;
+			scanf ("%d %d", &i, &j);
+	}
+	scanf ("%d", &n);
+	if (n < 0 || n > mr)
+		suma = -1;
+	else {
+		for (j = 0; j < mr; j++)
+			suma += x[n][j];
+	}
+	printf ("%d %d", brzamjena, suma);
+	return 0;
+}

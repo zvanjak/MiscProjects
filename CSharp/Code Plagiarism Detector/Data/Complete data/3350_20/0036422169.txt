@@ -1,0 +1,17 @@
+int najbolji(FILE *f) {
+     struct natjecatelj student;
+     int max_bodovi=-9999;
+     int rbr=0;
+     fseek(f, 0L, SEEK_SET);
+     while(1) {
+         if(fread(&student, sizeof(student), 1, f)) {
+             if (student.bodovi > max_bodovi && student.redni_br != 0) {
+                max_bodovi=student.bodovi;
+				rbr=student.redni_br;
+             }
+         } else {
+             break;
+         }
+     }    
+     return rbr;
+}

@@ -1,0 +1,18 @@
+#include<stdio.h>
+int main(){
+	int i,n;
+	double x,y;
+	x=1;
+	y=1;
+	scanf("%d",&n);
+	if((n >= 1)&&(n <= 20)&&(n - (int)n == 0)) {
+		for(i=1;i<n;i++) {
+			y=y*i;
+			x=x+(1/y);
+		}
+		printf("%13.12f",x);
+	}
+	else
+		printf("n nije valjan");
+	return 0;
+}

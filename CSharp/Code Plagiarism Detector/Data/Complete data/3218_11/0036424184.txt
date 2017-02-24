@@ -1,0 +1,30 @@
+
+# include <stdio.h>
+int main ()
+{
+	
+	int cb[10000],p=0,j,k,i,m=0;
+	i=0;
+	do
+	{
+		scanf ("%d",&cb[i]);
+		i=i+1;
+	}
+	while (cb[i-1]>2);
+	for (j=0; j==(i-1); j=j+1)
+	{
+		for (k=2; k>(cb[j]/2);k=k+1)
+		{
+			if ((cb[j]%k)==0) 
+			{
+				k=cb[j]/2+1;
+				p=0;
+			}
+			else 
+				p=cb[j];
+		}
+	if (p>m) m=p;
+	}
+	printf ("%d",m);
+return 0;
+}

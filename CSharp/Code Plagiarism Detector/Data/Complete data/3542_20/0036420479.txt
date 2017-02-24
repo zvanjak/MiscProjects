@@ -1,0 +1,37 @@
+int promijenimbr(zapis **glava, int starimbr, int novimbr){
+
+	int nadjeno;
+	zapis *p;
+	zapis *novi;
+	nadjeno=0;
+zapis **pocetak;
+
+pocetak=glava;
+    if ((novi = (zapis *) malloc(sizeof(zapis))) == NULL) 
+		return 0;
+	
+for (; *glava && (*glava)->matbr != starimbr;  glava = &((*glava)->sljed));
+  if (*glava) {
+	p = *glava; //glava je sad nadjeni matbr;
+	//novi->imepr=p->imepr;
+	novi->matbr=novimbr;
+	novi->spol=p->spol;
+	novi->pros=p->pros;
+
+	*glava = (*glava)->sljed; //glavu stavimo da je matbr poslije obrisanog
+	free (p);
+	
+  } else {
+	return 0;
+  }
+
+
+
+for (p = *pocetak; p->sljed && (p->sljed)->matbr < novimbr; p = p->sljed);
+
+		novi->sljed = p->sljed;
+		p->sljed = novi;
+
+
+return 1;
+}	

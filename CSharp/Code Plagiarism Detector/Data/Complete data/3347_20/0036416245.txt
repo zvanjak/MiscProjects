@@ -1,0 +1,10 @@
+double sumareda( double x, int N ){
+	double suma;
+	kontrola ();
+	if (N>0) 
+		suma= (N%2) ? pow (x, N)/N : -1*(pow (x, N)/N);
+	else
+		return 0;
+	suma+=sumareda(x, N-1);
+	return suma;
+}

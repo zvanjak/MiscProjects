@@ -1,0 +1,16 @@
+float prosjek (FILE *f){
+	float pros=0.;
+	int brojac=0;
+	struct zapis_album{
+		char naziv[30+1];
+		char autor[20+1];
+		int prodano;
+	} album;
+	fseek (f,0L, SEEK_SET);
+	while (fscanf(f,"%s%s%d\n",album.naziv,album.autor,&album.prodano)>0) {
+		pros+=album.prodano;
+		brojac++;
+	}
+	pros=pros/brojac;
+	return pros;
+}

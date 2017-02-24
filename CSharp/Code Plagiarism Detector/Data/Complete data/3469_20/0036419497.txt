@@ -1,0 +1,9 @@
+double fun1(Trokut t,Pravokutnik p,Krug k){
+double povtrokuta,povpravok,povkruga,max;
+max=t.Povrsina();
+povpravok=p.Povrsina();
+povkruga=k.Povrsina();
+if (povpravok>max)max=povpravok;
+if(povkruga>max)max=povkruga;
+return max;
+}

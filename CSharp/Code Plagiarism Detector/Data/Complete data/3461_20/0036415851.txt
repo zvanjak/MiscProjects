@@ -1,0 +1,11 @@
+#include <stdio.h>
+int JelSeSijeku(Kruznica &k1, Kruznica &k2){
+    float d, razr, zbrr;
+    d=(k1.GetCenterX()-k2.GetCenterX())*(k1.GetCenterX()-k2.GetCenterX())-(k1.GetCenterY()-k2.GetCenterY())*(k1.GetCenterY()-k2.GetCenterY());
+    razr=(k1.GetRadius()-k2.GetRadius())*(k1.GetRadius()-k2.GetRadius());
+    zbrr=(k1.GetRadius()+k2.GetRadius())*(k1.GetRadius()+k2.GetRadius());
+    if((k1.GetCenterX()==k2.GetCenterX())&&(k1.GetCenterY()==k2.GetCenterY())&&(k1.GetRadius()==k2.GetRadius()))return 3;
+    else if((razr<d)&&(d<zbrr))return 2;
+    else if((d==razr)||(d==zbrr))return 1;
+    else return 0;
+}

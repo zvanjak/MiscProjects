@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main()
+{
+	int i, j, k;
+	char znakovi[101], p;
+
+	k=0;
+	do{
+		scanf("%c", &znakovi[k]);
+		k++;
+	}while(znakovi[k-1]!='.');
+	
+	znakovi[--k]='\0';
+
+	do{
+		scanf("%d %d", &i, &j);
+		
+		if(i-1<k && j-1<k)
+		{
+			p=znakovi[i-1];
+			znakovi[i-1]=znakovi[j-1];
+			znakovi[j-1]=p;
+		}
+	}while(i-1<k && j-1<k);
+
+	for(i=0;i<k;i++)
+		printf("%c ", znakovi[i]);
+	
+	return 0;
+}

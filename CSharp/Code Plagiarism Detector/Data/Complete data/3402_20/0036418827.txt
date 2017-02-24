@@ -1,0 +1,25 @@
+int* napraviPolje(int *A, int Na , int a, int b ,int *Nc){
+	int brojac=0,i=0,k=0,j,pom[MAX],*mal;
+	if (a > b) return 0;
+	else {
+		while(i < Na){
+			j=a;
+			while(j<=b){
+				if ((*(A + i) % j)==0) {
+					pom[k]=*(A+i);
+					k++;
+					break;
+					
+				}
+				j++;
+			}
+			i++;
+		}
+		*Nc=k;
+		mal = (int *) malloc (k*sizeof (int));
+		for(i=0;i<k;i++){
+			mal[i] = pom [i];
+		}
+		return mal;
+	}
+}

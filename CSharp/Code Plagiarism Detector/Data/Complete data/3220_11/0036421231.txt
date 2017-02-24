@@ -1,0 +1,19 @@
+#include<stdio.h>
+int main(){
+	int x,y,z,i;
+	scanf("%d", &x);
+	y=0; i=1;
+	if (x>0) {
+		while (x>0) {
+			z=x%10;
+			if (!(z%2==0 || z==0)){
+				y= y + i*z;
+			    i=i*10;
+			}
+			x=x/10;
+		}
+		printf("%d", y);
+	}
+	else printf("%d", x);
+	return 0;
+}

@@ -1,0 +1,22 @@
+int JeLiUnutra(Kruznica &kruz, Kvadrat &kvad)
+	{
+	float xKvad, yKvad, stran, xKruz, yKruz, rad;
+	int zastavica;
+	xKruz = kruz.GetCenterX();
+	yKruz = kruz.GetCenterY();
+	rad = kruz.GetRadius();
+	xKvad = kvad.GetX();
+	yKvad = kvad.GetY();
+	stran = kvad.GetDuljinaStranice();
+	if (stran>(2*rad))
+		if ((xKruz>xKvad)&&(xKruz<(xKvad+stran))&&(yKruz<yKvad)&&(yKruz>(yKvad-stran)))
+			if (((xKruz-rad)>xKvad)&&((xKruz+rad)<(xKvad+stran))&&((yKruz+rad)<yKvad)&&((yKruz-rad)>(yKvad-stran)))
+				zastavica = 1;
+			else
+				zastavica = 0;
+		else
+			zastavica = 0;
+	else
+		zastavica = 0;
+	return zastavica;
+	};

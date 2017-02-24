@@ -1,0 +1,12 @@
+int Najgore(cvor *glava){
+	cvor *trenutni = glava;
+	cvor *temp;
+	if (glava == NULL) return 0;
+	while ((trenutni->lijevo != NULL) || (trenutni->desno != NULL)){
+		if ((trenutni->lijevo == NULL) && (trenutni->desno != NULL)) temp=trenutni->desno;
+		if ((trenutni->lijevo != NULL) && (trenutni->desno == NULL)) temp=trenutni->lijevo;
+		if ((trenutni->lijevo != NULL) && (trenutni->desno != NULL)) return 0;
+		trenutni=temp;
+	}
+	return 1;
+}

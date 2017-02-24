@@ -1,0 +1,21 @@
+float prosjek(FILE *f){
+	struct album{
+		char naziv[30+1];
+		char autor[20+1];
+		int prodano;
+	} a;
+
+	int n, i=0, suma=0;
+
+	fseek(f, 0, SEEK_SET);
+
+	do {
+		n = fread(&a, (long)sizeof(a), 1, f);
+		if (n==1) {
+			i++;
+			suma += a.prodano;
+		}
+	} while ( n == 1);
+
+	return (float)suma/i;
+}

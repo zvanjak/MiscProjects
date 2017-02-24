@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<math.h>
+#include<conio.h>
+
+double main()
+{
+
+int n,i;
+double p=0;
+
+
+printf("\nUpishi broj chlanova: ");
+scanf("%d", &n);
+
+if( n<1 || n>400 )
+	printf("\nn nije valjan");
+else
+	{
+	for(i=0; i<n; i++)
+		p += (double) 1 / pow( (2 * i + 1), 2 );
+
+	p *= 8;
+   p = sqrt(p);
+
+	printf("%.12f", p);
+	}
+}

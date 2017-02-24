@@ -1,0 +1,24 @@
+Tocka fun5(Trokut t) {
+
+	Tocka Povratna;
+
+	double x = 0;
+	double y = 0;
+
+	Tocka A, B, C;
+	
+	A = t.getA();
+	B = t.getB();
+	C = t.getC();
+
+	x += A.X + B.X + C.X;	
+	y += A.Y + B.Y + C.Y;
+
+	x /= 3; y/=3;
+
+	Povratna.X = x;
+	Povratna.Y = y;
+
+	return Povratna;
+	
+}

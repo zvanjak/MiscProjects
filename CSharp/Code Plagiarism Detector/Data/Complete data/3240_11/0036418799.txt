@@ -1,0 +1,24 @@
+#include <StdIO.h>
+#include <Math.h>
+
+
+int main()
+{
+        int n;
+
+        /*printf("Unesite n: ");*/
+        scanf("%d",&n);
+
+        if(n <= 0) /*puts("n nije valjan");*/ printf ("n nije pozitivan");
+        else
+        {
+                int k = pow(10,(int)log10((double)n));
+                while(k)
+                {
+                        printf("%d ",n/k);
+                        n %= k;
+                        k /= 10;
+                }
+                /*printf("\n");*/
+        }
+}

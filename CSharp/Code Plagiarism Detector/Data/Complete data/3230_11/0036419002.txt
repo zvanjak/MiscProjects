@@ -1,0 +1,15 @@
+#include <stdio.h>
+int main() {
+int n,i=1,j;
+double e=1.;
+scanf("%d",&n);
+if ((n<1)||(n>20)) printf ("n nije valjan");
+else {
+for (j=1; j<n; j++){
+i=i*j;
+e=e+1./i;
+	}
+printf("%1.13g",e);
+}
+return 0;
+}

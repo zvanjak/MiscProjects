@@ -1,0 +1,55 @@
+class Kosarica{
+
+private:
+
+float *_Podatci;	
+int _BrojElemenata;						
+
+public:
+
+Kosarica::Kosarica()
+{_Podatci = new float[1];
+_BrojElemenata = 0;}
+
+
+void Kosarica::DodajProizvod(float cijena)
+{
+_BrojElemenata++;
+float *Temp = new float[_BrojElemenata];
+for(int i = 0; i < _BrojElemenata - 1; i++ )
+	Temp[i] = _Podatci[i];
+delete []_Podatci;
+_Podatci = Temp;
+_Podatci[_BrojElemenata - 1] = cijena;}
+
+
+float Kosarica::UkupnaCijena()
+{
+int i;
+float suma = 0;
+if(_BrojElemenata == 0)
+{return 0;}
+else
+{for(i = 0;i < _BrojElemenata; i++)
+{suma = suma + _Podatci[i];}}
+return suma;
+}
+
+float Kosarica::NajskupljiProizvod()
+{
+int i;
+float max;
+if(_BrojElemenata == 0)
+return 0;
+else
+{max = _Podatci[0];
+for(i = 1;i < _BrojElemenata; i++)
+if(_Podatci[i] > max)
+max = _Podatci[i];}
+return max;
+}
+
+Kosarica::~Kosarica()
+{delete []_Podatci;}
+
+};

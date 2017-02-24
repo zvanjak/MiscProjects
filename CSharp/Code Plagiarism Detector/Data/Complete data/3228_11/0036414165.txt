@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <math.h>
+
+int main () {
+
+	int i;
+	float rez, pi, a, n; 
+	
+	rez = 0;
+	
+	scanf ("%f", &n);
+
+	if (n != (int)n || n < 1 || n > 100) {
+		printf ("n nije valjan");
+	}
+	
+	else{
+
+		for (i = 1; i <= n; i++){
+
+			if (i % 2 != 0) a = 1. / (i * i);
+
+			else a = -1. / (i * i);
+
+			rez += a;
+
+		}
+
+		pi = sqrt (12 * rez);
+
+		printf ("%.12f", pi);
+
+	}
+
+	return 0;
+
+}

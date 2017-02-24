@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main(){
+	int a,b,i;
+	unsigned int d;
+
+	scanf("%d %u %d", &a, &d, &b);
+	i=0;
+	while (!(a>b)){
+		a=a+d;
+		printf("%d ",a);
+		i++;
+
+	}
+	printf("%d", i);
+
+return 0;
+}

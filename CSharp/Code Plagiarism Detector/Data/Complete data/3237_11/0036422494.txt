@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+	int n=0, i=0, k=0;
+	float rez=0.0f, rez1=0.0f;
+
+	scanf ("%d", &n);
+	
+	if (n<1 || n>30)
+	{
+		printf ("n nije valjan");
+	}
+	else
+	{
+		do
+		{
+			i += 1;
+			k = pow(i, 6);
+			
+			rez = rez + (1.0f / k);
+
+			rez1 = rez*945;
+			rez1 = pow(rez1, 1/6.0f);
+		} while (i<=n);
+
+		printf ("%.12f", rez1);
+	}
+
+	return 0;
+}

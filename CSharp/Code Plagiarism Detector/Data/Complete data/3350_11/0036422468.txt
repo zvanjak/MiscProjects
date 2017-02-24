@@ -1,0 +1,19 @@
+int najbolji(FILE *f){
+
+int max=0, broj; 
+
+struct natjecatelj pot;
+
+fseek(f,0L,SEEK_SET);
+
+while( (fread (&pot, sizeof (pot), 1, f)) != 0 ){
+
+if(pot.redni_br != 0){
+if(pot.bodovi > max) broj = pot.redni_broj;
+} 
+
+}
+
+return broj;
+
+}

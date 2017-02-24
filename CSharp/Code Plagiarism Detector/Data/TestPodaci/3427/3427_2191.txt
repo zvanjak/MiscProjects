@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int main()
+{
+  int polje[200];
+  int temp, prosti=0, razlika=0, j, k, i=-1;
+  long umn=1;
+
+  do
+  scanf("%d", &polje[++i]);  
+  while (polje[i] > 0);    
+
+  if ((--i)%2 != 0)          
+       {
+        for (j=0; j<=i; j++)
+           if (polje[j]>1)
+               {
+                temp=0;
+                for (k=2; k<polje[j]; k++)
+                     if ((polje[j]%k) == 0) temp=1; 
+                if (!temp) prosti++;
+               }
+
+        i++;                     
+        for (j=0; j<=i; j++)
+               umn *= polje[j];   
+        printf("%d %d", umn, prosti);
+       }
+       else
+       {
+       for (j=0; j<(i/2); j++)
+        if (polje[j] != polje[i-j]) razlika=1;          
+       if (razlika) printf("Nije"); else printf("Jest");
+       }
+  scanf("%d", &i);
+  return 0;
+}

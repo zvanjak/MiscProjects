@@ -1,0 +1,26 @@
+int najbolji(FILE *f){
+	struct natjecatelj{
+		int redni_br;
+		char prezime[20+1];
+		int bodovi;
+	}zapis;
+	int lik, max, broj_zapisa, i;
+   
+	fseek(f, 0L, SEEK_END);
+	broj_zapisa=ftell(f)/sizeof(zapis);
+
+	fseek(f, 0L, SEEK_SET);
+	fread(&zapis, sizeof(zapis), 1, f);
+	lik=zapis.redni_br;
+	max=zapis.bodovi;
+	
+	fseek(f, 0L, SEEK_SET);
+	for(i=1; i<=broj_zapisa; i++){
+		fread(&zapis, sizeof(zapis), 1, f);
+		if ((max<zapis.bodovi)&&(zapis.redni_br!=0)){
+			max=zapis.bodovi;
+			lik=zapis.redni_br;
+		}
+	}
+	return lik;
+}

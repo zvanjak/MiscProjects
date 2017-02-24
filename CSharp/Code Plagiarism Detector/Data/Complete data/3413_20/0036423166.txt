@@ -1,0 +1,36 @@
+char *brojeve_u_znakove(int *polje, int duljina)
+{
+	char *p;
+	int i=0,mj=0,j=0,zn;
+	int *brzn=(int*)malloc(duljina*sizeof(int));
+	float b=10;
+	
+	for(i=0;i<duljina;i++){
+		brzn[i]=0;
+		zn=polje[i];
+		if(polje[i]== 0) zn=1;
+		while(zn>0){
+			zn=zn/10;
+			brzn[i]++;
+		}
+		mj+=brzn[i]+1;
+	}
+	p=(char*)malloc(mj);
+	if(duljina == 0){
+		*p='\0';
+		return p;
+	}
+	for(i=0;i<duljina;i++){
+		for(mj=(brzn[i]),j;mj>0;mj--,j++){
+			p[j]=(char)(48+(polje[i]%(int)(pow(b,mj)))/((int)(pow(b,(mj-1)))));
+			if(polje[i]== 0) p[j]=(char)(48+0);
+		}
+		if(i<(duljina-1)){
+			p[j]=' ';
+			j++;
+		}
+		else p[j]='\0';
+		
+	}
+	return p;		
+}

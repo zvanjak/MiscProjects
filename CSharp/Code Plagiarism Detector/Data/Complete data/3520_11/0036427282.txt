@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include<ctype.h>
+
+int RemoveAllDigits (char * inputField, char * outputField, int * number){
+
+	int broj=0, i, j=0, num=0;
+
+	while(*(inputField + broj) != '\0')
+		broj++;
+
+	for(i=0;i<=broj; i++){
+		if (isdigit((*(inputField +i)))){
+			num++;}
+		else{
+			*(outputField +j)=*(inputField +i);
+			j++;}
+		*number=num;
+	}
+
+		return (broj-num);
+}

@@ -1,0 +1,7 @@
+int niz(int i){
+	int n;
+	kontrola();
+	if (i<3) return i;
+	n=(niz(i-1)+2*(niz(i-2))-niz(i-3));
+        return n;
+}

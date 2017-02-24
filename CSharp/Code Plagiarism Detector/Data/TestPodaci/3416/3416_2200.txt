@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main()
+{
+	char string[100] = { '\0' } , slovo_min, slovo_max;
+	int i=0, j;
+	do
+	{
+		scanf("%c", &string[i]);
+		if(!(string[i]>='A' && string[i]<='Z')) break;
+		i++;
+	}
+	while(1);
+	if(i==0)
+	{
+		printf("-1");
+		return 0;
+	}
+	slovo_min = slovo_max = string[0]; 
+	for(j = 1; j < i; j++)
+	{
+		if(slovo_min > string[j]) slovo_min = string[j];
+		if(slovo_max < string[j]) slovo_max = string[j];
+	}
+	printf("%c %c", slovo_min, slovo_max);
+	return 0;
+}

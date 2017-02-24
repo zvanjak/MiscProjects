@@ -1,0 +1,10 @@
+#include <stdio.h>
+int main () {
+ char a,b; int x;
+ scanf ("%c %c", &b, &a);
+ if (a>47 && a<59) a = a - 48; else a = a - 55;
+ if (b>47 && b<59) b = b - 48; else b = b - 55;
+ x = b*16+a;
+ printf ("%d", x);
+ return 0;
+ }

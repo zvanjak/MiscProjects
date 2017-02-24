@@ -1,0 +1,21 @@
+int *Find3Max(int *p, int n){
+	int i;
+	int *np=malloc(3*sizeof(int));
+	for(i=0;i<3;i++) *(np+i)=0;
+	if(n<3) return NULL;
+	for(i=0;i<n;i++){
+		if(*(p+i)>=*(np)){ 
+			*(np+2)=*(np+1);
+			*(np+1)=*(np);
+			*(np)=*(p+i);
+		}
+		else if(*(p+i)>=*(np+1)){
+			*(np+2)=*(np+1);
+			*(np+1)=*(p+i);
+		}
+		else if(*(p+i)>=*(np+2)){
+			*(np+2)=*(p+i);
+		}
+	}
+	return np;
+}

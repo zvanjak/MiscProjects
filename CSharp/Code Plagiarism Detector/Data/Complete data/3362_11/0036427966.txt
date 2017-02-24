@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main() {
+	int broj,a,b,c,d,kraj;
+	scanf("%d",&broj);
+	a=broj/1000;
+	d=broj%10;
+	broj=broj/10;
+	c=broj%10;
+	broj=broj/10;
+	b=broj%10;
+	kraj=d*1000+c*100+b*10+a;
+	printf("%d",kraj);
+	return 0;
+}

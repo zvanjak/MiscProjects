@@ -1,0 +1,16 @@
+int* napraviPolje(int *A, int Na, int a, int b, int* Nc) {
+     int *p, *p_2, br_el=0, i=0;
+     if(a>b)
+           return 0;
+     p=(int*)malloc(Na*sizeof(int));
+     p_2=p;
+     for(i=0; i<Na; i++)
+           if(*(A+i)>b) {
+                 br_el++;
+                 p=(int*)realloc(p, br_el*sizeof(int));
+                 *p_2=*(A+i);
+                 p_2++;
+     }
+     *Nc=br_el;
+     return p;
+}

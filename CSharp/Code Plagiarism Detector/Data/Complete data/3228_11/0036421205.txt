@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <math.h>
+int main () {
+	int n, i;
+	double pi=0;
+	scanf("%d", &n);
+	if (n<1 || n>100) printf("\nn nije valjan");
+	else {
+		for (i=1; i<=n; i=i+1)
+		pi=pi+pow(-1, i+1)*1.0/pow(i,2);
+		pi=pow(12*pi,1.0/2);
+		printf("\n%1.12f", pi);
+	}
+	return 0;
+}

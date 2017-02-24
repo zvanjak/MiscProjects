@@ -1,0 +1,19 @@
+#include<stdio.h>
+#include<math.h>
+
+int main() 
+{
+	int m = 0, n = 0;
+	double pi = 0;
+
+	scanf("%d", &n);
+	if ((n < 1) || (n > 25))
+	{
+		printf("n nije valjan");
+		return(0);
+	}
+	while(m++ <= n) pi += pow((double)m, -8.);
+	pi = pow((double)(pi * 9450.), 1 / 8.);
+	printf("%.12Lf", pi);
+	return(0);
+}

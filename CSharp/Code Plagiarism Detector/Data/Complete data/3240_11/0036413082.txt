@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <math.h>
+
+int main () {
+int i, b, n, z;
+scanf("%d", &n);
+if (n > 0) {
+z = log10((double)n);
+for(i=pow(10,z); i>0; i/=10) {
+b = n/i%10;
+printf("%d ", b);
+}
+}
+else {
+printf("n nije pozitivan");
+}
+return 0;
+}

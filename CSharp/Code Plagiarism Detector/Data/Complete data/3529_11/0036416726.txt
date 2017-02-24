@@ -1,0 +1,14 @@
+void spoji(char * ime, char *prezime, char *jmbag, char *izlazni) {
+	char broj[6+1];
+	int i,j,k;
+	i=j=0;
+	k=strlen(jmbag);
+	if (k>6) {
+	for (i=(k-6); i<=k; i++) {
+		broj[j]=jmbag[i];
+		j++;
+	}
+	sprintf(izlazni, "%s, %s: %s", prezime, ime, broj);
+	}
+	else sprintf(izlazni, "%s, %s: %06s", prezime, ime, jmbag);
+}	

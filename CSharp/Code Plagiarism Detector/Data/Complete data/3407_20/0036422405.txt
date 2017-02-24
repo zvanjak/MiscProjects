@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+char *SamoSamoglasnici(char *ulazni_niz) {
+	int i;
+	char c;
+	char *novi_niz = NULL;
+	
+	if (ulazni_niz == NULL)
+		return (NULL);
+	
+	if (*ulazni_niz == '\0')
+		return (NULL);
+	
+	i = 0;
+	do {
+		c = *ulazni_niz & 0xDF;
+		if (c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U' || c == '\0') {
+			novi_niz = (char *) realloc(novi_niz, ++i);
+			novi_niz[i - 1] = *ulazni_niz;
+		}
+		ulazni_niz++;
+	} while (c);
+	
+	return (novi_niz);
+}

@@ -1,0 +1,14 @@
+#include <stdio.h>
+main () {
+unsigned int bs,bns,cs;
+float netto,brutto;
+scanf ("%d %d %d", &bs, &bns, &cs);
+if (bs < bns) brutto = (bs*0.9f*cs);
+if (bs > bns) brutto = (bs*1.15f*cs);
+else brutto=bs*cs;
+if (brutto > 6000) netto = (0.7f*brutto);
+else netto = (0.8f*brutto);
+printf("%.2f",netto);
+return 0;
+}
+

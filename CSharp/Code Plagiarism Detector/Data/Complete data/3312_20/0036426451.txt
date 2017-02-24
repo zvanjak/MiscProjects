@@ -1,0 +1,14 @@
+int br_prodanih(FILE *f, char *autor) {
+	char naziv[30+1];
+	char covjek[20+1];
+	int prodano;
+	int suma=0;
+
+	while (fscanf(f, "%s %s %d", naziv, covjek, &prodano)==3) {
+		
+		if (strcmp(covjek, autor)==0)
+			suma+=prodano;
+	}
+
+	return suma;
+}

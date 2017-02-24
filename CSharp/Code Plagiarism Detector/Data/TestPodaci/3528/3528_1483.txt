@@ -1,0 +1,11 @@
+int zamijeni (char * ulazni, char *prvi, char *drugi){
+	int br=0,i=0, prvilen, drugilen; char *niz;
+	prvilen= strlen(prvi);
+	drugilen=strlen(drugi);
+	while (niz=strstr(ulazni, prvi)){
+		strcpy (niz+drugilen, niz+prvilen);
+		strncpy (niz, drugi, drugilen);
+		br++;
+	}
+	return br;
+}

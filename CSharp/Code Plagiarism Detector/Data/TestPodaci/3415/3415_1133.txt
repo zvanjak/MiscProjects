@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <conio.h>
+#include <math.h>
+main(){
+	int a,b,i,zb=0,n=0;
+	char znak[20];
+	i=0;
+	scanf("%d %d %c",&a,&b,&znak[i]);
+	while(znak[i]=='+'||znak[i]=='-'||znak[i]=='*'||znak[i]=='/'||znak[i]=='%')
+	{
+		if(	znak[i]=='+')
+			zb=zb+(a+b);
+		if(znak[i]=='-')
+			zb=zb+(a-b);
+		if(znak[i]=='*')
+		   	zb=zb+(a*b);
+		if( znak[i]=='/' && b>0)
+			zb=zb+(a/b);
+		if(znak[i]=='%'&& b>0)
+            zb=zb+(a%b);
+		i++;
+		n++;
+    scanf("%d %d %c",&a,&b,&znak[i]);}
+	printf("%d",zb);
+	for(i=0;i<n;i++){
+		printf(" %c",znak[i]);}
+	return 0;
+}

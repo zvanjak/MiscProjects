@@ -1,0 +1,19 @@
+#include<stdio.h>
+int main(){
+int i;
+float n;
+double suma;
+suma=0;
+scanf("%f",&n);
+if (n!=int(n) || n<1 || n>100)
+{ 
+	printf("n nije valjan");
+}
+else { 
+	for (i=1; i<=n; i++) {
+		if (i%2 == 1) suma+=1./i;
+		else suma-=1./i;
+} 
+}
+printf("%.12f",suma);
+return 0;}

@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+int n,a=0,i,prost;
+
+do
+{
+    scanf ("%d",&n);
+	if (n<=2)
+		break;
+
+	prost = 1;
+	for (i=2;i<=(sqrt((double)(n)));i++)
+	     if (n%i==0)
+	         prost = 0;   
+    if (prost)
+          if (n>a)
+          a=n;       
+}		
+while (n>2);
+printf ("%d",a);
+	return 0;
+}

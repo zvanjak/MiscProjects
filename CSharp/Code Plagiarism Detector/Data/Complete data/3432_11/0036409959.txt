@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+void main () {
+
+	int i,j,x,niz[100];
+	
+	i=0;
+
+	do {
+		scanf("%d",&x);
+		if (x!=-1) {
+			niz[i]=x;
+			i+=1;
+		}
+	} while (x>0);
+
+	for (j=0; j<i; j+=2)
+		for (x=niz[j+1]; x>0; x-=1)
+			printf ("%d ",niz[j]);	
+
+}

@@ -1,0 +1,23 @@
+#include <stdio.h>
+#define MAX 100
+int main () {
+char polje[MAX],pom;
+int m,n;
+char brojac=0;
+
+for (brojac=0; brojac<=100; brojac++) {
+scanf ("%c", &polje[brojac]);
+if (polje[brojac]=='.')break;
+}
+while (1) {
+scanf ("%d %d", &m, &n);
+if ((m<1) || (m>brojac) || (n<1) || (n>brojac)) {
+break;
+}
+pom=polje[m-1];
+polje[m-1]=polje[n-1];
+polje[n-1]=pom;
+}
+for (m=0; m<brojac;m++) printf ("%c", polje[m]);
+return 0;
+}

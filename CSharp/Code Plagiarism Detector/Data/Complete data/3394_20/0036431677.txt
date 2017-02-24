@@ -1,0 +1,18 @@
+int* napraviPolje(int *A, int Na, int*B, int Nb, int* Nc){
+     int i,j,br=0,*polje;
+     for(i = 0; i < Na; i++)
+           for(j = 0; j < Nb; j++)
+                 if(A[i] > B[j]){
+                               br++;
+                               break;}
+     polje = (int *)malloc(br * sizeof(int));
+     
+     *Nc = br;
+     br=0;
+     for(i = 0; i < Na; i++)
+           for(j = 0; j < Nb; j++)
+                 if(A[i] > B[j]){
+                               polje[br]=A[i];
+                               br++;
+                               break;}
+     return polje;}

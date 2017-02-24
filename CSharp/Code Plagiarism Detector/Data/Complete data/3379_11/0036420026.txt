@@ -1,0 +1,27 @@
+#include <stdio.h>
+int main()
+{
+	int broj, a, b, c, d, e, zbroj, raz, dij;
+	scanf ("%d",&broj);
+	if (broj > 9999 && broj <= 99999)
+	{
+	a = broj / 10000;
+	b = (broj / 1000) % 10;
+	c = (broj / 100) % 10;
+	d = (broj / 10) % 10;
+	e = broj % 10;
+	zbroj = a + b + c + d + e;
+		if (broj % zbroj == 0)
+		{
+			raz = broj - zbroj;
+			printf ("%d",raz);
+		}
+		else
+		{
+			dij = broj / zbroj;
+			printf ("%d",dij);
+		}
+	}
+	else
+		return 0;
+}

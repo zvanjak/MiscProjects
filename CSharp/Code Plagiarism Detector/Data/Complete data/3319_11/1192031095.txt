@@ -1,0 +1,17 @@
+void dodaj(FILE *f){
+struct natjecatelj{
+int redni_br;
+char prezime[20+1];
+int bodovi;
+}igrach,best;
+int n=fread(&igrach,sizeof(igrach),1,f);
+best.bodovi=0;
+while(n==1){
+if (igrach.redni_br && igrach.bodovi>best.bodovi)
+best=igrach;
+n=fread(&igrach,sizeof(igrach),1,f);
+}
+best.bodovi+=10;
+fseek(f,(long) (best.redni_br-1)*sizeof(igrach),SEEK_SET);
+fwrite(&best,sizeof(best),1,f);
+}

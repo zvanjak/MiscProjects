@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+int main(){
+int n, i;
+double rez=0;
+scanf("%d*c", &n);
+if ((n < 1) || (n > 500)) {
+printf("n nije valjan");
+exit(1);
+}
+for (i=1; i<=n; i++){
+rez = rez + 1/(2.*i-1) * pow(-1,i+1);
+}
+rez = rez * 4;
+printf("%.12lf", rez);
+return 0;
+}

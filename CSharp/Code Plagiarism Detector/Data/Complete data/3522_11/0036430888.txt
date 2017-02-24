@@ -1,0 +1,24 @@
+void ConvertToXML(char *inputField, char *outputField){
+     char *pi, *ki, *pp, *kp, *pj, *kj, *p;
+     int lenime, lenprezime, lenjmbg;
+     
+     pi = inputField + 1;
+     ki = strchr(inputField + 1, '#');     
+     lenime = ki - pi;
+     
+     pp = ki + 1;
+     kp = strchr(pp, '#');
+     lenprezime = kp - pp;
+     
+     pj = kp + 1;
+     kj = strchr(pj, '#');
+     lenjmbg = kj - pj;
+     
+     p = strcat(outputField, "<osoba>\n<ime>");
+     p = strncat(p, pi, lenime);
+     p = strcat(p, "</ime>\n<prezime>");
+     p = strncat(p, pp, lenprezime);
+     p = strcat(p, "</prezime>\n<jmbg>");
+     p = strncat(p, pj, lenjmbg);
+     p = strcat(p, "</jmbg>\n</osoba>\n");
+     }

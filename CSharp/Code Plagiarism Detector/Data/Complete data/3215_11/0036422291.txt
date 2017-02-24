@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <conio.h>
+int main()
+{
+    int broj, par=0, nepar=0;
+    do
+    {
+        scanf ("%d",&broj);
+        if (broj > 0)
+        { if (broj %2)
+                nepar++;
+        else par++;
+        }
+    }
+    while (broj!=0);
+    printf ("%d %d",par, nepar);
+   // getch();
+    return 0;
+}

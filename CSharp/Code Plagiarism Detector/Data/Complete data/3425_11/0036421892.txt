@@ -1,0 +1,90 @@
+/*Napisati program koji učitava rang dvodimenzionalne kvadratne matrice matrice mr,
+1 <= mr <=10.Ukoliko unesena vrijednost nije unutar intervala, učitavanje treba ponavljati 
+sve dok se ne unese ispravna vrijednost.
+Nakon toga program treba učitati vrijednosti članova dvodimenzionalnog cjelobrojnog polja od 
+mr redaka i mr stupaca po redovima (najprije element na poziciji (0,0), pa (0,1)...(0,mr-1), 
+zatim (1,0)...(1,mr-1)....(mr-1,0)...(mr-1,mr-1)) itd.
+Nakon toga program treba u jednoj scanf naredbi učitavati dva cijela broja i i j u formatu 
+"%d %d" (između %d i %d je razmak i nema \n na kraju), najprije i, a zatim j, koji 
+predstavljaju indeks retka (i) i stupca (j), te ako su indeksi i i j valjani, zamijeniti 
+element na mjestu ( i , j ) sa elementom na mjestu ( j, i ). Učitavanje indeksa retka i 
+stupca te zamjenu elemenata treba obavljati sve dok se ne unese neispravni indeks retka ili 
+stupca. 
+Indeksi redaka i stupaca počinju od 0. Nakon završetka postupka zamjene, program treba učitati 
+indeks retka n čiju sumu treba izračunati. Ukoliko indeks retka n nije valjan, suma je 
+jednaka -1. Naposljetku program treba ispisati broj obavljenih zamjena, jedan razmak te 
+sumu članova  retka s indeksom n, bez početnih ili završnih praznina, te bez prijelaza u 
+novi red.
+Napomena: zamjenu pri kojoj se broj treba zamijeniti sa samim sobom također treba brojati.
+
+Primjer: Ukoliko se za dimenzije kvadratne matrice unese: 3
+te potom i elementi matrice: 1 2 3 4 5 6 7 8 9
+što odgovara matrici:
+ 
+1 2 3
+4 5 6
+7 8 9
+
+Ako korisnik zatim unese: 0 2 obavlja se u zadatku opisana zamjena te dobiva matrica:
+
+1 2 7
+4 5 6
+3 8 9
+
+Ukoliko se, nakon toga unese: 1 2 matrica poprima oblik:
+
+1 2 7
+4 5 8
+3 6 9
+
+Ako se zatim unese: 7 2 završava se sa zamjenama jer je barem jedan od indeksa izvan raspona. 
+Ukoliko potom korisnik unese: 2
+ispisuje se: 2 18
+(2 je broj obavljenih zamjena, a 18 zbroj elemenata 2. retka).*/
+
+#include<stdio.h>
+
+int main()
+{
+int mr, i, j, mat[10][10], pomocna;
+int brojac=0, n, suma=0;
+	do
+	{
+		scanf("%d", &mr);
+	}while((mr<1) || (mr>10));
+
+	for(i=0; i<mr; i++)
+	{
+		for(j=0; j<mr; j++)
+		{
+			scanf("%d", &mat[i][j]);
+		}
+	}
+
+	do
+	{
+		scanf("%d %d", &i, &j);
+		pomocna=mat[i][j];
+		mat[i][j]=mat[j][i];
+		mat[j][i]=pomocna;
+		brojac+=1;
+	}while((i>=0 && i<=(mr-1)) && ((j>=0 && j<=(mr-1))));
+
+	scanf("%d", &n);
+
+	if((n<0) || (n>(mr-1))) suma=-1;
+	else
+	{
+		for(j=0; j<mr; j++)
+		{
+			i=n;
+			suma+=mat[i][j];
+		}
+	}
+	printf("%d %d", (brojac-1), suma);
+return 0;
+}
+
+
+
+

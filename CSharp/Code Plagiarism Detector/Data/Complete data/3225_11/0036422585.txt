@@ -1,0 +1,18 @@
+#include<stdio.h>
+#include<math.h>
+int main () {
+	int b,i;
+	long double s,p;
+	scanf("%d", &b);
+	if ((b>0)&&(b<=400)) {
+		s=1;
+		for(i=1; i<b; i++)
+			s=s+(1/(double)pow((2*i+1),2));
+		s=s*8;
+		p=sqrt(s);
+		printf("%.12lf", p);
+	}
+	else
+		printf("n nije valjan");
+return 0;
+}

@@ -1,0 +1,41 @@
+#include<stdio.h>
+int main() {
+   int suma=0;
+   int brojac=0;
+   
+   int rang;
+   int r,s;
+   int polje[10][10];
+   int i,j,n;
+   int pom;
+   do {
+	   scanf("%d",&rang);
+   }while(!(rang>=1 && rang<=10));
+   for(r=0; r<rang; r++){
+	   for(s=0; s<rang; s++){
+			   scanf("%d",&polje[r][s]);
+	   }
+   }
+   
+   do{
+	   scanf("%d %d",&i,&j);
+
+	   pom=polje[j][i];
+	   polje[j][i]=polje[i][j];
+	   polje[i][j]=pom;
+	   brojac++;
+   }while((i>=0 && i<=(rang-1))&&(j>=0 && j<=(rang-1)));
+
+   scanf("%d",&n);
+   if(n>=0 && n<=rang-1){
+	   for(s=0; s<rang;s++){
+		   suma+=polje[n][s];
+	   }
+   }
+   else{
+	   suma=-1;
+   }
+   printf("%d %d",brojac-1,suma);
+   return 0;
+}
+

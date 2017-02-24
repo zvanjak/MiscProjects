@@ -1,0 +1,27 @@
+#include <stdio.h>
+int main () {
+	int a[32000],
+		k=0,
+		i=0,
+		n=0,
+		j=0,
+                pocetak;
+	do {
+		i++;
+		scanf("%d", &a[i]);
+	}
+	while (a[i]>0);
+	for (j=1; j<=i; j++) {
+                pocetak = 1;
+		while (a[j]>0) {
+			k=a[j]%10;
+                        if(pocetak && k > 0)
+                            pocetak = 0;
+                        if(!pocetak)
+   			    printf("%d", k);
+			a[j]=a[j]/10;
+		}
+		printf(" ");
+	}
+	return 0;
+}

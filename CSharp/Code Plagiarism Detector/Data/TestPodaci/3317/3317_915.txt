@@ -1,0 +1,12 @@
+typedef struct{
+	int redni_br; 
+	char prezime [20+1];
+	int bodovi;
+}natjecatelj;
+
+void brisi (FILE *f, int redni_br){
+natjecatelj pero;
+	fseek(f, (long)(redni_br-1)*sizeof(pero), SEEK_SET);
+	fwrite(0, sizeof (int), 1, f);
+	return;
+}

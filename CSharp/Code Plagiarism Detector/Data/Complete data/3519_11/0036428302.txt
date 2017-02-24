@@ -1,0 +1,21 @@
+int SplitToSentences(char *inputField, char *outputField){
+    
+    int br=0,i=0;
+    
+    while(inputField[i]!='\0'){
+        if(inputField[i]==','){
+            br++;
+            inputField[i]='.';
+            if(inputField[++i]>='a' && inputField[i]<='z')
+                inputField[i]=inputField[i]-32;
+        }
+        i++;
+    }    
+    i=0;
+    while(inputField[i]!='\0'){
+        outputField[i]=inputField[i];
+        i++;
+    }
+        return br;
+
+}

@@ -1,0 +1,27 @@
+int veci_od(FILE *f, int n){
+
+struct natjecatelj{
+int redni_br;
+char prezime[20+1];
+int bodovi;
+};
+struct natjecatelj struktura;
+int z,i,l=0;
+fseek(f,0,SEEK_END);
+
+
+z=ftell(f)/sizeof(struktura);
+fseek(f,0,SEEK_SET);
+
+for(i=0;i<z;i++){
+fread(&struktura,sizeof(struktura),1,f);
+if(struktura.redni_br!=0){
+
+if(struktura.bodovi>=n){
+l=l+1;
+}
+}
+}
+return l;
+
+}

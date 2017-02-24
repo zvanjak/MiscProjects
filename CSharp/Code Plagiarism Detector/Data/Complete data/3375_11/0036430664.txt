@@ -1,0 +1,22 @@
+#include<stdio.h>
+int main(){
+	int broj,novi_broj;
+	scanf("%d",&broj);
+	if (broj){
+		if ((broj/1000)%2){
+			novi_broj=broj-1000*(broj/1000);
+					if ((novi_broj/100)%2) {
+						novi_broj=novi_broj-100*(novi_broj/100);
+							if ((novi_broj/10)%2) {
+								novi_broj=novi_broj-10*(novi_broj/10);
+									if (novi_broj%2){
+										novi_broj=0;
+										printf("%d",novi_broj); 
+									}else printf("%d",novi_broj);
+							}else printf("%d",novi_broj);
+					}else printf("%d",novi_broj);
+		}else printf("%d",broj);
+	}
+	if (broj==0) printf("%d",broj);
+	return 0;
+}

@@ -1,0 +1,63 @@
+int izbacinaj (zapis **glava) {
+zapis *help, *i, *najm, *najv;
+int n = 0;
+float prosjek, zbroj = 0;
+if (*glava == NULL) return 0;
+for (i = *glava; i; i = i->sljed) {
+n++;
+zbroj += i->pros;
+}
+if (n == 1) {
+help = *glava;
+*glava = NULL;
+free (help);
+return 1;
+}
+prosjek = zbroj / n;
+najm = najv = *glava;
+for (i = *glava; i->sljed; i = i->sljed) {
+if ((i->sljed)->pros < najm->pros) najm = i->sljed;
+else if ((i->sljed)->pros > najv->pros) najv = i->sljed;
+}
+if (najm->pros == najv->pros) {
+help = *glava;
+*glava = (*glava)->sljed;
+free (help);
+help = *glava;
+if ((*glava)->sljed) {
+*glava = (*glava)->sljed;
+free (help);
+}
+else {
+*glava = NULL;
+free (help);
+}
+return 2;
+}
+else {
+if ((i = *glava)->matbr != najv->matbr) {
+for (i = *glava; i->sljed && (i->sljed)->matbr != najv->matbr;
+i = i->sljed);
+help = i->sljed;
+i->sljed = help->sljed;
+}
+else {
+help = *glava;
+*glava = (*glava)->sljed;
+}
+free (help);
+if ((i = *glava)->matbr != najm->matbr) {
+for (i = *glava; i->sljed && (i->sljed)->matbr != najm->matbr;
+i = i->sljed);
+help = i->sljed;
+i->sljed = help->sljed;
+}
+else {
+help = *glava;
+*glava = (*glava)->sljed;
+}
+free (help);
+return 2;
+}
+}
+

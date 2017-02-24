@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main()
+{
+	int n,predznak,a;
+	double pi=0;
+	scanf("%d",&n);
+	if (n<1 || n>500)
+		printf("n nije valjan");
+	else 
+	{
+		for (a=1;a<=n;a++)
+		{ 
+			predznak=(a%2==0)?(-1):(1);
+			pi+=predznak*(1./(2*a-1)); 
+		}
+		pi*=4;
+		printf("%.12f",pi);
+	}
+return 0;
+}

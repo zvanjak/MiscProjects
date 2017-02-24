@@ -1,0 +1,15 @@
+float prosjek (zapis *glava) {
+    zapis *z;
+    float br=0, suma=0, prosj=0;
+    if (glava == NULL) return 0;
+    for (z=glava; z!=NULL; z=z->sljed){
+        suma=suma+z->pros;
+        br++;
+    }
+    prosj=suma/br;
+    for (z=glava; z!=NULL; z=z->sljed){
+        if (z->pros < prosj)
+        z->pros=0;
+    }
+    return prosj;
+}

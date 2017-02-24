@@ -1,0 +1,18 @@
+#include <stdio.h>
+int main (){
+	int broj, i=0, min, max;
+	while(1){
+		scanf("%d", &broj);
+		i++;
+		if(i==1) {
+			min = broj;
+			max = broj;
+		}else{
+			if(broj < min) min = broj;
+			else if(broj > max) max = broj;
+		}
+		if((broj > 0) && ((broj % 4) == 0)) break;
+	}
+	printf("%d %d", min, max);
+	return 0;
+}

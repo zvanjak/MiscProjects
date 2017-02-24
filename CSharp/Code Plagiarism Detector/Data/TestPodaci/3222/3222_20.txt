@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <math.h>
+void main()
+{
+        int n,i,znam,ost;
+        ost=1;
+        i=0;
+        scanf("%d",&n);
+        while(ost && i<40)
+        {
+                znam=n%10;
+                n=n+znam;
+                ost=n%13;
+                i++;
+        }
+        printf("%d",i);
+      
+}
+

@@ -1,0 +1,21 @@
+#include <stdio.h>
+int main ()
+{
+int D, G, N,i,suma=0;
+scanf("%d",&D);
+scanf ("%d", &G);
+if ( (D<=0) || (G<=0) || (G<D) )
+		printf ("D i G nisu valjani");
+else{ for (N=D; N<=G; N++)
+
+{
+	for (i=1;i<=N;i++)
+	{
+		if(i%2==0)
+		suma+=i;
+	}
+	printf("%d ",suma); suma=0;
+}
+}
+				
+				return 0;}

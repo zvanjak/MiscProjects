@@ -1,0 +1,30 @@
+int promijenimbr(zapis **glavap, int starimbr, int novimbr){
+	 
+	zapis *p,*pp;
+	pp = *glavap;
+
+	if(*glavap==NULL)return 0;
+
+	if ((*glavap)->matbr == starimbr) {
+		if(((*glavap)->sljed==NULL)||(novimbr<=(*glavap)->sljed->matbr)){
+		 (*glavap)->matbr=novimbr;
+		 return 1;
+	  }
+	}
+  for (; *glavap && (*glavap)->matbr != starimbr; glavap = &((*glavap)->sljed));
+  
+  if (*glavap) {
+	p = *glavap;
+	*glavap = (*glavap)->sljed;
+	p->matbr=novimbr;
+	
+  
+  
+	for (; pp->sljed && (pp->sljed)->matbr < novimbr; pp = pp->sljed);
+		p->sljed = pp->sljed;
+		pp->sljed = p;
+		return 1;
+  }
+  
+  return 0;
+}

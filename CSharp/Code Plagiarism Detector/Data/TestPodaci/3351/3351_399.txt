@@ -1,0 +1,12 @@
+int info(FILE*f,int redni_br){
+int n;
+fseek(f,(long)(redni_br-1)*sizeof(struct natjecatelj),SEEK_SET);
+n=fread(&natjecatelj,sizeof(struct natjecatelj),1,f))
+if(n==0)
+return -1;
+else {
+   if(natjecatelj.bodovi>=100)
+     return 1;
+    else return 0;
+}}
+

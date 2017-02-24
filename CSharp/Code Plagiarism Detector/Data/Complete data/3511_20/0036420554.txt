@@ -1,0 +1,102 @@
+typedef struct
+{
+    char ime[20+1];
+    char prezime[30+1];
+    char jmbag[10+1];
+    int ocjena;
+} tip;
+typedef struct atom
+{
+    tip podatak;
+    struct atom *sljed;
+} atom;
+int brojElementa(atom *glava)
+{
+    int brojelem = 0;
+    atom *pokglava;
+    for(pokglava = glava; pokglava != NULL; pokglava  = pokglava->sljed) 
+    {
+        brojelem = brojelem + 1;
+    }
+    return brojelem;
+}
+int dodaj (atom **glavap, tip element)
+{
+    atom *elem;
+    if((elem = (atom *)malloc(sizeof(atom))) == NULL)
+    {
+        return 0;
+    }
+    strcpy((elem->podatak).ime, element.ime);
+    strcpy((elem->podatak).prezime, element.prezime);
+    strcpy((elem->podatak).jmbag, element.jmbag);
+    (elem->podatak).ocjena = element.ocjena;
+    elem->sljed = *glavap;
+    *glavap = elem;
+    return 1;
+}
+int maksOcjena(atom *glava)
+{
+    int max;
+    atom *pokglava;
+    if(glava == NULL)
+    {
+        return -1;
+    }
+    max = (glava->podatak).ocjena;
+    for(pokglava = glava; pokglava != NULL; pokglava = pokglava->sljed)
+    {
+        if((pokglava->podatak).ocjena > max)
+        {
+            max = (pokglava->podatak).ocjena;
+        }
+    }
+    return max;
+}
+float prosjOcjena(atom *glava)
+{
+    int broj = 0;
+    float suma = 0;
+    atom *pokglava;
+    if(glava == NULL)
+    {
+        return -1;
+    }
+    for(pokglava = glava; pokglava != NULL; pokglava = pokglava->sljed)
+    {
+        broj = broj + 1;
+        suma = suma + (pokglava->podatak).ocjena;
+    }
+    return suma / broj;
+}
+int izbaciPrezimePocinjeS (atom **glavap, char *prezimePocetak)
+{
+    atom *pokglava, *pp; int broj = 0;
+    for(pokglava = *glavap; pokglava != NULL;)
+    {
+        if((strncmp((pokglava->podatak).prezime, prezimePocetak, strlen(prezimePocetak)) == 0) && (strlen((pokglava->podatak).prezime) >= strlen(prezimePocetak)))
+        {
+            if(pokglava == *glavap)
+            {
+                 pp = (*glavap)->sljed;
+                 free(*glavap);
+	             *glavap = pp;
+	             pokglava = pp;
+	             broj = broj + 1;
+            }
+            else
+            {		   
+	             for(pp = *glavap; pp->sljed != pokglava; pp = pp->sljed);
+	             pp->sljed = pokglava->sljed;
+	             free(pokglava);
+	             pokglava = pp->sljed;
+	             broj = broj + 1;
+            }
+        }
+        else
+        {
+            pokglava = pokglava->sljed;
+        }
+    }
+    return broj;
+} 

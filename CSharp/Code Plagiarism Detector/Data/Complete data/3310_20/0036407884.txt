@@ -1,0 +1,13 @@
+
+ int veci_od ( FILE *f , int granica) {
+
+		struct album a;
+		int prodano = 0;
+
+while (fread(&a, sizeof(a), 1, f) == 1) {
+
+		if(a.prodano >= granica) prodano++;
+ }
+
+ return prodano;
+ }

@@ -1,0 +1,15 @@
+int br_prodanih (FILE *f, char *autor) {
+int br_prodanih=0;
+
+struct album {
+char naziv[31];
+char pomocna[21];
+int prodano;
+} osoba;
+
+while (fread(&osoba, sizeof(osoba), 1, f)==1) {
+if (strstr(osoba.pomocna, autor)!=NULL)
+br_prodanih+=osoba.prodano; }
+
+return br_prodanih;
+}

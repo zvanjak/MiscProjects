@@ -1,0 +1,40 @@
+# include <stdio.h>
+# include <math.h>
+# define gg 50
+
+int main () {
+    int polje [gg] ,i ,k ,n,z;
+    float umn=1.,prost =1.;
+    
+    for (i=0;i<gg;i++){
+    scanf("%d", &polje[i]);
+    ++n;
+    if ( polje[i]<0 ) break;
+}
+
+for (k=0;k<n;k++)     
+     if (n==2*k+1) {
+     for (i=0;i<=n-1;i++){
+         if (polje[i]=polje[n-i-1]){
+           printf ("Jest"); 
+           }
+           else { 
+           printf ("Nije"); 
+           }
+         }
+     }
+     if (n==2*k){  
+       for (i=0;i<=n-1;i++){
+      
+      umn *= polje[i];
+      }
+      for (i = 2; prost && i <= sqrt(polje[i]); i = i + 1) {
+		if (prost = (polje[i] % i) != 0){
+           ++z;
+     }
+     }
+        printf ("%f %d",umn,z);     
+        }
+    
+  return 0;
+}

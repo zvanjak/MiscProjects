@@ -1,0 +1,39 @@
+#include<stdio.h>
+int main(){
+    int niz[100 + 1], i, broj, pon, nul; 
+    for(i=0; i < 100 ; i++){
+             scanf ("%d", &broj);
+             if(broj != -1 && broj >= 0){
+                     niz[i]=broj;
+             }else{
+                   niz [i]= -1;
+                   i=100;
+                   }
+                   }
+     
+     
+     for(i = 0; i<100; i++){
+           broj = niz[i];
+           pon = niz[i+1];
+           
+           if(broj != -1){
+                   if(pon != -1){
+                          nul = 0;
+                          while(nul<pon){
+                                         printf("%d ", broj);
+                                         nul++;
+                                         }
+                   }else{
+                         printf("%d ", broj);
+                         i=100;
+                         }
+           }else{
+                 i=100;
+                 }
+           i++;
+           }
+            return 0;
+}
+
+                                                       
+    

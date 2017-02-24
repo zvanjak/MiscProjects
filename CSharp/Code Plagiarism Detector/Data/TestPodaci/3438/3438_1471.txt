@@ -1,0 +1,22 @@
+#include <stdio.h>
+#define MAX 100
+
+void main () {
+	char niz[MAX], pom;
+	int i, j, k=0, a;
+	do{
+		scanf("%c", &niz[k]);
+		k++;
+	} while (k<MAX && niz[k-1]!='.');
+	do{
+		scanf("%d %d", &i, &j);
+		if(i>0 && i<=k && j>0 && j<=k){
+			pom=niz[i-1];
+			niz[i-1]=niz[j-1];
+			niz[j-1]=pom;
+		}
+	} while (i>0 && i<=k && j>0 && j<=k);
+	for(a=0; a<(k-1); a++) {
+		printf("%c ", niz[a]);
+	}
+}

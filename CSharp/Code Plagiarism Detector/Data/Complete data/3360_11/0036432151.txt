@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+  int x,rez,znam1,znam2,znam3,zbroj;
+  scanf("%d", &x);
+  if(x>=100 && x<=999)
+  {
+            znam1=x/100;
+            znam2=(x % 100)/10;
+            znam3=x%10;
+            zbroj=znam1+znam2+znam3;
+            if(zbroj%2)
+            { 
+            rez=znam1*znam2*znam3;
+            printf("%d \n",rez);
+            }
+            else
+            {
+            rez=znam1-znam2-znam3;
+            printf("%d \n",rez);
+            }
+  }
+  return 0;
+}

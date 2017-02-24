@@ -1,0 +1,21 @@
+int SijekuSe(Kruznica k1, Kruznica k2){
+    float razlika;
+
+    if(k1.getX() == k2.getX() && k1.getY() == k2.getY() && k1.getRad() == k2.getRad()){
+        return 3;
+    }
+
+    razlika = (float) sqrt((k1.getX() - k2.getX()) * (k1.getX() - k2.getX()) + (k1.getY() - k2.getY()) * (k1.getY() - k2.getY()));
+
+    if(razlika == k1.getRad() + k2.getRad()){
+        return 1;
+    }
+    else if(razlika > k1.getRad() + k2.getRad()){
+        return 0;
+    }
+    else if(razlika < k1.getRad() + k2.getRad()){
+        return 1;
+    }
+
+    return -2;
+}

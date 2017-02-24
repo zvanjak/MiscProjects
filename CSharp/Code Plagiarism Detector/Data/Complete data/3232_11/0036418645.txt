@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <math.h>
+int n,i;
+float dva;
+
+int main()
+{
+scanf("%d",&n);
+if (n>=0 && n<=30)
+ {
+ for (i=0;i<=n;i++) dva+=(1/pow(2,i));
+ printf("%.12f\n",dva);
+ } else printf("n nije valjan\n");
+return 0;
+}

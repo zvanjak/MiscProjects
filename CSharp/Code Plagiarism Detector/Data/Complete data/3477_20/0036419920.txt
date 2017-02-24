@@ -1,0 +1,52 @@
+class Recenica
+{
+public:
+
+	Recenica()
+	{
+		_nZ=0;
+		_nR=0;
+		_prev=0;
+		_n=0;
+	}
+
+	void UcitajZnak(char znak)
+	{
+
+		_n++;
+
+		if(znak==',')
+			_nZ++;
+
+		if(_prev==' '&&(znak!=' ' && znak != ','))
+			_nR++;
+
+		if(_prev==','&&(znak!=',' && znak != ' '))
+			_nR++;
+
+		if(_n==1&&znak!=' '&&znak!=',')
+			_nR++;
+
+
+		_prev=znak;
+
+	}
+
+	int PrebrojiRijeci()
+	{
+		return _nR;
+	}
+
+	int PrebrojiZareze()
+	{
+		return _nZ;
+	}
+
+
+private:
+	int _nZ;
+	int _nR;
+
+	char _prev;
+	int _n;
+};

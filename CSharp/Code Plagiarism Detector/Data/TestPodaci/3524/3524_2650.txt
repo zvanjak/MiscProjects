@@ -1,0 +1,29 @@
+#include<stdio.h>
+#include<string.h>
+#include<ctype.h>
+void ubaci(char *niz, char *podniz, int i){
+	char *p;
+	char a[200];
+	int k=0;
+	if (i<0 || i>strlen(niz))
+		while(*niz!='\0'){
+			*niz=toupper(*niz);
+			niz++;}
+	else if (i==strlen(niz)) strcat(niz,podniz);
+	
+	else {p=niz;
+	    while(*niz!=0){
+		   a[k++]=*niz;
+		   niz++;}
+	    a[k]='\0';
+	    niz=p;
+	    for(k=0;a[k]!='\0';k++){
+		    if (k==i) 
+			while (*podniz!='\0'){
+			   *niz=*podniz;
+			   niz++;
+			   podniz++;}
+	        *niz=a[k];
+	        niz++;}
+	*niz='\0';}
+}

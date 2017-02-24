@@ -1,0 +1,15 @@
+bool fun2(Pravokutnik p, Krug k)
+{
+     double vis, sir;
+     Tocka DL, DD, GL, GD;
+     DL = DD = GL = GD = p.getDLkut();
+     vis = p.getVisina();
+     sir = p.getSirina();
+     DD.X+=sir;
+     GL.Y+=vis;
+     GD.X+=sir;
+     GD.Y+=vis;
+     
+     if(k.Sadrzi(DL)==true && k.Sadrzi(DD)==true && k.Sadrzi(GL)==true && k.Sadrzi(GD)==true) return true;
+     else return false;
+}

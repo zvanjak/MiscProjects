@@ -1,0 +1,16 @@
+int Memoriraj (Radio& radio) {
+	int i;
+	Stanica prva, st;
+	
+	for (i = 0; i < 6;) {
+		st = radio.TraziSljedecu();
+		if (i == 0)
+			prva = st;
+		else
+			if (st == prva) break;
+		if ((st.RDS())[0])
+			radio.MemorirajStanicu(st, ++i);
+	}
+	
+	return (i);
+}

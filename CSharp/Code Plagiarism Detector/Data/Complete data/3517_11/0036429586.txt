@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+double f(double x) {
+	return pow(x, sinh(x))*cosh(x*x);
+}
+
+double deriv(double x, double dx) {
+	return (f(x+dx)-f(x))/dx;
+}
+
+int main() {
+	double dx;
+	double mat[50];
+	float tmp;
+	int a, i;
+
+	scanf("%lf", &dx);
+
+	for (i=0;;++i) {
+		scanf("%f", &tmp);
+		if (tmp==0.0) break;
+		mat[i]=deriv(tmp, dx);
+	}
+
+	for (a=0;a<i;++a) {
+		printf("%.2lf\n", atan(mat[a]));
+	}
+
+	return 0;
+}

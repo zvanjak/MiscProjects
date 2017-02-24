@@ -1,0 +1,10 @@
+bool fun2(Pravokutnik p, Krug k) {
+	Tocka DD(p.getDLkut().X + p.getSirina(), p.getDLkut().Y);
+	Tocka GD(DD.X, DD.Y - p.getVisina());
+	Tocka GL(GD.X - p.getSirina(), GD.Y);
+	if(!k.Sadrzi(p.getDLkut())) return false;
+	if(!k.Sadrzi(DD)) return false;
+	if(!k.Sadrzi(GD)) return false;
+	if(!k.Sadrzi(GL)) return false;
+	return true;
+};

@@ -1,0 +1,48 @@
+void maxaps(int *prvamat, int *drugamat, int brRedPrva, int brStupPrva,
+ int maxStupPrva, int brRedDruga, int brStupDruga, int maxStupDruga, int niz[]){
+    int i,j,k,inverz=1;
+    int max;
+    int aps;
+    int mat[10][10]={0};
+    if (brRedPrva!=brStupDruga || brStupPrva!=brRedDruga) inverz=0;
+    else{
+      for(i=0;i<brRedPrva;i++){
+         for(j=0;j<brStupDruga;j++){
+            for(k=0;k<brStupPrva;k++){
+            mat[i][j]+=*(prvamat+i*maxStupPrva+k) * *(drugamat+k*maxStupDruga+j);}
+    }}
+    for(i=0;i<brRedDruga;i++){
+         for(j=0;j<brStupPrva;j++){
+           if (i==j && mat[i][j]==1) continue;
+           if (mat[i][j]) inverz=0;
+           }
+      }}
+    
+    if (inverz){
+      for(i=0;i<brRedPrva;i++){
+         if (*(prvamat+i*maxStupPrva)<0) max=-1* *(prvamat+i*maxStupPrva);
+         else max=*(prvamat+i*maxStupPrva);
+         niz[i]=*(prvamat+i*maxStupPrva);
+         
+         for(j=1;j<brStupPrva;j++){
+            if (*(prvamat+i*maxStupPrva+j)<0) aps=-1* *(prvamat+i*maxStupPrva+j);
+            else aps=*(prvamat+i*maxStupPrva+j);
+            if (aps>max){
+               max=aps;
+               niz[i]=*(prvamat+i*maxStupPrva+j);
+               }
+            else if (aps==max && *(prvamat+i*maxStupPrva+j)>niz[i])
+               niz[i]=*(prvamat+i*maxStupPrva+j);
+            }
+         }
+      }
+    else{
+        for(i=0;i<brStupPrva;i++){
+           niz[i]=*(prvamat+j);
+           for(j=0;j<brRedPrva;j++){
+              if (*(prvamat+j*maxStupPrva+i)<niz[i])
+                 niz[i]=*(prvamat+j*maxStupPrva+i);
+           }}
+        }
+    return;
+}

@@ -1,0 +1,31 @@
+char *SamoSamoglasnici(char *ulazni_niz){
+	char *p;
+	int i,j,d;
+	i=0;
+	j=0;
+	d=strlen(ulazni_niz);
+	if(ulazni_niz==NULL){
+		return NULL;
+	}
+	if(!d){
+		return NULL;
+	}
+	p=malloc(d);
+	while(ulazni_niz[i]!='\0'){
+
+		if(ulazni_niz[i]=='A'||ulazni_niz[i]=='a'|| ulazni_niz[i]=='E'||
+			ulazni_niz[i]=='e'||ulazni_niz[i]=='I'
+			||ulazni_niz[i]=='i'||ulazni_niz[i]=='O'||
+			ulazni_niz[i]=='o'||ulazni_niz[i]=='U'||ulazni_niz[i]=='u'){
+				
+				p[j]=ulazni_niz[i];
+				j++;
+				}
+              
+				i++;
+		
+		}
+    p[j]='\0';
+
+ return p;
+ }

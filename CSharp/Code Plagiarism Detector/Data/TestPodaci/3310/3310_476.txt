@@ -1,0 +1,9 @@
+int veci_od(FILE *f, int granica)
+{
+int broj=0;
+struct album alb;
+while(fread(&alb, sizeof(struct album), 1, f)==1)
+	if (granica<=alb.prodano)
+	    broj++;
+return broj;
+}

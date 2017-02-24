@@ -1,0 +1,38 @@
+#include<stdio.h>
+int main(){
+ char s[32];
+ int x, i, j=0, Z, A, brojZnam=1;
+
+  for (i=0; i<32; i++){
+	  s[i] = '\0';}
+   printf("Upisite neki cijeli broj>");
+   scanf("%d", &x);
+     if( x<0 ){
+		 printf("%d\n", x);
+	 }else{
+		 Z=x;
+	   
+		 while(Z/=10) brojZnam++;
+		  Z=x;
+		  for(i=0; i<brojZnam; i=i+1){
+			  A=Z%10;
+		      Z/=10;
+			if(A%2!=0){
+				s[j] = A+48;
+			    j++;
+		  }
+       }
+	 i=0;
+	 while(s[i]!=0)
+		 i++;
+
+	  x=0;
+	  brojZnam = i;
+	 for(i=brojZnam-1; i>=0; i--){
+		 x*=10;
+		 x+=s[i]-48;
+	 }
+	printf("%d\n", x);
+   }
+ return 0;
+}

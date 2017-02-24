@@ -1,0 +1,8 @@
+Krug fun4( Pravokutnik p )
+{
+    double r=sqrt( p.getVisina()*p.getVisina() +
+p.getSirina()*p.getSirina() )/2;
+    Tocka t=p.getDLkut();
+    Tocka s( p.getSirina()/2+t.X, p.getVisina()/2+t.Y );
+    return Krug( s, r );
+}

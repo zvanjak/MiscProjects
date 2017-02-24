@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<math.h>
+int main(){
+	float x,y,r,fi,d1,d2,d3,d4,povrsina;
+	struct tocka {
+		float x;
+		float y;
+	}t1,t2,t3,t4;
+	scanf("%f %f %f %f %f %f %f %f",&t1.x,&t1.y,&t2.x,&t2.y,&t3.x,&t3.y,&t4.x,&t4.y);
+	d1=sqrt((t2.x-t1.x)*(t2.x-t1.x)+(t2.y-t1.y)*(t2.y-t1.y));
+	d2=sqrt((t3.x-t2.x)*(t3.x-t2.x)+(t3.y-t2.y)*(t3.y-t2.y));
+	d3=sqrt((t4.x-t3.x)*(t4.x-t3.x)+(t4.y-t3.y)*(t4.y-t3.y));
+	d4=sqrt((t4.x-t1.x)*(t4.x-t1.x)+(t4.y-t1.y)*(t4.y-t1.y));
+	if(d1==d2&&d2==d3&&d3==d4&&d4==d1){
+		povrsina=d1*d1;
+		printf("%.2lf",povrsina);
+	}
+	else{
+		x=(t1.x+t2.x+t3.x+t4.x)/4;
+		y=(t1.y+t2.y+t3.y+t4.y)/4;
+		r=sqrt(x*x+y*y);
+		fi=atan2(y,x);
+		printf("%.2lf %.2lf",r,fi);
+	}
+	return 0;
+}

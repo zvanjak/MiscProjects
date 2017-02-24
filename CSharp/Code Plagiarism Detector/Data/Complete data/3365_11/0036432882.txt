@@ -1,0 +1,26 @@
+#include <stdio.h>
+int main (void) {
+    unsigned int x;
+    int a, b, c;
+    int suma;
+    
+    scanf ("%d", &x);
+    
+    if (x<250 || x>950) {
+              a = x/100;
+              b= (x-100*a)/10;
+              c= (x-100*a-10*b);
+              suma=a+b+c;
+              printf (" %d", suma);
+              }
+    else
+        if ( x>=250 && x<=950) {
+             a = x/100;
+              b= (x-100*a)/10;
+              c= (x-100*a-10*b);
+             suma=a+c;
+             printf (" %d", suma);
+             }
+  
+    return 0;
+}

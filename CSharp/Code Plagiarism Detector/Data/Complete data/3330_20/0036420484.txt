@@ -1,0 +1,9 @@
+float *KreirajTablicuMnozenja(int n){
+float *p;
+int i,j;
+        p=(float*)malloc(n*n*sizeof(float));
+        for(i=1;i<=n;i++)
+        for(j=1;j<=n;j++)
+        p[(i-1)*n+(j-1)]=(float)i*j;
+return p;
+}

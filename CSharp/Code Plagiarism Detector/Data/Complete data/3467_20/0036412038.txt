@@ -1,0 +1,28 @@
+int igra(Igrac& igrac,Automat& aut,int max, int *broj){
+	int z,y,x;
+	x=y=z=0;
+	z=igrac.TrenutnoStanje();
+	for(int i=0;i<max;i++){
+        x=aut.TrenutnoStanje();
+	   if(x>0){
+			x=aut.Zavrti();
+			y++;
+			igrac.UplatiNaRacun(x);
+		}else if((igrac.TrenutnoStanje())>0){
+			igrac.SkiniSRacuna(1);
+			aut.UplatiIznos(1);
+			x=aut.TrenutnoStanje();
+		    if(x>0){
+			  x=aut.Zavrti();
+			  y++;
+			  igrac.UplatiNaRacun(x);
+			}
+		}else{ 
+			aut.Zavrti();
+		}
+	}
+	*broj=y;
+	x=aut.PodigniPreostalo();
+	y=igrac.TrenutnoStanje();
+	return z-x-y;
+}

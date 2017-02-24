@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <math.h>
+
+int main () {
+	int n;
+	double p=0;	
+	int i;
+	scanf ("%d", &n);
+	if (n<1 || n>25) printf ("n nije valjan\n");
+	else {
+		for (i=1; i<=n; i++){
+			p += 1./(pow((double) i, 8.));
+		}
+		printf ("%.12f\n", p);
+	}
+	return 0;
+}

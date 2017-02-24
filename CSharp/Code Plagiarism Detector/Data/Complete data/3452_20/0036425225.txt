@@ -1,0 +1,64 @@
+class SortRazlPolje{
+    class cvor{
+        public: int elem;
+                cvor* sljed;
+    };
+    cvor* polje;
+    int brelem;
+    public:
+        SortRazlPolje(){
+            brelem=0;
+            polje=NULL;
+        }
+        int Dodaj(int Broj){
+            cvor *slj,*pred;
+            cvor *temp=(cvor*)malloc(sizeof(cvor));
+            if(temp==NULL)return 0;
+            brelem++;
+            slj=polje;
+            pred=NULL;
+            temp->elem=Broj;
+            temp->sljed=NULL;
+            if(polje==NULL){
+                polje=temp;
+                return 1;
+            }      
+            while(slj!=NULL){
+                if(Broj>slj->elem){
+                    pred=slj;
+                slj=slj->sljed;
+                }else if(Broj==slj->elem){
+                    brelem--;
+                    return 1;
+                }else   break;
+            }
+            if(pred==NULL && slj!=NULL){
+                temp->sljed=polje;
+                polje=temp;
+                return 1;
+            }      
+            pred->sljed=temp;
+            temp->sljed=slj;    
+            return 1;
+        }
+        int *VratiSortPolje(int &n){
+            int *p,i;
+            n=brelem;
+            p=(int*)malloc(sizeof(cvor)*brelem);
+            for(i=0;i<brelem;i++)p[i]=skini();
+            return p;
+        }
+        ~SortRazlPolje(){
+            while(polje!=NULL){
+                cvor *temp=polje;
+                polje=polje->sljed;
+                free(temp);
+            }
+        };            
+    private :int skini(){
+            cvor temp;
+            temp=*polje;
+            polje=polje->sljed;
+            return temp.elem;
+        }    
+    };

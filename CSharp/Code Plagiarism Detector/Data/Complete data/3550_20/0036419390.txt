@@ -1,0 +1,37 @@
+void izbaci (zapis **pom)
+{
+
+   	zapis *pom1;
+	pom1=(*pom);
+	(*pom)=(*pom1).sljed;
+	free(pom1);
+}
+
+
+int izbacinaj(zapis **glava)
+{
+	zapis **min,**max,*pom,*pom1;
+
+	if (*glava==NULL) return 0;
+	if ((**glava).sljed==NULL) { izbaci(glava);return 1;}
+
+	
+	
+
+	
+	pom1=*glava;
+	pom=(**glava).sljed;
+	min=glava;
+	max=glava;
+	
+	while(pom)
+	{
+		if ((*pom).pros>(**max).pros) max=&(*pom1).sljed;
+		if ((*pom).pros<(**min).pros) min=&(*pom1).sljed;
+		pom1=pom;
+		pom=(*pom).sljed;
+	}
+   	izbaci(min);
+	izbaci(max);
+	return 2;
+}

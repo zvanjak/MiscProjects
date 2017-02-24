@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <math.h>
+#include <limits.h>
+
+int main()
+{
+    int mr, ms, max = INT_MIN, maxr = 0, maxs = 0, i, j, tmp;
+
+    do
+    {
+        scanf("%d %d", &mr, &ms);
+    } while ( (mr < 1) || (mr > 20) || (ms < 1) || (ms > 5) );
+
+
+    for (i = 0; i < mr; i++)
+    {
+        for (j = 0; j < ms; j++)
+        {
+            scanf("%d", &tmp);
+            if (abs(tmp) > max)
+            {
+                max = abs(tmp);
+                maxr = i;
+                maxs = j;
+            }
+        }
+    }
+
+    printf("%d %d", maxr, maxs);
+
+    return 0;
+}
+
+

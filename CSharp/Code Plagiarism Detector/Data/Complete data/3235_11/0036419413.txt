@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main()
+{
+	int n, prefiks, i;
+	double suma;
+
+	scanf("%d",&n);
+	if ((n>0) && (n<101))
+	{
+		suma=0;
+		prefiks=-1;
+		for (i=1; i<=n; i++)
+		{
+			prefiks*=-1;
+			suma+=prefiks*(1/(double)i);
+		}
+		printf("%.12f", suma);
+	}
+	else
+		printf("n nije valjan");
+	return 0;
+}

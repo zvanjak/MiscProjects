@@ -1,0 +1,20 @@
+int KolikoUnutar(Kruznica &kruz, Tocka poljeTocaka[], int n)
+{
+	int unutar=0,i;
+	float udaljenost;
+
+	for(i=0;i<n;i++)
+	{
+		udaljenost = sqrt( pow( kruz.GetCenterX() - poljeTocaka[i].GetX(),2) + pow( kruz.GetCenterY() - poljeTocaka[i].GetY(),2)); 
+		if( udaljenost < kruz.GetRadius() )
+			unutar++;		
+	}
+
+	return unutar;
+}
+
+
+
+
+
+

@@ -1,0 +1,13 @@
+double sumareda (double x, int n)
+{
+// x predstavlja varijablu reda
+// n predstavlja broj članova do kojeg se izračunava suma reda
+double suma = 0;
+kontrola ();
+if (n == 0)
+return 0;
+else if (n == 1)
+return x - 1;
+suma += ((n % 2) ? 1 : -1) * pow (x - 1, n) / n;
+return suma + sumareda (x, n - 1);
+}

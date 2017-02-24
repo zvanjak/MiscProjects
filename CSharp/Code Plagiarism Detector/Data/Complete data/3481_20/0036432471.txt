@@ -1,0 +1,24 @@
+int Memoriraj(Radio& radio){
+	int broji=0;
+	int zastavica=1, zastavica_prvi=1;
+	float frek;
+	const char *pok;
+	Stanica a,b;
+	
+	while(a!=b || zastavica_prvi){	
+    zastavica_prvi=0;
+	a=radio.TraziSljedecu();
+	if (zastavica) 
+	{b=a;zastavica=0; zastavica_prvi=1;}
+    frek=a.Frekvencija();
+	pok=a.RDS();
+	
+	if(strlen(pok)&& (broji <=6 && a!=b || zastavica_prvi)){
+		
+		radio.MemorirajStanicu(a,++broji);
+	
+	}
+	}
+
+return broji;
+}

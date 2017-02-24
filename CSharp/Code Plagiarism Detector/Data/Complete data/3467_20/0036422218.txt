@@ -1,0 +1,15 @@
+int igra(Igrac &igrac, Automat &aut, int max, int *broj)
+{
+    int stanje = igrac.TrenutnoStanje(); 
+    while (max--)
+    {
+        if (aut.TrenutnoStanje() == 0)
+        {
+            return igrac.TrenutnoStanje() - stanje;
+        }        
+        (*broj)++;
+        igrac.UplatiNaRacun(aut.Zavrti());
+    }    
+    igrac.UplatiNaRacun(aut.PodigniPreostalo());    
+    return igrac.TrenutnoStanje() - stanje;
+}

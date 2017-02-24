@@ -1,0 +1,54 @@
+void izbaciUljeza (char * ulazni){
+	int i=0,a [50]={0},b[3]={0},r=0,k=0,j,min;
+	while (ulazni [i] !='\0'){
+		if ((ulazni [i]>='a') && (ulazni [i]<='z')){
+			a[i]=1; b[0]=b[0]+1;
+		}
+        if ((ulazni [i]>='A') && (ulazni [i]<='Z')){
+			a[i]=2; b[1]=b[1]+1;
+		}
+        if ((ulazni [i]>='0') && (ulazni [i]<='9')){
+			a[i]=3; b[2]=b[2]+1;
+		}
+i++;
+	}
+	min=b[0];
+	for (j=1;j<3;j++){
+		if (b[j]<min) min=b[j];
+	}
+	for (j=0;j<3;j++){
+		if (b[j]==min) r=r+1;
+	}
+	if ((r==1) && (min==b[0])){
+		for (i=0;a[i]!=0;i++){
+			if (a[i]==1) ulazni[i]=ulazni[i]-32;
+	}
+	}
+    if ((r==1) && (min==b[1])){
+		for (i=0;a[i]!=0;i++){
+			if (a[i]==2) ulazni[i]=ulazni[i]+32;
+	}
+	}
+    if ((r==1) && (min==b[2])){
+		for (i=0;a[i]!=0;i++){
+			if (a[i]!=3){ 
+				ulazni[k]=ulazni[i];
+				k++;}
+        }
+    ulazni[k]='\0';
+	}
+	if (r>1){
+		for (i=0;a[i]!=0;i++){
+            if (a[i]!=3){ 
+				ulazni[k]=ulazni[i];
+				k++;}
+		}
+		ulazni[k]='\0';
+		if ((ulazni[0]>='a') && (ulazni[0]<='z')) ulazni[0]=ulazni[0]-32;
+        if ((ulazni[k-1]>='a') && (ulazni[k-1]<='z')) ulazni[k-1]=ulazni[k-1]-32;
+		for (i=1;i<k-1;i++){
+        if ((ulazni[i]>='A') && (ulazni[i]<='Z')) ulazni[i]=ulazni[i]+32;
+		}
+	}
+	return;
+}

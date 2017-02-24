@@ -1,0 +1,9 @@
+float niz(i){
+float n[100]={1,2,3};
+int kontrola();
+if(i>=0&&i<=2)
+    return n[i];
+else niz(i-1);
+n[i]=(n[i-1]-n[i-3])/(n[i-1]+n[i-3]);
+return n[i];}
+

@@ -1,0 +1,77 @@
+#include <stdio.h>
+int main() {
+char a;
+int i=0,p=0,n=0;
+do{
+scanf("%c",&a);
+switch (a){
+	case '1':
+		n+=1;
+		break;
+	case '2':
+		p+=2;
+		break;
+		case '3':
+		n+=3;
+		break;
+		case '4':
+		p+=4;
+		break;
+		case '5':
+		n+=5;
+		break;
+		case '6':
+		p+=6;
+		break;
+		case '7':
+		n+=7;
+		break;
+		case '8':
+		p+=8;
+		break;
+		case '9':
+		n+=9;
+		break;
+		case 'a':
+		p+=10;
+		break;
+		case 'A':
+		p+=10;
+		break;
+		case 'b':
+		n+=11;
+		break;
+		case 'B':
+		n+=11;
+		break;
+		case 'c':
+		n+=12;
+		break;
+		case 'C':
+		n+=12;
+		break;
+		case 'd':
+		n+=13;
+		break;
+		case 'D':
+		n+=13;
+		break;
+		case 'e':
+		n+=14;
+		break;
+		case 'E':
+		n+=14;
+		break;
+		case 'f':
+		n+=15;
+		break;
+		case 'F':
+		n+=15;
+		break;
+		}
+if(!(a>='0'&&a<='9'||a>='a'&&a<='f'||a>='A'&&a<='F'))
+break;}
+while(1);
+printf("%d",p-n);
+return 0;
+}

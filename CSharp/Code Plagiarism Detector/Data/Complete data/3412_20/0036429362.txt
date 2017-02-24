@@ -1,0 +1,19 @@
+char *SamoDuplikati (char *ulazni_niz) {
+char *novi_niz;
+int i,j,z,k;
+if (ulazni_niz==NULL || ulazni_niz[0]=='\0')
+return NULL;
+novi_niz=(char *) malloc(sizeof (char));
+for (i=0,j=0; ulazni_niz[i]!='\0';i++) {
+    k=0;
+    for (z=0; z<i;z++)
+        if (ulazni_niz[i]==ulazni_niz[z]) k=1;
+    if (k==0) {
+
+novi_niz=(char *) realloc (novi_niz,sizeof(char)*(j+1));
+novi_niz[j]=ulazni_niz[i];
+novi_niz[++ j]='\0';
+}
+}
+return novi_niz;
+}

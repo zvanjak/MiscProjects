@@ -1,0 +1,14 @@
+double fun1(Trokut t, Pravokutnik p, Krug k) {
+	
+	double pp,pt,pk,max;
+
+	pp=p.Povrsina();
+	pt=t.Povrsina();
+	pk=k.Povrsina();
+
+	max=pp;
+	if(pt>max) max=pt;
+	if(pk>max) max=pk;
+
+	return max;
+}

@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
+void ubaci (char *niz, char *podniz, int i){
+    int g,h,k=0,n=0,x=0,j=0;
+	char novi[50+1],novi2[50+1];
+	g = strlen(niz);
+	h = strlen(podniz);
+	if(i>=0 && i<g){
+		for(k=0;k<i;k++){
+			novi[k]=niz[k];
+		}
+		novi[k]='\0';
+		x=strlen(novi);
+		for(k,j;j<h;j++,k++){
+			novi[k]=podniz[j];
+		}
+		novi[k]=' ';
+		novi[k+1]='\0';
+		x=strlen(novi);
+		for(i,n;i<g;i++,n++){
+			novi2[n]=niz[i];
+		}
+		novi2[n]='\0';
+		strcat(novi,novi2);
+		strcpy(niz,novi);
+	}else if(i==g){
+		strcat(niz,podniz);
+	}else{
+		for(i=0;i<=g;i++){
+			niz[i]=toupper(niz[i]);
+		}
+		}
+}

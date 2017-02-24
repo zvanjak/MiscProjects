@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <math.h>
+
+int main (){
+	int n, i;
+	double red=1.0, fakt=1.0;
+	scanf("%d", &n);
+	if (n<1 || n>20) printf("n nije valjan");
+    else {
+		for(i=1;i<n;++i) red +=pow((fakt *= i), -1);
+ 		printf("%.12lf", red);
+	}
+	return 0;
+}

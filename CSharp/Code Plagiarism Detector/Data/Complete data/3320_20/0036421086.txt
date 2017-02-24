@@ -1,0 +1,12 @@
+#include <stdio.h>
+ 
+
+int rmax(int *polje, int N) {
+ int a, b;
+ kontrola();
+ if (N == 1) return *polje;
+ a = *polje;
+ b = rmax(polje + 1, N-1);
+ if (a > b) return a;
+ else       return b;
+}

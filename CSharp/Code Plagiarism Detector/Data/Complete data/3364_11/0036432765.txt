@@ -1,0 +1,29 @@
+#include <stdio.h>
+int main(){
+	char a, b, c;
+	int rez;
+	scanf("%c %c %c", &a, &b, &c);
+	if ( c != '%' && c!= '*' && c != '+' && c != '-' && c != '/') {
+		printf("Neispravna!");
+	} else { if ((a > '0' && a <= '9') && (b > '0' && b <= '9')){
+        if( c== '%') {
+		rez = a % b;
+		printf("rezultat je %d", rez);
+		} else if (c == '*') {
+			rez = a * b;
+			printf("rezultat je %d", rez);
+		} else if (c == '+') {
+			rez = a + b;
+			printf("rezultat je %d", rez);
+		} else if (c == '-') {
+			rez = b - a;
+			printf("rezultat je %d", rez);
+		} else if (c == '/') {
+			rez = a / b;
+			printf("rezultat je %d", rez);
+		}
+	}
+	}
+	return 0;
+}
+		

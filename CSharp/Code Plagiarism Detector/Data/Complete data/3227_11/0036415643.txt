@@ -1,0 +1,23 @@
+#include<stdio.h>
+int main (){
+	int n, i=1;
+	double x, s;
+	scanf("%d",&n);
+	if (n<1 || n>500)
+		printf("n nije valjan");
+	else {
+		for(i=2;i<=n;i++){
+				if (n%2==0) {
+				s=1./(2*n-1);
+				n=n+1;
+				x=s-1./(2*n-1);
+		}		else if (n%2==1) {
+			s=1./(2*n-1);
+			n=n+1;
+			x=1./(2*n-1)+s;
+				}
+}
+		printf("%.12f",4*x);
+	}
+	return 0;
+}

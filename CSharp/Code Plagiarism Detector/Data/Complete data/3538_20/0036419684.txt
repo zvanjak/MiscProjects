@@ -1,0 +1,33 @@
+Red* VratiBrojeve(Red *red)
+{
+    Red *novi = new Red;
+    Red tmp;
+
+    int len, z;
+    char br[8] = "";
+
+
+    while (red->SkiniIzReda(&len))
+    {
+        tmp.DodajURed(len);
+      
+        for (int i = 0; i < 8; i++) br[i] = NULL;
+      
+        for (int i = 0; i < len; i++)
+        {
+            red->SkiniIzReda(&z);
+            tmp.DodajURed(z);
+
+            br[i] = 48 + z;
+        }
+
+        sscanf(&br[0], "%d", &z);
+
+        novi->DodajURed(z);
+    }
+
+
+    while (tmp.SkiniIzReda(&z)) red->DodajURed(z);
+
+    return novi;
+}

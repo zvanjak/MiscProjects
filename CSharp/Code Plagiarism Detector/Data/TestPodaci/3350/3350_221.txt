@@ -1,0 +1,14 @@
+int najbolji (FILE *f){
+	int najveci, broj_bodova;
+	struct natjecatelj zapis;
+	fread(&zapis,sizeof(zapis),1,f);
+	broj_bodova=zapis.bodovi;
+	najveci=zapis.redni_br;
+	while(fread(&zapis,sizeof(zapis),1,f)){
+		if(zapis.bodovi>broj_bodova) {
+			najveci=zapis.redni_br;
+			broj_bodova=zapis.bodovi;
+		}
+	}
+	return najveci;
+}

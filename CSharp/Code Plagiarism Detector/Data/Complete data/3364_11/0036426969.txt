@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() { 
+	char op, a, b;
+
+	scanf("%c %c %c", &a, &b, &op);
+	
+	a = a - 48;
+	b = b - 48;
+
+	if (op == '+')
+		printf("%d", a + b);
+
+	else if (op == '-')
+		printf("%d", a - b);
+
+	else if (op == '*')
+		printf("%d", a * b);
+
+	else if (op == '/')
+		printf("%d", a / b);
+
+	else if (op == '%')
+		printf("%d", a % b);
+
+	else
+		printf("Neispravna");
+	
+	return 0;
+}

@@ -1,0 +1,33 @@
+#include<stdio.h>
+int main(){
+int s,r,polje[20][20],i,j,zI,zJ,pomocna,suma=0;
+//zI -> i-ti redak zamjeni sa zJ-tim
+do{
+scanf("%d %d",&r,&s);
+}while (r<1 || r>20 || s<1 || s>5);
+//ucitavanje sve dok se ne unesu prva vrijednosti
+for (i=0;i<r;i++){
+for (j=0;j<s;j++){
+scanf("%d",&polje[i][j]);
+}
+}
+//ucitavanje elemenata polja
+scanf("%d %d",&zI, &zJ);
+while (zI>-1 && zJ>-1 && (zJ<s) && (zI<r)){//sve dok su uneseni indeksi OK
+for (i=0;i<s;i++) {
+pomocna=polje[zJ][i];
+polje[zJ][i]=polje[zI][i];
+polje[zI][i]=pomocna;
+}
+scanf("%d %d",&zI, &zJ);
+}
+//zbrajanje elemenata polja...
+for (i=0;i<r;i++){
+suma=0;
+for (j=0;j<s;j++)
+{ suma+=polje[i][j];}
+printf("%d",suma);
+if (i<r-1) printf(" "); //ovaj red je potreban jer je u zadatku pise-> ... ispisati odvojene jednim razmakom, bez pocetnih ili zavrsnih praznina, te bez...
+}
+return 0;
+}

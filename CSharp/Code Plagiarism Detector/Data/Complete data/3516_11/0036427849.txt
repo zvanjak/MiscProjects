@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
+#define MAX 50
+
+double funkcija(double x){
+		return pow(cos(exp(-1.)),sin(exp(sin(x+exp(-1.))))); /*cos(exp((-1.)*sin(exp(sin(x+exp(-1.)))))); */
+}
+
+int main(){
+	double dx,k[MAX];
+	float x[MAX];
+	int i,br=0;
+
+	scanf("%lf",&dx);
+	if (dx==0.0) exit(1);
+	
+	do{
+		scanf("%f",&x[br++]);
+	}while((x[br-1]!=0.0) && br<MAX);
+	if (x[br-1]==0.0) br--;
+
+	for(i=0; i<br; i++)
+		k[i]=(funkcija(x[i]+dx)-funkcija(x[i]))/dx;
+
+	for(i=0; i<br; i++)
+		printf("%.2lf ",atan(k[i]));
+	
+	return 0;
+}

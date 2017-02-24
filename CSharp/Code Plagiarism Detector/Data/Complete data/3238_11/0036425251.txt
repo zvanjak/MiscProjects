@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <math.h>
+main(){
+char c;
+unsigned long int n,i;
+long double PI, a,b;
+scanf("%d", &n);
+a=0;
+if ((n<1) || (n>25)) printf("n nije valjan");
+else {
+	for (i=1; i <= n; i++)
+		a = a + 1./(pow(i,8));
+		PI = pow(a*9450,1./8.);
+		printf("\n%.16f", PI);
+      }
+
+return 0;}

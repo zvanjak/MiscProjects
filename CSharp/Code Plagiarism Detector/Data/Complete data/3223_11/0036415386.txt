@@ -1,0 +1,34 @@
+#include<stdio.h>
+#define MAX 512
+
+int main(){
+	int polje[MAX];
+	int i,najveci, najmanji;
+	int br=0;
+	
+	for(i=0;i<MAX;i++){
+		scanf("%d",&polje[i]);
+		br++;
+		if (polje[i]<=0) continue;
+		if ((polje[i]%4)==0) break;
+		
+	}
+	najveci=polje[0];
+	for (i=1;i<br;i++){
+	 if(polje[i]>najveci)
+		 najveci=polje[i];
+	}
+
+	najmanji=polje[0];
+	for (i=1;i<br;i++){
+		if(polje[i]<najmanji)
+			najmanji=polje[i];
+	}
+
+	printf("%d %d",najveci,najmanji);
+	return 0;
+}
+
+	
+
+		

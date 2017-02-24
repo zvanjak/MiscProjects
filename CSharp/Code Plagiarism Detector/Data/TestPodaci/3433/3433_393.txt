@@ -1,0 +1,35 @@
+int main(int argc, char* argv[])
+{
+   struct s {
+        char znak;
+        int prirodniBroj;
+    }; typedef struct s PAR;
+
+    PAR kompresiraniNiz[100];
+    char dekompresiraniNiz[1000];
+
+    int i = 0, int j = 0; countDekompr = 0;
+    int velicinaKompresiranogNiza, velicinaDekompresiranogNiza;
+
+    scanf("%c%d", &kompresiraniNiz[i].znak, &kompresiraniNiz[i].prirodniBr oj);
+    while (kompresiraniNiz[i].prirodniBroj!=-1) {
+        i++;
+        scanf("%c%d", &kompresiraniNiz[i].znak, &kompresiraniNiz[i].prirodniBroj);
+    }
+    velicinaKompresiranogNiza = i;
+
+    for (i=0; i<velicinaKompresiranogNiza;i++)
+    {
+        for (j=0; j<kompresiraniNiz[i].prirodniBroj; j++)
+        {
+            dekompresiraniNiz[countDekompr]    = kompresiraniNiz[i].znak;
+            countDekompr++;
+        }
+    }
+    velicinaDekompresiranogNiza = countDekompr;
+
+    for (i=0; i<velicinaDekompresiranogNiza;i++)
+        printf("%c ", dekompresiraniNiz[i]);
+
+    return 0;
+}

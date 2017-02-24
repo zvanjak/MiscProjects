@@ -1,0 +1,53 @@
+#include <stdio.h>
+
+int main(){
+  int x, k, sum, check;
+  char again = 0;
+
+  while (again == 0){
+    printf("unesite prvu variablu. mora biti jedinice ili nule, i cetveroznamenkasta");
+    scanf("%d", &k);
+
+  while ((k < 1000)||(k > 1111)){
+    if ((k < 1000)||(k > 1111)){
+      printf("krivo ste unjeli. ponovite");
+      scanf("%d", &k);
+    }
+  }
+
+  printf("unesite drugu variablu. mora biti cetveroznamenkasta");
+  scanf("%d", &x);
+  while ((x < 1000)||(k > 9999)){
+    if ((x < 1000)||(k > 9999)){
+      printf("krivo ste unjeli. ponovite");
+      scanf("%d", &x);
+    }
+  }
+
+  sum = k + x;
+  check = sum - x;
+
+  if ((check%1000) > 111){
+    printf("provjerite drugu znamenku u prvoj variabli");
+    again = 0;
+  }
+  else if ((check%100) > 11){
+    printf("provjerite trecu znamenku u prvoj variabli");
+    again = 0;
+  }
+  else if ((check%10) > 1){
+    printf("provjerite cetvrtu znamenku u prvoj variabli");
+    again = 0;
+  }
+  else{
+    if (sum >= 9999){
+      sum = sum%1000; 
+      printf("suma je %d", &sum);
+    }
+    else{
+      printf("suma je %d", &sum);
+    }
+    again = 1;
+  }
+  }
+return 0;}

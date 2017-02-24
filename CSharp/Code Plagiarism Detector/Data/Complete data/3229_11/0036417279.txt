@@ -1,0 +1,36 @@
+#include<stdio.h>
+main()
+{
+int i,fakt=1;
+float n;
+double e=1;
+scanf("%d",&n);
+if(n<1 || n>30)
+printf("n nije valjan");
+else
+{
+for(i=1;i<n;i++)
+{
+fakt*=(-i);
+e+=1./fakt;
+}
+printf("%1.12f",1/e);
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

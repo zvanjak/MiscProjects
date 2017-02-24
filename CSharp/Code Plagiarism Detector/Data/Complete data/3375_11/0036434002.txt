@@ -1,0 +1,43 @@
+#include<stdio.h>
+
+int main(){
+	int broj, a, b, c, d, rez, abs;
+	printf ("Unesite četveroznamenkasti cijeli broj \n");
+	scanf ("%d", &broj);
+
+	if (broj>0)
+		abs=broj;
+	else
+		abs=-broj;
+
+	a=abs%10000/1000;
+		if (a%2==0)
+			rez = a;
+		else
+			rez=0;
+
+	b=abs%1000/100;
+		if (b%2==0)
+			rez=rez*10 + b;
+		else 
+			rez= rez + 0;
+
+	c=abs%100/10;
+		if (c%2==0)
+			rez= rez*10 + c;
+		else
+			rez= rez + 0;
+
+	d=abs%10;
+		if (d%2==0)
+			rez=rez*10 + d;
+		else
+			rez=rez + 0;
+
+	if (broj>0)
+		printf ("%d", rez);
+	else
+		printf ("%d", rez*(-1));
+
+	return 0 ;
+}

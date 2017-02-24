@@ -1,0 +1,21 @@
+float *KreirajGeomNiz(int n, float q0, float q)
+{
+	int i;
+	float *result;
+	float next = q0;
+
+	if(n < 0)
+	{
+		return 0;
+	}
+
+	result = (float*)malloc(n * sizeof(float));
+
+	for(i = 0; i < n; i++)
+	{
+		result[i] = next;
+		next = result[i] * q;
+	}
+
+	return result;
+}

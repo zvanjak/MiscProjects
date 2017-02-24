@@ -1,0 +1,55 @@
+class Recenica
+{
+private:
+    char *rec;
+    int duzina;
+
+public:
+    Recenica()
+    {
+        rec = (char*) malloc(sizeof(char));
+        rec[0] = '\0';
+        duzina = 0;
+    }
+
+    void UcitajZnak(char znak)
+    {
+        rec[duzina++] = znak;
+        realloc(rec, (duzina+1)*sizeof(char));
+        rec[duzina] = '\0';
+    }
+
+    int PrebrojiRijeci()
+    {
+        int i, broj=0, rijec=0;
+
+        for (i=0; i<duzina; i++)
+        {
+            if ((rec[i]!= ',') && (rec[i]!=' '))
+            {
+                if (!rijec)
+                {
+                    rijec=1;
+                    broj++;
+                }
+                else continue;
+            }
+            else
+            {
+                if (!rijec) continue;
+                else rijec = 0;
+            }
+        }
+
+        return broj;
+    }
+
+    int PrebrojiZareze()
+    {
+        int i, broj=0;
+
+        for (i=0; i<duzina; i++)
+            if (rec[i] == ',') broj++;
+return broj;
+}
+};

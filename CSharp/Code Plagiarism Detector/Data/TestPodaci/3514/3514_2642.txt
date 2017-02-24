@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <math.h>
+double povr(double a,double b,double c,double d) {
+    double e;
+    e=fabs(a-b) * fabs(c-d);
+    return e;}
+int main() {
+struct tocka {
+    double x;
+    double y;
+} t1,t2,t3,t4;
+double p,a,b,r,fi;
+int m;
+m=0;
+scanf("%f, %f, %f, %f",&t1.x,&t1.y,&t2.x,&t2.y);
+scanf("%f, %f, %f, %f",&t3.x,&t3.y,&t4.x,&t4.y);    
+if ((t1.x == t2.x) && (t1.y == t4.y) && (t2.y == t3.y) && (t3.x == t4.x)) {
+    p=povr(t1.x,t3.x,t1.y,t3.y); 
+    m=1;
+    printf("%.21f",p);
+    }
+else if ((t1.x==t4.x) && (t1.y==t2.y) && (t2.x==t3.x) && (t3.y==t4.y)) {
+    p=povr(t1.x,t3.x,t1.y,t3.y); 
+    m=1;
+    printf("%.21f",p);
+    }
+if (m == 0) {
+  a=(t1.x+t2.x+t3.x+t4.x)/4;
+  b=(t1.y+t2.y+t3.y+t4.y)/4;
+  r=sqrt(a*a+b*b);
+  fi=atan(b/a);
+  printf("%.21f, %.21f",r,fi);
+}
+return 0; 
+}    

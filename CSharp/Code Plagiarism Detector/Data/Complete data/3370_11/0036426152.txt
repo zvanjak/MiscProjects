@@ -1,0 +1,28 @@
+
+
+#include <stdio.h>
+int main(){
+	int a, b;
+	int z1=10, z2=10;
+	scanf("%d %d", &a, &b);
+	if((a>=10&&a<=99)&&(b>=10&&b<=99))
+	{if(a%10 == b%10 || a%10 == b/10)
+		z1 = a%10;
+	if(a/10 == b%10 ||a/10 == b/10)
+		z2 = a/10;
+	if(z1==10 & z2==10){
+		printf("Nema");
+	}
+	else if( (z1!=10 || z2!=10) && (z1==10 || z2==10) ){
+		printf("%d", z1==10 ? z2 : z1);
+	}
+	else{
+		if(z1<z2)
+			printf("%d %d", z1, z2);
+		else if(z2<z1)
+			printf("%d %d", z2, z1);
+		else
+			printf("%d", z1);
+	}}
+	return 0;
+}

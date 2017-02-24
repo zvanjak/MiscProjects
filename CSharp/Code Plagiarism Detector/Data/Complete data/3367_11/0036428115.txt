@@ -1,0 +1,17 @@
+#include <stdio.h>
+void main () {
+  char a, b;
+  int c, d, e;
+  scanf ("%c %c", &a, &b);
+  if ((int) a >57) {c= (((int) a) - 55);
+  }
+  else {c= (((int) a)-48);
+  }
+  if ((int) b >57) {d= (((int) b) - 55);
+  }
+  else {d= (((int) b) -48);
+  }
+  c=c*16;
+  e=c+d;
+  printf ("%d", e);
+}

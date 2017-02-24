@@ -1,0 +1,24 @@
+#include<stdio.h>
+main()
+{	
+	int a,b,c,d;
+	scanf("%d",&a);
+	b=a;
+	if (a>2)
+	{	
+		while (a>2)
+		{	
+			d=1;
+			scanf("%d",&a);
+			for ( c=2; c<a; c++)
+				if(a%c==0)
+					d=0;
+			if((d==1)&&(a>b))
+				b=a;
+		}
+		printf("%d",b);
+	}	
+	else
+	printf("0");	
+return 0;
+}

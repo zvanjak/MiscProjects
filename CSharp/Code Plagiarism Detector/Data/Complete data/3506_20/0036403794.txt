@@ -1,0 +1,11 @@
+int Razina(cvor *glava, int id, int *razina){
+	int brojac=0;
+	if(glava==NULL)return 0;
+	while(glava!=NULL){
+		if(glava->id==id){brojac ++;break;}
+		(*razina)++;
+		if(id<glava->id) glava=(glava->lijevo);
+		else glava=(glava->desno);}
+	if(!brojac)return 0;
+	else return 1;
+}

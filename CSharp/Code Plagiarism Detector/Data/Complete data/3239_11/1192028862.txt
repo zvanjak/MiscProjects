@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int main () {
+    int d, g, i=0, j=0, rez=0;
+    scanf ("%d %d", &d, &g);
+    if ((d>0) && (g>d)){
+              for (i=d; i<=g; i++) {                                            
+                  if (i<g) {
+                  for (j=2,rez=0; j<=i; j=j+2){
+                      rez=rez+j;
+                     }
+                     printf ("%d ", rez); }
+                     else {
+                          for (j=2,rez=0; j<=i; j=j+2)
+                          {
+                      rez=rez+j;
+                     }
+                     printf ("%d", rez);}}
+}
+else printf ("D i G nisu valjani\n");
+return 0;
+}

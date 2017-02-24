@@ -1,0 +1,30 @@
+#include<stdio.h>
+int main()
+{
+ int n,m,i,j,k,p;
+ char niz[32];
+ scanf("%d",&n);
+ while (n>0)
+ {	
+	i=0;
+	k=0;
+	m=n;
+	while (m!=0)
+	{
+		i++;
+		m=m/10;
+	}
+	for(j=0;j<i;j++)
+	{ 
+		p=n%10;
+		niz[k]=p+48;
+		k++;
+		n/=10;
+	}
+	for(j=0;j<k;j++)
+		printf("%c",niz[j]);
+        printf(" ");
+	scanf("%d",&n);
+ }
+return 0;
+}

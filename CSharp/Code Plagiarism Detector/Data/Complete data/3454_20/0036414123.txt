@@ -1,0 +1,30 @@
+#include <set>
+
+using namespace std;
+
+struct RazlPolje {
+   set<int> brojevi;
+   int suma;
+
+   RazlPolje() { suma = 0; }
+
+   int Dodaj( int Broj ) {
+      if( brojevi.insert( Broj ).second ) 
+         suma += Broj;
+      return 1;
+   }
+
+   int Izbaci( int Broj ) {
+      if( brojevi.erase( Broj ) ) {
+         suma -= Broj;
+         return 1;
+      }
+      return 0;
+   }
+
+   int SumaPolja() {
+      return suma;
+   }
+
+   ~RazlPolje() {}
+};

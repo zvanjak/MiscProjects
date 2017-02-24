@@ -1,0 +1,15 @@
+int najbolji(FILE *f) {
+    struct natjecatelj n;
+    int pozicijaMax = -1;
+    int max;
+
+    rewind(f);
+    while (fread(&n, sizeof(n), 1, f)) {
+        if (pozicijaMax == -1 || n.bodovi > max) {
+            pozicijaMax = n.redni_br;
+            max = n.bodovi;
+        }
+    }
+
+    return pozicijaMax;
+}

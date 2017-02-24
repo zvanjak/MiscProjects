@@ -1,0 +1,23 @@
+float prosjek(FILE *f){
+
+    struct album
+    {
+        char naziv[30+1];
+        char autor[20+1];
+        int prodano;
+    }dat;
+    int albumi=0;
+    float prosjek=0;
+    float n;
+    while(fread(&dat,sizeof(dat),1,f)==1)
+    {
+        prosjek+=dat.prodano;
+        albumi++;
+    }
+    if(albumi>0){
+        n=prosjek/albumi;
+        return n;
+    }
+    else
+        return(0);
+}

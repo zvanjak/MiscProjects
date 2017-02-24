@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main()
+{
+ double r,k=0,pi; 
+ int n,i;
+ 
+ scanf("%d",&n);
+ if ((n<1) || (n>100)){
+           
+           }else{
+                 for(i=1;i<=n;i++){
+                 r=(1./(i*i));
+                 k=k+r;
+                 }
+                 pi=sqrt(k*6);
+                 printf("PI je:%.12f\n",pi);
+                      }
+ system("PAUSE");	
+  return 0;
+}

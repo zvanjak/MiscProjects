@@ -1,0 +1,24 @@
+class Komprimiranje
+{
+      int n;
+      int *polje;
+public:      
+      Komprimiranje()
+      { polje=0; n=0;}
+            
+      Komprimiranje(int *_polj, int _n)
+      {polje=_polj; n=_n;}
+            
+      int UkupnaSuma()
+      {   int i,a=0;
+          for (i=0;i<n;i+=2){a=a+polje[i]*polje[i+1];};
+          return a;
+      }
+
+      int UkupniBrojElemenata(int vrijednost)
+      { int i,a=0;
+        for (i=0;i<n;i+=2){
+            if (vrijednost==polje[i])a=a+polje[i+1];}
+        return a;
+      }
+};

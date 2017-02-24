@@ -1,0 +1,23 @@
+int izbaci(zapis **glava){
+	zapis *brisi,*prethodni,*temp;
+	int n=0;
+	for(brisi=(*glava);brisi!=NULL;brisi=brisi->sljed){
+		if(brisi->pros < 2.0)
+		{
+			n++;
+			if(*glava==brisi)
+			{
+				
+				*glava=brisi->sljed;
+				
+			}
+			else
+			{
+				for(prethodni=*glava;prethodni->sljed!=brisi;prethodni=prethodni->sljed);
+				prethodni->sljed=brisi->sljed;
+				
+			}
+		}		
+	}
+	return n;
+}

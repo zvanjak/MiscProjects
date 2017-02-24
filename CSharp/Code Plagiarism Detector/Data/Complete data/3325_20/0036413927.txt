@@ -1,0 +1,11 @@
+void rStrnscp(char *odrediste, char *izvoriste, int n){
+int v=0;
+kontrola();
+rstr(&odrediste, &izvoriste, n, v);
+}
+
+void rstr(char *odr, char *izv, int n, int v){
+if (v>n) return;
+else {odrediste[v]=izvoriste[v];
+      rstr(&odr, &izv, n, v+1);}
+}

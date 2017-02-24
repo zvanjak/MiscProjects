@@ -1,0 +1,16 @@
+#include<stdio.h>
+#include<math.h>
+int main() 
+{
+	int n,i;
+	long double sum=0;
+	scanf("%d",&n);
+	if (n>=1 && n<=25) 
+	{
+		for (i=1;i<=n;i++) sum += pow((double)i,-8.);
+        printf("%.12Lf", pow((double)(sum * 9450), 1./8.));	
+	}
+	else 
+		printf("n nije valjan");
+	return 0;
+}

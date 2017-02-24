@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+   int x,j,pom,znamenka=0,i=0,novibroj=0;
+    scanf("%d",&x);
+    if(x>0){
+            do{
+            znamenka = x%10;
+                     if (znamenka%2==1){
+                     pom=1;
+                     for(j=0;j<i;j++) pom*=10;                                 
+                     novibroj+=znamenka*pom;
+                     i++;
+                     }
+            x/=10;
+            }while(x>0);
+    }    
+    else
+    novibroj=x;
+    printf ("%d",novibroj);
+    return 0;
+} 

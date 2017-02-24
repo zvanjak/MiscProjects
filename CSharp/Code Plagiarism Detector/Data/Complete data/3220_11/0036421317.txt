@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main()
+{
+	int x=0,k=0,n=0,i=1;
+	scanf(" %d",&n);
+	k=n;
+	if (n<1) printf("%d", n);
+	else
+	{
+		while (n>0)
+		{	
+		if (n%2==1) 
+		{
+			k=n%10;
+			x=x+k*i;
+			i=i*10;
+		}
+		n=n/10;
+		}
+	printf("%d", x);
+	}
+	return(0);
+}

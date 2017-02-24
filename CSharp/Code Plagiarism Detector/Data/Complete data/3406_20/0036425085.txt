@@ -1,0 +1,20 @@
+char *SamoSuglasnici(char *ulazni_niz){
+	int i, j = 0;
+	char *nov;
+    nov = (char *) malloc ((strlen(ulazni_niz)+1) * sizeof(char));
+	for (i=0; i<=strlen(ulazni_niz); i++){
+		if (isalpha(*(ulazni_niz + i)) && 
+		    *(ulazni_niz + i) != 'A' && *(ulazni_niz + i) != 'a' &&
+			*(ulazni_niz + i) != 'E' && *(ulazni_niz + i) != 'e' &&
+			*(ulazni_niz + i) != 'I' && *(ulazni_niz + i) != 'i' &&
+			*(ulazni_niz + i) != 'O' && *(ulazni_niz + i) != 'o' &&
+			*(ulazni_niz + i) != 'U' && *(ulazni_niz + i) != 'u'){
+   	 
+                *(nov+j) = *(ulazni_niz+i);
+   	            *(nov+j+1) = '\0';
+				j++;
+		}
+	}
+	if (j == 0) return NULL;
+	return nov;
+}

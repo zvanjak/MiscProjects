@@ -1,0 +1,15 @@
+int *napraviPolje(int *A, int Na, int a, int b, int *Nc){
+	int *p;
+	int i,clan;
+	p = NULL;
+	*Nc=0;
+	if (a>b) return NULL;
+	for (i=0; i<Na; i++){
+			if (*(A+i)>b){
+			p=(int *)realloc(p,sizeof(int)+(4*(*Nc)));
+			*(p+ *Nc)=*(A+i);
+			(*Nc)++;
+		}
+	}
+	return p;
+}

@@ -1,0 +1,32 @@
+#include<stdio.h>
+int main(){
+	unsigned int x,y,z1,z2,z3,z4,zaj1=10,zaj2=10;
+	scanf("%d %d",&x,&y);
+	if(x<100&&x>9&&y<100&&y>9){
+		z2=x%10;
+		z1=x/10;
+		z4=y%10;
+		z3=y/10;
+		if(z1==z3)
+			zaj1=z1;
+		else if(z1==z4)
+			zaj1=z1;
+		if(z2==z3)
+			zaj2=z2;
+		else if(z2==z4)
+			zaj2=z2;
+		if(zaj1==zaj2&&zaj1!=10)
+			 printf("%d",zaj1);
+		else if(zaj1>zaj2&&zaj1!=10) 
+			printf("%d %d",zaj2,zaj1);
+		else if(zaj2>zaj1&&zaj2!=10)
+			printf("%d %d",zaj1,zaj2);
+		else if(zaj1<10&&zaj2==10)
+			printf("%d",zaj1);
+		else if(zaj2<10&&zaj1==10)
+			printf("%d",zaj2);
+		else
+			printf("Nema");
+	}
+	return(0);
+}

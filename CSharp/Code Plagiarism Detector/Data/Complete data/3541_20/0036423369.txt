@@ -1,0 +1,35 @@
+int izbaciZ ( zapis **glava ) {
+	int n = 0, izbaceno = 0;
+	float prosjek = 0;
+	zapis *pom = *glava, *prethodni = NULL;
+	if ( *glava == NULL )
+		return 0;
+	while ( pom ) {
+		prosjek += pom -> pros;
+		n++;
+		pom = pom -> sljed;
+	}
+	prosjek /= n;
+	pom = *glava;
+	while ( pom ) {
+		if ( pom -> spol == 'Z'  &&  pom -> pros < prosjek ) {
+			izbaceno++;
+			if ( pom == *glava ) {
+				*glava = pom -> sljed;
+				free ( pom );
+				pom = *glava;
+			}
+			else {
+				prethodni -> sljed = pom -> sljed;
+				free ( pom );
+				pom = prethodni -> sljed;
+			}
+		}
+		else {
+			prethodni = pom;
+			pom = pom -> sljed;
+		}
+
+	}
+	return izbaceno;
+}

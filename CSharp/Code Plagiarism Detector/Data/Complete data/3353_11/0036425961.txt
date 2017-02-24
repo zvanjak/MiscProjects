@@ -1,0 +1,19 @@
+#include <stdio.h>
+int main (){
+    int n, m, a, b, c, d;
+    scanf("%d %d", &n, &m);
+    if (n>999 && n<10000) {
+        a=n/1000;
+        b=(n/100)%10;
+        c=(n/10)%10;
+        d=n%10;
+        if (m<1 || m>4) n=a+b+c+d;
+        else if (m==1) n=a*100+b*10+c;
+             if (m==2) n=a*100+b*10+d;
+             if (m==3) n=a*100+c*10+d;
+             if (m==4) n=b*100+c*10+d;
+
+        printf("%d", n);
+    }
+return 0;
+}

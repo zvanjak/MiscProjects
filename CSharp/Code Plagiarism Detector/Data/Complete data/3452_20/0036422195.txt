@@ -1,0 +1,34 @@
+class SortRazlPolje {
+	int *polje;
+	int _n;
+public:
+	SortRazlPolje(){
+		polje=NULL;
+		_n=0;
+	}
+	~SortRazlPolje(){
+		free(polje);
+	}
+
+	int Dodaj(int broj){
+		int i;
+		if ((polje=(int *)realloc(polje,(_n+1)*sizeof(int)))==NULL) 
+                        return 0;
+		for (i=0;i<_n;++i) if (polje[i]==broj) return 1;
+		polje[_n++]=broj;
+		return 1;
+	}
+	
+	int *VratiSortPolje(int &n){
+		int i,j,t;
+		for (i=0;i<_n-1;++i)
+			for (j=i+1;j<_n;++j)
+				if (polje[j]<polje[i]){
+					t=polje[i];
+					polje[i]=polje[j];
+					polje[j]=t;
+				}
+		n=_n;
+	return polje;
+	}
+};

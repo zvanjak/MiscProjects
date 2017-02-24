@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main (){
+	char c,pom,polje[100];
+	int van=0,vun=0, i=0, j, broj;
+	do {
+		scanf("%c",&c);
+		if (c == '.') vun=1;
+		else {
+			polje[i]=c;
+			i++;
+		}
+	} while (i<100 && vun==0);
+	broj=i;
+	do {
+		scanf("%d %d",&i,&j);
+		if (i<=broj && i>0 && j<=broj && j>0){
+			pom=polje[j-1];
+			polje[j-1]=polje[i-1];
+			polje[i-1]=pom;
+		}else van=1;
+	} while (van==0);
+	for (i=0; i<broj; i++) printf("%c ",polje[i]);
+	return 0;
+}
+
+
+

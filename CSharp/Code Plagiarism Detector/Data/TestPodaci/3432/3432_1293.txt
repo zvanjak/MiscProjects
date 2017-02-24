@@ -1,0 +1,24 @@
+#include<stdio.h>
+int main ()
+{
+int komp[100];
+int dekomp[1000];
+int n,i,j,k;
+
+i = 0;
+do{
+	scanf("%d", &komp[i]);
+	if(komp[i] == -1) break;
+ }while(i++ < 100);
+
+n=i;
+k = 0;
+for(i=0;i<n;i=i+2)
+	for(j = 0; j < komp[i+1]; j++)
+		dekomp[k++] = komp[i];
+
+for(i = 0; i < k; i++)
+	printf("%d ", dekomp[i]);
+
+return 0;
+}

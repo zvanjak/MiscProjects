@@ -1,0 +1,12 @@
+int Sortirano(cvor *glava){
+if (glava==NULL) return 1;
+int x1=0,x2=0,y1=0,y2=0;
+x2=Sortirano(glava->lijevo);
+if (glava->lijevo!=NULL){
+    if (glava->id > glava->lijevo->id) x1=1;}
+else x1=1;
+y2=Sortirano (glava->desno);
+if (glava->desno!=NULL){
+    if (glava->id < glava->desno->id) y1=1;}
+else y1=1;
+return x1&x2&y1&y2;}

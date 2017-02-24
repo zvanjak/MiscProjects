@@ -1,0 +1,29 @@
+#include <stdio.h>
+int main ()
+{
+	int x,prost,i,max;
+	max=0;
+	prost=0;
+	do
+	{
+		scanf ("%d",&x);
+		for (i=2;i<x;i++)
+		{
+			if (x%i)
+            {
+				prost=x;
+			}
+		}
+		if (prost>max)
+		{
+			max=prost;
+		}
+     }
+	while (x>2);
+
+	if (max !=0){
+		printf("%d",max);}
+	else {
+		printf("0");}
+	return 0;
+}

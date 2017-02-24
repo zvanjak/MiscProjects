@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <string.h>
+#include <malloc.h> 
+
+int *Find3Max (int *p, int n) {
+	int i, j, pom, *polje;
+	polje = (int *) malloc (3 *sizeof(int));
+	for (i=0; i<n; i++) 
+		for (j=i+1; j<n; j++) {
+			if (p[i]<p[j]) {
+				pom= p[i];
+				p[i]= p[j];
+				p[j]= pom;
+			}
+		}
+	for (i=0; i<3; i++)
+		polje[i]=p[i];
+	
+	return &polje[0];
+}

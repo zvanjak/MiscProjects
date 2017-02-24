@@ -1,0 +1,32 @@
+#include<stdio.h>
+int main () {
+int x,suma,j,d,s;
+scanf("%d",&x);
+j=x%10;
+d=x%100;
+d=d/10;
+s=x/100;
+if((x>99)&&(x<1000)){
+printf("Broj %d nije troznamenkast broj ili je negativan\n",x);
+}else if((s%2==1)&&(d%2==1)&&(j%2==1)){
+suma=s+d+j;
+printf("Suma neparnih znamenki broja %d je %d\n",x,suma);
+}else if((s%2==1)&&(d%2==1)){
+suma=s+d;
+printf("Suma neparnih znamenki broja %d je %d\n",x,suma);
+}else if((s%2==1)&&(j%2==1)){
+suma=s+j;
+printf("Suma neparnih znamenki broja %d je %d\n",x,suma);
+}else if((d%2==1)&&(j%2==1)){
+suma=d+j;
+printf("Suma neparnih znamenki broja %d je %d\n",x,suma);
+}else if(j%2==1){
+printf("Suma neparnih znamenki broja %d je %d\n",x,j);
+}else if(d%2==1){
+printf("Suma neparnih znamenki broja %d je %d\n",x,d);
+}else if (s%2==1){
+printf("Suma neparnih znamenki broja %d je %d\n",x,s);
+}else
+printf("Broj %d nema neparnih znamenki\n",x);
+return 0;
+}

@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main () {
+   int n,p,i;
+   double pom=1.,fakt=1.;
+   
+   if (n<1 || n>30){
+      printf("n nije valjan");return 0;
+   }
+   
+   else {
+     if (n==1){printf("%.12lf ",pom);
+        return 0;
+     }
+   
+     for(i=1;i<n;i++){
+      fakt*=i;
+      if(i%2!=0)p=-1;
+      else p=1;
+      pom+=p/(double)fakt;
+     }
+  }
+  printf("%.12lf",1./pom);
+  return 0;
+}

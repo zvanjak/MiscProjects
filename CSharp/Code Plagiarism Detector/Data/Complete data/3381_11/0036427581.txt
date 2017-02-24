@@ -1,0 +1,13 @@
+#include <stdio.h>
+int main ()
+{int ax,ay,bx,by,cx,cy,dx,dy;
+scanf ("%d %d %d %d %d %d %d %d",&ax,&ay,&bx,&by,&cx,&cy,&dx,&dy);
+if (  ((ax-cx)==0) || ((bx-dx)==0) ) {printf("K"); return 0;}  ;
+
+if (  (abs(ax-bx)==abs(cx-dx)) && (abs(ay-by)==abs(cy-dy)) ) {
+if (((ay-cy)/(ax-cx))*((by-dy)/(bx-dx))==-1) {printf("R"); return 0;};
+}
+if (((ay-cy)/(ax-cx))*((by-dy)/(bx-dx))!=-1) {printf("C"); return 0;};
+return 0;
+}
+

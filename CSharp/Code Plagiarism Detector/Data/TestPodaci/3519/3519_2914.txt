@@ -1,0 +1,12 @@
+int SplitToSentences (char *inputField, char *outputField){
+	int i=0,brojac=0,x;
+	strcpy(outputField,inputField);
+	x=strlen(outputField);
+	for(i=0;i<x;i++){
+		if(outputField[i]==','){
+			outputField[i]='.';
+			outputField[i+1]=toupper(outputField[i+1]);
+		brojac++;}
+	}
+	return brojac;
+}

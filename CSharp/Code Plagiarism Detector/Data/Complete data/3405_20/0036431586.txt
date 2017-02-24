@@ -1,0 +1,22 @@
+# include <stdio.h>
+# include <stdlib.h>
+# include <string.h>
+
+char *SvakiDrugi(char *ulazni_niz){
+	char *p,*pom;
+	int i,n,t;
+	int j=0;
+	pom=ulazni_niz;
+	if(pom==" " || pom==NULL) return NULL;
+	n =(int)strlen(pom)/2 +2;
+	t=(int)strlen(pom);
+	p=(char *) malloc(n*sizeof(char));
+	for(i=0;i<t;i++){
+		if(i%2==0){
+		*(p+j)=*(pom+i);
+		j++;
+		}
+	}
+	*(p+j)='\0';
+	return p;
+}

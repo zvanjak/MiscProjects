@@ -1,0 +1,29 @@
+char *Spoji(char *niz1, char *niz2) {
+     char *novi;
+     int duljina1 = 0, duljina2 = 0, duljina = 0, i, j;
+     duljina1 = strlen(niz1);
+     duljina2 = strlen(niz2);
+     duljina = duljina1 + duljina2 + 1;
+     printf("%d\n", duljina1);     
+     printf("%d\n", duljina2);
+     printf("%d\n", duljina);
+     novi = malloc(duljina);
+     novi[duljina - 1] = '\0';
+     
+     for (i = 0, j = 0; j < duljina1; i += 2) {
+         if (j > duljina2)
+            i--;
+         novi[i] = niz1[j];
+         j++;
+         printf("%c %d\n", novi[i], i);
+     }
+     for (i = 1, j = 0; j < duljina2; i += 2, j++) {
+         if (duljina1 == 0)
+            i--;
+         if (j >= duljina1)
+            i--;
+         novi[i] = niz2[j];
+         printf("%c %d\n", novi[i], i);         
+     }
+     return novi;
+}

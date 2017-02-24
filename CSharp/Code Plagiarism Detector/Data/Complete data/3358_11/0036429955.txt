@@ -1,0 +1,32 @@
+#include<stdio.h>
+int main(){
+
+    int a[5];
+    int br;
+    int zbroj=0;
+
+    scanf("%d", &br);
+
+    a[0]=br%10;
+    a[1]=br%100/10;
+    a[2]=br%1000/100;
+    a[3]=br%10000/1000;
+    a[4]=br/10000;
+
+    if(a[0]==a[4] && a[1]==a[3]){
+        for(br=0; br<5; br++){
+            if(!(a[br]%2))
+                zbroj+=a[br];
+        }
+        printf("%d", zbroj);
+    }
+    else{
+        for(br=0; br<5; br++){
+            if(a[br]%2)
+                zbroj+=a[br];
+        }
+        printf("%d", zbroj);
+    }
+
+    return 0;
+} 

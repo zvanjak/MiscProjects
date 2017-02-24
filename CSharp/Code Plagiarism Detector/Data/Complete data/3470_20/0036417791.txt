@@ -1,0 +1,19 @@
+bool fun2 (Pravokutnik p, Krug k){
+
+	Tocka A;
+	double a, b;
+
+	A = p.getDLkut();
+	a = p.getVisina();
+	b = p.getSirina();
+
+	Tocka B (A.X, A.Y + a);
+	Tocka C (A.X + b, A.Y + a);
+	Tocka D (A.X + b, A.Y);
+
+	if (k.Sadrzi (A) && k.Sadrzi (B) && k.Sadrzi (C) && k.Sadrzi (D))
+		return 1;
+	else
+		return 0;
+
+}

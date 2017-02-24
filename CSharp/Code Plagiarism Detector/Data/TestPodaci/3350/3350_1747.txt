@@ -1,0 +1,24 @@
+int najbolji(FILE *f)
+{
+	struct natjecatelj a;
+	int maxbod, covac;
+	while (fread(&a, sizeof(a),1,f) == 1)
+	{
+		if (a.redni_br!= 0)
+		{maxbod = a.bodovi;
+		covac = a.redni_br;
+		break;
+		}
+	}
+	while(fread(&a, sizeof(a),1,f) == 1)
+		{
+			if(a.redni_br != 0)
+			{
+				if(maxbod < a.bodovi)
+				{maxbod = a.bodovi;
+				covac = a.redni_br;
+				}
+			}
+		}
+		return covac;
+}

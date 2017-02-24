@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define max 10
+int main(){
+    int polje[max]={0}, polje2[max]={0}, i=0, j, k=0, naj=0;
+    do {
+        for(;i<max;i++){
+        scanf("%d",&polje[i]);
+        if (polje[i]<=2) break;
+        }
+    
+    } while (polje[i] > 2);
+    for (i=0;i<max;i++){
+        for (j=2;j<polje[i];j++){
+            if(!(polje[i]%j)) break;
+            else {
+                 for(k=0;k<max;k++){
+                 polje2[k] = polje[i];
+                 if (k==0) naj=polje2[k];
+                 if(naj<polje2[k]) naj=polje2[k];
+                  break;
+                  }
+                  }
+        }
+    }
+    
+    
+    if (naj) printf("%d", naj);
+    if (polje[0]<=2) printf("0");
+    /*system("PAUSE");*/
+    return 0;
+    }

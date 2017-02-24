@@ -1,0 +1,9 @@
+int veci_od(FILE *f,int granica){
+	char a[30+1];
+	char b[20+1];
+	int n,k=0;;
+	while (fscanf(f,"%s %s %d",a,b,&n)>0){
+		if (n>=granica) k++;
+	}
+	return k;
+}

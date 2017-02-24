@@ -1,0 +1,32 @@
+char *SamoSuglasnici (char *ulazni_niz) 
+{
+  int i, n=0, j=0;
+  char *temp;
+  
+  if (strlen (ulazni_niz) == 0 || ulazni_niz == NULL) return NULL;
+  
+  for (i=0; i < strlen (ulazni_niz); i++)
+     if (ulazni_niz[i] == 'A' || ulazni_niz[i] == 'a'
+         || ulazni_niz[i] == 'E' || ulazni_niz[i] == 'e'
+         || ulazni_niz[i] == 'I' || ulazni_niz[i] == 'i'
+         || ulazni_niz[i] == 'O' || ulazni_niz[i] == 'o'
+         || ulazni_niz[i] == 'U' || ulazni_niz[i] == 'u'
+         || (!isalpha(ulazni_niz[i])))
+         n++;
+         
+  temp = (char *) malloc ((strlen (ulazni_niz) - n + 1) * sizeof (char));
+  
+  for (i=0; i < strlen (ulazni_niz); i++)
+     if (ulazni_niz[i] != 'A' && ulazni_niz[i] != 'a'
+         && ulazni_niz[i] != 'E' && ulazni_niz[i] != 'e'
+         && ulazni_niz[i] != 'I' && ulazni_niz[i] != 'i'
+         && ulazni_niz[i] != 'O' && ulazni_niz[i] != 'o'
+         && ulazni_niz[i] != 'U' && ulazni_niz[i] != 'u'
+         && isalpha(ulazni_niz[i]))
+         temp[j++] = ulazni_niz[i];
+  
+  temp[strlen (ulazni_niz) - n] = '\0';
+  
+  return temp;
+  
+}

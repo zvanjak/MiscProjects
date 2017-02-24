@@ -1,0 +1,40 @@
+class Recenica {
+ public: 
+ void UcitajZnak(char znak); 
+ int PrebrojiRijeci(); 
+ int PrebrojiZareze();
+ Recenica();
+ private:
+ int brojRijeci;
+ int brojZareza;
+ int zadnjiZnak;
+}; 
+
+Recenica::Recenica()
+{
+  zadnjiZnak=',';
+  brojRijeci=0;
+  brojZareza=0;
+}
+
+void Recenica::UcitajZnak(char znak)
+{
+  if ((znak==',' || znak==' ') && (zadnjiZnak!=',' && zadnjiZnak!=' ')) 
+    brojRijeci++;
+  if (znak==',')
+    brojZareza++;
+  zadnjiZnak=znak;
+}
+
+int Recenica::PrebrojiRijeci()
+{
+  if (zadnjiZnak!=',' && zadnjiZnak!=' ')
+    return brojRijeci+1;
+  else
+  return brojRijeci;
+}
+
+int Recenica::PrebrojiZareze()
+{
+  return brojZareza;
+}

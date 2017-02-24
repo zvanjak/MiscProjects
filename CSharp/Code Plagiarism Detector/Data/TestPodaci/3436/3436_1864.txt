@@ -1,0 +1,67 @@
+#include <stdio.h>
+
+int main() 
+{
+	int x, y, z;
+	int n;
+	int br;
+     
+	char m[20][20];
+	char in[400];
+	char pobjednik;
+	
+	scanf("%d%s", &n, &in);
+	
+	z = 0;
+	for(x = 0; x < n; x++) 
+		for(y = 0; y < n; y++) 
+        {
+			m[x][y] = in[z];
+			z++;
+		}
+	
+	pobjednik = '-';
+	
+	for(x = 0; x < n; x++)
+	{
+        br = 0;
+        for(y = 0; y < n; y++)
+        {
+            if(m[x][y] == m[x][0]) br++;
+        }
+        if(br == n) 
+        {
+            pobjednik = m[x][0];
+            break;
+        }
+        
+        br = 0;
+        for(y = 0; y < n; y++)
+        {
+            if(m[y][x] == m[0][x]) br++;
+        }
+        if(br == n) 
+        {
+            pobjednik = m[0][x];
+            break;
+        }
+    } 	   
+	
+	br = 0;	
+	for(x = 0; x < n; x++)
+	{
+        if(m[x][x] == m[0][0]) br++;
+    }
+    if(br == n) pobjednik = m[0][0];
+    
+    br = 0;	
+	for(x = 0; x < n; x++)
+	{
+        if(m[n - 1 - x][x] == m[n - 1][0]) br++;
+    }
+    if(br == n) pobjednik = m[n - 1][0];
+    
+    printf("%c", pobjednik);
+    
+    return(0);
+}

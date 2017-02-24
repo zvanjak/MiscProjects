@@ -1,0 +1,8 @@
+float prosjek(FILE *f){
+int prodano, br=0, uk=0;
+while(fscanf(f, "%*s%*s%d",&prodano)==1){
+br++;
+uk+=prodano;
+}
+return ((float)uk)/prodano;
+}

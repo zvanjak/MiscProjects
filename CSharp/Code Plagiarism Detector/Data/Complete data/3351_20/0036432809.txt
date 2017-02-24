@@ -1,0 +1,14 @@
+int info(FILE *f,int redni_br) {
+	struct natjecatelj {
+		int redni_br;
+		char prezime[20+1];
+		int bodovi;
+	} sportas;
+	fseek(f,(redni_br-1)*sizeof(sportas),SEEK_SET);
+	fread(&sportas,sizeof(sportas),1,f);
+		if (redni_br==sportas.redni_br &&  (sportas.redni_br!=0)) {
+			if (sportas.bodovi>=100) return 1;
+if (sportas.bodovi<100) return 0;
+		}
+		else return -1;
+	}

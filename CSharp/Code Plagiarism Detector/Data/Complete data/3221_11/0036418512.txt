@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+	int A, d, B, i, brojac = 0;
+	scanf ("%d %d %d", &A, &d, &B);
+
+    if (A > B){
+		brojac = 0;
+	}else if (d > (B-A)){
+		printf ("%d ", A+d);
+		brojac = brojac + 1;
+	}else{
+		for (i=2;(A+(i-1)*d)<=B;i++){
+			printf ("%d ", (A+(i-1)*d));
+			brojac = brojac + 1;
+			if ((A+(i-1)*d+d) > B){
+				printf ("%d ", (A+(i-1)*d+d));
+				brojac = brojac + 1;
+			}
+		}
+	}
+	printf ("%d ", brojac);
+	return 0;
+}

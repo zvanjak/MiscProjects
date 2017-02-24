@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+void main(){
+	int broj,novibroj=0,znam;
+	
+	scanf("%d",&broj);
+		while(broj>0){	
+			while(broj>0){
+				znam=broj%10;
+				novibroj=novibroj*10+znam;
+				broj/=10;
+			}
+		printf("%d ",novibroj);
+		novibroj=0;
+		scanf("%d",&broj);
+	}	
+}

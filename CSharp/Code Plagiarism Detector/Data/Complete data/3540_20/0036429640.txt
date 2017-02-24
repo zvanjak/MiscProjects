@@ -1,0 +1,17 @@
+int izbaci (zapis **glava) {
+    zapis *brisi;
+    int izbaceno=0;
+    do {
+        if (*glava) {
+            if ((*glava)->pros < 2.0) {
+                brisi = *glava;
+                *glava = (*glava)->sljed;
+                zapis *brisi = *glava;
+                izbaceno++;
+            } else {
+                glava = &((*glava)->sljed);
+            }
+        }
+    } while (*glava);
+    return izbaceno;
+}

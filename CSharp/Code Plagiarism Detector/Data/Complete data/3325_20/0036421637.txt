@@ -1,0 +1,24 @@
+void rStrncpy(char *odrediste, char *izvoriste, int n)
+{
+	int pom;
+	kontrola();
+	pom=n;
+	if (pom>strlen(izvoriste))
+	{	
+		n--;
+		if (n<0) return;
+		if(n<=strlen(izvoriste))
+			odrediste[n]=izvoriste[n];
+		rStrncpy(odrediste,izvoriste,n);
+	
+	}
+	else
+	{
+		n--;
+		if (n<0) return;
+		odrediste[pom]='\0';
+		rStrncpy(odrediste,izvoriste,n);
+		odrediste[n]=izvoriste[n];
+		
+	}
+}

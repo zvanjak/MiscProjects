@@ -1,0 +1,22 @@
+void dodaj(FILE *f)
+{
+	int i,max,x;
+	struct natjecatelj nat;
+	fread(&nat,sizeof(natjecatelj),1,f);
+	max=nat.bodovi;i=nat.redni_br;
+	do
+	{
+		fread(&nat,sizeof(natjecatelj),1,f);
+		if (!nat.redni_br) {i++;continue;}
+		if(nat.bodovi>max) i=nat.redni_br;
+	} while (!feof(f));
+	x=i*sizeof(nat);
+	fseek(f,x,SEEK_SET);
+	fread(&nat,sizeof(nat),1,f);
+	fseek(f,-sizeof(nat),SEEK_CUR);
+         fread(&nat,sizeof(nat),1,f);
+	i=nat.bodovi;
+	nat.bodovi=i+10;
+	fwrite(&nat,sizeof(nat),1,f);
+	fclose(f);
+}

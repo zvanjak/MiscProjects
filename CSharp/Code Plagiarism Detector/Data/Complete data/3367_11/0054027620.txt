@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main () {
+	char a, b;
+	int c,d;
+	scanf ("%c %c", &a, &b);
+	if (a >= 65 && a <= 70)
+		c = a-55;
+	else c=a-48;
+	if (b >= 65 && b <= 70)
+		d = b-55;
+	else d=b-48;
+	printf("%d", c*16+d);
+	return 0;
+}

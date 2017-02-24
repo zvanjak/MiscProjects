@@ -1,0 +1,26 @@
+int *napraviPolje(int *A, int Na, int a, int b, int *Nc){
+	int i, j, c, br=-1;
+	int *B, *C;
+	if(a>b) return 0;
+	if(a==b) B=(int*) malloc(sizeof(int));
+	if(b>a) B=(int*) malloc((b-a+1)*sizeof(int));
+	for(i=a;i<=b;i++) B[i-a]=i;
+	c=b-a+1;
+	for(i=0; i<c; i++){
+		for(j=0; j<Na; j++){
+			if(B[i]%A[j]==0){
+				br++;
+				if(br==0){
+					C=(int*) malloc((br+1)*sizeof(int));
+					C[br]=A[j];	
+				}
+				if(br>0){
+					C=(int*) realloc(C, (br+1)*sizeof(int));
+					C[br]=A[j];		
+				}		
+			}
+		}
+	}
+	*Nc=br+1;
+	return C;
+}

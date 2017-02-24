@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <math.h>
+float der(float x){
+	float f;
+	f=(pow(x,sinh(x))*cosh(x*x));
+	return f;
+}
+int main () {
+float x1, rez[50], tgx, rez2 ;
+float x[50], pom;
+int i=0, j, k=0, z ;
+scanf("%f", &x1);
+while(1){ scanf("%f", &pom); 
+  if(pom==0)break;
+		  if(pom>=0 && pom<=1){
+		  x[i]=pom;
+			  i++;
+		  }
+		  }
+for(j=0;j<i;j++){
+	tgx=((der(x[j]+x1)-der(x[j]))/x1);
+	rez[k]=tgx;
+	k++;
+}
+for(z=0;z<k;z++){
+rez2=(atan(rez[z]));
+	printf("%.2lf ", rez2);
+}
+return 0;
+}
+

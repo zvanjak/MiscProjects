@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <math.h>
+
+void main () {
+	int x, pom, pom10, y;
+
+scanf("%d", &x);
+
+y=x;
+
+pom=x%10;
+if (pom%2==0){ y-=pom;}
+x-=pom;
+
+pom=x%100;
+pom/=10;
+pom10=x%100;
+if (pom%2==0){ y-=pom10;}
+x-=pom10;
+
+pom=x%1000;
+pom/=100;
+pom10=x%1000;
+if (pom%2==0){ y-=pom10;}
+x-=pom10;
+
+pom=x%10000; pom/=1000;
+if (pom%2==0){
+	pom10=x%10000;
+	y-=pom10;
+}
+
+printf("%d",y);
+
+}

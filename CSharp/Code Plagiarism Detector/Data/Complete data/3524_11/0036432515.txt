@@ -1,0 +1,18 @@
+void ubaci (char *niz, char *podniz, int i)
+{
+  int j, niz_len = strlen(niz);
+
+  if (i < 0 || i > niz_len) {
+    for (j = 0; j < niz_len; j++) {
+      if (niz[j] >= 97 && niz[j] <= 122) niz[j] -= 32;
+    }
+  } else {
+    int podniz_len = strlen(podniz);
+    char c;
+
+    for (j = niz_len + podniz_len - 1; j >= i; j--) {
+      if (j <= niz_len) niz[j+podniz_len] = niz[j];
+      if (j < i + podniz_len) niz[j] = podniz[j - i];
+    }
+  }
+}

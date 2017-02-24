@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <math.h>
+
+int main () {
+	int broj, x,a, rez[10+1], j=1;
+	
+	scanf("%d", &broj);
+
+	if (broj<=0) { printf("n nije pozitivan");
+	} else {
+	if (broj < 10) {
+		printf("%d", broj);
+	} else{
+	for (x=1; x<12; x++) {
+		rez[j]= broj % 10;
+		j++;
+		broj=broj/10;
+		if (broj<10) {
+			rez[j]=broj;
+			break;
+		}
+	}
+
+	for (a=j; a>0; a--) {
+		printf("%d ", rez[a]);
+	}
+	}
+	}
+	return 0;
+}

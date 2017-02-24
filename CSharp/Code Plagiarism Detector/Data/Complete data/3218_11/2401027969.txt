@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main () {
+	int i, x = 3, prmax = 1;
+	while (x > 2)
+	{
+		scanf("%i", &x);
+		for (i = 2; i <= x-1; i++)
+			if ((x %i) == 0)
+				prmax = i;
+	}
+	/* printf("najveci prosti djelitelj je %i", prmax); */
+        printf ("%i", prmax);
+	return (0);
+}

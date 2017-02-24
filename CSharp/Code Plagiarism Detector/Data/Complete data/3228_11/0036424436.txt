@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include<math.h>
+int main (){
+
+	int n,i;
+	double pi=0,suma1=0,suma2=0,suma12=0,suma22=0;
+	
+	/*printf("Unesi broj clanova reda:\n");*/
+	scanf("%d",&n);
+
+	if (n>=1 && n<=100){
+		for(i=1; i<=n; i+=1){
+			if (i%2){
+			    suma1=(double)1/(i*i);
+			    suma12 += suma1;   
+			}else{ 
+			    suma2=-(double)1/(i*i);
+			    suma22 += suma2;
+			}
+			
+		}
+	  pi=sqrt(12*(suma12+suma22));
+      printf("%.12f",pi);
+	}
+	else 
+		printf("n nije valjan");
+	return 0;
+	}

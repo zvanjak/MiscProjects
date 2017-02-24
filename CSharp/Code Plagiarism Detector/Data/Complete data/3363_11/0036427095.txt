@@ -1,0 +1,31 @@
+#include <stdio.h>
+int main()
+{
+int a,b,rez;
+char o;
+scanf ("%d %d %c",&a,&b,&o);
+if (o=='+') { 
+rez=a+b;
+printf("%d",rez); 
+}
+if(o=='-') {
+rez=a-b;
+printf("%d",rez); 
+}
+if(o=='*') {
+rez=a*b;
+printf("%d",rez); 
+}
+if(o=='/'){
+rez=a/b;
+printf("%d",rez);
+} 
+if(o=='%') {
+rez=a%b;
+printf("%d",rez); 
+}
+if ((o!='+') && (o!='-') && (o!='*') && (o!='/') && (o!='%')) {
+printf("Neispravna");
+}
+return 0;
+}

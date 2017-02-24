@@ -1,0 +1,9 @@
+Red *PrepisiStogURed(Stog *stog){
+     int element;
+     Red *red1=new Red;
+     if (stog->Skini(&element)) {
+            red1=PrepisiStogURed(stog);
+            red1->DodajURed(element);
+            stog->Stavi(element);}
+            return red1;}
+ 

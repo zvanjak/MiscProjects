@@ -1,0 +1,20 @@
+#include<stdio.h>
+int main()
+{
+	int i,n;
+	long int f=1;
+	double s=1.0;
+	scanf("%d",&n);
+	if((n>=1)&&(n<=30))
+	{
+		for(i=1;i<=n;i++)
+		{
+			f=f*i;
+			s=s+(double)1/(double)f;
+		}
+		printf("%.12f",s);
+	}
+	else
+		printf("n nije valjan");
+	return 0;
+}

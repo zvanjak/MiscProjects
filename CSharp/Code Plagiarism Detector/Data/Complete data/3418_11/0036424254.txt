@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <math.h>
+#define max 100
+
+int main(){
+
+int a=0, n,i,ind=0,puta=0, nula=0, polje[max];
+
+
+do{
+ 
+ scanf("%d", &n);
+
+} while (n<1 || n>100);
+
+for(i=0; i<n; i++){
+ 
+	scanf("%d", &polje[i]);
+}
+
+do{ 
+	
+	scanf("%d",&ind);
+        scanf("%d", &a);
+
+	if (ind>=0 && ind<n){
+
+	if (a!=0){
+		polje[ind]= polje[ind]/a;
+		if (polje[ind]==0) nula++;
+		puta++;
+	}}
+	
+	}while(ind>=0 && ind<n);
+
+	printf("%d %d\n", nula, puta);
+	
+
+
+return 0;
+}

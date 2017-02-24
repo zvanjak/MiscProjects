@@ -1,0 +1,9 @@
+double sumareda(int n){
+	double suma=0;
+	kontrola();
+	if (n>0) {
+		suma= (double)(1)/(double)((4*n-1)*(4*n+1));
+		suma+= sumareda(--n);
+		}
+return suma;
+}

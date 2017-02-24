@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<math.h>
+#define duzina(x1,y1,x2,y2) ((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2))
+int main(){
+    struct tocka{
+           double x,y,str;
+    }bla[4];
+    char i,k=1;
+    double x=.0,y=.0;
+    for(i=0;i<4;i++){
+         scanf("%lf %lf",&bla[i].x,&bla[i].y);
+         x+=bla[i].x;y+=bla[i].y;
+         if(i) bla[i-1].str=duzina(bla[i-1].x,bla[i-1].y,bla[i].x,bla[i].y);
+    }
+    bla[3].str=duzina(bla[3].x,bla[3].y,bla[0].x,bla[0].y);
+    for(i=0;i<3;i++)
+        if(bla[i].str!=bla[i+1].str) k=0;
+    if(k&&duzina(bla[0].x,bla[0].y,bla[2].x,bla[2].y)==duzina(bla[1].x,bla[1].y,bla[3].x,bla[3].y))
+        printf("%.2lf",bla[0].str*bla[0].str);
+    else printf("%.2lf %.2lf",sqrt(duzina(.0,.0,x/4.,y/4.)),atan(y/x));
+    return 0;
+}

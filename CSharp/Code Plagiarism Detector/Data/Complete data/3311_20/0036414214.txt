@@ -1,0 +1,17 @@
+float prosjek(FILE *f)
+{
+    double suma = 0.;
+	long int brojac = 0;
+	struct album lista;
+
+	if (!f)
+		return 0;
+
+	while (fread (&lista, sizeof (lista), 1, f) != 0)
+	{
+		suma = suma + lista.prodano;
+		brojac++;
+	}
+
+	return (float)(suma / brojac);
+}

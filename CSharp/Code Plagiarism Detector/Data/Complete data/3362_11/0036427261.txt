@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+
+int main()
+{ int i,a,znam,b,c,d;
+  b=10;
+  d=1000;
+  i=0;
+  c=0;
+  do
+  scanf("%d",&a);
+  while(a<1000 || a>9999);
+  do
+  {znam=a % b;
+  c=c+znam*d;
+  a=a/10;
+  i++;
+  d=d/10;
+  znam=0;}
+  while(i<4);
+  printf("%d",c);
+
+
+      return 0;
+}

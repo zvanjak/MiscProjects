@@ -1,0 +1,16 @@
+int br_prodanih(FILE *f,char *autor){
+		struct album{
+		char naziv[30+1];
+		char autor[20+1];
+		int prodano;
+		}nesto;
+	
+	int brojProd=0;
+	int n=fread(&nesto,sizeof(nesto),1,f);
+	while(n==1){
+		if(strcmp(autor,nesto.autor)==0)
+			brojProd+=nesto.prodano;
+		n=fread(&nesto,sizeof(nesto),1,f);
+	}
+	return brojProd;
+	}

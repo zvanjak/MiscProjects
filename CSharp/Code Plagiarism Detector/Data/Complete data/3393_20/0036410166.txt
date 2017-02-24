@@ -1,0 +1,31 @@
+int* napraviPolje (int *A, int Na, int *B, int Nb, int *Nc) {
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <malloc.h>
+
+int i,j,k;
+int *C;
+
+k=1;
+
+for(i=0,j=0; i<Na,j<Nb; i++,j++) {
+
+if ((A[i]>9) && (A[i]<100)) {
+C=(int *)realloc(C,k*sizeof(int));
+C[k-1]=A[i];
+k++;
+}
+
+if ((B[j]>9) && (B[j]<100)) {
+C=(int *)realloc(C,k*sizeof(int));
+C[k-1]=B[j];
+k++;
+}
+
+}
+
+*Nc=k;
+return (*C);
+free(C);
+}

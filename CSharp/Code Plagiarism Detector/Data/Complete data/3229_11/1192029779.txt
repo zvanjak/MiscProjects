@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <math.h>
+int main ()
+{
+int faktorijela=1,i,n;
+double e,a=1.;
+scanf("%d",&n);
+if ((n>=1)&&(n<=30))
+{
+for(i=1;i<=n;i++)
+{ 
+faktorijela*=i; 
+a+=pow(-1,i)/faktorijela;
+}
+e=1/a;
+printf("%.12f",e);
+}
+else
+printf("n nije valjan");
+return 0;
+}

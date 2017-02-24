@@ -1,0 +1,7 @@
+float niz(int n) {
+      kontrola();
+      if (n==0) {return 1;}
+      else if (n==1) {return 2;}
+      else if (n==2) {return 3;}
+      else {return ((niz(n-1) - niz(n-3))/(niz(n-1)+niz(n-3)));
+      }}

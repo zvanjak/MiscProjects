@@ -1,0 +1,24 @@
+int izbaciZ (zapis **glava) {
+    zapis *p;
+    int brojac = 0;
+	float prosjek = 0;
+	for (p = *glava; p != NULL; p= p->sljed)
+	{
+		brojac++;
+		prosjek+=p->pros;
+	}
+	prosjek/=brojac;
+	brojac=0;
+    for (;*glava;){
+        if ( (*glava) && ((*glava)->pros < prosjek) && ((*glava)->spol == 'Z')) {
+            p = *glava;
+            *glava = (*glava)->sljed;
+            free (p);
+            brojac++;
+          } 
+          else{ 
+              glava = &((*glava)->sljed);
+         }
+    }
+    return brojac;
+}

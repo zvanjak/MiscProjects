@@ -1,0 +1,21 @@
+#include <math.h>
+Red *VratiBrojeve(Red *red)
+{
+	Red *novi_red=new Red();
+	int i, tmp, br_tvorba, suma;
+
+	while(red->SkiniIzReda(&br_tvorba))
+	{
+		suma=0;
+		for(i=0; i<br_tvorba; i++)
+		{
+			red->SkiniIzReda(&tmp);
+			tmp=tmp*pow(10,(br_tvorba-1)-i);
+			suma+=tmp;
+		}
+
+		novi_red->DodajURed(suma);
+	}
+
+	return novi_red;
+}

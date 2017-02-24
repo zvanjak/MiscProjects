@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+
+struct tocka {
+  double x;
+  double y;
+};
+
+double d(struct tocka A,struct tocka B) {
+  return sqrt((A.x-B.x)*(A.x-B.x)+(A.y-B.y)*(A.y-B.y));
+}
+
+int ok(struct tocka A,struct tocka B,struct tocka C,struct tocka D) {
+  return fabs(fabs(d(A,B))-fabs(d(C,D)))<1e-9;
+}
+
+int main() {
+  struct tocka A,B,C,D,X;
+  scanf("%lf %lf %lf %lf %lf %lf %lf %lf",&A.x,&A.y,&B.x,&B.y,&C.x,&C.y,&D.x,&D.y);
+
+  if(ok(A,B,B,C) && ok(A,B,C,D) && ok(A,B,D,A)) printf("%.2lf",d(A,B)*d(B,C));
+  else {
+    X.x=(A.x+B.x+C.x+D.x)/4; X.y=(A.y+B.y+C.y+D.y)/4;
+    printf("%.2lf  %.2lf",sqrt(X.x*X.x+X.y*X.y),atan(X.y/X.x));
+  }
+  return 0;
+}

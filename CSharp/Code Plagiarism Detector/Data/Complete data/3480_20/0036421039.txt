@@ -1,0 +1,49 @@
+class Komprimiranje{
+private:
+	int *_podaci;
+	int _brojelemenata;
+public:
+	Komprimiranje(){
+		_brojelemenata = 10000;
+		_podaci = (int*)malloc(_brojelemenata * sizeof(int));
+	}
+	Komprimiranje(int *podaci, int broj){
+		_brojelemenata = broj;
+		_podaci = podaci;
+	}
+	int BrojRazlicitihElemenata(){
+		int i, brojac = 0, pom[10000];
+		for (i = 0; i < _brojelemenata; i++){
+			pom[i] = -1;
+		}
+		pom[0] = _podaci[0];
+		for (i = 2; i < _brojelemenata; i += 2){
+			if (usporedi(_podaci, _podaci[i], i)){
+				pom[i] = _podaci[i];
+			}
+		}
+		for (i = 0; i < _brojelemenata; i += 2){
+            if (pom[i] != -1) brojac++;
+		}
+		return brojac;
+	}
+	bool usporedi(int niz[], int vrijednost, int indeks){
+		int i;
+		for (i = indeks - 2; i >= 0; i -= 2){
+			if (niz[i] == vrijednost) {
+				return false;
+			}
+		}
+		return true;
+	}
+	int UkupniBrojElemenata(int vrijednost){
+        int i, brojac = 0;
+		for (i = 0; i < _brojelemenata; i += 2){
+			if (_podaci[i] == vrijednost){
+				brojac += _podaci[i + 1];
+			}
+		}
+		return brojac;
+	}
+	~Komprimiranje(){}
+};

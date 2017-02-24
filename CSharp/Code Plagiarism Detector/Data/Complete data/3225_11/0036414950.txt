@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <math.h>
+int main (){
+	int n,i;
+	double broj=0;
+	scanf("%d",&n);
+	if((n<1)||(n>400))
+		printf("n nije valjan");
+	else{
+		for(i=0;i<n;++i)
+			broj+=(1./pow(2*i+1,2));
+		printf("%.12f",sqrt(broj*8));
+	}
+	return 0;
+}

@@ -1,0 +1,8 @@
+int rStrlen(char *niz){
+    
+	kontrola();
+	
+    if (niz == NULL) return 0;
+	if (*niz == '\0') return 0;
+    return (rStrlen (++niz) + 1);
+}

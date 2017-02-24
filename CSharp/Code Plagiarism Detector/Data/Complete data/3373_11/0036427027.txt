@@ -1,0 +1,30 @@
+#include <stdio.h>
+int main()
+{
+    int a, b, z, k, i, x;
+
+    scanf("%d %d", &a, &b);
+    if (a<b)
+       { z=a;
+         a=b;
+         b=z;
+       }
+    k=1;
+    x=0;
+    do
+    {
+        x=x+k*(b%8);
+        
+        b=b/8;
+        
+        k=k*10;
+
+        }
+        while (b>0);
+        
+    printf("%d", x);
+        
+ 
+    
+return 0;
+}

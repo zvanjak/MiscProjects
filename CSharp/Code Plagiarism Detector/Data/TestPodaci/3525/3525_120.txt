@@ -1,0 +1,59 @@
+void funkcija (char *ulazni, char *izlazni, int* broj)
+     {
+              int duljina,i,j,br,br2,k,duljina2;
+              char zn,pomocni[512];
+              
+              br=0; k=0;br2=0;
+              duljina=strlen(ulazni);
+              
+              for(i=0;i<duljina;i++)
+              {
+                                    for(j=0;j<duljina;j++)
+                                    {
+                                    if(ulazni[i]==ulazni[j]) br++;
+                                    
+                                    }
+                                    
+                                    if(br==1) 
+                                             {
+                                             
+                                             izlazni[k]=ulazni[i];
+                                             k++;
+                                             
+                                             }
+                                    
+                                    br=0;
+                                    
+              }
+              izlazni[k]='\0';
+              
+              for(i=0;i<k/2;i++)
+              {
+              zn=izlazni[i];
+              izlazni[i]=izlazni[k-i-1];
+              izlazni[k-i-1]=zn;
+              }
+              pomocni[0]='\0';
+              br=0;
+              for(i=0;i<duljina;i++){
+                                     for(j=0;j<duljina;j++){
+                                                            if(ulazni[i]==ulazni[j]) br++;
+                                                           }
+                                     
+                                     if(br>1){
+                                              duljina2=strlen(pomocni);
+                                              for(k=0;k<duljina2;k++){
+                                                                      if(ulazni[i]==pomocni[k]) br2++;
+                                                                      }
+                                              if(br2==0){
+                                                         pomocni[duljina2+1]=pomocni[duljina2];
+                                                         pomocni[duljina2]=ulazni[i];
+                                                         }
+                                              br2=0;     
+                                              
+                                              }
+                                     br=0;
+                                     }
+              
+              *broj=strlen(pomocni);
+     }

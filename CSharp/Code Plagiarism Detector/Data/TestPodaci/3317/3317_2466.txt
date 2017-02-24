@@ -1,0 +1,29 @@
+void brisi(FILE *f,int redni_br){
+	struct natjecatelj {
+		int redni_br;
+		char prezime[20+1];
+		int bodovi;
+	} nesto;
+int naj=0,bodovi=0,kraj,n=0;
+
+fseek(f,0L,SEEK_END);
+kraj=ftell(f);
+fseek(f,0L,SEEK_SET);
+do{
+	n++;
+	fread(&nesto, sizeof(nesto), 1, f);
+	if (redni_br == nesto.redni_br) {       
+		
+fseek(f, (n-1)*sizeof(nesto),SEEK_SET);
+
+		nesto.redni_br=0;
+		fwrite(&nesto, sizeof(nesto),1,f);
+		break;
+
+	}
+
+}
+while (ftell(f) < kraj);
+
+
+}

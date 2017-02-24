@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main () {
+	int n,i;
+	double k=0,l,s;
+	scanf("%d",&n);
+	if (n>=1&&n<=200){
+		for (i=1;i<=n;i=i+1){
+			l=1./(i*i+i);
+			k=k+l;}
+			printf("%.12f\n",k);
+		}
+	else printf ("n nije valjan");
+	return 0;
+	}

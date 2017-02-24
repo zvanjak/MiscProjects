@@ -1,0 +1,23 @@
+#include<stdio.h>
+int main(){
+char znak;
+int i=0,j,niz[100],parni=0,neparni=0,razlika=0;
+do{
+	scanf(" %c",&znak);
+if( znak=='A'||znak=='B'||znak=='C'||znak=='D'||znak=='E'||znak=='F')
+	niz[i]=znak-55;
+else if(znak=='a'||znak=='b'||znak=='c'||znak=='d'||znak=='e'||znak=='f')
+	niz[i]=znak-87;
+else niz[i]=znak-48;
+	i++;
+}
+while(znak=='a'||znak=='A'||znak=='b'||znak=='B'||znak=='c'||znak==' C'||znak=='d'||znak=='D'||znak=='e'||znak=='E'||znak=='f'||znak=='F' ||znak=='1'||znak=='2'||znak=='3'||znak=='4'||znak=='5'||znak=='6'|| znak=='7'||znak=='8'||znak=='9'||znak=='0');
+for(j=0;j<i-1;j++){
+	if(niz[j]%2==0){
+		parni+=niz[j];}
+else if(niz[j]%2!=0){
+		neparni+=niz[j];}}
+		razlika=parni-neparni;
+		printf("%d",razlika);
+return 0;
+}

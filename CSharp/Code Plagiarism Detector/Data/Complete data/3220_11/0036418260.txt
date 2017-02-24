@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+void main() {
+	
+	int unos,broj,znamenka,pot,novi;
+
+	pot=1;
+	novi=0;
+	/*printf(" Upisi cijeli broj: ");*/
+	scanf("%d", &unos);
+	if(unos<=0)
+		printf("%d",unos);
+	else {
+		while(unos!=0){
+			if ((unos%2)!=0){
+				znamenka=unos%10;
+				broj=znamenka*pot;
+				pot=pot*10;
+				novi=novi+broj;
+				unos=unos/10;
+			}
+			
+			else{
+				unos=unos/10;
+				
+			}
+			
+		
+		}
+		printf("%d \n",novi);
+	}
+}

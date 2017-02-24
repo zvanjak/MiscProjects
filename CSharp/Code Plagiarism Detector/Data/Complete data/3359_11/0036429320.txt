@@ -1,0 +1,19 @@
+#include <stdio.h>
+int main()
+{ int a,b,c,d,broj,x,z; 
+scanf ("%d",&broj);
+ if ((broj >= 1000) && (broj<=9999))
+    {
+      a=(broj / 1000);
+      b=((broj / 100) % 10);
+      c=((broj %100) / 10);
+      d= (broj % 10);
+      x=((a)*(b)*(c)*(d));
+	  {if (x % 2 == 1)
+            z=a;
+	  }{	  if (x%2==0)
+			z=d;
+	  }
+	  printf("%d\n",z);
+      return 0;
+} }

@@ -1,0 +1,12 @@
+double sumareda(double x, int N){
+	double ret, xNa = 1;
+	int i;
+	kontrola();
+        if (N == 1) return x;
+
+        for (i = 1; i <=2*N-1;++i) xNa*=x;
+
+	ret = xNa / (2*N -1);
+	
+	return sumareda(x, N - 1) + ret;
+}

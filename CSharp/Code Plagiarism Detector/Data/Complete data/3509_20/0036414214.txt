@@ -1,0 +1,69 @@
+typedef struct {
+  char ime[20+1];
+  char prezime[30+1];
+  char jmbag[10+1];
+  int  ocjena;
+} tip;
+
+struct atom {
+  tip element;
+  atom *sljed;
+};
+
+int brojElementa(atom *glava)
+{
+  int br;
+  for (br=0; glava!=NULL; ++br, glava=glava->sljed) ;
+  return br;
+}
+
+int dodaj (atom **glavap, tip element) {
+       atom *novi = new atom;
+  if (novi == NULL) return 0;
+       novi->element = element;
+       novi->sljed = *glavap;
+       *glavap = novi;
+  return 1;
+}
+
+int minOcjena(atom *glava)
+{
+  if (brojElementa(glava) == 0) return -1;
+  int vrati = glava->element.ocjena;
+  for (atom *p=glava->sljed; p!=NULL; p=p->sljed)
+     if (p->element.ocjena < vrati)
+        vrati = p->element.ocjena;
+  return vrati;
+}
+
+float prosjOcjena(atom *glava)
+{
+  if (brojElementa(glava) == 0) return -1;
+  int suma = 0;
+  for (atom *p=glava; p!=NULL; p=p->sljed)
+     suma += p->element.ocjena;
+  return (float)suma/brojElementa(glava);
+}
+
+int izbaciPrezimeSadrzi (atom **glavap, char * prezimePodniz) {
+  int vrati = 0;
+  while (*glavap!=NULL && strstr((*glavap)->element.prezime, prezimePodniz)!=NULL) {
+     *glavap = (*glavap)->sljed;
+     ++vrati;
+  }
+  if (*glavap==NULL) return vrati;
+  atom *preth = *glavap, *p = preth->sljed;
+  while (p != NULL) {
+     if (strstr(p->element.prezime, prezimePodniz)!=NULL) {
+        preth->sljed = p->sljed;
+        p = p->sljed;
+        ++vrati;
+     }
+     else {
+        preth = p;
+        p = p->sljed;
+     }
+  }
+
+  return vrati;
+}

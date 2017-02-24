@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <math.h>
+
+int main () {
+
+float n=0,x=1; double pi,red=0;
+scanf ("%f", &n);
+if (n >= 1 && n <= 25) {
+	do {
+red+=1/pow(x++,8);
+} while (x<=n);
+
+	pi=pow(red*9450,1./8);
+	
+printf ("%.12f", pi); }	else printf ("n nije valjan");
+return 0 ;
+}

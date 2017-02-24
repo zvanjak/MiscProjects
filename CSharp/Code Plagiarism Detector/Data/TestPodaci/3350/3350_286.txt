@@ -1,0 +1,30 @@
+int najbolji(FILE *f)
+{	
+	long kraj;
+	int i=0, max;
+	struct {
+         int redni_br;
+         char prezime[20+1];
+         int bodovi;
+	} nat;
+	
+	fseek(f, 0, SEEK_END);
+	kraj = ftell(f)/sizeof(nat);
+	fseek(f, 0, SEEK_SET);
+	
+	nat.redni_br = 0;
+	while(!nat.redni_br)
+	{
+		fread(&nat, sizeof(nat), 1, f);
+		max = nat.bodovi;
+		i++;
+	}
+	
+	for(i=1; i<kraj; i++)
+	{
+		fread(&nat, sizeof(nat), 1, f);
+		if (nat.redni_br && nat.bodovi>max) max=nat.bodovi;
+	}
+	
+	return max;
+}

@@ -1,0 +1,57 @@
+class RazlPolje {
+      private:
+             int *_polje; 
+             int _velpolja;
+             
+			 bool RazlPolje::Postoji(int Broj) {
+                  int i;
+                  for (i=0; i<_velpolja; i++){
+                      if (_polje[i] == Broj) return true;
+                      }
+                  return false;
+             }
+
+      public:
+             RazlPolje::RazlPolje() {
+                     _velpolja = 0;
+                     _polje = (int *) malloc (sizeof(int)*0);
+             }
+             
+             int RazlPolje::Dodaj(int Broj) {
+                 int i;
+                 if (Postoji(Broj)) return 1;
+                 if (realloc (_polje, ((_velpolja+1))*sizeof(int)) == NULL) return 0;
+                 _velpolja++;
+				 _polje=(int *)realloc (_polje, (_velpolja)*sizeof(int));
+				 _polje[_velpolja-1] = Broj;
+                 return 1;
+             }
+             
+             int RazlPolje::Izbaci(int Broj) {
+                 int i,n;
+                 if (!Postoji(Broj)) return 0;
+                 for (i=0; i < _velpolja; i++) {
+                     if (_polje[i] == Broj) break;
+                 }
+                 n = i;
+                 for (i=n; i < (_velpolja-1); i++) {
+                     _polje[i] = _polje[i+1];
+                 }
+                 _velpolja--;
+                 _polje=(int *)realloc (_polje, ((_velpolja))*sizeof(int));
+                 return 1;
+             }
+             
+             int RazlPolje::SumaPolja() {
+                 int i;
+                 int zbroj=0;
+                 for (i = 0; i < _velpolja; i++) {
+					 zbroj+=_polje[i];
+                 }
+                 return zbroj;
+             }
+             
+             RazlPolje::~RazlPolje() {
+                          free(_polje);
+             }
+};

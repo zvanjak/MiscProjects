@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main(){
+    
+    long int p[20][5],mr,ms,i,j,b=1,prod=1;
+    
+    do {
+        scanf("%d %d",&mr,&ms);}
+    while(mr<1 || mr>20 || ms<1 || ms>5);
+        
+    for(i=0;i<mr;i++){
+        for(j=0;j<ms;j++)
+            scanf("%d",&p[i][j]);
+    }
+    
+    if (mr%2){
+        for(i=0;i<(mr/2);i++){
+            for(j=0;j<ms;j++)
+                if (p[i][j]!=p[mr-i-1][j]) b=0;
+        }
+        if (b==1) printf("Jest"); else printf("Nije");
+    }
+    else {
+        for(i=0;i<mr;i++){
+            for(j=0;j<ms;j++)
+                if (!(i%2) && !(j%2)) prod*=p[i][j];
+            }
+        printf("%d",prod);
+    }
+            
+        
+    return 0;
+}

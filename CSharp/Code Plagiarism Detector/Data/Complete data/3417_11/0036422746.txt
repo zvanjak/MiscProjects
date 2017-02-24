@@ -1,0 +1,29 @@
+#include<stdio.h>
+#include<ctype.h>
+int main(){
+	char a[20];
+	int i,n=20,br;
+	br=0;
+	i=0;
+	do{
+		
+			scanf("%c",&a[i]);
+			i++;
+			br++;
+		
+	}
+		while((a[i]>64&&a[i]<91)||(a[i]>96&&a[i]<123));
+	
+	for(i=0;i<br;i++){
+		if(a[i]!='A'||a[i]!='a'||a[i]!='E'||a[i]!='e'||a[i]!='I'||a[i]!='i'||a[i]!='O'||a[i]!='o'||a[i]!='U'||a[i]!='u'){
+			toupper(a[i]);
+			printf("%c",a[i]);
+		}
+	}
+	for(i=(br-1);i>=0;i--){
+		if(a[i]!='A'||a[i]!='a'||a[i]!='E'||a[i]!='e'||a[i]!='I'||a[i]!='i'||a[i]!='O'||a[i]!='o'||a[i]!='U'||a[i]!='u'){
+			
+			printf("%c",a[i]);}
+	}
+	return 0;
+}

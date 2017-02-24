@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <math.h>
+int main () {
+int polje[12], i=0, brZnam=0, j=0, pomocno[12];
+long int broj,x=0;
+	scanf("%d",&broj);
+	if(broj>0){
+		while(broj>0){
+			polje[i]=broj%10;
+			broj/=10;
+			i++;
+			brZnam++;
+		}
+		for(i=0;i<brZnam;i++){						
+			pomocno[i]=polje[brZnam-1-i]; 
+		}
+		for(i=0;i<brZnam;i++){
+			if((pomocno[i]%2==1)||(pomocno[i]==0)){ 
+			polje[j]=pomocno[i];
+			j++;
+			}			
+		}
+		for(i=0;i<j;i++){					
+			x+=polje[i]*(int)pow(10,(j-1-i));
+		}
+		printf("%ld",x);
+	}
+
+	else if (broj<=0) {      
+		printf("%ld",broj);	
+	}
+ return 0;
+}
+

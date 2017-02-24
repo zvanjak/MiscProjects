@@ -1,0 +1,15 @@
+#include "stdio.h"
+int main()
+{
+    int broj,ostatak,brojac=10;                
+    while(broj>=0){
+                  scanf ("%d",&broj);
+                  while(broj>0){
+                                ostatak=broj%brojac;
+                                printf ("%d",ostatak);
+                                broj=broj/10;
+                  }
+                  printf (" ");
+    }
+return 0;
+}

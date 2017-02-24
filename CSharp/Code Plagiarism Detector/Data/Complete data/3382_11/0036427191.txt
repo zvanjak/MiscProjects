@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main(){
+	
+	int broj, a, b, c, d;
+	scanf("%d",&broj);
+
+	d = broj % 10;
+	broj -= d;
+
+	c = broj % 100;
+	broj -= c;
+	c /= 10;
+
+	b = broj % 1000;
+	broj -= b;
+	b /= 100;
+
+	a = broj % 10000;
+	broj -= a;
+	a /= 1000;
+
+	if ( ((a*10 + b)*(c*10 + d))%(b*10 + c) == 0)
+		printf("%d",a+c);
+	else
+		printf("%d",c*d);
+
+	return 0;
+
+}

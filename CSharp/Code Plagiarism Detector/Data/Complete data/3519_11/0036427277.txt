@@ -1,0 +1,24 @@
+int SplitToSentences (char * inputField, char * outputField){
+int brpr = 0;
+char* pom = inputField;
+char* nov = outputField;
+int Zarez = 0;
+while( *pom != '\0'){
+	if( *pom == ',' ){
+		*nov = '.';
+		brpr++;
+		Zarez = 1;
+		}
+	else if( *pom <= 'Z' && *pom>='A' && Zarez){
+		*nov = *pom;
+		Zarez = 0;
+		}
+	else if( *pom <= 'z' && *pom>='a' && Zarez){
+		*nov = *pom - 32;
+		Zarez = 0;
+		}
+	else *nov = *pom;
+		pom++;nov++;
+	}
+return brpr;
+}

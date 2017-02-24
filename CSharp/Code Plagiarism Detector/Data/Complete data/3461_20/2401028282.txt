@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+
+int JelSeSijeku( Kruznica &k1, Kruznica &k2){
+	double d, pom;
+
+	d=sqrt(pow(k1.GetCenterX() - k2.GetCenterX(), 2) + pow(k1.GetCenterY()-k2.GetCenterY(), 2));
+	pom=k1.GetRadius() + k2.GetRadius();
+
+if ( (d == 0) && ( k1.GetRadius() == k2.GetRadius() ) ) return 3;
+else if ( (d>0) && (d<pom) ) return 2;
+else if ((d==pom) && (d>0)) return 1;
+else return 0;
+}

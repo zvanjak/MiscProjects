@@ -1,0 +1,14 @@
+float niz(int i){
+	
+	
+
+	if (i<3) return i+1;
+
+	kontrola();
+
+
+
+	return (niz(i-1)-niz(i-3))/(niz(i-1)+niz(i-3));
+
+
+}

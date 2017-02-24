@@ -1,0 +1,25 @@
+int izbaci(zapis **glava) {
+	int brIzbac=0;
+	zapis *p, *elem, *pp;
+	while(*glava && (*glava)->pros < 2.0) {
+		pp=(*glava);
+		*glava = (*glava)->sljed;
+		free(pp);
+		brIzbac++;
+	}
+	elem=*glava;
+	p=elem->sljed;
+	while(p) {
+		if(p->pros < 2.0) {
+			pp=p;
+			p = p->sljed;
+			free(pp);
+			brIzbac++;
+			elem->sljed = p;
+		} else {
+			elem = elem->sljed;
+			p = p->sljed;
+		}
+	}
+	return brIzbac;
+}

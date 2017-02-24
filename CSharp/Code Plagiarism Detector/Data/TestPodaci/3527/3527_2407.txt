@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int izbaciDuplikate (char *ulazni){
+ int i=1; 
+ int j=0;
+ int br=0;
+ int el=0;
+ int h=0;
+ char c,c1;
+ while (*(ulazni+i)!='\0') { i++;el++;} 
+ 
+ for (i=0; i<el; i++){
+						c=*(ulazni+i);
+						for (j=i+1; j<=el; j++) {
+							c1= *(ulazni+j);
+							if (c==c1){ for(h=j+1; h<=el+1;h++) *(ulazni+j)= *(ulazni+h);
+													j--;
+													el--;
+							                        br++;}
+						}}
+ 
+ return br;}

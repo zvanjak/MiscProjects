@@ -1,0 +1,21 @@
+float prosjek(zapis *glava){
+zapis *temp;
+temp = glava;
+float pro=0;
+int x=0;
+if(temp == NULL)return 0;
+while(temp != NULL)
+        {
+        pro += temp->pros;
+        temp = temp->sljed;
+        x++;
+        }
+pro = pro/(float)x;
+temp = glava;
+while(temp != NULL)
+        {
+        if(temp->pros < pro)temp->pros = 0;
+        temp = temp->sljed;
+        }
+return pro;
+}

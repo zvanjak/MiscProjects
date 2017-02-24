@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+float prosjek(FILE *f)
+{
+    char naziv[30+1];
+    char autor[20+1];
+    int prodano;
+    
+    int n=0, zbroj=0;
+    float prosjek=0;
+	
+
+    while(fscanf(f, "%s %s %d", naziv, autor, &prodano) == 3)
+    {
+        zbroj+=prodano;
+        n++;
+    }
+    
+	if(zbroj > 0) {
+		prosjek=(float)zbroj/n;
+		return(prosjek);}
+    else
+        return(0);
+}

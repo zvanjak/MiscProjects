@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main(){
+	int n,b,a=0,i;
+	do 
+    scanf("%d",&n);
+	while (n<1);
+	for (i=1; i<=40; i++){
+	b=n%10;
+        n=n+b;
+	a++;
+        printf("%d ",n);
+        if (n%13==0) break;	
+	}
+  printf("%d",a);
+  return 0;
+}

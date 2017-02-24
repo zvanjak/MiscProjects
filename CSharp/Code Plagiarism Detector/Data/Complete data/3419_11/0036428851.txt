@@ -1,0 +1,49 @@
+#include <stdio.h>
+
+int main ()
+{
+	float mat [20][5]={0};
+	int mr, ms, i,j,max=0,stupac, redak;
+	do
+	{
+		printf("Upisi dimenzije matrice:");
+		scanf ("%d %d", &mr, &ms);
+	}
+	while (!((mr>0)&&(mr<=20)&&(ms>0)&&(ms<=5)));
+	for (i=0;i<mr;i++)
+	{
+		for (j=0;j<ms;j++)
+		scanf ("%d", &mat[i][j]);
+		}
+			for (i=0;i<mr;i++)
+			{
+			for (j=0;j<ms;j++)
+			{
+			if (mat[i][j]<0)
+			mat[i][j]=-mat[i][j];
+			}
+			}
+			if (mat[i][j]>max)
+			{
+			redak=i;
+			stupac=j;
+			if (mat[i][j]==max)
+			{
+			if (i<redak)
+			{
+			redak=i;
+			stupac=j;
+			if (i==redak)
+			{
+			if (j<stupac)
+			{
+			redak=i;
+			stupac=j;
+			}
+			}
+			}
+			}
+			}
+		printf ("%d %d", redak, stupac);
+	return 0;
+}

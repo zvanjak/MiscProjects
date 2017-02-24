@@ -1,0 +1,49 @@
+int izbacinaj(zapis **glava){
+	zapis *manji, *veci, *pom, *prvi;
+	prvi = *glava;
+	int n=0;
+	if((manji = veci = pom = prvi) && !(prvi->sljed))
+		return 0;
+	while (pom->sljed){
+		pom = pom->sljed;	
+		if (pom->pros < manji->pros)
+			manji = pom;
+		if (pom->pros > veci->pros)
+			veci = pom;
+	}
+	if(prvi == manji || prvi == veci){
+		pom = prvi;
+		*glava = prvi->sljed;
+		free(pom);
+		n++;
+	}
+	if(manji != prvi){
+		if(manji == *glava){
+			pom = *glava;
+			*glava = pom->sljed;
+			free(pom);
+			n++;
+		}
+		else{
+			for (pom=*glava; pom->sljed == manji; pom = pom->sljed);
+			pom = manji->sljed;
+			free(manji);
+			n++;
+		}
+	}
+	if (veci != prvi && veci != manji){
+		if (veci == *glava){
+			pom = *glava;
+			*glava = pom->sljed;
+			free(pom);
+			n++;
+		}
+		else {
+			for (pom=*glava; pom->sljed == veci; pom = pom->sljed);
+			pom = veci->sljed;
+			free(veci);
+			n++;
+		}
+	}
+	return n;
+}

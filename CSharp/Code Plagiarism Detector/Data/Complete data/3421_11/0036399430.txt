@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+int main()
+{
+	char ulazni[100] = {'\0'};
+	char izlazni[100];
+	int br_ul = 0;
+	int br_iz = 0;
+	int cont = 1;
+	
+	gets(ulazni);
+		
+	while( (ulazni[br_ul]!='.') && (ulazni[br_ul]!='\0') )
+	{
+		if( (ulazni[br_ul] != ',') && (ulazni[br_ul]!=' ') )
+		{
+			if( cont == 1 )
+			{
+				izlazni[br_iz] = toupper(ulazni[br_ul]);
+				
+				cont = 0;
+			}
+			else
+				izlazni[br_iz] = tolower(ulazni[br_ul]);			
+			br_iz++;
+		}
+		else
+			cont = 1;
+		br_ul++;
+	}
+	izlazni[br_iz] = '.';
+	br_iz++;
+	izlazni[br_iz] = '\0';
+	printf("%s", izlazni);	
+			
+	return 0;
+}

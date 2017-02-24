@@ -1,0 +1,27 @@
+# include <stdio.h>
+
+int main () {
+ 
+char xx1,xx2,c;
+int r,x1,x2;
+r=0;
+ 
+scanf ( "%c %c %c", &xx1, &xx2, &c);
+x1=(int)xx1-48;
+x2=(int)xx2-48;
+
+if ((x1>=0 && x1<=9) && (x2>=0 && x2<=9)){
+ if (c=='+') r=x1 + x2;
+  else if (c== '-') r= x1 - x2;
+  else if ( c== '*') r= x1*x2;
+  else if ( c== '/') r= x1/x2;
+  else if (c=='%') r= x1 % x2;
+  
+ if(c!='+' && c!='-' && c!='/' && c!='%' && c!='*') printf ("Neispravna");
+else printf("%d", r);
+}
+else
+  printf("SLOVO-BROJKA!!!");
+
+return 0;
+}

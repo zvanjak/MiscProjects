@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <math.h>
+int n,z=13;
+double x=1;
+int y,i;
+int a[11];
+
+main (){
+	scanf("%i", &n);
+	if(n>=0){
+	do{
+		z=n/(x*10);
+		x=x*10;
+		y++;
+        }while (z>0);
+
+for (i=y; i>0; i--){
+
+a[i]=((int)(n/pow(10,(i-1))))%10;
+	}
+for (i=y; i>1; i--){
+printf("%i ", a[i]);
+}
+printf("%i", a[1]);}
+	else{
+		printf("n nije pozitivan");
+		/*printf("%i nije pozitivan", n);*/
+	}
+
+return 0;
+}

@@ -1,0 +1,40 @@
+class Kosarica {
+	private:
+		float *proizvod;
+		int n;
+	public:
+		Kosarica  () {
+			proizvod=(float *) malloc(sizeof(float));
+			proizvod[0]=0;
+			n=0;
+		}
+		void DodajProizvod(float cijena){
+			proizvod[n]=cijena;
+			n++;
+			proizvod=(float *)realloc(proizvod, (n+1)*sizeof(float));
+		}
+		float UkupnaCijena(){
+			float suma=0;
+			int i;
+			if (n==0) return 0;
+			else {
+				for (i=0; i<n; i++)
+					suma+=proizvod[i];
+			}
+			return suma;
+		}
+		float NajskupljiProizvod(){
+			float naj;
+			int i;
+			if (n==0) return 0;
+			else {
+				naj=proizvod[0];
+				for (i=0; i<n; i++){
+					if (proizvod[i]>naj)
+						naj=proizvod[i];
+				}
+			}
+			return naj;
+		}
+		~Kosarica(){}
+	};

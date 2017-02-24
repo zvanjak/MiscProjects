@@ -1,0 +1,20 @@
+int najbolji(FILE *f) {
+int n, brbodova=0,redbr=0, br=0;
+struct natjecatelj nat;
+
+fseek(f,0,SEEK_END);
+n=ftell(f);
+fseek(f,0,SEEK_SET);
+
+while(br<n) {
+fread(&nat,sizeof(struct natjecatelj),1,f);
+if(nat.redni_br!=0) {
+if(nat.bodovi>brbodova) {
+brbodova=nat.bodovi;
+redbr=nat.redni_br;
+}
+}
+br++;
+}
+return redbr;
+}

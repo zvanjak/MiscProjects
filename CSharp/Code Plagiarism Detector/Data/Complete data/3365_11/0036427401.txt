@@ -1,0 +1,22 @@
+#include <stdio.h>
+int main() {
+    unsigned int x,su,sn,a,b,c;
+    scanf("%d", &x);
+    a=x/100;
+    b=(x%100)/10;
+    c=x%10;
+    su=0; sn=0;
+    if(x>=100 && x<=999) {
+              if(x<250 || x>950) {
+                       su=a+b+c;
+                       printf("%d", su); 
+                       }
+              else {
+                   if(a%2 == 1) sn += a;
+                   if(b%2 == 1) sn += b;
+                   if(c%2 ==1 ) sn += c;
+                   printf("%d", sn); 
+                   }
+    }
+    return 0;
+}

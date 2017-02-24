@@ -1,0 +1,11 @@
+int rBrojPojavljivanja (int *polje, int n, int broj) {
+  int m;
+  int kontrola();
+  if (n == 0) {					
+	  m = polje[0]; 
+	  broj = 1;}		
+   else {
+    m = rBrojPojavljivanja (polje, n - 1, broj);	
+    if (polje[n] == polje[n - broj]) {		 
+		m = polje[n]; (broj)++;}}
+   return m;}

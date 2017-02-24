@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <math.h>
+
+void main() {
+ int i,n;
+float x,suma=0;
+ scanf("%d", &n );
+  if ((n <1)||(n>100)) {
+		printf("\nn nije valjan");
+	}
+
+	else
+	{
+		scanf("%f", &x );
+
+		  if ((x <=0)||(x>=2)) {
+			printf("\nx nije valjan");
+			}
+			else{
+			
+        for(i=1;i<=n;i++){
+			suma=suma+(pow(-1,(i+1))*pow((x-1),i)/i);
+			 }
+		    printf("\n%d %6.5f %13.12f",n,x,suma);
+			}
+	}
+
+}

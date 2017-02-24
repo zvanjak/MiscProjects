@@ -1,0 +1,16 @@
+# include <stdio.h>
+int main() {
+int broj,x,y,v,z;
+scanf("%d",&broj);
+x= broj/1000;
+y=(broj-x*1000)/100;
+v=(broj-x*1000-y*100)/10;
+z= broj % 10;
+if(x%2==0)x=0;
+if(y%2==0)y=0;
+if(v%2==0)v=0;
+if(z%2==0)z=0;
+broj=(x*1000)+(y*100)+(v*10)+z;
+printf("%d", broj);
+return 0;
+}

@@ -1,0 +1,24 @@
+#include <stdio.h>
+int main()
+{
+int a,b,i,j,suma;
+char radi,znakovi[20]={'+'};
+radi='+';
+i=0;
+suma=0;
+while (radi == '+' || radi=='-' || radi=='*' || radi=='/' || radi=='%'){
+scanf("%d %d %c",&a,&b,&radi);
+switch (radi){
+case '+' : znakovi[i]=radi; ++i; suma+=a+b; break;
+case '-' : znakovi[i]=radi; ++i; suma+=a-b; break;
+case '*' : znakovi[i]=radi; ++i; suma+=a*b; break;
+case '/' : znakovi[i]=radi; ++i; if (!(b==0)) suma+=a/b; break;
+case '%' : znakovi[i]=radi; ++i; if (!(b==0)) suma+=a%b; break;
+default : break;
+}
+}
+printf("%d",suma);
+for (j=0;j<i;j++)
+printf(" %c",znakovi[j]);
+return 0;
+}

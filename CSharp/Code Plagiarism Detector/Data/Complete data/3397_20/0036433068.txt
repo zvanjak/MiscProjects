@@ -1,0 +1,16 @@
+int *napraviPolje(int *A, int Na, int a, int b, int* Nc){
+			  int *poljeC=NULL;
+			  int i;
+			  int n=0;
+			  if (a>b) return poljeC;
+			  else{
+			  for (i=0;i<Na;i++)
+			  if (*(A+i)>a && *(A+i)<b){
+			  poljeC=(int *) realloc (poljeC,(n+1)*sizeof(int));
+			  *(poljeC+n)=*(A+i);
+			  n++;
+			}
+			  *Nc=n;
+			  return poljeC;
+			  }
+		  }

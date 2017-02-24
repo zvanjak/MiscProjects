@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <math.h>
+int main ()
+{
+int n,i;
+float clan, pi;
+pi=0;
+scanf ("%d", &n);
+if ((n<1) || (n>25))
+printf ("n nije valjan");
+else
+{
+for (i=1; i<=n; i++)
+{
+clan = 1/(pow(i,8));
+pi = pi+clan;
+}
+printf ("%.12f", pi);
+}
+return 0;
+}

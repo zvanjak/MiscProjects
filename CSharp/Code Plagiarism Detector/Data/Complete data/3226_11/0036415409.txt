@@ -1,0 +1,14 @@
+#include<stdio.h>
+int main(){
+int n,i;
+float suma=0;
+scanf("%d", &n);
+if(n>=1 && n<=1000){
+   for(i=2; i<=n; i++)
+       suma+=(1./((i-1)*(i+1)));
+       printf("Izracunati broj 0.75 je: %15.12f\n", suma);
+   }
+else
+   printf("Uneseni n nije valjan!\n");
+return 0;
+}

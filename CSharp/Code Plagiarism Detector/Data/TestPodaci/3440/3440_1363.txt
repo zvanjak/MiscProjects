@@ -1,0 +1,23 @@
+#define max 20
+#include <stdio.h>
+int main(){
+int i,j,n,a[max][max],b[max][max];
+scanf("%d",&n);
+if ((n>=20) || (n<=0)) printf("Krivi n!!");
+else{
+for (i=0;i<n;i++)
+	for (j=0;j<n;j++)
+		scanf("%d",&a[i][j]);
+for (i=0;i<n;i++)
+	for (j=0;j<n;j++)
+		scanf("%d",&b[i][j]);
+for (i=0;i<n;i++)
+	for (j=0;j<n;j++)
+		if (a[i][j]==1) b[i][j]=i+j;
+for (i=0;i<n;i++)
+	for(j=0;j<n;j++)
+		//printf("%d",b[i][j]);
+                printf("%d ", b[i][j]); 
+}
+return 0;
+}

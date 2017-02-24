@@ -1,0 +1,17 @@
+Krug fun4(Pravokutnik p) {
+
+	Tocka kutPr = p.getDLkut();
+	Tocka Srediste;
+	Srediste.X = kutPr.X + (p.getSirina()/2);
+	Srediste.Y = kutPr.Y + (p.getVisina()/2);
+
+	double pitX = Srediste.X - kutPr.X;
+	double pitY = Srediste.Y - kutPr.Y;
+
+	double rad = pitX*pitX;
+	rad += pitY*pitY;
+	rad = sqrt(rad);
+	
+	Krug ret(Srediste, rad);
+	return ret;
+}

@@ -1,0 +1,19 @@
+#include<stdio.h>
+int main()
+{
+    char a,b,znak; int c;       
+    scanf("%c %c %c", &a, &b, &znak); 
+    a = a - 48;
+    b = b - 48;
+    if (znak == '+'){ c = a + b; }
+    if (znak == '-'){ c = a - b; }
+    if (znak == '*'){ c = a * b; }
+    if (znak == '/'){ c = a / b; }
+    if (znak == '%'){ c = a % b; }
+    if ((znak == '+') || (znak == '-') || (znak == '*') || (znak == '/') || (znak == '%'))printf ("%d",c);    
+    else {
+              printf ("Neispravna");
+    }
+    
+return 0;                      
+}                              

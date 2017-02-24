@@ -1,0 +1,18 @@
+#include<stdio.h>
+int main()
+{
+   int i,a,b,c,d;
+   scanf("%d",&i);
+   a=i%8;
+   i/=8;
+   b=i%8;
+   i/=8;
+   c=i%8;
+   i/=8;
+   d=i%8;
+   if(d==0)
+   printf("%d%d%d",c,b,a);
+   else
+   printf("%d%d%d%d",d,c,b,a);
+   return 0;
+}

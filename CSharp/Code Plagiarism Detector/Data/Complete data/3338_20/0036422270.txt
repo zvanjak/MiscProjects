@@ -1,0 +1,20 @@
+int rZamijeni( char *niz, char stariZnak, char noviZnak)
+{
+	int brojac=0;
+	int N;
+	kontrola();
+	N=strlen(niz);
+	if (N==0)
+		return 0;
+	else 
+	{
+		if (*niz==stariZnak)
+		{
+			*niz=noviZnak;
+		brojac=1+rZamijeni(&niz[1],stariZnak,noviZnak);
+		return brojac;
+		}
+		brojac=rZamijeni(&niz[1],stariZnak,noviZnak);
+	return brojac;
+}
+}

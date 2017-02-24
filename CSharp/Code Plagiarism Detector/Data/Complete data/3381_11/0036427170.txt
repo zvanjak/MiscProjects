@@ -1,0 +1,31 @@
+#include<stdio.h>
+
+int main(){
+
+	int ax,ay,bx,by,cx,cy,dx,dy;
+	double kac,kbd;
+	scanf("%d %d %d %d %d %d %d %d",&ax,&ay,&bx,&by,&cx,&cy,&dx,&dy);
+	
+	if( ((cx-ax)!=0)&&((dx-bx)!=0) ){
+        
+		kac=( (double)(cy-ay)/(double)(cx-ax) );
+        kbd=( (double)(dy-by)/(double)(dx-bx) );
+
+		if((kac*kbd)==-1){
+			if( ((ax+cx)==(bx+dx))&&((ay+cy)==(by+dy)) ){
+                printf("R");
+			}
+			else{
+				printf("C");
+			}            
+		}
+		else{
+			printf("C");
+		}        
+	}
+	else{
+		printf("K");
+	}
+
+	return 0;
+}

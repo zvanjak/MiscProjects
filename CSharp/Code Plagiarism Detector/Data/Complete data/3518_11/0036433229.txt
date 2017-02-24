@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <math.h>
+
+double dx;
+double f(double x){
+return #include <stdio.h>
+#include <math.h>
+
+double dx;
+double f(double x){
+return (pow(x,sinh))*(cosh*cosh);
+}
+
+double deriviraj(double x){
+return (f(x + dx) - f(x)) / dx;
+}
+
+int main(){
+scanf("%lf", &dx);
+
+double x = -1.0;
+while ( fabs(x) != 0.0 ){
+scanf("%lf", &x);
+if ( fabs(x) == 0.0 ) break;
+printf("%.2lf\n", atan(deriviraj(x)));
+}
+return 0;
+};
+}
+
+double deriviraj(double x){
+return (f(x + dx) - f(x)) / dx;
+}
+
+int main(){
+scanf("%lf", &dx);
+
+double x = -1.0;
+while ( fabs(x) != 0.0 ){
+scanf("%lf", &x);
+if ( fabs(x) == 0.0 ) break;
+printf("%.2lf\n", atan(deriviraj(x)));
+}
+return 0;
+}

@@ -1,0 +1,50 @@
+#include <stdio.h>
+#define MAX 100
+int main() {
+	int i= -1,j,k;
+	char rijec[MAX + 1];
+   
+	do {
+
+       i++;
+
+	  rijec[i]=getchar ();
+
+	} while(rijec[i] != '.');
+	
+	rijec[i+1]='\0';
+
+    for(j=0; j<i; j++){
+
+		if(rijec[j] >='A' && rijec[j]<='Z'){
+
+			rijec[j] = rijec[j] + 32;
+		}
+	}
+
+	for(j=0; j<i; j++){
+
+		if(rijec[j]== 32 || rijec[j]==','){
+			if(rijec[j+1] == 32 || rijec[j+1]==',') continue; 
+			rijec[j+1]= rijec[j+1] - 32;
+		}
+	}
+	
+	for(j=0; j<i; j++){
+		if(rijec[j] == 32 || rijec[j]== ',' ){
+			for(k=j; k<i+1; k++){
+				rijec[k]= rijec[k+1];
+			}
+		
+		if(rijec[j]==32 || rijec[j]==',')
+		j--;
+		}
+	}
+	rijec[0] = rijec[0] - 32;
+
+	printf("%s\n", rijec);
+
+
+
+	return 0;
+}

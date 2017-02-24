@@ -1,0 +1,6 @@
+Tocka fun5(Trokut t){
+  Tocka A=t.getA(), B=t.getB(), C=t.getC(),r;
+  r.X=(A.X+B.X+C.X)/3;
+  r.Y=(A.Y+B.Y+C.Y)/3;
+  return r;
+}

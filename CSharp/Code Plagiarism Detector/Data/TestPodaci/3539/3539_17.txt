@@ -1,0 +1,18 @@
+float prosjek(zapis *glava){
+	zapis *pom = glava;
+	float ocjene=0;
+	int brel = 0;
+	while (pom!=NULL){
+		ocjene+= pom->pros;
+		brel++;
+		pom = pom->sljed;
+	}
+	if( brel==0) return 0.f;
+	ocjene /= brel;
+	pom = glava;
+	while (pom!=NULL){
+		if (pom->pros < ocjene) pom->pros=0;
+		pom = pom->sljed;
+	}
+	return ocjene;
+}

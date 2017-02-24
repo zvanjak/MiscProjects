@@ -1,0 +1,139 @@
+bool jedinicna(int *prvamat,int brRedPrva,int brStupPrva,
+			   int *drugamat, int brRedDruga,int brStupDruga)
+{
+	int i;
+	int j;
+	int k;
+
+	if (brStupPrva != brRedDruga)
+    {
+		printf("Matrice nije moguce pomnoziti \n" );
+		getche();
+		exit (1);
+	}
+
+	int rezultat[MAX_RED_PRVA][MAX_STUP_DRUGA];
+	for(i=0;i<MAX_RED_PRVA;i++)
+		for(j=0;j<MAX_STUP_DRUGA;j++)
+			rezultat[i][j]=0;
+
+	  for ( i = 0; i < brRedPrva ; i++)
+		  for ( j = 0; j <brStupDruga; j++)
+		  {
+			  for ( k = 0; k < brStupPrva; k++)
+			  {  
+				 
+				  rezultat[i][j] += prvamat[i*brStupPrva+k] * drugamat[j+k*brStupDruga];
+			  }
+
+			 
+		  }
+	  
+	  getche();
+
+	  for ( i = 0; i < brRedPrva ; i++)
+	  {
+		  for (j = 0; j <brStupDruga; j++)
+		  {
+			
+			  if(i=j)
+			  {
+				  if(rezultat[i][j]!=1)
+					  return false;
+			  }
+
+			  if(i!=j)
+			  {
+				  if(rezultat[i][j]!=0)
+					  return false;
+			  }
+		  }
+	  }
+	  
+	  return true;
+}
+
+
+int max_u_retku(int *matrica, int brojStupaca, int indexRetka)
+{
+	int i;
+
+	int maximalniPoApsolutnoj=abs(matrica[indexRetka]);
+
+	int pomocni=matrica[indexRetka];
+
+	int absolutna;
+
+	for(i=0;i<brojStupaca;i++)
+	{
+		absolutna = abs(matrica[indexRetka+i]);
+
+		if( absolutna> maximalniPoApsolutnoj)
+		{
+			maximalniPoApsolutnoj=absolutna;
+			pomocni = matrica[indexRetka+i];
+		}
+
+
+	}
+
+	return pomocni;
+}
+
+int max_u_stupcu(int *matrica, int brojRedaka, int indexStupca)
+{
+	int i;
+
+	int maximalniPoApsolutnoj=abs(matrica[indexStupca]);
+
+	int pomocni=matrica[indexStupca];
+
+	int absolutna;
+
+	for(i=0;i<brojRedaka;i++)
+	{
+		absolutna = abs(matrica[indexStupca+brojRedaka*i]);
+
+		if( absolutna> maximalniPoApsolutnoj)
+		{
+			maximalniPoApsolutnoj=absolutna;
+			pomocni = matrica[indexStupca+brojRedaka*i];
+		}
+
+		if(absolutna== maximalniPoApsolutnoj && pomocni<0 && matrica[indexStupca+brojRedaka*i] )
+		{
+			pomocni=absolutna;
+		}
+
+		
+		if(absolutna== maximalniPoApsolutnoj && pomocni>0 && matrica[indexStupca+brojRedaka*i] )
+		{
+			pomocni=absolutna;
+		}
+	}
+
+	return pomocni;
+}
+
+void maxaps(int *prvamat, int *drugamat, int brRedPrva, int brStupPrva, 
+			int maxStupPrva, int brRedDruga, int brStupDruga, int maxStupDruga, int niz [] )
+{
+
+
+	if(jedinicna(prvamat,brRedPrva,brStupPrva,drugamat,brRedDruga,brStupDruga))
+	{
+		for(int i=0;i<brRedPrva;i++)
+		{
+			niz[i]=max_u_retku(prvamat,brStupPrva,i);
+		}
+	}
+
+	else
+	{
+		for(int i=0;i<brStupDruga;i++)
+		{
+			niz[i]=max_u_stupcu(drugamat,brRedDruga,i);
+		}
+	}
+	
+}

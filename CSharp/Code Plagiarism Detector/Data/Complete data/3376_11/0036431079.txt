@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main()
+{
+	char broj[8];
+	int bbroj;
+
+	scanf("%s",broj);
+
+	if(broj[0] % 2 == 0)
+		broj[0] = '0';
+
+	if(broj[1] % 2 == 0)
+		broj[1] = '0';
+
+	if(broj[2] % 2 == 0)
+		broj[2] = '0';
+
+	if(broj[3] % 2 == 0)
+		broj[3] = '0';
+
+	sscanf(broj,"%d",&bbroj);
+
+	printf("%d",bbroj);
+
+	return 0;
+}

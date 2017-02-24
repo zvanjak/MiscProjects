@@ -1,0 +1,33 @@
+#include<stdio.h>
+int main(){
+int ms,mr,mat[20][20],i,j,i_zam,j_zam,temp,suma=0;
+
+do{
+scanf("%d %d",&mr,&ms);
+}while (mr<1 || mr>20 || ms<1 || ms>5);
+
+for (i=0;i<mr;i++){
+	for (j=0;j<ms;j++){
+	  scanf("%d",&mat[i][j]);
+	}
+}
+
+scanf("%d %d",&i_zam, &j_zam);
+while (i_zam>-1 && j_zam>-1 && (j_zam<ms) && (i_zam<mr)){
+	for (i=0;i<ms;i++) {
+		temp=mat[j_zam][i];
+		mat[j_zam][i]=mat[i_zam][i];
+		mat[i_zam][i]=temp;
+	}
+	scanf("%d %d",&i_zam, &j_zam);
+}
+
+for (i=0;i<mr;i++){
+	suma=0;
+	for (j=0;j<ms;j++){ 
+	  suma+=mat[i][j];
+	}
+	printf("%d",suma);
+	if (i<mr-1) printf(" ");
+}
+}

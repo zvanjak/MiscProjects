@@ -1,0 +1,32 @@
+class Kosarica{
+      private:
+		  float ncijena;
+		  float suma;
+		  float jeftin;
+		  long int brojac;
+      public:
+             Kosarica(){
+				 ncijena=0;
+				 suma=0;
+				 jeftin=0;
+				 brojac=0;
+			 }
+			 void DodajProizvod(float cijena){
+				 if(cijena>0){
+					 ncijena=cijena;
+					 if(!brojac) jeftin=cijena;
+					 if(cijena<jeftin) jeftin=cijena;
+					 suma=suma+cijena;
+					 brojac++;
+				  }
+             }
+             float ProsjecnaCijena(){
+				 if(brojac==0) return 0;
+				 return suma/(float)brojac;
+			 }
+             float NajjeftinijiProizvod(){
+				 if(brojac==0) return 0;
+				 return jeftin;
+			 }
+             ~Kosarica(){}
+};

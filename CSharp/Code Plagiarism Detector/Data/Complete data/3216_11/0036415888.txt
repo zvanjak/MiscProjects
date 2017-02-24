@@ -1,0 +1,18 @@
+#include <stdio.h>
+int main () {
+int broj,brojac=0,i,jest;
+    do {
+       scanf("%d",&broj);
+       if (broj>2) {
+         jest=1;
+         for (i=2;i<broj;i++) {
+          if (broj%i==0)
+             jest=0;
+}
+          if (jest==1)
+           brojac++;
+}
+}
+    while (broj>2);
+    printf("%d",brojac);
+}  

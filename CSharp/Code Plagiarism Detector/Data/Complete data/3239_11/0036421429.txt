@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main(){
+	
+	int d, g, n, i, sum=0;
+
+	scanf("%i %i", &d, &g);
+
+	if(d<0||g<0||g<=d) printf("D i G nisu valjani");
+	else {
+		for(n=d; n<=g; n++){
+			/*for(i=2; i<n; i++){*/
+                          for(i=2; i<=n; i++){
+				if(i%2==0) sum+=i;
+			}
+			/*sum= sum+1+n;*/
+			printf("%i ", sum);
+			sum=0;
+		}
+	}
+	return 0;
+}
+

@@ -1,0 +1,13 @@
+#include<stdio.h>
+int main () {
+int n=1,a=0,b=0;
+while(n) {
+scanf("%d",&n);
+if(n>0){
+if(n%2) a++;
+else b++;
+}
+}
+printf("%d %d",b,a);
+return 0;
+}

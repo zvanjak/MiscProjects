@@ -1,0 +1,43 @@
+#include <stdio.h> 
+
+int main() {
+	int mr, ms;
+	int matrica[20+1][5+1];
+	int i, j;
+	int p, q;
+	int zi, zj, brz=0, brs=0;
+
+	do {
+		scanf("%d %d", &mr, &ms);
+	} while (mr < 1 || mr > 20 || ms < 1 || ms > 5);
+
+	scanf("%d %d", &p, &q);
+
+	for (i=0;i<mr;i++)
+		for (j=0;j<ms;j++)
+			if (i%2)
+				matrica[i][j] = q;
+			else
+				matrica[i][j] = p;
+
+	do {
+		scanf("%d %d", &zi, &zj);
+		if (zi >= 0 && zi <= mr && zj >= 0 && zj <= ms) {
+			matrica[zi][zj] = 0;
+			brz++;
+		}
+	} while (zi >= 0 && zi <= mr && zj >= 0 && zj <= ms);
+
+	for (i=0;i<ms;i++) {
+		for (j=0;j<mr;j++)
+			if (!matrica[j][i])
+				break;
+		if (j == mr)
+			brs++;
+	}
+
+	printf("%d %d", brz, brs);
+
+
+	return 0;
+}

@@ -1,0 +1,23 @@
+
+#include<stdio.h>
+
+int main(){
+	int polje[20][5], i, j, k, mr, ms, brojac1=0, brojac2=0;
+	do {
+	scanf("%d %d", &mr, &ms);
+	
+	}while(!(mr>=0&&mr<=20&&ms>=1&&ms<=5));
+	
+
+	for(i=0;i<mr;i++){
+		for(j=0;j<ms;j++){
+			scanf("%d", &polje[i][j]);
+			for(k=2;k<=polje[i][j];k++){
+				if ((polje[i][j]%k)!=0)
+					continue;}
+					
+			}
+		brojac1++; brojac2++;}
+	printf("%d %d", brojac1, brojac2);
+		return 0;
+  }

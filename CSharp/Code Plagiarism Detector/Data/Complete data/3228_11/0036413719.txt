@@ -1,0 +1,20 @@
+#include<stdio.h>
+#include<math.h>
+
+int main()
+{
+    int n,i=1;
+    float pi;
+    scanf("%d",&n);
+    if (n<1 || n>100) printf("n nije valjan");
+    else{
+         do{
+            if (i%2==1) pi+=1/pow(i,2);
+            if (i%2==0) pi-=1/pow(i,2);
+            i++;}
+         while (i<=n);
+         pi=sqrt(12*pi);
+         printf("%14.12f",pi);
+         }
+    return 0;
+}

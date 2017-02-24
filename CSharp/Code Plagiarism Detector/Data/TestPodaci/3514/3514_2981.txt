@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main(){
+	double x=0, y=0, s=0, v=0, r=0, p=0, pov=0;
+	int flag =0;
+	struct tocka {
+		double x;
+		double y;
+	} t1, t2, t3, t4;
+	scanf("%lf %lf %lf %lf %lf %lf %lf %lf", &t1.x, &t1.y, &t2.x, &t2.y, &t3.x, &t3.y, &t4.x, &t4.y);
+	
+	if(t1.x == t2.x){
+		if(t2.y == t3.y){
+			if(t3.x == t4.x && t1.y == t4.y){
+				flag = 1;
+				s = fabs(t3.x - t2.x);
+				v = fabs(t1.y - t2.y);
+				pov = s*v;
+			}
+		}
+	}
+	if(t1.y == t2.y){
+		if(t2.x == t3.x){
+			if(t3.y == t4.y && t1.x == t4.x){
+				flag = 1;
+				s = fabs(t1.x - t2.x);
+				v = fabs(t3.y - t2.y);
+				pov = s*v;
+			}
+		}
+	}
+	else{
+		flag = 0;
+		x = (t1.x+t2.x+t3.x+t4.x)/4;
+		y = (t1.y+t2.y+t3.y+t4.y)/4;
+		r = sqrt(pow(x,2)+pow(y,2));
+		p = atan(y/x);
+	}
+	if (flag == 1){
+		printf("%.2lf", pov);
+	}
+	else if (flag == 0){
+		printf("%.2lf %.2lf", r, p);
+	}
+	return 0;
+}

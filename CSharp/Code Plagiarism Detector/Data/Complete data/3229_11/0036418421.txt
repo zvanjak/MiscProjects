@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <math.h>
+int main(){
+int i,n,predznak=1;
+double clan,fakt=1,e=0;
+scanf("%d",&n);
+if(n>=1 && n<=30){
+for(i=0;i<n;i++){
+if(i!=0)
+fakt*=1;
+clan=predznak*(1./fakt);
+predznak*=-1;
+e+=clan;
+}
+e=pow(e,-1);
+printf("%.12f",e);
+}else{
+printf("n nije valjan");
+}
+return 0;
+}

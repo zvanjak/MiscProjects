@@ -1,0 +1,22 @@
+char *brojeve_u_znakove(int *polje, int duljina)
+{
+    int i, j, k, zn;
+    char broj[20];
+    char *ret = (char *)malloc(sizeof(char));
+    
+    strcpy(ret, "\0");
+    if(polje == NULL)
+        return(ret);
+    
+    for(i = 0; i < duljina; i++)
+    {
+        k = 0;  
+        for(j = polje[i]; j >= 1; j/= 10)
+            broj[k++] = (char)((j % 10) + 48);
+
+        broj[k] = '\0';
+        ret = (char *)realloc(ret, strlen(ret) + strlen(broj) + 1);
+        ret = strcat(ret, broj);
+    }
+    return(ret);
+}

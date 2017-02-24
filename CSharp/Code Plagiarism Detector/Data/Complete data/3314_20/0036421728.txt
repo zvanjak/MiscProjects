@@ -1,0 +1,17 @@
+int veci_od(FILE *f,int granica){
+	struct popis{
+	    char naziv [30+1];
+        char autor [20+1];
+	    int prodano;
+    } album;
+	int s=0,i;
+	for(i=0;fscanf(f,"%30s %20s %d",album.autor,album.naziv,&album.prodano)==3;i++)
+	    if (album.prodano>=granica)
+			s++;
+	return s;
+}
+
+
+
+
+

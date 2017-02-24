@@ -1,0 +1,109 @@
+class CjelobrojniNiz 
+{
+public:
+int VecinaJednaka;
+int Usporedi(CjelobrojniNiz niz);
+int *VratiPresjek(CjelobrojniNiz niz, int* n);
+
+CjelobrojniNiz(int *start,int n);
+CjelobrojniNiz(const CjelobrojniNiz &cp);
+~CjelobrojniNiz();
+
+//test
+//void Ispisi();
+//testend
+private:
+int *_n;
+int _size;
+};
+
+CjelobrojniNiz::CjelobrojniNiz(int *start, int n)
+{
+int i,j,tmp,max=0;
+_size=n;
+_n = new int[n];
+for (i=0;i<n;++i)
+	_n[i]=start[i];
+
+for (i=1;i<n;++i)
+	{
+	tmp=_n[i];j=i;
+		while (j>=1 && _n[j-1]>tmp)
+			{
+			_n[j]=_n[j-1];
+			j--;
+			}
+	_n[j]=tmp;	
+	}
+VecinaJednaka=0;	
+if (_size>=1) 
+	{
+	tmp=_n[0];
+	j=1;
+	}
+	else j=0;
+for (i=1,max=0;i<n;++i)
+	if (_n[i]==tmp) j++;
+		else 
+			{
+			tmp=_n[i];
+			if (j>max) max=j;
+			j=0;
+			}
+if (j>max) max=j;
+if (max>_size/2) VecinaJednaka=1;
+}
+
+CjelobrojniNiz::CjelobrojniNiz(const CjelobrojniNiz &cp)
+{
+int i;
+_size=cp._size;
+_n=new int[_size];
+for (i=0;i<_size;++i)
+	_n[i]=cp._n[i];
+VecinaJednaka=cp.VecinaJednaka;
+}
+
+CjelobrojniNiz::~CjelobrojniNiz()
+{
+delete [] _n;
+}
+
+int CjelobrojniNiz::Usporedi(CjelobrojniNiz niz)
+{
+if (_size!=niz._size) return 0;
+for (int i=0;i<_size;++i)
+	if (niz._n[i]!=_n[i]) return 0;
+return 1;
+}
+
+int *CjelobrojniNiz::VratiPresjek(CjelobrojniNiz niz, int *n)
+{
+int i=0,j=0,ti,tj,np=0,*store;
+while (i<_size && j<niz._size)
+	{
+	//cout << i << ' ' << j << endl;
+	ti=_n[i];tj=niz._n[j];
+	//cout << ti << ' ' << tj << endl;
+	
+	if (ti==tj) np++;
+	//cout << np << endl << endl;
+	if (ti<=tj) while (i<_size && _n[i]==ti) i++;
+	if (tj<=ti) while (j<niz._size && niz._n[j]==tj) j++;
+	}
+if (!np) {*n=0;return NULL;}
+store = new int[np];
+i=0;j=0;np=0;
+
+while (i<_size && j<niz._size)
+	{
+	ti=_n[i];tj=niz._n[j];
+	if (ti==tj) store[np++]=ti;
+	if (ti<=tj) while (i<_size && _n[i]==ti) i++;
+	if (tj<=ti) while (j<niz._size && niz._n[j]==tj) j++;
+	}
+
+*n=np;
+
+return store;
+}

@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main () {
+   int broj,z1,z2,z3;
+   scanf("%d", &broj);
+   z1=broj/1000;
+   z2=broj/100;
+   z3=broj/10;
+   if (broj>999 && broj<10000) {
+      if (z1%2==0) broj=broj+1000;
+      if (z2%2==0) broj=broj+100;
+      if (z3%2==0) broj=broj+10;
+      if (broj%2==0) broj=broj+1;
+      printf("%d",broj);
+   }
+return 0;
+}

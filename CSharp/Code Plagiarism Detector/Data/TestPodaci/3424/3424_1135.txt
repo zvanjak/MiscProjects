@@ -1,0 +1,22 @@
+#include<stdio.h>
+
+int main(){
+    int i, j, a[100];
+      
+    for(i=0;i<5;i++){
+        scanf("%d", &a[i]);
+        if(a[i]<0) break;
+    }
+    
+    for(i=0;i<5;i++){
+      if(a[i]>=0){
+          for(j=0;j<a[i];j++){
+              if(i || j) printf(" ");
+              printf("%d", i);                         
+          }
+      }
+      else break;
+    }
+    
+    return 0;
+}

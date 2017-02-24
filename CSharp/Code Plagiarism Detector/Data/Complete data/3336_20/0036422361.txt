@@ -1,0 +1,9 @@
+int rStrcmp (char *s1, char *s2)
+{
+	kontrola();
+	if ((*s1)&&(*s2)){
+		if (*s1==*s2) rStrcmp(s1+1,s2+1);
+		else return *s1-*s2;
+	}
+	else return *s1-*s2;
+}

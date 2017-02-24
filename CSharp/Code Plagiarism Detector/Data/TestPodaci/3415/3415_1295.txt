@@ -1,0 +1,29 @@
+#include <stdio.h>
+int main()
+{
+int a,b;
+char c;
+char znakovi[20+1];
+int suma=0;
+int i=0;int k=0;
+int count=0;
+do
+{
+scanf("%d %d %c",&a,&b,&c);
+switch(c)
+    {case '+':suma=suma+(a+b);break;
+    case '-':suma=suma+(a-b);break;
+    case '*':suma=suma+(a*b);break;
+    case '/':suma=suma+(a/b);break;
+    case '%':suma=suma+(a%b);break;
+}    
+znakovi[i]=c;
+i++;
+count++;}
+while((c=='+')||(c=='-')||(c=='*')||(c=='/')||(c=='%'));
+printf("%d ",suma);
+for(k=0;k<=(count-2);k++)
+  printf("%c ",znakovi[k]);
+  /* printf("%c",znakovi[count-2]); */
+  return 0;
+}

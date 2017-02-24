@@ -1,0 +1,26 @@
+char *SamoSamoglasnici (char *ulazni_niz) {
+	int i;
+	char *r;
+	char *p;
+	if (!ulazni_niz) return NULL;
+	if (!strlen(ulazni_niz)) return NULL;
+
+	r = malloc(0);
+	i = 0;
+	for (p = ulazni_niz; *p; p++) {
+		switch (tolower(*p)) {
+			case 'a':
+			case 'e':
+			case 'i':
+			case 'o':
+			case 'u':
+				r = realloc(r, i+1);
+				*(r+i) = *p;
+				i++;
+				break;
+		}
+	}
+	r = realloc(r, i+1);
+	*(r+i) = 0;
+	return r;
+}

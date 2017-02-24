@@ -1,0 +1,63 @@
+#include<stdio.h>
+int main(){
+	char polje[20][20];
+	int n,i,j,bx=0,bo=0,bx1=0,bo1=0,gdx=0,gdo=0,sdx=0,sdo=0;
+	scanf("%d", &n);
+	for(i=0; i<n; i++){
+		for(j=0; j<n; j++){
+			scanf("%c", &polje[i][j]);
+		}
+	}
+	for(i=0; i<n; i++){
+		for(j=0; j<n; j++){
+			if(polje[i][j]=='X')bx+=1;
+			if(polje[i][j]=='O')bo+=1;
+		}
+		if(bo==n){
+			printf("O");
+			break;
+		}if(bx==n){
+			printf("X");
+			break;
+		}
+		bx=0;
+		bo=0;
+		}
+	if((bx<n)&&(bo<n)){
+	for(j=0; j<n; j++){
+		for(i=0; i<n; i++){
+			if(polje[i][j]=='X')bx1+=1;
+			if(polje[i][j]=='O')bo1+=1;
+		}
+		if(bo1==n){
+			printf("O");
+			break;
+		}if(bx1==n){
+			printf("X");
+			break;
+		}
+		bx1=0;
+		bo1=0;
+		}
+	}
+	if((bx1<n)&&(bo1<n)){
+		for(i=0,j=0;i<n;i++,j++){
+			if(polje[i][j]=='X')gdx+=1;
+			if(polje[i][j]=='O')gdo+=1;
+		}
+	if(gdx==n)printf("X");
+	if(gdo==n)printf("O");
+	}
+	if((gdx<n)&&(gdo<n)){
+		for(i=0,j=n-1; i<n;i++,j--){
+			if(polje[i][j]=='X')sdx+=1;
+			if(polje[i][j]=='O')sdo+=1;
+		}
+	if(sdx==n)printf("X");
+	if(sdo==n)printf("O");
+	}
+	if((bo<n)&&(bx<n)&&(bo1<n)&&(bx1<n)&&(gdx<n)&&(gdo<n)&&(sdx<n)&&(sdo<n))
+		printf("-");
+	return 0;
+}
+

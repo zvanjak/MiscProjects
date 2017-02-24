@@ -1,0 +1,22 @@
+#include <iostream>
+
+using namespace std;
+
+MjeracProsjecneTemperature::MjeracProsjecneTemperature(Termometar *t){
+	this->t = t;
+}
+
+double MjeracProsjecneTemperature::Prosjek(int n, int *min, int *max){
+     int i, suma = 0, trenutna;
+	 trenutna = this->t->Ocitaj();
+	 *max = trenutna;
+	 *min = trenutna;
+	 suma += trenutna;
+	 for (i = 2; i <= n; i++) {
+		trenutna = this->t->Ocitaj();
+		if (trenutna > *max) *max = trenutna;
+		if (trenutna < *min) *min = trenutna;
+		suma += trenutna;
+	 }
+	 return ((double) suma / n);
+}

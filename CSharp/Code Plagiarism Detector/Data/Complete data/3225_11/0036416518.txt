@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <math.h>
+int main () {
+	int i,n;
+	double p,s=0;
+	scanf("%d",&n);
+	if ((n<1)||(n>400)) 
+	printf ("n nije valjan"); 
+	else { 
+	    for(i=0;i<=n-1;i++)
+		s+=(1./pow ((2*i+1),2));
+		p=sqrt (8*s);
+		printf("%.12f",p);
+	}
+return 0;
+}

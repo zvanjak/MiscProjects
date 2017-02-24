@@ -1,0 +1,25 @@
+#include <stdio.h>
+int main(){
+	int brojevi[100];
+	int k,d;
+	int i=-1;
+char znakovi[100];
+
+	do{
+		i++;
+		scanf("%c%d",&znakovi[i],&brojevi[i]);
+	}
+	while(brojevi[i]!=-1);
+	
+
+
+	for(k=0;k<i;k++)
+	{
+		for( d=0 ; d<brojevi[k]; d++)
+	{
+		
+	printf("%c ",znakovi[k]);
+		}
+	}	
+	return 0 ;
+}

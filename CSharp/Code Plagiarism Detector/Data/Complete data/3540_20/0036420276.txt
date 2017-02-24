@@ -1,0 +1,16 @@
+int izbaci(zapis **glava){
+    zapis *pom;
+    int br=0;
+    for (;*glava;){
+        if ((*glava)&&((*glava)->pros < 2.0)) {
+            pom = *glava;
+            *glava = (*glava)->sljed;
+            free (pom);
+            br++;
+          } 
+          else{ 
+              glava = &((*glava)->sljed);
+         }
+    }
+    return br;
+}

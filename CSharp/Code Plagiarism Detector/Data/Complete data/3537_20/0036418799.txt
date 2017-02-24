@@ -1,0 +1,16 @@
+int BrojClanova (Red *red) {
+	int count = 0;
+	int k;
+
+	Red *a = new Red;
+
+	while (red->SkiniIzReda(&k)){
+		count++;
+		a->DodajURed(k);
+	}
+	while (a->SkiniIzReda(&k))
+		red->DodajURed(k);
+
+	delete a;
+	return count;
+}

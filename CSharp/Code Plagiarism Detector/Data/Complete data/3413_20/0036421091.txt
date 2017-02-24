@@ -1,0 +1,23 @@
+char *brojeve_u_znakove(int *polje, int duljina)
+{
+	char *povratna;
+	int i, size = 1;
+
+	povratna = (char *)malloc(sizeof(char));
+	povratna[0] = '\0';
+
+	for (i = 0; i < duljina; ++i)
+	{
+		char pom[16];
+		int length = (int)strlen(itoa(polje[i], pom, 10));
+		size += length + 1;
+
+		povratna = (char *)realloc(povratna, size*sizeof(char));
+		strcat (povratna, pom);
+		strcat (povratna, " ");
+	}
+
+	povratna[size - 2] = '\0';
+
+	return povratna;
+}

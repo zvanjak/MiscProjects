@@ -1,0 +1,36 @@
+int izbaciZ(zapis **glava){
+
+  zapis *pom=*glava;
+  zapis *pom1=NULL;
+  float prosjek=0.;
+  int brzapisa=0, brizbacenih=0;   
+    
+  while(pom){
+	  prosjek+=pom->pros;
+      brzapisa++;
+      pom=pom->sljed;
+  }
+  prosjek/=brzapisa;
+  pom=*glava; 
+  while((*glava) && ((*glava)->spol=='Z') && ((*glava)->pros<prosjek)){
+       pom1=*glava;
+       *glava=(*glava)->sljed;
+       brizbacenih++;
+       free(pom1);
+  }
+  if (*glava) {
+  pom=*glava;
+  while (pom->sljed){
+	  if ((pom->spol=='Z') && (pom->pros<prosjek)){
+	      pom1=pom->sljed;
+	      pom->sljed=(pom->sljed->sljed);
+		  brizbacenih++;
+	      free(pom1);
+	  }
+	  else pom=pom->sljed;
+  
+  }
+  }
+  
+  return brizbacenih;
+}

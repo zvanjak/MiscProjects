@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <math.h>
+
+void main() {
+	int n, i;
+	float brx = 0, x;
+	scanf("%d", &n);
+	if ((n >= 1) && (n <= 100)) {
+        scanf("%f", &x);
+        if ((x > 0) && (x < 2)) {
+            for(i = 1; i <= n; i++) {
+				brx += (pow(-1, i-1)*pow(x-1, i)) / i;
+			}
+			printf("%d %.5f %.12f", n, x, brx);
+		}
+		else {
+            printf("x nije valjan");            
+		}
+	}
+	else {
+		printf("n nije valjan");
+	}
+}

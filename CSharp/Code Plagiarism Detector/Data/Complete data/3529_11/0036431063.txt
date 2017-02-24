@@ -1,0 +1,47 @@
+void spoji (char *ime,char*prezime,char*JMBG,char*izlazni)
+{       int i=0,k=0,a[10],m;
+        while (*(prezime+i)!='\0')
+        {       if (*(prezime+i)>='a'&&*(prezime+i)<'z'||*(prezime+i)>='A'&&*(prezime+i)<='Z')
+                {       *izlazni=*(prezime+i);
+                        izlazni++;
+                } i++;
+        }
+        *izlazni=',';
+        izlazni++;
+        *izlazni=' ';
+        izlazni++;
+     
+      for(i=0;*(ime+i)!='\0';i++) if (*(ime+i)>='a'&&*(ime+i)<='z'||*(ime+i)>='A'&&*(ime+i)<='Z') {       
+        *izlazni=*(ime+i);
+        izlazni++;
+      }
+        
+      *izlazni=':';
+      izlazni++;
+      *izlazni=' ';
+      izlazni++;
+      i=0;
+                while (*(JMBG+i)!='\0')
+                {       if      (*(JMBG+i)>='0'&&*(JMBG+i)<='9')
+                        {       a[k]=*(JMBG+i);
+                                k++;
+                        }
+                        i++;
+                }
+                if (k>6)
+                       for (i=k-6;i<k;i++)
+                        {       *(izlazni)=a[i];
+                                izlazni++;
+                        }
+                else if (k<=6)
+                {       for (m=0;m<6-k;m++)
+                        {       *izlazni='0';
+                                izlazni++;
+                        }
+                        for (i=0;i<k;i++)
+                        {       *izlazni=a[i];
+                                izlazni++;
+                        }
+                        }
+                        *izlazni='\0'; return;
+                        }

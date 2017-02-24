@@ -1,0 +1,26 @@
+#include <stdio.h>
+#define min 1
+#define max 30
+int main(){
+	int n, i, k, b1, pot;
+	double broj=1;
+    scanf("%d",&n);
+	if((n<min)||(n>max)){
+		printf("n nije valjan");
+		return 0;
+	}
+	for(i=0;i<n-1;i++){
+		b1=1;
+		pot=1;
+		for(k=0;k<=i;k++){
+			b1 *= -1;
+			pot *= 2;
+		}
+		broj +=b1*(1./pot);
+	}
+	printf("%.12f",broj);
+	return 0;
+}
+
+
+	

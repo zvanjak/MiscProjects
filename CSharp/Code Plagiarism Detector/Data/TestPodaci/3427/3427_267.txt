@@ -1,0 +1,57 @@
+#include <stdio.h>
+#include <math.h>
+#define MAX 50
+
+int jest_prost(int broj) {
+	int i, prost = 1;
+
+	if (broj % 2 == 0 || broj == 1)
+		prost = 0;
+	else {
+		for (i = 3; i < sqrt(broj); i += 2) {
+			if (broj % i == 0) {
+				prost = 0;
+				break;
+			}
+		}
+	}
+
+	if (prost || broj == 2)
+		return 1;
+	else
+		return 0;
+}
+
+int main () {
+	int p[MAX];
+	int br_elemenata = 0, n, i, j, umnozak = 0, prostih = 0, simetrican = 1;
+	/*umnozak = 0 => Jer je moguce unijeti i nula elemenata*/
+	do {
+		scanf("%d", &n);
+		if (n > 0) {
+			p[br_elemenata] = n;
+			br_elemenata++;
+		}
+	} while (n > 0 && br_elemenata < MAX);
+	
+	if (br_elemenata % 2 == 0) {
+		/*Paran broj elemenata*/
+		umnozak = 1;
+		for (i = 0; i < br_elemenata; i++) {
+			umnozak *= p[i];
+			if (jest_prost(p[i])) prostih++;
+		}
+		printf("%d %d", umnozak, prostih);
+	} else {
+		/*Neparan broj elemenata*/
+		for (j = i = br_elemenata / 2; i >= 0; i--, j++) {
+			if (p[i] != p[j]) simetrican = 0;
+		}
+		if (simetrican)
+			printf("Jest");
+		else
+			printf("Nije");
+	}
+
+	return 0;
+}

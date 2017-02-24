@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include<ctype.h>
+#include<string.h>
+
+void main ()
+{
+char strin[100+1];
+char new_strin[100+1];
+int i,j;
+gets(strin);
+for (i=0;i< strlen(strin);i++)
+ {
+ strin[i]=tolower(strin[i]);
+ };
+strin[0]=toupper(strin[0]);
+for (i=0;i<strlen(strin);i++)
+ {
+ if (strin[i]==' ') strin[i+1]=toupper(strin[i+1]);
+ if (strin[i]==',') strin[i+1]=toupper(strin[i+1]);
+ }
+j=0;
+for (i=0;i<strlen(strin);i++) 
+ {
+if (strin[i]==',') continue;
+if (strin[i]==' ') continue;
+ new_strin[j++] = strin[i];
+ if (strin[i]=='.') break;
+ 
+ printf("%c", strin[i]);
+}
+printf(".");
+}
+

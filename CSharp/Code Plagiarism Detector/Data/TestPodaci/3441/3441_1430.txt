@@ -1,0 +1,22 @@
+#include<stdio.h>
+int main()
+{
+	int a,b,s=0,z=0;
+	do
+	{
+		scanf("%d", &a);
+		b=a;
+		if(a<0)a*=(-1);
+		if(a==0)continue;
+	do
+	{
+		s+=(a%10);
+		z++;
+		a=a/10;
+	}
+	while(a>0);
+	}
+	while(b!=0);
+	printf("%d %d", z,s);
+	return 0;
+}

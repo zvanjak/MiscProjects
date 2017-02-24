@@ -1,0 +1,21 @@
+#include<stdio.h>
+int main(){
+int n,m,j,l,k,i,nfakt=1,mfakt=1,kfakt=1;
+float fakt;
+scanf("%d%d",&n,&m);
+k=n-m;
+if(m==0)
+fakt=0;
+else if(m==n)
+fakt=0;
+else{
+for(i=1;i<=n;i++){
+nfakt*=i;}
+for(j=1;j<=m;j++){
+mfakt*=j;}
+for(l=1;l<=k;l++){
+kfakt*=l;}
+fakt=(float)nfakt/(mfakt*kfakt);}
+printf("%.0f",fakt);
+return 0;
+}

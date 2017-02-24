@@ -1,0 +1,27 @@
+char *brojeve_u_znakove(int *polje, int duljina)
+{
+	int i, dniza = 0;
+	char *niz;
+
+	niz = (char *) malloc((dniza + 1) * sizeof(char));
+	niz[0] = '\0';
+
+	for(i = 0; i < duljina; i++)
+	{
+		char broj[10+1];
+		int dbroja;
+
+		if(i == 0)
+			dbroja = sprintf(broj, "%d", polje[i]);
+		else
+			dbroja = sprintf(broj, " %d", polje[i]);
+
+		dniza += dbroja;
+
+		niz = (char *) realloc(niz, (dniza + 1) * sizeof(char));
+
+		strcat(niz, broj);
+	}
+
+	return niz;
+}

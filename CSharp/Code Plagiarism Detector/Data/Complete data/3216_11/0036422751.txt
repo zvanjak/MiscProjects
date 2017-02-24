@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main()
+{
+	int broj, i,  prost=1, gotovo=0, brojac=0;
+	
+	while(!gotovo)
+	{
+		
+		scanf("%i",&broj);
+		if(broj>=2){
+		for(i=2;i<=broj-1;i++)
+		{
+			if(broj%i==0){ prost=0; break; }
+			else prost=1;
+		}
+		
+		if( prost && broj !=2 && broj != 1 && broj!=0)
+			brojac+=1;
+		}
+
+		if(broj<=2)
+			gotovo=1;
+        
+		
+	}
+	printf("%i", brojac);
+	return 0;
+}

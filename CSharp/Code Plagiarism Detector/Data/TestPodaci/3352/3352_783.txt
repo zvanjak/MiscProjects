@@ -1,0 +1,9 @@
+int veci_od(FILE *f, int n)
+	{
+		int izlaz=0;
+		struct natjecatelj a;
+		while(fread(&a, sizeof(a), 1, f) == 1){
+		if (a.bodovi > n && a.redni_br!=0) izlaz++; 
+		}
+		return izlaz;
+	}

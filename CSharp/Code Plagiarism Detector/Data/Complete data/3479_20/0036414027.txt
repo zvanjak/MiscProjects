@@ -1,0 +1,36 @@
+Kalendar *Unesi(MojDatum datumi[], int broj, int *mjesec)
+{
+	Kalendar *temp;
+	int mjeseci[12]={0}, max;
+	int i;
+	
+	for(i=0;i<broj;i++)
+	{
+		if(datumi[i].mjesec>=1 && datumi[i].mjesec<=12)
+		{
+			mjeseci[datumi[i].mjesec-1]++;
+		}
+		else
+			throw "Nedozvoljeni mjesec";
+	}
+
+	temp=new Kalendar();
+
+	for(i=0;i<broj;i++)
+	{
+		temp->Dodaj(datumi[i]);
+	}
+	
+	
+	*mjesec=1;
+	max=mjeseci[0];
+	for(i=1;i<12;i++)
+	{
+		if(mjeseci[i]>max)
+		{
+			max=mjeseci[i];
+			*mjesec=i+1;
+		}
+	}
+	return temp;
+}

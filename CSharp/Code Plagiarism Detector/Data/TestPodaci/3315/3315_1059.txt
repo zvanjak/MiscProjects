@@ -1,0 +1,16 @@
+float prosjek(FILE *f){
+	struct album {
+		char naziv[30+1];
+		char autor[20+1];
+		int prodano;
+	} pom;
+	float i=0,sum=0;
+	float prosjek;
+	fseek (f,0L,SEEK_SET);
+	while(fscanf(f,"%30[^ ]s% %20[^ ]s% %d",pom.naziv,pom.autor,&pom.prodano)==3){
+		i++;
+		sum+=pom.prodano;
+		}
+	prosjek = (sum/i);
+	return prosjek;
+}

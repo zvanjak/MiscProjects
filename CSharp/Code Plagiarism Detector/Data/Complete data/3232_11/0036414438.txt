@@ -1,0 +1,15 @@
+#include <math.h>
+#include <stdio.h>
+
+int n,i;
+float x=0;
+int main(){
+	scanf("%d",&n);
+	if (n<1 || n>30){
+		printf("\nn nije valjan\n");
+		return 0;}
+	for(i=0;i<n;i++)
+		x=x+1.0/(pow(2,i));
+	printf("\%.12f ",x);
+	return 0;
+}

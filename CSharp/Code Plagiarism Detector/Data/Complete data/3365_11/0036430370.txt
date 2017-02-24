@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[])
+{int broj,z1,z2,z3;
+int rez=0;
+scanf("%d",broj);
+z1=broj/100;
+z2=(broj%100)/10;
+z3=broj%10;
+if ((broj>=100)&&(broj<1000))
+   {
+    if ((broj<=250)||(broj>=950))
+   {
+    rez=z1+z2+z3;
+    printf("%d",rez);
+   }
+   else
+   {if((z1%2!=0)&&(z2%2!=0)&&(z1%2!=0))
+   rez=z1+z2+z3;
+   if((z1%2!=0)&&(z2%2!=0)&&(z1%2==0))
+   rez=z1+z2;
+   if((z1%2!=0)&&(z2%2==0)&&(z1%2!=0))
+   rez=z1+z3;
+   if((z1%2==0)&&(z2%2!=0)&&(z1%2!=0))
+   rez=z2+z3;
+   if((z1%2!=0)&&(z2%2==0)&&(z1%2==0))
+   rez=z1;
+   if((z1%2==0)&&(z2%2!=0)&&(z1%2==0))
+   rez=z2;
+   if((z1%2==0)&&(z2%2==0)&&(z1%2!=0))
+   rez=z3;
+   printf("%d",rez);
+   }
+   }
+else 
+printf("Uneseni broj nije pozitivni cijeli troznamenkasti broj");
+    
+        return 0;
+  
+  
+}

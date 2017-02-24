@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <math.h>
+int main () {
+  int n,f;
+  float y,w,z,q,a,i;
+       scanf("%d",&n);
+        if (n<1 || n>30){
+        printf("broj nije valjan");
+        }else {
+        for(i=0; i<10000; i=i+2){
+            y=1./ pow(2.,i);
+            z=y+z;
+            }
+        for(i=1; i<10000; i=i+2){
+            w=1./ pow(2.,i);
+            q=w+q;
+            }
+            a=2-z+y;
+           printf("%", a);
+           scanf("%d",&n);
+         }
+return 0;
+}

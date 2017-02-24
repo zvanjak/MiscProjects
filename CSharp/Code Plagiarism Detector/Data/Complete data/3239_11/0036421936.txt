@@ -1,0 +1,12 @@
+#include <stdio.h>
+int main() {
+int D,G,i,j,s;
+scanf("%d %d",&D,&G);
+if (D<=0 || G<=0 || D>=G) printf("D i G nisu valjani");
+else for (i=D;i<=G;i=i+1) {
+     s=0;
+     for (j=2;j<=i;j=j+2) s=s+j;
+     printf ("%d ",&s); }
+return 0;
+}
+

@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main(){
+    int x, najm=0,najv;
+    do{
+        scanf("%d",&x);
+	
+       if(x>najv)
+                 najv=x;
+	   if (x<najm)
+				 najm=x;
+                    
+                     
+        }while(x%4!=0 || x<0);
+printf("%d %d", najv,najm);   
+      return 0;
+    }

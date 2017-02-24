@@ -1,0 +1,9 @@
+int *KreirajAritNiz (int n, int a0, int d){
+	int i, *niz;
+	niz = (int *) malloc (sizeof (int)*n);
+	*niz = a0;
+	for (i=1; i<n; i++){
+		*(niz+i) = *(niz+i-1) + d;
+	}
+	return niz;
+}

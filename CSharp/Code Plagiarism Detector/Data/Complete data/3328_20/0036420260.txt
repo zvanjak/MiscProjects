@@ -1,0 +1,11 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <malloc.h>
+int *KreirajAritNiz (int n, int a0, int d)
+{
+int i,*p;
+p=(int *) malloc ((n+1)*sizeof(int));
+for (i=0; i<n; i++)*(p+i)=a0+i*d;
+*(p+i)='\0';
+return p;
+}

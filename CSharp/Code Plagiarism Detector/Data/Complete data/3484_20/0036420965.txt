@@ -1,0 +1,65 @@
+class CjelobrojniNiz{
+    int kolicina;
+	int *polje;
+public:
+	int VecinaJednaka;
+
+    CjelobrojniNiz(int *p, int n){
+	    polje = (int *)malloc(n*sizeof(int));
+		for (int i = 0; i < n; i++)
+			polje[i] = p[i];
+		VecinaJednaka = 0;
+		for (int i = 0; i < n; i++){
+			int brojac = 0;
+			for (int j = 0; j < n; j++)
+			   if (polje[j] == polje[i]) brojac++;
+			if (brojac > n/2) VecinaJednaka = 1;
+		}
+		kolicina = n;
+	}
+	
+	CjelobrojniNiz(const CjelobrojniNiz &kopi){
+         polje = (int *)malloc(kopi.kolicina*sizeof(int));
+		 for (int i = 0; i < kopi.kolicina; i++)
+			polje[i] = kopi.polje[i];
+		kolicina = kopi.kolicina;
+		VecinaJednaka = kopi.VecinaJednaka;
+	}
+
+	~CjelobrojniNiz(){
+		free(polje);
+	}
+
+    int Usporedi(CjelobrojniNiz a){
+	   if (kolicina != a.kolicina) return 0;
+	   for (int i = 0; i < kolicina; i++)
+		   if (polje[i] != a.polje[i]) return 0;
+	   return 1;
+	}
+
+	int * VratiPresjek(CjelobrojniNiz a, int *n){
+	    int *novo;
+		int koliko = 0;
+		for (int i = 0; i < kolicina; i++){
+			int moze = 1;
+			for (int j = 0; j < i; j++)
+				if (polje[j] == polje[i]) moze = 0;
+			if (moze == 1){
+			   moze = 0;
+		       for (int j = 0; j < a.kolicina; j++)
+				   if (a.polje[j] == polje[i]) moze = 1;
+			}
+			if (moze == 1){
+			   if (koliko)
+			      novo = (int *)realloc(novo, (koliko+1)*sizeof(int));
+			     else
+				  novo = (int *)malloc(sizeof(int));
+			   novo[koliko] = polje[i];
+			   koliko++;
+			}
+		}
+		*n = koliko;
+		return novo;
+	}
+
+};

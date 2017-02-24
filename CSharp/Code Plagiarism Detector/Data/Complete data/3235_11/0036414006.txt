@@ -1,0 +1,18 @@
+#include<stdio.h>
+  void main() {
+    int i,predznak;
+    float ln2=0,n;
+    scanf("%f",&n);
+    if ((n>=1) && (n<=100) && (n==(int)n))
+    {
+        for(i=1; i<=n; i++){
+	    if(i%2==0) predznak=-1;        
+	    else predznak=1;
+		ln2=ln2 + predznak * (float) 1/i ;
+                           }
+      printf("%.12f",ln2);
+    }
+    else {
+    printf("n nije valjan");            
+	 }
+	      }

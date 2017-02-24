@@ -1,0 +1,15 @@
+float prosjek(FILE *f);
+
+float prosjek(FILE *f){
+float totalProd = 0;
+float temp;
+float cnt = 0;
+char tt[31];
+while( fscanf(f,"%s%s%f", tt,tt,&temp) == 3 )
+{
+totalProd += temp;
+cnt+= 1;
+}
+fclose(f);
+return totalProd / cnt;
+}

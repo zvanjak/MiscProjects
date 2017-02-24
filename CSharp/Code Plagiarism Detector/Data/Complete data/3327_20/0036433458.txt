@@ -1,0 +1,28 @@
+int *Find3Max(int *p, int n){
+	int *maks,mini=0, indeks=0, i,j=0; 
+	int brojac=0;
+	while(p[j]<=9 && p[j]>=0){
+		j++;
+		brojac++;
+	}
+	if (brojac<3) return NULL;
+	maks = (int *) (malloc (3));
+
+	for(i=0; i<3; i++){
+		*(maks +i)=0;
+		indeks=0;
+		for (j=0; j<brojac; j++){
+			if (p[j]>maks[i]) {
+				maks[i]=p[j];
+				indeks=j;
+			}
+			if (p[j]<mini) mini=p[i];
+		
+		}
+		p[indeks]=mini-1; 
+	}
+
+return maks;
+}
+
+

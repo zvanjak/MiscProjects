@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main() {
+	int a;
+	
+	scanf("%o", &a);
+	
+	if (a > 0 && a < 512)
+	
+
+	printf("%d\n",a);
+	
+	
+		return 0;
+}

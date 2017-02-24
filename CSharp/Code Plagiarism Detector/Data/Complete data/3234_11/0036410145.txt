@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <math.h>
+main()
+{
+int i, n;
+float a;
+a=1;
+scanf("%d", &n);
+if(n<1 || n>100)
+printf("\n n nije valjan");
+else{
+for (i=2; i<=n; i++)
+a=a+1/(i*i);
+a=sqrt(a*6);
+printf("\n %f", a);
+}
+}

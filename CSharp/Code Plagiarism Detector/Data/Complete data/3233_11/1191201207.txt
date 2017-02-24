@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int n;
+double x;
+
+int main()
+{
+
+  scanf("%d",&n);
+  if(n>=1&&n<=200)
+            {     for(n;n>0;--n)
+                  x+=(1./(n*(n+1)));
+                  printf("%12e",x); 
+                  }
+         else
+             printf("n nije valjan");
+
+  return 0;
+}

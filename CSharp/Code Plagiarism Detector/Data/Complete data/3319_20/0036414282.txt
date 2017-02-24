@@ -1,0 +1,21 @@
+void dodaj(file *f){
+	struct natjecatelj pom;
+	int max,br;
+	
+	
+	max = 0;
+	br = 0;
+while ( fread(&pom,sizeof(pom),1,f) == 1) {
+	if (pom.bodovi > max) br = pom.redni_br;
+}
+
+fseek(f,(br-1)*sizeof(pom),SEEK_SET);
+fread(&pom,sizeof(pom),1,f);
+pom.bodovi += 10;
+fseek(f,-sizeof(pom),SEEK_CUR);
+fwrite(&pom,sizeof(pom),1,f);
+
+}
+
+
+		

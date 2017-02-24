@@ -1,0 +1,16 @@
+Ekipa StvoriISortiraj(char *naziv)
+{
+	int i, j;
+
+	Ekipa novi(naziv);
+
+	novi.Napuni();
+
+	for(i=0; i<11-1; ++i)
+		for(j=0; j<11-i-1; ++j)
+			if(novi[j+1].VratiBroj()<novi[j].VratiBroj())
+				novi.Zamijeni(j+1, j);
+
+	return Ekipa(novi);
+	// problem je sto se ovdje zove destruktor koji obrise naziv;
+}

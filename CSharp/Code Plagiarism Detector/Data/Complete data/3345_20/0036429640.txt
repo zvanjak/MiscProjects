@@ -1,0 +1,6 @@
+double sumareda (int N) {
+    double v=0;
+    kontrola();
+    if (N==1) v=1;
+        else v=sumareda(N-1) + 1.0/(N*N*N*N);
+    return v;}

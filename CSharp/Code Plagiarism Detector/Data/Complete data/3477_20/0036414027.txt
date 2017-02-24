@@ -1,0 +1,59 @@
+class Recenica
+{
+	int size;
+	int num;
+	char *text;
+public:
+	Recenica();
+	void UcitajZnak(char znak);
+	int PrebrojiRijeci();
+	int PrebrojiZareze();
+};
+
+Recenica::Recenica()
+{
+	num=0;
+	size=1;
+	text=(char*)malloc(sizeof(char)*size);
+}
+
+void Recenica::UcitajZnak(char znak)
+{
+	if(num+1>=size)
+	{
+		size<<=1;
+		text=(char*)realloc(text, sizeof(char)*size);
+	}
+	
+	text[num]=znak;
+	num++;
+}
+
+int Recenica::PrebrojiRijeci()
+{
+	int count=0;
+	int i;
+
+	for(i=0;i<num-1;i++)
+	{
+		if(isalnum(text[i]) && !isalnum(text[i+1]))
+			++count;
+	}
+	
+	if(num>0)
+	if(isalnum(text[num-1])) ++count;
+
+	return count;
+}
+
+int Recenica::PrebrojiZareze()
+{
+	int count=0;
+	int i;
+
+	for(i=0;i<num;i++)
+	{
+		if(text[i]==',') count++;
+	}
+	return count;
+}

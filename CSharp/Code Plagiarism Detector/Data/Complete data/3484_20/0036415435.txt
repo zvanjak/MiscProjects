@@ -1,0 +1,99 @@
+class CjelobrojniNiz{
+private:
+	int N;
+	int *polje;
+public:
+	int VecinaJednaka;
+	CjelobrojniNiz(int *niz, int n);
+	int Usporedi(CjelobrojniNiz niz);
+	int *VratiPresjek(CjelobrojniNiz niz , int *n);
+	CjelobrojniNiz(const CjelobrojniNiz &copy);
+	~CjelobrojniNiz();
+};
+
+CjelobrojniNiz::CjelobrojniNiz(int *niz, int n){
+	int i,max=0,jednakih=0,ulaz;
+	polje=new int[n];
+	N=n;
+	ulaz=niz[0];
+	for(i=0;i<n;i++){
+		if(ulaz==niz[i]){
+			jednakih++;
+		}
+		else{
+			if(jednakih>max){
+				max=jednakih;
+			}
+			jednakih=0;
+			ulaz=niz[i];
+		}
+		polje[i]=niz[i];
+	}
+	if(max>(N/2))
+		VecinaJednaka=1;
+	else
+		VecinaJednaka=0;
+
+}
+
+CjelobrojniNiz::~CjelobrojniNiz(){
+	delete []polje;
+}
+
+int CjelobrojniNiz::Usporedi(CjelobrojniNiz niz){
+	int i;
+
+	if(N != niz.N)
+		return 0;
+	for(i=0;i<N;i++){
+		if(polje[i]  != niz.polje[i])
+			return 0;
+	}
+	return 1;
+}
+
+int *CjelobrojniNiz::VratiPresjek(CjelobrojniNiz niz, int *n){
+	int *izlaz;
+	int i,j;
+	*n=0;
+	izlaz=NULL;
+	i=j=0;
+	while(i<N && j<niz.N){
+		if(polje[i]==niz.polje[j]){
+			if(izlaz==NULL)
+				izlaz=(int *)malloc(sizeof(int));
+			else
+				izlaz=(int *)realloc(izlaz,(sizeof(int))*(*n+1));
+			izlaz[*n]=polje[i];
+			while(polje[i]==izlaz[*n]){
+				i++;
+				if(i==N)
+					break;
+			}
+			while(niz.polje[j]==izlaz[*n]){
+				j++;
+				if(j==niz.N)
+					break;
+			}
+			(*n)++;
+		}
+		while(polje[i] > niz.polje[j]){
+			j++;
+			if(j==niz.N)
+				break;
+		}
+		while(niz.polje[j] > polje[i]){
+			i++;
+			if(i==N)
+				break;
+		}
+	}
+	return izlaz;
+}
+CjelobrojniNiz::CjelobrojniNiz(const CjelobrojniNiz &copy) {
+	int i;
+	N = copy.N;
+        polje = (int*) malloc(sizeof(int)*N);
+	for (i = 0; i < N; i++) polje[i] = copy.polje[i];
+	VecinaJednaka = copy.VecinaJednaka;
+}

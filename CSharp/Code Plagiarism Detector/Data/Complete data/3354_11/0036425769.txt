@@ -1,0 +1,46 @@
+#include <stdio.h>
+
+int main() {
+	char a,b,c,ai,bi,ci;
+
+	scanf("%c %c %c",&a,&b,&c);
+	if((a>='a')&&(a<='z') || (a>='A')&&(a<='Z'))
+		ai=0;
+	else 
+		ai=1;
+	if((b>='a')&&(b<='z') || (b>='A')&&(b<='Z'))
+		bi=0;
+	else 
+		bi=1;
+	if((c>='a')&&(c<='z') || (c>='A')&&(c<='Z'))
+		ci=0;
+	else 
+		ci=1;
+	
+	if((ai*bi*ci == 1) || ((ai+bi+ci)== 0))
+		printf("Nema uljeza");
+	else {
+		if(ai==1) {
+			if(bi==1)
+				printf("%c",c);
+			else {
+				if(ci==1)
+					printf("%c",b);
+				else
+					printf("%c",a);
+			}
+		}
+		else {
+			if(bi==0)
+				printf("%c",c);
+			else {
+				if(ci==0)
+					printf("%c",b);
+				else
+					printf("%c",a);
+			}
+		}
+	 }
+	return 0;
+
+}

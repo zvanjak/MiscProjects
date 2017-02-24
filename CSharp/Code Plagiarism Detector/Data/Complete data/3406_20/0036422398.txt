@@ -1,0 +1,23 @@
+char *SamoSuglasnici(char *ulazni_niz){
+     char *izlazni;
+     int i,j=0,n;
+     char pom;
+     
+     if((ulazni_niz==NULL)||(ulazni_niz[0]=='\0'))
+     return NULL;
+     
+     n=strlen(ulazni_niz);
+     izlazni=(char *) malloc (sizeof(char));
+     for(i=0;i<n;i++){
+                      if(isalpha(ulazni_niz[i])){
+                                                 pom=tolower(ulazni_niz[i]);
+                                                 if (pom=='a'||pom=='e'||pom=='i'||pom=='o'||pom=='u')
+                                                 continue;
+                                                 izlazni=(char *) realloc (izlazni, (j+1)*sizeof(char));
+                                                 izlazni[j]=ulazni_niz[i];
+                                                 j++;
+                                                 }
+                      }
+     izlazni[j]='\0';
+     return izlazni;
+     }

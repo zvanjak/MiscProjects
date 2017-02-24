@@ -1,0 +1,11 @@
+#include<stdio.h>
+int main(){
+int radni_sati,minimalno,satnica;
+float ukupno;
+scanf("%d %d %d",&radni_sati, &minimalno, &satnica);
+if (radni_sati<minimalno) satnica-=satnica*0.1;
+else if (radni_sati>minimalno) satnica+=satnica*0.15;
+ukupno=satnica*radni_sati;
+ukupno*= ukupno>6000? 0.7:0.8;
+printf("%.2f",ukupno);
+return 0;}

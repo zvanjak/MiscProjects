@@ -1,0 +1,35 @@
+int izbaci(char *ulazni,char *podniz)
+{
+	char temp[100];
+	int br=0;
+	int i,j,c;
+
+	sprintf(temp,ulazni);
+
+
+
+	for(i=0;podniz[i]!='\0';i++)
+		for(j=0;temp[j]!='\0';j++)
+		{
+			if(temp[j] == podniz[i])
+			{
+				br++;
+				
+				for(c=j;temp[c]!='\0';c++)
+				{
+					temp[c]=temp[c+1];
+
+					if(temp[c] == '\0')
+					{
+						j--;
+						break;
+					}
+				}
+			}
+		}
+
+		ulazni=temp;
+		
+
+	return br;
+}

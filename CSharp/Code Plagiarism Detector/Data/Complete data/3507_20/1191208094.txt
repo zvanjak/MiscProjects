@@ -1,0 +1,35 @@
+int Sortirano(cvor *glava){
+    struct obilazak{
+           int Max(cvor *glava){
+               int tmp;
+               int mx=glava->id;
+               if(glava->lijevo){
+                   if ((tmp=Max(glava->lijevo))>mx) mx=tmp;
+               }
+               if(glava->desno){
+                   if ((tmp=Max(glava->desno))>mx) mx=tmp;
+               }
+               return mx;
+           }
+           int Min(cvor *glava){
+               int tmp;
+               int mn=glava->id;
+               if(glava->lijevo){
+                   if ((tmp=Min(glava->lijevo))<mn) mn=tmp;
+               }
+               if(glava->desno){
+                   if ((tmp=Min(glava->desno))<mn) mn=tmp;
+               }
+               return mn;
+           }
+    } provjera;
+    if(!glava) return 1;
+    if (glava->lijevo){
+       if(provjera.Max(glava->lijevo)>=glava->id) return 0;
+    }
+    if (glava->desno){
+       if(provjera.Min(glava->desno)<glava->id) return 0;
+    }
+    if(!Sortirano(glava->lijevo)||!Sortirano(glava->desno)) return 0;
+    return 1;
+}

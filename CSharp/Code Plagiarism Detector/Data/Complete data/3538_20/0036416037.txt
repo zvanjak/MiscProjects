@@ -1,0 +1,31 @@
+Red *VratiBrojeve (Red *red) {
+	Red *pom = new Red;
+	int *pomInv = (int *) malloc (sizeof (int)), *pomRed;
+	int i = 0, vel, j = 0, lev = 0, noviElem = 0, k = 0, pot, ten = 1;
+
+	while (red->SkiniIzReda (&pomInv[i])) {
+		i++;
+		pomInv = (int *) realloc (pomInv, sizeof (int) * (i + 1));
+	}
+	pomRed = (int *) malloc (sizeof (int) * (i));
+	for (--i; i >= 0; i--) {
+		pomRed [i] = pomInv [j++];
+	}
+	vel = j;
+	j = i = 0;
+	for (; i < vel; i++) {
+		if (i == 0 || i == lev + 1 + j) {
+			k = lev = pomRed [i];
+			j = i;
+			continue;
+		}
+		for (pot = --k; pot; pot--) ten *= 10;
+		noviElem += ten * pomRed [i];
+		ten = 1;
+		if (i == lev + j){
+			pom->DodajURed (noviElem);
+			noviElem = 0;
+		}
+	}
+	return pom;
+}

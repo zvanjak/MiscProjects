@@ -1,0 +1,43 @@
+# include <stdio.h>
+
+int main()
+{
+int x, var_max;
+int brojac_neg;
+
+
+	var_max = 0;
+	brojac_neg = 0;
+	do {
+		
+		scanf ("%d",&x);
+
+		if ((x%2)==0) {
+			continue;
+		}
+		else {
+			if(x>var_max && x >2){
+				var_max = x;
+				brojac_neg = brojac_neg + 1;
+			}
+		}
+	}
+		while (x > 2);
+		if (brojac_neg !=0)
+		printf ("%d",var_max);
+		else printf ("0");
+		
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+	

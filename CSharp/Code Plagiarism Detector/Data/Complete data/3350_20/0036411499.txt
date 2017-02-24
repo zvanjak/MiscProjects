@@ -1,0 +1,18 @@
+int najbolji(FILE *f){
+	struct natjecatelj n;
+	int red_br=0, bod, k=1;
+	while(fread(&n, sizeof(n), 1, f)==1){
+		if(k){
+			bod=n.bodovi;
+			red_br=1;
+			k=0;
+		}
+		if(n.bodovi!=0){
+			if(n.bodovi>bod){
+				bod=n.bodovi;
+				red_br=n.redni_br;
+			}
+		}
+	}
+	return red_br;
+}

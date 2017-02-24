@@ -1,0 +1,14 @@
+int* napraviPolje(int *A, int Na, int *B, int Nb, int *Nc){
+	int i, najmanji = *B, *C, n = 0;
+	C = NULL;
+	for (i = 1; i < Nb; i++)
+		if (*(B + i) < najmanji) najmanji = *(B+i);
+	for (i = 0; i < Na; i++)
+		if (*(A + i) < najmanji){
+			C = (int *) realloc(C, (n + 1)*sizeof(int));
+			*(C + n) = *(A + i);
+			n++;
+		}
+	*Nc = n;
+	return C;
+}

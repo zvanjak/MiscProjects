@@ -1,0 +1,8 @@
+double sumareda (int N)
+{
+	kontrola();
+
+	if (N==1)
+		return 1.0;
+	else return ((1.0/(pow(N,4))) + sumareda(N-1));
+}

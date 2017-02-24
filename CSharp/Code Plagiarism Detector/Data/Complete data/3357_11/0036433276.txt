@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<math.h>
+
+int main (){
+    
+   int a,b,x,y,c=1000,s=0,k,l,m=0;
+   scanf("%d %d", &a,&b);
+   k=a;
+   l=b;
+   do{
+             x=a%10;
+             y=(b/c)%10;
+             if(x==y) s=s+x;
+             else m=1;
+             a=a/10;
+             c=c/10;
+             
+             }while(c!=0);
+             
+   if(m==1) printf("%d", k-l);
+   else printf("%d", s);
+             
+   
+     return 0;
+}                        

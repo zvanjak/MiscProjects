@@ -1,0 +1,19 @@
+int igra(Igrac& igrac,Automat& aut,int max, int *broj)
+{
+	int poc=igrac.TrenutnoStanje();
+	(*broj)=0;
+	int dobitak=0,krajnje=0;
+	do
+	{
+		aut.UplatiIznos(1);
+		igrac.SkiniSRacuna(1);
+		dobitak=aut.Zavrti();
+			if(dobitak>0)
+				igrac.UplatiNaRacun(dobitak);
+		(*broj)++;
+	}while(igrac.TrenutnoStanje()>0 && *broj<max);
+
+	krajnje=igrac.TrenutnoStanje();
+	aut.PodigniPreostalo();
+	return krajnje-poc;
+}

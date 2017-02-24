@@ -1,0 +1,20 @@
+int izbaci (zapis **glava) {
+  zapis *moja_glava = *glava, *temp;
+  int N = 0;
+  
+  while (moja_glava != NULL) {
+    if (moja_glava -> pros < 2.0) {
+      temp = moja_glava;
+      moja_glava = moja_glava -> sljed;
+      free ((void *) temp);
+      N++;
+      
+      if (N == 1)
+        *glava = moja_glava;
+    }
+    else
+      moja_glava = moja_glava -> sljed;
+  }
+  
+  return N;
+}

@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+char *izbacipresjek(char *niz1, char *niz2){
+char *niz3[1000];
+int i=0,j=0,k=0,br=0;
+
+while (niz1[i]!=\0){
+      while(niz2[j]!=\0){
+           if(niz1[i]==niz2[j]) k=1;
+           j++;
+           }
+      if(!k){
+           niz3[br]=niz1[i];
+           br++;
+        }
+      i++;
+      j=0;
+      k=0;
+      }
+return niz3;
+}
+            
+     

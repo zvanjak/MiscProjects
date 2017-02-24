@@ -1,0 +1,25 @@
+#include <stdio.h>
+int main() {
+	int a, c, d, e, f, b;
+	printf ("unesite pozitivni broj koji se sastoji od najvise tri znamenke:  ");
+	scanf("%d", &a);
+	c = a / 10;
+	d = a % 10;
+	e = c / 10;
+	f = c % 10;
+	b = e * 8 * 8 + f * 8 + d;
+	if (a<0){
+		printf ("To nije pozitivni broj!\n");
+		}else{
+			if(a/1000 > 0){
+			printf ("Ovaj broj ima vise od tri znamenke.\n");
+			}else{
+				if (d>7 || e>7 || f>7){
+					printf ("Ovo nije broj u oktalnom brojevnom sustavu\n");
+				}else{
+					printf(" Dekatski zapis broja %d je %d.\n", a, b);
+				}
+			}
+		}
+		return 0;
+}

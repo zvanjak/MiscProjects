@@ -1,0 +1,22 @@
+int JeLiUnutra(Kruznica &kruz, Kvadrat &kvad)
+{
+
+	float minx,miny;
+	
+	if((kruz.GetCenterX()-kvad.GetX())>(kvad.GetX()+kvad.GetDuljinaStranice()-kruz.GetCenterX()))
+		minx=kvad.GetX()+kvad.GetDuljinaStranice()-kruz.GetCenterX();
+	else
+		minx=kruz.GetCenterX()-kvad.GetX();
+
+	if((kruz.GetCenterY()-(kvad.GetY()-kvad.GetDuljinaStranice())>(kvad.GetY()-kruz.GetCenterY())))
+		miny=kvad.GetY()+kvad.GetDuljinaStranice()-kruz.GetCenterY();
+	else
+		miny=kruz.GetCenterY()-(kvad.GetY()-kvad.GetDuljinaStranice());
+
+	if((kvad.GetX()<kruz.GetCenterX())&& (kruz.GetCenterX()<(kvad.GetX()+kvad.GetDuljinaStranice())) && 
+		(kvad.GetY()-kvad.GetDuljinaStranice())<kruz.GetCenterY() && (kruz.GetCenterY()<kvad.GetY()) && (kruz.GetRadius()<=minx) && (kruz.GetRadius()<=miny)) 
+		
+return 1;
+	else
+		return 0;
+}

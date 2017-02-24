@@ -1,0 +1,23 @@
+#include<stdio.h>
+int main()
+{
+	int i,n,j;
+	double S=2,k;
+	scanf("%d",&n);
+	if(n>0&&n<21)
+	{
+		for(i=2;;i++)
+		{
+			k=1;
+			if(S>=2.7182818281828)
+				break;
+			for(j=2;j<=i;j++)
+				k=k*j;
+			S=S+1./k;
+			printf("\n%.12f",S);
+		}
+	}
+	else
+		printf("n nije valjan");
+	return(0);
+}

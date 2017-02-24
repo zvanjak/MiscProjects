@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<math.h>
+int main() {
+	int n, i;
+	double pi, br, el;
+	scanf("%d",&n);
+	br=0;
+	if ((n<1) || (n>100)) {
+		printf("n nije valjan");
+	} else {
+		for (i=1;i<=n;i++) {
+			if (i%2) {
+				el=1./pow(i,2);
+			} else {
+				el=-1./pow(i,2);
+			}
+			br=br+el;
+		}
+		pi=pow(12*br,1./2);
+		printf("%.12lf",pi);
+	}
+	return 0;
+}

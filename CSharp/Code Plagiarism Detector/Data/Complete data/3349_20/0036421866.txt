@@ -1,0 +1,13 @@
+double sumareda (double x, int n)
+{
+	double s = 0;
+
+	kontrola ();
+
+	if (n == 0) 	return 0;
+	else if (n == 1)  return x - 1;
+
+	s += ((n % 2) ? 1 : -1) * pow (x - 1, n) / n;
+
+	return s + sumareda (x, n - 1);
+}

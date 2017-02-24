@@ -1,0 +1,8 @@
+int rBrojPojavljivanja(int *polje, int n, int broj){
+    int i, brPoj = 0;
+    kontrola();
+    for(i = 0; i < n; i++){
+        if (polje[i] == broj) brPoj++;
+    }
+    return brPoj;
+}

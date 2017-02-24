@@ -1,0 +1,13 @@
+int Najgore(cvor *glava) {
+	int k = 0;
+
+	if(glava == NULL) return k;
+	if((!glava->lijevo && glava->desno) || (glava->lijevo && (!glava->desno))){
+		if (glava->lijevo != NULL)
+			k = Najgore(glava->lijevo);
+		if (glava->desno != NULL)
+			k = Najgore(glava->desno);
+	} else if (glava->lijevo && glava->desno) return k;
+	else if (!(glava->lijevo || glava->desno)) return k+1;
+	return k;
+}

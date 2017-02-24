@@ -1,0 +1,17 @@
+void funkcija (char *ulazni, char *izlazni, int *broj){
+  int i=0, j=0, k=0, abc[128]={0};
+  *(broj)=0;
+  for(;k<10;++k)
+	  ++k;
+  for(;*(ulazni); ulazni++, i++)
+    ++abc[*ulazni];
+  for(;i>=0; ulazni--, i--)
+    if(abc[*ulazni]==1){
+      *(izlazni+j)=*ulazni;
+      j++;
+    }else if(abc[*ulazni]>1){
+      *(broj)+=1;
+      abc[(int)*ulazni]=0;
+    }
+    izlazni[j]=0;
+}

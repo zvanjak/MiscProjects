@@ -1,0 +1,116 @@
+struct tip {
+	char ime[20+1];
+	char prezime[30+1];
+	char jmbag[10+1];
+	int ocjena;
+};
+
+struct at {
+	struct tip element;
+	struct at *sljed;
+};
+typedef struct at atom;
+
+
+
+/* broj elemenata */
+int brojElementa(atom *glava) {
+	int a = 0;
+	while(glava) {
+		a++;
+		glava = glava->sljed;
+	}
+	return a;
+}
+
+
+/* dodaj element */
+int dodaj(atom **glavap, struct tip element) {
+
+	atom *novi = (atom *) malloc( sizeof(atom) );
+	if (novi == NULL) return 0;
+
+	if (*glavap == NULL) {
+		*glavap = novi;
+		novi->element = element;
+		novi->sljed = NULL;
+	} 	
+	else {
+		novi->sljed = *glavap;
+		*glavap = novi;
+		novi->element = element;	
+	}
+
+	return 1;
+}
+
+
+/* min ocjena */
+int minOcjena(atom *glava) {
+
+	int min;
+	if (glava == NULL) return -1;
+    
+	min = glava->element.ocjena;
+
+	while (glava) {
+		if (glava->element.ocjena < min)
+			min = glava->element.ocjena;
+		glava = glava->sljed;	
+	}
+	return min;
+}
+
+/* prosjecna ocjena */
+float prosjOcjena(atom *glava) {
+	float suma = 0;
+	int count = 0;
+
+	if (glava == NULL) return -1;
+
+	while(glava) {
+		suma += glava->element.ocjena;
+		count++;
+		glava = glava->sljed;
+	}
+	return (suma/count);
+}
+
+
+int izbaciImeSadrzi(atom **glavap, char *imePodniz) {
+	if (*glavap == NULL) return 0;
+
+	int count = 0;
+	atom *temp = *glavap;
+	atom *pom = NULL;
+
+	while (strstr(temp->element.ime, imePodniz) && temp) {
+		pom = temp;
+		*glavap = temp->sljed;
+		temp = temp->sljed;
+		free (pom);
+		count++;
+
+		if (temp == NULL) return count;
+	}
+
+	while((temp->sljed)->sljed) {
+		if ( strstr((temp->sljed)->element.ime, imePodniz) ) {
+			pom = temp->sljed;
+			temp->sljed = (temp->sljed)->sljed;
+			free (pom);
+			count++;
+		}
+		else {
+			temp = temp->sljed;
+		}
+	}
+
+	if ( strstr((temp->sljed)->element.ime, imePodniz) ) {
+		free (temp->sljed);
+		temp->sljed = NULL;
+			count++;
+	}
+
+	return count;
+}

@@ -1,0 +1,32 @@
+#include<stdio.h>
+int main()
+{
+	int x=0,rez=0,ost=0,a=0;
+	scanf("%d",&x);
+	if(((x>999)&&(x<10000))||((x<-999)&&(x>-10000))){
+		rez=x/1000;
+		ost=x%1000;
+		if(rez%2==0) printf("%d",x);
+		else if(ost==0) printf("%d",ost);
+		else if((ost>0)&&(ost<10)&&(ost%2!=0)) { ost=0; printf("%d", ost);}
+		else if((ost<0)&&(ost>-10)&&(ost%2!=0)) { ost=0; printf("%d", ost);}
+		else{
+			a=ost;
+			rez=ost/100;
+			ost=ost%100;
+			if(rez%2==0) printf("%d",a);
+			else if(ost==0) printf("%d",ost);
+			else if((ost>0)&&(ost<10)&&(ost%2!=0)) { ost=0; printf("%d", ost);}
+			else if((ost<0)&&(ost>-10)&&(ost%2!=0)) { ost=0; printf("%d", ost);}
+			else{
+				a=ost;
+				rez=ost/10;
+				ost=ost%10;
+				if(rez%2==0) printf("%d",a);
+				else if(ost==0) printf("%d",ost);
+				else if(ost%2==0) printf("%d",ost);
+				else { a=0;
+				printf("%d",a);}}}}
+return 0;
+}	
+

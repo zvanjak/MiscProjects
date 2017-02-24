@@ -1,0 +1,18 @@
+#include <stdio.h>
+int main(){
+    int i,n;
+    float pi, naz;
+    scanf("%i", &n);
+    naz=1;
+    if ((n>0)&&(n<501)){
+       for (i=0;i<n;i++){
+           if (i%2) pi=pi-1./naz;
+           else pi=pi+1./naz;
+           naz+=2;
+           }
+       pi*=4;
+       printf("\n%13.12f", pi);  
+                       }
+    else printf("\nn nije valjan");
+return 0;
+}

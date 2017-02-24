@@ -1,0 +1,18 @@
+#include <conio.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main ()
+{float p;
+    double ln2;   
+    int n,i;
+    scanf("%f", &p);
+    n=(int)p/1;
+    if (((n<1 || n>100))||(p>n)) printf ("n nije valjan");
+                                 else 
+                                 {
+                                      for (i=1; i<=n; i++) ln2 = ln2 + pow(-1,(i+1))/i;
+                                      printf ("%.12f",ln2);
+                                 }
+}

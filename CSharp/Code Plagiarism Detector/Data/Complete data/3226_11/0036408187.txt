@@ -1,0 +1,15 @@
+#include <stdio.h>
+int main () {
+    int n, a;
+    double s;
+    
+    scanf("%d", &n);
+    if (n<1 || n>1000) printf("n nije valjan");
+    else {
+         for (a=2, s=0; n>0; a++, n--) {
+             s+=(double)1/((a-1)*(a+1));
+             }
+             printf("%.12f", s);
+             }
+    return 0;
+ }

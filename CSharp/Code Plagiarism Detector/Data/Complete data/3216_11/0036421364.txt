@@ -1,0 +1,20 @@
+#include<stdio.h>
+
+int main()
+{
+	int br = 0, pr = 0, i = 0, uk = 0;
+
+	do
+	{
+		pr = 1;
+		scanf("%d", &br);
+		for(i = 2; i <= br / 2; i++)
+		{
+			if (!(br % i)) pr = 0;
+		}
+		if (pr) uk++;
+	}while (br > 2);
+	--uk;
+	printf("%d\n", uk);
+	return(0);
+}

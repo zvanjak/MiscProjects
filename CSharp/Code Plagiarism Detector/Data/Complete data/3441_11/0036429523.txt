@@ -1,0 +1,17 @@
+#include <stdio.h> 
+int main(){ 
+	int broj, a, br=0, suma=0; 
+	do{ 
+  		scanf("%d", &broj); 
+		a=broj; 
+		if(a<0) 
+			a*=-1; 
+		do{ 
+			suma+=a%10; 
+			a/=10; 
+			br++; 
+		}while(a!=0); 
+	}while(broj!=0); 
+	printf("%d %d", br-1, suma); 
+	return 0; 
+}

@@ -1,0 +1,16 @@
+#include <stdio.h>
+int main () {
+unsigned int x,a,b,c,d,e,s ;
+scanf("%d", &x);
+a=x/100;
+b=(x%100)/10;
+c=x%10;
+d=1; 
+e=7;
+s=a+b+c;
+if(a*a == 10*b+c) printf("%d%d%d",c,b,a);
+else if(x>=150 && x<=450) printf("%d", d); 
+else if(x>=451 && x<=750) printf("%d", e);
+else printf("%d", s);
+return 0;
+}

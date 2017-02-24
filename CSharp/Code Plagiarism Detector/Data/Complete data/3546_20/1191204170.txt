@@ -1,0 +1,15 @@
+Stog *PrepisiRedUStog(Red *red){
+            int clan,dj,br=0,r;
+            Stog *stog=new Stog;
+
+             r=red->SkiniIzReda(&clan);
+             if (!r) return stog;
+             stog=PrepisiRedUStog(red);
+
+             for (dj=2;dj<clan;dj++){
+                                           if  ( (clan%dj) == 0) br++;
+              }
+            if (br == 0) dj=stog->Stavi(clan);
+            red->DodajURed(clan);
+            return stog;
+}

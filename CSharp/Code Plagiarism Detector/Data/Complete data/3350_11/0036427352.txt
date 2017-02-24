@@ -1,0 +1,25 @@
+int najbolji(FILE *f)
+{
+	struct nat{   
+		int redni_br;
+		char prezime[20+1];
+		int bodovi;
+	};
+	struct nat n;
+	int red_br;
+	int bod=-1;
+	while(fread(&n ,sizeof(n),1,f)==1)
+	{
+		if(n.redni_br!=0)
+		{
+			if(n.bodovi>bod)
+			{
+				bod=n.bodovi;
+				red_br=n.redni_br;
+			}			
+			
+		}
+		
+	}
+	return red_br;
+}

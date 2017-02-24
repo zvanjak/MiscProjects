@@ -1,0 +1,30 @@
+char * Spoji(char *niz1, char *niz2)
+{
+int a=0,b=0,i,j=0,k=0,n=0;
+char *niz;
+
+for (i=0;niz1[i]!='\0';i++)a++;
+for (i=0;niz2[i]!='\0';i++)b++;
+niz = (char*) malloc ((a+b)*sizeof (char));
+if (niz==NULL) {return 0;}
+
+for (i=0;i<=a+b;i++) {
+    if (n==0 && niz1[j]!='\0')
+       {
+       niz[i]=niz1[j];
+       j++;
+       n=1;
+       if (niz2[k]!='\0') i++;
+       }
+       else n=1;
+
+    if (n==1 && niz2[k]!='\0')
+       {
+       niz[i]=niz2[k];
+       k++;
+       n=0;
+       }
+       else n=0;
+    }
+return niz;
+}

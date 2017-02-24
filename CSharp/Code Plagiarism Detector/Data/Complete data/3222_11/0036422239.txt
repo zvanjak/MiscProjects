@@ -1,0 +1,18 @@
+#include <stdio.h>
+int main () {
+	int n, i;
+	scanf("%d", &n);
+	i=0;
+	if (!(n%13)) {
+		printf("%d %d", n, i);
+	}
+	else {
+	do {
+		n+=n%10;
+		printf("%d ",n);
+		i++;
+	}while((n%13) && (i<40));
+		printf("%d",i);
+	}
+	 return 0;
+	}

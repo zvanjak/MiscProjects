@@ -1,0 +1,25 @@
+Stog *PrepisiRedUStog(Red *red)
+{
+	int pom;
+	Stog *tempStog;
+	if (red->SkiniIzReda(&pom))
+	{
+		int apom = (pom>0) ? pom : -pom;
+		int prost = (apom % 2 || apom==2) ? 1 : 0; 
+		
+		tempStog = PrepisiRedUStog(red); 
+		
+		for (int i=3;i<apom/2;i+=2) 
+			if (apom % i == 0) 
+			{
+				prost = 0;
+				break;
+			}
+		if (prost) 
+			tempStog->Stavi(pom);	
+	} 
+	else
+		tempStog = new Stog();
+
+	return tempStog;
+}

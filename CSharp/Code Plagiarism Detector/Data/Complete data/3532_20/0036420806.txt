@@ -1,0 +1,18 @@
+Stog *noviOdNeparnih(Stog *stog)
+{
+	int broj;
+	Stog *novi = new Stog();
+	Stog *pom  = new Stog();
+	while(stog->Skini(&broj))
+	{
+		pom->Stavi(broj);
+	}
+	while(pom->Skini(&broj))
+	{
+		stog->Stavi(broj);
+		if(broj % 2) novi->Stavi(broj);
+	}
+	delete pom;
+
+	return(novi);
+}

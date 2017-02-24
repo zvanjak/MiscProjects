@@ -1,0 +1,22 @@
+int main(){
+	int broj, sto, dec, jed, rez=0;
+	scanf("%d", &broj);
+	
+	if(broj>=100 && broj<=999){
+
+		sto=broj/100;
+		dec=(broj%100)/10;
+		jed=(broj%100)%10;
+
+		if((sto+dec+jed)%2==0){
+
+			rez=sto-dec-jed;
+
+		} else {
+			rez=sto*dec*jed;
+		}
+	}
+
+	printf("%d", rez);
+	return 0;
+}

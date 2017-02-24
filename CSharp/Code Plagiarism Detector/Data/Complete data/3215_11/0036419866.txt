@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int nn=0,np=0,c;
+
+int main(int argc, char *argv[])
+{
+	for (;;)
+	{
+		scanf("%i",&c);
+		if (c == 0) break;
+		if (c < 0) continue;
+		if (c%2 == 0) np++; else nn++;
+	}
+	printf("%i %i",np,nn);
+
+  	return 0;
+}

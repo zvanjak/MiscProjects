@@ -1,0 +1,25 @@
+#include<stdio.h>
+
+int main(){
+	int i,j,n,k;
+	double e=1;
+	scanf("%d", &n);
+	if(!((n>=1)&&(n<=30)))
+		/*printf("n nije valjan\n");*/
+                printf("n nije valjan");
+	else{
+		for(i=1; i<=n; i++){
+			k=1;
+			for(j=1; j<=i; j++){
+				k*=j;
+				
+			}
+			e+=(1./k);
+			
+		}
+		/*printf("%.12f\n", e);*/
+                printf("%.12f",e);
+		
+	}
+
+}

@@ -1,0 +1,22 @@
+#include <stdio.h>
+int main () {
+	int a,b,c,d,e,f,g,h,i ;
+	scanf ("%d",&a);
+	if (a<99 || a>999 || a<0){
+	}else{
+	b= a/8;
+	c= a%8;
+    d= b/8;
+	e= b%8;
+	f= d/8;
+	g= d%8;
+	if (f==0){
+		printf ("%d%d%d",g,e,c);
+	}else{
+        h=f/8;
+		i=f%8;
+		printf ("%d%d%d%d",i,g,e,c);
+	}
+	}
+	return 0 ;
+}

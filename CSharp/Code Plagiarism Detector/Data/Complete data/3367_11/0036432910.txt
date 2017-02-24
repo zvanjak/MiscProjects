@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main(void)
+{
+	char a, b;
+	int broj;
+	char znamenka[255];
+
+	znamenka['0'] = 0;
+	znamenka['1'] = 1;
+	znamenka['2'] = 2;
+	znamenka['3'] = 3;
+	znamenka['4'] = 4;
+	znamenka['5'] = 5;
+	znamenka['6'] = 6;
+	znamenka['7'] = 7;
+	znamenka['8'] = 8;
+	znamenka['9'] = 9;
+	znamenka['A'] = znamenka['a'] = 10;
+	znamenka['B'] = znamenka['b'] = 11;
+	znamenka['C'] = znamenka['c'] = 12;
+	znamenka['D'] = znamenka['d'] = 13;
+	znamenka['E'] = znamenka['e'] = 14;
+	znamenka['F'] = znamenka['f'] = 15;
+
+	scanf("%c %c", &a, &b);
+
+	broj = 16 * znamenka[ a ] + znamenka[ b ];
+
+	printf("%d", broj);
+
+	return 0;
+}

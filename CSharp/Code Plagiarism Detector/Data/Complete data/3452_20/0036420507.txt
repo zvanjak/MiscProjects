@@ -1,0 +1,40 @@
+class SortRazlPolje {
+    int *polje,capacity,n;
+    public:
+	  	SortRazlPolje() {
+        	polje=(int*)malloc(100*sizeof(int));	// na pocetku rezerviramo 100 mjesta
+        	//if (polje==NULL) printf ("Veliko sranje!\n"); else printf ("%Alokacija OK:p\n",polje);
+         	n=0;	// nula elemenata u polju
+        	capacity=100; 	// mozemo primiti 100
+        }
+	  	int Dodaj(int Broj) {
+	  	    for (int i=0;i<n;i++)
+	  	    	if (polje[i]==Broj) return 1;	// element je vec u polju
+	  		if (n==capacity) {
+         		int *pom=(int*)malloc(2*capacity*sizeof(int));	// rezerviramo dvostruko vise nego prije
+         		capacity*=2;
+           		if (pom==NULL) return 0;	// ako nema memorije, vracamo nulu
+         		for (int i=0;i<n;i++)	
+         			pom[i]=polje[i];
+     			free(polje);	// oslobadjamo memoriju starog polja, pocivala u miru
+     			polje=pom;		// preusmjeravamo pokazivac na novo polje
+           }    		
+           //printf ("Dodajem %d, n=%d, capacity=%d, polje= %p\n",Broj,n,capacity,polje);  
+           polje[n++]=Broj;
+           return 1;  
+	  	}    
+	  	int *VratiSortPolje(int &a) {
+	  	    a=n;
+	  	 	for (int i=0;i<n;i++)		// Bubble sort
+      			for (int j=0;j<n-1-i;j++)
+         			if (polje[j]>polje[j+1]) {
+                		int t=polje[j];
+            			polje[j]=polje[j+1];
+            			polje[j+1]=t;
+               		}
+            return polje;      
+	  	}    
+	  	~SortRazlPolje() {
+	  	 	free(polje);   
+	  	}    
+};    

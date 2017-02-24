@@ -1,0 +1,15 @@
+int izbaci(zapis **glava) {
+    zapis *p;
+    int brojac = 0;
+    while(*glava) {
+        if(*glava && (*glava)->pros < 2.0) {
+            p = *glava;
+            *glava = (*glava)->sljed;
+            free(p);
+            brojac++;
+        }
+        else
+            glava = &((*glava)->sljed);
+    }
+    return brojac;
+}

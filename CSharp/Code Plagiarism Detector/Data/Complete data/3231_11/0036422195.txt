@@ -1,0 +1,25 @@
+#include <stdio.h>
+int main()
+{
+	int n;
+	double res = 0;
+	int i;
+	double pow2 = 1;
+
+	scanf("%d", &n);
+	if ( (n<1) || (n>30) )
+	{
+		printf("n nije valjan");
+		return 0;
+	}
+
+	for (i = 0; i < n; ++i)
+	{
+		res += (1/pow2)*( (i%2==0) ? 1 : -1 );
+		pow2 *= 2;
+	}
+
+	printf("%.12f", res);
+
+	return 0;
+}

@@ -1,0 +1,36 @@
+int izbacinaj (zapis **glava){
+int b=0,n=1,m=1;
+float max=0, min=0; 
+zapis *p,*p_pom;
+p_pom=*glava;
+for (p = *glava; p != NULL; p = p->sljed) {
+	if (p==*glava) min=max=p->pros;
+	if (min>p->pros) min=p->pros;
+	if (max<p->pros) max=p->pros;
+  }
+
+while(*glava){
+	if (min==max) n=0;
+       if ((*glava)&&((*glava)->pros==min&&n)) {
+            n=0; 
+			p = *glava;
+			b+=1;
+            *glava = (*glava)->sljed;
+            free (p);
+         
+          }
+	   if ((*glava)&&((*glava)->pros==max&&m)) {
+            m=0; 
+			p = *glava;
+			b+=1;
+            *glava = (*glava)->sljed;
+            free (p);
+          
+          } 
+       
+          else{ 
+              glava = &((*glava)->sljed);
+			  
+		  }}
+
+	  return b;};

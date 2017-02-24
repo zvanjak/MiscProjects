@@ -1,0 +1,39 @@
+#include<stdlib.h>
+#include <stdio.h>
+#include <math.h>
+
+int	main(){
+	
+	int mr,ms,i,j,x,y;
+	double max;
+	int a[20][5];
+	
+	do{
+		scanf("%d %d",&mr ,&ms);
+	}while((mr<1 || mr>20)	|| (ms<1 ||	ms>5));
+	
+	
+    for(i=0;i<mr;i++){
+	for(j=0;j<ms;j++){
+	  scanf("%d",&a[i][j]);
+		}
+	}
+	max=fabs(a[0][0]);
+
+	
+    for(i=mr-1;i>=0;i--){
+	for(j=ms-1;j>=0;j--){
+    if (fabs(a[i][j])>=max){
+	max=fabs(a[i][j]);
+	x=i;
+	y=j;
+			}
+		}
+	}
+	printf("%d %d",x,y);
+	
+
+
+	
+	return 0;
+}

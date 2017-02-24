@@ -1,0 +1,17 @@
+#include<stdio.h>
+int main(){
+	int a,i,prost=0,t=3, x=1;
+	
+	do{
+		scanf("%d", &a);
+		for( i=2; i< a-1; i++){
+			if(a%i==0){t=0;break;}
+	else t=1;
+		}
+		if(t==1&& a > prost)
+           prost=a;
+	}while(a>2);
+
+	 printf("%d", prost);
+	return 0;
+}

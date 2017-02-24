@@ -1,0 +1,57 @@
+
+#include "stdio.h"
+
+int main()
+{
+	int m[20][5];
+	int t[5];
+    int mr, ms, jp, ip;
+	int i;
+	int j;
+	int z;
+	int l,h;
+	int r[5] = {0};
+	int c;
+
+
+
+
+
+	do {
+		scanf("%d %d", &mr, &ms);
+	} 
+	while ( (mr < 1) || (mr > 20) || (ms < 1) || (ms > 5) );
+
+	for (ip=0; ip<mr; ip++) {
+		for (jp=0; jp<ms; jp++) {
+			scanf("%d", &m[ip][jp]);
+
+		}
+	}
+	
+
+	do {
+		scanf("%d %d", &i, &j);
+			if ( (i > mr-1) || (j > mr-1) ) break;
+			for (z=0; z<ms; z++) {
+				t[z] = m[i][z];
+				m[i][z] = m[j][z];
+				m[j][z] = t[z];
+			}
+	} 
+	while (1);
+
+	for (l=0; l<mr; l++) {
+		for (h=0; h<ms; h++) {
+			r[l] += m[l][h];	
+		}
+	}
+	
+	for (c=0; c<mr-1; c++) {
+		printf("%d ",r[c]);
+	}
+
+	printf("%d",r[c]);
+
+    return 0;
+}

@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <math.h>
+
+int main () {
+ 
+ 
+ 
+ long int n,m; int x=0;    
+ scanf("%d",&n);
+ if (n<1) printf("n nije pozitivan"); else {    
+     
+    if (n>999999999) {m=(n/1000000000); printf("%d ",m);n=(n-(m*1000000000));x=1;}         
+    if ((n>99999999)||(x==1)) {m=(n/100000000); printf("%d ",m);n=(n-(m*100000000));x=1;}   
+    if ((n>9999999)||(x==1)) {m=(n/10000000); printf("%d ",m);n=(n-(m*10000000));x=1;}   
+    if ((n>999999)||(x==1)) {m=(n/1000000); printf("%d ",m);n=(n-(m*1000000));x=1;}   
+    if ((n>99999)||(x==1)) {m=(n/100000); printf("%d ",m);n=(n-(m*100000));x=1;}   
+    if ((n>9999)||(x==1)) {m=(n/10000); printf("%d ",m);n=(n-(m*10000));x=1;}   
+    if ((n>999)||(x==1)) {m=(n/1000); printf("%d ",m);n=(n-(m*1000));x=1;}   
+    if ((n>99)||(x==1)) {m=(n/100); printf("%d ",m);n=(n-(m*100));x=1;}      
+    if ((n>9)||(x==1)) {m=(n/10); printf("%d ",m);n=(n-(m*10));x=1;}      
+    if (n>=0) {printf("%d",n);} 
+       
+   }     
+    return 0;    
+}    

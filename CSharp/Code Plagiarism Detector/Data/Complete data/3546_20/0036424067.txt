@@ -1,0 +1,21 @@
+Stog *PrepisiRedUStog(Red *red){
+ 
+int x,n,m,br=0;
+ 
+Stog *stog=new Stog;
+ 
+ x=red->SkiniIzReda(&n);
+    if(!x) return stog;
+ 
+ stog=PrepisiRedUStog(red);
+ 
+    for(m=2;m<n;m++)
+ 
+      if((n%m)==0) br++;
+         if(!br) m=stog->Stavi(n);
+ 
+ red->DodajURed(n);
+ 
+return stog;
+ 
+}

@@ -1,0 +1,14 @@
+int veci_od(FILE *f, int granica)
+{
+	int rez = 0;
+	int prodano;
+	char naziv[31], autor[21];
+
+	while(1)
+	{
+		if(fscanf(f, "%s %s %d", naziv, autor, &prodano) != 3) break;
+		if(prodano >= granica) rez++;
+	}
+
+	return rez;
+}

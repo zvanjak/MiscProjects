@@ -1,0 +1,26 @@
+#include<stdio.h>
+int main()
+{
+int i, n;
+float fakt, eb;
+scanf("%d", &n);
+eb=0;
+fakt= 1.;
+i= 1;
+if((n<1) || (n>30))
+/*printf("broj je kriv");*/
+printf ("n nije valjan");
+
+else
+{
+while(i<=n)
+{
+fakt=fakt*i;
+eb=eb + 1./fakt;
+i= i + 1;
+}
+eb=eb + 1;
+printf("%.12f", eb);
+}
+return 0;
+}

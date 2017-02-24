@@ -1,0 +1,68 @@
+#include <stdio.h>
+int main() {
+	int mr=0, ms=0, i=0,j=0,k=0,l=0;
+	int sred_redak=0, p=0, r=0, koor1=0, m=0, n=0, x=0, y=0;
+	int simetrija=0, umn=1;
+	int polje[20][5];
+	int sim1[9][5];
+	int sim2[9][5];
+
+	do {
+		scanf("%d %d", &mr, &ms);
+		}
+	while ((mr<1 || mr>20) || (ms<1 || ms>5));
+
+	for(i=0; i<mr; i++) {
+		for(j=0; j<ms; j++) {
+			scanf("%d", &polje[i][j]);
+		}
+	}
+
+	if (mr%2==1) {
+
+		sred_redak = (mr/2);
+
+		for(k=(sred_redak - 1); k>=0; k--) {
+
+			koor1 = k - (sred_redak - 1);
+			if (koor1<0) koor1 = -(koor1);
+
+			for(l=0; l<ms; l++) {
+
+				sim1[koor1][l] = polje[k][l];
+			}	
+		}
+
+
+		for(m=(sred_redak + 1); m<mr; m++) {
+			for(n=0; n<ms; n++) {
+				sim2[m - (sred_redak+1)][n] = polje[m][n];
+			}
+		}
+
+for(p=0; p<=(sred_redak - 1); p++) {
+		for(r=0; r<ms; r++) {
+			if (sim1[p][r] == sim2[p][r]) simetrija +=1;
+		}
+	}
+
+
+if (simetrija == (sred_redak * ms)) {
+	printf("Jest");
+}
+else
+{
+	printf("Nije");
+}
+
+	}
+	else {
+		for(x=0; x<mr; x++) {
+			for(y=0; y<ms; y++) {
+				if ((x%2==0) && (y%2==0)) umn = umn * polje[x][y];
+			}
+		}
+		printf("%d", umn);
+	}
+	return 0;
+}

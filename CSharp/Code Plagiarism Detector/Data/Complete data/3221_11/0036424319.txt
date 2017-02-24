@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <math.h>
+int main () {
+	int A, d, B, p;
+	scanf ("%d", &A);
+	scanf ("%d", &d);
+	scanf ("%d", &B);
+	if (d > 0)
+	{ 
+	p = A;
+	while (A <= B){
+		A = A + d;
+		printf ("%d ", A);
+	}
+	p = (A - p)/d;
+	printf ("%d\n", p);
+	}
+	return 0;
+
+}

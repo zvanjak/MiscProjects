@@ -1,0 +1,16 @@
+#include <stdio.h>
+void main(){
+int n,br_p=0,br_n=0;
+do{
+// printf("Unesite broj");
+ scanf("%d",&n);
+ if(n>0){
+  if(n%2==0){
+   br_p++;
+  }else{
+   br_n++;
+  }
+ }
+}while(n!=0);
+printf("%d %d",br_p,br_n);
+}

@@ -1,0 +1,26 @@
+#include<stdio.h>
+main()
+{
+int a,i,prost,c,max=0;
+do{
+scanf("%d",&a);
+
+
+			prost=0;
+         if(a>2){
+			for(i=2;i<a;i++)
+				if(a%i==0)
+					prost++;
+				if(!prost)
+            {c=a;
+            	if(c>max)
+               {max=c;}
+                          }
+
+               }
+		}
+      while(a>2);
+      printf("%d",max);
+      return 0;
+	}
+

@@ -1,0 +1,15 @@
+#include <stdio.h>
+int main() {
+	int d,g,i,j,suma;
+	scanf("%d %d", &d, &g);
+	if((d>0) && (g>0) && (g>d))
+	{
+		for(i=d;i<=g;i++){
+			suma=0;
+			for(j=2;j<=i;j=j+2)
+                suma+=j;
+			printf("%d ", suma);
+		}
+	}else printf("D i G nisu valjani");
+		return 0;
+}

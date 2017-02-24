@@ -1,0 +1,27 @@
+#include<stdio.h>
+
+void main()   {
+       int a,b,i;
+       int brojac;
+       int suma;
+
+       scanf("%d",&a);
+       scanf("%d",&b);
+
+       if((a == 0) || (b == 0) || (b < a))  {
+              printf("D i G nisu valjani");
+       }
+       else  {
+           brojac = a;
+           while(brojac <= b)  {
+                  suma = 0;
+                  for (i = 0; i <= brojac; i++)  {
+                             if(( i % 2 ) == 0 )  {
+                                suma = suma + 1;
+                             }
+                  }
+                  printf("%d",suma);
+                  brojac++;
+           }
+      }
+}

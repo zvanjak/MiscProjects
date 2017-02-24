@@ -1,0 +1,9 @@
+double sumareda (int N) {
+	kontrola();
+	if (N==0){
+		return 0;
+	}
+	else {
+		return 1/(16*pow(N,2)-1)+sumareda(N-1);
+	}
+}

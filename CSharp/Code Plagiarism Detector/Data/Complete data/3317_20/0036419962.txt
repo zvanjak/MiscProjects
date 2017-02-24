@@ -1,0 +1,14 @@
+void brisi (FILE *f, int redni_br) {
+	struct natjecatelj {
+		int redni_br;
+		char prezime [20+1];
+		int bodovi;
+	} n;
+	fseek (f, 0L, SEEK_SET);
+	while (fread (&n, sizeof(n), 1, f) == 1) {
+		if (n.redni_br == redni_br) {
+			n.redni_br = 0;
+			break;
+		}
+	}
+}

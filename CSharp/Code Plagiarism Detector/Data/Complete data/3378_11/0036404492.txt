@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+void main(){
+
+	int odr, nom, bru;
+	float br_placa, ne_placa;
+
+	scanf("%d %d %d", &odr, &nom, &bru);
+
+	if( odr < nom ) br_placa = odr * bru * 0.9;
+	else if ( odr > nom) br_placa = odr * bru * 1.15;
+	else br_placa = odr * (float)bru;
+
+	if( br_placa > 6000) ne_placa = 0.7 * br_placa;
+	else ne_placa = 0.8 * br_placa;
+
+	printf("0.2f", ne_placa);
+
+}

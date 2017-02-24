@@ -1,0 +1,22 @@
+int* napraviPolje (int *A, int Na, int *B, int Nb, int *Nc)
+{
+	int i, j, MinB, k=0;
+	int *vracam;
+	vracam = (int *) malloc(Na*sizeof(int));
+
+	for (i=0; i<Na; i++)
+	{
+		MinB=B[0];
+		for (j=0; j<Nb; j++)
+		{
+			if (B[j]<MinB) MinB=B[j];
+		}
+
+		if (A[i]<MinB) vracam[k++]=A[i];
+		vracam=(int *) realloc(vracam, k*sizeof(int));
+	}
+
+	*Nc=k;
+
+	return (vracam);
+}

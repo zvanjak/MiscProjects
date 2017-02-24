@@ -1,0 +1,18 @@
+#include <stdio.h>
+int main(){
+	unsigned int br, pz, dz, tz, cz;
+	scanf("%d", &br);
+	pz = br / 1000;
+	br = br % 1000;
+	dz = br / 100;
+	br = br % 100;
+	tz = br / 10;
+	br = br % 10;
+	cz = br;
+		if (((10*pz+dz)*(10*tz+cz))%(10*dz+tz) == 0)
+			printf("%d\n",(pz+tz));
+		else
+			printf("%d\n",(tz*cz));
+	return 0;
+}
+

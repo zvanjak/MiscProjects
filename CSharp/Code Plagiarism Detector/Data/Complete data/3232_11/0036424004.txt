@@ -1,0 +1,13 @@
+#include <stdio.h>
+int main(){
+	int n,i,f=1;
+	double dva=0;
+		scanf("%d",&n);
+		if (n<1 || n>30) printf("n nije valjan");
+		else
+			{for(i=1;i<=n;i++){
+			dva+=(1./f);
+			f*=2;}
+			printf("%.12lf",dva);
+			}
+	return 0;}

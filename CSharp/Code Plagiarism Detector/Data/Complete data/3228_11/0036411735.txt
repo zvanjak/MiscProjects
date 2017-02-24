@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <math.h>
+int main () {
+int y=1;
+float n, rez;
+scanf("%f",&n);
+if(!(n==(int)(n) || (n<1 || n>100)){
+printf("n nije valjan");
+return 0;}
+for(y=1; y<=n; y++){
+rez = (1/(y*y));}
+rez=sgrt (rez*12);
+printf("%.12f",rez);

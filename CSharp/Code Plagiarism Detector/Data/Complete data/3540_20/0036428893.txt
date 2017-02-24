@@ -1,0 +1,29 @@
+int izbaci(zapis **glava) {
+           zapis *pom,*pom2;
+           int broj=0;
+           if (*glava!=0) {
+           while((*glava)->pros<2.0) {
+              pom=*glava;
+              (*glava)=(*glava)->sljed;
+              free(pom);
+              broj++;
+              if(*glava==NULL) break;
+              }
+              }
+           pom=*glava;
+           if (pom!=0) {
+           while(pom->sljed!=0) {
+               if(pom->sljed->pros<2.0)
+               {
+               pom2=pom->sljed;
+               pom->sljed=pom->sljed->sljed;
+               free(pom2);
+               broj++;
+               }
+               else{
+                    pom=pom->sljed;
+                    }
+           }
+           }
+           return broj;
+           }

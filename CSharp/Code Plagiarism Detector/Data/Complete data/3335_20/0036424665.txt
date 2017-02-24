@@ -1,0 +1,9 @@
+int niz(int i){
+int n;
+kontrola();
+if (i<= 1) {
+    n = 1; 
+  } else 
+    n= 2*(niz(i-1)) + 3*(niz(i-2));
+return n;
+}

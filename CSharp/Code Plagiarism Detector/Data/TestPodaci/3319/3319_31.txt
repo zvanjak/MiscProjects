@@ -1,0 +1,35 @@
+void dodaj (FILE *f){
+	struct natjecatelj n;
+	int max, pom;
+	max=0; pom=0;
+    
+    fseek (f, 0L, SEEK_SET);
+
+	if(fread(&n, sizeof (struct natjecatelj), 1, f)==1){
+		if (n.redni_br==0) printf("zapis prazan!");
+		else { max= n.bodovi;
+              pom= n.redni_br;
+		}
+	}
+
+
+    while(fread(&n, sizeof (struct natjecatelj), 1, f)==1){
+		if (n.redni_br==0) printf("zapis prazan!");
+		else {
+			if (max<n.bodovi){ max= n.bodovi;
+                                           pom= n.redni_br;
+				
+							 
+			}
+		}
+	}
+    fseek (f, (pom-1)*sizeof (struct natjecatelj), SEEK_SET);
+    
+    fread(&n, sizeof (struct natjecatelj),1,f);            
+    
+    n.bodovi+=10;
+    
+    fseek (f, (pom-1)*sizeof (struct natjecatelj), SEEK_SET);
+    fwrite (&n, sizeof (struct natjecatelj), 1, f);
+	return;
+}

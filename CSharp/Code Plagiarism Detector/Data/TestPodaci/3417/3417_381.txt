@@ -1,0 +1,26 @@
+#include <stdio.h>
+int main ()
+{
+	char slovo, rijec [40]={0}, i=0, j, broj;
+	do {
+		scanf("%c", &slovo);
+		if (slovo >= 'a' && slovo <= 'z') {
+			if (slovo!='a'&&slovo!='e'&&slovo!='i'&&slovo!='o'&&slovo!='u')
+				rijec[i++]= slovo-32;
+		}
+		if (slovo >= 'A' && slovo <= 'Z') {
+			if (slovo!='A'&&slovo!='E'&&slovo!='I'&&slovo!='O'&&slovo!='U')
+				rijec[i++]= slovo;
+		}
+	} while (slovo >= 'A' && slovo <= 'Z'|| slovo >= 'a' && slovo <= 'z');
+	if (i==0) printf (-1);
+	else {
+		broj=i;
+		for (j=broj-1;j>=0;j--){
+			rijec[i++]=rijec[j]+32;
+		}
+		for (j=0;j<2*broj;j++) 
+			printf ("%c", rijec[j]);
+	}	
+	return 0;
+}

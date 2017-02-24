@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int n, m, i;
+    double n_fakt = 1, m_fakt = 1, n_m_fakt = 1;
+    double fakt;
+    
+    scanf ("%d %d", &n, &m);
+    
+    if (m == 0 || m == n)
+    printf ("0");
+    
+    else
+    {
+        for (i = 1; i <= n; i++)
+        n_fakt = n_fakt * i;
+    
+        for (i = 1; i <= m; i++)
+        m_fakt = m_fakt * i;
+    
+        for (i = 1; i <= n-m; i++)
+        n_m_fakt = n_m_fakt * i;
+        
+        fakt = n_fakt / (m_fakt * n_m_fakt);
+        
+        printf ("%.0lf", fakt);       
+        
+    }
+    	
+    return 0;
+}

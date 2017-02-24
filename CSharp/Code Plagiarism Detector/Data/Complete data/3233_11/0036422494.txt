@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main()
+{
+	int n=0, i=0;
+	float rez=0.0f;
+
+	scanf ("%d", &n);
+
+	if (n<1 || n>200)
+	{
+		printf ("n nije valjan");
+	}
+	else
+	{
+		do
+		{
+			i += 1;
+			rez += (1.0f / (i * (i+1)));
+		} while (i<=n);
+	
+		printf ("%.12f", rez);
+	}
+
+	return 0;
+}

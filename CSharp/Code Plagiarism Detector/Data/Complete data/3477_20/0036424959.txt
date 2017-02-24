@@ -1,0 +1,40 @@
+class Recenica {
+private:
+	char *znakovi;
+	int br,bioznak,brzarez;
+	
+public:
+	Recenica(){
+		znakovi=(char *)malloc(0);
+		br=0;
+		bioznak=0;
+		brzarez=0;
+	}
+	~Recenica(){
+		free(znakovi);
+	}
+	void UcitajZnak(char c){
+		if ((znakovi[br-1]==' ' || znakovi[br-1]==',') && c==' ') return;
+		if (c==',') {
+			brzarez++;
+			if (znakovi[br-1]==',' ||znakovi[br-1]==' ') return;
+		}
+		if (c!=' ' && c!=',') bioznak=1;
+		br++;
+		znakovi=(char *)realloc(znakovi,br*sizeof(char));
+		znakovi[br-1]=c;
+		
+	}
+	int PrebrojiZareze(){
+		return brzarez;
+	}
+
+	int PrebrojiRijeci(){
+		int i,ret=0;
+		for (i=1;i<br-1;++i)
+			if ((znakovi[i]==' ' || znakovi[i]==',') && br>1) { i++;  ret++; }
+		
+		if (bioznak) return ret+1;
+		return ret;
+	}
+};

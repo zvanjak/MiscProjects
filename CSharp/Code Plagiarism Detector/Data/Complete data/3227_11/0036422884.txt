@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+	int i,n;
+	double PI,x,y,z,p;
+	scanf("%d",&n);
+	if (n<1 || n>500)
+	{
+		printf("n nije valjan\n");
+	}
+	else
+	{
+		for(i=1,x=0,y=0;i<=n;i=i+2)
+		{
+			x=1./((2*i)-1);
+			y=y+x;
+		}
+		for(i=2,z=0,p=0;i<=n;i=i+2)
+		{
+			z=-(1./((2*i)-1));
+			p=p+z;
+		}
+		PI=4.*(y+p);
+		printf("%.12lf\n",PI);
+	}
+	return 0;
+}

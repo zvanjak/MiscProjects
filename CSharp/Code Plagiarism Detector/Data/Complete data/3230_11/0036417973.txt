@@ -1,0 +1,23 @@
+#include <stdio.h>
+  
+float fakt(float x) {
+float k, f;
+for (f=1,k=1;k<=x;k++)
+f *= k ; 
+return f;
+}
+
+int main () {
+
+	float n=0,e=0,i=0; 
+
+scanf ("%f", &n);
+if (n >=1 && n<=30) {
+do {		if (n==1) {e=1; break;}
+		e+=1/fakt(i);
+		i++;
+} while (i+1<=n) ; 
+
+printf ("%.12f", e); }	else printf ("n nije valjan");
+return 0 ;
+}

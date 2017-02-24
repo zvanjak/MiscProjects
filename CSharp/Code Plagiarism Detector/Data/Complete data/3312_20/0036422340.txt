@@ -1,0 +1,10 @@
+int br_prodanih(FILE *f,char *autor){
+	char naziv[30+1];
+	char aut[20+1]="\0";
+	char m;
+	int z,b,n=0;
+	while (fscanf(f,"%30[^ ]%c%20[^ ]%d%d",naziv,&m,aut,&b,&z)==4) {
+		if (strstr(autor,aut)!=NULL) n=n+b;
+	}
+	return n;
+}

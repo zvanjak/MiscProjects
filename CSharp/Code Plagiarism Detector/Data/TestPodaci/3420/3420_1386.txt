@@ -1,0 +1,32 @@
+#include<stdio.h>
+int main() {
+	int mr, ms, matrica[20][5], i=0, j=0, gotovo=0, a, b, m[5], sum[20];
+	do{
+		scanf("%d %d", &mr, &ms);
+	}while(mr<1 || mr > 20 || ms<1 || ms > 5);
+	for(a=0; a<mr; a++){ 
+		for(b=0; b<ms; b++){
+			scanf("%d", &matrica[a][b]);
+		}
+	}
+	while(!gotovo){
+		scanf("%d %d", &i, &j);
+		if (i>=0 && i<=mr && j>=0 && j<=ms){
+			for (b=0; b<ms; b++){
+				m[b]=matrica[i][b];
+				matrica[i][b]=matrica[j][b];
+				matrica[j][b]=m[b];
+			}
+		}else{
+			gotovo = 1;
+		}
+	}
+	for(a=0; a<mr; a++){ 
+		sum[a]=0;
+		for(b=0; b<ms; b++){
+			sum[a]=sum[a]+matrica[a][b];
+		}
+		printf("%d ", sum[a]);
+	}
+	return 0;
+}

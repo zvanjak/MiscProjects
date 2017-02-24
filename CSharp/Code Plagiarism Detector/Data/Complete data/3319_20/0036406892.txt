@@ -1,0 +1,21 @@
+void dodaj(FILE *f){
+	
+	int bod=0, poz=0, n=0, temp=0;
+
+	do{
+		fseek(f, 23+n*25, SEEK_SET);
+		fscanf(f, "%d", &temp);
+
+		if(temp>bod){
+			bod=temp;
+			poz=n;
+		}
+
+		n++;
+	} while (f!= NULL);
+	
+	fseek(f, poz*25+23, SEEK_SET);
+	fprintf(f, "%d", bod+10);
+
+}
+

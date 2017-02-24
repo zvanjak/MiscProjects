@@ -1,0 +1,12 @@
+float *KreirajMatricu(int n, float *p, int m){
+	float *matrica;
+	int i,j;
+	matrica=(float*)malloc(sizeof(float)*m*n);
+	for(i=0;i<m;i++){
+		for(j=0;j<n;j++){
+			if(i==0) matrica[j]=1;
+			else matrica[i*n+j]=matrica[(i-1)*n+j]*p[j];
+		}
+	}
+	return matrica;
+}

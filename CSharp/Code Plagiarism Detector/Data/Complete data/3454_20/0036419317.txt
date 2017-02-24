@@ -1,0 +1,47 @@
+class RazlPolje
+	{
+	private:
+		int *_podatci;
+		int _TrenElem;
+		int _MaxElem;
+	public:
+		RazlPolje();
+		~RazlPolje();
+		int Dodaj(int broj);
+		int Izbaci(int broj);
+		int SumaPolja();
+	};
+
+	RazlPolje::RazlPolje(){
+		 _podatci=(int*)malloc(5*sizeof(int));
+		 _TrenElem=0;
+		 _MaxElem=5;
+	}
+	RazlPolje::~RazlPolje(){
+		free (_podatci);
+	}
+	int RazlPolje::Dodaj(int broj){
+		if (_TrenElem>_MaxElem)
+			_podatci=(int*)realloc(_podatci,(_MaxElem+5)*sizeof(int));
+		if (_podatci==NULL) return 0;
+			_MaxElem+=5;
+		for(int i=0; i<_TrenElem; i++) 
+			if (_podatci[i]==broj)return 1;
+		_podatci[i]=broj;
+		_TrenElem=i+1;
+		return 1;
+	}
+	int RazlPolje::Izbaci(int broj){
+		for (int i=0; i<_TrenElem; i++)
+			if (_podatci[i]==broj){
+				for (int j=i; j<_TrenElem; j++) _podatci[j]=_podatci[j+1];
+				_TrenElem--;
+				return 1;
+			}
+		return 0;
+	}
+	int RazlPolje::SumaPolja(){
+		int ret=0;
+		for (int i=0; i<_TrenElem;i++) ret+=_podatci[i];
+		return ret;
+	}

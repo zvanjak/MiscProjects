@@ -1,0 +1,12 @@
+#include <stdio.h>
+int main () {
+int x,y,z,t,d,p;
+scanf("%d",&x);
+t= x & 8;
+y= x / 8;
+d= y & 8;
+z= y / 8;
+p= z & 8;
+printf("%d %d %d",&p,&d,&t);
+return 0;
+}

@@ -1,0 +1,56 @@
+class Kosarica {
+private:
+	float *_kosara;
+	int _brelem;
+	int _maxelem;
+
+public:
+	Kosarica();
+	void DodajProizvod (float);
+	float ProsjecnaCijena();
+	float NajjeftinijiProizvod();
+	~Kosarica();
+};
+
+Kosarica::Kosarica(): _kosara(new float[10]), _brelem(0), _maxelem(10){
+	if(_kosara == 0) throw "Neuspjela alokacija u konstruktoru";
+}
+
+Kosarica::~Kosarica(){
+	delete []_kosara;
+}
+
+
+void Kosarica::DodajProizvod(float cijena){
+	if (_brelem == _maxelem){
+		_maxelem += 10;
+		float *pom;
+		pom = new float [_maxelem];
+		if (pom == 0)throw "Neuspjela alokacija u dodavanju proizvoda";
+		for (int i = 0; i<_brelem; i++)
+			pom[i]=_kosara[i];
+		delete [] _kosara;
+		_kosara = pom;
+		
+	}
+	_kosara[_brelem] = cijena;
+	_brelem++;
+}
+
+
+float Kosarica::ProsjecnaCijena(){
+	if (_brelem ==0) return 0.f;
+	float suma=0;
+	for (int i=0; i< _brelem; i++)
+		suma += _kosara[i];
+	return (suma/_brelem);
+}
+
+
+float Kosarica::NajjeftinijiProizvod(){
+	if (_brelem==0) return 0.f;
+	float min = _kosara[0];
+	for (int i=1; i<_brelem; i++)
+		if (_kosara[i]<min) min =_kosara[i];
+	return min;
+}

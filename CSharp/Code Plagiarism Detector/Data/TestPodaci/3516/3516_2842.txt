@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <ctype.h>
+#include <math.h>
+
+#ifndef M_El
+#define M_El       2.7182818284590452353602874713526625L 
+#endif
+
+double f(double x) {
+  double xpluse1=x+1/M_El;
+  double PrviSin=sin(xpluse1);
+  double eNaSin=pow((double)M_El,PrviSin);
+  double DrugiSin=sin(eNaSin);
+  
+  return pow(cos(1/M_El), DrugiSin);
+}
+
+int main()
+{
+  double deltax;         
+  float x[50];          
+  double rjesenje[50];   
+  int i=0,j;
+  scanf("%lf",&deltax);
+  do{
+    scanf("%f",&x[i]);
+    i++;
+  }while(x[i-1] && i<50);
+  if (!x[i-1]) i--; 
+
+  for (j=0;j<i;j++) 
+  {
+    rjesenje[j]=( f(x[j]+deltax) - f(x[j]) )/deltax; 
+  }
+  for (j=0;j<i;j++)
+  {
+    printf("%.2lf ",atan(rjesenje[j])); 
+                                 
+  }
+  return 0;
+}

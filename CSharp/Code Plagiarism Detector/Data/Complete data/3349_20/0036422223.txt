@@ -1,0 +1,7 @@
+double sumareda(double x,int N){
+	int predznak;
+	kontrola();
+	if (N<=0) return 0;
+	predznak=pow(-1,N-1);	
+	return (predznak*pow(x-1,N)/N)+sumareda(x,N-1);
+}

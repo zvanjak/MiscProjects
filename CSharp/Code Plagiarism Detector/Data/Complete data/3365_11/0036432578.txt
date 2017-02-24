@@ -1,0 +1,20 @@
+#include <stdio.h>
+int main () {
+    int broj,a,b,c,suma;
+    scanf("%d",&broj);
+    a=broj / 100;
+    b=(broj-a*100)/10;
+    c=broj-a*100-b*10;
+    if (broj<250 && broj>950) {
+            suma=a+b+c;
+            printf("%d",suma);
+    }
+    else {
+        suma=0;
+        if (a%2==1) suma=suma+a;
+        if (b%2==1) suma=suma+b;
+        if (c%2==1) suma=suma+c;
+        printf("%d",suma);
+    }
+    return 0;
+}

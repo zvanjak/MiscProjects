@@ -1,0 +1,16 @@
+void AritSred_StdDev(float *p, int n, float *ArSred, float *StdDev){
+     int i;
+     float suma=0,nazivnik,pro,suma_kv=0,rezultat,kvadratr;
+     nazivnik=n*(n-1);
+     
+     for(i=0;i<n;i++) suma+=p[i];
+     pro=suma/n;
+      
+     for(i=0;i<n;i++){
+                      kvadratr=(p[i]-pro)*(p[i]-pro);
+                      suma_kv+=kvadratr;
+                      }
+     rezultat=sqrt(suma_kv/nazivnik);
+     *ArSred=pro;
+     *StdDev=rezultat;     
+     }

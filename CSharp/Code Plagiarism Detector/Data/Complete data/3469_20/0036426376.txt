@@ -1,0 +1,13 @@
+double fun1(Trokut t, Pravokutnik p, Krug k)
+{
+	double pov = 0;
+	
+	pov = t.Povrsina();
+	if(p.Povrsina() > pov)
+		pov = p.Povrsina();
+		
+	if(k.Povrsina() > pov)
+		pov = k.Povrsina();
+	
+	return pov;
+}

@@ -1,0 +1,12 @@
+int rZamijeni(char *niz, char stariznak, char noviznak)
+{
+int i=0,broj_pon=0;
+kontrola();
+if(*niz!='\0')
+i=rZamijeni(niz+1,stariznak,noviznak);
+if(*niz==stariznak)
+{*niz=noviznak;
+broj_pon++;
+}
+return i+broj_pon;
+}

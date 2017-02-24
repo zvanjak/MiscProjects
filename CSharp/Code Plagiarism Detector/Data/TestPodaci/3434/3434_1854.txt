@@ -1,0 +1,48 @@
+#include<stdio.h>
+int main(){
+int polje[202],x,y;
+int i=0,z,kv1=0,kv2=0,kv3=0,kv4=0;
+do{
+scanf("%d %d",&x,&y);
+if(x!=0||y!=0){
+polje[i]=x;
+polje[i+1]=y;
+i=i+2;
+}
+}while(x!=0||y!=0);
+z=i;
+for(i=0;i<z;i=i+2){
+if(polje[i]>0 && polje[i+1]>0){
+kv1++;
+}
+
+if(polje[i]<0 && polje[i+1]>0){
+kv2++;
+
+}
+if(polje[i]<0 && polje[i+1]<0){
+kv3++;
+}
+if(polje[i]>0 && polje[i+1]<0){
+kv4++;
+}
+if(polje[i]==0 && polje[i+1]>0){
+kv1++;
+kv2++;
+}
+if(polje[i]==0 && polje[i+1]<0){
+kv3++;
+kv4++;
+}
+if(polje[i]>0 && polje[i+1]==0){
+kv1++;
+kv4++;
+}
+if(polje[i]<0 && polje[i+1]==0){
+kv2++;
+kv3++;
+}
+}
+printf("%d %d %d %d",kv1,kv2,kv3,kv4);
+return 0;
+}

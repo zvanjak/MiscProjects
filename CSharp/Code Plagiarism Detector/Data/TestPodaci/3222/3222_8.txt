@@ -1,0 +1,9 @@
+#include <stdio.h>
+int main(void)	{	
+	int n,br;
+	scanf("%d",&n);
+    for (br=1,n+=n%10;br<40 && (n%13)!=0;br++,n+=n%10) 
+		printf("%d ",n);
+	printf("%d %d\n",n,br);
+	return 0;
+}

@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+int main ()
+{
+	char h;
+	int i=0,sump=0,z=0,sumn=0;
+
+do
+	{
+	scanf("%c", &h);
+		if (h == 10) scanf("%c", &h);
+		if (h>='0' && h<='9')
+		{
+		if ((h-48)%2==0)
+		sump+=(h-48);
+		else
+		sumn+=(h-48);
+		}
+		else if (h>='A' && h<='F')
+			{
+				if(h%2==1)
+				sump+=(h-55);
+				else
+				sumn+=(h-55);
+			}	
+		else if (h>='a' && h<='f')
+			{
+				if(h%2==1)
+				sump+=(h-87);
+				else
+				sumn+=(h-87);
+			}
+		else 
+		break;
+		i++;
+	}
+	while (i<100);
+printf ("%d", sump-sumn);
+
+return 0;
+}
+		

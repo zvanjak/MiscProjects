@@ -1,0 +1,7 @@
+double fun1(Trokut t, Pravokutnik p, Krug k) {
+double najveci = 0;
+if (p.Povrsina() > najveci) najveci = p.Povrsina();
+if (k.Povrsina() > najveci) najveci = k.Povrsina();
+if (t.Povrsina() > najveci) najveci = t.Povrsina();
+return najveci;
+}

@@ -1,0 +1,44 @@
+class SortRazlPolje{
+      int *polje;
+      int MaxBrojElem;
+      int BrojElem;
+      public:
+      SortRazlPolje(){
+            MaxBrojElem=0;
+            BrojElem=0;
+            polje=NULL;
+      }
+      int Dodaj(int Broj){
+            int i;
+            if(BrojElem>=MaxBrojElem)
+                  MaxBrojElem++;
+                  polje=(int*)realloc(polje,MaxBrojElem*sizeof(int));
+                  if(polje==NULL)return 0;
+            for(i=0;i<BrojElem;i++)
+                  if(Broj==polje[i]) 
+                        return 1;
+            polje[BrojElem]=Broj;
+            BrojElem++;
+            return 1;
+      }
+      int *VratiSortPolje(int &n){
+            int *sort,pom,max,i,j;
+            sort=new int[BrojElem];
+            if(BrojElem==0)return NULL;
+            for(i=0;i<BrojElem;i++)
+                  sort[i]=polje[i];
+            for(i=0;i<BrojElem;i++){
+                  max=i;
+                  for(j=i+1;j<BrojElem;j++)
+                        if(sort[j]>sort[max])max=j;
+                  pom=sort[i];
+                  sort[i]=sort[max];
+                  sort[max]=pom; 
+            }
+            n=BrojElem;
+            return sort;
+      }
+      ~SortRazlPolje(){
+            delete []polje;
+      }
+};

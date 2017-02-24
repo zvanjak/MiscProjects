@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+	int n,i;
+	double z=0;
+	scanf("%d",&n);
+	if(n<1 || n>100)
+	{
+		printf("n nije valjan");
+		exit(1);
+	}
+	for(i=1;i<=n;i++)
+		z=z+1./pow(i,2);
+	printf("%.12f",z);
+	return 0;
+}

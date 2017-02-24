@@ -1,0 +1,19 @@
+#include <stdio.h>
+#define MAX 100
+int main () {
+char a[MAX] = {0};
+int i, j, brojac=0, b;
+for(i=0; i<MAX; i=i + 2) {
+scanf("%c%d", &a[i], &a[i + 1]);
+if(a[i+1]==-1) break;
+brojac++;
+}
+for(i=0; i<(brojac+10); i++) {
+if(i%2==1) {
+b=a[i];
+for(j=0; j<b; j++) {
+printf("%c ", a[i-1]);
+}
+}
+}
+}

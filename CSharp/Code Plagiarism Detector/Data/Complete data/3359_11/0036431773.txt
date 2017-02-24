@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main(){
+ int a,b,c,d,e,umn;
+ scanf ("%d",&a);
+  b=a/1000; 
+  c=(a%1000)/100; 
+  d=((a%1000)%100)/10; 
+  e=a%10; 
+  umn=b*c*d*e;
+ if (umn%2==0)
+  printf ("\n %d",e);
+ else
+  printf ("\n %d",b); 
+ return 0;
+ }
+ 

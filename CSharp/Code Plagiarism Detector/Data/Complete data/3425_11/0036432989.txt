@@ -1,0 +1,41 @@
+#include <stdio.h>
+#define MAX 10
+int main () {
+	int polje[MAX][MAX];
+	int i,j,x,y,sum=0,mr,br=0,n,pom;
+
+	do 
+	 scanf("%d", &mr);
+	 while (mr<1 || mr>10);
+
+	 for (i=0; i<mr; i++){
+		 for (j=0; j<mr; j++){
+			 scanf("%d", &polje[i][j]);
+		 }
+	 }
+
+	 do {
+	 scanf("%d %d",&x,&y);
+	 if ((x>=0 && x<mr)&&(y>=0 && y<mr)){
+		 pom=polje[x][y];
+		 polje[x][y]=polje[y][x];
+		 polje[y][x]=pom;
+		 br++;
+	 }
+	 }
+	 while ((x>=0 && x<mr)&&(y>=0 && y<mr));
+	
+	 scanf("%d", &n);
+	 
+	 if (n>=0 && n<mr)
+		 for (j=0; j<mr; j++){
+			 sum+=polje[n][j];
+		 }
+	 else 
+		 sum=-1;
+
+	 printf("%d %d", br, sum);
+
+	 return 0;
+
+}

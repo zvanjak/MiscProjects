@@ -1,0 +1,40 @@
+/*2. Program treba učitavati niz znakova koji predstavljaju heksadecimalne znamenke 
+dok se ne učita znak koji ne predstavlja heksadecimalnu znamenku 
+(pretpostaviti da je niz maksimalne duljine od 100 znakova). 
+Program treba ispisati razliku suma parnih i neparnih znamenaka učitanog niza 
+i to u dekadskom obliku. Primjer: za niz 138AbFh, program treba ispisati -12, 
+jer je suma parnih znamenki (8, A) jednaka 18, a suma neparnih znamenki (1, 3, b, F)
+jednaka 30, a razlika 18 i 30 iznosi -12. Iz priloženog je vidljivo da se toleriraju 
+i jednako tretiraju velika i mala slova za heksadecimalne znamenke veće od 9.
+Napomena:Ispravnost programa ocjenjuje računalo pa program mora dati točno 
+određene izlaze (ispise), pa iz krajnje verzije programa izbacite SVE ispise 
+(printf-ove i sl.) osim onih koji ispisuju tražene podatke. Formate unosa i ispisa 
+potrebno je uskladiti s primjerima iz zadatka.
+*/
+#include <stdio.h>
+int main()
+{
+	int i, k;
+	char c;
+	int sumaParnih = 0, sumaNeparnih = 0;
+	for(i = 0; i< 100; i++)
+	{
+		scanf("%c", &c);
+		if(!((c >= '0' && c<= '9') || (c>='A' && c<='F') || (c>='a'&& c<= 'f')))
+			break;
+		else 
+		{
+			if(isalpha(c))
+			{
+				c = tolower(c);
+				k = c - 87;
+			
+			}
+			else k = c - '0';
+			if(k%2) sumaNeparnih += k;
+			else sumaParnih += k;
+		}
+	}
+	printf("%d", sumaParnih - sumaNeparnih);
+	return 0;
+}

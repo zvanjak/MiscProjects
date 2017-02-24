@@ -1,0 +1,26 @@
+int JeLiUnutra(Kruznica &kruz,Kvadrat &kvad) {
+        float Xk,Yk;
+        float Xr,Yr;
+        float d1,d2,d3,d4,a,r;
+        
+        r=kruz.GetRadius();
+        a=kvad.GetDuljinaStranice();
+        
+        Xk=kvad.GetX()+kvad.GetDuljinaStranice();
+        Yk=kvad.GetY()-kvad.GetDuljinaStranice();
+        Xr=kruz.GetCenterX();
+        Yr=kruz.GetCenterY();
+        
+        if (Xr<kvad.GetX() || Xr>Xk || Yr<Yk || Yr>kvad.GetY())
+           return 0;         //radijus je van 
+        
+        d1=Xr-kvad.GetX();
+        d2=kvad.GetY()-Yr;
+        d3=Xk-Xr;
+        d4=Yr-Yk;
+        
+        if (r>=d1 || r>=d2 || r>=d3 || r>=d4 )
+           return 0;
+        return 1;
+  
+}

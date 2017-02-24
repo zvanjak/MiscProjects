@@ -1,0 +1,39 @@
+#include <stdio.h>
+int main ()
+{
+	int z1, z2, x1, x2, y1, y2;
+
+	printf("\n Unesite prvi dvoznamenkasti broj: ");
+	scanf("%d",&z1);
+	printf("\n Unesite drugi dvoznamenkasti broj: ");
+    scanf("%d",&z2);
+	x1=z1/10;
+	x2=z1-x1*10;
+	y1=z2/10;
+	y2=z2-y1*10;
+
+if (x1 == y1 & x1 == y2 & x2 == y1 & x2 == y2)
+		printf("\n %d\n",x1);
+	else if (x1 == y1 || x1 == y2)
+	{
+		if (x2 == y1 || x2 == y2)
+		{
+			if(x1<x2)
+			   printf("\n %d %d\n", x1, x2);
+			else if (x1>x2)
+			   printf("\n %d %d\n", x2, x1);
+			else
+				printf("\n %d\n",x1);
+		}
+		   
+		else
+			printf("\n %d\n",x1);
+	}
+	else if(x2 == y1 || x2 == y2)
+	{
+		printf("\n %d\n",x2);
+	}
+	else
+		printf("\n Nema zajednickih znamenki\n");
+	return 0;
+}

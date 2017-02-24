@@ -1,0 +1,27 @@
+zapis *UzmiZadnji(zapis **glava) {
+	zapis *prvi=*glava,*zadnji,*parent;
+	if (prvi==NULL) return NULL;
+
+	if (prvi->sljed == NULL) {
+		zadnji = *glava;
+		*glava = NULL;
+		return zadnji;
+	}
+
+	for (; prvi->sljed!=NULL; prvi=(prvi)->sljed) parent = prvi;
+
+	zadnji=prvi;
+	parent->sljed=NULL;
+	return zadnji;
+}
+
+void obrni(zapis **glava) {
+	zapis *p,*gl=*glava,*t;
+	*glava=p=UzmiZadnji(&gl);
+	while(t=UzmiZadnji(&gl)) {
+		p->sljed=t;
+		t->sljed=NULL;
+		p=t;	
+	}
+	return;
+}

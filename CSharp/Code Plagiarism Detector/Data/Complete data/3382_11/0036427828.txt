@@ -1,0 +1,22 @@
+#include <stdio.h>
+int main () {
+        int broj;
+        int pdvije, ddvije, sdvije;
+        int pzn,dzn,tzn,czn;
+        scanf("%i",&broj);
+                if (broj>=1000 && broj<=9999){
+                        pdvije=broj/100;
+                        ddvije=broj%100;
+                        sdvije=(broj%1000)/10;
+                        pzn=broj/1000;
+                        dzn=(broj-(pzn*1000))/100;
+                        tzn=(broj-(pzn*1000)-(dzn*100))/10;
+                        czn=(broj-(pzn*1000)-(dzn*100)-(tzn*10));
+                        if ((pdvije*ddvije)%sdvije==0){
+                                printf("%i",pzn+tzn);
+                        }else{
+                                printf("%i",tzn*czn);
+                        }
+        }
+        return 0;
+}

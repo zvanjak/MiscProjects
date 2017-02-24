@@ -1,0 +1,25 @@
+int zamijeni (char *ulazni, char *prvi, char *drugi)
+{
+	char niz[100]={0}, *niz_p;
+	int i, zamjena=0, l_niz, l_prv, l_dru, razlika;
+	strcpy(niz, ulazni);
+	l_niz=strlen(niz);
+	l_prv=strlen(prvi);
+	l_dru=strlen(drugi);
+	razlika=l_prv-l_dru;
+
+	do
+	{
+		niz_p=strstr(niz, prvi);
+		if(niz_p==NULL)	break;
+		strncpy(&niz[niz_p-niz], drugi, l_dru);
+		zamjena++;
+		if (razlika>0)
+			for (i=(niz_p-niz)+l_dru; i<=l_niz; i++)	
+				*(niz+i)=*(niz+i+razlika);
+	} while (niz_p != NULL);
+	*(niz+strlen(niz))='\0';
+	for (i=0; i<=l_niz; i++)
+		*(ulazni+i)=*(niz+i);
+	return zamjena;
+}

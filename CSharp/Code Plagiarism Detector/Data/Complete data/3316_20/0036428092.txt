@@ -1,0 +1,15 @@
+void dodaj(FILE *f,int redni_br,int bodovi){
+   struct natjecatelj{
+      int redni_br;
+      char prezime[20+1];
+      int bodovi;} bla;
+   int to;
+   while(fread(&bla, sizeof(bla),1,f)==1)
+      if (bla.bodovi<bodovi && bla.redni_br==redni_br) { to=bla.bodovi;
+   fseek(f,(to-1)*sizeof(bla),SEEK_SET);
+   fread(&bla,sizeof(bla),1,f);
+   bla.bodovi=bodovi;
+   fseek(f,-sizeof(bla),SEEK_CUR);
+   fwrite(&bla,sizeof(bla),1,f);}
+   return;
+   }

@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <math.h>
+int main(){
+int n,m,rotirani;
+char c;
+scanf ("%d %d %c", &n, &m, &c);
+if (n<=0 || m<1 || m>3 || c != 'L' && c != 'R')
+printf("Error\n");
+else if (c=='L'){
+rotirani = (n % (int) pow(10,3-m)) * (int) pow(10,m)+(n / (int) pow(10,3-m));
+printf ("%d",rotirani);
+} else {
+rotirani = (n % (int) pow(10,m)) * (int) pow(10,3-m)+(n / (int) pow(10,m));
+printf ("%d", rotirani);
+}
+return 0;
+}

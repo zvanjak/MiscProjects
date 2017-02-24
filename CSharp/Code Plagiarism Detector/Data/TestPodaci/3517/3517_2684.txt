@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+
+double funk(double x){
+double funct;
+funct = pow(x, sinh(x)) * cosh(pow(x,2));
+return funct;
+}
+
+int main(){
+float x[51];
+double dervs[51]={0}, dx, arg;
+int i=0,j;
+scanf("%lf ", &dx);
+do{
+   scanf( "%f", &x[i]);
+   i++;
+}while(x[i-1]!=0.0);
+for (j=0; j<i-1; j++){
+    arg=x[j]+dx;
+    dervs[j]=(funk(arg) - funk(x[j]) )/dx;
+	printf ("%.2lf", atan(dervs[j]));
+}
+return 0;
+}

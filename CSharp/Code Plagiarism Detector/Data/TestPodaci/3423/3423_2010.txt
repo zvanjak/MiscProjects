@@ -1,0 +1,47 @@
+#include <stdio.h>
+
+
+int main(){
+  int brr=0,brs,br=0,mr,ms,i,j;
+  int x[20][5],k[20]={0},p[20]={0};
+    
+    do{
+         scanf("%d %d",&mr,&ms);
+         }while(ms>5 || ms<1 || mr<1 || mr>20);
+    
+    
+    for(i=0;i<mr;i++)
+    for(j=0;j<ms;j++)
+    scanf("%d",&x[i][j]);
+
+
+
+    for(i=0;i<mr;i++){
+         for(j=0;j<ms;j++){
+         if(x[i][j]/10==0) if(x[i][j]==2 || x[i][j]==3 || x[i][j]==5 || x[i][j]==7) {p[i]=1;br++;}                  
+         if(x[i][j]/10!=0) if(x[i][j]%2!=0 && x[i][j]%3!=0 && x[i][j]%5!=0 && x[i][j]%7!=0) {p[i]=1;br++;}
+         }
+    } 
+    
+    
+    for(i=0;i<br;i++)
+    if (p[i]==1) brr++;
+    
+    printf("%d ",brr);
+    
+    br=0;
+    for(j=0;j<ms;j++){
+         for(i=0;i<mr;i++){
+         if(x[i][j]/10==0) if(x[i][j]==2 || x[i][j]==3 || x[i][j]==5 || x[i][j]==7) {k[j]=1;br++;}                  
+         if(x[i][j]/10!=0) if(x[i][j]%2!=0 && x[i][j]%3!=0 && x[i][j]%5!=0 && x[i][j]%7!=0) {k[j]=1;br++;}
+         }
+    } 
+    
+    for(i=0;i<br;i++)
+    if (k[i]==1) brs++;
+    
+    
+    printf("%d",brs);
+    
+    return 0;
+    }

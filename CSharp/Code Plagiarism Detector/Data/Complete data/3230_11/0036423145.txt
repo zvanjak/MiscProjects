@@ -1,0 +1,20 @@
+#include <stdio.h>
+ int main(){
+     int n,x;
+     double faktorijel,e;
+     scanf("%d",&n);
+     if ((n<1)||(n>30)){
+         printf("n nije valjan");
+     }
+     else{
+         e=1;
+         faktorijel=1.;
+         for(x=1;x<=n-1;x++){
+             faktorijel=faktorijel*x;
+             e=e+(1./faktorijel);
+         }
+     printf("%.12f",e);        
+     }
+     
+     return 0;
+ }

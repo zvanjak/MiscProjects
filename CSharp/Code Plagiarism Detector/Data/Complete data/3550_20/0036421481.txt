@@ -1,0 +1,120 @@
+int izbacinaj(zapis **glava)
+{
+	zapis * temp = *glava;
+	zapis * jure;
+	zapis * prev;
+
+	int brisao = 0;
+
+	int retval = 0;
+	float min, max;
+	int nasaoMin, nasaoMax;
+	nasaoMin = nasaoMax = 0;
+
+	if (*glava)
+	{
+		min = max = temp->pros;
+		temp = temp->sljed;
+
+		while (temp)
+		{
+			if (temp->pros > max)
+			{
+				max = temp->pros;
+			}
+			if (temp->pros < min)
+			{
+				min = temp->pros;
+			}
+			temp = temp->sljed;
+		}
+
+		temp = prev = *glava;
+
+		while (temp)
+		{
+			brisao = 0;
+			if (temp->pros == min && temp->pros == max)
+			{
+				if (temp == *glava)
+				{
+					*glava = temp->sljed;
+				}
+				else if (temp->sljed == NULL)
+				{
+					prev->sljed = NULL;
+				}
+				else
+				{
+					prev->sljed = temp->sljed;
+				}
+				jure = temp->sljed;
+				free(temp);
+
+				nasaoMin = nasaoMax = 1;
+				retval++;
+				brisao = 1;
+			}
+			else if (temp->pros == min && nasaoMin == 0)
+			{
+				if (temp == *glava)
+				{
+					*glava = temp->sljed;
+				}
+				else if (temp->sljed == NULL)
+				{
+					prev->sljed = NULL;
+				}
+				else
+				{
+					prev->sljed = temp->sljed;
+				}
+				jure = temp->sljed;
+				free(temp);
+
+				nasaoMin = 1;
+				retval++;
+				brisao = 1;
+			}
+			else if (temp->pros == max && nasaoMax == 0)
+			{
+				if (temp == *glava)
+				{
+					*glava = temp->sljed;
+				}
+				else if (temp->sljed == NULL)
+				{
+					prev->sljed = NULL;
+				}
+				else
+				{
+					prev->sljed = temp->sljed;
+				}
+				jure = temp->sljed;
+				free(temp);
+
+				nasaoMax = 1;
+				retval++;
+				brisao = 1;
+			}
+
+			if (nasaoMin == 1 && nasaoMax == 1)
+				break;
+
+			if (!brisao)
+			{
+				prev = temp;
+				temp = temp->sljed;
+			}
+			else
+			{
+				temp = jure;
+			}
+		}
+		return retval;
+	}
+	else
+	{
+		return 0;
+	}
+}

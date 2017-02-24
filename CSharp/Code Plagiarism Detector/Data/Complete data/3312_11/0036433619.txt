@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+int br_prodanih(FILE *f, char *autor){
+    int i=0, j=0, br=1, k;
+    char album[10000][30+1], ime[10000][20+1];
+    int prodani, x[10000], suma=0;
+    do{
+       i++;
+       fscanf(f, "%s %s %d", album[i], ime[i], &prodani);
+       x[i]=prodani;
+       k=strlen (ime[i]);
+       if (k!=0){
+          br++;
+       }
+       else j=1;
+    }while ((i!=10000) && (j==0));
+    for (i=0; i<br; i++) {
+        if (!(strcmp(ime[i], autor))){
+           suma=suma + x[i];
+           }
+        }
+    return suma;
+}

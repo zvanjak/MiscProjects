@@ -1,0 +1,29 @@
+#include<stdio.h>
+
+
+int main() {
+	int broj, suma=0, brojac=0, ostatak,i, k, rest ;
+	do { 
+		scanf("%d", &broj);
+		
+		if (broj<0){broj=-broj;}
+		i=broj;
+		ostatak=broj%10; 
+		brojac++;
+			while(broj>0)
+			{
+				broj=broj/10;
+				rest=broj%10;
+					if(rest>0){brojac++;}
+				 
+				suma+=rest;
+						}
+			suma=suma+ostatak;
+			
+	} while (i!=0);
+	if(i==0){ brojac--;}
+	printf("%d %d", brojac--, suma);	
+	
+	
+return 0;			
+}

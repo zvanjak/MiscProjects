@@ -1,0 +1,26 @@
+#include<stdio.h>
+#define NR 20
+#define NS 5
+main(){
+int mr, ms, bs=0, br=0, nr=0, ns=0;
+int a[NR][NS];
+int i, j;
+do{
+scanf("%d %d",&mr,&ms);
+}while((mr<1 || mr>NR) || (ms<1 || ms>NS));
+for(i=0; i<mr; i++){
+for(j=0; j<ms; j++){
+	scanf("%d",&a[i][j]);}}
+for(i=0; i<mr; i++){
+	for(j=0; j<ms; j++){
+		if(a[i][j]%2==0)
+			nr=nr+1;}
+	if(nr>=1)
+		br++;}
+for(j=0; j<ms; j++){
+	for(i=0; i<mr; i++){
+		if(a[i][j]%2==1)
+			ns=ns+1;}
+	if(ns>=1)
+		bs++;}
+printf("%d %d",br,bs);}

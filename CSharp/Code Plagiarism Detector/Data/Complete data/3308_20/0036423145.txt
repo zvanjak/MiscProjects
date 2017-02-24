@@ -1,0 +1,10 @@
+void FuncMinMax(int *p,int n,int *max,int *min){
+    int i;
+    *max=*p;
+    *min=*p;
+    for(i=1;i<n;i++){
+       if (p[i]>*max) *max=p[i];
+       if (p[i]<*min) *min=p[i];
+       }
+    return;
+    }

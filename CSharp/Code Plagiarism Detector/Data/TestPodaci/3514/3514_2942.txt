@@ -1,0 +1,49 @@
+#include <math.h>
+#include <stdio.h>
+
+
+struct tocka{
+ double y;
+ double x;
+
+};
+
+int main(){
+  struct tocka tocke[4];
+
+  double povrsina,x,y,r,fi,d[4],k[4],n1,n3;
+  int i;
+
+  for(i=0;i<4;i++)
+     scanf("%lf %lf",&tocke[i].x,&tocke[i].y);
+
+  k[0]=(tocke[1].y-tocke[0].y)/(tocke[1].x-tocke[0].x);
+  k[1]=(tocke[2].y-tocke[1].y)/(tocke[2].x-tocke[1].x);
+  k[2]=(tocke[3].y-tocke[2].y)/(tocke[3].x-tocke[2].x);
+  k[3]=(tocke[0].y-tocke[3].y)/(tocke[0].x-tocke[3].x);
+
+
+  d[0]=sqrt(pow(tocke[1].x-tocke[0].x,2)+pow(tocke[1].y-tocke[0].y,2));
+  d[1]=sqrt(pow(tocke[2].x-tocke[1].x,2)+pow(tocke[2].y-tocke[1].y,2));
+  d[2]=sqrt(pow(tocke[3].x-tocke[2].x,2)+pow(tocke[3].y-tocke[2].y,2));
+  d[3]=sqrt(pow(tocke[0].x-tocke[3].x,2)+pow(tocke[0].y-tocke[3].y,2));
+
+
+  n1=-1/k[1];
+  n3=-1/k[3];
+
+  if(d[0]==d[1] && d[1]==d[2] && d[2]==d[3]){
+     if(k[0]==n1 && k[0]==n3){
+     povrsina=d[0]*d[0];
+     printf("%.2lf",povrsina);
+     }
+  }
+  else{
+     x=(tocke[0].x+tocke[1].x+tocke[2].x+tocke[3].x)/4;
+     y=(tocke[0].y+tocke[1].y+tocke[2].y+tocke[3].y)/4;
+     r=sqrt(pow(x,2)+pow(y,2));
+     fi=atan(y/x);
+     printf("%.2lf %.2lf",r,fi);
+     }
+  return 0;
+}

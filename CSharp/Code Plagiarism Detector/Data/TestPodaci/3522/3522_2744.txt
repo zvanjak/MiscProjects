@@ -1,0 +1,29 @@
+void  ConvertFromXML (char * inputField, char * outputField)
+{
+	int i, j, br = -1;
+	for(i = 6; inputField[i] != '\n' && inputField[i-1] != '\0'; i++) {
+		if(inputField[i-5] == '<' && inputField[i-4] == 'i' && inputField[i-3] == 'm' && inputField[i-2] == 'e' && inputField[i-1] == '>')
+		{
+			outputField[++br] = '#';
+			for(j = i; inputField[j] != '<' || inputField[j+1] != '/' || inputField[j+2] != 'i'; j++) {
+				outputField[++br] = inputField[j];
+			}
+		}
+		if(inputField[i-5] == 'z' && inputField[i-4] == 'i' && inputField[i-3] == 'm' && inputField[i-2] == 'e' && inputField[i-1] == '>' && inputField[i-6] == 'e' && inputField[i-7] == 'r' && inputField[i-8] == 'p' && inputField[i-9] == '<')
+		{
+			outputField[++br] = '#';
+			for(j = i; inputField[j] != '<' || inputField[j+1] != '/' || inputField[j+2] != 'p'; j++) {
+				outputField[++br] = inputField[j];
+			}
+		}
+		if(inputField[i-6] == '<' && inputField[i-5] == 'j' && inputField[i-4] == 'm' && inputField[i-3] == 'b' && inputField[i-2] == 'g' && inputField[i-1] == '>')
+		{
+			outputField[++br] = '#';
+			for(j = i; inputField[j] != '<' || inputField[j+1] != '/' || inputField[j+2] != 'j'; j++) {
+				outputField[++br] = inputField[j];
+			}
+			outputField[++br] = '#'; outputField[++br] = '\n'; 
+		}
+	}
+	outputField[++br] = '\0';
+}

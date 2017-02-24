@@ -1,0 +1,14 @@
+double sumareda(int N){
+double suma=0;
+int n=N;
+double i,a;
+
+kontrola();
+
+i=1./(n*n*n*n);
+if(N==0)return 0;
+if(N==1)return 1;
+a=sumareda(N-1);
+suma=i+a;
+return suma;
+}

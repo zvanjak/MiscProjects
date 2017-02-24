@@ -1,0 +1,108 @@
+typedef struct {
+	char ime[20+1];
+	char prezime [30+1];
+	char jmbg[10+1];
+	int ocjena;
+}tip;
+
+struct at {
+	tip element;
+	struct at *next;
+};
+
+typedef struct at atom;
+
+int brojElemenata(atom *glava) {
+	int broj=0;
+	atom *tmp;
+	
+	tmp = glava;
+	
+	while(tmp != NULL) {
+		broj++;
+		tmp = tmp->next;
+	}
+	
+	return broj;
+}
+
+
+
+int dodaj(atom **glavap, tip element) {
+	if(atom *novi = (atom*) malloc(sizeof(atom)) == NULL)
+		return 0;
+
+	novi->element = element;
+	
+	novi->next = *glavap;
+	*glavap = novi;
+	return 1;
+	
+}
+
+int minOcjena(atom *glava) {
+	int min=0;
+	atom *tmp;
+		
+	if(glava == NULL)
+		return -1;
+	
+	tmp = glava;
+	
+	min = tmp->element.ocjena;
+	
+
+	tmp = tmp->next;
+	
+	while(tmp != NULL) {
+		if(min > tmp->element.ocjena)
+			min = tmp->element.ocjena;
+		tmp = tmp->next;
+	}
+	
+	return min;
+}
+
+float prosjekOcjena(atom *glava) {
+	float ukupno = 0.0;
+	int broj = 0;
+	atom *tmp;
+	
+	if(glava == NULL)
+		return -1;
+	
+	tmp = glava;
+	
+	while(tmp != NULL) {
+		ukupno += tmp->element.ocjena;
+		broj++;
+		tmp = tmp->next;
+	}
+	
+	return ukupno/broj;
+}
+
+int izbaciImeSadrzi(atom **glavap, char *imePodniz) {
+	int broj = 0;
+	atom *tmp;
+   atom *del;
+
+	tmp = *glava;
+	
+	if(tmp == NULL)
+		return broj;
+	
+	while(tmp->next != NULL) {
+		if(strcmp(tmp->next->element->ime, imePodniz) == 0) {
+			
+			del = tmp->next;
+			tmp->next = tmp->next->next;
+			free(del);
+				broj++;
+		}
+		tmp = tmp->next;
+	}
+	
+	return broj;
+	
+}

@@ -1,0 +1,24 @@
+#include <iostream>
+
+using namespace std;
+
+int JeLiUnutra(Krug &kruz, Pravokutnik &kvad) {
+
+ int unutra = 1;
+
+
+ if( !( kruz.Sadrzi( kvad.getDLkut() ) ) )
+  unutra = 0;
+
+ if(!kruz.Sadrzi(Tocka(kvad.getDLkut().X, kvad.getDLkut().Y + kvad.getVisina())))
+  unutra = 0;
+
+ if(!kruz.Sadrzi(Tocka(kvad.getDLkut().X + kvad.getSirina(), kvad.getDLkut().Y )))
+  unutra = 0;
+
+if(!kruz.Sadrzi(Tocka(kvad.getDLkut().X + kvad.getSirina(),kvad.getDLkut().Y + kvad.getVisina())))
+  unutra = 0;
+
+ return unutra;
+
+}

@@ -1,0 +1,56 @@
+#include<stdio.h>
+
+
+
+int main (){
+    int mr,i,j,a,b,q,t=0,n,suma=0,mat[11][11];
+    
+   do{
+        scanf("%d", &mr);
+        
+        }while(mr<1 || mr>10);
+        
+    
+    
+    for(a=0;a<mr;a++){
+                      for(b=0;b<mr;b++){
+                                        scanf("%d",&mat[a][b]);
+                                        }
+                                        }
+                                  
+    do{
+                   
+    scanf("%d %d", &i,&j);
+    if((i<mr &&  i>=0) && (j<mr &&  j>=0)) {
+             
+             for(a=0;a<mr;a++){
+              for(b=0;b<mr;b++){
+                if(i==a && j==b) {
+                        
+                   q=mat[a][b];
+                   mat[a][b]=mat[b][a];
+                   mat[b][a]=q;
+                   t=t+1;
+             }
+             }
+             }
+             
+             
+             }
+             }while((i<mr &&  i>=0) && (j<mr &&  j>=0));
+    
+                      
+    
+    scanf("%d", &n);
+    a=n;
+    if(n<mr &&  n>=0) for(b=0;b<mr;b++) suma=suma+mat[a][b];
+    else suma=-1;
+    
+    printf("%d %d",t,suma);
+                      
+    
+                
+                
+     
+     return 0;
+     }                

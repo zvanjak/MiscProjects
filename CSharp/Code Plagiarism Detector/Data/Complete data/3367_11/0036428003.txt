@@ -1,0 +1,19 @@
+#include<stdio.h>
+int main(void)
+{char a,b;
+int x,y,z;
+x=0;
+y=0;
+scanf("%c %c",&a,&b);
+do
+{if(y==0)z=16;
+else z=1;
+if(a<59)x+=(a-48)*z;
+else x+=(a-55)*z;
+y++;
+a=b;
+}
+while(y!=2);
+printf("%d",x);
+return 0;
+}

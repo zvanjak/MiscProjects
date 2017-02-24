@@ -1,0 +1,28 @@
+#include<math.h>
+
+Red *VratiBrojeve(Red *red) {
+	int broj, novi_broj;
+	int dodaj, br_znam, i;
+	Red temp; 
+	Red *novi = new Red();
+	i = 0;
+	do {
+		novi_broj = 0;
+		br_znam = red->SkiniIzReda (&i);
+		if (br_znam != 0){
+			dodaj = temp.DodajURed (i);
+			for(; i > 0; i--){
+				dodaj = red->SkiniIzReda (&broj);
+				dodaj = temp.DodajURed (broj);
+				broj = broj * pow (10,(i-1));
+				novi_broj = novi_broj + broj;
+			}
+			dodaj = novi->DodajURed (novi_broj);
+		}
+	} while (br_znam != 0);
+
+	while (temp.SkiniIzReda (&broj)!=0)
+		red->DodajURed (broj);
+
+	return novi;
+}

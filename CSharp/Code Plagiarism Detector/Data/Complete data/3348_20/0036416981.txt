@@ -1,0 +1,5 @@
+double sumareda(int N){
+	double m=0;
+	kontrola();
+	if(N>0)m=1./((4*N-1)*(4*N+1))+sumareda(N-1);
+	return m; }

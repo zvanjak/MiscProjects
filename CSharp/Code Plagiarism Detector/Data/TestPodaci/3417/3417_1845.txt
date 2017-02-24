@@ -1,0 +1,61 @@
+#include "stdio.h"
+#include "conio.h"
+#include "stdlib.h"
+#define  MAX 20
+int main()
+{
+
+	
+	
+	int j,i=-1,brojac=0,neznak;
+	char slovo[MAX+1],polje[MAX+1];
+	
+	
+		do{
+        i++;
+		
+		scanf ("%c",&slovo[i]);
+		scanf("%*c");
+		}while((slovo[i]>=65 && slovo[i]<=90) || (slovo[i]>=97 && slovo[i]<=122));
+        brojac=i;
+		neznak=slovo[i];
+		
+		
+		if(brojac>=1){
+            j=0;
+			for(i=0;slovo[i]!=neznak;i++){
+
+if(slovo[i]=='a' || slovo[i]=='e' || slovo[i]=='i' || slovo[i]=='o' || slovo[i]=='u' || slovo[i]=='A' || slovo[i]=='E' || slovo[i]=='I' || slovo[i]=='O' || slovo[i]=='U')
+continue;
+
+else {
+    
+	polje[j]= slovo[i];}
+	j++;		}
+
+			polje[j]=neznak;
+            brojac=0;
+			for(i=0;polje[i]!=neznak;i++){
+                brojac++;
+				if(polje[i]>=65 && polje[i]<=90) printf("%c",polje[i]);
+				else printf ("%c",polje[i]-32);
+			
+			}
+            brojac--;
+			for(i=brojac;i>=0;i--){
+
+				if(polje[i]>=97 && polje[i]<=122) printf("%c",polje[i]);
+				else printf("%c",polje[i]+32);
+			}
+		}
+
+		else printf("-1");
+}
+
+		
+
+
+
+
+
+

@@ -1,0 +1,44 @@
+#include <stdio.h>
+#define MAX 20
+
+int main ()
+{
+	int kontrolna[MAX][MAX], druga[MAX][MAX];
+	int n, i, j, x;
+
+	printf("Upisi broj:\n");
+	scanf("%d", &n);
+
+	for (i = 0; i<n; i++) {
+		for (j = 0; j<n; j++) {
+			do
+			{
+			scanf("%d", &kontrolna[i][j]);
+			} 
+			while (!(kontrolna[i][j]==0 || kontrolna[i][j]==1));
+		}
+	}
+	for (i = 0; i<n; i++) {
+		for (j = 0; j<n; j++) {
+			scanf("%d", &druga[i][j]);
+		}
+	}
+
+	for (i = 0; i<n; i++) {
+		for (j = 0; j<n; j++) {
+			if(kontrolna[i][j]==1)
+			{
+				x=i+j;
+				druga[i][j]=x;
+			}
+		}
+	}
+
+	for (i = 0; i<n; i++) {
+		for (j = 0; j<n; j++) {
+			printf("%d ", druga[i][j]);
+		}
+	}
+	
+	return 0;
+}

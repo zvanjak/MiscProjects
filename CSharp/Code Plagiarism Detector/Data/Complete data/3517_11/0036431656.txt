@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <math.h>
+#define MAX 50
+#define funkcija(a) (pow((a),sinh(a))*(cosh(pow((a),(2.)))))
+int main(){
+	int i=0;
+	float x[MAX];
+	double deltax=0, f[MAX], f2[MAX], der[MAX];
+	scanf("%f", &deltax);
+	do{
+		scanf("%f",&x[i]);
+		if(x[i]==0.0) break;
+		f[i]=funkcija(x[i]);
+		f2[i]=funkcija(x[i]+deltax);
+		der[i]=(f[i]-f2[i])/deltax;
+		printf("%.2lf\n", atan(f[i]/ x[i]));
+		i++;
+	}while (i<=MAX);
+	return 0;
+}

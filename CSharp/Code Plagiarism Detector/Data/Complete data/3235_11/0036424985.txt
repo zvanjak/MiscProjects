@@ -1,0 +1,19 @@
+#include<stdio.h>
+int main() {
+int n,i,b=1;
+double a=0;
+double c;
+scanf("%d",&n);
+if(n<=100 && n>=1){
+	for(i=1;i<=n;i++){
+        c=(float)b/i;
+		a=a+c;
+		b=-b;
+	}
+}
+else
+    printf("n nije valjan");
+if(i==n+1) 
+	printf("%.12f",a);
+return 0;
+}

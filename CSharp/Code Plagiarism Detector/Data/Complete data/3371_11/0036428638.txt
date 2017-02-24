@@ -1,0 +1,38 @@
+#include <stdio.h>
+int main (){
+	int x, x4, x3, x2, x1;
+	scanf ("%d", &x);
+
+	if (x > 999 && x < 10000) {	
+
+			x4= x / 1000;
+			x3= (x / 100) % 10;
+			x2= (x / 10) % 10;
+			x1= x % 10;
+
+			if (x4 % 2 == 0) {
+				x4= ++x4;
+				printf ("%d", x4);
+			} else
+				printf ("%d", x4);
+		
+			if (x3 % 2 == 0) {
+				x3= ++x3;
+				printf ("%d", x3);
+			} else
+				printf ("%d", x3);
+			
+			if (x2 % 2 == 0) {
+				x2= ++x2;
+				printf ("%d", x2);
+			} else
+				printf ("%d", x2);
+		
+			if (x1 % 2 == 0) {
+				x1= ++x1;
+				printf ("%d", x1);
+			} else 
+				printf ("%d", x1);
+	}
+	return 0;
+}

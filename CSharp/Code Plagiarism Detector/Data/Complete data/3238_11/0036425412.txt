@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <math.h>
+int main() {
+int n,i;
+double ukupno=0,pi;
+scanf("%d",&n);
+if ((n<1)||(n>25)) printf ("n nije valjan");
+else {
+for (i=1; i<n+1; i++) ukupno=ukupno+1./(pow(i,8));
+pi=ukupno*9450.;
+pi=pow(pi,1./8);
+printf("%1.13g",pi);
+}
+return 0;
+}

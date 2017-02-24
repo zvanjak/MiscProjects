@@ -1,0 +1,19 @@
+int Memoriraj(Radio& radio)
+{
+	int BrojStanica=1;
+	Stanica st;
+
+	while(BrojStanica<7)
+	{
+		st=radio.TraziSljedecu();
+
+		if(st==radio.Dohvati(1)) return (BrojStanica-1);
+
+
+		if(strlen(st.RDS()))
+		{
+			radio.MemorirajStanicu(st,BrojStanica++);
+		}
+	}
+	return (BrojStanica-1);
+}

@@ -1,0 +1,19 @@
+float prosjek(FILE *f){
+    
+	struct album{
+		char naziv[30+1];
+		char autor[20+1];
+		int prodano;
+	}zapis;
+	
+	int i=0, brojac_uk=0;
+
+	    do{
+		   fseek(f,i*sizeof(zapis),SEEK_SET);
+		   if(fread(&zapis,sizeof(zapis),1,f)!=1) break;
+                   brojac_uk+=zapis.prodano;
+		   i++;
+           }while(1);
+		  		   
+	return ((float)brojac_uk/i);
+}

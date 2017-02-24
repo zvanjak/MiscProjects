@@ -1,0 +1,16 @@
+#include <stdio.h>
+int main () {
+	int n, z, brojac;
+	scanf ("%d", &n);
+	brojac = 0;
+	if ((n%13!=0) && (brojac<40)) {
+	    while ((n%13!=0) && (brojac<40)) {
+             z=n%10;
+             n=n+z;
+             printf ("%d ", n);
+             brojac=brojac+1;
+	    }
+	}
+        printf ("%d", brojac);
+	return 0;
+}

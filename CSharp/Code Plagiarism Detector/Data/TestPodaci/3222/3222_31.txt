@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <math.h>
+int main () {
+    long int n, brojac=0;
+    scanf("%d", &n);
+    do {
+        n+=n%10;
+        brojac+=1;
+        printf("%d ", brojac);
+        printf("%d ", n);
+       }
+    while(((n%13)!=0)&&(brojac<40));
+    return 0;
+}

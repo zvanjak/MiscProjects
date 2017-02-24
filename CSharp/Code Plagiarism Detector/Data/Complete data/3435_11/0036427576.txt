@@ -1,0 +1,13 @@
+#include<stdio.h>
+int main(){
+int n,m,i;
+	long int x=1,br=1,naz1=1,naz2=1;
+scanf("%d%d",&n,&m);
+if ((n==m)||(m==0))x=0;
+else {for (i=1;i<=n;i++)br*=i;
+for (i=1;i<=m;i++)naz1*=i;
+for (i=1;i<=(n-m);i++)naz2*=i;
+	 x=br/(naz1*naz2);}
+printf("%d",x);
+return 0;
+}

@@ -1,0 +1,25 @@
+#include <stdio.h>
+#define MAXRED 20	
+#define MAXSTUP 20
+int main()
+{
+	int x[MAXRED][MAXSTUP]={0},i,j,m,n;
+	long int suma=0,umn=1;
+	scanf("%d %d", &n, &m);
+	for (i=0; i<n; i++)
+		for(j=0; j<m; j++)
+		{
+			scanf("%d", &x[i][j]);
+		}
+	for (i=0; i<n; i+=2)
+	{
+		umn=1;
+		for (j=0; j<m; j++)
+		{
+			umn*=x[i][j];
+		}
+		suma+=umn;
+	}
+	printf("%d", suma);
+return 0;
+}

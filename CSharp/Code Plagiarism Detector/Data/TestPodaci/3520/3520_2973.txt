@@ -1,0 +1,26 @@
+#include <stdio.h>
+int RemoveAllDigits (char * inputField, char * outputField, int * 
+number){
+	int duljinaNovogNiza=0;
+	int brojIzbacenih=0;
+	char tempchar;
+	
+	tempchar = *inputField;
+	while(tempchar!='\0'){
+		if(tempchar>='0' && tempchar<='9'){
+			brojIzbacenih++;
+		}else{
+			*outputField=tempchar;
+			outputField++;
+			duljinaNovogNiza++;			
+		}
+		inputField++;
+		tempchar = *inputField;
+	}
+	*outputField='\0';
+	outputField++;
+	// duljinaNovogNiza++
+
+	*number = brojIzbacenih;
+	return duljinaNovogNiza;
+}

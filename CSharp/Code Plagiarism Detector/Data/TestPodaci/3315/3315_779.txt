@@ -1,0 +1,13 @@
+float prosjek(FILE *f)
+{
+	char naziv[30+1],autor[20+1];
+	int prodano,i=0;
+	long u_prodano;
+	while(!feof(f))
+	{
+		fscanf(f,"%s %s %d\n",&naziv,&autor,&prodano);
+		u_prodano+=prodano;
+		++i;
+	}
+	return (u_prodano/i);
+}

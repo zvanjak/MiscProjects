@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+
+int main()
+{
+  char rec[100];
+  int i = 0, j, pomak = 0, n, prije = 0;
+  do {
+        scanf("%c", &rec[i]);
+        i++;
+        }while ((rec[i-1] != '.') && (i < 100));
+  for(i = 1; i < 100; i++){
+        if (rec[i] == '.'){ 
+                   n = i + 1;
+                   rec[i] = '\0';
+                   break;
+                   }
+        else continue;
+        }
+  for(i = 0; i < n; i++){
+        if (i == 0){ if (islower(rec[0])) rec[0] = toupper(rec[0]); else continue;}
+        else{
+             if ((prije == 1) && !((rec[i] == ' ') || (rec[i] == ','))){
+                           if (islower(rec[i])){
+                                rec[i] = toupper(rec[i]);
+                                }
+                           prije = 0;
+                           }
+             else if (isupper(rec[i])) rec[i] = tolower(rec[i]);
+             else if ((rec[i] == ' ') || (rec[i] == ',')){
+                                      for(j = i; j < n; j++){
+                                      rec[j] = rec[j+1];
+                                      }
+                                      prije = 1;
+                                      i--;
+                                      }
+             else continue;
+             }
+        }
+  printf("%s", rec);
+  return 0;
+}

@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main ()
+{
+	
+	int dec;
+	    
+	do
+	{
+		scanf ("%d", &dec);
+	}
+	while ( dec < 100 || dec > 999 );
+
+	printf ("%o", dec);
+
+	return 0;
+
+}

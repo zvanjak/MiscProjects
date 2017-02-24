@@ -1,0 +1,12 @@
+float prosjek (FILE *f)
+{
+char naziv [31],autor [21];
+int granica1,br=0,s=0;
+float x;
+while (fscanf (f,"%s %s %d",naziv,autor,&granica1)==3){
+br++;
+s=s+granica1;
+}
+x=(float)s/br;
+return x;
+}

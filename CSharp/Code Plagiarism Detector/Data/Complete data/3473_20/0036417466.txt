@@ -1,0 +1,24 @@
+Krug fun4(Pravokutnik p){
+	double wit, hig;
+	double r;
+	double x1,y1;
+	double x2,y2;
+	double xs, ys;
+	Tocka T;
+	Tocka S;
+	wit=p.getSirina();
+	hig=p.getVisina();
+	T = p.getDLkut();
+	x1=T.X;
+	y1=T.Y;
+	x2=x1+wit;
+	y2=y1+hig;
+	xs=(x2-x1)/2;
+	ys=(y2-y1)/2;
+	r=(sqrt((wit*wit)+(hig*hig)))/2;
+	S.X=xs;
+	S.Y=ys;
+	Krug *k = new Krug(S,r);
+	return *k;
+}
+

@@ -1,0 +1,26 @@
+class Komprimiranje
+
+{
+	private:
+             int _BrojElemenata;
+             int *_Pokazivac;
+   public:
+	     Komprimiranje() {}
+             Komprimiranje(int *polje , int n )
+			 {
+                               _BrojElemenata=n;                                   
+                               _Pokazivac=polje;
+			 }  
+             ~Komprimiranje() {}
+             int UkupnaSuma(){
+                            int i, suma=0;
+                            for (i=1; i<_BrojElemenata; i+=2) suma+=((_Pokazivac[i-1])*(_Pokazivac[i]));
+                            return suma;                             
+                            }
+			 int UkupniBrojElemenata(int vrijednost){
+			 int i,broj=0;
+			 for (i=0; i<_BrojElemenata; i+=2) if (vrijednost==_Pokazivac[i]) broj+=_Pokazivac[i+1];
+			 return broj;
+			 }
+      
+};

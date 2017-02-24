@@ -1,0 +1,37 @@
+char *SamoDuplikati(char *ulazni_niz) {
+    int l,i,j,p,brojac,c;
+	int k=0;
+	int ima;
+    char *rj;
+	char *pom;
+
+    l=strlen(ulazni_niz);
+    if (ulazni_niz==NULL || l==0) return NULL;
+    
+    pom=malloc(sizeof(char)*(l));
+	rj=malloc(sizeof(char)*(l));
+    strcpy(pom,ulazni_niz);
+	for(i=0;i<l;i++){
+		p=0;
+		brojac=1;
+		ima=0;
+		for(j=i+1;(j<l)&&(ima==0);j++) {
+			for(c=0;c<=k;c++) {
+				if(pom[i]==rj[c]){
+					ima=1;
+				}
+			}
+
+			if(pom[j]==pom[i]){
+				brojac++;
+			}
+				
+		}
+		if(brojac>=2) {
+			rj[k]=pom[i];
+			k++;
+		}
+	}
+	rj= realloc(rj,sizeof(char)*(k));
+	return rj;
+}

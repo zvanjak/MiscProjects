@@ -1,0 +1,42 @@
+#include<stdio.h>
+
+#define PUN 1000
+
+void main()
+{
+	int p[PUN], br=3, max = 2, n = 0, i = 0, j, k, slozen;
+
+	while(br>2){
+	     scanf("%d", &br);
+	     p[i] = br;
+	     i++;
+
+	}
+	n = i-1;
+
+/*	if(n == 0) 
+	  printf("\nNema unesenih clanova!!\n");
+*/
+
+	for(j = 0; j<n; j++){
+	   slozen = 0;
+	   for(k = 2; k <= p[j]/2; k++){
+		   if((p[j]%k) == 0){
+			slozen = 1;   
+		   }
+	   }
+
+	   if(slozen != 1 && max < p[j]){
+		   max = p[j];
+	   }
+
+	}
+
+	if(max == 2){
+	   printf("0");
+	}
+
+	else{
+	  printf("%d", max);
+	}
+}

@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+  int main() {
+	  
+  int a, b, c, d, br, i ;
+
+  scanf ("%d", &a );
+  scanf ("%d", &d );
+  scanf ("%d", &b );
+
+  if ( d<0 ) exit (1);
+  else {
+	  br=0 ;
+	  c=0 ;
+		  if (a>b) {
+		  printf ("%d ", c);  exit (1); }
+	        
+			
+	  { for (i=a+d; i<=b; i+=d)
+	  {
+		  br=1 + br;
+
+		  printf ("%d ", i ); }
+	  if ((i-d) != b)
+	     { printf (" %d ", i );
+	       br=br + 1; }
+      
+	 printf ("\n %d ", br ); }
+  }
+  }

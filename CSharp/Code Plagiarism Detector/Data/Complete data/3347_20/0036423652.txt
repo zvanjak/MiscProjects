@@ -1,0 +1,14 @@
+double sumareda(double x, int N)
+{
+double pom;
+kontrola();
+if (N>0)
+{
+pom= (pow(-1.,(N%2+1)))*pow(x, N)/N;
+return (pom + sumareda(x, N-1));
+}
+else
+{
+return 0;
+} 
+}

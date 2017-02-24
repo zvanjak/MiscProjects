@@ -1,0 +1,30 @@
+int izbaci (zapis **glavap) {
+ zapis *p, *pp; 
+ int br = 0;
+ 
+ for (p = *glavap; p != NULL; ) {
+ 
+     if (p->pros < 2) {
+         
+         if (p == *glavap) {
+               pp = (*glavap)->sljed;
+               free (*glavap);
+               *glavap = pp;
+               p = pp;
+               br++;
+         }
+         
+          else {           
+               for (pp = *glavap; pp->sljed != p; pp = pp->sljed);
+               pp->sljed = p->sljed;
+               free (p);
+               p = pp->sljed;
+               br++;
+          }
+     }
+     
+     else p = p->sljed;
+ }
+
+ return br;
+}

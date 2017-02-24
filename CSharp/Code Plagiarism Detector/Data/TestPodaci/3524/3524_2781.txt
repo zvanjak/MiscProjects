@@ -1,0 +1,11 @@
+void ubaci( char *niz, char *podniz, int i ) {
+   int j, len = strlen( niz ), len2 = strlen( podniz );
+   if( i < 0 || i > len ) {
+      for( j = 0; j < len; j++ )
+         if( niz[j] >= 'a' && niz[j] <= 'z' ) niz[j] += 'A' - 'a';
+   } else {
+      for( j = len+len2-1; j >= i+len2; j-- ) niz[j] = niz[j-len2];
+      for( j = 0; j < len2; j++ ) niz[i+j] = podniz[j];
+      niz[len+len2] = 0;
+   }
+}

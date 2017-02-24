@@ -1,0 +1,24 @@
+char *SamoSuglasnici(char *c) {
+int r=0,i=0,s=0;
+char *d;
+
+while(c[i]!='\0'){
+r++;i++;}
+
+d = (char *) malloc (sizeof (char));
+
+for (i=0;i<r;i++){
+if (isalpha(c[i])!=0)
+if ((c[i]!='e') || (c[i]!='E')|| 
+    (c[i]!='a') || (c[i]!='A')|| 
+    (c[i]!='i') || (c[i]!='I')|| 
+    (c[i]!='o') || (c[i]!='O')|| 
+    (c[i]!='u') || (c[i]!='U'))
+{ d[s] = c[i];
+  s++;
+  d=(char *) realloc (d, (s+1)*sizeof(char));}
+}
+  
+d[s] = '\0';
+return d;
+}

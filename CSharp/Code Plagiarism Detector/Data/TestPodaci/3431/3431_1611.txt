@@ -1,0 +1,35 @@
+#include <stdio.h>
+int main(){
+    int niz[100],i,n,par,nepar,rez;
+    char z;
+    nepar=0;par=0;rez=0;i=0;n=0;
+    
+    do{
+         scanf("%c", &z);
+         if (z>='0' && z<='9'){
+                    niz[n]=z-48;
+                    n++;
+                    }
+         else if (z>='A' && z<='F'){
+              niz[n]=z-55;
+              n++;
+              }
+         else if (z>='a' && z<='f'){
+              niz[n]=z-87;
+              n++;
+              }
+             
+    }while( ((z>='0' && z<='9') || (z>='A' && z<='F') || (z>='a' && z<='f')) && n<100);
+
+    for (i=0;i<n;i++){
+        if (niz[i]%2){
+            nepar+=niz[i];
+            }
+        else {
+             par+=niz[i];
+             }
+        }
+    printf("%d",par-nepar);
+    
+    return 0;      
+}   

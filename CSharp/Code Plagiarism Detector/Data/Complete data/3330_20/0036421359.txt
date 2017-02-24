@@ -1,0 +1,13 @@
+int* KreirajTablicuMnozenja(int n){
+	int i, j;
+	int *tab;
+
+	tab = (int*) malloc(n*n*sizeof(int));
+
+	for(i=0; i < n; i++){
+		for(j=0; j < n; j++){
+			tab[i*n + j] = (i+1)*(j+1);
+		}
+	}
+	return tab;
+}

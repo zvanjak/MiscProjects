@@ -1,0 +1,7 @@
+int rBrojParnih(int *p, int n){
+   kontrola();
+   if (0==n){
+      return(1-p[n]%2);
+   }
+   return 1 - p[n]%2 + rBrojParnih(p, n-1);
+}

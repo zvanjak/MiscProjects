@@ -1,0 +1,43 @@
+class Skup
+{
+private:
+	float *_element;
+	int _brojElemenata;
+public:
+	Skup();
+	Skup(int brojElemenata);
+	void Dodaj(float element);
+	int BrojElemenata();
+	int BrojPojavljivanja(float element);
+	~Skup();
+};
+
+Skup::Skup() {
+	_element = new float[10];
+	_brojElemenata = 0;
+}
+
+Skup::~Skup() {
+	delete[] _element;
+}
+
+Skup::Skup(int brojElemenata) {
+	_element = new float[brojElemenata];
+	_brojElemenata = 0;
+}
+
+void Skup::Dodaj(float element) {
+	_element[_brojElemenata++] = element;
+}
+
+int Skup::BrojElemenata() {
+	return _brojElemenata;
+}
+
+int Skup::BrojPojavljivanja(float element) {
+	int i, br = 0;
+	for (i = 0; i < _brojElemenata; i++)
+		if (element == _element[i])
+			br++;
+	return br;
+}

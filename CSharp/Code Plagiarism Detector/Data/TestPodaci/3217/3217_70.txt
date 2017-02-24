@@ -1,0 +1,18 @@
+#include<stdio.h>
+#include<math.h>
+int main(){
+	int x,n,i=0,zn=0;
+	int l;
+	do{
+		scanf("%d", &n);
+		x=n;
+		zn=log10(n)+1;
+
+		for(i=0; i<zn; i++){
+			l=n%10;
+			n=n/10;
+			printf("%d" ,l);
+		}
+	}while(x>0);
+	return 0;
+}

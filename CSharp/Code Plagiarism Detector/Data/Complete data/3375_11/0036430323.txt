@@ -1,0 +1,37 @@
+#include<stdio.h>
+#include<math.h>
+int main(){
+	int broj;
+	int predznak=1;
+	int a,b,c,d;
+	float brojac=0;
+	int novi_broj=0;
+	scanf("%d", &broj);
+	if (broj<0) {
+		predznak=-1;
+		broj*=-1;
+	}
+	a=broj/1000;
+	b=(broj/100)%10;
+	c=(broj%100)/10;
+	d=broj%10;
+	if (d%2==0) {
+		novi_broj+=d*pow(10,brojac);
+		brojac++;
+	}
+	if (c%2==0) {
+		novi_broj+=c*pow(10,brojac);
+		brojac++;
+	}
+	if (b%2==0) {
+		novi_broj+=b*pow(10,brojac);
+		brojac++;
+	}
+	if (a%2==0) {
+		novi_broj+=a*pow(10,brojac);
+		brojac++;
+	}
+	if (predznak==-1) novi_broj*=-1;
+		printf("%d", novi_broj);
+	return 0;
+}

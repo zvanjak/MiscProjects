@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <string.h>
+
+int br_prodanih(FILE *f, char *autor) {
+struct {
+char naziv[30+1];
+char autor[20+1];
+int prodano;
+} zapis;
+
+int prodano = 0;
+
+while ((fscanf(f, "%s%s%d", zapis.naziv, zapis.autor, &zapis.prodano)) == 3) {
+if (strcmp(autor, zapis.autor) == 0)
+prodano += zapis.prodano;
+}
+
+return prodano;
+}

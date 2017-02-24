@@ -1,0 +1,14 @@
+float prosjek(FILE *f)
+{
+  char naziv[31];
+  char autor[21];
+  int prodano;
+  int ukupno=0, br=0;
+  fseek(f, 0, SEEK_SET);
+  while(fscanf(f, "%s %s %d", naziv, autor, &prodano)!=EOF)
+  {
+    ukupno+=prodano;
+    br++;
+  }
+  return (float)ukupno/br;
+}

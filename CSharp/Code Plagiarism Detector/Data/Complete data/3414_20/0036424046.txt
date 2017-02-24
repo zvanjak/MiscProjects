@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+char *brojeve_u_znakove (int *polje, int duljina){
+	char *p;
+	int i,j;
+	p = NULL;
+	if (duljina!=0){ 
+		j = 0;
+		for (i=0; i<duljina; i++){
+			if (polje[i] == 0){
+				p = (char *) realloc(p, (j+1)*sizeof(char)); 
+				p[j] = polje[i] + '0';
+				j++;}
+			else {
+                while(polje[i]){
+					p = (char *) realloc(p, (j+1)*sizeof(char));
+					p[j] = (polje[i] % 10) + '0';
+					polje[i]/=10;
+					j++;
+				}
+			}
+		}
+	}
+	else if (duljina == 0) {
+		p = (char *) malloc(2*sizeof(char));
+		strcpy(p, "\0");
+		return p;
+	}
+p[j]='\0';
+return p;
+
+}

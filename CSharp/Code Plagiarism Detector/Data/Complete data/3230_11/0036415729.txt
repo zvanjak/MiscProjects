@@ -1,0 +1,22 @@
+#include <stdio.h>
+int main () {
+
+  int i, n, y;
+  float e, x;
+  
+  scanf ("%d", &n);
+  if (n>=1 && n<=30) {
+	for (i = 0; i<n; i++) {
+		
+		
+	
+	}
+printf ("%.12f", e);	
+  
+  } else {
+	  
+	  printf ("n nije valjan");
+	  }
+ 
+  return 0;
+}

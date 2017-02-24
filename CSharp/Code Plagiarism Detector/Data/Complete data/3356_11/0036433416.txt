@@ -1,0 +1,10 @@
+#include<stdio.h>
+int main () {
+int n, m;
+char c;
+scanf("%n %m %c", &n, &m, &c);
+if (n < 0 || m < 1 || m > 3)
+print ("Error");
+if (c = !"L" || c = !"R")
+printf("Error");
+}

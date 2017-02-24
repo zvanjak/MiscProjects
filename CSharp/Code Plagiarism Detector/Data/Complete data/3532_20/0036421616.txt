@@ -1,0 +1,28 @@
+Stog* noviOdNeparnih(Stog *stog)
+{
+		Stog temp1,temp2;
+		Stog *kopija = new Stog;
+		int broj,i;
+
+		
+		while(stog->Skini(&broj))
+		{
+			temp1.Stavi(broj);
+			temp2.Stavi(broj);
+		}
+
+		while(temp1.Skini(&broj))
+		{
+			stog->Stavi(broj);
+		}
+
+		while(temp2.Skini(&broj))
+		{
+			
+			if(broj%2)
+				kopija->Stavi(broj);
+		}
+
+		return kopija;
+
+}

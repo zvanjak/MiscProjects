@@ -1,0 +1,17 @@
+#include<stdio.h>
+
+int m = -1, n = 0;
+long double br = 0, pov = -2;
+
+int main()
+{
+	scanf("%d", &n);
+	if ((n < 1) || (n > 30))
+	{
+		printf("n nije valjan\n");
+		return(0);
+	}
+	while(++m < n) br += pov /= -2.;
+	printf("%.12f\n", br);
+	return(0);
+}

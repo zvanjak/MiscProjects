@@ -1,0 +1,13 @@
+#include<stdio.h>
+int main() {
+        int i;float n;double e=0,fakt=1;
+        scanf("%f",&n);
+        if(n!=(int)(n)||n<1||n>20)
+                printf("n nije valjan");
+        else {
+                for(i=1;i<=n;i++) {
+                        fakt*=i;
+                    e+=1./fakt; }
+                printf("%1.12f",e); }
+        return 0;
+}

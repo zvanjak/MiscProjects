@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<math.h>
+main() {
+	char x, y, c;
+	int r;
+	scanf("%c %c %c", &x, &y, &c);
+	if(c==43){
+		r=(x-48)+(y-48);
+		printf("%d",r);
+	    }
+		if(c==45){
+			r=(y-48)-(x-48);
+			printf("%d",r);
+		    }
+		if(c==42){
+			r=(x-48)*(y-48);
+		    printf("%d",r);
+		    }
+		if(c==47){
+			r=(x-48)/(y-48);
+			printf("%d",r);
+		    }
+		if(c==37){
+			r=(x-48)%(y-48);
+			printf("%d",r);
+		    }
+		if(!(c==43 || c==45 || c==42 || c==47 || c==37)){
+			printf("Neispravna");
+			}
+		return 0;
+	}

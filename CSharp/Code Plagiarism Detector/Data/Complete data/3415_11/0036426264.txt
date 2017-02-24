@@ -1,0 +1,51 @@
+#include <stdio.h>
+int main () {
+	int prvi,drugi,suma,i,br;
+	char znakovi[20];
+	char operacija;
+	suma=0;
+	br=0;
+	i=0;
+
+	do {
+		scanf("%d %d %c", &prvi, &drugi, &operacija);
+		switch (operacija) {
+			case '+': {
+				znakovi[i] = operacija;
+				suma += (prvi + drugi);
+				break;
+					  }
+			case '-': {
+				znakovi[i] = operacija;
+				suma += (prvi - drugi);
+				break;}
+			case '/': {
+				if (drugi == 0) znakovi[i] = operacija;
+				else {
+				znakovi[i] = operacija;
+				suma += (prvi / drugi);
+				break;}}
+			case '*':{
+				znakovi[i] = operacija;
+				suma += (prvi * drugi);
+				break;	 }
+			case '%': {
+				if (drugi == 0) znakovi[i] = operacija;
+				else {
+				znakovi[i] = operacija;
+				suma += (prvi % drugi);
+				break;}}
+			}
+			++i;
+			++br;
+ 		
+	}
+	while ((operacija =='+') || (operacija == '-') || (operacija == '*') || 
+		(operacija =='/') || (operacija=='%'));
+	printf("%d ",suma);
+	for (i=0; i<(br-1); ++i)
+	printf("%c ",znakovi[i]);
+
+	
+	return 0;
+}

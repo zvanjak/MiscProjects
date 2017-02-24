@@ -1,0 +1,22 @@
+char *brojeve_u_znakove (int *polje, int duljina)
+{
+     int i;
+     int n;
+     int zadnja_pozicija = 0;
+     char *niz ;
+     niz = (char*) malloc(sizeof(char)); 
+     for (i=0;i<duljina;i++)
+     {
+         n = polje[i];
+         while ( n )
+         {
+               if ( (niz = (char*) realloc (niz, strlen(niz) + 1 )) == NULL ){
+                  return NULL; }
+               *(niz + zadnja_pozicija) = n%10 + 48 ; 
+               zadnja_pozicija++;
+               n/=10;
+         }
+     }
+     *(niz+zadnja_pozicija) = '\0';
+     return niz;
+}

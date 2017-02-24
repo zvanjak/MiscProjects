@@ -1,0 +1,39 @@
+#include<stdio.h>
+#define maxStup 20 
+#define maxRed 5
+int main(){
+	int i,j,mr,ms,najveci,r,s;
+	int a[maxRed][maxStup];
+	do{
+		scanf("%d %d",&mr,&ms);
+	}while(mr<1||mr>5 || ms<1||ms>20);
+	for(i=0;i<mr;i++){
+		for(j=0;j<ms;j++){
+			scanf("%d",&a[i][j]);
+		}
+	}
+    for(i=0;i<mr;i++){
+		najveci=a[i][0];
+		r=i;
+		s=0;
+		for(j=1;j<ms;j++){
+			if(a[i][j]<0){
+               a[i][j]=-(a[i][j]);
+			}
+            if(a[i][j]>najveci){
+				a[i][j]=najveci;
+                r=i; 
+                s=j;
+			}
+			if(a[i][j]=najveci){
+				if(i<r){a[i][j]=najveci;}
+				if(i=r){if(j<s){a[i][j]=najveci;}
+				}
+			}
+		}
+	}
+	printf("%d %d",r,s);
+  
+
+	return 0;
+}

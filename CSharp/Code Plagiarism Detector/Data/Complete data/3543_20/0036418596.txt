@@ -1,0 +1,10 @@
+void obrni(zapis **glava){
+    zapis *tren = *glava;
+    zapis *tren_sljed = tren->sljed;
+    tren->sljed = NULL;
+    if (tren_sljed != NULL) {
+       *glava = tren_sljed;
+       obrni(glava);
+       tren_sljed->sljed = tren;
+    }
+}

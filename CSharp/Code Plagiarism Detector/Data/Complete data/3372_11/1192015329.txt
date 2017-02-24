@@ -1,0 +1,35 @@
+#include <stdio.h>
+int main () {
+	int broj,z1=0,z2=0,z3=0,z4=0,pom=0,novibr=0;
+	//printf ("Ucitaj cetveroznamenkasti pozitivni broj: ");
+	scanf ("%d", &broj);
+	if ((broj<1000) && (broj>9999)) {
+		
+		} else if (broj<0) printf ("Broj nije pozitivan\n");
+			else {
+				pom = broj % 10;
+				broj=broj / 10;
+				z4=pom;
+				if (pom % 2) z4=z4+1;
+				if (z4==10) z4=0;
+				pom = broj %10;
+				broj = broj / 10;
+				z3 = pom;
+				if (pom % 2) z3=z3+1;
+				if (z3==10) z3=0;
+				pom = broj % 10;
+				broj = broj / 10;
+				z2 = pom;
+				if (pom % 2) z2=z2+1;
+				if (z2==10) z2=0;
+				pom = broj % 10;
+				broj = broj / 10;
+				z1 = pom;
+				if (pom % 2) z1=z1+1;
+				if (z1==10) z1=0;
+				novibr=z1*1000+z2*100+z3*10+z4;
+				if ((z1==0)&&(z2==0)&&(z3==0)&&(z4==0)) printf ("");
+				else printf ("%4d\n", novibr);
+				}
+		return 0;
+		}

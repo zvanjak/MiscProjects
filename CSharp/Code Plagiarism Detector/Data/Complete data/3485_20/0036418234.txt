@@ -1,0 +1,68 @@
+class CjelobrojniNiz{
+public:
+	int SviJednaki;
+	int _n;
+	int *_p;
+	CjelobrojniNiz(){}
+	CjelobrojniNiz(int *niz, int brElem){
+		_n=brElem;
+		_p=(int*)malloc(brElem*sizeof(int));
+		for (_i=0;_i<brElem;_i++){
+			_p[_i]=niz[_i];
+		}
+		for (_i=0;_i<brElem-1;_i++){
+			SviJednaki=1;
+			if(_p[_i]!=_p[_i+1]){
+				SviJednaki=0;
+				break;
+			}
+		}
+	}
+
+	~CjelobrojniNiz(){}
+
+	int Usporedi(CjelobrojniNiz niz){
+		if(_n!=niz._n) return 0;
+		for(_i=0;_i<_n;_i++) if(_p[_i]!=niz._p[_i]) return 0;
+		return 1;
+	}
+
+	int *VratiRazliku(CjelobrojniNiz niz, int *n){
+		*n=0;
+		_k=0;
+		_PomPolje=0;
+		for(_i=0;_i<_n;_i++){
+			for(_j=0;_j<niz._n;_j++){
+				if(_p[_i]!=niz._p[_j])_pom=1;
+				else{
+                    _pom=0;
+					break;
+				}
+			}
+			if(_pom) {
+				for (_j=0;_j<(*n);_j++){
+					if (_PomPolje[_j]==_p[_i]){
+						_pom2=0;
+						break;
+					}		
+					else
+						_pom2=1;}
+				if (_pom2){
+				++(*n);
+                _PomPolje=(int*)realloc(_PomPolje,(*n)*sizeof(int));
+				_PomPolje[_k++]=_p[_i];
+				}
+
+			}
+        }
+		return _PomPolje;
+	}
+
+private:
+	int _pom2;
+	int _i,_j;
+	int *_PomPolje;
+	int _pom;
+	int _k;
+
+};

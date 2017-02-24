@@ -1,0 +1,24 @@
+#include <stdio.h>
+int main () {
+	int broj,max=0,i,jest;
+	do {
+		scanf("%d",&broj);
+		if(broj>2) {
+			jest=1;
+			for(i=2;i<=broj/2;i++) {
+				if (broj%i==0)
+					jest=0;
+			}
+			if(jest==1) {
+				if(broj>max)
+				max=broj;
+			}
+		}
+	}
+	while(broj>2);
+	if (max==0)
+		printf("0");
+	else
+		printf("%d", max);
+	return 0;
+}

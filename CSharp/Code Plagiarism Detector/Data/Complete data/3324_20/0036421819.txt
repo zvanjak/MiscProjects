@@ -1,0 +1,10 @@
+void rStrcpy(char *niz2, char *niz1){
+     char *pok1, *pok2;
+     pok1=niz1;
+     pok2=niz2;
+     if(*pok1=='\0') *pok2=*pok1;
+     else { *pok2=*pok1;
+             rStrcpy(pok2+1, pok1+1); }
+
+     kontrola();
+}

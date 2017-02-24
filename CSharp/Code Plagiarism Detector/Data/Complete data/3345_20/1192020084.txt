@@ -1,0 +1,12 @@
+# include <stdlib.h>
+# include <stdio.h>     
+# include <malloc.h>   //ovisno o programu stavljamo predprocesorske naredbe
+
+//funkcuja
+
+double sumareda(int n) {
+    kontrola();
+     if (n == 1) return 1;
+     else return 1/(double)(n*n*n*n)+sumareda(n-1);
+}
+ 

@@ -1,0 +1,23 @@
+#include<stdio.h>
+int main () {
+	
+	int n,i;
+	float pi=0, pom=0,pom1=0;
+	scanf("%d",&n);
+	if (n<1||n>400) {
+		printf ("n nije valjan \n");
+	}
+	else 
+	{
+		for (i=1;i<=n;i++) {
+			pom1=(4*i-1)*(4*i+1);
+			pom=(8/pom1);
+			pi+=pom;
+		} 
+		pi=4-pi;
+		printf ("%.8f",pi);
+	
+	}
+	return 0;
+}
+

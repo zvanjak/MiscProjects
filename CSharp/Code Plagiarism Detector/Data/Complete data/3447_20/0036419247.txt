@@ -1,0 +1,61 @@
+class ZatvoreniInterval
+{
+private:
+	float _pocetak;
+	float _kraj;
+
+	int strop (const float broj)
+	{
+		int start;
+		if (broj > 0)
+		{
+			if (broj != (int) broj)
+				start = (int) broj + 1;
+			else
+				start = (int) broj;
+		}
+		else
+			start = (int) broj;
+
+		return start;
+	}
+
+public:
+	ZatvoreniInterval ()
+	{
+		_pocetak = 0;
+		_kraj = 1;
+	}
+
+	ZatvoreniInterval (float pocetak, float kraj)
+	{
+		_pocetak = pocetak;
+		_kraj = kraj;
+	}
+
+	float Duljina ()
+	{
+		if (_pocetak > _kraj)
+			return 0;
+		return _kraj - _pocetak;
+	}
+
+	int BrojCijelihTocaka ()
+	{
+		int start, brojac;
+		if (_pocetak <= _kraj)
+		{
+			brojac = 0;
+			start = (int) strop (_pocetak);
+			while (start <= _kraj)
+			{
+				start++; 
+				brojac++; 
+			}
+		}
+		else
+			brojac = 0;
+
+		return brojac;
+	}
+};

@@ -1,0 +1,29 @@
+char *brojeve_u_znakove(int *polje, int duljina){
+	int i,j, temp, brojac, m=0;
+	char *niz;
+	niz = (char *) malloc (duljina * 10);
+
+	if(duljina == 0)
+		return (niz = "");
+
+	for(i=0; i < duljina; i++) {
+		brojac = 0;
+		if (*(polje + i) == 0) {
+			*(niz+m) = 48;
+			m++;
+		}
+		temp = *(polje + i);
+		while (temp != 0) {
+			temp /= 10;
+			brojac++;
+		}
+		
+		for(j=0; j < brojac; j++, m++) 
+			*(niz+m) = ((*(polje + i) % ((int)pow(10, j+1))) / (int)pow(10,j)) + 48;
+		
+	}
+	*(niz+m) = '\0';
+
+
+	return niz;
+}

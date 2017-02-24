@@ -1,0 +1,122 @@
+class CjelobrojniNiz {
+  private:
+    int *_niz;
+    int _brElem;
+  
+  public:
+    int VecinaJednaka;
+    
+    CjelobrojniNiz (int *niz, int brElem) {
+      int i, j, max = 0, pom;
+      _brElem = brElem;
+      _niz = new int[_brElem];
+      
+      for (i = 0; i < _brElem; i++)
+        _niz[i] = niz[i];
+      
+      for (i = 0; i < _brElem; i++) {
+        pom = 1;
+        for (j = i + 1; j < _brElem; j++)
+          if (_niz[j] == _niz[i]) pom++;
+        if (pom > max)
+          max = pom;
+      }
+      
+      if (max > brElem / 2)
+        VecinaJednaka = 1;
+      else
+        VecinaJednaka = 0;
+    }
+    
+    ~CjelobrojniNiz () {
+      delete [] _niz;
+    }
+    
+    int Usporedi (CjelobrojniNiz niz) {
+      int i;
+      
+      if (_brElem != niz._brElem)
+        return 0;
+      
+      for (i = 0; i < _brElem; i++)
+        if (_niz[i] != niz._niz[i])
+          return 0;
+      
+      return 1;
+    }
+    
+    int *VratiPresjek (CjelobrojniNiz niz, int *n) {
+      int i = 0, j = 0, t, novibrElem = 0;
+      int *novi = (int *) malloc ((_brElem + niz._brElem) * sizeof (int));
+      int *konacni = NULL;
+
+      while (i < _brElem) {
+        if (i > 0) {
+          if (_niz[i] != _niz[i - 1]) {
+            novibrElem++;
+            novi[novibrElem - 1] = _niz[i];
+          }
+        }
+        else {
+          novibrElem++;
+          novi[novibrElem - 1] = _niz[i];
+        }
+        i++;
+      }
+      
+      while (j < niz._brElem) {
+        if (j > 0) {
+          if (niz._niz[j] != niz._niz[j - 1]) {
+            novibrElem++;
+            novi[novibrElem - 1] = niz._niz[j];
+          }
+        }
+        else {
+          novibrElem++;
+          novi[novibrElem - 1] = niz._niz[j];
+        }
+        j++;
+      }
+      
+      for (i = 0; i < novibrElem; i++)
+        for (j = 0; j < novibrElem - 1 - i; j++)
+          if (novi[j] > novi[j + 1]) {
+            t = novi[j];
+            novi[j] = novi[j + 1];
+            novi[j + 1] = t;
+          }
+
+      i = 0;
+      t = 0;
+      while (i < novibrElem) {
+        if (i > 0) {
+          if (novi[i] != novi[i - 1]) {
+            t++;
+            realloc (konacni, t * sizeof (int));
+            konacni[t - 1] = novi[i];
+          }
+        }
+        else {
+          t++;
+          realloc (konacni, t * sizeof (int));
+          konacni[t - 1] = novi[i];
+        }
+        i++;
+      }
+
+      free (novi);
+      *n = t;
+      return konacni;
+    }
+    
+    CjelobrojniNiz (const CjelobrojniNiz &izvor) {
+      int i;
+
+      _brElem = izvor._brElem;
+      _niz = new int[_brElem];
+      VecinaJednaka = izvor.VecinaJednaka;
+
+      for (i = 0; i < _brElem; i++)
+        _niz[i] = izvor._niz[i];
+    }
+};

@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <math.h>
+#define DIMENZIJA 50
+
+int main () {
+
+int i=1; int n=1; double e=1; double dx;
+int j=0; float x; double niz [DIMENZIJA]; double dfx;
+double der [DIMENZIJA]; double firad;
+
+for ( i; i<=50; i++){
+n = n*i;
+e = e+1./n;
+}
+
+scanf ( "%f", &dx);
+
+for ( j; j<=50; j++) {
+
+scanf ("%f", &x);
+
+if (x==0.0) break;
+
+else {
+niz[j] = x;
+
+dfx = (pow (cos (1./e), sin (pow (e, sin (x+ dx + 1./e)))) -
+pow (cos (1./e), sin (pow (e, sin (x+ 1./e))))) / dx ;
+
+der[j] = dfx;
+
+firad = atan(dfx) / 180 ;
+
+printf ("%.2lf", firad);
+}
+}
+return 0;
+}

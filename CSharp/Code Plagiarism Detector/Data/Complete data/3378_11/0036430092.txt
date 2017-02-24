@@ -1,0 +1,18 @@
+#include<stdio.h>
+int main() {
+	unsigned int br_odr,br_nom,bruto_sat;
+	float bruto_placa,neto_placa;
+	scanf("%d %d %d",&br_odr,&br_nom,&bruto_sat);
+	if (br_odr<br_nom)
+		bruto_placa=br_odr*bruto_sat*0.9;
+	if (br_odr>br_nom)
+		bruto_placa=br_odr*bruto_sat*1.15;
+	if (br_odr=br_nom)
+		bruto_placa=br_odr*bruto_sat;
+	if (bruto_placa>6000)
+		neto_placa=bruto_placa*0.7;
+	else neto_placa=bruto_placa*0.8;
+	printf("%.2f",neto_placa);
+	return 0;
+}
+

@@ -1,0 +1,17 @@
+int *napraviPolje(int *A, int Na, int *B, int Nb, int *Nc){
+	int *p = NULL;
+	int najmanji_b,i,j=0;
+	najmanji_b=*B;
+	for (i=1;i<Nb;i++){
+		if(najmanji_b>*(B+i)) najmanji_b=*(B+i);
+	};
+	for(i=0;i<Nb;i++){
+		if(*(A+i)>najmanji_b){
+			j++;
+			p= (int*) realloc(p,j*sizeof(int));
+			*(p+j-1)=*(A+i);
+			*Nc=j;
+		};
+	};
+	return p;
+}

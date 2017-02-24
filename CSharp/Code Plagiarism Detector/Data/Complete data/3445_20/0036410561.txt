@@ -1,0 +1,56 @@
+class Kosarica {
+
+	float cijena;
+	Kosarica *sljedeci;
+
+public:
+
+	Kosarica(float c=-1) : cijena(c),sljedeci(NULL) {}
+
+	void DodajProizvod(float c) {
+		Kosarica *pom=this;
+		if (pom->cijena==-1) {
+			(*pom).cijena=c;
+		}
+		else {
+			while((*pom).sljedeci!=NULL) pom=(*pom).sljedeci;
+			(*pom).sljedeci=new Kosarica;
+			pom=(*pom).sljedeci;
+			pom->cijena=c;
+			pom->sljedeci=NULL;
+		}
+	}
+
+	float UkupnaCijena(){
+		Kosarica *pom=this;
+		float ukupno=0;
+		if (pom->cijena<0) return 0;
+		while(1) {
+			ukupno+=pom->cijena;
+			if (pom->sljedeci==NULL) break;
+			pom=pom->sljedeci;
+		}
+		return ukupno;
+	}
+
+	float NajskupljiProizvod() {
+		Kosarica *pom=this;
+		float skup=0;
+		if (pom->cijena<=0) return 0;
+		while(1) {
+			if ((*pom).cijena>skup) skup=pom->cijena;
+			if (pom->sljedeci==NULL) break;
+			pom=pom->sljedeci;
+		}
+		return skup;
+	}
+
+	~Kosarica() {
+		Kosarica *pom1=this->sljedeci,*pom=this;
+		while(pom1) {
+			pom1=pom->sljedeci;
+			delete[] pom;
+			pom=pom1;
+		}
+	}
+};

@@ -1,0 +1,62 @@
+
+#include <stdio.h>
+#include <stdlib.h>
+#define MAX 10
+
+
+void maxaps (int *prvamat, int *drugamat, int brRedPrva, int brStupPrva, int maxStupPrva,int brRedDruga,int brStupDruga, int maxStupDruga, int niz[]){
+
+ int o=0,p=0,z=0,r=0,umnozak[MAX][MAX]={0};
+ int t2=brStupPrva,t1=brRedPrva,d2=brStupDruga,d1=brRedDruga,brjed=0,brnul=0,inverz=0,obicna=0;
+
+ for (o=0; (o<t1)||(o<d1); o++){
+   for (p=0; (p<t2)||(p<d2); p++){
+	   for (z=0; (z<t1)||(z<d1); z++){
+	umnozak[o][p] += prvamat[o*maxStupPrva+z]*drugamat[z*maxStupPrva+p]; 	
+ }
+ }
+ }
+
+ for (o=0; o<t1; o++){
+	 if (umnozak[o][o]==1){
+			    brjed++;
+		 }
+ }
+
+ for (o=0; o<t1; o++){
+     for (p=0; p<t2; p++){
+		 if (umnozak[o][p]==0){
+			    brnul++;
+		 }
+	 }
+ }
+ 
+ if ((brjed+brnul)==(t1*t2)){
+	 inverz=1;
+ }
+ if ((brjed+brnul)!=(t1*t2)){
+	 obicna = 1;
+ }
+
+ if (inverz==1){
+    for (o=0; o<t1; o++){
+     niz[o] = abs(prvamat[o*maxStupPrva]);
+          for (p=1; p<t2; p++){
+			  if (niz[o] < abs(prvamat[o*maxStupPrva+p])){
+				  niz[o] = abs(prvamat[o*maxStupPrva+p]);
+			  }
+		  }
+ }
+ }
+
+ if (obicna==1){
+    for (o=0; o<t1; o++){
+		niz[o] = abs(drugamat[o*maxStupPrva]);
+          for (p=1; p<t2; p++){
+			  if (niz[o] < abs(drugamat[o*maxStupPrva+p])){
+				  niz[o] = abs(drugamat[o*maxStupPrva+p]);
+			  }
+		  }
+ }
+ }
+}

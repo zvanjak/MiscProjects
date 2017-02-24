@@ -1,0 +1,14 @@
+int main () {
+	int a[100], i=0, j, k;
+	do {
+		scanf ("%d", &a[i]);
+		i++;
+	}
+	while (a[i-1]!=-1);
+
+	for (j=0; j<i; j+=2) {
+		for (k=0; k<a[j+1]; k++)
+			printf ("%d ", a[j]);
+	}
+return 0;
+}

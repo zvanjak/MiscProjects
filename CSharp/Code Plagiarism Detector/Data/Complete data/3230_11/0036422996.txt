@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main ()
+{
+int i,n,j;
+double e=0,a=1;
+scanf ("%d",&n);
+
+
+if (     (n>=1)  &&  (n<=30)  )   
+{
+for (i=1;i<n;i++)  
+{
+
+for (j=1;j<=i;j++)
+
+a=a*j;
+
+
+
+e=e+(1/a);
+a=1;
+}
+printf ("%.12f",e+1);
+}
+
+else
+printf ("n nije valjan");
+
+return 0;
+}

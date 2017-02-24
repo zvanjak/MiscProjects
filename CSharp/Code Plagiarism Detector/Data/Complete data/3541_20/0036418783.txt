@@ -1,0 +1,39 @@
+int izbaciZ(zapis **glava){
+	int brojac=0;
+	zapis *trenutni,*prethodni,*pom;
+	float prosjek=0;
+	trenutni=*glava;
+		
+	do {
+		brojac++;
+		prosjek+=trenutni->pros;
+		trenutni=trenutni->sljed;
+	}while(trenutni!=NULL);
+	prosjek=prosjek/brojac;
+	brojac=0;
+	prethodni=*glava;
+	trenutni=*glava;
+	
+	do {
+		if(trenutni->pros<prosjek && trenutni->spol=='Z'){
+			brojac++;
+		if (trenutni==*glava){ pom=trenutni; *glava=trenutni->sljed;
+			  prethodni=trenutni->sljed; trenutni=trenutni->sljed;
+			                             }
+			else { 
+				prethodni->sljed=trenutni->sljed;
+						pom=trenutni;
+			trenutni=trenutni->sljed;
+			}
+			free(pom);
+			
+		}
+		else { prethodni=trenutni;
+		trenutni=trenutni->sljed;
+		
+		   }
+	}		
+	while(trenutni!=NULL);
+
+	return brojac;
+}

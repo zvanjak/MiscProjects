@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+char *brojeve_u_znakove(int *polje, int duljina){
+	int i, j, pomocni, brojac, pointer = 0;
+	char *zavrsni, pom[40];
+    zavrsni = (char *) malloc (sizeof(duljina));
+	if (duljina == 0){
+        return zavrsni;
+	}
+	for (i = 0; i < duljina; i++){
+		brojac = 0;
+        pomocni = *(polje + i);
+		while (pomocni > 0){
+			pom[brojac] = ((pomocni % 10) + '0');
+			pomocni /= 10;
+            brojac++;
+		}
+		for (j = 0; j <= brojac; j++){
+			zavrsni[pointer + j] = pom[brojac - j - 1];
+			printf ("pom[%d] = %c\n", brojac - j, pom[brojac - j]);
+		}
+		pointer += brojac;
+		getch();
+		zavrsni[pointer] = ' ';
+		pointer++ ;
+	}
+	return zavrsni;
+}

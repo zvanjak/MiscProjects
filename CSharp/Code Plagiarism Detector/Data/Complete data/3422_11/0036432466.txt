@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+char S[110];
+
+int main() {
+  char c; int i,a=0;
+  do {
+    scanf("%c",&c);
+    S[a++]=c;
+  } while(c!='.');
+  S[a]='\0';
+
+  for(i=0;i<a;i++) if(S[i]>='A' && S[i]<='Z') S[i]+=32;
+
+  for(i=0;i<a;i++) {
+    if(!i && S[i]>='a' && S[i]<='z') S[i]-=32;
+    if(i<a-1 && (S[i+1]==' ' || S[i+1]==',' || S[i+1]=='.') && S[i]>='a' && S[i]<='z') S[i]-=32;
+    if(i && (S[i-1]==' ' || S[i-1]=='.' || S[i-1]==',') && S[i]>='a' && S[i]<='z') S[i]-=32;
+  }
+  printf("%s",S);
+  return 0;
+}

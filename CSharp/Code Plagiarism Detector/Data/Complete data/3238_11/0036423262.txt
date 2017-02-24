@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+	int n1,i;
+	long double a=0,n,pi;
+	/* printf("Unesite broj n: "); */
+	scanf("%le",&n);
+	n1=n;
+	if(n1==n&&n<260&&n>0)
+	{
+		for(i=1;i<=n;i=i+1)
+		{
+			a=(double)(a+1/pow(i,8));
+		}
+	
+		a=9450*a;
+	
+		pi=(double) sqrt(a);
+	
+		pi=(double) sqrt(pi);
+		
+		pi=(double) sqrt(pi);
+		printf("%.12f",pi);
+	}	
+	else
+		printf("\nn nije valjan");
+	
+
+
+}

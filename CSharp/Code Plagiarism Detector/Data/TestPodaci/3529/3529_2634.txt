@@ -1,0 +1,37 @@
+void spoji(char * ime, char *prezime, char *JMBAG, char *izlazni){
+    int count_var=0, count_out=0;
+    while(prezime[count_var]!='\0'){
+        izlazni[count_out]=prezime[count_var];
+        count_var++; 
+        count_out++;
+    }
+    izlazni[count_out++]=',';
+    izlazni[count_out++]=' ';
+    count_var=0;
+    while(ime[count_var]!='\0'){
+        izlazni[count_out]=ime[count_var]; 
+        count_var++;
+        count_out++;
+    }
+    izlazni[count_out++]=':';
+    izlazni[count_out++]=' ';
+    count_var=0;
+    JMBAG=JMBAG+4;
+ while((count_var<6)&& (JMBAG[count_var]!='\0')){
+        if(JMBAG[count_var]==' '){ 
+            izlazni[count_out++]= '0';
+            count_var++;
+        } else {
+            izlazni[count_out++]= JMBAG[count_var++];
+        }
+    }
+ if (count_var < 6 ) {
+  while (count_var < 6) {
+   izlazni[count_out++]='0';
+   count_var++;
+  }
+ }
+
+    izlazni[count_out]='\0';
+    return;
+}

@@ -1,0 +1,44 @@
+class Recenica
+{
+	public:
+		Recenica::Inicijaliziraj()
+		{	
+			int j;
+			int *temp=new int[vel];
+			for(j=0;j<vel;j++)
+			{
+				temp[j]=polje[j];
+			}
+			delete []polje;
+			polje=temp;
+			vel++;
+		}
+		void UcitajZnak(char znak)
+		{
+			Inicijaliziraj();
+			polje[i]=znak;
+			i++;
+		}
+		int PrebrojiRijeci()
+		{	
+			int brri=0;
+			int k;
+            for(k=0;k!='\0';k++)
+			{
+				if(((polje[k]==',')||(polje[k]!=' '))&&(polje[k-1]==',')||(polje[k-1]==' ')) brri++;
+			}
+			return brri;
+		}
+		int PrebrojiZareze()
+		{
+			int brz=0;
+			int l;
+			for(l=0;l!='\0';l++)
+			if(polje[l]==',') brz++;
+			return brz;
+		}
+	private:
+		char polje[];
+		int vel=1;
+		int i=0;
+};

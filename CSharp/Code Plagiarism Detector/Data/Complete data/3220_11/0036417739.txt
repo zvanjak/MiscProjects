@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void main()
+{
+  int broj, novi=0,zn,pot=1;
+  scanf("%d",&broj);
+  if(broj<=0){
+             printf("%d",broj);
+             exit(1);
+             }
+  while(broj>0){
+                zn=broj%10;
+                broj=broj/10;
+                if(zn%2==1)
+                {
+                         novi=novi+zn*pot;
+                         pot=pot*10;  
+                }
+                }
+  printf("%d",novi);
+
+}

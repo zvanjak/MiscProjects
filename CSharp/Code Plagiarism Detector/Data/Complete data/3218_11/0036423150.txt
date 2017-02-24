@@ -1,0 +1,26 @@
+#include <stdio.h>
+int main () {
+int brojgl, brojtemp, mrez, i;
+brojtemp = 0;
+scanf("%d", &brojgl);
+while (brojgl >= 2) {
+mrez = brojgl - 1;
+for(i=2 ; i <= mrez; i=i+1) {
+	if (!(brojgl % i)) {
+     i = mrez + 2;
+	 break;
+	}
+if (mrez == i) {
+	if (brojgl > brojtemp) {
+brojtemp = brojgl;
+	}
+}
+}
+scanf("%d", &brojgl);
+}
+if (brojgl <= 2) {
+printf("%d", brojtemp);
+}
+return 0;
+
+}

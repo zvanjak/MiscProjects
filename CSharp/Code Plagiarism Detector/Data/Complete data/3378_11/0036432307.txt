@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main()
+{
+	int br_odr_s, br_nom_s, brutto_po_s;
+	float brutto, netto;
+	// printf("Upišite broj odrađenih sati, broj nominalnih sati te brutto cijenu sata: ");
+	scanf("%d %d %d", &br_odr_s, &br_nom_s, &brutto_po_s);
+	if(br_odr_s < br_nom_s)
+		brutto = .9f*br_odr_s*brutto_po_s;
+	else if(br_odr_s > br_nom_s)
+		brutto = 1.15f*br_odr_s*brutto_po_s;
+	else
+		brutto = br_odr_s*brutto_po_s;
+	if(brutto > 6000)
+		netto = .7f*brutto;
+	else
+		netto = .8f*brutto;
+	// printf("Iznos brutta je %.2f, a netta %.2f", brutto, netto);
+	printf("%.2f", netto);
+	return 0;
+}

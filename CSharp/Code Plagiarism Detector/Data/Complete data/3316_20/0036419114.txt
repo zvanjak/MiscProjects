@@ -1,0 +1,6 @@
+void azuriraj(FILE *f,int redni_br,int bodovi)
+{
+  int velicina=sizeof(int)*2+sizeof(char)*21;
+  fseek(f,velicina*(redni_br-1)+sizeof(int)+21,SEEK_SET);
+  fwrite(&bodovi,sizeof(bodovi),1,f);
+}

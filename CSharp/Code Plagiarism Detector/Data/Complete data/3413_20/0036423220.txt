@@ -1,0 +1,22 @@
+char *brojeve_u_znakove(int *polje, int duljina)
+{
+	int i,nd=0;
+	char novi_broj[6+1];
+	char* novi_niz;
+
+	if (!duljina) return NULL;
+	for (i=0;i<duljina;i++)
+	{
+		itoa(*(polje+i),novi_broj,10);
+		nd+=strlen(novi_broj)+1;
+	}
+	nd--;
+	novi_niz=(char*)malloc(sizeof(char)*nd);
+	for (i=0;i<duljina;i++)
+	{
+		itoa(*(polje+i),novi_broj,10);
+		if (i<(duljina-1)) strcat(novi_broj," ");
+		strcat(novi_niz,novi_broj);
+	}
+	return novi_niz;
+}

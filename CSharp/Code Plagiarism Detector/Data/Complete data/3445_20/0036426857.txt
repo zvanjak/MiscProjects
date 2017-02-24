@@ -1,0 +1,13 @@
+class Kosarica {
+private:
+float c, m;
+public:
+Kosarica() { c = m = 0.0; }
+~Kosarica() {}
+void DodajProizvod( float p ) {
+c += p;
+if( p > m ) m = p;
+}
+float UkupnaCijena() { return c; }
+float NajskupljiProizvod() { return m; }
+};

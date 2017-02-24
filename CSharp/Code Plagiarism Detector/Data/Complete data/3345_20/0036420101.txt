@@ -1,0 +1,9 @@
+double sumareda (int N) {
+  kontrola ();
+  if (N == 0)
+    return 0.;
+  else if (N == 1)
+    return 1.;
+  else
+    return 1 / (double) (N * N * N * N) + sumareda (N - 1);
+}

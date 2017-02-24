@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int  SplitToSentences ( char * inputField,  char * outputField) {
+int j,prom;
+
+prom=0;
+j=0;
+while (inputField[j]!='\0') {
+		
+	if (inputField[j]==',' ){
+		prom++;
+		outputField[j]='.';
+		j++;
+		outputField[j]=toupper(inputField[j]);
+	}else { 
+		outputField[j]=inputField[j];
+	}
+	j++;
+}
+outputField[j]='\0';
+return (prom);
+}
+

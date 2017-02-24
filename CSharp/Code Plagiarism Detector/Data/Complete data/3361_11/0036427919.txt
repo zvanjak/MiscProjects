@@ -1,0 +1,15 @@
+#include<stdio.h>
+int main () {
+	int unos, a, b, s;
+	scanf("%d", &unos);
+	if (unos>999 && unos<10000) {
+		a=unos/100;
+		b=unos-a*100;
+		s=a+b;
+		if (s%a==0)
+			printf("Jest");
+		else
+			printf("Nije");
+	}
+	return 0;
+}

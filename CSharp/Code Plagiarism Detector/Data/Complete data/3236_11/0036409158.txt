@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+int n,i;
+float x,cl,lnx=0;
+do{
+	scanf("%d",&n);
+	if(n<=1 || n>=100) printf("n nije valjan");
+}while(n<=1 || n>=100);
+do{
+	scanf("%f",&x);
+	if(x<0 || x>2) printf("x nije valjan");
+}while(x<0 || x>2);
+for(i=1;i<=n;i++){
+	if(i%2==0) cl=-pow((x-1),i)/i;
+	else cl=pow((x-1),i)/i;
+	lnx=lnx+cl;
+}
+printf("%d %.5f %.12f",n,x,lnx);
+}

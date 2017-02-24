@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main(){
+	float suma = 0;
+	int i, n;
+
+	scanf("%d", &n);
+	if(n < 1 || n > 100){
+		printf("n nije valjan\n");
+	}else{
+		for(i=1; i <= n; i++){
+			if(i % 2 == 0){
+				suma = suma - 1/(float)i;
+			}else{
+				suma = suma + 1/(float)i;
+			}
+		}
+	}
+	printf("ln2 = %.12f\n", suma);
+	return 0;
+}

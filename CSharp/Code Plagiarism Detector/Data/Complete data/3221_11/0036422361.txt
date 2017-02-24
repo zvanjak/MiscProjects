@@ -1,0 +1,26 @@
+#include <stdio.h>
+int main()
+{
+      int A,d,B,br,i,t;
+      scanf("%d",&A);
+      scanf("%d",&d);
+      scanf("%d",&B);
+      if (A>B)
+            printf("%d",0);
+      else
+      {
+            t=1;
+            br=0;
+            while (t)
+            {
+                  i=A+d;
+                  printf("%d%c",i,' ');
+                  br=br+1;
+                  if (i>B)
+                        t=0;
+                  A=i;
+            }
+            printf("%d",br);
+      }
+      return 0;
+}  

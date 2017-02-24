@@ -1,0 +1,28 @@
+int JelSeSijeku(Kruznica &k1, Kruznica &k2){
+   double d;
+   float X1,X2,Y1,Y2,Rad1,Rad2,temp;
+   X1 = k1.GetCenterX();
+   Y1 = k1.GetCenterY();
+   Rad1 = k1.GetRadius();
+
+   X2 = k2.GetCenterX();
+   Y2 = k2.GetCenterY();
+   Rad2 = k2.GetRadius();
+
+   d = sqrt(pow((X1 - X2), 2) + pow((Y1 - Y2), 2));
+
+   if(Rad2 > Rad1){
+     temp = Rad1;
+     Rad1 = Rad2;
+     Rad2 = temp;
+   }
+
+   if(X1 == X2 && Y1 == Y2 && Rad1 == Rad2)
+     return 3;
+   else if((d > Rad1 + Rad2) || (d < Rad1 - Rad2))
+     return 0;
+   else if((d == Rad1 + Rad2) || (d == Rad1 - Rad2))
+     return 1;
+   else if((d < Rad1 + Rad2) && (d > Rad1 - Rad2))
+     return 2;
+}

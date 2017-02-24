@@ -1,0 +1,19 @@
+int igra(Igrac& igrac, Automat& aut, int max, int *broj)
+{	int maxi=max, poc, kraj,pom;
+	poc=aut.TrenutnoStanje();
+	*broj=0;
+	while(maxi)
+	{	
+		maxi--;
+		if(aut.TrenutnoStanje()==0)
+		{	pom=igrac.TrenutnoStanje();
+			aut.UplatiIznos(pom);
+			if(!(igrac.SkiniSRacuna(pom)))return poc;
+		}
+		pom=aut.Zavrti();
+		(*broj)++;
+		igrac.UplatiNaRacun(pom);
+	}
+	kraj=igrac.TrenutnoStanje() + aut.PodigniPreostalo();
+	return poc-kraj;
+}

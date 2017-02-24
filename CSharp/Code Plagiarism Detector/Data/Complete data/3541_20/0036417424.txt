@@ -1,0 +1,30 @@
+int izbaciZ(zapis **glava){
+	float suma=0, prosjek;
+	zapis *prethodni=NULL, *sljedeci=NULL, *pom=NULL;
+	int brojac=0;
+
+        pom=*glava;
+	while (*glava != NULL) {
+		  suma+=(*glava)->pros;
+		  brojac++;
+		  *glava=(*glava)->sljed;
+	}
+	prosjek=suma/brojac;
+	printf("\nProsjek je: %.2f", prosjek);
+
+        brojac=0;
+        *glava=pom;
+        while (pom != NULL) {
+                sljedeci=pom->sljed;
+                if ( pom->spol=='Z' || pom->spol=='z' ){
+                        if ( pom->pros < prosjek) {
+                                brojac++;
+                                if (prethodni==NULL) *glava=pom->sljed;
+                                else prethodni->sljed=sljedeci;
+                        }
+                }
+                prethodni=pom;
+                pom=pom->sljed;
+        }
+	return brojac;
+}

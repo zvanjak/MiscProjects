@@ -1,0 +1,14 @@
+#include<stdio.h>
+int main () {
+	unsigned int x, y, z, o, d;
+	scanf("%d", &o);
+	z = o%10;
+	y = (o/10)%10;
+	x = (o/100)%10;
+	if ((z<8)&&(y<8)&&(x<8)){
+	if (o<1000){
+		d = (z+(8*y)+(64*x));
+		printf("%d", d);
+	}}
+	return 0;
+}

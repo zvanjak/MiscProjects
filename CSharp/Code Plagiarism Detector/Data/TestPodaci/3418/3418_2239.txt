@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+#define MAXPOLJE 100
+int main(){
+	int polje[MAXPOLJE];
+	int n,i, poz, djel, brdjel=0, brnula=0;
+	do{
+		scanf("%d", &n);
+	}while (n > MAXPOLJE);
+	for(i=0;i<n; ++i){
+		scanf("%d", &polje[i]);
+	}
+	do{
+		scanf("%d", &poz);
+		if(poz>-1 && poz<n){
+			scanf("%d", &djel);
+			if(djel!=0) polje[poz]=polje[poz]/djel;
+			if (polje[poz]==0) brnula++;
+			brdjel++;
+		}
+	}
+	while (poz>-1 && poz<n);
+	printf("%d %d\n", brnula, brdjel);
+	return 0;
+}

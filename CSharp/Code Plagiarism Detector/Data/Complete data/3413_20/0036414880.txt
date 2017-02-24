@@ -1,0 +1,32 @@
+char *brojeve_u_znakove(int *polje, int duljina) {
+	char *znakovi,broj[100];
+	int i,k=0,temp;
+	if (duljina==0) {
+		znakovi = (char *) malloc (2*sizeof(char));
+		strcpy(znakovi,"\0");
+		return znakovi;
+	}
+	for (i=0; i<duljina; i++) {
+		temp = polje[i];
+		while (temp!=0) {
+			temp = temp / 10;
+			k++;
+		}
+		k++;
+	}
+	znakovi = (char *) malloc ((k-1)*sizeof(char));
+	for (i=0; i<duljina; i++) {
+		if (i != (duljina-1)) {
+			sprintf (broj, "%d ", polje[i]);
+			if (i == 0) {
+				strcpy (znakovi, broj);
+			} else {
+				strcat (znakovi, broj);
+			}
+		} else {
+			sprintf (broj, "%d", polje[i]);
+			strcat (znakovi, broj);
+		}	
+	}
+	return znakovi;
+}

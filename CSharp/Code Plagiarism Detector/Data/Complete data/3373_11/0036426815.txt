@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include<conio.h>
+int main ()
+{
+    int a,b,d,e,f,g; 
+    scanf("%d %d",&a,&b);
+    if((a<1000) && (a>99) && (b<1000) && (b>99) && (a>0) && (b>0))
+    {
+                if((a<b) || (a=b))
+                {
+                         d=a%8;
+                         e=(a/8)%8;
+                         f=(a/64)%8;
+                         g=(a/512)%8;
+                         printf("broj %d u dekadskom je %d%d%d%d u oktalnom sustavu",a,g,f,e,d);
+                         }
+                else 
+                {
+                      d=b%8;
+                      e=(b/8)%8;
+                      f=(b/64)%8;
+                      g=(b/512)%8;
+                      printf("broj %d u dekadskom je %d%d%d%d u oktalnom sustavu",b,g,f,e,d);
+                     }
+                }else printf("morate unijeti oba troznamenkasta broja i moraju oba biti pozitivna");
+                return 0;
+                getch();
+                
+                
+    }

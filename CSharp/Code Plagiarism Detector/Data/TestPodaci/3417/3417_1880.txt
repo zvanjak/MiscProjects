@@ -1,0 +1,54 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int main(){
+	char niz[20+1]={0};
+	char rez[40+1]={0};
+	int i=0,k=0,l=0,r=0;
+	do{
+		niz[i]=getche();
+		if(!(isalpha(niz[i]))){
+			break;
+		}
+		else{
+			i++;
+			l++;
+		}
+	}
+	while(i<20);
+	if(l==0){
+		printf("-1");
+	}
+	else{
+		for(i=0;i<20;i++){
+			if(isalpha(niz[i])==0){
+				break;
+			}
+			else{
+				if(niz[i]=='a'||niz[i]=='e'||niz[i]=='i'||niz[i]=='o'||niz[i]=='u'||
+					niz[i]=='A'||niz[i]=='E'||niz[i]=='I'||niz[i]=='O'||niz[i]=='U'){
+					continue;
+				}
+				else{
+					rez[k]=islower(niz[i])?niz[i]-32:niz[i];
+					k++;
+				}
+			}
+		}
+		i=2*k-1;
+		for(i;i>=k;i--){
+			rez[i]=rez[r]+32;
+			r++;
+		}
+
+		for(i=0;i<20;i++){
+			if(isalpha(rez[i])==0){
+				break;
+			}
+			else{
+				printf("%c", rez[i]);
+			}
+		}
+	}
+	return 0;
+}

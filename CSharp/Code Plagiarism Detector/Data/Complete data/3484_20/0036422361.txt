@@ -1,0 +1,116 @@
+#include <stdlib.h>
+
+class CjelobrojniNiz
+{
+public:
+	CjelobrojniNiz()
+	{
+		int br=0;
+		VecinaJednaka = 0;
+		_BrojElem = 10;
+		_Podaci = new int [_BrojElem];
+
+		if( _Podaci == NULL )
+			throw "Nema memorije";
+
+		for(int i=0;i<_BrojElem;i++)
+			_Podaci[i]=i;
+		
+		for(i=0;i<_BrojElem;i++){
+			for(int j=0;j<_BrojElem;j++){
+				if (j!=i){
+					if (_Podaci[j]==_Podaci[i])
+						br++;
+					}
+			}
+			if ((br+1)>(_BrojElem/2)){
+				VecinaJednaka=1;
+				break;
+			}
+			else br=0;
+		}
+	}
+
+	CjelobrojniNiz(int polje[], int BrojElemenata)
+	{
+	    int br=0;
+		VecinaJednaka = 0;       
+		_BrojElem = BrojElemenata;
+	    _Podaci = new int [_BrojElem];
+
+		if( _Podaci == NULL )
+            throw "Nema memorije";
+
+		for(int i=0;i<_BrojElem;i++)
+			_Podaci[i]=polje[i];
+
+		for(i=0;i<_BrojElem;i++){
+			for(int j=0;j<_BrojElem;j++){
+				if (j!=i){
+					if (_Podaci[j]==_Podaci[i])
+						br++;
+				}
+			}
+			if ((br+1)>(_BrojElem/2)){
+				VecinaJednaka=1;
+				break;
+			}
+			else br=0;
+		}
+	}
+
+	CjelobrojniNiz(const CjelobrojniNiz &copy)
+	{
+		VecinaJednaka = copy.VecinaJednaka;
+		_BrojElem = copy._BrojElem;
+    	_Podaci = new int[_BrojElem];
+
+		if( _Podaci == NULL )
+			throw "Nema memorije";
+
+		for (int i=0; i<_BrojElem; i++ )
+			_Podaci[i] = copy._Podaci[i];
+	}
+
+	~CjelobrojniNiz()
+	{
+		delete []_Podaci;
+	}
+    
+	int VecinaJednaka;
+
+	int Usporedi(CjelobrojniNiz niz)
+	{
+		if (_BrojElem!=niz._BrojElem) return 0;
+		for (int i=0;i<_BrojElem;i++)
+			if (_Podaci[i]!=niz._Podaci[i]) return 0;
+		return 1;
+	}
+
+	int *VratiPresjek(CjelobrojniNiz niz, int *n)
+	{
+		int i=0,j=0,k=0;
+		int jednaki;
+		int *polje=(int *)malloc(sizeof(int));
+		int br=1;
+
+		for (i=0;i<_BrojElem;i++){
+			for (j=0;j<niz._BrojElem;j++){
+				if (_Podaci[i]==niz._Podaci[j]){
+					if (_Podaci[i]!=polje[k-1]){
+						polje=(int *)realloc(polje,br*sizeof(int));
+						polje[k++]=_Podaci[i];
+						br++;
+					}
+				}
+			}
+		}
+        					
+		*n=br-1;
+     	return polje;
+	}
+
+private:
+	int *_Podaci;
+	int _BrojElem;
+};

@@ -1,0 +1,10 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+#include<string.h>
+
+void rStrncpy(char *odrediste,char *izvoriste,int n){
+kontrola();
+if (n>1) rStrncpy(odrediste,izvoriste,n-1);
+if (n!=0) {odrediste=(char*)realloc(odrediste,(n)*sizeof(char));
+odrediste[n-1]=izvoriste[n-1];}}

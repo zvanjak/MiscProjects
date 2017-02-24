@@ -1,0 +1,16 @@
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+#include<stdlib.h>
+int main() {
+int n,i,z=1;
+float x=0;
+scanf("%d", &n);
+if ((n<1)||(n>30)) printf("n nije valjan");
+    else {
+for (i=1;i<=n;i++) 
+    {if (i%2==1) x=x+1.0/z;
+        else x=x-1.0/z;
+     z=z*2;}
+printf("%1.12f",x);}
+return 0;}

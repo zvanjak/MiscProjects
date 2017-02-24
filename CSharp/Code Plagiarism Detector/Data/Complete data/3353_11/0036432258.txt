@@ -1,0 +1,31 @@
+#include <stdio.h>
+int main (){
+    int n, m;
+    int a[4];
+    scanf("%d", &n);
+    scanf("%d", &m);
+    
+    a[0] = n%10;
+    a[1] = n%100/10;
+    a[2] = n%1000/100;
+    a[3] = n/1000;
+    
+    if (m > 0 && m < 5){
+            a[m-1] = -1;
+            for(m=3; m>=0; m--)
+                     if(a[m]!=-1)
+                     printf("%d", a[m]);
+    }
+    else {
+         printf("%d", a[0] + a[1] + a[2] + a[3]);
+    }
+    return 0;
+}
+
+     
+         
+            
+    
+    
+    
+    

@@ -1,0 +1,22 @@
+int JeLiUnutra(Kruznica &kruz, Kvadrat &kvad) {   int unutra = 1;
+  float pomX, pomY;
+
+  if (fabsf(kvad.GetX() - kruz.GetCenterX()) < kruz.GetRadius()) unutra = 0;
+  if (fabsf(kvad.GetY() - kruz.GetCenterY()) < kruz.GetRadius()) unutra = 0;
+  pomX = kvad.GetX() + kvad.GetDuljinaStranice();
+  pomY = kvad.GetY();
+  if (fabsf(pomX - kruz.GetCenterX()) < kruz.GetRadius()) unutra = 0;
+  if (fabsf(pomY - kruz.GetCenterY()) < kruz.GetRadius()) unutra = 0;
+
+  pomX = kvad.GetX();
+  pomY = kvad.GetY() - kvad.GetDuljinaStranice();
+  if (fabsf(pomX - kruz.GetCenterX()) < kruz.GetRadius()) unutra = 0;
+  if (fabsf(pomY - kruz.GetCenterY()) < kruz.GetRadius()) unutra = 0;
+
+  pomX = kvad.GetX()  + kvad.GetDuljinaStranice();
+  pomY = kvad.GetY() - kvad.GetDuljinaStranice();
+  if (fabsf(pomX - kruz.GetCenterX()) < kruz.GetRadius()) unutra = 0;
+  if (fabsf(pomY - kruz.GetCenterY()) < kruz.GetRadius()) unutra = 0;
+
+  return unutra;
+}

@@ -1,0 +1,14 @@
+#include<stdio.h>
+int main () {
+int a,b,d;
+scanf("%d", &a);
+d=1;
+b=0;
+while (a>0) {
+b=b+ (a%8)*d;
+a=a/8;
+d=d*10;
+}
+printf("%d",b);
+return 0;
+}

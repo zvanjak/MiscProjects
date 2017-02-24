@@ -1,0 +1,50 @@
+#include <stdio.h>
+#define REDAKA 20
+#define STUPACA 5
+
+int main() {
+
+	int matrica[REDAKA][STUPACA];
+	int mr,ms,p,q,r,s,i,j;
+	int brojac_zamjena = 0;
+	int brStupaca = 0;
+
+	do {
+
+		scanf("%d %d", &mr, &ms);
+
+	} while (mr > 20 || mr < 1 || ms > 5 || ms < 0);
+
+	scanf("%d %d", &p, &q);
+
+	
+	for(r = 0; r < mr; r++) {
+		for(s = 0; s < ms; s++) {
+			if(r%2==0) matrica[r][s] = p;
+			else matrica[r][s] = q;
+		}
+	}
+	
+	while(1) {
+		scanf("%d %d", &i, &j);
+		if (i >= mr || i < 0 || j >=ms || j < 0) break;
+		matrica[i][j] = 0;
+		brojac_zamjena++;
+	}
+
+
+	for(s = 0; s < ms; s++) {
+		int flag = 0;
+		for(r = 0; r < mr; r++) {
+			if(matrica[r][s] == 0) {
+				flag = 1;
+				break;
+			}
+		}
+		if(flag == 0) brStupaca++;
+	}
+
+	printf("%d %d", brojac_zamjena,brStupaca);
+
+	return 0;
+}

@@ -1,0 +1,22 @@
+int JeLiUnutra(Kruznica &kruz, Kvadrat &kvad){
+  float Ox, Oy, Orad;
+  float Dx, Dy, Da;
+  
+  Ox = kruz.GetCenterX();
+  Oy = kruz.GetCenterY();
+  Orad = kruz.GetRadius();
+  
+  Dx = kvad.GetX();
+  Dy = kvad.GetY();
+  Da = kvad.GetDuljinaStranice();
+
+  if((Ox < Dx || Ox > Dx+Da) || (Oy > Dy || Oy < Dy-Da)){
+    return 0;
+  }else{
+    if(Ox+Orad > Dx+Da || Ox-Orad < Dx || Oy+Orad > Dy || Oy-Orad < Dy-Da){
+      return 0;
+    }else{
+      return 1;
+    }
+  }
+}

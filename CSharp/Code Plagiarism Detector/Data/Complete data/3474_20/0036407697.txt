@@ -1,0 +1,12 @@
+#include <iostream>
+
+using namespace std;
+
+Tocka fun5(Trokut t) {
+	double tezX, tezY;
+	tezX = (t.getA().X + t.getB().X + t.getC().X) / 3.;
+	tezY = (t.getA().Y + t.getB().Y + t.getC().Y) / 3.;
+	
+	Tocka *teziste = new Tocka(tezX, tezY);
+	return *teziste;
+}

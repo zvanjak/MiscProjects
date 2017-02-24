@@ -1,0 +1,24 @@
+#include <stdio.h>
+int main() { 
+    char a, b, c, rez;
+
+    scanf ("%c %c %c", &a, &b, &c);
+     if (a<0 && a>9 && b<0 && b>9)
+       printf("Nisi unio jednoznamenkasti broj");
+     else
+         if (c=='+'){
+            rez=a+b;
+         }else if (c=='-'){
+            rez=a-b;
+         }else if (c=='*'){
+            rez=a+b;
+         }else if (c=='/'){
+               rez=a/b;
+         }else if (c=='%')
+               rez=a%b;
+          if (c!='+' || c!='-' || c!='*' || c!='/' || c!='%')
+             printf("Neispravna");
+          else   
+           printf ("%c %c %c = %c'\n'", a,c, b, rez);
+      return 0;
+}   

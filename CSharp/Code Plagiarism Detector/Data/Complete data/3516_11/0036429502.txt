@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <math.h>
+
+#define DIM 100
+
+int main() {
+	float x[DIM];
+	int i=0, j=0;
+	double dx, aproks[DIM], prvi, drugi;
+
+	scanf("%lf", &dx);
+
+	for (i=0; i<DIM; i++) {
+		scanf("%f", &x[i]);
+		if (x[i]==0)
+			break; }
+
+	for (j=0; j<i; j++) {
+		prvi=pow(cos(1/exp(1.)), sin(pow(exp(1.), sin(x[j]+dx+1/exp(1.)))));
+		drugi=pow(cos(1/exp(1.)), sin(pow(exp(1.), sin(x[j]+1/exp(1.)))));
+		aproks[j]=(prvi-drugi)/dx; }
+
+	for (j=0; j<i; j++)
+		printf("%.2lf ",atan(aproks[j]));
+
+	return 0;
+}

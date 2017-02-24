@@ -1,0 +1,15 @@
+#include <stdio.h>
+int main () {
+int x,prost=1,i;
+scanf ("%d",&x);
+while (x>2) {
+scanf ("%d",&x);
+for(i=2;i<=x-1;i++) {
+if (x%i==0) {
+prost=0;
+break;
+}
+}
+}
+return 0;
+}

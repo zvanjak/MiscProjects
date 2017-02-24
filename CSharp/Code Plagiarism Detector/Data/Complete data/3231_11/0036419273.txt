@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+	int n,i;
+	double suma=0.,j=0.;
+	scanf("%d",&n);
+	if ((n<1)||(n>30)) printf("n nije valjan");
+	else {
+	     for (i=0;i<n;i++)
+		 {
+			 j=(double)1./(pow(-2,i));
+			 suma+=j;
+		 }
+	printf("%1.6f",suma);
+	}
+	return 0;
+}

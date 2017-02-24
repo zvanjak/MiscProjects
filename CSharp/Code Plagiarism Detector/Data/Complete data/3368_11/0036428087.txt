@@ -1,0 +1,26 @@
+#include <stdio.h>
+int main(){
+	int broj;
+	char x1,x2;
+	scanf("%d",&broj);
+	if (broj >= 15 && broj <= 255) {
+        x1=(broj % 16);
+        x2=(broj/16);
+       if (x1 > 9) { 
+          x1 = x1 + 'A' - 10; 
+         } 
+          else { 
+           x1 = x1 + '0';
+          }
+           if (x2 > 9) {
+            x2 = x2 + 'A' - 10;
+          }
+            else {
+             x2 = x2 + '0';
+          }
+       printf("%c%c\n" ,x2,x1);
+	}
+	else
+		printf("Izvan intervala\n");
+    return 0;
+}

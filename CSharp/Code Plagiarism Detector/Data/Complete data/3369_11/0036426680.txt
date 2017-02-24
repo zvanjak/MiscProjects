@@ -1,0 +1,18 @@
+# include <stdio.h>
+int main (void) {
+	int a, b ;
+     
+	scanf("%d",&a);
+	(a<0) ? (b=-1) : (b=1);
+	while (a!=0) {
+		b= b*10 + a%8;
+		a= a/8;
+	}
+	while ((b!=1) && (b!=-1)) {
+		a= b%10 + a*10;
+		b= b/10;
+	}
+	printf("%d", a);
+	
+	return 0;
+}

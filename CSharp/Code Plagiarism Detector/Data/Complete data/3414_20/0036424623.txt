@@ -1,0 +1,23 @@
+char *brojeve_u_znakove(int *polje, int duljina)
+{
+	int i,j=0, znam, c=0;
+	char *znak;
+
+	znak = NULL;
+
+	for(i=0; i< duljina; i++)
+	{
+		do{
+			znam = polje[i] % 10;
+           		 if(polje[i] > 0 || c == 0)
+			{
+				znak = (char *) realloc (znak,(j+1)*sizeof(char));
+				znak[j++] = znam + '0';
+			}
+			polje[i] /= 10;
+			c++;
+		}while (polje[i] != 0);
+	}
+        znak[j] = '\0';
+	return znak;
+}

@@ -1,0 +1,12 @@
+Tocka fun5 (Trokut t){
+Tocka aa,bb,cc,pom;
+double n,m;
+aa=t.getA();
+bb=t.getB();
+cc=t.getC();
+m=(aa.X + bb.X + cc.X)/(3);
+n=(aa.Y + bb.Y + cc.Y)/(3);
+pom.X=m;
+pom.Y=n;
+return pom;
+}

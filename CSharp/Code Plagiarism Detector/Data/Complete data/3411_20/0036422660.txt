@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<string.h>
+
+char *bez_duplikata(char *ulazni_niz){
+	int i=0,j,k=0,br=0;
+	char *niz;
+    niz=(char *) calloc(strlen(ulazni_niz)*sizeof(char));
+
+	if(*ulazni_niz=='\0' )return NULL;
+	if(strlen(ulazni_niz)==0)return NULL;
+	while(ulazni_niz[i]!='\0'){
+		br=0;
+		for(j=0;j<i;j++){
+			if(ulazni_niz[i]==ulazni_niz[j])
+				br++;
+		}
+		if(!br){
+			*(niz +k)=ulazni_niz[i];
+			k++;
+		}
+		i++;
+	}
+	return niz;
+}
+

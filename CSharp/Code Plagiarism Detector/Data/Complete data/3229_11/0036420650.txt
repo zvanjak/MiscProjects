@@ -1,0 +1,24 @@
+#include<stdio.h>
+#include<math.h>
+int main (){
+	int m, i = 1, faktorijela = 1;
+	float e, suma = 1.0, n;
+
+	scanf("%f", &n);
+	m = n;
+
+	if ((n<1)||(n>30)||(n==1)||(m!=n)){
+		printf ("n nije valjan\n");
+	}
+	else{
+		while(i<=n){
+			faktorijela = faktorijela*i;
+			suma = suma + (float)pow(-1, i)/(float)faktorijela;
+			i++;
+		}
+		e = 1./suma;
+		
+		printf ("%1.12f\n", e);
+	}
+	return 0;
+}

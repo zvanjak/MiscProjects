@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main()
+{
+	int odr, nom, bruttosat;
+	float netto, bruttosat2, bruttoplaca;
+	scanf("%d %d %d", &odr, &nom, &bruttosat);
+	if (odr < nom) bruttosat2 = bruttosat * 0.9f;
+	if (odr > nom) bruttosat2 = bruttosat * 1.15f;
+	if (odr == nom) bruttosat2 = bruttosat;
+	bruttoplaca = odr * bruttosat2;
+	if (bruttoplaca > 6000) netto = bruttoplaca * 0.7f;
+	if (bruttoplaca <= 6000) netto = bruttoplaca * 0.8f;
+
+	printf("%.2f", netto);
+
+	return 0;
+}

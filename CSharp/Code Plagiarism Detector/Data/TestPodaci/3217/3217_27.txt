@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main()
+{
+        int a, broj, broj2, i, j, k, b, br=0;
+        do
+        {
+                scanf("%d",&broj);
+                if(broj > 0){
+                    b=0;
+                    broj2=0;
+                    do 
+                    {
+                        broj2=broj2*10+broj%10;
+                        broj/=10;
+                    }
+                    while(broj>0);
+                    br++;
+                    if (br==1) printf("%d", broj2); 
+                    else printf(" %d", broj2); 
+                }    
+        }while ( broj >0);
+    
+        return 0;
+}
+

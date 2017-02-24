@@ -1,0 +1,21 @@
+#include<stdio.h>
+/*#include<math.h>*/
+int main () { 
+                float pi,a,suma;
+                int n,x,i;
+		suma=0;
+		a=0;
+		x=945;
+		i=0;
+                n = 17;
+                if ( (n >= 1) && (n <= 30)) {for(i=1; i<=n; i=i+1)
+		{a=1./(i*i*i*i*i*i);
+                suma=(suma+a); } 
+				
+                pi = pow(((double)(suma*x)),1./6);
+                /*printf(" pi je %.12f ", pi);*/
+                printf("%.12f", pi);}
+                else /*printf(" n nije valjan ");*/ printf("n nije valjan");
+             
+                return 0;
+}

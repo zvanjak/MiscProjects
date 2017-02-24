@@ -1,0 +1,24 @@
+#include <stdio.h>
+#define MAX 100
+int main () {
+	int i,j,y=0,x;
+	int niz[MAX], niz2[MAX];
+	for(i=0; i<MAX; i++) {
+		scanf ("%d", &niz[i]);
+		  if (niz[i]==-1) break;
+	}
+	x=i;
+	for (i=0; i<x; i+=2) {
+		for (j=0; j<niz[i+1]; j++){
+			niz2[y]=niz[i];
+			y++;
+		}
+	}
+
+	for (i=0; i<y; i++) {
+		printf ("%d ", niz2[i]);
+	}
+
+	return 0;
+
+}

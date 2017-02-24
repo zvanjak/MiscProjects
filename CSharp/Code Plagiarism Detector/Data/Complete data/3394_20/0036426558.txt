@@ -1,0 +1,16 @@
+int* napraviPolje( int *A, int Na, int *B, int Nb, int *Nc )
+{
+int i,miny=999999,cnt=0;
+int *novi;
+*Nc = 0;
+
+for( i = 0; i < Nb; i++ )
+ miny = *(B+i) < miny ? *(B+i) : miny;
+for( i = 0; i < Na; i++ )
+ *Nc += *(A+i) > miny ? 1 : 0;
+novi = (int *)malloc( sizeof(int) * (*Nc) );
+for( i = 0; i < Na; i++ )
+if( *(A+i) <= miny ) continue;
+else *(novi + cnt++) = *(A+i);
+return novi;
+}

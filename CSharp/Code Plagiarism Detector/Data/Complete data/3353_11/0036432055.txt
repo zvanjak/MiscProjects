@@ -1,0 +1,35 @@
+#include <stdio.h>
+int main () {
+	int n, m, a, b, c, d, broj;
+	scanf("%d %d", &n, &m);
+	a = n%10;
+	b = (n/10)%10;
+	c = (n/100)%10;
+	d = n/1000;
+	if(m==1)
+	{
+		broj = b+(10*c)+(100*d);
+		printf("broj je %d", broj);
+	}
+	if(m==2)
+	{
+		broj = a+(10*c)+(100*d);
+		printf("broj je %d", broj);
+	}
+	if(m==3)
+	{
+		broj = a+(10*b)+(100*d);
+		printf("broj je %d", broj);
+	}
+	if(m==4)
+	{
+		broj = a+(10*b)+(100*c);
+		printf("broj je %d", broj);
+	}
+	if(m<1 || m>4)
+	{
+		broj = a+b+c+d;
+		printf("broj je %d", broj);
+	}
+	return 0;
+}

@@ -1,0 +1,26 @@
+int* napraviPolje(int *A, int Na, int a, int b, int* Nc)
+	{
+	int *novo_polje;
+	int i,j, brojach=0;
+
+	if(a>b)
+		return(NULL);
+
+	novo_polje = (int *) malloc( Na * sizeof(int) );
+
+	for(i=0; i<Na; i++)
+		{
+		for(j=a; j<=b; j++)
+			{
+			if( *(A+i) % j == 0)
+				{
+				*(novo_polje + brojach) = *(A+i);
+				brojach++;
+				break;
+				}
+			}
+		}
+	
+	*Nc = brojach;
+	return(novo_polje);
+	}

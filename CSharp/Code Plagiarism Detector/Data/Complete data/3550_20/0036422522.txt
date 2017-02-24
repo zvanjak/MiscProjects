@@ -1,0 +1,71 @@
+int izbacinaj (zapis **glava) 
+{
+    zapis *p,*i,*najlosiji,*najbolji;
+    int n=0;
+	if(*glava == NULL) 
+		return 0;
+    for (i=*glava;i;i=i->sljed) 
+	{
+        n++;
+    }
+    if(n == 1) 
+	{
+        p=*glava;
+        *glava=NULL;
+        free (p);
+        return 1;
+    }
+    najlosiji=najbolji=*glava;
+    for (i=*glava;i->sljed;i=i->sljed) 
+	{
+        if((i->sljed)->pros < najlosiji->pros) 
+			najlosiji=i->sljed;
+        else if ((i->sljed)->pros > najbolji->pros) 
+			najbolji = i->sljed;
+    }
+    if (najlosiji->pros == najbolji->pros) 
+	{
+        p=*glava;
+        *glava=(*glava)->sljed;
+        free (p);
+        p=*glava;
+        if ((*glava)->sljed) 
+		{
+            *glava=(*glava)->sljed;
+        }
+        else 
+		{
+            *glava=NULL;
+        }
+		free (p);
+        return 2;
+    }
+    else 
+	{
+        if ((i=*glava)->matbr != najlosiji->matbr) 
+		{
+            for (i=*glava;i->sljed && (i->sljed)->matbr != najlosiji->matbr;i=i->sljed);
+            p=i->sljed;
+            i->sljed=p->sljed;
+        }
+        else 
+		{
+            p=*glava;
+            *glava=(*glava)->sljed;
+        }
+        free (p);
+		if ((i=*glava)->matbr != najbolji->matbr) 
+		{
+            for (i=*glava;i->sljed && (i->sljed)->matbr != najbolji->matbr;i = i->sljed);
+            p=i->sljed;
+            i->sljed=p->sljed;
+        }
+        else 
+		{
+            p=*glava;
+            *glava=(*glava)->sljed;
+        }
+        free (p);
+        return 2;
+    }
+}

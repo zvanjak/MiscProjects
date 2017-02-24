@@ -1,0 +1,11 @@
+Krug fun4 (Pravokutnik p){
+     double r,x,y;
+     Tocka t;
+     t = p.getDLkut();
+     x = p.getSirina();
+     y = p.getVisina();
+     r = sqrt(x*x + y*y)*0.5;
+     Tocka sred ((t.X + x*0.5), (t.Y + y*0.5));
+     Krug k(sred,r);
+     return k;
+     }

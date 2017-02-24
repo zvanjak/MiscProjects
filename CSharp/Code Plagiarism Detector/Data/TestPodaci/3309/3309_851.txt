@@ -1,0 +1,12 @@
+int br_prodanih(FILE *f,char *A) {
+  struct album {
+    char n[31];
+    char a[21];
+    int br;
+  } t;
+  int sol=0;
+
+  while(fread(&t,sizeof(t),1,f)==1) if(!strcmp(t.a,A)) sol+=t.br;
+
+  return sol;
+}

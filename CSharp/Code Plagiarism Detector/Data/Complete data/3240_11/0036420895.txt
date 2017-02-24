@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+	int n, pot, exp, i, znam;
+	scanf ("%d", &n);
+	if (n<=0)
+	{
+		printf ("n nije pozitivan");
+	}
+	else
+	{
+		pot=0;
+		i=0;
+		do
+		{
+			pot=pot+1;
+			i=n/(pow(10, pot));
+		}
+		while (i!=0);
+		/*printf ("%d", pot);*/
+		exp=pot-1;
+		do
+		{
+			znam=n/(pow(10, exp));
+			n=n-znam*pow(10, exp);
+			printf ("%d ", znam);
+			exp=exp-1;
+		}
+		while (exp>=0);
+	}
+}

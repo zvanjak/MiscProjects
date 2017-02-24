@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+char *IzbaciPresjek (char *niz1, char *niz2) {
+	char *novi, p=1;
+	int i = 0, j = 0, n = 0, m = 0, duzina1, duzina2;
+
+	duzina1=strlen (niz1);
+	duzina2=strlen (niz2);
+
+	if (duzina1 == 0) {
+		novi = (char*) malloc (1 * sizeof (char));
+		novi[0] = '\0';
+		return novi;
+	}
+
+	if (duzina2 == 0) {
+		novi = (char*) malloc ((duzina1 + 1) * sizeof (char));
+		for (i=0; i < duzina1; i++)
+				novi[i]=niz1[i];
+		novi[duzina1] = '\0';
+		return novi;
+	}
+
+	for (j = 0; j < duzina2; j++) {
+		for (i = 0; i < duzina1; i++) {
+			if (niz2[j] == niz1 [i]) 
+				n++;
+		}
+	}
+
+	if (n >= duzina1) {
+		novi = (char*) malloc (1 * sizeof (char));
+		novi [0] = '\0';
+		return novi;
+	}
+
+	novi = (char*) malloc ((duzina1 - n + 1) * sizeof (char));
+	for (i = 0; i < duzina1; i++) {
+		p=0;
+		for (j = 0; j < duzina2; j++) {
+			if (niz1[i] == niz2[j]) 
+				p=1;
+		}
+		if (!p) 
+			novi[m++] = niz1[i];
+	}
+
+	novi[duzina1 - n] = '\0';
+	return novi;
+}

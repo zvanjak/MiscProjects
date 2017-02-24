@@ -1,0 +1,31 @@
+class Komprimiranje
+{
+private:
+	int *niz;
+	int n;
+public:
+	Komprimiranje(int *niz, int n)
+	{
+		this->niz = niz;
+		this->n = n;
+	}
+
+	int UkupnaSuma()
+	{
+		int suma = 0, i;
+		for (i=0; i<n; i+=2)
+			suma += niz[i+1] * niz[i];
+		return suma;
+	}
+
+	int UkupniBrojElemenata(int vrijednost)
+	{
+		int ukupniBroj = 0, i;
+		for (i=0; i<n; i+=2)
+		{
+			if (niz[i] != vrijednost)
+				ukupniBroj += niz[i+1];
+		}
+		return ukupniBroj;
+	}
+};

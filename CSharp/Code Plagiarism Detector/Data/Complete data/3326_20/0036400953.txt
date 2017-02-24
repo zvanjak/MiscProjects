@@ -1,0 +1,14 @@
+void AritSred_StdDev(float *p, int n, float *ArSred, float *StdDev) {
+	float suma, brojnik = 0;
+	int i;
+
+	for(i=0, suma=0; i<n; i++){
+		suma += *(p+i);
+	}
+	*ArSred = suma/n;
+
+	for(i=0; i<n; i++){
+		brojnik += ((*(p+i))-(*ArSred))*((*(p+i))-(*ArSred));
+	}
+	*StdDev = sqrt(brojnik/(n*(n-1)));
+}

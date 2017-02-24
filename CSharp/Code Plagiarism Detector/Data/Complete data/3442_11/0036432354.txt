@@ -1,0 +1,27 @@
+#include <stdio.h>
+int k (int a);
+int km1 (int a);
+int main()
+{
+int n,K,KM1;
+scanf ("%d",&n);
+K = k(n);
+KM1 = km1(n);
+printf ("%d", (K-KM1));
+return 0;
+}
+
+int k (int a)
+{
+int rez=0,i;
+for (i=0;i<=a;i++)
+rez +=(i*i);
+return rez;
+}
+int km1 (int a)
+{
+int rez=0,i;
+for (i=1;i<=(a-1);i++)
+rez +=(2*i);
+return rez;
+}

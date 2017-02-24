@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <math.h>
+int main () {
+  int i,j,mr,ms,max,imin,jmin;
+  int a[20][20];
+  max=0;
+  imin=0;
+  jmin=0;
+  do
+    scanf("%d %d",&mr,&ms);
+  while (mr<1 && mr>20 && ms<1 && ms>20);
+  for (i=0;i<mr;i++)
+	  for (j=0;j<ms;j++){
+			    scanf("%d",&a[i][j]);
+                if (abs(a[i][j])>max){
+					max=abs(a[i][j]);
+                    imin=i;
+					jmin=j;
+				}
+				else if (abs(a[i][j])==max){
+					if (i<imin){
+						imin=i;
+						jmin=j;
+						max=abs(a[i][j]);
+					}
+					else if (imin==i) {
+						if (j<jmin){
+							imin=i;
+							jmin=j;
+							max=abs(a[i][j]);
+						}
+					}
+				}
+	  }
+  printf ("%d %d",imin,jmin);
+  return 0;
+}

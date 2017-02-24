@@ -1,0 +1,24 @@
+#include <stdio.h>
+int main (){
+	int x, y, x1, x2, y1, y2;
+	scanf("%d %d", &x, &y);
+	if (x > 9 && x < 100 && y > 9 && y < 100){
+		x1 = x/10; x2 = x%10;
+		y1 = y/10; y2 = y%10;
+		if (x1==y1 || x1==y2) x=x1;
+		else x=0;
+		if (x2==y1 || x2==y2) y=x2;
+		else y=0;
+		if (y==0 && x==0) printf("Nema");
+		if (x==0 && y) printf("%d", y);
+		if (y==0 && x) printf("%d", x);
+		if (x && y) {
+			if (x==y) printf("%d", x);
+			else{
+				if (x<y) printf("%d %d", x, y);
+				else printf("%d %d", y, x);
+			}
+		}
+	}
+return 0;
+}

@@ -1,0 +1,15 @@
+#include <stdio.h>
+int main () {
+	int broj,a,b,c;
+	scanf("%d",&broj);
+	if(broj>=100 && broj<=999){
+		(a=broj/100);
+		(b=(broj%100)/10);
+		(c=broj%10);  
+	          if(c%2 ==0)
+				  printf("%d",a-b-c);
+			        else  printf("%d",a*b*c);  
+	}
+
+	return 0;
+}

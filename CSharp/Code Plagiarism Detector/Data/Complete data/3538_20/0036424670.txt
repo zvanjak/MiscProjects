@@ -1,0 +1,33 @@
+Red* VratiBrojeve(Red *red)
+{
+    Red *novi, *tmp;
+    int a, n=0, broj;
+
+    novi = new Red();
+    tmp = new Red();
+
+    while( red->SkiniIzReda( &a ) )
+    {
+        tmp->DodajURed( a );
+
+        if( n==0 )
+        {
+            n = a;
+            broj = 0;
+        }
+        else
+        {
+            broj = broj*10 + a;
+            --n;
+
+            if( n==0 )
+                novi->DodajURed( broj );
+        }
+    }
+
+    while( tmp->SkiniIzReda( &a ) )
+        red->DodajURed( a );
+
+    delete tmp;
+    return novi;
+}

@@ -1,0 +1,12 @@
+#include<stdio.h>
+int main(){
+int broj1,broj2;
+scanf("%d %d", &broj1,&broj2);
+if (broj1%10) broj2++;
+if((broj1%100)/10) broj2+=10;
+if (((int)(broj1%1000)/100)) broj2+=100;
+if (broj1/1000) broj2+=1000;
+broj2=broj2%10000;
+printf("%d",broj2);
+return 0;
+}

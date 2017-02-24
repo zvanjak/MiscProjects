@@ -1,0 +1,68 @@
+#include <stdio.h>
+#include <ctype.h>
+void spoji (char *ime, char *prezime, char *JMBAG, char *izlazni){
+	int i, brojac=0, ukupno=0;
+while (*prezime != '\0'){
+		if (*prezime == 32){
+			prezime++;
+			continue;
+		}else{
+			*izlazni=*prezime;
+			izlazni++;
+			prezime++;
+		}
+	}
+	*izlazni=',';
+	izlazni++;
+	*izlazni=32;
+	izlazni++;
+	while (*ime != '\0'){
+		if (*ime==32){
+			ime++;
+			continue;
+		}else{
+			*izlazni=*ime;
+			izlazni++;
+			ime++;
+		}
+	}
+	*izlazni=':';
+	izlazni++;
+	*izlazni=32;
+	izlazni++;
+
+	while (*JMBAG != '\0'){
+		if(isdigit(*JMBAG))
+			brojac+=1;
+		ukupno+=1;
+		JMBAG++;
+	}
+	JMBAG=JMBAG- ukupno;
+
+	while(*JMBAG==32){
+		JMBAG++;
+	}
+
+	if (brojac<6){
+		for (i=0;i<6-brojac;i++){
+			*izlazni='0';
+			izlazni++;
+
+		}
+		while (*JMBAG != '\0'){
+			*izlazni=*JMBAG;
+			izlazni++;
+			JMBAG++;
+		}
+	}else{
+		JMBAG+=(brojac-6);
+
+		while(*JMBAG != '\0'){
+			*izlazni=*JMBAG;
+			izlazni++;
+			JMBAG++;
+		}
+	}
+	*izlazni= '\0';
+	return;
+}

@@ -1,0 +1,19 @@
+int izbaci(char *ulazni, char *podniz){
+
+    int i=0, z, k=0, j, x;
+    z=strlen(ulazni);
+    while(*(podniz + i)!=NULL){
+                   j=0;
+                   while(*(ulazni + j)!= NULL){
+                   if(*(ulazni + j)==*(podniz + i))
+                   k++;
+                   for (x=0;x<z;x++){
+                       ulazni[j]=ulazni[j+1];
+              
+                       }
+                   j++;
+                   }
+    i++;
+    }
+    return k;
+    }

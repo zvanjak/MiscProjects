@@ -1,0 +1,18 @@
+#include <stdio.h>
+int main () {
+	int D, G, i, N, rez = 0;
+	scanf("%d %d", &D, &G);
+	if (D > 0 && G > 0 && G > D) {
+		for (N = D; N <= G; N++) {
+			for (i = 1; i <= N; i++) {
+				
+				if (i % 2==0) rez = rez + i;
+			}
+			printf ("%d ", rez);
+			rez = 0;
+		}
+	} else {
+		printf ("D i G nisu valjani");
+	}
+	return 0;
+}

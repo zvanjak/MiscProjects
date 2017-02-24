@@ -1,0 +1,15 @@
+void azuriraj(FILE *f, int redni_br, int bodovi){
+     
+    struct natjecatelj m;
+	
+    if (fseek (f, (redni_br-1) * sizeof (m), SEEK_SET) == -1) return;
+    if (fread (&m, sizeof (m), 1, f) == 0) return;
+
+    fseek(f,(long)(redni_br-1)*(sizeof(m)),SEEK_SET);
+	fread(&m,sizeof(m),1,f);
+	m.bodovi=bodovi;
+	fseek(f,(-1L)*sizeof(m),SEEK_CUR);
+	fwrite(&m,sizeof(m),1,f);
+	fseek(f,0L,SEEK_SET);
+	return;
+}

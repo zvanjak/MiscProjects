@@ -1,0 +1,65 @@
+#include <stdio.h>
+int main (void) {
+	int n, i, j, t;
+	char m[20][20];
+	scanf("%d", &n);
+	for (i=0; i<n; i++)
+		for (j=0; j<n; j++)
+			scanf("%c", &m[i][j]);
+
+	
+	for (i=0; i<n; i++) {
+		t=1;
+		if (m[i][0] == 'x') for (j=1; j<n; j++) if ('x' != m[i][j]) t=0;
+		if ((t==1)&&(m[i][0] == 'x')) {
+		  printf("x");
+		  goto kraj; }
+		t=1;
+		if (m[i][0] == 'o') for (j=1; j<n; j++) if ('o' != m[i][j]) t=0;
+		if ((t==1)&&(m[i][0] == 'o')) {
+		  printf("o");
+		  goto kraj; }
+	}
+
+	for (j=0; j<n; j++) {
+		t=1;
+		if (m[0][j] == 'x') for (i=1; i<n; i++) if ('x' != m[i][j]) t=0;
+		if ((t==1)&&(m[0][j] == 'x')) {
+		  printf("x");
+		  goto kraj; }
+		t=1;
+		if (m[0][j] == 'o') for (i=1; i<n; i++) if ('o' != m[i][j]) t=0;
+		if ((t==1)&&(m[0][j] == 'o')) {
+		  printf("o");
+		  goto kraj; }
+	}
+    
+	t=1;
+	if (m[0][0] == 'x') for (i=1; i<n; i++) if ('x' != m[i][i]) t=0;
+	if ((t==1)&&(m[0][0] == 'x')) {
+	  printf("x");
+	  goto kraj; }
+	t=1;
+	if (m[0][0] == 'o') for (i=1; i<n; i++) if ('o' != m[i][i]) t=0;
+	if ((t==1)&&(m[0][0] == 'o')) {
+	  printf("o");
+	  goto kraj; }
+
+    t=1;
+	if (m[0][n-1] == 'x') for (i=1; i<n; i++) if ('x' != m[i][n-1-i]) t=0;
+	if ((t==1)&&(m[0][n-1] == 'x')) {
+	  printf("x");
+	  goto kraj; }
+	t=1;
+	if (m[0][n-1] == 'o') for (i=1; i<n; i++) if ('o' != m[i][n-1-i]) t=0;
+	if ((t==1)&&(m[0][n-1] == 'o')) {
+	  printf("o");
+	  goto kraj; }
+	
+
+	printf("-");
+
+kraj:
+
+	return 0;
+}

@@ -1,0 +1,24 @@
+char *Spoji(char *niz1, char *niz2) {
+	
+	int d = (strlen(niz1)+strlen(niz2)+1);
+	char *sol,*a,*b;
+	int i=0;
+	
+	sol = (char *)malloc(d*sizeof(char));
+	a = niz1;
+	b = niz2;
+	sol[0]=0;
+	
+	while (*a && *b) {
+		sol[i]=*a;
+		sol[i+1]=*b;
+		sol[i+2]=0;
+		++a; ++b;
+		i+=2;
+	}
+	
+	if (*a) strcat(sol,a);
+	if (*b) strcat(sol,b);
+
+	return sol;
+}

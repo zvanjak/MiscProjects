@@ -1,0 +1,15 @@
+int veci_od(FILE *f, int granica){
+	int zadovoljava=0;
+	char naziv[30+1];
+	char autor[20+1];
+	int prodano;
+	
+	f=fopen("podaci.txt","r");
+	
+	while(fscanf(f,"%s%*c%s%*c%d%*c",naziv,autor,prodano)==1){
+		if(prodano>=granica) {zadovoljava++;}
+	}
+	fclose(f);
+
+	return zadovoljava;
+}

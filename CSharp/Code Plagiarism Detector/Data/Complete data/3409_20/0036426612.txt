@@ -1,0 +1,26 @@
+char *IzbaciPresjek (char *niz1, char *niz2)
+{
+	int i=0;
+	int j=0;
+	int br=0;
+	char *novi;
+	novi=strdup(niz1);
+	for (i=0;i<strlen(niz1);i++)
+	{
+		for(j=0;j<strlen(niz2);j++)
+		{
+			if(niz1[i]==niz2[j])
+			{
+				break;
+			}
+    	}
+		if(j>=strlen(niz2))
+		{
+			novi[br]=niz1[i];
+			br++;
+		}
+		
+	}
+	novi[br]='\0';
+return novi;
+}

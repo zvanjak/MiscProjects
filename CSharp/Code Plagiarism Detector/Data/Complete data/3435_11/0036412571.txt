@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+
+int main(){
+int x[20][20],i,j,m,n,suma=0,umn=1,s[20]={0},br=0;
+
+scanf("%d %d",&m,&n);
+
+for(i=0;i<m;i++){
+for(j=0;j<n;j++){
+scanf("%d",&x[i][j]);
+}
+}
+
+for(i=0;i<m;i++){
+suma=0;
+umn=1;
+for(j=0;j<n;j++){
+if (i%2==0) {umn*=x[i][j],s[i]=umn;br++;}
+}
+
+}
+
+for(i=0;i<br;i++)
+suma+=s[i];
+
+printf("\n%d",suma);
+
+getch();
+return 0;
+}

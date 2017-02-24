@@ -1,0 +1,14 @@
+void brisi (FILE *f, int redni_br)
+{
+struct natjecatelj z; 
+while(fread(&z, sizeof(z), 1, f))
+{
+if(z.redni_br==redni_br)
+{
+z.redni_br=0;
+fseek(f,-1*sizeof(z),SEEK_CUR);
+fwrite(&z,sizeof(z),1,f);
+break;
+}
+}
+}

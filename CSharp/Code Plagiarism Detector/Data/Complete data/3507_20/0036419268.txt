@@ -1,0 +1,14 @@
+int Sortirano(cvor *glava){
+    int d=1;
+    cvor *p=glava;
+    if(p){
+        if(p->lijevo)
+    d=d*Sortirano(p->lijevo);
+        if(p->desno)
+    d=d*Sortirano(p->desno);
+    if(p->lijevo && p->id < p->lijevo->id)return 0;
+    if(p->desno && p->id > p->desno->id)return 0;
+    }
+    return d;
+  
+    }

@@ -1,0 +1,14 @@
+#include<stdio.h>
+int main () {
+	int n, m, brKoraka;
+	brKoraka=0;
+	scanf("%d", &n);
+	while(brKoraka<40 && n%13!=0){
+		scanf("%d", &m);
+		n+=m;
+		brKoraka+=1;
+		printf("%d", n);
+	}
+	printf(" %d", brKoraka);
+	return 0;
+}

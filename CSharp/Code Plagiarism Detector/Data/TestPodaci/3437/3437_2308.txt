@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+main () {
+        int polje[4096], x, y, x1, x2, y1, y2, i=0, j;
+        char chrpolje[4096], *t;
+
+        gets (chrpolje);
+
+        t = strtok (chrpolje, " ");
+        while (t != NULL) {
+                polje[i++] = atoi (t);
+                t = strtok (NULL, " ");
+                polje[i++] = atoi (t);
+                t = strtok (NULL, " ");
+
+                if (polje[i-2] == 50)
+                        break;
+        }
+
+        j=i;
+        i=0;
+
+        while (j-=2) {;
+                x1 = polje[i++];
+                y1 = polje[i++];
+                x2 = polje[i++];
+                y2 = polje[i++];
+
+                i -= 2;
+
+                if (y1>y2)
+                        printf ("Pada ");
+                if (y1==y2)
+                        printf ("Ravan ");
+                if (y1<y2)
+                        printf ("Raste ");
+        }
+
+        return (EXIT_SUCCESS);
+}

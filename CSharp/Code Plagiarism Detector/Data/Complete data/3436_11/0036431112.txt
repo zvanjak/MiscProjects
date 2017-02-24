@@ -1,0 +1,51 @@
+#include<stdio.h>
+int main(){
+int i,j,n,brojacxgd=0,brojacxsd=0,brojacogd=0,brojacosd=0,pom=0;
+int brojacxr[20]={0},brojacxs[20]={0},brojacor[20]={0},brojacos[20]={0};
+char mat[20][20];
+scanf("%d",&n);
+/*ucitavanje matrice*/
+for(i=0;i<n;i++)
+{
+for(j=0;j<n;j++)
+{
+scanf("%c",&mat[i][j]);
+}}
+/*provjeravanje po retcima i stupcima*/
+for(i=0;i<n;i++)
+{
+for(j=0;j<n;j++)
+{
+if(mat[i][j]=='X')brojacxr[i]++;
+if(mat[i][j]=='O')brojacor[i]++;
+if(mat[j][i]=='X')brojacxs[i]++;
+if(mat[j][i]=='O')brojacos[i]++;
+}
+}
+/*provjeravanje po dijagonalama*/
+for(i=0;i<n;i++)
+{
+if(mat[i][i]=='X')brojacxgd++;
+if(mat[i][i]=='O')brojacogd++;
+if(mat[i][n-1-i]=='X')brojacxsd++;
+if(mat[i][n-1-i]=='O')brojacosd++;
+}
+/*ispisivanje*/
+for(i=0;i<n;i++)
+{
+if(brojacxr[i]==n || brojacxs[i]==n || brojacxgd==n || brojacxsd==n)
+{
+printf("X");
+pom=1;
+break;
+}
+if(brojacor[i]==n || brojacos[i]==n || brojacogd==n || brojacosd==n)
+{
+printf("O");
+pom=1;
+break;
+}
+}
+if(pom==0) printf("-");
+return 0;
+}

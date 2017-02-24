@@ -1,0 +1,13 @@
+#include <stdio.h>
+main(){
+int n,i;
+long double PI, a;
+scanf("%d", &n);
+a=0;
+if ((n<1) || (n>400)) printf("n nije valjan");
+else {
+	for (i=1; i <= n; i++)
+		a = a + 1./((4.*i - 1.)*(4.*i + 1.));
+	PI = (a * 8. - 4.) * (-1.);
+	printf("%.8f", PI);}
+return 0;}

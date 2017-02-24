@@ -1,0 +1,9 @@
+float niz(int i){
+    kontrola();
+    switch(i){
+        case 0:return 1;break;
+        case 1:return 2;break;
+        case 2:return 3;break;
+        default:return (niz(i-1)-niz(i-3))/(niz(i-1)+niz(i-3));break;
+    }
+}

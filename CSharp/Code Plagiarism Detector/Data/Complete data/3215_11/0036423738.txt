@@ -1,0 +1,14 @@
+#include<stdio.h>
+int main()
+{
+	int a,brp=0,brn=0;
+	do {
+		scanf("%d",&a);
+		if(a>0 && a%2==0)
+			brp++;
+		if(a>0 && a%2!=0)
+			brn++;
+	} while(a!=0);
+	printf("%d %d",brp,brn);
+	return 0;
+}		

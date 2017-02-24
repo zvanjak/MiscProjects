@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+char *SamoDuplikati(char *ulazni_niz) {
+char *niz2;
+int i=0, j=0, k=0, n;
+
+if (ulazni_niz[0]=='\0') return NULL;
+n=strlen(ulazni_niz);
+niz2=(char*)malloc(sizeof(char));
+for (i=0; i<n; i++) {
+for (j=0; j<i; j++) {
+if (ulazni_niz[j]==ulazni_niz[i]) {
+niz2[k]=ulazni_niz[i];
+k++;
+niz2=(char*)realloc(niz2, (k+1)*sizeof(char));
+break;
+}}}
+niz2[k]='\0';
+if (niz2[0]=='\0') return NULL;
+return niz2;
+}

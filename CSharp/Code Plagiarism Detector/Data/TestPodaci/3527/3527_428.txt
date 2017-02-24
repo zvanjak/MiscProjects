@@ -1,0 +1,37 @@
+int izbaciDuplikate (char * ulazni)
+{
+int flag = 0;
+int i, j, k;
+int brojilo = 0;
+
+
+for(i='A'; i!=' ' + 1; i++)
+	{
+	for(j=0; ulazni[j] != 0; j++)
+		{
+		if(ulazni[j] == i)
+			{
+			if(flag==0)
+				{
+				flag = 1;
+				}
+			else
+				{
+				brojilo++;
+				for(k=j; ulazni[k]!=0; k++)
+					{
+					ulazni[k] = ulazni[k+1];
+					}
+				}
+			}
+		}
+	flag=0;
+
+	if(i=='Z')
+		i= 'a' - 1;
+
+	if(i=='z')
+		i= ' ' - 1;
+	}
+return brojilo;
+}

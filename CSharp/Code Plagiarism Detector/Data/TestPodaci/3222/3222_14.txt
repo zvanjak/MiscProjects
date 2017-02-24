@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+void main(){
+	int A,B,d,brojac=0,n;
+	scanf("%d",&n);
+	do{
+	++brojac;
+	if ((n>=0)&&(n<10)) n+=n; else{ 
+	n=n+(n%10);}
+	printf("%d ",n);
+	}while((n%13)&&(brojac<40));
+	printf("%d",brojac);
+	}

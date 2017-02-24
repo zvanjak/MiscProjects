@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+int main(){
+ int i=0,j=0;
+ char recenica[101];
+ 
+ do{   
+   scanf("%c",&recenica[i]);
+   i++;
+ }while(recenica[i-1]!='.');
+ 
+ if (recenica[0]>='a' && recenica[0]<='z'){
+    recenica[0]-=32;
+ } 
+ 
+ while(j<(i-1)){
+ 
+    if(recenica[j]==' ' || recenica[j]==','){
+        do{
+         recenica[j]=recenica[j+1];
+         j++;
+        }while(recenica[j]==' ' || recenica[j]==',');
+        
+        if(recenica[j]>='a' && recenica[j]<='z'){
+              recenica[j]-=32;
+         }
+   } else if (recenica[j]>='A' && recenica[j]<='Z' && j!=0){
+         recenica[j]+=32;
+   }
+   
+   
+  
+   printf("%c",recenica[j]);          
+   j++;          
+       
+
+ }
+  
+ return 0;   
+}

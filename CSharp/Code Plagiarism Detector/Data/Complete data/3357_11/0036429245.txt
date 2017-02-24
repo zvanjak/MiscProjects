@@ -1,0 +1,20 @@
+#include <stdio.h>
+int main ()
+{
+ int a,a1,a2,a3,a4,b,x;
+ scanf ("%d %d", &a, &b);
+ if ((a > 999 && a <= 9999) && (b>999 && b<=9999))
+{
+ a4= a%10;
+ a3= (a/10)%10;
+ a2= (a/100)%10;
+ a1= a/1000;
+ x=a4*1000+a3*100+a2*10+a1;
+
+ if(x==b)
+   printf ("%d", a1+a2+a3+a4);
+else 
+   printf ("%d", a-b);
+   }
+return 0;
+}

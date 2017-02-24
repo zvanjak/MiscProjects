@@ -1,0 +1,31 @@
+char *Spoji (char *niz1, char *niz2){
+char *novi, c[2] = "";
+int l = 0, l1, l2, i, j;
+l1 = strlen(niz1);
+l2 = strlen(niz2);
+l = l1 + l2;
+if (l == 0){
+novi = (char*)(malloc (1));
+novi[0] = '\0';
+return novi;
+}
+novi = (char*)(malloc (l * sizeof(char)));
+novi[0] = '\0';
+for (i = 0; i < ((l1 <= l2) ? l2 : l1); i++){
+if (niz1[i] == '\0'){
+strcat (novi, &niz2[i]);
+break;
+}
+else if (niz2[i] == '\0'){
+strcat (novi, &niz1[i]);
+break;
+}
+else{
+c[0] = niz1[i];
+strcat (novi, c);
+c[0] = niz2[i];
+strcat (novi, c);
+}
+}
+return novi;
+} 

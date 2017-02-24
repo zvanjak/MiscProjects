@@ -1,0 +1,15 @@
+void obrni ( zapis **glava )
+{
+	 zapis *pokaz1, *pokaz2, *pokaz3;
+	 if (*glava==NULL) return;
+	 pokaz1=NULL;
+	 pokaz2=*glava;
+	 while (pokaz2!=NULL)
+	 {
+		 pokaz3=pokaz2->sljed;
+		 pokaz2->sljed=pokaz1;
+		 pokaz1=pokaz2;
+		 pokaz2=pokaz3;
+	 }
+	 *glava=pokaz1;
+}

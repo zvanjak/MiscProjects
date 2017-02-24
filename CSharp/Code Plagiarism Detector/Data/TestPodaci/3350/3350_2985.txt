@@ -1,0 +1,25 @@
+int najbolji(FILE *f)
+{
+int bodmax=0, natmax=0;
+struct natjecatelj nat;
+fseek(f,0,SEEK_SET);
+
+while (natmax==0 && fread((void *)&nat,sizeof(struct natjecatelj),1,f)>0)
+	{
+	if (nat.redni_br!=0)
+		{
+		natmax=nat.redni_br;
+		bodmax=nat.bodovi;
+		}
+	}
+
+while (fread((void *)&nat,sizeof(struct natjecatelj),1,f)>0)
+	{
+	if (nat.redni_br!=0 && nat.bodovi>bodmax)
+		{
+		natmax=nat.redni_br;
+		bodmax=nat.bodovi;
+		}
+	}
+return natmax;
+}

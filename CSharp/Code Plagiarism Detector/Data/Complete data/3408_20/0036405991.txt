@@ -1,0 +1,19 @@
+char *Spoji (char *niz1,char *niz2){
+char *pom,pom1[512]="",pom2[]="";
+int i,j,k;
+if (niz1=="" && niz2==""){pom=pom2;}
+else {
+    if (strlen(niz1)>=strlen(niz2))k=strlen(niz2);
+    else k=strlen(niz1);
+    for (i=0;i<k;i=i+1){
+	pom1[i*2]=niz1[i];}
+    for (j=0;j<k;j=j+1){
+	pom1[2*j+1]=niz2[j];}
+if (strlen(niz1)>=strlen(niz2)) {for (j=k;j<strlen(niz1);j=j+1){
+	pom1[j+2*k-k]=niz1[j];}}
+else {
+for (j=k;j<strlen(niz2);j=j+1){
+	pom1[j+2*k-k]=niz2[j];}}
+pom=pom1;}
+return pom;
+}

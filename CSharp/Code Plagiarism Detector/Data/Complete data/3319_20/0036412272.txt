@@ -1,0 +1,26 @@
+void dodaj(FILE *f){
+	
+	struct natjecatelj buf;
+	int max,mjesto,flag=0;
+	char max_pre[21];
+	
+	fread(&buf,sizeof(buf),1,f);
+	max=buf.bodovi;
+	mjesto=buf.redni_br; if(mjesto==0) {flag=1;}
+	
+	if(flag==0){
+		while(fread(&buf,sizeof(buf),1,f)){
+			if(max < buf.bodovi) {
+				max=buf.bodovi;
+				strcpy(max_pre,buf.prezime);
+				mjesto=buf.redni_br;}
+		}
+	
+		buf.bodovi=max+10;
+		strcpy(buf.prezime,max_pre);
+		buf.redni_br=mjesto;
+		
+		fseek (f, (mjesto-1)*sizeof(buf), SEEK_SET);
+		fwrite(&buf,sizeof(buf),1,f);
+	}
+}

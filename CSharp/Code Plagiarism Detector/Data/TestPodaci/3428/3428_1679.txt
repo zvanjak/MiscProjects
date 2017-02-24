@@ -1,0 +1,45 @@
+#include <stdio.h>
+
+int main(){
+	int matrica[20][5];
+	int mr, ms, sr, i, j, go=0, umnozak=1;
+	do{
+		scanf("%d %d", &mr, &ms);
+		if (mr>=1 && mr<=20){
+			if (ms>=1 && ms<=5){
+				go=1;
+			}
+		}
+	}while (go==0);
+	for(i=0; i<mr; i++){
+		for (j=0; j<ms; j++){
+			scanf("%d", &matrica[i][j]);
+		}
+	}
+	if (mr%2){
+		sr=mr/2;
+		for (i=0; i<ms; i++){
+			for (j=0; j<sr; j++){
+				if (matrica[j][i]!=matrica[mr-1-j][i]){
+					go=0;
+				}
+			}
+		
+		}
+		if (go) {
+			printf("Jest");
+		}else{
+			printf("Nije");
+		}
+	}else{
+		for (i=0; i<mr; i++){
+			for (j=0; j<ms; j++){
+				if (j%2==0 && i%2==0){
+					umnozak*=matrica[i][j];
+				}
+			}
+		}
+		printf("%d", umnozak);
+	}
+	return 0;
+}

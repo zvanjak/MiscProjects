@@ -1,0 +1,17 @@
+# include<stdio.h>
+# include<math.h>
+main () {
+double e,p,s;
+int n,i,j,z;
+scanf("%d",&n);
+if (n>=1 && n <=30){
+       for(i=1;i<=n;i++){
+       p=1;
+       for(j=1;j<=i;j++)
+       p=p*j;
+       s=s+1./p;}
+       e=1+s;
+       printf("%.12f",e);}
+         else printf("n nije valjan");
+return 0;
+}

@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int main(){
+	char recenica[100]={0};
+	int i=-1, j=0;
+	do{
+		++i;
+		scanf ("%c", &recenica[i]);
+	}while ( i<99 && recenica[i]!='.');
+	for(j=0;j<i;j++)
+	{
+		if (recenica [j]==' ' || recenica[j]==',') printf ("%c", recenica[j]);
+		else 
+		{
+			if (j>0)
+			{
+				if (recenica[j-1]==','||recenica[j-1]==' '|| recenica[j+1]==','||recenica[j+1]==' '|| recenica[j+1]=='.')
+				{
+					if(recenica[j]>='A'&& recenica[j]<='Z') printf ("%c", recenica[j]);
+					else printf ("%c", recenica[j]-32);
+				}
+				else 
+				{
+					if(recenica[j]>='a'&& recenica[j]<='z') printf ("%c", recenica[j]);
+					else printf ("%c", recenica[j]+32);
+				}
+			}
+			else 
+			{
+				if(recenica[j]>='A'&& recenica[j]<='Z') printf ("%c", recenica[j]);
+				else printf ("%c", recenica[j]-32);
+			}
+		}
+
+	}
+	return 0;
+}

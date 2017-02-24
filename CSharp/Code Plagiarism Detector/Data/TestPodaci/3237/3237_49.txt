@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+	int n;
+	double i, pom, sum=0, potenc;
+	
+	scanf("%i",&n);
+	if(n>=1 && n<=30)
+	{
+		for(i=1;i<(n+1);i++)
+		{
+			potenc=pow(i,6);
+			pom=1/potenc;
+			sum=sum+pom;
+		}
+		sum=pow(sum*945, 1./6);
+		printf("%13.12f",sum);
+	}
+	else
+		printf("n nije valjan");
+	return 0;
+}

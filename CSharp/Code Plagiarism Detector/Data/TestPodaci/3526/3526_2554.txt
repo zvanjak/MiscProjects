@@ -1,0 +1,65 @@
+void maxaps (int *prvamat, int *drugamat, int brRedPrva, int brStupPrva, int maxStupPrva,
+             int brRedDruga, int brStupDruga, int maxStupDruga, int niz[]){
+             int sum=0, i, j, a, b, mat[10][10]={0}, prov=1, max, min;
+             
+             if (brStupPrva==brRedDruga){
+                for(a=0; a<brStupDruga; a++){
+                         for(b=0; b<brRedPrva; b++, sum=0){
+                                  for(i=0, j=0; i<brStupPrva; i++, j++){
+                                           sum+=(*(prvamat+b*maxStupPrva+i))*(*(drugamat+j*maxStupDruga+a));
+                                           }
+                                           mat[a][b]=sum;
+                                           }
+                                           }
+                for (a=0; a<brStupDruga; a++){
+                         for(b=0; b<brRedPrva; b++, sum=0){
+                                  if(a==b){
+                                           if(mat[a][b]==1)
+                                           prov*=1;
+                                           else prov*=0;
+                                           
+                                           }
+                                  else{
+                                       if(mat[a][b]==0)
+                                       prov*=1;
+                                       else prov*=0;
+                                       }
+                                       }
+                                       }
+                if (prov==1){
+                             for(i=0; i<brRedPrva; i++){
+                                      for(j=0, max=*(prvamat+i*maxStupPrva+j); j<brStupPrva; j++){
+                                               if(abs(*(prvamat+i*maxStupPrva+j))>abs(max)){
+                                                                                            max=*(prvamat+i*maxStupPrva+j);
+                                                                                            }
+                                               else if(abs(*(prvamat+i*maxStupPrva+j))==abs(max)){
+                                                    if(*(prvamat+i*maxStupPrva+j)>max){
+                                                                                       max=*(prvamat+i*maxStupPrva+j);
+                                                                                       }
+                                                                                       }
+                                                                                       }
+                                                                                       niz[i]=max;
+                                                                                       }
+                                                  }
+                else{
+                     for(i=0; i<brStupPrva; i++, min){
+                              for(j=0, min=*(prvamat+j*maxStupPrva+i); j<brRedPrva; j++){
+                                       if(*(prvamat+j*maxStupPrva+i)<min)
+                                          min=*(prvamat+j*maxStupPrva+i);
+                                          }
+                              niz[i]=min;
+                              }
+                              }
+                              }
+             else{
+                  for(i=0; i<brStupPrva; i++, min){
+                              for(j=0, min=*(prvamat+j*maxStupPrva+i); j<brRedPrva; j++){
+                                       if(*(prvamat+j*maxStupPrva+i)<min)
+                                          min=*(prvamat+j*maxStupPrva+i);
+                                          }
+                              niz[i]=min;
+                              }
+                              }
+                                                           
+return;
+}

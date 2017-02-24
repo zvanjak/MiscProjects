@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <malloc.h>
+#include <math.h>
+
+float  *KreirajGeomNiz(int n, float q0, float q){
+	float *p; float x; int i;
+	p = (float*)malloc(n*sizeof(float));
+	for(i=0; i<n; i++){
+		x=(float)pow(q,i);
+		p[i]=q0*x;
+		
+
+
+	}		
+		return p;
+}

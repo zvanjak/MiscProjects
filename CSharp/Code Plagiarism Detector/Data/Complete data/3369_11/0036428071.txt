@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main () {
+
+      int x;
+
+      scanf ("%d", &x);
+
+      if (x > 99 && x < 1000)
+
+      printf ("%o", x);
+
+      return 0;
+
+}

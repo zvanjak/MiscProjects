@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int *napraviPolje(int *A, int Na, int a, int b, int *Nc){
+	int *C, i=0, br_el=0;
+	if (a>b) return 0;
+	C=(int*)malloc(i*sizeof(int));
+	for(i=0;i<Na;++i){
+		if(A[i]<a || A[i]>b){
+			br_el++;
+			C=(int *)realloc(C, br_el*sizeof(int));
+		    *(C+br_el-1)=*(A+i);
+		}
+	}
+	*Nc=br_el;
+	return C;
+}

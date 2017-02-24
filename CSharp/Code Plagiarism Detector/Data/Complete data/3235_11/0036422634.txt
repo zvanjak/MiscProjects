@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main() {
+float ln2;
+int n,i,p;
+p=1;
+ln2=0;
+scanf("%d", &n);
+if ( n<1 || n>100) {
+	printf("n nije valjan"); }
+else {
+	for (i=1; i<=n; i++){	
+	p= p*(-1);
+	ln2= ln2- p*(1./i);
+	} 
+	printf("%.12f",ln2);}
+	return 0;
+} 

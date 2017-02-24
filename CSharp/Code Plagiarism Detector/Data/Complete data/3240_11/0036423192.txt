@@ -1,0 +1,19 @@
+#include <stdio.h>
+int main()
+{
+int i,a=0,b;
+char n[1000000];
+gets (n);
+for (i=0; i<1000000; i++)
+{
+if (n[i]!='\0')a++;
+else break;
+}
+if (n[0]=='-' || n[0]=='0')printf ("n nije pozitivan");
+else {
+     for (i=0;i<a;i++)
+         if (i!=(a-1)) printf ("%c ",n[i]);
+         else printf ("%c",n[i]);
+     }
+return 0;
+}

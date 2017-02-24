@@ -1,0 +1,14 @@
+bool fun2(Pravokutnik p, Krug k){
+	bool pom=true;
+	Tocka t;
+	t=p.getDLkut();
+	pom &=k.Sadrzi(t);
+	t.X +=p.getSirina();
+	pom &=k.Sadrzi(t);
+	t.X -=p.getSirina();
+	t.Y -=p.getVisina();
+	pom &=k.Sadrzi(t);
+	t.X +=p.getSirina();
+	pom &=k.Sadrzi(t);
+	return pom;
+}

@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <conio.h>
+#include <string.h>
+void funkcija (char *ulazni, char *izlazni, int *broj){
+int i, j, brpon, multchar=0, n, m=0;
+n=strlen(ulazni);
+for(i=n-1; i>=0; i--){
+brpon=1;
+for(j=0; j<n; j++){
+if(i!=j){
+if(ulazni[j]==ulazni[i])brpon++;
+}
+}
+if (brpon>1)multchar++;
+else if(brpon==1)izlazni[m++]=ulazni[i];
+}
+izlazni[m]='\0';
+*broj=multchar;
+}

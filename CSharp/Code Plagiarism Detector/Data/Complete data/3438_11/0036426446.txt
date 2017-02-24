@@ -1,0 +1,27 @@
+#include<stdio.h>
+int main(){
+        char znak[102];
+        int i,maxind,x[100],y[100],pom,m;
+        for(i=1;i<101;i++){
+                scanf("%c",&znak[i]);
+                if(znak[i]=='.'){
+                        maxind=i-1;
+                        i=101;
+                }
+        }
+        for(i=1;i<101;i++){
+                scanf("%d %d",&x[i],&y[i]);
+                if(x[i]>maxind || y[i]>maxind || x[i]<=0 || y[i]<=0){
+                        m=i;
+                        i=101;
+                }
+        }
+        for(i=1;i<m;i++){
+                pom=znak[x[i]];
+                znak[x[i]]=znak[y[i]];
+                znak[y[i]]=pom;
+        }
+        for(i=1;i<maxind+1;i++)
+                printf("%c ",znak[i]);
+        return 0;
+}

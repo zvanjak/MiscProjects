@@ -1,0 +1,19 @@
+#include <stdio.h>
+int main ()
+{
+	int a, b, c, d, z ;
+	scanf ("%d", &a) ;
+	b = a/100 ;
+	c = (a%100)/10 ;
+	d = a%10 ;
+	z = b + c + d ;
+	if (z%2==0)
+	{
+		printf ("%d", b-c-d) ;
+	}
+	else
+	{
+		printf ("%d", b*c*d) ;
+	}
+	return 0 ;
+}

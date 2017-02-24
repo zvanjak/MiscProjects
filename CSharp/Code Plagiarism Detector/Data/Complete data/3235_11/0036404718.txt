@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <math.h>
+void main ()
+{
+   int i;
+   float n, ln2=0;
+   
+   scanf ("%f", &n);
+   
+   if ((n>0)&&(n<101)&&((n-ceil(n))==0))
+   {
+   
+   for (i=1;i<=n;i++)
+   {
+      ln2+=pow (-1,i+1)/i;
+   }
+
+   printf ("%.12f", ln2);
+   }
+   else 
+   printf ("n nije valjan");
+}

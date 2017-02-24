@@ -1,0 +1,14 @@
+#include<stdio.h>
+int main() {
+char x,c,y;
+scanf("%c %c %c",&x,&y,&c);
+x=x-'0';
+y=y-'0';
+if (c=='+') printf("%d\n",x+y);
+else if (c=='*') printf("%d\n",x*y);
+else if (c=='-') printf("%d\n",x-y);
+else if (c=='/') printf("%d\n",x/y);
+else if (c=='%') printf("%d\n",x%y);
+else printf("Neispravna\n");
+return 0;
+}

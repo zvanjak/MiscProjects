@@ -1,0 +1,36 @@
+int prost(int broj) {
+	int i;
+	
+	if(broj == 2)
+		return 0;
+        if(broj<0)
+         {
+          broj=-broj;
+         }
+	for(i=2; i<broj; i++) {
+		if(broj%i == 0)
+			return 0;
+	}
+		
+	return 1;
+}
+
+Stog* PrepisiRedUStog(Red *red) {
+	int broj=0;
+	Stog *stog = new Stog;
+		
+	if(red->SkiniIzReda(&broj))
+		stog = PrepisiRedUStog(red);
+	else
+		return stog;
+	
+	if(prost(broj)) {
+		stog->Stavi(broj);
+	}
+	
+	return stog;
+
+}
+
+
+	

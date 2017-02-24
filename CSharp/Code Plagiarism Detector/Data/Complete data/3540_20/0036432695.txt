@@ -1,0 +1,21 @@
+int izbaci(zapis **glava) {
+	zapis *p, *q;
+	int brojac = 0;
+	while (*glava!=NULL && (*glava)->pros<2.0) {
+		p=*glava;
+		*glava = (*glava)->sljed;
+		free(p);
+		brojac++;
+	}
+	for (p=*glava; p!=NULL && p->sljed!=NULL;) {
+		if (p->sljed->pros<2.0) {
+			q=p->sljed;
+			p->sljed=q->sljed;
+			free(q);
+			brojac++;
+		} else {
+			p=p->sljed;
+		}
+	}
+	return brojac;
+}

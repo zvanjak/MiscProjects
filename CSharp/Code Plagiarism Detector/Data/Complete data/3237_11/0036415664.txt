@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <math.h>
+int main() {
+int n,i;
+double pi,s;
+s=0;
+scanf("%d",&n);
+if((n<1)||(n>30))
+/*printf("n nije valjan\n");*/
+printf("n nije valjan");
+
+else{
+for(i=1;i<=n;i++){
+s=s+(1.f/(pow(i,6)));
+pi=pow(s*945,1/6.f);}
+/*printf("pi iznosi %.12f",pi);*/
+printf("%.12f", pi);
+}
+return 0;
+}

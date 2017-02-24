@@ -1,0 +1,28 @@
+#include <stdio.h>
+#define MAXm 20
+#define MAXn 20
+
+int main()
+{
+	int m, n, matrica[MAXm][MAXn], prod[MAXm], suma=0, i, j;
+	
+	scanf("%d %d", &m, &n);
+	
+	for (i=0; i<m; i++)
+	{	for (j=0; j<n; j++)
+			scanf("%d", &matrica[i][j]);
+	}
+
+	
+	for (i=0; i<m; i++)	{
+		prod[i]=1;
+		for (j=0; j<n; j++) 
+			prod[i] = prod[i] * matrica[i][j]; 
+		if(i%2==0)
+			suma += prod[i];
+	}
+		
+	printf("%d", suma); 
+	return 0;
+
+}

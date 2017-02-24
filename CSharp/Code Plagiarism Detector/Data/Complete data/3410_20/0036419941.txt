@@ -1,0 +1,10 @@
+char *StvoriNiz(char *poljeznakova, int duljina, int n) {
+	int i,x;
+	char polje [10];
+	for (i=0;i<n;i++) {
+		x=moj_rand () % duljina;		
+		polje [i]=*(poljeznakova + x);
+	}
+	polje[n]="\0";
+	return polje;
+}

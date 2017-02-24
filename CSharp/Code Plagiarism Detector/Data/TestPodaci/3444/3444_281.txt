@@ -1,0 +1,21 @@
+#include <stdio.h>
+int main () {
+    int n,m,i,j,prod[20],suma; 
+	int mat[20][20];
+	scanf ("%d",&n);
+	scanf ("%d",&m);
+	for (i=0; i<n; i++) {
+		for (j=0; j<m; j++) 
+			scanf ("%d",&mat[i][j]);
+	}
+	for (i=0;i<n;i++) {
+		prod[i]=1;
+		for (j=0;j<m;j++)
+			prod [i]*=mat[i][j];
+	}
+	suma=0;
+	for (i=0;i<n;i++)
+		if (i % 2==0) suma=suma+prod[i];
+		printf ("%d",suma);
+	return 0;
+}

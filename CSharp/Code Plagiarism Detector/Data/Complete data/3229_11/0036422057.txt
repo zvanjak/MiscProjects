@@ -1,0 +1,30 @@
+#include<stdio.h>
+
+int main()
+{
+    int n, i, predznak;
+    double suma, nazivnik;
+
+    scanf( "%d", &n );
+
+    if( (n<1) || (n>30) ) {
+        printf( "n nije valjan" );
+        return 0;
+    }
+
+    suma = 1;
+    predznak = -1;
+    nazivnik = 1;
+
+    for( i=1 ; i<=n ; i++ ) {
+        nazivnik = nazivnik * i;
+        suma = suma + predznak * 1 / nazivnik;
+        predznak = predznak * (-1);
+    }
+
+
+    printf( "%.12f", 1/suma );
+    
+    
+    return 0;
+}

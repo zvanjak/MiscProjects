@@ -1,0 +1,13 @@
+#include<stdio.h>
+int main(){
+	int x,z;
+	scanf("%d",&x);
+	if(x<16 || x>255)
+		printf("Izvan intervala");
+	else {
+		z=x%16;
+		x/=16;
+		printf("%c%c", x<10?x+48:x+55, z<10?z+48:z+55);
+	}
+	return 0;
+}

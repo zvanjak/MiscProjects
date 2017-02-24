@@ -1,0 +1,14 @@
+void funkcija (char * ulazni, char *izlazni, int *broj){
+	int i,j=0, polje [128]={0};
+	*broj=0; 
+	for (i=strlen(ulazni)-1;i>=0;i--){
+		if (strchr(ulazni,ulazni[i])&& strchr(ulazni,ulazni[i])!=&ulazni[i]&& !polje[ulazni[i]]){
+			(*broj)++;
+			polje[ulazni[i]]++;
+		}
+		else if (!polje[ulazni[i]])
+			izlazni[j++]=ulazni[i];
+	}
+	izlazni[j]='\0';
+	return;
+}

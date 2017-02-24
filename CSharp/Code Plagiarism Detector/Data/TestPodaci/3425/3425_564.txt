@@ -1,0 +1,50 @@
+#include <stdio.h>
+#define MR 10
+
+int main()
+{
+    int mat [MR][MR];
+    int a,zam,vel,p,i,j,i1,j1,n,z,s;
+    p=1;
+    s=0;
+    z=0;
+    while (p==1)
+    {
+          scanf("%d",&vel);
+          if ((vel>0) && (vel<11))
+          {
+                     p=2;
+          }
+    }
+    for (i=0; i<vel; i++)
+        for (j=0; j<vel; j++)
+        {
+            scanf("%d",&mat[i][j]);
+        }
+    
+    p=1;
+    while (p==1)
+    {
+          scanf("%d %d",&i1,&j1);
+          if ((i1>=0) && (i1<vel) && (j1>=0) && (j1<vel))
+          {
+                    zam=mat[i1][j1];
+                    mat[i1][j1]=mat[j1][i1];
+                    mat[j1][i1]=zam;
+                    z=z+1;
+          }
+          else 
+          {
+               p=2;
+          }
+    }
+    scanf("%d",&n);
+    if ((n>=0) && (n<=vel))
+    {
+              for (i=0; i<vel; i++) s=s+mat[n][i];
+    }
+    else s=-1;
+    printf("%d %d",z,s);
+
+    return 0;
+}

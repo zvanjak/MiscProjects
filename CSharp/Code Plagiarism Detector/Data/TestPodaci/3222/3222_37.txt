@@ -1,0 +1,15 @@
+# include <stdio.h>
+int main(){
+int n,p=0,q=0;
+
+	do{
+		scanf("%d",&n);
+		if (n>0){ 
+			if((n%2)==0)
+				p=p+1;
+			else q=q+1;}
+		}
+		while(n!=0);
+		printf("%d %d",p,q);
+		return 0;
+	}

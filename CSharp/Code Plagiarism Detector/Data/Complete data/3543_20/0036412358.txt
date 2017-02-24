@@ -1,0 +1,13 @@
+void obrni(zapis **glava)
+{
+	zapis *prvi;
+	zapis *iduci;
+	if (*glava== NULL) return;
+	prvi = *glava;
+	iduci = prvi->sljed; 
+	if (iduci == NULL) return;
+	obrni(&iduci);
+	prvi->sljed->sljed = prvi;
+	prvi->sljed = NULL;
+	*glava = iduci;
+}

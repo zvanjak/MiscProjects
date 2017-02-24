@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <math.h>
+#define max 50
+#define f(x)(pow(x,sin(x))*tanh(pow(x,(pow(exp(1.),x)))))
+int main()
+{
+	double dx=0,p1[max],p2[max];;
+	float x=0;
+	int i=0,br=0;
+
+scanf("%lf", &dx);
+
+do{
+	scanf("%f",&x);
+	p1[i]=x;
+	i++;
+	br++;
+}while((x>=0.1)&&(x<=10));
+
+for(i=0;i<br;i++)
+{
+	p2[i]=(f(p1[i]+dx)-f(p1[i])/dx);
+}
+
+for(i=0;i<br-1;i++)
+{
+	printf("%96.2lf",atan(p2[i]));
+
+}	
+	return 0;
+}

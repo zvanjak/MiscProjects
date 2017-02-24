@@ -1,0 +1,17 @@
+int rBrojParnih (int *polje, int n){
+	int kontrola ();
+	if(n>0){
+		if(polje[n-1]==0){
+			return 0 + rBrojParnih (polje, n-1);
+		}
+		if(polje[n-1]%2==0){
+			return 1 + rBrojParnih (polje, n-1);
+		}
+		else{
+			return rBrojParnih (polje, n-1);
+		}
+	}
+	else{
+		return 0;
+	}
+}

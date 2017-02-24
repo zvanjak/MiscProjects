@@ -1,0 +1,40 @@
+#include <stdio.h>
+int main()
+{
+int a1,d,b,an,n,koliko;
+scanf("%d",&a1);
+scanf("%d",&d);
+scanf("%d",&b);
+n=1;
+koliko=1;
+if ((a1>0)&&(a1>b)) goto kraj;
+if ((a1>0)&&(b>0)) 
+do 
+{
+    
+	an = a1 + n * d;
+	n=n+1;
+	printf("%d ",an);
+	koliko=koliko+1;
+	
+}
+while (an < b);
+else
+{
+do 
+{
+    
+	an = a1 - n * d;
+	n=n+1;
+	printf("%d ",an);
+	koliko=koliko+1;
+	
+}
+while (an > b);
+}
+
+
+kraj:printf("%d",koliko-1);
+
+return(0);
+}

@@ -1,0 +1,21 @@
+char *BezDuplikata(char *ulazni_niz)
+{
+     char *b;
+     int i=0,j=0,k=0,l=0,m=0;
+     	
+  l=strlen(ulazni_niz);
+  b=(char*)malloc(l*sizeof(char));
+   free(b);
+  for (i=0;i<l;i++){
+     for(j=0+k;j<i;j++)
+     {
+     if (b[j-k]==ulazni_niz[i]){k++; m=1; j=i; }      
+                     }
+                     if(m!=1){
+     b[i-k]=ulazni_niz[i];
+     }
+     m=0;
+     } 
+     if (b[0]=='\0') return NULL;      
+return b;     
+     }

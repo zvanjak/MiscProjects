@@ -1,0 +1,10 @@
+Tocka fun5(Trokut t){
+	Tocka A = t.getA();
+	Tocka B = t.getB();
+	Tocka C = t.getC();
+	double n, m;
+	n = (A.X + B.X + C.X)/3;
+	m = (A.Y + B.Y + C.Y)/3;
+	Tocka *pom = new Tocka(n,m);
+	return *pom;
+}

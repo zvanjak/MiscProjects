@@ -1,0 +1,8 @@
+int niz (int i){
+    int n = 1;
+    kontrola ();
+    if (i < 0) return 0;
+    else if (i == 0 || i == 1) return 1;
+    else n = 2 * niz(i-1) + 3 * niz(i-2);
+    return n;
+}

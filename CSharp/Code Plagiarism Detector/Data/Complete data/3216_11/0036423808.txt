@@ -1,0 +1,19 @@
+#include<stdio.h>
+
+int main(){
+    int br, prosti=0, i, ctrl=0;
+
+    do{
+        scanf("%d", &br);
+        if(br>2){
+            for(i=2;i<br/2;i++){
+                if(br%i==0)ctrl=1;
+            }
+            if(ctrl==0)prosti++;
+        }
+    }while(br>2);
+
+    printf("%d", prosti);
+
+    return 0;
+}

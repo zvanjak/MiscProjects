@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main () {
+
+   int n;
+   int i, predznak=1;
+   double moj23=0;
+   scanf("%d", &n);
+
+   if (n<1 || n>30) {
+      printf("n nije valjan\n");
+      return 0;
+   }
+
+   for (i=0;i<n;i++) {
+      moj23+=predznak*1.0/(1<<i);
+      predznak=-predznak;
+   }
+   printf("%.12lf", moj23);
+
+
+   return 0;
+}

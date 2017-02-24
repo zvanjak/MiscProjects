@@ -1,0 +1,26 @@
+Red* VratiBrojeve(Red *red){
+       Red *result=new Red();
+	   Red *pom=new Red();
+	   int i,j,znam,zn,broj,ozn,p;
+	   while(red->SkiniIzReda(&znam)){
+		   pom->DodajURed(znam);
+		      zn=0;broj=0;ozn=0;
+		   for(i=1;i<=znam;i++){ 
+			   if ((red->SkiniIzReda(&zn))){
+				   ozn=1;
+				   pom->DodajURed(zn);
+				   for (j=1;j<=(znam-i);j++) zn*=10;
+				   broj+=zn;
+			   }
+			   else break;
+		   }
+		   if (ozn==1) result->DodajURed(broj);
+	   }
+	   while(pom->SkiniIzReda(&p)){
+		   red->DodajURed(p);}
+	    delete pom;
+	   return result;
+}
+
+
+

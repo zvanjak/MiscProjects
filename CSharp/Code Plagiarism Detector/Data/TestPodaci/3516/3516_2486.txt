@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<math.h>
+#define funkcija(a) (pow(cos(1. / exp(1.)), sin(pow(exp(1.), sin((a) + 1. / exp(1.))))))
+
+int main(){
+float x;
+int i, br=0;
+double polje[50], dx;
+
+scanf("%lf", &dx);
+
+for(i = 0, x = 1.; i<50; i++){
+scanf ("%f", &x);
+if (x == 0.0) break;
+polje[i] = ((funkcija(x + dx) - funkcija(x))/dx);
+br++;
+}
+
+for(i=0; i<br; i++){
+printf("%.2lf", atan(polje[i]));
+}
+
+
+return 0;
+
+}

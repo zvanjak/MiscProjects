@@ -1,0 +1,9 @@
+char *rStrchr(char *niz, char c){
+char *x;
+kontrola();
+if(*niz==c){
+x=niz;
+return x;
+}
+else rStrchr(niz+1,c);
+}

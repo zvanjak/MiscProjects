@@ -1,0 +1,13 @@
+int najbolji(FILE *f){
+	int bolji=0, n=0;
+	struct natjecatelj billy;
+	while(fread(&billy, sizeof(struct natjecatelj), 1, f)){
+		if (billy.redni_br!=0){
+			if (billy.bodovi>bolji){
+				bolji=billy.bodovi;
+				n=billy.redni_br;
+			}
+		}
+	}
+	return n;
+}

@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main(){
+
+   int a, i;
+   double sol, tre;
+   scanf("%d", &a);
+   if (a > 0&& a < 21){ 
+      sol = 2.0; tre = 1.0;
+      for (i = 2; i <= a; i++)
+		  tre *= i, sol += 1./tre;
+	  printf("%.12lf", sol);
+   } else {
+      printf("n nije valjan");
+   }
+
+   return 0;
+}

@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main () {
+    int a, i, prost, br_prostih=0;
+    do {
+        prost=1;
+        scanf("%d",&a);
+        if (a<=2) break;
+        for (i=2; i<a; i++) {
+            if (a%i==0) prost=0;   
+            }
+        if (prost) br_prostih++;
+    } while (a>2);  
+    printf ("Broj prostih je %d", br_prostih);
+    getch ();
+    return 0;
+}

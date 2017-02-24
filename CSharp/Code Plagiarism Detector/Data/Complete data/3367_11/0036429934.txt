@@ -1,0 +1,12 @@
+#include <stdio.h>
+int main(){
+char a,b;
+int x,y,rez;
+scanf("%c %c", &a, &b);
+x=a; y=b;
+if (x>=65) x=x-55; else x=x-48;
+if (y>=65) y=y-55; else y=y-48;
+printf ("%d", rez=(x*16)+y);
+return 0;
+}
+

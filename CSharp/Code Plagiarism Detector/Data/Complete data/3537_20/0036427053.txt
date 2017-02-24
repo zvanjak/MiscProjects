@@ -1,0 +1,12 @@
+int BrojClanova(Red *red) {
+	int br=0, elem;
+	Red pom;
+	while(red->SkiniIzReda(&elem)) {
+        br++;
+		pom.DodajURed(elem);
+	}
+	while(pom.SkiniIzReda(&elem)) {
+		red->DodajURed(elem);
+	}
+	return br;
+}

@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+
+
+char *BezDuplikata(char *ulazni_niz){
+
+char *novi_niz,x;
+int n,i,j=0,z=0;
+
+if(ulazni_niz==NULL||ulazni_niz[0]=='\0') return NULL;
+n=strlen(ulazni_niz);
+
+novi_niz=(char*)malloc(sizeof(char)*n);
+x=ulazni_niz[0];
+if(x>=0&&x<=127){
+for(i=0;i<n;i++)
+{
+x=ulazni_niz[i];
+if(strchr(novi_niz,x)==NULL)
+{
+novi_niz[z]=x; 
+z++;
+}
+}
+}
+novi_niz[z]='\0';
+return novi_niz;
+free(novi_niz);
+}

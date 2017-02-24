@@ -1,0 +1,12 @@
+#include <stdio.h>
+int main () {
+	int br, rez;
+	 scanf("%d", &br);
+
+	 if (br>999 && br<10000) {
+		 rez=(br%10)*1000 + ((br%100)-((br%100)%10))*10 + ((br/100)%10)*10 + (br/1000);
+
+			 printf("%d", rez); }
+	 return 0;
+
+   }

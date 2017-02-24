@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <math.h>
+
+int main () {
+
+	int i;
+	float rez, pi, m, n; 
+	float a[31];
+
+	rez = 0;
+	
+	scanf ("%f", &n);
+
+	if (n / (int)n != 1 || n < 1 || n > 30) {
+		printf ("n nije valjan");
+	}
+	else{
+
+		m = n;
+
+		for (i = m; i >= 1; i--){
+
+			a[i-1] = 1 / (pow (n , 6));
+			
+			rez += a[i-1];
+			
+			n--;
+		}
+
+		pi = pow (rez*945 , 1./6);
+
+		printf ("%.12f", pi);
+
+	}
+
+	return 0;
+
+}

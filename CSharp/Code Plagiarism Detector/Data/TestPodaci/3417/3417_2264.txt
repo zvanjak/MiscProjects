@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int main(){
+    int i=-1,br=-1,j,brj=0;
+    char x[20],y[20]={0};
+    do{
+         i++;
+         br++;
+         scanf("%c",&x[i]);
+         }while(isalpha(x[i]));
+         
+         
+         j=0;
+         for(i=0;i<br;i++){
+              if(!(x[i]=='A' || x[i]=='E' || x[i]=='I' || x[i]=='O' || x[i]=='U' || x[i]=='a' || x[i]=='e' || x[i]=='i' || x[i]=='o' || x[i]=='u'))
+                  {
+                             y[j]=x[i];
+                             j++;
+                             brj++;} 
+              }
+                  
+         if(y[0]==0) printf("-1");
+                  
+         for(i=0;i<brj;i++){
+         if (y[i]>='a' && y[i]<='z') {y[i]=toupper(y[i]);printf("%c",y[i]);}
+         }
+         
+         for(i=brj;i>-1;i--){
+         if (y[i]>='A' && y[i]<='Z') {y[i]=tolower(y[i]);printf("%c",y[i]);}
+         }
+         
+
+return 0;
+}
+                        

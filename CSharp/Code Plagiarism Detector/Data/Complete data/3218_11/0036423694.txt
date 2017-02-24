@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int prost(long broj)
+{
+    long br_dj = 0, i;
+    for(i = 2; i < broj; i++)
+          if(broj % i == 0)
+                  br_dj += 1;
+    if(br_dj > 0)
+        return 0;
+    else
+        return 1;
+    
+}
+
+int main()
+{
+    long max = 0, uneseni;
+    
+    do
+    {
+        /* printf("Unesi prirodan broj veci od 2: ");*/
+
+         scanf("%d", &uneseni);
+         if((prost(uneseni) == 1) && (uneseni > 2) && (uneseni > max))
+                            max = uneseni;      
+    } while(uneseni > 2);
+    printf("%d", max);
+    
+    return 0;
+}

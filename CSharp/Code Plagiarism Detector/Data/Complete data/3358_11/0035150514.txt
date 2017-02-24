@@ -1,0 +1,55 @@
+#include <stdio.h>
+int main() {
+	int a,pom1,pom2,pom3,pom4,pom5,s;
+	scanf("%d",&a);
+    s=0;
+	if (a>=10000 && a<100000) {
+		pom1=a/10000;
+		pom5=a%10;
+		pom4=(a%100)/10;
+		pom2=(a/1000)%10;
+		pom3=(a/100)%10;
+		if (pom1==pom5 && pom2==pom4) {
+			if (pom1 % 2 == 0) {
+				s+=pom1;
+			}
+			if (pom2 % 2 ==0){
+				s+=pom2;
+			}
+			if (pom3 % 2 ==0){
+			    s+=pom3;
+			}
+			if (pom4 % 2 ==0){
+				s+=pom4;
+			}
+			if (pom5 % 2 ==0){
+				s+=pom5;
+			}
+			printf("%d\n", s);
+		}else {
+		   if (pom1%2 != 0){
+			 s+=pom1;
+		   } 
+		   if (pom2%2 != 0) {
+			   s+=pom2;
+		   }
+		   if (pom3%2 != 0) {
+			   s+=pom3;
+		   }
+		   if (pom4%2 != 0) {
+			   s+=pom4;
+		   }
+		   if (pom5%2 != 0) {
+			   s+=pom5;
+		   }
+		   printf("%d\n", s);
+		} 
+	}
+	return 0;
+}
+
+
+
+                
+
+

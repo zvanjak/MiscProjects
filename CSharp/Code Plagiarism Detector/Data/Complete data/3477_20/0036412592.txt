@@ -1,0 +1,32 @@
+class Recenica{
+private:
+	int _nrijeci,_nzareza;
+	char _prije;
+public:
+	Recenica();
+	void UcitajZnak(char znak);
+	int PrebrojiRijeci();
+	int PrebrojiZareze();
+};
+
+Recenica::Recenica(){
+  _nrijeci=0;
+  _nzareza=0;
+  _prije=' ';
+}
+
+void Recenica::UcitajZnak(char znak){
+  if(znak==',') _nzareza++;
+  else if(znak==' ');
+  else 
+	  if(_prije==' ' || _prije==',') _nrijeci++;
+  _prije=znak;
+}
+
+int Recenica::PrebrojiRijeci(){
+  return _nrijeci; 
+}
+
+int Recenica::PrebrojiZareze (){
+  return _nzareza;
+}

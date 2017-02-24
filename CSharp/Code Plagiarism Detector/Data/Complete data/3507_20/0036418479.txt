@@ -1,0 +1,43 @@
+int Sortirano(cvor* glava)
+{
+	if(glava == NULL)
+	{
+		return 1;
+	}
+
+	if(glava->lijevo != NULL)
+	{
+		if(glava->id >= glava->lijevo->id)
+		{
+			int valid = Sortirano(glava->lijevo);
+
+			if(valid == 0)
+			{
+				return 0;
+			}
+		}
+		else
+		{
+			return 0;
+		}
+	}
+
+	if(glava->desno != NULL)
+	{
+		if(glava->id < glava->desno->id)
+		{
+			int valid = Sortirano(glava->desno);
+
+			if(valid == 0)
+			{
+				return 0;
+			}
+		}
+		else
+		{
+			return 0;
+		}
+	}
+
+	return 1;
+}

@@ -1,0 +1,21 @@
+Red *VratiBrojeve(Red *red){
+    Red pom;
+    Red *red2=new Red();
+    int broj,pot,element,i,j;
+    
+    while(red->SkiniIzReda(&element))
+    {
+        pom.DodajURed(element);
+        broj=0;
+        for(i=element;i>0;i--){
+                red->SkiniIzReda(&element);
+                pom.DodajURed(element);
+                pot=1;
+        for(j=i-1;j>0;j--) pot*=10;
+            broj+=element*pot;
+                 }
+                 red2->DodajURed(broj);
+                 }
+                 while(pom.SkiniIzReda(&element)) red->DodajURed(element);
+                 return red2;
+    }

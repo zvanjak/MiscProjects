@@ -1,0 +1,42 @@
+
+#include "stdio.h"
+#define MAX 100
+#define PRVI 0
+#define DRUGI 1
+#define TRECI 2
+#define CETVRTI 3
+
+int main()
+{
+	int i, total=0;
+	int x[MAX], y[MAX];
+	int kv[4]={0};
+
+	for(i=0; i<MAX; i++)
+	{
+		scanf("%d %d", &x[i], &y[i]);
+		if(x[i]== 0 && y[i]==0)
+			break;
+		total++;
+	}
+	for(i=0; i<total; i++)
+	{
+		if(x[i] >= 0)
+		{
+			if(y[i] >= 0)
+				kv[PRVI]++;
+			if(y[i] <=0)
+				kv[CETVRTI]++;
+		}
+		if(x[i]<=0)
+		{
+			if(y[i] >= 0)
+				kv[DRUGI]++;
+			if(y[i] <=0)
+				kv[TRECI]++;
+		}
+	}
+	printf("%d %d %d %d", kv[PRVI], kv[DRUGI], kv[TRECI], kv[CETVRTI]);
+	return 0;
+}
+

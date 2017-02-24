@@ -1,0 +1,29 @@
+int Najgore(cvor *glava)
+{
+	int k = 1;
+	if (glava == NULL)
+	{
+		k = 0;
+		return k;
+	}
+	else
+	{
+		if (glava->lijevo != NULL && glava->desno != NULL)
+		{
+			k = 0;
+			return k;
+		}
+		else if (glava->lijevo == NULL && glava->desno == NULL)
+		{
+			k = 1;
+			return k;
+		}
+		else
+		{
+			if (glava->lijevo != NULL && glava->desno == NULL)
+				return k * Najgore(glava->lijevo);
+			if (glava->lijevo == NULL && glava->desno != NULL)
+				return k * Najgore(glava->desno);
+		}
+	}
+}

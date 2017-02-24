@@ -1,0 +1,17 @@
+# include <stdio.h>
+int main () {
+int n, j, m;
+double logoddva, x;
+scanf("%d", &n);
+j=1;
+if (n<1 || n>100) printf ("n nije valjan"); 
+	else {
+		for (m=1; m<=n; m++) {
+			x=j*(1./m);
+			j=-j;
+			logoddva += x;
+		}
+		printf("%1.12f", logoddva);
+}
+return 0;
+}

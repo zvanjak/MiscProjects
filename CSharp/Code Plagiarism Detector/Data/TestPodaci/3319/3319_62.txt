@@ -1,0 +1,24 @@
+void dodaj(FILE *f){
+	long zapis, velicina, i;
+	int redni_br, bodovi, maxbod=-10000, najbolji;
+	char prezime[20+1];
+	
+	zapis=sizeof(redni_br)+ sizeof(bodovi)+ 21*sizeof(prezime[0]);
+	
+	fseek (f, 0, SEEK_END);
+	velicina=ftell(f);
+	fseek(f, 0, SEEK_SET);
+
+	while (ftell(f)<velicina){
+		fread (&redni_br, sizeof(redni_br), 1, f);
+		fread (prezime, sizeof(prezime[0]), 21, f);
+		fread (&bodovi, sizeof(bodovi), 1, f);
+		if(redni_br!=0) if(bodovi>maxbod) {
+			maxbod=bodovi;
+			najbolji=redni_br;
+		}
+	}
+	maxbod+=10;
+	fseek(f, (zapis*(najbolji-1)+sizeof(redni_br)+21*sizeof(prezime)), SEEK_SET);
+	fwrite(&maxbod, sizeof(maxbod), 1, f);
+}

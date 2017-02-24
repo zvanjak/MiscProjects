@@ -1,0 +1,31 @@
+int *napraviPolje(int *A, int Na, int a, int b, int *Nc) {
+	int *novoPolje;
+	int nije_dijeljiv=1; 
+	int i, j;
+	
+	if(a>b)
+		return 0;
+	
+	novoPolje = (int *) malloc(Na*sizeof(int));
+	
+	if (novoPolje == NULL)
+		exit(1);
+	
+	(*Nc) = 0;
+	
+	for(i=0; i<Na; i++) { 
+			for(j=a; j<=b; j++) {  
+				if(A[i]%j == 0) {  
+					nije_dijeljiv=0; 
+					break;           
+				}
+			}
+		if(nije_dijeljiv==1) {    
+			novoPolje[*Nc]=A[i];   
+			(*Nc)++;             
+		}
+		nije_dijeljiv=1;   
+	}
+	
+	return novoPolje;
+}

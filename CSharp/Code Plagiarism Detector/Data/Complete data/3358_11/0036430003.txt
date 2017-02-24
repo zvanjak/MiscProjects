@@ -1,0 +1,84 @@
+#include<stdio.h>
+main(){
+	int broj,a,b,c,d,e,suma;
+	printf("\n Upisi peteroznamenkasti broj:");
+	scanf("%d",&broj);
+	e=broj%10;
+	d=(broj/10)%10;
+	c=(broj/100)%10;
+	b=(broj/1000)%10;
+	a=(broj/10000)%10;
+	if(a==e&&b==d){
+		if(a%2==0&&b%2==0&&c%2==0)
+			suma=a+b+c+d+e;
+		else if(a%2==0&&b%2!=0&&c%2==0)
+			suma=a+e+c;
+		else if(a%2!=0&&b%2==0&&c%2==0)
+			suma=b+d+c;
+		else if(a%2==0&&b%2==0&&c%2!=0)
+			suma=a+b+d+e;
+		else if(a%2!=0&&b%2!=0&&c%2!=0)
+			suma=0;
+		else 
+			suma =c;
+		printf("\n Suma parnih znamenki je %d",suma);}
+	if(a!=e||b!=d){
+		if(a%2!=0&&b%2!=0&&c%2!=0&&d%2!=0&&e%2!=0)
+			suma=a+b+c+d+e;
+		else if(a%2==0&&b%2!=0&&c%2!=0&&d%2!=0&&e%2!=0)
+			suma=b+c+d+e;
+		else if(a%2!=0&&b%2==0&&c%2!=0&&d%2!=0&&e%2!=0)
+			suma=a+c+d+e;
+		else if(a%2!=0&&b%2!=0&&c%2==0&&d%2!=0&&e%2!=0)
+			suma=a+b+d+e;
+		else if(a%2!=0&&b%2!=0&&c%2!=0&&d%2==0&&e%2!=0)
+			suma=a+b+c+e;
+		else if(a%2!=0&&b%2!=0&&c%2!=0&&d%2!=0&&e%2==0)
+			suma=a+b+c+d;
+		else if(a%2==0&&b%2==0&&c%2!=0&&d%2!=0&&e%2!=0)
+			suma=c+d+e;
+		else if(a%2==0&&b%2!=0&&c%2==0&&d%2!=0&&e%2!=0)
+			suma=b+d+e;
+		else if(a%2==0&&b%2!=0&&c%2!=0&&d%2==0&&e%2!=0)
+			suma=b+c+e;
+		else if(a%2==0&&b%2!=0&&c%2!=0&&d%2!=0&&e%2==0)
+			suma=b+c+d;
+		else if(a%2!=0&&b%2==0&&c%2==0&&d%2!=0&&e%2!=0)
+			suma=a+d+e;
+		else if(a%2!=0&&b%2==0&&c%2!=0&&d%2==0&&e%2!=0)
+			suma=a+c+e;
+		else if(a%2!=0&&b%2==0&&c%2!=0&&d%2!=0&&e%2==0)
+			suma=a+c+d;
+		else if(a%2!=0&&b%2!=0&&c%2==0&&d%2==0&&e%2!=0)
+			suma=a+b+e;
+		else if(a%2!=0&&b%2!=0&&c%2==0&&d%2!=0&&e%2==0)
+			suma=a+b+d;
+		else if(a%2!=0&&b%2!=0&&c%2!=0&&d%2==0&&e%2==0)
+			suma=a+b+c;
+		else if(a%2==0&&b%2==0&&c%2==0&&d%2!=0&&e%2!=0)
+			suma=d+e;
+		else if(a%2==0&&b%2==0&&c%2==0&&d%2==0&&e%2!=0)
+			suma=e;
+		else if(a%2==0&&b%2==0&&c%2!=0&&d%2!=0&&e%2==0)
+			suma=c+d;
+		else if(a%2==0&&b%2==0&&c%2!=0&&d%2==0&&e%2!=0)
+			suma=c+e;
+		else if(a%2==0&&b%2!=0&&c%2==0&&d%2==0&&e%2!=0)
+			suma=b+e;
+		else if(a%2==0&&b%2!=0&&c%2==0&&d%2!=0&&e%2==0)
+			suma=b+d;
+		else if(a%2==0&&b%2!=0&&c%2!=0&&d%2==0&&e%2==0)
+			suma=b+c;
+		else if(a%2!=0&&b%2!=0&&c%2==0&&d%2==0&&e%2==0)
+			suma=a+b;
+		else if(a%2!=0&&b%2==0&&c%2!=0&&d%2==0&&e%2==0)
+			suma=a+c;
+		else if(a%2!=0&&b%2==0&&c%2==0&&d%2!=0&&e%2==0)
+			suma=a+d;
+		else if(a%2!=0&&b%2==0&&c%2==0&&d%2==0&&e%2!=0)
+			suma=a+e;
+		else 
+			suma=0;
+		printf("\nSuma neparnih znamenki je %d",suma);}
+
+	return 0;}

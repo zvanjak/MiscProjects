@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+long okreni(long broj)
+{
+	long znam, rez = 0;
+	
+	while(broj > 0)
+	{
+		znam = broj % 10;
+		broj /= 10;
+		rez = rez * 10+znam;
+	}
+
+	return rez;
+}
+
+int main()
+{
+	long broj, rez;
+
+	while(1)
+	{
+		scanf("%li", &broj);
+		if(broj < 0)
+		{
+			break;
+		}
+
+		rez = okreni(broj);
+
+		printf("%li", rez);
+	}
+
+	return 0;
+}

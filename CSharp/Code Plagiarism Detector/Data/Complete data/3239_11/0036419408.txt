@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+	int i, d, g, p = 0;
+	
+	scanf("%d %d", &d, &g);
+	
+	if (d <= 0 || g <= d) {
+		printf("D i G nisu valjani\n");
+		return(0);
+	}
+	
+	for (i = 2; i < d; i += 2)
+		p += i;
+	
+	for (i = d; i < g; i++) {
+		if (!(i % 2))
+			p += i;
+		printf("%d ", p);
+	}
+	
+	if (!(g % 2))
+		p += g;
+	printf("%d", p);
+	
+	return(0);
+}

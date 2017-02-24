@@ -1,0 +1,25 @@
+#include<stdio.h>
+int main()
+{
+	int n, i, p;
+	double e, er, nf;
+
+	scanf("%i", &n);
+	if ( n < 1 || n > 30)
+		printf("n nije valjan");
+	else
+	{
+		nf = 1;
+		er = 0;
+		p = 1;
+		for (i = 1; i <= n; ++i)
+		{
+			nf *= i;
+			er += p * 1. / nf;
+			p = -p;
+		}
+		e = 1. / (1. - er);
+		printf("%.12f", e);
+	}
+	return 0;
+}

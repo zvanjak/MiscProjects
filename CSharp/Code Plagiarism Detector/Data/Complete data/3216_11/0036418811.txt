@@ -1,0 +1,18 @@
+#include<stdio.h>
+
+int main(void){
+	int x,i,prost,br=0;
+	scanf("%d",&x);
+	while(x>2){
+		prost=1;
+        for(i=2;i<=x/2;i++)
+			if(x%i==0){
+				prost=0;
+				break;
+			}
+		if (prost==1)br++;
+		scanf("%d",&x);
+	}
+	printf("%d\n",br);
+	return 0;
+}

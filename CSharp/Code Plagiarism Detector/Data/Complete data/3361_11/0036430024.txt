@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main(){
+    int upisani_broj, lijeva_strana, desna_strana;
+    scanf("%d", &upisani_broj);
+    if(upisani_broj >=1000 && upisani_broj <=9999){
+          lijeva_strana = upisani_broj/100;
+          desna_strana = upisani_broj -(upisani_broj/100)*100;
+          if((lijeva_strana + desna_strana) % lijeva_strana == 0){
+            printf("Jest");
+          }
+          else{ 
+           printf("Nije");
+  }
+ }
+return 0 ;
+}

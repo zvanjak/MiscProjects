@@ -1,0 +1,25 @@
+char *BezDuplikata(char *ulazni_niz)
+{
+    int duljina, isti = 0, i, j, x;
+	char *NoviNiz;
+	duljina = strlen(ulazni_niz);
+
+	if((ulazni_niz == NULL) || (duljina == 0)) 
+		return NULL;
+	
+	NoviNiz = (char *) malloc(duljina+1);
+	strcpy(NoviNiz,ulazni_niz);
+	
+	for(i=0; i < duljina; i++)
+		for(j=i+1; j < duljina; j++)
+			if(NoviNiz[j] == NoviNiz[i]) 
+			{	
+				for(x=j; x < duljina; x++)
+				NoviNiz[x] = NoviNiz[x+1];
+				duljina--;
+				i--; 
+			}
+
+	NoviNiz=(char *)realloc(NoviNiz,duljina+1);	
+	return NoviNiz;
+}

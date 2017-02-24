@@ -1,0 +1,42 @@
+class SortRazlPolje {
+      private:
+              int *p;
+              int vel;
+      public:
+             SortRazlPolje(){
+                             p= (int*) malloc(0);
+                             vel= 0;
+                              }
+             ~SortRazlPolje() {
+                              free(p);
+                              }
+                              
+             int Dodaj(int num){
+                 int i;
+                 for (i=0; i<vel; i++)
+                     if (num==p[i])
+                        return 1;
+                 vel++;
+                 p=(int*)realloc(p, (vel*sizeof(int)));
+                 if (p==0) return 0;
+                 p[vel-1]=num;
+                 return 1;
+             }
+             int *VratiSortPolje(int &n){
+                 if (vel==0)
+                    return NULL;
+                 int i, j, pom;
+                 for (i=0; i<vel; i++) p[i]=p[i];
+				 for (i=0; i<vel; i++) {
+					 for (j=i+1; j<vel; j++) {
+                         if (p[j]>p[i]){
+                            pom = p[j];
+                            p[j]=p[i];
+                            p[i]=pom;
+                         }
+					 }
+				 }
+                 n=vel;   
+                 return p;
+             }
+      };

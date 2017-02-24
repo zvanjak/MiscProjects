@@ -1,0 +1,25 @@
+/* 
+Mihej Komar, 1.09
+JMBAG: 0036426836
+PiPI - 1. domaca zadaca
+*/
+
+#include <stdio.h>
+
+int main () {
+	char zn1, zn2, zn3, zn4;
+	int a;
+
+	scanf ("%d", &a);
+	zn1 = a/1000;
+	zn2 = (a/100) % 10;
+	zn3 = (a/10) % 10;
+	zn4 = a%10;
+	if (zn1%2==0) zn1 = 0;
+	if (zn2%2==0) zn2 = 0;
+	if (zn3%2==0) zn3 = 0;
+	if (zn4%2==0) zn4 = 0;
+	printf ("%d", zn1*1000+zn2*100+zn3*10+zn4);
+
+	return 0;
+}

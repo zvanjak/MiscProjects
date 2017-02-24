@@ -1,0 +1,28 @@
+#include <stdio.h>
+int main() {
+	int mat[10][10],m,i,j,k=0,l=0,br=0,suma=0,x=0;
+	do 
+	scanf("%d",&m);
+    while ((m<1)||(m>10));
+	for (i=0;i<m;i++)
+		for (j=0;j<m;j++)
+			scanf("%d",&mat[i][j]);
+	
+	while ((k>=0)&&(k<m)&&(l>=0)&&(l<m))  
+	{
+	int a=0;
+	scanf("%d %d",&k,&l);
+	if ((k>=0)&&(k<m)&&(l>=0)&&(l<m)) {
+		a=mat[k][l];
+		mat[k][l]=mat[l][k];
+		mat[l][k]=a;
+		br++; }
+	}
+	scanf("%d",&x);
+	if ((x>=0)&&(x<m))
+	for (i=0;i<m;i++) suma+=mat[x][i];
+	else suma=-1;
+	printf("%d %d",br,suma);
+
+return 0;
+}

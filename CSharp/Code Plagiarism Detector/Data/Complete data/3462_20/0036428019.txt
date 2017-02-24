@@ -1,0 +1,10 @@
+int KolikoUnutar(Kruznica &kruz, Tocka poljeTocaka[], int n){
+	int i, broj=0;
+	float a, b; 
+	for (i = 0; i < n; i++) {
+		a = poljeTocaka[i].GetX()-kruz.GetCenterX();
+		b = poljeTocaka[i].GetY()-kruz.GetCenterY();
+		if (sqrt(a*a+b*b)<kruz.GetRadius()) broj++;
+	}
+	return broj;
+}

@@ -1,0 +1,14 @@
+float prosjek(FILE *f)
+{
+ char input[32];
+ int brojcek,br,sum;
+ sum=0; br=0;
+ while (!feof(f)){
+       fscanf(f,"%s",&input);
+       fscanf(f,"%s",&input);
+       fscanf(f,"%d",&brojcek);
+       sum+=brojcek;
+       br++;
+ }
+ return (sum/(float)br);
+}

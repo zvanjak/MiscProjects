@@ -1,0 +1,16 @@
+Ekipa StvoriISortiraj(char *naziv){
+	try {
+		Ekipa moja(naziv);
+		moja.Napuni();
+
+		for (int i = 0; i<10; i++)
+			for (int j = i+1; j<11; j++)
+				if (moja[i].VratiBroj() > moja[j].VratiBroj()) moja.Zamijeni(i, j);
+		
+		return moja;
+	}
+	catch (char *strErr) {
+		//printf("%s\n", strErr);s
+		return NULL;
+	}
+}

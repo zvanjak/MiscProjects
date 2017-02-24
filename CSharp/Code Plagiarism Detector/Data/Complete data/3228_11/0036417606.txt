@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main () {
+	int n, i;
+	double pi=12., k;
+	scanf("%d", &n);
+	if(n>=1&&n<=100) {
+	for(i=2; i<=n; i++) {
+		k=12./(i*i);
+		if((i%2)!=0) pi=pi+k;
+		else pi=pi-k;}
+		pi=pow((double)pi, 1./2);
+        printf("%14.13g", pi);
+	}
+	else printf("n nije valjan");	
+	return 0;
+	}

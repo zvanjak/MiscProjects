@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+int main(){
+    
+    int a, b, c, d, e, f, x, rezultat;
+
+    scanf("%d %d", &a, &b);
+    
+    if (a >= 100 && a < 1000 && b >= 100 && b < 1000) {
+    
+        if ( a == b || a < b) {
+            x = a;
+        }
+        else {
+            x = b;
+        }
+        
+        if (x < 512) {
+            c = x % 8;
+            x = x / 8;
+            d = x % 8;
+            x = x / 8;
+            e = x % 8;
+        }
+        else {
+            c = x % 8;
+            x = x / 8;
+            d = x % 8;
+            x = x / 8;
+            e = x % 8;
+            x = x / 8;
+            f = x % 8;
+        }
+        
+        rezultat = (e * 100) + (d * 10) + c;
+
+        printf("%d\n", rezultat);
+    }
+
+    return 0;
+}

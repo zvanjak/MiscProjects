@@ -1,0 +1,16 @@
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+#include<stdlib.h>
+int main() {
+unsigned long x,z,n,i=0;
+scanf("%ld", &n);
+z=n%10;
+x=n;
+while((i<40)&&((x%13)!=0)){
+    i=i+1;
+    x=x*10+z;
+    printf("%ld ",x);}
+printf("%ld",i);
+fflush(stdout);
+return 0;}

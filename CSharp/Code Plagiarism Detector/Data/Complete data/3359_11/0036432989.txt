@@ -1,0 +1,18 @@
+#include <stdio.h>
+int main() {
+	int broj, a, b, c, d, sum;
+	scanf("%d", &broj);
+     a = broj / 1000;
+     broj = broj % 1000;
+     b = broj / 100;
+     broj = broj % 100;
+     c = broj / 10;
+     broj = broj % 10;
+     d = broj;
+     sum = a * b * c * d;
+      if (sum % 2 == 0)
+	     printf("%d\n", d);
+      else 
+         printf("%d\n", a); 
+ return 0;
+}

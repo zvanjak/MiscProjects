@@ -1,0 +1,15 @@
+int Memoriraj(Radio &radio) {
+   int memorirano = 0;
+   Stanica trenutna, prva = radio.TraziSljedecu();
+
+   do {
+      trenutna = radio.TraziSljedecu();
+
+      if( *trenutna.RDS() != 0 ) {
+         memorirano = memorirano + 1;
+         radio.MemorirajStanicu( trenutna, memorirano );
+      }
+   } while( trenutna != prva && memorirano < 6 );
+
+   return memorirano;
+}

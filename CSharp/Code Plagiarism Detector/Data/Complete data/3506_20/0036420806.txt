@@ -1,0 +1,27 @@
+int Razina(cvor *glava, int id, int *razina)
+{
+	if(!glava)
+	{
+		*razina = 0;
+		return(0);
+	}
+	cvor *p = glava;
+	while(p->id != id)
+	{
+		if((id <= p->id) && (p->lijevo))
+		{
+			p = p->lijevo;
+			(*razina)++;
+		}
+		else if((id > p->id) && (p->desno))
+		{
+			p = p->desno;
+			(*razina)++;
+		}
+		else
+		{
+			return(0);
+		}
+	}
+	return(1);
+}

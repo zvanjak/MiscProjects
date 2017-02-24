@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int x1, y1, x2, y2, x3, y3, x4, y4;
+
+int calc() {
+    if( x3-x1 == 0 ) return -1;
+    if( x4-x2 == 0 ) return -1;
+    if( (x1-x3)*(x4-x2) == -(y1-y3)*(y4-y2) ) return 1;
+    return 0;
+}
+
+int main(void) {
+    scanf( "%d%d%d%d%d%d%d%d", &x1, &y1, &x2, &y2, &x3, &y3, &x4, &y4 );
+    if( calc() == -1 ) printf( "K\n" );
+    if( calc() ==  1 ) printf( "R\n" );
+    if( calc() ==  0 ) printf( "C\n" );
+    return 0;
+}

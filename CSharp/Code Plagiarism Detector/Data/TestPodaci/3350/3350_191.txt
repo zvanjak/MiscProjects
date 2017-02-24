@@ -1,0 +1,27 @@
+int najbolji(FILE *f)
+{
+	struct natjecatelj
+	{
+		int redni_broj;
+		char prezime[20+1];
+		int bodovi;
+	};
+	struct natjecatelj osoba;
+	int rdb,maxb,k=1;
+
+	maxb=0;
+	rdb=0;
+	
+	while (k!=0)
+	{
+		k=fread(&osoba,sizeof(osoba),1,f);
+		if ((osoba.bodovi>maxb) && (osoba.redni_broj!=0))
+		{
+			maxb=osoba.bodovi;
+			rdb=osoba.redni_broj;
+		}
+
+	}
+
+	return rdb;
+}

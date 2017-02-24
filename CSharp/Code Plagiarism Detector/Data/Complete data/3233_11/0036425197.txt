@@ -1,0 +1,32 @@
+#include <stdio.h> 
+
+main()
+{
+float i,suma,y;
+int n,x;
+i=1;
+y=0;
+scanf("%d",&n);
+
+if (n>=1 && n<=200) {
+	
+	
+		
+		for(x=0;x!=n;x++) {	    
+		
+	    suma=1/(i*(i+1));
+		y=y+suma;
+        i++;
+		}
+
+		/* printf("\nBroj 1 je %13.12f." , y); */
+                printf("%13.12f", y);
+	
+}
+else printf("n nije valjan");
+
+
+return 0;
+		
+}
+	   

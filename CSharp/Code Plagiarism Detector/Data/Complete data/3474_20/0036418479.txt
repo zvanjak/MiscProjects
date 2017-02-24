@@ -1,0 +1,7 @@
+Tocka fun5(Trokut t)
+{
+	double x = t.getA().X + t.getB().X + t.getC().X;
+	double y = t.getA().Y + t.getB().Y + t.getC().Y;
+
+	return Tocka(x/3, y/3);
+}

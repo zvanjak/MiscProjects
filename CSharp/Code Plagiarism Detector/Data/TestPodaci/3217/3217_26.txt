@@ -1,0 +1,19 @@
+#include<stdio.h>
+int main(){
+int n,m,br,i;
+do{
+scanf("%d",&n);
+br=0;
+m=n;
+while(m>0){
+m=m/10;
+br++;
+}
+m=n;
+for(i=0;i<br;i++){
+printf("%d",m%10);
+m=m/10;
+}
+}while(n>0);
+return 0;
+}

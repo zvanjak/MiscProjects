@@ -1,0 +1,6 @@
+void rStrncpy(char *odrediste, char *izvoriste, int n){
+     int i=n;
+     kontrola();
+     --i;
+     rStrncpy(odrediste[i],izvoriste[i],i);
+}

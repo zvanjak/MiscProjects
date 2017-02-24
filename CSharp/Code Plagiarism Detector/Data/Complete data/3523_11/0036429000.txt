@@ -1,0 +1,21 @@
+  int izbaci (char *ulazni, char *podniz) { 
+ 
+     int len = (int) strlen(podniz); 
+     int i, j, br=0; 
+     char *pom; 
+ 
+     for (i=0; i<len; i++) { 
+          while(1) { 
+               pom = strchr(ulazni, podniz[i]); 
+               if ( pom ) { 
+                    br++; 
+                    for (j=0; j<(int)strlen(pom); j++) { 
+                         pom[j] = pom[j+1]; 
+                    } 
+               }      
+               else break; 
+          } 
+     } 
+ 
+     return br; 
+}

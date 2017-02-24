@@ -1,0 +1,31 @@
+/*
+Program treba učitavati cjelobrojne vrijednosti dok se ne učita broj 0. 
+Potrebno je izračunati ukupni broj znamenki i sumu znamenaka svih učitanih brojeva i ispisati ga na zaslon. 
+Primjer za učitani niz 10 578 2 -678 1999 0, program treba ispisati 13. 
+Kao što je očito iz primjera, nulu kao završni broj valja ignorirati.
+*/
+#include <stdio.h>
+int main()
+{
+	int z=0,d, br=0, suma=0;
+	while (1)
+	{
+		scanf ("%d", &d);
+		if (d==0)
+		{
+			break;
+		}
+		else
+		{
+			if (d<0) d=-1*d;
+			while(d>0)
+			{
+				br++;
+				suma = suma + d%10;
+				d = d/10;
+			}
+		}
+	}
+	printf("%d %d", br,suma);
+return 0;
+}

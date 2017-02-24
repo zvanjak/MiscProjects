@@ -1,0 +1,24 @@
+#include <stdio.h>
+int main()
+{
+	int n, x, in=0;
+	scanf("%d", &n);
+	if(n<0)
+	{
+		printf("n nije pozitivan");
+		return 0;
+	}
+	while(n>0)
+	{
+		x=n%10;
+		in=in*10+x;
+		n/=10;
+	}
+	while(in>0)
+        {
+		x=in%10;
+		printf("%d ", x);
+		in/=10;
+	}
+	return 0;
+}

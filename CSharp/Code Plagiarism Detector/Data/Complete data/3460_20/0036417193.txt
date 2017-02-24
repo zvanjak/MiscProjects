@@ -1,0 +1,15 @@
+void FuncMinMax(DinamickoPolje &polje,int *min,int *max){
+     int brojEl,i;
+
+     brojEl=polje.BrojElemenata();     //u brojEl varijabli je sad broj elemenata polja
+     *min=polje.DohvatiElement(0);     //recimo da je prvi element najmanji
+     *max=polje.DohvatiElement(0);    //recimo da je prvi element najveći
+
+
+     for (i=0;i<brojEl;i++){                      //idemo kroz cijelo polje
+         if (polje.DohvatiElement(i)<*min)        //i tražimo najmanji
+              *min=polje.DohvatiElement(i);
+         if (polje.DohvatiElement(i)>*max)        //i najveći član polja
+              *max=polje.DohvatiElement(i);
+     }
+}

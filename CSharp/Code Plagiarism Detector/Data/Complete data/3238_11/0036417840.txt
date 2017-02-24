@@ -1,0 +1,19 @@
+#include<stdio.h>
+#include<math.h>
+int main(){
+	double n;
+	double pi;
+	double red=0;
+	double i;
+	scanf("%lf",&n);
+	if(n>=1 && n<=25 && n==(int)n){
+		for(i=1;i<=n;i++){
+			red+=pow(i,-8);
+		}
+		pi=pow(9450*red,1./8);
+		printf("%.12lf",pi);
+		return 1;
+	}
+	printf("n nije valjan");
+	return 0;
+}

@@ -1,0 +1,7 @@
+void rStrcmp(char *s1, char *s2){
+
+     int v1, v2 itd; /* definicije vaših lokalnih varijabli */
+
+     kontrola(); /* ne treba primati povratnu vrijednost */
+
+     /* ostatak funkcije */

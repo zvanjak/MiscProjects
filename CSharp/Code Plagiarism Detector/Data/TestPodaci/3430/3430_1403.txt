@@ -1,0 +1,27 @@
+#include <stdio.h>
+#define MAX 100
+
+int main() {
+	int i,maks,uvjet=1;
+	char pal[MAX], lap[MAX], znak;
+
+for (i=0;i<MAX;i++) {
+	//fflush (stdin);
+	scanf ("%c", &znak);
+	if (znak=='.') break;
+	if (znak>='A' && znak<='Z') pal[i]=znak+32;
+	else pal[i]=znak;
+	maks=i;
+}
+
+for (i=0;i<=maks;i++) lap[maks-i]=pal[i];
+
+for (i=0;i<=maks;i++) {
+	if (pal[i]!=lap[i]) {uvjet=0; break;}
+}
+
+if (uvjet) printf ("DA");
+else printf ("NE");
+
+return 0;
+}

@@ -1,0 +1,21 @@
+#include<stdio.h>
+
+int main(){
+	int i,n;
+	float pi,pi_a=0,pi_b=0;
+	scanf("%d", &n);
+	if(!((n>=1)&&(n<=500)))
+		/*printf("n nije valjan\n");*/
+                printf("n nije valjan");
+	else{
+		for(i=1; i<=n; i+=2)
+			pi_a+=((float)1/(2*i-1));
+		for(i=2; i<=n; i+=2)
+			pi_b-=((float)1/(2*i-1));
+	pi=(pi_a+pi_b)*4;
+	/*printf("%.12f\n", pi);*/
+        printf("%.12f", pi);
+
+	}
+
+}

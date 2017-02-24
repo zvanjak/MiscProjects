@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main()
+
+{
+	int br, a, b, c;
+	do {
+		scanf("%d", &br);
+	   }
+
+	while (br<100 || br>999);
+
+	a = br / 100;
+	b = (br / 10) % 10;
+	c = br % 10;
+
+	if ((a+b+c)%2)
+	printf("Umnozak znamenaka = %d\n", a*b*c);
+
+	else 
+	printf("Razlika znamenaka = %d\n", a-b-c);
+	
+	return 0;
+}
+
+
+
+
+

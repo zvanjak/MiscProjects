@@ -1,0 +1,103 @@
+struct tip{
+        char ime [20 + 1];
+        char prezime [30 + 1];
+        char jmbag [10 + 1];
+        int ocjena;
+};
+typedef struct n atom;
+struct n {
+        tip element;
+        struct n *sljed;
+};
+
+int dodaj (atom **glavap, tip element){
+    atom *novi;
+    if ((novi = (atom *) malloc(sizeof(atom))) == NULL) return 0;
+    strcpy ((novi->element).ime, element.ime);
+    strcpy ((novi->element).prezime, element.prezime);
+    strcpy ((novi->element).jmbag, element.jmbag);
+    (novi->element).ocjena = element.ocjena;
+    novi->sljed = *glavap;
+    *glavap = novi;
+    return 1;
+}
+
+int brojElementa (atom *glava){
+    int br = 0;
+    while (glava != NULL){
+          glava = glava->sljed;
+          br++;
+    }
+    return br;
+}
+
+int minOcjena (atom *glava){
+    atom *p=glava;
+    int min;
+    if (glava == NULL) return -1;
+    min = (glava->element).ocjena;
+    while (p = p->sljed)
+          if ((p->element).ocjena < min) min = (p->element).ocjena;
+    return min;
+}
+
+
+int izbaciPrezimePocinjeS(atom **glavap, char *prezimePocetak){
+	if(*glavap==0) return 0;
+    int br=0;
+	atom *pom1=*glavap,*pom2;
+	if(strncmp(pom1->element.prezime,prezimePocetak,strlen(prezimePocetak))==0){
+		while(pom1 && strncmp(pom1->element.prezime,prezimePocetak,strlen(prezimePocetak))==0){
+			atom *tmp=pom1;
+			pom1=pom1->sljed;
+			free(tmp);
+			br++;
+		}
+		*glavap=pom1;
+	}
+	if(*glavap==0) return br;
+	pom2=pom1->sljed;
+	while(pom2){
+		if(strncmp(pom2->element.prezime,prezimePocetak,strlen(prezimePocetak))==0){
+			atom *tmp=pom2;
+			pom2=pom2->sljed;
+			free(tmp);
+			pom1->sljed=pom2;
+			br++;
+		}else{
+			pom1=pom1->sljed;
+			pom2=pom2->sljed;
+		}
+	}
+	return br;
+}
+
+int izbaciPrezimeSadrzi(atom **glavap, char *prezimePocetak){
+	if(*glavap==0) return 0;
+    int br=0;
+	atom *pom1=*glavap,*pom2;
+	if(strstr(pom1->element.prezime,prezimePocetak)){
+		while(pom1 && strstr(pom1->element.prezime,prezimePocetak)){
+			atom *tmp=pom1;
+			pom1=pom1->sljed;
+			free(tmp);
+			br++;
+		}
+		*glavap=pom1;
+	}
+	if(*glavap==0) return br;
+	pom2=pom1->sljed;
+	while(pom2){
+		if(strstr(pom2->element.prezime,prezimePocetak)){
+			atom *tmp=pom2;
+			pom2=pom2->sljed;
+			free(tmp);
+			pom1->sljed=pom2;
+			br++;
+		}else{
+			pom1=pom1->sljed;
+			pom2=pom2->sljed;
+		}
+	}
+	return br;
+}

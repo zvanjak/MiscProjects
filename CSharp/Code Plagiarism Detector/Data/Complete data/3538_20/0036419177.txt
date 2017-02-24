@@ -1,0 +1,31 @@
+Red *VratiBrojeve(Red *red)
+{
+	int broj, n, novibr, pot;
+	int x;
+	Red *novi = new Red();
+	Red *pom = new Red();
+	n = -1;
+	while(red->SkiniIzReda(&broj))
+	{
+		pom->DodajURed(broj);
+
+		novibr = 0;
+		pot = 1;
+		for(x = 0; x < broj; x++)
+			pot *= 10;
+
+		for(x = 0; x < broj; x++)
+		{
+			red->SkiniIzReda(&n);
+			pom->DodajURed(n);
+			novibr += n * (pot /= 10);
+		}
+		novi->DodajURed(novibr);
+	}
+
+	while(pom->SkiniIzReda(&broj))
+		red->DodajURed(broj);
+
+	delete pom;
+	return(novi);
+}

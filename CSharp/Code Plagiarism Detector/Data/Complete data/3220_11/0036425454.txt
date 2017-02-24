@@ -1,0 +1,14 @@
+#include<stdio.h>
+int main()
+ {
+	int n,br;
+	scanf("%d",&n);
+	br=0;
+	do 
+	{
+	    n=n%10;
+            n=n/10;
+        }
+        whilw
+	return 0;
+	}

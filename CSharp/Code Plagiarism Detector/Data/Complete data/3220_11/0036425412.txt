@@ -1,0 +1,29 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+int x,x1,b,y=0,zn,i,n,u=0;
+scanf("%d",&x);
+if (x<0){
+printf("%d",x);
+y=1;
+}
+else {x1=x;
+while (x1>0) {
+x1=x1/10;
+++u;
+}
+u=u-1;
+b=pow(10,u);
+for (i=1;i<=u+1;i++){
+zn=x/b;
+if(zn%2==1){printf("%d",zn);
+y=1;
+}
+x=x%b;
+b=b/10;
+}
+}
+if(y==0)printf("0");
+return 0;
+}

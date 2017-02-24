@@ -1,0 +1,37 @@
+# include <stdio.h>
+int main ()
+{
+    int i,j,mr,mat[10][10]={0},pom,brzam=0,n,suma=0;
+    do {
+        scanf ("%d",&mr);
+        }while (mr<1 || mr>10);
+        for (i=0;i<mr;i++)
+        {
+            for (j=0;j<mr;j++)
+            {
+                scanf ("%d",&mat[i][j]);
+                }
+                }              
+        while (1){
+        scanf ("%d %d",&i,&j);
+                if ( i<0 || i>mr-1 || j<0 || j>mr-1)
+           break;
+        else {
+              pom=mat[i][j];
+              mat[i][j]=mat[j][i];
+              mat[j][i]=pom;
+              brzam++;
+              }
+              }
+        scanf ("%d",&n);
+        if ( n<0 || n>=mr)
+           suma=-1;
+        else{
+        for (i=n,j=0;j<mr;j++)
+        {
+            suma += mat[i][j];
+            }
+            }
+        printf ("%d %d",brzam,suma);
+        return 0;
+}

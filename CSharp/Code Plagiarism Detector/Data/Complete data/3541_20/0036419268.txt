@@ -1,0 +1,35 @@
+ int izbaciZ(zapis **glava)
+ {
+     float prosijek=0.;
+     int broj=0;
+     zapis *p=*glava;
+     while(p)
+       {
+        prosijek+=p->pros; broj++;
+        p=p->sljed;
+       }
+        
+     prosijek=prosijek/broj;
+     broj=0;
+     p=*glava;
+     while(p->pros < prosijek && (p->spol=='z' || p->spol=='Z'))
+           {
+           *glava=p->sljed;
+           free(p);
+           p=*glava;
+           }
+ 
+     while(p->sljed)
+     { zapis* pom;
+      while(p->sljed->pros < prosijek && (p->spol=='z' || p->spol=='Z'))   
+         {pom=p->sljed;
+         p->sljed=pom->sljed;
+         broj++;
+         free(pom);
+         }    
+         p=p->sljed;
+     }
+     
+     return broj;
+     
+     }

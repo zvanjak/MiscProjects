@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+	int n=0, i=0;
+	double suma=0.0f;
+
+	scanf ("%d", &n);
+
+	if (n<1 || n>100)
+	{
+		printf ("n nije valjan");
+	}
+	else
+	{
+		for (i=1; i<=n; i++)
+		{
+			suma = suma + (1. / (i*i));
+		}
+
+		suma = suma * 6;
+
+		suma = sqrt(suma);
+
+		printf ("%.12f", suma);
+	}
+
+	return 0;
+}

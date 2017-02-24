@@ -1,0 +1,74 @@
+
+void spoji (char *ime, char *prezime, char *JMBAG, char *izlazni){
+	int i=0, j, k, l; 
+	int brojac1=0, brojac2=0, brojac3=0, brojac=0;
+	char *p, *pime, *pprezime, *pJMBAG;
+	i=0;
+
+	/*UVODNE PRAZNINE SE ELIMINIRAJU*/
+	while (prezime [i] == 32){
+		brojac1++;
+		i++;
+	}
+	pprezime=&prezime[brojac1];
+	
+	
+	i=0;
+	while (ime [i] == 32){
+		brojac2++; i++;
+	}
+	pime=&ime[brojac2];
+	i=0;
+	while (JMBAG [i] == 32){
+		brojac3++; i++;
+	}
+	pJMBAG=&JMBAG[brojac3];
+	/*UVODNE PRAZNINE SE ELIMINIRAJU ------ GOTOVO I PROVJERENO - TO JE OK*/
+	/* NAPOMENA - to se moglo riješiti i pomotzu funkcije*/
+
+
+	/*ELIMINACIJA PRAZNINA KOJE SlIJEDE NAKON TEKSTA*/
+
+	/* for (j=0; pime[j]!=32; j++); */
+	j=0;
+	while(1){
+		if (pime[j] == 32 || pime[j]==0) break;
+		j++;
+	}
+	/* for (k=0; pprezime[k]!=32; k++); */
+	k=0;
+	while (1){
+		if (pprezime[k]==32 || pprezime[k]==0) break;
+		k++;
+	}
+	/* OVO NE FUNKCIONIRA :   for (l=0; pJMBAG[l]!= 32; l++); */
+	l=0;
+	while(1){
+		if (pJMBAG[l] == 32 || pJMBAG[l]==0) break;
+		l++;
+	}
+	
+	/*JMBAG NE RADI--- do ovdje je OK*/
+
+	strncat(izlazni, pprezime, k);
+	strcat(izlazni, ", ");
+	strncat(izlazni, pime, j);
+	strcat(izlazni, ": ");
+
+	/* l (malo L) je dužina (broj znakova) od pJMBAGA */
+	
+	if (l < 6) {
+	for (brojac=0; brojac<(6 - l); brojac++){
+		strcat(izlazni, "0");
+	}
+	strcat(izlazni, pJMBAG);
+	} else if (l > 5){
+		p = &pJMBAG[l - 6];
+		strncat(izlazni, p, 6); 
+		/* OVDJE JE BILA GREŠKA, ispisivalo je pjmbag do kraja */
+	}
+	
+	/* UPSJESHNO ELIMINIRANE I POSLJEDNJE PRAZNINE ---- */
+	/* Testirano nekoliko puta i radi. */
+	return;
+	}

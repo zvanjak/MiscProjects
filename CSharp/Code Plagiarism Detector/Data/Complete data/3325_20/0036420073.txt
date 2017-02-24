@@ -1,0 +1,13 @@
+void rStrncpy(char *odrediste, char *izvoriste,int n)
+{
+	  int i;
+
+      while(n >= 1)
+      {
+              rStrncpy(odrediste,izvoriste,n-1);
+              odrediste[n-1]=izvoriste[n-1];
+			  odrediste[n]='\0';
+              break;
+              }
+
+}

@@ -1,0 +1,10 @@
+double fun1(Trokut t,Pravokutnik p,Krug k){
+	double P1,P2,P3,najveca;
+P1=t.Povrsina();
+P2=p.Povrsina();
+P3=k.Povrsina();
+najveca=P1;
+if (P2>najveca) najveca=P2;
+if (P3>najveca) najveca=P3;
+return najveca;
+}

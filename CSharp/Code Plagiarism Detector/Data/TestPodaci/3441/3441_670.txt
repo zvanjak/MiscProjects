@@ -1,0 +1,19 @@
+#include <stdio.h>
+int main () {
+int a[100]={0},i=0,j,suma=0,k=0,znam, br=0;
+do {
+	scanf ("%d", &a[i]);
+	i++;
+} while (a[i-1]!=0);
+for (j=0;j<i-1;j++){
+	if (a[j]<0) a[j]=-a[j];
+		do {
+		znam=a[j]%10;
+		suma+=znam;
+		a[j]/=10;
+		br++;
+	} while (a[j]!=0);}
+printf ("%d %d", br,suma);
+
+return 0;
+}

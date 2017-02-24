@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+ int n,nn, brzn=0;
+ scanf("%d",&n);
+ if (n<=0){
+  printf("n nije pozitivan");
+  return 0;
+ }
+ nn=n;
+ while(nn){
+  brzn++;
+  nn /= 10;
+ }
+ while(brzn){
+  printf("%d ",n/(int)pow(10,brzn-1));
+  n=n%(int)pow(10,brzn-1);
+  brzn--;
+ }
+
+ return 0;
+} 

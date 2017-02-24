@@ -1,0 +1,16 @@
+#include <stdio.h>
+#define MAX 100
+int main () {
+      int broj[MAX], i=0, j, b;
+      char slovo[MAX];
+      do {
+            scanf ("%c%d", &slovo[i], &broj[i]);
+            i++;
+      } while (broj[i-1]!=-1);
+      b=i;
+      for (i=0; i<b; i++)
+      for (j=0; j<broj[i]; j++){
+            printf ("%c ", slovo[i]);
+      }
+      return 0;
+}

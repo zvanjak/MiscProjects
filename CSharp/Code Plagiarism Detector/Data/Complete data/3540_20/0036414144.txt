@@ -1,0 +1,25 @@
+int izbaci(zapis **glava){
+  zapis *p, *pp;
+  int izb = 0;
+
+  p = *glava;
+  pp = NULL;
+  while(p) {
+    if (p->pros <2) {
+      izb++;
+      if (p == *glava){ 
+        *glava = p->sljed;
+        free(p);
+        p = *glava;
+      } else { 
+        pp->sljed = p->sljed;
+        free(p);
+        p = pp->sljed;
+      }
+    } else {
+      pp = p;
+      p = p->sljed;
+    }
+  }
+return izb;	
+}

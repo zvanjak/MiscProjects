@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <math.h>
+
+
+
+int main()
+{
+	long z,rez=0;
+	char i,j=-1;
+    
+	scanf("%d",&z);
+
+	if (z<=0 ) { printf("%d",z);return 0;}
+    
+	
+	while (z>0)
+	{
+	   i=z%10;
+	   z/=10;
+	   if (i%2) {j++; rez+=i*pow(10,j);} 
+	   }
+	printf("%d",rez);
+	return 0;
+}
+
+	

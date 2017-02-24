@@ -1,0 +1,13 @@
+#include <stdio.h>
+int main(){
+        char niz[100], c;
+        int n=0, pali=1, i;
+        do {
+                scanf ("%c", &c);
+                niz[n++]= ((c>=65)&&(c<=90)) ? c+32:c;
+        } while (c!='.');
+        for (i=0; i<n/2; i++)
+                if (niz[i]!=niz[n-2-i]) pali=0;
+        printf ("%s", (pali==1 ? "DA":"NE"));
+        return 0;
+}

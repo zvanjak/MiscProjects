@@ -1,0 +1,49 @@
+#include <stdio.h>
+
+int main () {
+
+	int broj;
+	int je,de,st,ti;
+	int broj2;
+
+	scanf("%d", &broj);
+
+	if(broj >= 1000 && broj <= 9999) {
+		je = broj % 10;
+		broj = broj / 10;
+		de = broj % 10;
+		broj = broj / 10;
+		st = broj % 10;
+		ti = broj / 10;
+
+		if (je%2 != 0) {
+			if (je == 9) je = 0;
+			else je = je + 1;
+		}
+
+		if (de%2 != 0) {
+			if (de == 9) de = 0;
+			else de = de + 1;
+		}
+
+		if (st%2 != 0) {
+			if (st == 9) st = 0;
+			else st = st + 1;
+		}
+
+		if (ti%2 != 0) {
+			if (ti == 9) ti = 0;
+			else ti = ti + 1;
+		}
+
+		broj2 = 1000*ti + 100*st + 10*de + je;
+
+		printf("%d", broj2);
+
+	}
+
+
+	return 0;
+}
+
+

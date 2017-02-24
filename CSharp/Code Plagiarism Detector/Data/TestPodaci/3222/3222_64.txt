@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main () {
+
+int n=0,i,b,k=0;
+
+	scanf ("%d", &n);
+
+	for (i=0; i<=39; i++) {
+		if(n<10) {
+		n+=n;
+		k+=1; 
+		printf ("%d ", n);}
+		if(n>=10) {
+		b=n%10;
+		n+=b;
+		k+=1;
+		printf ("%d ", n);}
+		if (n%13==0) break;
+	}
+	printf("%d", k);
+
+	return 0;
+}

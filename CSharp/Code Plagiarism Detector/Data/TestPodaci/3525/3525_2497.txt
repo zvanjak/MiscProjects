@@ -1,0 +1,19 @@
+void funkcija (char *ulaz, char *izlaz, int *broj){
+  int i=0, j=0, pom[128]={0};
+
+  *(broj)=0;
+
+        for(;*(ulaz); ulaz++, i++)
+                        ++pom[*ulaz];
+ 
+        for(;i>=0; ulaz--, i--)
+                        if(pom[*ulaz]==1){
+                           *(izlaz+j)=*ulaz;
+                                j++;}
+                        else if(pom[*ulaz]>1){
+
+      *(broj)+=1;
+      pom[(int)*ulaz]=0;
+    }
+    izlaz[j]=0;
+}

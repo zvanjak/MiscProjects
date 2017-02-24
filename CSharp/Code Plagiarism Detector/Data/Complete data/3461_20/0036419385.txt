@@ -1,0 +1,33 @@
+int JelSeSijeku(Kruznica &k1, Kruznica &k2)
+{
+	float udaljenost_sredista;	
+	udaljenost_sredista = sqrt(pow(k1.GetCenterX() - k2.GetCenterX(), 2) 
+		+ pow(k1.GetCenterY() - k2.GetCenterY(), 2));
+
+	if (udaljenost_sredista == 0 &&	k1.GetRadius() == k2.GetRadius())
+		return 3;
+
+	float zbroj_radiusa;
+	zbroj_radiusa = k1.GetRadius() + k2.GetRadius();	
+
+	float rveci, rmanji;
+	if (k1.GetRadius() > k2.GetRadius())
+	{
+		rveci = k1.GetRadius();
+		rmanji = k2.GetRadius();
+	}
+	else
+	{
+		rveci = k2.GetRadius();
+		rmanji = k1.GetRadius();
+	}
+
+	if ((udaljenost_sredista > zbroj_radiusa) || (rveci > udaljenost_sredista + rmanji))
+		return 0;
+	else if ((udaljenost_sredista == zbroj_radiusa) || 
+		(k1.GetRadius() + udaljenost_sredista == k2.GetRadius()) ||
+		(k2.GetRadius() + udaljenost_sredista == k1.GetRadius()))
+		return 1;
+	else
+		return 2;
+}

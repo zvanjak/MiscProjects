@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <math.h>
+int main ()
+{
+	int i,n;
+	double m,pi,s=0;
+	scanf("%d",&n);
+	if ((n>=1)&&(n<=500))
+		{
+	for(i=1;i<=n;i++)
+	{	
+		m=pow(-1,i-1);
+		s+=m/(2*i-1);
+	}
+		pi=4*s;
+		printf("%1.12f",pi);
+	}
+	else
+		printf("n nije valjan");
+	return 0;
+}

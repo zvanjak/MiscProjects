@@ -1,0 +1,8 @@
+void PrepisiStogURed(Stog *stog, Red *red){
+     int buf;
+     if (stog->Skini(&buf))
+      if (stog->Skini(&buf)){
+       PrepisiStogURed(stog,red);
+       red->DodajURed(buf);
+       }
+}

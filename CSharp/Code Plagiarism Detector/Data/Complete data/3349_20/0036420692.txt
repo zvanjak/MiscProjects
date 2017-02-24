@@ -1,0 +1,11 @@
+#include <stdio.h>
+#include <math.h>
+double sumareda(double x, int N){
+	double rezultat;
+	kontrola();
+	if (N <= 0){
+		return 0;
+	}
+	rezultat = (double) ((pow((x - 1), (double) N)) / N) * (double) (pow((-1), (N+1)));
+	return rezultat + sumareda(x, N - 1);
+}

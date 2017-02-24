@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main () {
+	char a, b;
+	scanf ("%c %c", &a, &b);
+	if (a>'9') {
+		if (b<='9') printf("%d\n", (a-55)*16+(b-48));
+		else printf("%d\n", (a-55)*16+(b-55));
+	}
+	else {
+		if (b<='9') printf("%d\n", (a-48)*16+(b-48));
+		else printf("%d\n", (a-48)*16+(b-55));
+	}
+	return 0;
+}

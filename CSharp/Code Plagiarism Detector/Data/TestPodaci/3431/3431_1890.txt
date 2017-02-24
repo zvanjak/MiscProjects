@@ -1,0 +1,37 @@
+#include <stdio.h>
+int main () {
+	int sp,sn,r,b,i;
+	char a[100],t;
+	i=0;
+	b=0;
+	sp=0;
+	sn=0;
+	do {scanf("%c",&t);
+		if ((t>=48 && t<=57)|| (t>='A' && t<='F') || (t>='a' && t<='f')){a[i]=t;
+		b++;
+		}
+		else break;
+	i++;} while (i<100);
+    for (i=0; i<b; i++){
+		switch (a[i]) {
+			case ('A'): a[i]=a[i]-55; break;
+			case ('B'): a[i]=a[i]-55; break;
+			case ('C'): a[i]=a[i]-55; break;
+			case ('D'): a[i]=a[i]-55; break;
+			case ('E'): a[i]=a[i]-55; break;
+			case ('F'): a[i]=a[i]-55; break;
+			case ('a'): a[i]=a[i]-87; break;
+			case ('b'): a[i]=a[i]-87; break;
+			case ('c'): a[i]=a[i]-87; break;
+			case ('d'): a[i]=a[i]-87; break;
+			case ('e'): a[i]=a[i]-87; break;
+			case ('f'): a[i]=a[i]-87; break;
+			default : a[i]=a[i]-48; break;
+		} }
+	for (i=0; i<b; i++){
+		if (a[i]%2==0) sp=sp+a[i];
+		else sn=sn+a[i];}
+	r=sp-sn;
+	printf("%d", r);
+	return 0;
+}

@@ -1,0 +1,13 @@
+Stog* noviOdNeparnih(Stog *stog)
+{
+	int e;
+	Stog pom;
+	Stog* novi = new Stog();
+	while (stog->Skini(&e)) pom.Stavi(e);
+	while (pom.Skini(&e))
+	{
+		stog->Stavi(e);
+		if (e % 2) novi->Stavi(e);
+	}
+	return novi;
+}

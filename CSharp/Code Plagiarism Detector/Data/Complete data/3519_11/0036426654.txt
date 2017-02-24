@@ -1,0 +1,20 @@
+int SplitToSentences (char *inputField, char *outputField) {
+	char *iTemp=inputField;
+	char *oTemp=outputField;
+	int brZam=0;
+
+	for (; *iTemp != 0; iTemp++, oTemp++) *oTemp=*iTemp;
+    *oTemp=0;
+
+	oTemp=outputField;
+	
+	for(; *oTemp != 0; oTemp++) {
+		if (*oTemp == ',') {
+			*oTemp='.';
+			if (*(oTemp+1) >= 'a' && *(oTemp+1) <= 'z') *(oTemp+1) = *(oTemp+1) - 32;
+			if (*(oTemp+2) >= 'a' && *(oTemp+2) <= 'z') *(oTemp+2) = *(oTemp+2) - 32;
+			brZam++;
+		}
+	}
+	return brZam;
+}

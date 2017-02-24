@@ -1,0 +1,13 @@
+int izbaci(char *ulazni, char *podniz)
+{
+	int i=0,br;
+	br=strlen(ulazni);
+	while(podniz[i]!=0)
+	{
+		if(strchr(ulazni,podniz[i])!=NULL)
+		strcpy(strchr(ulazni,podniz[i]),strchr(ulazni,podniz[i])+1);
+		else
+		i++;
+	}
+	return br-strlen(ulazni);
+}

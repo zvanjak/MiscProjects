@@ -1,0 +1,51 @@
+#include <stdio.h>
+int main()
+{
+	int n, k, k1, k10, k100, k1000, temp;
+	scanf("%d %d", &k, &n);
+	k1000=k/1000;
+	k100=(k%1000)/100;
+	k10=(k%100)/10;
+	k1=(k%2);
+	if (k1000==1)
+	{
+		if ((n/1000)<9)
+		{n=n+1000;}
+		else {
+			temp=n/1000;
+			temp=temp*1000;
+			n=n-temp;
+		}
+	}
+	if (k100==1)
+	{
+		if (((n%1000)/100)<9)
+		{n=n+100;}
+		else {
+			temp=(n%1000)/100;
+			temp=temp*100;
+			n=n-temp;
+		}
+	}
+    if (k10==1)
+	{
+		if (((n%100)/10)<9)
+		{n=n+10;}
+		else {
+			temp=(n%100)/10;
+			temp=temp*10;
+			n=n-temp;
+		}
+	}
+	if (k1==1)
+	{
+		if ((n%10)<9)
+		{n=n+1;}
+		else {
+			temp=(n%10);
+			n=n-temp;
+		}
+	}
+	printf("%d", n);
+	return 0;
+}

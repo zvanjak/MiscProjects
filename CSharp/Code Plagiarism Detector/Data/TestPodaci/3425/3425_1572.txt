@@ -1,0 +1,32 @@
+#include<stdio.h>
+#define MAX 10
+int main(){
+    int mat[MAX][MAX],mr,i,j,s=0,br=0,temp,n;
+    do{
+        scanf("%d",&mr);
+        } while(mr<1 || mr>10);
+        for(i=0;i<mr;i++){
+                          for(j=0;j<mr;j++){
+                                            scanf("%d",&mat[i][j]);
+                                            }
+                          }
+        do{
+           scanf("%d %d",&i,&j);
+           if((i>=0 && i<mr) && (j>=0 && j<mr)){
+           temp=mat[i][j];
+           mat[i][j]=mat[j][i];
+           mat[j][i]=temp;
+           br++;}
+           }while((i>=0 && i<mr) && (j>=0 && j<mr));
+        scanf("%d",&n);
+        if(n>=0 && n<mr){
+                for(i=n,j=0;j<mr;j++){
+                                   s+=mat[i][j];
+                                   }
+                }
+              
+        else{
+            s=-1;}
+        printf("%d %d",br,s);
+    return 0;
+}

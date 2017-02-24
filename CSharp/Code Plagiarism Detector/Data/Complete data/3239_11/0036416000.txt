@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+  int D, G, N, i, S;
+  
+  scanf("%d %d", &D, &G);
+  
+  if ((D>=G) || (D<=0) || (G<=0)) {printf("D i G nisu valjani"); exit;}
+  
+  else {
+       
+       for(N=D; N<=G; N++) {
+                         
+                         S=0;  
+                         for(i=1; i<=N; i++) {
+                                             if (i%2==0) S += i;
+                                             }
+                         if (N!=G) printf ("%d ", S);
+                         else printf ("%d", S);
+                            
+                         }
+       }
+       	
+  return 0;
+}

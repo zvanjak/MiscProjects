@@ -1,0 +1,20 @@
+char *brojeve_u_znakove(int *polje, int duljina)
+{
+    int i, j, k, nn;
+    char broj[20];
+    char *nov = (char *)malloc(sizeof(char));
+        strcpy(nov, "\0");
+    if(polje == NULL)
+        return(nov);
+        for(i = 0; i < duljina; i++)
+    {
+        nn = (int)(log(polje[i]) / log(10));
+        k = 0;
+        
+        for(j = (int)pow(10, nn); j >= 1; j/= 10)
+            broj[k++] = (char)((polje[i] % (10 *(j))) / j + 48);
+        broj[k] = '\0';
+        nov = strcat(nov, broj);
+    }
+    return(nov);
+}

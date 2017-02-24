@@ -1,0 +1,22 @@
+int main() {
+#include <stdio.h>
+	int broj, zn1, zn2, zn3, zn4, rez;
+	scanf("%d", &broj );
+	zn1 = broj / 1000;
+	zn2= (broj%1000) / 100;
+	zn3 = (broj % 1000 % 100) /10;
+	zn4 = (broj % 1000 % 100) %10;
+	if (broj >= 1000 && broj <=9999 ){
+		if (zn1 % 2 == 0) 
+			zn1 = (zn1 + 1);
+		if (zn2 % 2 == 0)
+			zn2 = (zn2 + 1);
+		if (zn3 % 2 == 0) 
+			zn3 = (zn3 + 1);
+		if (zn4 % 2 == 0)
+			zn4 = (zn4 + 1);
+				rez = (zn1*1000) + (zn2*100) + (zn3*10) + (zn4);
+				printf("%d", rez);
+	}	
+	return 0;
+}

@@ -1,0 +1,31 @@
+int Sortirano (cvor *glava)
+{
+	if (!glava){
+		return 1;
+}
+
+	int lij = 0, des = 0;
+	int ls = 0, ds = 0;
+	ls = Sortirano (glava->lijevo);
+	if (glava->lijevo)
+	{
+		if (glava->id > glava->lijevo->id){
+			lij = 1;
+}
+	}
+	else {
+		lij = 1;
+}
+	ds = Sortirano (glava->desno);
+	if (glava->desno)
+	{
+		if (glava->id < glava->desno->id){
+			des = 1;
+}
+	}
+	else {
+		des = 1;
+}
+
+	return lij & ls & des & ds;
+}

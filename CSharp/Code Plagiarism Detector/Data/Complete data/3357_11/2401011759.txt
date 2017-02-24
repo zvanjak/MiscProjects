@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main()
+{
+	int i, j, a, b, s = 0;
+	char broj1[10], broj2[10], pom[10];
+
+	printf("Unesi dva broja: ");
+	scanf("%d %d", &a, &b);
+
+	itoa(a, broj1, 10);
+	itoa(b, broj2, 10);
+
+	for(i = 0, j = strlen(broj1) - 1; broj1[i];)
+		pom[i++] = broj1[j--];
+	pom[i] = '\0';
+
+	if(!strcmp(pom, broj2))
+	{
+		for(i = 0; broj1[i]; i++)
+			s += broj1[i] - 48;
+		printf("%d", s);
+	}
+	else
+		printf("%d", a - b);
+
+	return 0;
+}

@@ -1,0 +1,26 @@
+#include<stdio.h>
+int main (){
+int b,A[20][20],i,j,c=0,suma=1,x;
+scanf("%d",&b);
+for (i=0;i<b;i++){
+	for(j=0;j<b;j++){
+		scanf("%d",&A[i][j]);
+	if(i%2==0)
+		if(j%2==0)
+			if(A[i][j]%2==0)c++;
+	}
+}
+x=b;
+if(x%2!=0)x=x+1;
+else x=b;
+x=(x/2)*(x/2);
+for (i=0;i<b;i++){
+	for(j=0;j<b;j++)
+		if(c==x){
+			if(i==j)suma=suma*A[i][j];}
+		else
+		if(j==(b-1-i))suma=suma*A[i][j];
+}
+printf("%d",suma);
+return 0;
+}

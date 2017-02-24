@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main(){
+    int min,max,a;
+    scanf("%d", &a);
+    min=a;
+    max=a;
+    while( !(a>0) || (a%4)) {
+           scanf("\n%d", &a);
+           if (a>max) max=a;
+           if (a<min) min=a;
+           }
+          printf("%d %d", max, min);
+          return 0;
+          }     

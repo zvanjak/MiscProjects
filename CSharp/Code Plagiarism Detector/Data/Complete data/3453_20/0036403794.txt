@@ -1,0 +1,64 @@
+class SortRazlPolje{
+int _BrEl; 
+int _MaxEl; 
+int *_pok;
+
+void Insert (int *A, int N);
+
+public:
+SortRazlPolje(); 
+int Dodaj(int Broj); 
+int *VratiSortPolje(int &n); 
+~SortRazlPolje();
+};
+void SortRazlPolje::Insert (int *C, int N) {
+int i, j;
+int Pomx;
+for (i = 1; i < N; i++) {
+Pomx = C[i];
+for (j = i; j >= 1 && C[j-1] < Pomx; j--)
+C[j] = C[j-1];
+C[j] = Pomx;
+}
+}
+SortRazlPolje::SortRazlPolje(){
+_BrEl = 0;
+_MaxEl = 1; 
+_pok = NULL;
+}
+
+int SortRazlPolje::Dodaj(int Broj){
+int i;
+
+if(_pok!=NULL && _BrEl != _MaxEl ){
+
+for(i=0; i<_BrEl; i++) if(*(_pok+i) == Broj) return 1;
+
+*(_pok + _BrEl++) = Broj;
+return 1;
+}
+
+
+int *Pomx = new int[_MaxEl * 2];
+if(Pomx == NULL) return 0;
+
+memcpy(Pomx, _pok, _BrEl * sizeof(int));
+delete []_pok;
+
+_MaxEl*=2;
+
+_pok = Pomx; 
+return this->Dodaj(Broj); 
+
+}
+int *SortRazlPolje::VratiSortPolje(int &n){
+if (_BrEl == 0 && _pok == NULL){n = 0; return NULL;}
+
+
+Insert (_pok, _BrEl);
+n = _BrEl;
+return _pok;
+}
+SortRazlPolje::~SortRazlPolje(){
+delete []_pok;
+}

@@ -1,0 +1,18 @@
+#include<stdio.h>
+main(){
+	int x;
+	scanf("%d",&x);
+	if((x/1000)%2==1){
+		if(x/1000==9) x=x-9000;
+		else x=x+1000;}
+	if((x/100)%2==1){
+		if((x/100)-(x/1000)*10==9) x=x-900;
+		else x=x+100;}
+	if((x/10)%2==1){
+		if((x/10)-(x/100)*10==9) x=x-90;
+		else x=x+10;}
+	if(x%2==1){
+		if(x-(x/10)*10==9) x=x-9;
+		else x=x+1;}
+	printf("%d",x);
+}

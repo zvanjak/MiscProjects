@@ -1,0 +1,19 @@
+#include <iostream>
+
+using namespace std;
+
+int KolikoUnutar(Kruznica &kruz, Tocka poljeTocaka[], int n) {
+      int i;
+      float d,dx,dy;
+      int br=0;
+  
+      for(i = 0; i<n; i++){
+         dx = kruz.GetCenterX() - poljeTocaka[i].GetX();
+         dy = kruz.GetCenterY() - poljeTocaka[i].GetY();
+         d = sqrt(dx*dx+dy*dy);
+         if (d < kruz.GetRadius()) br++;
+      }
+  
+      return br;
+  
+  }

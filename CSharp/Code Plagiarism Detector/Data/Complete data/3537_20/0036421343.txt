@@ -1,0 +1,10 @@
+int BrojClanova(Red *red){
+Red red2;
+int x,i,s=0;
+while (red->SkiniIzReda(&x)){
+    s++;
+    red2.DodajURed(x);}
+for (i=0;i<s;i++){
+    red2.SkiniIzReda(&x);
+    red->DodajURed(x);}
+return s;}

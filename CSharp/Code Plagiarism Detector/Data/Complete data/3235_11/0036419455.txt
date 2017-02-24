@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main () {
+	double rez;
+	int i,n;
+	rez = 0;
+	scanf("%d",&n);
+	if (n >= 1 && n <= 100) {
+		for (i=1; i<=n; i=i+1) {
+			if (i%2) {
+				rez = rez + 1./i;
+			} else rez = rez - 1./i;
+		}
+		printf("%1.12f", rez);
+	} else printf("n nije valjan");
+	return 0;
+}

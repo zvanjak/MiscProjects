@@ -1,0 +1,13 @@
+int NadjiRubni (int *mat, int m, int n, int maxstup, int *max, int *min)
+{
+int i,j;
+int a, b;
+a=*mat;
+b=*mat;
+for(i=0;i<m;i++){
+for(j=0;j<n;j++){
+if(i==0 || j==0 || i==(m-1) || j==(n-1)){
+if (mat[i*maxstup+j]>a) a=mat[i*maxstup+j];
+if (mat[i*maxstup+j]<b) b=mat[i*maxstup+j];
+
+}}}}

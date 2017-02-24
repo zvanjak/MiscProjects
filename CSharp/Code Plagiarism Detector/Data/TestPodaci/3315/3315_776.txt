@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+float prosjek (FILE *f){
+
+    char naziv[30+1];
+    char autor [20+1];
+    int prodano, i=0;
+    float x, suma=0;
+
+    while (fscanf(f, "%[^ ] %[^ ] %d%*c", naziv, autor, &prodano)==3){
+        suma+=prodano;
+        i++;
+    }
+    x=suma/i;
+    return x;
+}

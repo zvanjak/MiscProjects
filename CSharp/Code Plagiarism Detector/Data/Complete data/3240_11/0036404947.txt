@@ -1,0 +1,29 @@
+#include "stdio.h"
+
+int main()
+{
+    int broj,ostatak,brojac=10;  
+    scanf ("%d",&broj);
+    int privremeno=broj;
+    if(broj>=0){
+                while(broj>0){
+                                     while(privremeno!=0){                                                       
+                                                       privremeno=privremeno/10;
+                                                       brojac=brojac*10;
+                                     }                  
+                while(broj>0){
+                ostatak=broj/(brojac);
+                printf ("%d ",ostatak);
+                broj=broj-ostatak*(brojac);
+                brojac=brojac/10;
+                }
+                }
+                
+                
+    }              
+    else{
+    printf ("n nije pozitivan");
+    }
+        
+return 0;
+}

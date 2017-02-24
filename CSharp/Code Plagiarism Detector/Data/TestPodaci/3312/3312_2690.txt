@@ -1,0 +1,17 @@
+int br_prodanih(FILE *f, char *autor) {
+	
+	struct author {
+		char name[40],album[40];
+		int sold;
+	} current;
+	
+	int solution=0;
+	
+	fseek(f,0L,SEEK_SET);
+	
+	while (fscanf(f,"%s %s %d",current.album,current.name,&current.sold)==3) {
+		if (strcmp(current.name,autor)==0) solution += current.sold;
+	}
+	
+	return solution;
+}

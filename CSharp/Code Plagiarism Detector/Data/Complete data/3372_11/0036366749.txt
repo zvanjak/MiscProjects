@@ -1,0 +1,56 @@
+#include<stdio.h>
+
+  int main( ){
+
+      char predznak;
+       int x,rez;
+       short a,b,c,d;
+
+       
+       scanf("%d",&x);
+
+        if(x<0){
+           x=-x;
+           predznak='-';
+            }
+        if( ( x<1000 )|| ( x>9999 ) ){
+         printf("%d",x);
+           }else{
+                 a=x/1000;
+                 rez=x%1000;
+                 b=rez/100;
+                 rez%=100;
+                 c=rez/10;
+                 d=rez%10;                  
+              
+              if (d%2!=0){
+                    if (d==9) {
+                          d=0;
+                   } else{
+                    d++;
+               }}
+            if (c%2!=0){
+                    if (c==9) {
+                          c=0;
+                   } else{
+                    c++;
+               }}
+              if (b%2!=0){
+                    if (b==9) {
+                          b=0;
+                   } else{
+                    b++;
+               }}
+                if (a%2!=0){
+                    if (a==9) {
+                          a=0;
+                   } else{
+                     a++;
+               }}
+                                x=a*1000+b*100+c*10+d;
+                                if(predznak=='-'){
+                                     x=-x;
+                                  }
+                                printf("%d",x);
+                             }    return 0;
+                            }

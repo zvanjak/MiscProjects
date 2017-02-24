@@ -1,0 +1,25 @@
+#include <stdio.h>
+int main (){
+	char a, b, c;
+	int x=0, y=0, z=0;
+	scanf("%c %c %c" , &a,&b,&c);
+
+	if ((a>=65 && a<=90) || (a>=97 && a<=122))
+		x=1;
+
+	if ((b>=65 && b<=90) || (b>=97 && b<=122))
+		y=1;
+
+	if ((c>=65 && c<=90) || (c>=97 && c<=122))
+		z=1;
+	
+	if ((x==1 && y==1 && z==1) || (x==0 && y==0 && z==0))
+		printf("Nema uljeza");
+	
+		else if ((x==1 && y==1 && z==0)||(x==0 && y==0 && z==1))
+		printf("%c", c);
+		else if ((x==1 && y==0 && z==1)||(x==0 && y==1 && z==0))
+		printf("%c", b);
+		else if ((x==0 && y==1 && z==1)||(x==1 && y==0 && z==0))
+		printf("%c", a);
+}

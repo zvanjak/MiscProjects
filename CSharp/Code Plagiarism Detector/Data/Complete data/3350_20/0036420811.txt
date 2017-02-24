@@ -1,0 +1,17 @@
+int najbolji(FILE *f){
+	struct natjecatelj pom;
+	int max=0,prvi=1,poz=0;
+	fseek(f,0L,SEEK_SET);
+	while (fread(&pom,sizeof(pom),1,f)==1){
+		if (prvi && pom.redni_br){
+			max=pom.bodovi;
+			poz=pom.redni_br;
+			prvi=0;
+		}
+		if ((pom.bodovi>max) && pom.redni_br){
+			max=pom.bodovi;
+			poz=pom.redni_br;
+		}
+	}
+	return poz;
+}

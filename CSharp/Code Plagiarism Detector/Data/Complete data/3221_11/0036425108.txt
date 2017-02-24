@@ -1,0 +1,24 @@
+#include <stdio.h>
+int main() {
+	int an,b,br,i, d;
+	
+	scanf("%d %d %d",&an,&d ,&b);
+	br=0;
+
+	if (an<=b) {
+		for (i=an+d;i<=b;i=i+d) {
+				printf("%d ",i);
+				br=br+1;
+		}
+		
+		printf("%d ",i);
+		br=br+1;
+	}
+	
+	printf("\n%d",br);
+	
+
+return 0;
+}
+			
+

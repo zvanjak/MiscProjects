@@ -1,0 +1,25 @@
+Stog *PrepisiRedUStog(Red *red){
+	Red pom;
+	Stog *b;
+	int x,y,i=0,j;
+	while (red->SkiniIzReda(&x)) {
+		pom.DodajURed(x);
+		i++;
+	}
+	if (!i) {
+		b=new Stog;
+		return b;
+	}
+	pom.SkiniIzReda(&y);
+	for (j=1; j<i ;j++) {
+		pom.SkiniIzReda(&x);
+		red->DodajURed(x);
+	}
+	b=PrepisiRedUStog(red);
+	
+	x=0;
+	for(i=2;i<(y/2+1) && !x;i++) if (!(y%i)) x=1;
+	if ((!x || y==1 )&& y!=0)	b->Stavi(y);
+	
+	return b;
+	}

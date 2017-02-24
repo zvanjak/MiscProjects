@@ -1,0 +1,22 @@
+void dodaj(FILE *f)
+{
+    int redBR = 0,bodovi = 0,podaci,i;
+    struct natjecatelj osoba;
+    fseek(f, 0L, SEEK_END);
+    podaci = ftell(f) / sizeof(osoba);
+    fseek(f, 0L, SEEK_SET);
+    for (i = 0; i <podaci; i++) 
+	{
+        fread(&osoba, sizeof(osoba), 1, f);
+        if (osoba.bodovi > bodovi && osoba.redni_br != 0) 
+		{
+			redBR = osoba.redni_br;
+            bodovi = osoba.bodovi;
+		}
+	}
+	fseek(f,(redBR-1)*sizeof(osoba),SEEK_SET);
+	fread(&osoba, sizeof(osoba), 1, f);
+	osoba.bodovi=osoba.bodovi+10;
+	fseek(f,(redBR-1)*sizeof(osoba),SEEK_SET);
+	fwrite(&osoba,sizeof(osoba),1,f);
+}

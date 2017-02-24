@@ -1,0 +1,32 @@
+int NadjiNaGlavnoj(int *mat, int n, int m, int maxstup, int *max, int *min) {
+int i,j;
+*min=*mat;
+*max=*mat;
+if(n>m){
+for(i=0; i<m; i++){
+j=i;
+if(*(mat + i*maxstup + j)>*max)
+*max=(mat + i*maxstup + j);
+if(*(mat + i*maxstup + j)<*min)
+*min=(mat + i*maxstup + j);
+}}
+if(m>n){
+for(i=0; i<n; i++){
+j=i;
+if(*(mat + i*maxstup + j)>*max)
+*max=(mat + i*maxstup + j);
+if(*(mat + i*maxstup + j)<*min)
+*min=(mat + i*maxstup + j);
+}}
+else
+for(i=0; i<n; i++){
+j=i;
+if(*(mat + i*maxstup + j)>*max)
+*max=(mat + i*maxstup + j);
+if(*(mat + i*maxstup + j)<*min)
+*min=(mat + i*maxstup + j);
+return 0;}}
+
+
+
+

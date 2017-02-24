@@ -1,0 +1,39 @@
+#include <math.h>
+
+#include <stdio.h>
+
+ 
+
+int main () {
+
+      float x[50];
+
+      double x0, y[50];
+
+      int n=0, i;
+
+ 
+
+      scanf ("%lf", &x0);
+
+      do
+
+            scanf ("%f", &x[n]);
+
+      while (x[n++]!=0.0);
+
+      n--;
+
+      for (i=0; i<n; i++)
+
+            y[i] = (pow (x[i]+x0, sin (x[i]+x0))*tanh (pow (x[i]+x0, exp (x[i]+x0)))
+
+                             - pow (x[i], sin (x[i]))*tanh (pow (x[i], exp (x[i]))))/x0;
+
+      for (i=0; i<n; i++)
+
+            printf ("%.2lf", atan(y[i]));
+
+      return 0;
+
+}

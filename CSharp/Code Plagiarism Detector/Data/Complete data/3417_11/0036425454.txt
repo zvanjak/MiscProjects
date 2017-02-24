@@ -1,0 +1,36 @@
+#include <stdio.h>
+#define MAX	20
+int main () {
+int n=0, i=0, j=0, k=0;
+char a[MAX+1], b[MAX+1],d[MAX+1], pom;
+while (1) {
+	scanf("%c", &pom);
+	//getchar();
+	if(!(pom >='A' && pom <='Z' || pom >='a' && pom <='z'))break;
+	a[i]=pom;
+	i++;
+}if(i==0){
+	printf("-1");
+}
+for(j=0;j<i;j++){
+if(a[j]>='a' && a[j]<='z'){
+	a[j]-=32;
+}
+	}
+	for(j=0;j<i;j++){
+if(a[j]!='A' && a[j]!='E' && a[j]!='I' && a[j]!='O' && a[j]!='U'){
+	b[k]=a[j];
+	printf("%c", b[k]);
+	k+=1;
+	n++;
+}
+	}
+	for(j=0;j<n;j++){
+	b[j]+=32;
+	}
+	for(j=0;j<n;j++){
+		d[j]=b[n-j-1];
+		printf("%c",d[j]);
+	}
+	return 0;
+}

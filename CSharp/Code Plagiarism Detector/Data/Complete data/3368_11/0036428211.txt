@@ -1,0 +1,32 @@
+// Renato Jovic,1.03
+// 0036428211,FER
+
+#include <stdio.h>
+
+int main(void)
+{
+	int broj;
+	int prva,druga;
+
+	scanf("%d",&broj);
+		
+	if(broj < 16 || broj > 255)
+		printf("Izvan intervala");
+	else
+	{ 
+		druga = broj % 16;
+		broj /= 16;
+		prva = broj %16;
+	
+	if(prva >=10 && druga <10)
+		printf("%c%c",prva+55,druga+48);
+	else if(prva<10 && druga>=10)
+		printf("%c%c",prva+48,druga+55);
+	else if(prva>=10 && druga>=10)
+		printf("%c%c",prva+55,druga+55);
+	else 
+		printf("%c%c",prva+48,druga+48);
+	}
+ 
+ return 0;
+}

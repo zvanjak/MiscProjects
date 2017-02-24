@@ -1,0 +1,52 @@
+class SortRazlPolje{
+private:
+	int maxSize;
+	int brCl;
+	int *polje;
+	bool JeliIn(int sta){
+		for(int i=0;i<brCl;i++)
+			if(polje[i]==sta) return true;
+		return false;
+	}
+public:
+	SortRazlPolje():maxSize(10),brCl(0),polje(new int[maxSize]){}
+	~SortRazlPolje(){
+		delete [] polje;
+	}
+	int Dodaj(int Broj){
+		if (brCl>=maxSize){
+			maxSize+=10;
+			int *tmp=new int[maxSize];
+			if(tmp==0) return 0;
+			for(int i=0;i<brCl;i++)
+				tmp[i]=polje[i];
+			delete [] polje;
+			polje=tmp;
+		}
+		if(!JeliIn(Broj)){
+			polje[brCl]=Broj;
+			brCl++;
+		}
+		return 1;
+	}
+	int *VratiSortPolje(int &n){
+		if(brCl==0){
+			n=0;
+			return 0;
+		}
+		bool zamjena=true;
+		while(zamjena){
+			zamjena=false;
+			for(int i=0;i<brCl-1;i++)
+				if(polje[i]<polje[i+1]){
+					zamjena=true;
+					int tmp=polje[i];
+					polje[i]=polje[i+1];
+					polje[i+1]=tmp;
+				}
+		}
+		n=brCl;
+		return polje;
+	}
+
+};

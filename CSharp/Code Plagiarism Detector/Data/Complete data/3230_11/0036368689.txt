@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+double faktorijel(int x){
+      int i;
+      double rezultat;
+      rezultat=1;
+      for(i=1;i<=x;i++) rezultat*=i;
+      return rezultat;
+}
+void main(){
+      int n;
+      int i;
+      double e;
+
+      scanf("%d",&n);
+      e=0;
+      if(n>30 || n<1) printf("n nije valjan");
+      else {
+            for (i=0;i<=n;i++) e+=1/faktorijel(i);
+            printf("%14.12f",e);
+      }
+}

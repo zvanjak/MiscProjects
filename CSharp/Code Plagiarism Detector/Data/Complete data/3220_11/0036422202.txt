@@ -1,0 +1,37 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+
+int main(){
+    int n,i=1,z,np=0;
+    int p=0;
+    int flag=0;
+    int flag2=0;
+    scanf("%d",&n);
+    if(n<=0){
+        printf("%d",n);
+        exit(0);
+    }
+    while(flag==0){
+        i++;
+        np=(int)n/pow(10,i);
+        if(np!=0)
+        p++;
+        else
+        flag=1;
+    }
+    if(n>9)p++;
+    flag=0;
+    i=0;
+    while(flag==0){
+        np=(int)n/pow(10,p-i)-(int)((n/pow(10,p-i+1)))*10;
+        if(np%2!=0){
+            printf("%d",np);
+            flag2=1;
+        }    
+        if(i==p)flag=1;
+        i++;
+    }    
+if(flag2==0)printf("0");
+}    
+

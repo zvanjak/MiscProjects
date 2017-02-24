@@ -1,0 +1,24 @@
+class Kosarica {
+public:
+	Kosarica (){
+		suma=0;
+		i=0;
+		max=0;
+	}
+	~Kosarica(){
+			}
+    void DodajProizvod (float cijena){
+	cijene = (float *) malloc(sizeof(float));
+	*(cijene) = cijena;
+	suma = suma + *(cijene);
+	if (*cijene>max) max=*cijene;
+	cijene++;
+	i++;}
+	float UkupnaCijena () {
+	return suma;}
+	float NajskupljiProizvod () {
+		return max;}
+private:
+float suma,max;
+int i;
+float *cijene;};

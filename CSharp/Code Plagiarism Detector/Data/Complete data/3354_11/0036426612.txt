@@ -1,0 +1,40 @@
+#include <stdio.h>
+int main () {
+	char a,b,c;
+	int tipa,tipb,tipc;
+	scanf("%c %c %c", &a, &b, &c);
+	if((a>='0')&&(a<='9')) { 
+		tipa=0;
+	} else if ((a>='A')&&(a<='Z')||(a>='a')&&(a<='z')) { 
+		tipa=1;
+	} else { 
+		return 0;
+	}
+    if((b>='0')&&(b<='9')) { 
+		tipb=0;
+	} else if ((b>='A')&&(b<='Z')||(b>='a')&&(b<='z')) { 
+		tipb=1;
+	} else { 
+		return 0;
+	}
+	if((c>='0')&&(c<='9')) { 
+		tipc=0;
+	} else if ((c>='A')&&(c<='Z')||(c>='a')&&(c<='z')) { 
+		tipc=1;
+	} else { 
+		return 0;
+	}
+	if(tipa==tipb && tipb==tipc) {
+	   printf("Nema uljeza");
+	} else { 
+		if(tipa==tipb)
+			printf("%c", c);
+		else if(tipa==tipc)
+			printf("%c", b);
+		else 
+			printf("%c", a);
+	}
+	
+		
+	return 0;
+}

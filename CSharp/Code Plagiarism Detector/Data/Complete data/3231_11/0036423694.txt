@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main()
+{
+   int n, i;
+   double suma, predznak, clan;
+   
+   /*printf("Unesi broj clanova reda: ");*/
+
+   scanf("%d", &n);
+   if(!((n >= 1) && (n <= 30)))
+   {
+           printf("n nije valjan");
+   }
+   else
+   {
+       suma = 0.;
+       predznak = 1.;
+       clan = 1.;
+       for(i=0;i<n;i++)
+       {
+           suma = suma + predznak*clan;
+           clan = clan/2.;
+           predznak = (-1)*predznak;           
+       }                       
+       printf("%1.12f", suma);
+       
+   }
+    
+   return 0;
+}

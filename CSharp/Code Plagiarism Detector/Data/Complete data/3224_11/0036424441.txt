@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <math.h>
+int main () {
+	int n,i=0;
+        double pi=0,sum=0,d;
+	/* printf("\n Unesi broj clanova reda n:"); */
+	scanf("%d",&n);
+	if (n<1 || n>400)
+		printf("n nije valjan");
+	else {
+		while (i<n) {
+			++i;
+			
+			d=1./((4*i-1)*(4*i+1));
+			sum+=d;
+		}
+		pi=4-8*sum;
+        printf("%.8lf",pi);
+	}
+    
+    return 0;
+}

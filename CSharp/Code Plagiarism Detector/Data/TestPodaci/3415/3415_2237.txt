@@ -1,0 +1,38 @@
+#include<stdio.h>
+int main ()
+{
+	int i=0,suma=0,s[20],broj1,broj2,j;
+	char operacija[20+1];
+	operacija[0]='+';
+		i=i+1;
+	while(operacija[i-1]=='+'||operacija[i-1]=='-'||operacija[i-1]=='*'
+		||operacija[i-1]=='/'||operacija[i-1]=='%'){
+		scanf("%d %d %c",&broj1,&broj2,&operacija[i]);
+		if(operacija[i]=='+'){
+			s[i]=broj1+broj2;
+		}else if(operacija[i]=='-'){
+			s[i]=broj1-broj2;
+		}else if(operacija[i]=='*'){
+			s[i]=broj1*broj2;
+		}else if(operacija[i]=='/'){
+			if(broj2==0)
+				s[i]=0;
+			else
+				s[i]=broj1/broj2;
+		}else if(operacija[i]=='%'){
+			if(broj2==0)
+				s[i]=0;
+			else
+				s[i]=broj1%broj2;
+            }else{
+                 goto van;
+}
+		suma=suma+s[i];
+		i=i+1;
+	}
+van:
+	printf("%d ",suma);
+	for(j=1;j<=i-1;j++)
+		printf("%c ",operacija[j]);
+	return 0;
+}

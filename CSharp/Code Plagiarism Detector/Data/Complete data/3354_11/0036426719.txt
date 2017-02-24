@@ -1,0 +1,39 @@
+#include <stdio.h>;
+
+int main (){
+char a, b, x;
+scanf("%c %c %c", &a, &b, &x);
+if ((a>=48)&&(a<=57)) {
+    if ((b>=48)&&(b<=57)) {
+        if ((x>=48)&&(x<=57)) {
+            printf ("Nema uljeza");
+        }
+        else {
+            printf("%c", x);
+        }
+    }
+    else {
+        if ((x>=48)&&(x<=57)) {
+            printf ("%c", b); 
+        }
+        else {
+            printf("%c", a);
+        }
+    }
+}
+else {
+    if ((b>=48)&&(b<=57)) {
+        if ((b>=48)&&(b<=57))
+            printf("%c", a); 
+        else printf("%c", b);
+    }
+    else {
+        if ((x>=48)&&(x<=57)){
+            printf("%c", x);
+        }
+        else printf ("Nema uljeza");
+    }
+    }
+return 0;
+} 
+      

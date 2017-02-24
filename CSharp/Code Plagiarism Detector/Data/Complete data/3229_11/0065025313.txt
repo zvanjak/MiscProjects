@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main (){
+	int n, x=1;
+	float sum=0., e;
+	float fakt=1.;
+	scanf ("%d", &n);
+	if ( (n>=1) && (n<=30)) {
+	for( x=1 ; x<=n ; x++){
+		fakt=fakt*x;
+		if((x%2) !=0){
+			sum=sum-(1./fakt);
+		}else{
+			sum=sum+(1./fakt);
+		}}
+		e=1/(1+sum);
+		printf("%.12f", &e);
+	}else {
+		printf("n nije valjan");
+	}
+	return 0;
+}

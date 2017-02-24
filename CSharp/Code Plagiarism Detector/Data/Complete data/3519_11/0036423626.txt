@@ -1,0 +1,21 @@
+int SplitToSentences (char *inputField, char *outputField)
+{
+  int br_izmjena = 0,j ;
+    
+for (j = 0; j < max ; j ++ )
+   
+if ( inputField[j] == ',' ){
+     outputField[j] = '.';
+     br_izmjena ++;
+     j++;
+     while (inputField[j] == ' ')
+                          j ++ ;
+                          
+     outputField[j] = toupper(inputField[j]);
+     
+}
+else outputField[j] = inputField[j];
+
+    
+return br_izmjena;    
+}

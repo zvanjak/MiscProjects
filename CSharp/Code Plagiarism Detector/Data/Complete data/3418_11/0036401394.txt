@@ -1,0 +1,36 @@
+#include <stdio.h>
+#define MAXN 100
+int main () {
+    int polje[MAXN],p[MAXN],i,j,n,brnula=0;
+    int brdijel=0;
+    int broj,rez;
+do {
+        scanf("%d",&n);
+}while(n<1 || n>100);
+for(i=0;i<n;i++) {
+                 scanf("%d",&polje[i]);
+                 }
+for(j=0;j<n;j++) {
+    scanf("%d",&p[j]);
+}
+for(j=0;j<n;j++) {    
+    if(j%2==0) {
+        if(p[j]>n) {
+                    break;
+                    }
+        if(p[j+1]==0) {
+                       continue;
+                       }          
+         i=p[j];
+         rez=polje[i]/p[j+1];
+         brdijel++;
+         if(rez==0) {
+         brnula++;
+         }
+         polje[i]=rez;
+         }
+}
+printf("%d %d",brnula,brdijel);
+return 0;
+}
+    

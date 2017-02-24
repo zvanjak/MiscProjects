@@ -1,0 +1,36 @@
+#include<stdio.h>
+float koeficjent(float x1, float x2, float y1, float y2)
+{
+  return (y1-y2)/(x1-x2);
+}
+
+
+int main()
+{
+  int polje[22][2],i,j,k,x1,x2,y1,y2;
+
+  for(i=0;i<21;i++) { 
+      scanf("%d%d",&polje[i][0], &polje[i][1]);
+      
+      if(polje[i][0]==50)
+    		break;
+  }
+
+  for(k=0;k<i;k++) { 
+    x1=polje[k][0];
+    x2=polje[k+1][0];
+    
+    y1=polje[k][1];
+    y2=polje[k+1][1];
+    
+    if(koeficjent(x1,x2,y1,y2)<0)
+	     printf("Pada ");
+      else if(koeficjent(x1,x2,y1,y2)>0)
+      	printf("Raste ");
+      else
+      	printf("Ravan ");
+  }
+
+  return 0;
+}
+

@@ -1,0 +1,67 @@
+#include <stdio.h>
+#include <ctype.h>
+
+void izbaciUljeza (char *ulazni){
+	int broj_vel = 0, broj_mal = 0, broj_znam = 0, uljez = 0, posmak = 0;
+	char *c = ulazni;
+
+	while (*c) {
+		if (islower(*c)) broj_mal++;
+		else if (isupper(*c)) broj_vel++;
+		else if (isdigit(*c)) broj_znam++;
+
+		c++;
+	}
+	
+	if (broj_mal < broj_vel && broj_mal < broj_znam) uljez = 1;
+	else if (broj_vel < broj_mal && broj_vel < broj_znam) uljez = 2;
+	else if (broj_znam < broj_vel && broj_znam < broj_mal) uljez = 3;
+	
+	c = ulazni;
+	switch (uljez) {
+		case 1:
+			while (*c) {
+				*c = toupper(*c);
+				c++;
+			}
+			break;
+		case 2:
+			while (*c) {
+				*c = tolower(*c);
+				c++;
+			}
+			break;
+		case 3:
+			while (*c) {
+				if (isdigit(*c)) {
+					posmak++;
+					*c = '\0';
+				} else {
+					*(c-posmak) = *c;
+					if (posmak > 0) *c = '\0';
+				}
+				c++;
+			}
+			break;
+		case 0:
+			while (*c) {
+				*c = tolower(*c);
+				if (isdigit(*c)) {
+					posmak++;
+					*c = '\0';
+				} else {
+					*(c-posmak) = *c;
+					if (posmak > 0) *c = '\0';
+				}
+				c++;
+			}
+			c = ulazni;
+			while (*c) c++;
+			*(c-1) = toupper(*(c-1));
+			*ulazni = toupper(*ulazni);
+
+			break;
+	}
+
+	return;
+}

@@ -1,0 +1,23 @@
+#include <stdio.h>
+int main (){
+int n,m,i,j;
+double produkt,suma;
+ucitaj:
+scanf ("%d %d", &n, &m);
+suma=0.;
+int mat [20][20];
+if (n>0&&n<=20&&m>0&&m<=20){
+	for (i=0;i<n;i++){
+		for (j=0; j<m;j++){
+			scanf ("%d", &mat[i][j]);
+		}}}else{goto ucitaj;}
+for (i=0;i<n;i=i+2){
+	produkt=1.;
+	for (j=0;j<m;j++){
+		produkt=produkt*mat[i][j];
+			}
+	suma+=produkt;
+}
+printf ("%g", suma);
+return 0;
+}

@@ -1,0 +1,23 @@
+void dodaj (FILE *f){
+typedef struct{
+	int redni_br;
+	char prezime [20+1];
+	int bodovi;
+} natjecatelj;
+	int cont;
+        natjecatelj nat,max;
+	while (1){
+		cont=fread (&nat.redni_br,sizeof(int),1,f);
+		if (cont==0) break;
+		if (nat.redni_br!=0){
+			fseek(f,(long)sizeof(natjecatelj)*(nat.redni_br-1),SEEK_SET);
+			fread (&nat,sizeof(natjecatelj),1,f);
+			if (nat.redni_br==1) max=nat;
+			if (nat.bodovi>max.bodovi) max=nat;
+		}
+	}
+	max.bodovi+=10;
+	fseek (f,(long) sizeof(nat)*(max.redni_br-1),SEEK_SET);
+	fwrite (&max, sizeof(nat),1,f);
+	printf("%d",max.bodovi);
+}

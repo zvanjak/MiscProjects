@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <math.h>
+
+
+int main () {
+
+	double xc, yc, r, fi, povrsina;
+	
+	struct  tocka {
+      double x;
+      double y;
+	}t1,t2,t3,t4;
+
+	scanf("%lf %lf %lf %lf %lf %lf %lf %lf", &t1.x, &t1.y, &t2.x, &t2.y, &t3.x, &t3.y, &t4.x, &t4.y);
+	
+	if (sqrt(pow((t2.x - t1.x),2)+pow((t2.y - t1.y),2)) == sqrt(pow((t3.x - t2.x),2)+pow((t3.y - t2.y),2)) && sqrt(pow((t2.x - t1.x),2)+pow((t2.y - t1.y),2)) == sqrt(pow((t4.x - t3.x),2)+pow((t4.y - t3.y),2))  ){	
+		povrsina = pow((t2.x - t1.x),2)+pow((t2.y - t1.y),2);
+		printf("%.2lf", povrsina);
+	}
+	else{
+		
+		xc = (t1.x+t2.x+t3.x+t4.x)/4;
+		yc = (t1.y+t2.y+t3.y+t4.y)/4;		
+		r = sqrt(xc*xc+yc*yc);		
+		fi = atan(yc/xc);
+		printf("%.2lf %.2lf", r, fi);
+	}	
+
+	return 0;
+}

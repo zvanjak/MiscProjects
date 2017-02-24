@@ -1,0 +1,11 @@
+void azuriraj(FILE *f,int redni_br,int broj)
+{struct nesto{ int redni;
+char prezime[21];
+int broj;} struktura;
+fseek(f,(long)(redni_br-1)*32,SEEK_SET);
+fread(&struktura,32,1,f);
+struktura.broj=broj;
+fseek(f,(long)(redni_br-1)*32,SEEK_SET);
+fwrite(&struktura,32,1,f);
+return;
+}

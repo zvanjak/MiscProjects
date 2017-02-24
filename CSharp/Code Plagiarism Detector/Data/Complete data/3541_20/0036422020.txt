@@ -1,0 +1,20 @@
+int izbaciZ(zapis **glava)
+{
+	int i, BrIzbacenih=0;
+	float suma=0, prosjek;
+	zapis *p1, *p2;
+	p1 = p2 = *glava;
+	for (i = 0; p1 != NULL; p1 = p1->sljed, i++) suma += p1->pros;
+	prosjek = suma/i;
+	for (; p2 != NULL; p2 = p2->sljed)
+	{
+		if (((p2->spol == 'Z') || (p2->spol == 'z')) && (p2->pros < prosjek))
+		{
+			p1 = *glava;
+			(*glava) = (*glava)->sljed;
+			free (p1);
+			BrIzbacenih++;
+		}
+	}
+	return BrIzbacenih;
+}

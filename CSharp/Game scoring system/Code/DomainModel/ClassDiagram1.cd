@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="ZGSS.DomainModel.Player">
+    <Position X="8.75" Y="14.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Player.cs</FileName>
+      <HashCode>AAAAIAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ZGSS.DomainModel.PlayedGame">
+    <Position X="8.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>PlayedGame.cs</FileName>
+      <HashCode>IgFAAAAAWBACAAAAABGAAQEBAAAAAAAAAEAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_gameType" />
+      <Field Name="_map" />
+      <Field Name="_dataEnteredBy" />
+      <Field Name="_comments" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="_listParticipatingTeams" />
+    </ShowAsCollectionAssociation>
+    <AssociationLine Name="_map" Type="ZGSS.DomainModel.Map" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.25" Y="6.704" />
+        <Point X="11.193" Y="6.704" />
+        <Point X="11.193" Y="1.783" />
+        <Point X="10.25" Y="1.783" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="_dataEnteredBy" Type="ZGSS.DomainModel.Player" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="8.75" Y="8.255" />
+        <Point X="7.016" Y="8.255" />
+        <Point X="7.016" Y="14.89" />
+        <Point X="8.75" Y="14.89" />
+      </Path>
+    </AssociationLine>
+  </Class>
+  <Class Name="ZGSS.DomainModel.Team">
+    <Position X="8.75" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Team.cs</FileName>
+      <HashCode>AAAAIAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="_teamPlayers" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="ZGSS.DomainModel.TypeOfGame">
+    <Position X="8.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>TypeOfGame.cs</FileName>
+      <HashCode>AAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ZGSS.DomainModel.Repository_TypeOfGame">
+    <Position X="4.5" Y="4" Width="2" />
+    <TypeIdentifier>
+      <FileName>Repository_TypeOfGame.cs</FileName>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="_listTypeOfGame" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="ZGSS.DomainModel.Repository_PlayedGames">
+    <Position X="4.5" Y="6.5" Width="2" />
+    <TypeIdentifier>
+      <FileName>Repository_PlayedGames.cs</FileName>
+      <HashCode>AAAAAAAAAAAgAACACAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="_listPlayedGames" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="ZGSS.DomainModel.Map">
+    <Position X="8.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Map.cs</FileName>
+      <HashCode>AEAAIAAAAAAAgAAAAAAAAAUAAgAAAAAAAAAAAAIAAAQ=</HashCode>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_typeOfGame" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ZGSS.DomainModel.TeamParticipatingInGame">
+    <Position X="8.5" Y="10" Width="2" />
+    <TypeIdentifier>
+      <FileName>TeamParticipatingInGame.cs</FileName>
+      <HashCode>AAAAAgEAAAAAAAAAACAAAAAAAAQAAAAAQAAAAAEAAAA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_team" />
+      <Field Name="_teamStat" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ZGSS.DomainModel.Repository_Teams">
+    <Position X="4.75" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Repository_Teams.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAE=</HashCode>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="_listTeams" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="ZGSS.DomainModel.Repository_Players">
+    <Position X="4.75" Y="14.5" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>Repository_Players.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAAAAACAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="_listPlayers" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="ZGSS.DomainModel.ZGSSDataModel">
+    <Position X="1" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ZGSSData.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ZGSS.DomainModel.ZGSSController">
+    <Position X="1" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ZGSSController.cs</FileName>
+      <HashCode>AAACAAAQBAAAAAAAAAAAAAAAAAhAAAEAgAgAAAAAAAg=</HashCode>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_data" />
+      <Field Name="_repPlayers" />
+      <Field Name="_repTeams" />
+      <Field Name="_repGames" />
+      <Field Name="_repTypeOfGame" />
+    </ShowAsAssociation>
+    <AssociationLine Name="_repPlayers" Type="ZGSS.DomainModel.Repository_Players" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.5" Y="10.714" />
+        <Point X="3.25" Y="10.714" />
+        <Point X="3.25" Y="15.073" />
+        <Point X="4.75" Y="15.073" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="_repTeams" Type="ZGSS.DomainModel.Repository_Teams" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.5" Y="10.314" />
+        <Point X="5.438" Y="10.314" />
+        <Point X="5.438" Y="11.75" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="_repTypeOfGame" Type="ZGSS.DomainModel.Repository_TypeOfGame" ManuallyRouted="true">
+      <Path>
+        <Point X="2.5" Y="9.529" />
+        <Point X="3.229" Y="9.529" />
+        <Point X="3.229" Y="4.573" />
+        <Point X="4.5" Y="4.573" />
+      </Path>
+    </AssociationLine>
+  </Class>
+  <Class Name="ZGSS.DomainModel.TeamStatisticsInGame">
+    <Position X="12.25" Y="9.25" Width="2" />
+    <TypeIdentifier>
+      <FileName>TeamStatisticsInGame.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ZGSS.DomainModel.WarcraftGameStatistic">
+    <Position X="13.5" Y="10.5" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>WarcraftGameStatistic.cs</FileName>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_playedAs" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ZGSS.DomainModel.CoHGameStatistic">
+    <Position X="16.25" Y="10.5" Width="2" />
+    <TypeIdentifier>
+      <FileName>CoHGameStatistic.cs</FileName>
+      <HashCode>AAIAAACCAAABQQAAAAAAAAAAACAAAAAAAAAAAIAAAAA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_playedAs" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ZGSS.DomainModel.NullStatistic">
+    <Position X="11.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>TeamStatisticInGame.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ZGSS.DomainModel.PlayedGameComments">
+    <Position X="13.25" Y="7" Width="2" />
+    <TypeIdentifier>
+      <FileName>PlayedGameComments.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="_listComments" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="ZGSS.DomainModel.Comment">
+    <Position X="17.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Comment.cs</FileName>
+      <HashCode>ABAAAAAAAAAAAAAAAAAACAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_player" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ZGSS.DomainModel.Repository_Maps">
+    <Position X="4.5" Y="1" Width="2" />
+    <TypeIdentifier>
+      <FileName>Repository_Maps.cs</FileName>
+      <HashCode>AAAAAAAQAAAAAAAAAACAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="_listMaps" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Enum Name="ZGSS.DomainModel.CoHSides">
+    <Position X="16.5" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>CoHSides.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAE=</HashCode>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ZGSS.DomainModel.WarcraftRaces">
+    <Position X="13.75" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>WarcraftRaces.cs</FileName>
+      <HashCode>AAAQAAAAAEAAAAACAAAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Enum>
+</ClassDiagram>

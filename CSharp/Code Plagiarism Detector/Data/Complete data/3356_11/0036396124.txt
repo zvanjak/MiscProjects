@@ -1,0 +1,36 @@
+#include <stdio.h>
+int main (){
+	int broj, m, x;
+	char c;
+	scanf ("%d %d %c", &broj, &m, &c);
+	if (( broj >=100 && broj <=999) && (m >= 1 && m <=3) && (c == 'L' || c == 'R')){
+		if (c == 'R'){
+			if (m == 1){
+				x = ((broj % 100) * 10) + (((broj / 10) % 10) * 100) + (broj %10);
+				printf ("Traženi broj je : %d", x);
+			}else if (m == 2){
+				x = ((broj / 100) + (((broj / 10) % 10) * 100) + ((broj %10) * 10));
+                printf ("Traženi broj je : %d", x);
+			}else {
+				printf ("Traženi broj je : %d", broj);
+			}
+
+		}else if (c == 'L'){
+			if (m == 1){
+				x = ((broj / 100)  + ((broj % 100) * 10));
+				printf ("Traženi broj je : %d", x);
+			}else if (m == 2){
+				x = ((broj % 10) * 100) + ((broj / 100) * 10) + ((broj / 10) % 10);
+                printf ("Traženi broj je : %d", x);
+			}else {
+				printf ("Traženi broj je : %d", broj);
+			}
+		
+		}  else ;
+
+	}else{ 
+		printf("Error");
+		}
+	
+}
+

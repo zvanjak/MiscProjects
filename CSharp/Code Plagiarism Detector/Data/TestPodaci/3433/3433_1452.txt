@@ -1,0 +1,22 @@
+#include <stdio.h>
+int main () {
+int i,j,k,nizb[100];
+char nizz[100];
+i=0;
+scanf ("%c",&nizz[i]);
+scanf ("%d",&nizb[i]);
+while (nizb[i]!=-1){
+		++i;
+		scanf("%c", &nizz[i]);
+		scanf("%d", &nizb[i]);
+}
+
+if (i>0){
+	for (j=0; j<=i; ++j) {
+		for (k=1; k<=nizb[j]; ++k) {
+					 printf ("%c ",nizz[j]);
+				           }
+		             }
+	}
+return 0;
+}

@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <string.h>
+void spoji(char *ime, char *prezime, char *JMBAG, char *izlazni){
+	int i, j, k, z, x, y, w;
+	for(i=0, j=0; i<strlen(prezime); i++){
+		if(prezime[i]!=' '){
+		izlazni[j]=prezime[i];
+		j++;
+		}}
+    izlazni[j]='\0';
+	strcat(izlazni, ", ");
+	y=strlen(izlazni);
+	for(i=0, k=0; i<strlen(ime); i++){
+		if(ime[i]!=' '){
+			izlazni[y+k]=ime[i];
+			k++;
+		}}
+	
+		izlazni[j+k+2]='\0';
+		strcat(izlazni, ": ");
+		x=strlen(JMBAG);
+		y=strlen(izlazni);
+		if(x<6){
+			for(i=0, z=0; i<6-x; i++){
+			izlazni[j+k+4+z]='0';
+			z++;
+		}
+		izlazni[j+k+4+z]='\0';
+		strcat(izlazni, JMBAG);
+		}
+	    if(x>6){
+			y=strlen(izlazni);
+			for(i=0, w=0; i<6; i++){
+				izlazni[y+w]=JMBAG[x-6];
+				x++;
+				w++;
+		}izlazni[y+w]='\0';
+		}
+		if(x==6){
+			strcat(izlazni, JMBAG);
+			}}
+	

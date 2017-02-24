@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int info(FILE *f, int redni_br) {
+	struct {
+		int redni_br;
+		char prezime[20+1];
+		int bodovi;
+	} natjecatelj;	
+	
+	
+
+	while (fread(&natjecatelj, sizeof(natjecatelj), 1, f) == 1) {
+		if (natjecatelj.redni_br == 0)
+			return -1;
+		if (natjecatelj.redni_br < 100)
+			return 0;
+		if (natjecatelj.redni_br >= 100)
+			return 1;
+	}
+
+	return 11;
+}

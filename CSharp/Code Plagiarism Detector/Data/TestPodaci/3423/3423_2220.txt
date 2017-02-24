@@ -1,0 +1,40 @@
+#include <stdio.h>
+int main()
+{
+	int i,j,brojacredaka=0,brojacstupaca=0;
+	int mr,ms,n,brojac1=0,brojac2=0;
+	int polje[20][5];
+	do{
+	scanf("%d %d",&mr,&ms);
+	}while((mr<1 || mr>20)||(ms<1 || ms>5));
+     
+	for (i=0;i<mr;i++){
+		 for(j=0;j<ms;j++){	
+           scanf("%d",&polje[i][j]);
+		}
+	 }
+		for (i=0;i<mr;i++){
+		 for(j=0;j<ms;j++){	
+			 for(n=2;n<=polje[i][j];n++){
+				 if (polje[i][j]==2) brojac1=1;
+				 if(polje[i][j]!=1 && polje[i][j]%n==0) break;
+				 else brojac1=1;
+		}
+		 }
+		brojacredaka+=brojac1;
+		}
+for (j=0;j<mr;j++){
+		 for(i=0;i<ms;i++){	
+			 for(n=2;n<=polje[i][j];n++){
+				 if (polje[i][j]==2) brojac2=1;
+				 if(polje[i][j]!=1 && polje[i][j]%n==0) break;
+				 else brojac2=1;
+			 }
+		 }
+brojacstupaca+=brojac2;
+}
+	printf("%d %d", brojacredaka, brojacstupaca);	
+				 
+return 0;
+}
+		

@@ -1,0 +1,31 @@
+
+#include <stdio.h>
+# define MAX 100
+int main () {
+	int i=0,j=0,k=0;
+	char niz[100];
+	char *p;
+	char x;
+	printf("Ucitati niz znakova koji predstavljaju recenicu:");
+	scanf("%c",&x);
+	while (x!='.') {
+		if (( x>='A' && x<='Z') || (x>='a' && x<='z') || ( x== ',' || x==' ') ) niz[i]=x;
+		i++ ;}
+	niz[i]='.';
+	while (p==' ') {j++;k++ ;}
+	for (k=0;k<i;k++)*p=*(p+j);
+	if (niz[0]>='a' && niz[0]<='z') niz[0]-=32;
+	for(j=1;j<i;j++) 
+		if (niz[j] >='A' && niz[j]<= 'Z') niz[j]+=32;
+	for(j=1;j<i;j++)
+		if(niz[j]==' ')
+			niz[j+1]-=32;
+			if(niz[j-1]==',' ) 
+				niz[j-2]-=32;
+			else
+			niz[j-1]-=32 ;
+for (j=0;j<i;j++) 
+printf("Niz[j].");
+return 0;
+}
+

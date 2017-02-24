@@ -1,0 +1,24 @@
+int izbaciZ( z **g ) {
+   z *tmp, *last, *dumm;
+   float sum = 0.0;
+   int n = 0, c = 0;
+   for( tmp = *g; tmp != NULL; sum += tmp->pros, tmp = tmp->sljed ) ++n;
+
+   sum /= n;
+
+   last = NULL;
+   for( tmp = *g; tmp != NULL; ) {
+      dumm = tmp->sljed;
+      if( tmp->spol == 'Z' && tmp->pros < sum ) {
+         if( last == NULL ) *g = dumm;
+         else {
+            last->sljed = dumm;
+            free( tmp );
+         }
+         ++c;
+      } else last = tmp;
+      tmp = dumm;
+   }
+
+   return c;
+}

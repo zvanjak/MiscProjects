@@ -1,0 +1,23 @@
+Red *VratiBrojeve(Red *red)
+{
+	Red pom;
+	Red *red2=new Red;
+	int i,j,br,temp,pot;
+	while (red->SkiniIzReda(&br))
+	{
+		pom.DodajURed(br);
+		temp=0;
+		for (i=br-1;i>=0;i--)
+		{
+			red->SkiniIzReda(&br);
+			pom.DodajURed(br);
+			pot=1;
+			for (j=i;j>0;j--) 
+				pot*=10;
+			temp+=br*pot;	
+		}
+		red2->DodajURed(temp);
+	}
+	while (pom.SkiniIzReda(&br)) red->DodajURed(br);
+	return red2;
+}

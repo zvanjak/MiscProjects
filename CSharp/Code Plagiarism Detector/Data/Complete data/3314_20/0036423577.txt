@@ -1,0 +1,11 @@
+int veci_od(FILE *f, int granica) {
+	int br = 0;
+	int prodano=0;
+
+	while ( !feof(f) ) {	
+		fscanf(f,"%*s%*s%d", &prodano);			
+		if (prodano >= granica) br++;
+	} 
+
+	return br;
+}

@@ -1,0 +1,40 @@
+
+
+
+#include <stdio.h>
+
+int main () {
+
+int bos, bns, bcskn, nip, brpl;
+
+scanf("%d %d %d, &bos, &bns, &bcskn");
+
+brpl = bos*bcskn;
+
+if(bos<bns){
+
+ bcskn*=0.9;
+
+ } else if(bos>bns){
+   
+   bcskn*=1.15;
+  
+   } else if(bos==bns){
+     
+     bcskn=bcskn;
+    
+     }
+
+if(brpl>6000){
+ 
+ nip=0.7*brpl;
+
+ } else if(brpl<=6000){
+   
+   nip=0.8*brpl;
+   
+   }
+
+printf("Netto iznos place radnika za tekuci mjesec je %.2f, nip");
+
+}

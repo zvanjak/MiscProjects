@@ -1,0 +1,20 @@
+#include<stdio.h>
+int main()
+{
+	int A,d,B,y,i=0;
+	scanf("%d",&A);
+	scanf("%d",&d);
+	scanf("%d",&B);
+	y=A;
+	if(A>B)
+		printf("%d",i);
+	else{
+	do{
+		y+=d;
+		printf("%d ",y);
+		++i;
+	}while(y<=B);
+	printf("%d",i);
+	}
+	return 0;
+}

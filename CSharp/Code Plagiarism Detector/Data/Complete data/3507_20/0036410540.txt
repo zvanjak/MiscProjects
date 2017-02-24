@@ -1,0 +1,27 @@
+int Sortirano(cvor *glava)
+{
+	int sort = 1;
+	int tempid = -1;
+	while (glava != NULL)
+	{
+		if (tempid < 0)
+		{
+			tempid = glava->id;
+			glava = glava->desno;
+		}
+		else
+		{
+			if (tempid > glava->id)
+			{
+				sort = 0;
+				break;
+			}
+			else
+			{
+				tempid = glava->id;
+				glava = glava->desno;
+			}
+		}
+	}
+	return sort;
+}

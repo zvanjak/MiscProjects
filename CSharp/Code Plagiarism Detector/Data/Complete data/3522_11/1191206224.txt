@@ -1,0 +1,28 @@
+  void ConvertFromXML(char *i,char *o){
+    char *l;
+    while((i=strstr(i,"<osoba>"))!=NULL){
+                i+=7;
+                i=strstr(i,"<ime>")+5;
+                l=strstr(i,"</ime>");
+                *o='#';o++;
+                strncpy(o,i,l-i);
+                o+=l-i;
+                i=l+6;
+                i=strstr(i,"<prezime>")+9;
+                *o='#';o++;
+                l=strstr(i,"</prezime>");
+                strncpy(o,i,l-i);
+                o+=l-i;
+                i=l+10;
+                i=strstr(i,"<jmbg>")+6;
+                *o='#';o++;
+                l=strstr(i,"</jmbg>");
+                strncpy(o,i,l-i);
+                o+=l-i;
+                i=l+7;
+                i=strstr(i,"</osoba>")+8;
+                *o='#';o++;
+                *o='\n';o++;
+    }
+    *o='\0';
+}

@@ -1,0 +1,15 @@
+int rBrojParnih(int *polje, int n) {
+	kontrola();
+
+	if (n<=0)
+		return 0;
+	else if (n==1) {
+		return (*polje%2) ? 0 : 1;
+	} else {
+		if (*polje%2)
+			return rBrojParnih(polje+1, n-1);
+		else
+			return 1+rBrojParnih(polje+1, n-1);
+	}
+}
+

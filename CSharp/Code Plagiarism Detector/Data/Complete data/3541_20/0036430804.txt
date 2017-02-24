@@ -1,0 +1,39 @@
+int izbaciZ(zapis** glava){
+
+   float suma=0, ukpros=0;
+   int BRizbacenih=0, brojac=0;
+
+   zapis *p=*glava, *r;
+   
+   if (p==NULL) return 0;
+   
+   while (p) {
+     suma += p->pros;
+     p = p->sljed;
+     brojac++;
+     }
+   
+   ukpros = suma / brojac;
+   
+   p=*glava;
+   
+   while(p){
+      if (p->spol =='Z' && p->pros < ukpros) {
+         if (p==*glava){
+            BRizbacenih++;
+            *glava=p->sljed;
+            free(p);
+            p=*glava;
+            }
+         else {
+            BRizbacenih++;
+            for(r=*glava;r->sljed!=p ;r=r->sljed);
+            r->sljed=p->sljed;
+            free(p);
+            p=r->sljed;
+            }
+         }
+      else p=p->sljed;
+      }
+   return BRizbacenih;
+}

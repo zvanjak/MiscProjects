@@ -1,0 +1,21 @@
+# include <stdio.h>
+int main () {
+ int broj,m=1,z=0,novi=0;
+ 
+
+  scanf ("%d",&broj);
+ 
+ if (broj <= 0){
+  printf ("%d",broj);
+ } else { 
+     while (broj>0){     
+	 z=broj%10;
+	 broj/=10;
+	 if (!(z%2 ==0 || z==0 )) {novi+=z*m;
+	 m*=10;}
+	 }
+ 
+ printf("%d",novi);
+ }
+ return 0;
+}

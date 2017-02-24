@@ -1,0 +1,28 @@
+float prosjek(FILE *f) {
+
+      int b=0;
+      int ukupno=0;
+      float srednje;
+      
+struct album{
+       char naziv[30+1];
+       char autor[30+1];
+       int prodano;
+       }album;
+
+      fseek(f, 0L, SEEK_SET);
+      
+      while ( fread(&album, sizeof(struct album), 1, f) >0) {
+          
+          b++;
+          ukupno = ukupno + album.prodano;
+          
+           fseek(f, 0L, SEEK_CUR);
+                    
+          }
+    
+    srednje = (float)ukupno/b;
+    
+    return srednje;
+
+}

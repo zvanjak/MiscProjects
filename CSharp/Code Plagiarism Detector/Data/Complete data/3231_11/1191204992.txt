@@ -1,0 +1,26 @@
+# include <stdio.h>
+
+int main()
+{int n,br,i;
+ double s;
+ scanf("%d",&n);
+ if((n > 0) && (n < 31))
+   {br = 1;
+    s = 0;
+  for(i = 1;i < (n + 1);i++);
+     {if((i % 2)==1)
+         {s=s + (1 / br);
+          br=br * 2;
+         }
+      else{ s=s - (1 / br);
+             br=br * 2;
+           }
+         }
+      printf("%f.12",s);
+      }
+      else{printf("n nije valjan");
+         } 
+      return 0;
+    }
+ 
+          

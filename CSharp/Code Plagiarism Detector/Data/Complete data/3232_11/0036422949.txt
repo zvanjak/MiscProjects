@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <math.h>
+int main(){
+	int n;
+	double a;
+	scanf("%d",&n);
+	if (1<=n && n<=30){
+		a=((double)(pow(0.5,n)-1)/(-0.5));
+		printf("%.12f",a);
+	}
+	else {
+		printf("n nije valjan");
+	}
+	return 0;
+}
+
+	

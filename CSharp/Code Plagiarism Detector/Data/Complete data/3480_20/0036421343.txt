@@ -1,0 +1,27 @@
+class Komprimiranje {
+public:
+    Komprimiranje(int *poljeulaz,int nulaz);
+    int BrojRazlicitihElemenata();
+    int UkupniBrojElemenata(int Vrijednost);
+private:
+    int _n;
+    int *_polje;
+};
+
+Komprimiranje::Komprimiranje(int *poljeulaz,int nulaz){
+    _n=nulaz;
+    _polje=new int[nulaz];
+    _polje=poljeulaz;}
+
+int Komprimiranje::UkupniBrojElemenata(int Vrijednost){
+    int i,x=0;
+    for (i=0;i<_n;i=i+2) if (_polje[i]==Vrijednost) x=x+_polje[i+1];
+    return x;}
+
+int Komprimiranje::BrojRazlicitihElemenata(){
+    int x=0,i,j,t;
+    for (i=0;i<_n;i=i+2){
+        t=1;
+        for(j=0;j<i;j=j+2) if (_polje[j]==_polje[i]) t=0;
+        if (t==1) x++;}
+    return x;}

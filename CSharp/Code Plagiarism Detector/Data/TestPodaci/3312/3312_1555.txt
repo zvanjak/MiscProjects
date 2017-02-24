@@ -1,0 +1,18 @@
+int br_prodanih(FILE *f, char *autor){
+	struct zapis {
+		char naziv[30+1];
+		char autor[20+1];
+		int prodano;
+	};
+	struct zapis z;
+	int prodanih=0;
+
+	while (fscanf(f,"%30s %20s %d",&z.naziv, &z.autor, &z.prodano)!= EOF)
+	{
+		if (z.autor == *autor){
+			prodanih += z.prodano;
+		}
+	}
+	return prodanih;
+
+}

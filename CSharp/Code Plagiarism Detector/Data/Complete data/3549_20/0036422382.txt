@@ -1,0 +1,6 @@
+void OOPStogURedListom (atom2 **glava, atom2 **rep, Stog *stog){
+	int element;
+	while (stog->Skini(&element)){
+		DodajURed(element, glava, rep);
+	}
+}

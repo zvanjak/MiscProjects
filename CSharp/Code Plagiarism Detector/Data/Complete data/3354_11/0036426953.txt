@@ -1,0 +1,31 @@
+#include<stdio.h>
+int main(){
+
+  char z[3];
+  int t[3];
+  int i;
+  
+  scanf("%c %c %c", &z[0], &z[1], &z[2]);
+  
+  for(i=0; i<3; i++)
+    if(  z[i] >= 'A' && z[i] <= 'Z' ||
+         z[i] >= 'a' && z[i] <= 'z'     )
+      t[i]=1;
+    else
+      t[i]=2;
+
+  if(t[0]==t[1] && t[0]==t[2]){
+    printf("Nema uljeza");
+  }
+  else if(t[0]!=t[1] && t[1]==t[2]){
+    printf("%c", z[0]);
+  }
+  else if(t[1]!=t[0] && t[0]==t[2]){
+    printf("%c", z[1]);
+  }
+  else{
+    printf("%c", z[2]);
+  }
+  
+  return 0;
+}

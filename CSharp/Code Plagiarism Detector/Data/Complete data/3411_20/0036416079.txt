@@ -1,0 +1,19 @@
+char *BezDuplikata(char *ulazni_niz)
+{
+	int i=0, x=0;
+	char ch=0;
+	char *buffer = (char *)malloc(strlen(ulazni_niz)+1);
+	if(ulazni_niz == NULL || *ulazni_niz == '\0')
+		return NULL;
+	for(i=0; i<strlen(ulazni_niz); i++)
+	{
+		ch = ulazni_niz[i];
+		if(!strchr(buffer, ch))
+		{
+			buffer[x]=ch;
+			x++;
+		}
+	}
+	buffer[x]='\0';
+	return buffer;
+}

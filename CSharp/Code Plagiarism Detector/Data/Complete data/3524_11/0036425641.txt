@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include<string.h>
+#include<ctype.h>
+
+void ubaci (char *niz , char *podniz , int n)
+{
+	int i, j ,d;
+        char pom[100];
+	i=0;
+	j=0;
+	d=strlen(niz);
+	j=strlen(podniz);
+	if (n<0 || n>d)
+	{
+		do
+		{
+			niz[i]=niz[i]-'32';
+			i=i+1;
+
+		}while (i>=d);
+	}
+		if (n<d)
+		{
+			for(i=0;i>=d;i++)
+			pom[i]=niz[i];
+			for(i=0;i>=j;i++)
+			niz[n+i]=podniz[i];
+			for(i=0;i>=d-n;i++)
+			niz[(n+j)+i]=pom[n+i];
+		
+}
+}
+

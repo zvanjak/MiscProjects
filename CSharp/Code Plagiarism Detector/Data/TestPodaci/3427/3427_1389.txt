@@ -1,0 +1,41 @@
+#include<stdio.h>  
+#define MAX 50  
+int main () { 
+	
+    int polje[MAX], brojeva=0, umnozak=1, neprostih=0, nesimetrican=0, i, j;
+	for(i=0;i<50;i++){
+		scanf("%d", &polje[i]);
+		if (polje[i]<1){break;}
+		brojeva++;}
+	if ((brojeva%2)==0){
+		for(i=0;i<brojeva;i++){
+			umnozak*=polje[i];
+			if(polje[i]!=1){
+				for(j=2;j<(int)(polje[i]/2+1);j++){
+					if((polje[i]%j)==0){						 
+							neprostih++;
+							break;
+					};
+				};
+			}else{neprostih++;};
+		};
+		printf("%d %d", umnozak, brojeva-neprostih);
+
+	}else{
+		for(i=0;i<brojeva;i++){
+			if(!(polje[i]==polje[brojeva-1-i])){
+				nesimetrican++;
+				break;
+			};
+				
+		};
+		if (nesimetrican>0){
+			printf("Nije");
+		}else{
+			printf("Jest");
+		};
+	};
+
+
+return 0;  
+}

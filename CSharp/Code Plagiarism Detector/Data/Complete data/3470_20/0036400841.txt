@@ -1,0 +1,15 @@
+bool fun2(Pravokutnik p, Krug k) {
+	Tocka t1, t2, t3, t4 = Tocka();
+
+	t1.X = p.getDLkut().X;
+	t1.Y = p.getDLkut().Y;
+	t2.X = p.getDLkut().X + p.getSirina();
+	t2.Y = p.getDLkut().Y;
+	t3.X = p.getDLkut().X + p.getSirina();
+	t3.Y = p.getDLkut().Y + p.getVisina();
+	t4.X = p.getDLkut().X;
+	t4.Y = p.getDLkut().Y + p.getVisina();
+	if (k.Sadrzi(t1) && k.Sadrzi(t2) && k.Sadrzi(t3) && k.Sadrzi(t4))
+		return true;
+	else return false;
+}

@@ -1,0 +1,21 @@
+#include <stdio.h>;
+int main(){
+int n,i,b,j;
+int a[100];
+scanf("%d",&n);
+i=0;
+{
+while (n>0)
+{
+b=n%10;
+n=n/10;
+a[i]=b;
+i=i+1;
+}
+for (j=i-1;j>=0;j--)
+{
+printf("%d ",a[j]);
+}
+}
+return 0;
+}

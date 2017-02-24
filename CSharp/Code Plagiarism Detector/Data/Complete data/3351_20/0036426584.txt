@@ -1,0 +1,6 @@
+int info(FILE *f, int redni_br) {
+   struct natjecatelj tmp;
+   fread( &tmp, sizeof tmp, 1, f );
+   if( tmp.redni_br == 0 ) return -1;
+   return tmp.bodovi>=100;
+}

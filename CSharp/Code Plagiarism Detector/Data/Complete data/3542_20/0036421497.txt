@@ -1,0 +1,28 @@
+int promijenimbr(zapis **glava, int starimbr, int novimbr){
+ zapis *pom1,*pom2,*pom3,*pom4;
+ for(pom1=*glava; pom1&&pom1->matbr!=starimbr;pom1=pom1->sljed);
+ if(pom1){
+   pom2=pom1;
+   if(pom1==*glava){
+    pom3=(*glava)->sljed;
+    free(*glava);
+    *glava=pom3;
+  }else{
+    for(pom3=*glava;pom3->sljed!=pom1;pom3=pom3->sljed);
+    pom3->sljed=pom1->sljed;
+    free(pom1);
+  }
+  pom2->matbr=novimbr;
+  if((*glava)->matbr>=novimbr){
+   pom2->sljed=*glava;
+   *glava=pom2;
+  }else{
+   for(pom4=*glava;pom4->sljed&&(pom4->sljed)->matbr<novimbr;pom4=pom4->sljed);
+   pom2->sljed=pom4->sljed;
+   pom4->sljed=pom2; 
+  }
+  return 1;
+ }else{
+  return 0;
+ }
+}

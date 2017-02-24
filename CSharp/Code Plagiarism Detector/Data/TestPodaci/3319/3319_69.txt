@@ -1,0 +1,28 @@
+struct natjecatelj{
+	int redni_br;
+	char prezime[20+1];
+	int bodovi;
+};
+
+typedef struct natjecatelji nat;
+void dodaj (FILE *f){
+	SEEK_SET
+fseek(F,0,SEEK_SET);
+	int max=0;
+	int red_br=-1;
+	nat a;
+	while (fread(&a,sizeof(a),1,f) == 1){
+	 if (a.redni_br==0) continue;
+		if (a.bodovi>max) {
+		max=a.bodovi;
+		red_br = a.red_br;
+		}
+	}
+	if (red_br == -1) return;
+	fseek(f,sizeof(a)*(red_br-1),SEEK_SET);
+	fread(&a,sizeof(a),1,f);
+	a.bodovi+=10;
+	 fseek(f,-(signed)sizeof(a),SEEK_CUR);
+	fwrite(&a,sizeof(a),1,f);
+	return;
+}

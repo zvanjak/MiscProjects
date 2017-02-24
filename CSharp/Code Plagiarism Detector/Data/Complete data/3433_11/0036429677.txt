@@ -1,0 +1,17 @@
+#include <stdio.h>
+ 
+void ispis (char znak, int n) {
+  int i;
+  if (n != -1) 
+   for (i=1; i<=n; i++) printf ("%c ", znak); 
+}
+ 
+int main () {
+ char znak;
+ int n=0;
+ while (n!=-1) {
+  scanf ("%c%d", &znak, &n);
+  ispis (znak,n);
+ }
+ return 0;
+}

@@ -1,0 +1,19 @@
+int *napraviPolje( int *A, int Na, int a, int b, int *Nc ) {
+   int i, *C;
+   if( a > b ) return 0;
+   
+   *Nc = 0;
+   for( i = 0; i < Na; i++ )
+      if( A[i] > b ) ++*Nc;
+
+   C = (int *)malloc( *Nc * sizeof( int ) );
+
+   *Nc = 0;
+   for( i = 0; i < Na; i++ )   
+      if( A[i] > b ) {
+         C[*Nc] = A[i];
+         ++*Nc;
+      }
+
+   return C;
+}

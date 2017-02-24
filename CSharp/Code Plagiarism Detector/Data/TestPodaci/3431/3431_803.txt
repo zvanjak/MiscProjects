@@ -1,0 +1,27 @@
+#include<stdio.h>
+
+int main(){
+    char a[100];
+    int i=0, j, par=0, nepar=0, rez;
+    
+    do{
+        scanf("%c", &a[i]);
+        i++;
+    }while(((a[i-1]>='0') && (a[i-1]<='9')) || ((a[i-1]>='A') && (a[i-1]<='F')) || ((a[i-1]>='a') && (a[i-1]<='f')));
+    
+    for(j=0;j<i;j++){
+        if(a[j]>='A' && a[j]<='F') a[j]-=55;
+        else if(a[j]>='a' && a[j]<='f') a[j]-=87;
+        else if(a[j]>='0' && a[j]<='9') a[j]-=48;
+        else break;
+        
+        if(a[j]%2) nepar+=a[j];
+        else par+=a[j];
+    }
+    
+    rez=par-nepar;
+    
+    printf("%d", rez);
+      
+    return 0;
+}

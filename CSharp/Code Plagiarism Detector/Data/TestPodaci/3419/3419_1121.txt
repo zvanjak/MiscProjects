@@ -1,0 +1,46 @@
+#include <stdio.h>
+int main()
+{
+	float polje[20][5],najveci,c;
+		int mr,ms,i,j,x=0,y=0;
+	float *p=&polje[0][0];
+opet:
+	scanf("%d %d", &mr, &ms);
+	if (mr<1 || mr>20 || ms<1 || ms>5)
+	{
+		goto opet;
+	}
+	for(i=0;i<mr;i++)
+	{
+		for(j=0;j<ms;j++)
+		{
+			scanf("%f", &polje[i][j]);
+		}}
+	najveci=polje[0][0];
+
+	for (i=0;i<mr;i++)
+	{
+		for (j=0;j<ms;j++)
+		{
+            if(*(p+i*5+j)<0)
+                {c=*(p+i*5+j);
+			     if (najveci<0)
+				 {if (-c>-najveci)
+				 {najveci=c; x=i; y=j;}}
+				 else{
+
+                    if (-c>najveci)
+					{najveci=c; x=i; y=j;}}}
+			else
+                {
+					if(najveci>0)
+                        {
+                            if(*(p+i*5+j)>najveci)
+                                {najveci=(*(p+i*5+j)); x=i; y=j;}}
+                    else
+					{
+						if(*(p+i*5+j)>-najveci)
+                            {najveci=(*(p+i*5+j)); x=i; y=j;
+							}}}}}
+	printf("%d %d",x,y); 
+}

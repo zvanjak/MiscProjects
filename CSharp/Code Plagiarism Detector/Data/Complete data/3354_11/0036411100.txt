@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+int main ()
+{
+	char a,b,c;
+	int e,d,f;
+	e=d=f=2;
+
+	scanf ("%c %c %c", &a,&b,&c);
+
+	if ((a<=57 && a>=48) && (b<=57 && b>=48) && (c<=57 && c>=48))
+	{
+		printf ("Nema uljeza");
+		return 0;
+	}
+
+	if (((a<=90 && a>=65) || (a<=122 && a>= 97)) && ((b<=90 && b>=65) || (b<=122 && b>= 97)) && ((c<=90 && c>=65) || (c<=122 && c>= 97)))
+	{
+		printf ("Nema uljeza");
+		return 0;
+	}
+
+	if ((a<=90 && a>=65) ||  (a<=122 && a>= 97)) 
+		e=0;
+	else 
+		e=1;
+
+	if ((b<=90 && b>=65) ||  (b<=122 && b>= 97)) 
+		d=0;
+	else 
+		d=1;
+
+	if ((c<=90 && c>=65) ||  (c<=122 && c>= 97)) 
+		f=0;
+	else 
+		f=1;
+
+	if (e==d) printf ("%c", c);
+	if (e==f) printf ("%c", b);
+	if (d==f) printf ("%c", a);
+
+	return 0;
+} 

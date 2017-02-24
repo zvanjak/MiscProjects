@@ -1,0 +1,6 @@
+void rStrcpy(char* odrediste, char* izvoriste)
+{
+	kontrola();
+	if ((*odrediste=*izvoriste) == 0) return;
+	rStrcpy(odrediste+1,izvoriste+1);
+}

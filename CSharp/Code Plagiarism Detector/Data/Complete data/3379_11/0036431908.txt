@@ -1,0 +1,28 @@
+#include<stdio.h>
+int main()
+{
+int x,a,b,c,d,e,zbroj,raz,dij;
+printf("Unesite broj x:");
+scanf("%d", &x);
+if(x>9999 && x<=99999)
+    {  
+        a=x/10000;
+        b=(x/1000)%10;
+        c=(x/100)%10;
+        d=(x/10)%10;
+        e=x%10;
+        zbroj=a+b+c+d+e;
+        
+        if(x%zbroj==0)
+        {
+        raz=x-zbroj;
+        printf("%d", raz);
+        }
+else{
+dij=x/zbroj;
+printf("%d", dij);
+}
+}
+else
+return 0;
+}

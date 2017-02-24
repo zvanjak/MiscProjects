@@ -1,0 +1,13 @@
+#include <iostream>
+
+using namespace std;
+
+Krug fun4(Pravokutnik p) {
+	double x = (p.getDLkut().X + p.getSirina()) / 2.;
+	double y = (p.getDLkut().Y + p.getVisina()) / 2.;
+	double radius = sqrt(p.getSirina() * p.getSirina() + p.getVisina() * p.getVisina()) / 2.;
+
+	Krug *noviKrug = new Krug(Tocka(x,y), radius);
+
+	return *noviKrug;
+}

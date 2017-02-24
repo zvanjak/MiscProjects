@@ -1,0 +1,13 @@
+int br_prodanih(FILE *f,char *autor){
+	char naziv[31],autor1[21];
+	int broj,ukupno=0;
+	while(1){
+		if (fscanf(f, "%s", naziv)==EOF) break;
+		fscanf(f, "%s", autor1);
+		fscanf(f, "%d", &broj);
+			if(strcmp(autor,autor1)==0){
+				ukupno=ukupno+broj;
+			}
+	}
+	return ukupno;
+}

@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main()
+{
+	int a, b;
+	scanf("%d %d", &a, &b);
+	if(a>b)
+		printf("%o", b);
+	else if(a<b)
+		printf("%o",a);
+	else
+		printf("%o",a);
+	return 0;
+}

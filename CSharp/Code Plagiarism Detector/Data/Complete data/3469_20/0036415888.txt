@@ -1,0 +1,15 @@
+double fun1 (Trokut t, Pravokutnik p, Krug k){
+	double po[3], max;
+	int i;
+
+	po[0] = max = t.Povrsina();
+	po[1] = p.Povrsina();
+	po[2] = k.Povrsina();
+
+	for (i = 0; i < 3; i++){
+		if (max <= po[i]){
+			max = po[i];
+		}
+	}
+	return max;
+}

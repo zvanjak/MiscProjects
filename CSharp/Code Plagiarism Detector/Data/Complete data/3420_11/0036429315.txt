@@ -1,0 +1,37 @@
+#include<stdio.h>
+int main() {
+	int mr, ms, mat[20][5], i=0, j=0, gotovo=0, x, y, m[5], sum[20];
+	do{
+		scanf("%d %d", &mr, &ms);
+	}while(mr > 20 && ms > 5);
+	for(x=0; x<mr; x++){ 
+		for(y=0; y<ms; y++){
+			scanf("%d", &mat[x][y]);
+		}
+	}
+	while(!gotovo){
+		scanf("%d %d", &i, &j);
+		if (i>=0 && i<=mr && j>=0 && j<=ms){
+			for (y=0; y<ms; y++){
+				m[y]=mat[i][y];
+				mat[i][y]=mat[j][y];
+				mat[j][y]=m[y];
+			}
+		}else{
+			gotovo = 1;
+		}
+	}
+	for(x=0; x<mr; x++){ 
+		sum[x]=0;
+		for(y=0; y<ms; y++){
+			sum[x]=sum[x]+mat[x][y];
+		}
+		printf("%d ", sum[x]);
+	}
+	return 0;
+}
+
+
+
+
+

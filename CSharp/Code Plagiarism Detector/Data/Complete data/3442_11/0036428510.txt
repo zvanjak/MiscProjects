@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main( void ) 
+{
+    int i,n;
+    int suma = 0;
+    scanf("%d", &n);
+    for( i = 0; i <= n - 1; i++ )
+         suma = suma + i * i - 2 * i;
+    printf("%d", suma + n * n);
+    return 0; 
+}

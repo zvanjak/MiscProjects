@@ -1,0 +1,90 @@
+#include<malloc.h>
+#include<string.h>
+
+int DaLiPostoji (int tko, int polje[], int n) {
+	int i;
+	for (i = 0; i < n; i++) {
+		if (polje[i] == tko) return 1;
+	}
+	return 0;
+}
+int Prebroji (int koga, int polje[], int n) {
+	int i, br = 0;
+	for (i = 0; i < n; i++) {
+		if (polje[i] == koga) br++;
+	}
+	return br;
+}
+
+class CjelobrojniNiz {
+public:
+	CjelobrojniNiz(int*, int);
+	CjelobrojniNiz(const CjelobrojniNiz &copy);
+	~CjelobrojniNiz();
+
+	int  Usporedi(CjelobrojniNiz niz);
+	int* VratiPresjek(CjelobrojniNiz niz, int* n);
+
+	int  VecinaJednaka;
+	int  _brEl;
+	int* _brojevi;
+};
+CjelobrojniNiz::CjelobrojniNiz (int* polje, int n) {
+	int i, brU = 0;
+	int* unique;
+
+	VecinaJednaka = 0;
+	_brojevi = (int*) malloc(n*sizeof(int));
+	_brEl = n;
+
+	memcpy(_brojevi, polje, n*sizeof(int));
+
+	unique = (int*) malloc(n*sizeof(int));
+	for (i = 0; i < n; i++) {
+		if (!DaLiPostoji(polje[i], unique, brU)) {
+			unique[brU] = polje[i];
+			brU++;
+		}
+	}
+	for (i = 0; i < brU; i++) {
+		if(Prebroji(unique[i], polje, n) > n/2.) {
+			VecinaJednaka = 1;
+			break;
+		}
+	}
+	free(unique);
+}
+CjelobrojniNiz::CjelobrojniNiz(const CjelobrojniNiz &copy) {
+	int i;
+	_brEl = copy._brEl;
+	_brojevi = (int*) malloc(_brEl*sizeof(int));
+	memcpy(_brojevi, copy._brojevi, _brEl*sizeof(int));
+}
+CjelobrojniNiz::~CjelobrojniNiz() {
+	free(_brojevi);
+}
+int CjelobrojniNiz::Usporedi (CjelobrojniNiz niz) {
+	if (niz._brEl != _brEl) {
+		return 0;
+	}
+	if (memcmp (_brojevi, niz._brojevi, _brEl*sizeof(int)) == 0) {
+		return 1;
+	} else {
+		return 0;
+	}
+}
+int* CjelobrojniNiz::VratiPresjek (CjelobrojniNiz niz, int* n) {
+	int  i, br = 0;
+	int* presjek = (int*) malloc((_brEl+niz._brEl) * sizeof(int));
+
+	for (i = 0; i < _brEl; i++) {
+		if (DaLiPostoji(_brojevi[i], niz._brojevi, niz._brEl)
+			&& !DaLiPostoji(_brojevi[i], presjek, br)) {
+			presjek[br] = _brojevi[i];
+			br++;
+		}
+	}
+
+	*n = br;
+	return presjek;
+}

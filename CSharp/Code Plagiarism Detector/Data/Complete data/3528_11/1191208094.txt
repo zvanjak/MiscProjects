@@ -1,0 +1,21 @@
+int zamijeni(char *ulazni, char *prvi, char *drugi){
+    int br=0,pomak,i;
+    char *pom,*pom1,*zavrsetak;
+    pomak=strlen(prvi)-strlen(drugi);
+    while((pom=strstr(ulazni,prvi))!=NULL&&*prvi!='\0'){
+          pom1=pom+pomak;
+          for(i=0;i<strlen(drugi);i++){
+              *pom=drugi[i];
+              pom++;
+              pom1++;
+          }
+          while(*pom1!='\0'){
+              *pom=*pom1;
+              pom++;
+              pom1++;
+          }
+          *pom=*pom1;
+          br++;
+    }
+    return br;
+}

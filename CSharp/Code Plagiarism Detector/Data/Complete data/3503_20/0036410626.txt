@@ -1,0 +1,12 @@
+int ModElementa(cvor *glava, char *naziv)
+{
+	int b;
+
+	if( glava==NULL ) return 0;
+
+	b=0;
+	if( strcmp( naziv, glava->naziv ) == 0 )
+		b=1;
+
+	return b + ModElementa( glava->lijevo, naziv ) + ModElementa( glava->desno, naziv );
+}

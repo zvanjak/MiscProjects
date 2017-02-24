@@ -1,0 +1,11 @@
+float *KreirajTablicuMnozenja(int n)
+{
+    int i, j;
+    float *suma = (float *)malloc(n * n * sizeof(float));
+    
+    for(i = 0; i < n; i++)
+        for(j = 0; j < n; j++)
+            suma[i * n + j] = (i + 1) * (j + 1);
+    
+    return suma;
+}

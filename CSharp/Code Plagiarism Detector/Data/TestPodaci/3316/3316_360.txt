@@ -1,0 +1,7 @@
+void azuriraj(FILE *f, int redni_br, int bodovi);
+struct natjecatelj;
+int i, n;
+
+for ( i=1, i<=redni_br, i++); 
+
+

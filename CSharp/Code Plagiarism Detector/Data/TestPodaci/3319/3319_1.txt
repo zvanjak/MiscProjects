@@ -1,0 +1,19 @@
+void dodaj(FILE *f){
+	natjecatelj bodovi[MAX];
+	int n=0,max=-32767,pos=0;
+	while (1){
+		fscanf(f,"%d\n%s\n%d\n", &bodovi[n].redni_br, bodovi[n].prezime, &bodovi[n].bodovi);
+		if(bodovi[n].redni_br==0)break;
+		if(bodovi[n].bodovi>max){
+			max = bodovi[n].bodovi;
+			pos = n;
+		}
+		++n;
+	}
+	bodovi[pos].bodovi +=10;
+	fseek(f,0,SEEK_SET);
+	for(int i=0;i<n;++i){
+		fprintf(f,"%d\n%s\n%d\n", bodovi[i].redni_br, bodovi[i].prezime, bodovi[i].bodovi);
+	}
+
+}

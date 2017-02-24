@@ -1,0 +1,41 @@
+int izbacinaj(zapis **glava){
+    float mali = -1, veli = -1;
+    int mili = -1, vili = -1;
+    int i = 0;
+    zapis **brisem;    
+    zapis *t = *glava;
+    
+    while ( t != NULL ){
+        if ( mili == -1 || t->pros < mali ){
+            mili = i;
+            mali = t->pros;
+        }
+        if ( vili == -1 || t->pros > veli ){
+            vili = i;
+            veli = t->pros;
+        }
+        t = t->sljed;
+        ++i;
+    }     
+    if ( mili == -1 ) return 0;
+
+    brisem = glava;
+    for (i = 0; i != mili; brisem = &((*brisem)->sljed), i++);
+    if ( *brisem ){
+        t = *brisem;
+        *brisem = (*brisem)->sljed;
+        free (t);
+    }
+        
+    if ( mili == vili ) return 1;
+
+    brisem = glava;
+    for (i = 0; i != vili; brisem = &((*brisem)->sljed), i++);
+    if ( *brisem ){
+        t = *brisem;
+        *brisem = (*brisem)->sljed;
+        free (t);
+    }    
+    
+    return 2;
+}

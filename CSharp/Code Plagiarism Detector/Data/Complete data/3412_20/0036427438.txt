@@ -1,0 +1,12 @@
+char *SamoDuplikati(char *ulazni_niz){
+	int k,j,i=0,l=0;
+	char p[1000];
+	j=strlen(ulazni_niz);
+	for(k=0;k<j;k++){
+		for(l=k-1;l>=0;l--){
+			if(ulazni_niz[k]==ulazni_niz[l]){
+				p[i]=ulazni_niz[k];
+				i++;
+				break;}}}
+	p[i]=0;
+	return p;}

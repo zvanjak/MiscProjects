@@ -1,0 +1,23 @@
+#include <stdlib.h>
+#include <math.h>
+#include <stdio.h>
+
+int main()
+{   int j, n;
+    double pi;
+    scanf("%i",&n);
+    if ((n<1)||(n>100)) 
+		{printf("n nije valjan");
+	
+		exit(1);}
+    j=1;
+    pi=0.;
+    while (j<=n)
+            {pi=pi+ (double)1/(j*j);
+             j+=1;}
+    pi=pi*6;
+    pi=sqrt(pi);
+    printf("%.12f\n",pi);
+    
+      return 0;
+}

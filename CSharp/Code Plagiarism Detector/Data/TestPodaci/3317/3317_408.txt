@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <string.h>
+
+void brisi(FILE*f,int redni_br){
+     struct natjecatelj s;
+	fseek(f,(long)(redni_br-1)*(sizeof(s)),SEEK_SET);
+	fread(&s,sizeof(s),1,f);
+	s.redni_br=0;
+	fseek(f,(-1L)*sizeof(s),SEEK_CUR);
+	fwrite(&s,sizeof(s),1,f);
+	fseek(f,0L,SEEK_SET);
+	return;
+}

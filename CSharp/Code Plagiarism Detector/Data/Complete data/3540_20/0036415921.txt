@@ -1,0 +1,42 @@
+
+int izbaci(zapis **glava)
+{
+	int ret = 0;
+	zapis *trenPos = *glava;
+	zapis *prijePos = 0;
+
+	while (trenPos != 0)
+	{
+		if (trenPos->pros < 2)
+		{
+			if (prijePos == 0)
+			{
+				**glava = *trenPos->sljed;
+
+				// nisam siguran oli treba oslobodit    :)
+				// prostor od onih maknutih iz liste??? :)
+				free(trenPos);
+				// ************************************ :)
+				trenPos = *glava;
+			}
+			else
+			{
+				prijePos->sljed = trenPos->sljed;
+				// nisam siguran oli treba oslobodit    *:)
+				// prostor od onih maknutih iz liste??? *:)
+				free(trenPos);
+				// ************************************ *:)
+
+				trenPos = prijePos->sljed;
+			}
+
+			ret++;
+			continue;
+		}
+
+		trenPos = trenPos->sljed;
+		prijePos = prijePos->sljed;
+	}
+
+	return ret;
+}

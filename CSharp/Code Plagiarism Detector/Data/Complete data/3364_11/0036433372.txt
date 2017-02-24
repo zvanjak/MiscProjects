@@ -1,0 +1,20 @@
+#include <stdio.h>
+int main () {
+	char a, b, c;
+	scanf ("%c %c %c", &a, &b, &c);
+	a=(int) a-48;
+	b=(int) b-48;
+	if (c=='+') {
+		printf ("%d", a+b);
+	} else if (c=='-') {
+		printf ("%d", a-b);
+	} else if (c=='*') {
+		printf ("%d", a*b);
+	} else if (c=='/') {
+		printf ("%d", a/b);
+	} else if (c=='%') {
+		printf ("%d", a%b);
+	} else {printf ("Neispravna");
+	}
+	return 0;
+}

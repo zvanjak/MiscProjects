@@ -1,0 +1,29 @@
+#include<stdio.h> 
+#include<math.h>
+int main() {
+    int x,a,b,c,d,e,s,z;
+    scanf("%d",&x);
+   if(x>=10000&&x<=99999){
+   a=x/10000;
+   b=x/1000-a*10;
+   c=x/100-a*100-b*10;
+   d=x/10-a*1000-b*100-c*10;
+   e=x-a*10000-b*1000-c*100-d*10;
+    s=a+b+c+d+e;
+    if(x%s==0)
+       {
+              z=x-s;
+              printf("%d",z);
+              }
+   else
+       {
+              z=x/s;
+              printf("%d",z);
+              }                 }
+  
+               
+               return 0;  
+                      }
+                            
+             
+               

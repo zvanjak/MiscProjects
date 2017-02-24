@@ -1,0 +1,23 @@
+void AritSred_StdDev (DinamickoPolje &polje, float *ArSred, float *StdDev)
+{
+	float x, y, n, i;
+	y = 0;
+	x = 0;
+	n = polje.BrojElemenata();
+	for (i = 0; i < n; i++)
+		x = x + polje.DohvatiElement(i);
+	x = x/n;
+	for (i = 0; i<n; i++)
+		y = y + ((polje.DohvatiElement(i)) - x)*((polje.DohvatiElement(i)) - x);
+	y = y/(n*(n-1));
+	y= sqrt(y);
+	*ArSred = x;
+	*StdDev = y;
+	if ( n <= 0)
+	{	
+		*ArSred = 0;
+		*StdDev = 0;
+	}
+	else if ( n == 1)
+		*StdDev = 0;
+}

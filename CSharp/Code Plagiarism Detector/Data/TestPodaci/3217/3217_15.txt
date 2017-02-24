@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <math.h>
+int main (){
+	int x,z[20],i,a,s,b, temp;
+	do {
+	scanf("%i",&x);
+        temp = x;
+        /*if(x>=0){*/
+          if(x > 0){
+		i=0;
+		while (x>0) {
+			i++;
+			z[i]=x%10;
+			x=x/10;
+    	}
+		s=0;
+		b=0;
+		for (a=i;a>0;a--)s=s+z[a]*pow(10,b++);
+		printf("%i ",s);
+	}
+	}
+/*	while (x>=0);*/
+        while(temp>0);
+        return 0;
+}

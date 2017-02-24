@@ -1,0 +1,43 @@
+class Kartica
+
+{
+
+private:
+
+     int _ukupniIznos;
+
+     int _dozvoljeniMinus;
+
+public:
+
+     Kartica();
+
+     Kartica(int ukupniIznos, int dozvoljeniMinus)
+     {_ukupniIznos=ukupniIznos;
+     _dozvoljeniMinus=dozvoljeniMinus;
+     }
+     
+     
+     
+
+     int MaxIznosZaDignuti()
+     {
+     return(_ukupniIznos+_dozvoljeniMinus);
+     }
+     void StaviNovac(int iznos)
+     {_ukupniIznos=_ukupniIznos+iznos;}
+
+     int DigniNovac(int iznos)
+     {
+         if (MaxIznosZaDignuti()<iznos) {_ukupniIznos=_ukupniIznos-iznos; return 0;}
+         if (_ukupniIznos>=iznos){_ukupniIznos=_ukupniIznos-iznos; return 1;}
+         _ukupniIznos=_ukupniIznos-iznos; return 2;
+         
+         
+         
+         
+     }   
+  
+     
+
+};

@@ -1,0 +1,29 @@
+int *napraviPolje(int *A, int Na, int a, int b, int *Nc)
+{
+  int *field;
+  int i, j, k, g=0;
+  
+  *Nc = 0;
+  
+  if ((A == NULL) || (a > b) || (Na == 0)) return 0;
+  
+  for (i = 0; i < Na; i++) {
+      k=1;
+      for (j = a; j <= b; j++) {
+          if (A[i] % j) k = 0;
+      }
+      if (k) ++(*Nc);
+  }
+  
+  field = malloc ((*Nc) * sizeof (int));
+  
+  for (i = 0; i < Na; i++) {
+      k=1;
+      for (j = a; j <= b; j++) {
+          if (A[i] % j) k = 0;
+      }
+      if (k) field[g++] = A[i];
+  }
+  
+  return field;
+}

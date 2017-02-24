@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<string.h>
+
+int izbaciDuplikate (char *ulazni){
+	int n,j;
+	int flag=1;
+	int i=0; 
+	int brojac=0;
+	char pom[100+1];
+
+	while(ulazni[i]!='\0'){
+		for(j=0; j<brojac; j++){
+			if(ulazni[i]==pom[j]){
+			flag=0;}
+		}
+			if(flag){
+			pom[brojac]=ulazni[i];
+			brojac++;}
+		i++;
+		flag=1;
+	}
+
+n=i-brojac;
+strcpy(ulazni, pom);
+return n;
+}

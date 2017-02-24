@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main()
+{
+	int i, j = 0, k = 0;
+	char polje[100];
+	char c;
+	for(i = 0; i< 100; i++)
+	{
+		scanf("%c", &c);
+		if(c == '.')
+			break;
+		else 
+		{
+			if(isalpha(c))
+			{
+				c = tolower(c);
+			}
+			polje[i] = c;
+		}
+	}
+	for(j = i-1, k = 0; j >= 0; j--, k++)
+	{
+		if(polje[j] == polje[k]) continue;
+		else 
+		{
+			printf("NE");
+			exit (1);
+		}
+	}
+	printf("DA");
+	return 0;
+}

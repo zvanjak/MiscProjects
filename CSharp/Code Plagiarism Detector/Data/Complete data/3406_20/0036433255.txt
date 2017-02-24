@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <ctype.h>
+
+char *SamoSuglasnici(char *ulazni_niz){
+    int len, i, j = 0;
+    char *ret;
+
+    if ( ulazni_niz == NULL || strcmp(ulazni_niz,"") == 0 ) return NULL;
+    
+    len = strlen(ulazni_niz);
+    ret = (char *)malloc(len * sizeof(char));
+    
+    for (i = 0; i < len; i++)
+        if ( isalpha(ulazni_niz[i]) )
+            if ( ulazni_niz[i] != 'A' && ulazni_niz[i] != 'E' &&
+                 ulazni_niz[i] != 'I' && ulazni_niz[i] != 'O' &&
+                 ulazni_niz[i] != 'U' )
+            if ( ulazni_niz[i] != 'a' && ulazni_niz[i] != 'e' &&
+                 ulazni_niz[i] != 'i' && ulazni_niz[i] != 'o' &&
+                 ulazni_niz[i] != 'u' ){
+                    ret[j++] = ulazni_niz[i];                 
+                 }
+                
+            
+    ret[j] = 0;
+    return ret;
+}

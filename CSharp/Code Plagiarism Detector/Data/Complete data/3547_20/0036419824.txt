@@ -1,0 +1,8 @@
+Stog *RedListomUOOPStog(atom2 *glava, atom2 *rep){
+	int e;
+	Stog *s=new Stog();
+	if(SkiniIzReda(&e,&glava,&rep)==0) return s;
+	else s=RedListomUOOPStog(glava,rep);
+	s->Stavi(e);
+	return s;
+}

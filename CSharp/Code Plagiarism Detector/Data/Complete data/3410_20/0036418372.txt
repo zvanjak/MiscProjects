@@ -1,0 +1,14 @@
+char *StvoriNiz(char *poljeznakova, int duljina, int n){
+	char *noviNiz;
+	int i;
+	
+	noviNiz=(char *)malloc(n*sizeof(char)+1);
+	for(i=0;i<n;i++){
+		noviNiz[i]=poljeznakova[moj_rand()%(duljina)];
+	}
+	noviNiz[n]='\0';
+	return noviNiz;
+}
+
+
+

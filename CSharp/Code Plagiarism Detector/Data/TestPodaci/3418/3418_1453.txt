@@ -1,0 +1,37 @@
+#include<stdio.h>
+int main (){
+int p[n];
+int n;
+int i;
+int b;
+int c=0;
+int d=0;
+printf("Unesite broj n ==> ");
+scanf("%d", &n);
+if(n<1 || n>100){
+               printf("Krivi unos, ponovo unesite n ==> ",n);
+               scanf("%d", &n);
+              }
+else{
+     for(i=0; i<n; i++){
+                        printf("p[%d] ==> ",i);
+                        scanf("%d", &p[i]);
+                       } 
+     if(i=>0 && i<n){
+                     printf("Ucitajte cjelorojni broj ==> ", b);
+                     scanf("%d", b);
+                     p[i]=p[i]/b;
+                     c=c+1;
+                    }
+     for(i=0; i<n; i++){
+                        if(p[i]=0){
+                                   d=d+1;
+                                  }
+                       }
+     printf("%d %d",d,c);
+    }
+return 0;
+}
+
+                   
+                                 

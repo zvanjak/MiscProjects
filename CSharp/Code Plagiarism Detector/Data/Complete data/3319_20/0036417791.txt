@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void dodaj (FILE *f){
+
+	struct natjecatelj {
+		int redni_br;
+		char prezime [20 + 1];
+		int bodovi;
+	}nat;
+
+	int n, i, r_br, max;
+	int *p;
+	n = 0;
+
+	while ((fread (&nat, sizeof (nat), 1, f)) != 3)
+		n++;
+
+	p = (int *) malloc (n * sizeof (int));
+	if (p == 0)
+		exit (1);
+
+	fseek (f, 0L, SEEK_SET);
+
+	for (i = 0; i < n; i++){
+		fread (&nat, sizeof (nat), 1, f);
+		p[i] = nat.bodovi;
+	}
+
+	max = p[0];
+	r_br = 0;
+
+	for (i = 1; i < n; i++)
+		if (p[i] > max){
+			max = p[i];
+			r_br = i;
+		}
+
+	fseek (f, r_br * sizeof (nat), SEEK_SET);
+	fread(&nat, sizeof (nat), 1, f);
+	nat.bodovi += 10;
+	fseek(f, - sizeof (nat), SEEK_CUR);
+	fwrite (&nat, sizeof (nat), 1, f);
+
+	free (p);
+}

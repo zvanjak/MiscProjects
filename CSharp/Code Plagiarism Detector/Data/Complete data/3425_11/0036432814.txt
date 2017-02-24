@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+int main() {
+       
+        int mr,i,j,b,c,t,n,k;
+        int suma=0;
+        int br=0;
+        int a[10][10];
+        do
+        scanf("%d",&mr);
+        while ((mr<=1)||(mr>=10));
+
+       
+        for (i=0; i<mr; i=i+1) {
+                for (j=0; j<mr; j=j+1) {
+                scanf("%d",&a[i][j]);
+                }
+        }
+
+        scanf("%d %d",&b,&c);
+        while (b<mr && b>=0 && c>=0 && c<mr) {
+        t=a[b][c];
+        a[b][c]=a[c][b];
+        a[c][b]=t;
+        br=br+1;
+        scanf("%d %d",&b,&c);
+        }
+
+        scanf("%d", &n);
+
+        if (n<mr && n>=0) {
+                for (k=0; k<mr; k=k+1) {
+                suma=suma+a[n][k];
+                }
+        }
+        else
+        {
+                suma=-1;
+        }
+        printf("%d %d",br,suma);
+        return 0;
+}

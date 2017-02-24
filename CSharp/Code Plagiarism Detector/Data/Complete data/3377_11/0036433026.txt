@@ -1,0 +1,20 @@
+#include <stdio.h>
+int main(void)
+{
+	char kontrola[8];
+	char broj[8];
+	int bbroj;
+
+	scanf("%s",kontrola);
+	scanf("%s",broj);
+
+	broj[0] = 48 + (broj[0] - 48 + kontrola[0] - 48) % 10;
+	broj[1] = 48 + (broj[1] - 48 + kontrola[1] - 48) % 10;
+	broj[2] = 48 + (broj[2] - 48 + kontrola[2] - 48) % 10;
+	broj[3] = 48 + (broj[3] - 48 + kontrola[3] - 48) % 10;
+
+	sscanf(broj,"%d",&bbroj);
+	printf("%d",bbroj);
+
+	return 0;
+}

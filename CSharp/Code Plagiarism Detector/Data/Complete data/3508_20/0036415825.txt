@@ -1,0 +1,17 @@
+int Najgore(cvor *glava) 
+{  
+	if (glava == NULL)  
+	return 0;  
+ while (true)  
+	{ 
+	if (glava->lijevo == NULL && glava->desno == NULL)  
+	return 1; 
+	if (glava->lijevo != NULL && glava->desno != NULL)  
+	return 0; 
+	if (glava->lijevo != NULL)  
+	glava = glava->lijevo; 
+	if (glava->desno != NULL)  
+	glava = glava->desno;   
+}  
+return 1; 
+}

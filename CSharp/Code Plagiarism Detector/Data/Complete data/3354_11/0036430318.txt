@@ -1,0 +1,35 @@
+#include <stdio.h>
+int main () {
+	char x, y, z;
+	scanf ("%c %c %c", &x, &y, &z);
+	if (x >= 48 && x <= 57) {
+		if (y >= 48 && y <= 57) {
+			if (z >= 48 && z <=57) {
+				printf ("Nema uljeza");
+			} else {
+				printf ("%c", z);
+			}
+		} else {
+			if (z >= 48 && z <=57) {
+				printf ("%c", y);
+			} else {
+				printf ("%c", x);
+			}
+		}
+	} else {
+		if (y >= 48 && y <= 57) {
+			if (z >= 48 && z <=57) {
+				printf ("%c", x);
+			} else {
+				printf ("%c", y);
+			}
+		} else {
+			if (z >= 48 && z <=57) {
+				printf ("%c", z);
+			} else {
+				printf ("Nema uljeza");
+			}
+		}
+	}
+	return 0;
+}

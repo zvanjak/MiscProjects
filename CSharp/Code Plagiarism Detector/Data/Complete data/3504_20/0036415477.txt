@@ -1,0 +1,102 @@
+typedef struct {
+
+      char ime[20+1];
+
+      char prezime[30+1];
+
+      char jmbag[10+1];
+
+      int  ocjena;
+
+} tip;
+
+
+typedef struct s{
+	tip el;
+	
+	struct s *sljed;
+
+}
+atom;
+
+/* Vraća broj elemenata u listi. */
+int brojElementa(atom *glava){
+	int broj=0;
+	for (;glava;glava=glava->sljed,broj++);
+	return broj;
+}
+
+/*Dodaje zadani element na početak liste. Vraća 1 ako je uspjela, inače 0. */
+int dodaj (atom **glavap, tip element){
+	atom *novi;
+	if ((novi=(atom *)malloc(sizeof(atom)))==NULL){
+		return 0;
+	}
+	
+	//novi->el=element;			// NE NE NE
+	strcpy(novi->el.ime,element.ime);
+	strcpy(novi->el.prezime,element.prezime);
+	strcpy(novi->el.jmbag,element.jmbag);
+	novi->el.ocjena=element.ocjena;
+
+	novi->sljed=(*glavap);
+	*glavap=novi;
+	return 1;
+}
+
+/* Vraća minimalnu ocjenu odnosno -1 ako je lista prazna.. */
+int minOcjena(atom *glava){
+	int min;
+	if (!glava){
+		return -1;
+	}
+	min=glava->el.ocjena;
+	glava=glava->sljed;
+
+	for (;glava;glava=glava->sljed){
+		if (glava->el.ocjena<min){
+			min=glava->el.ocjena;
+		}
+	}
+	
+	return min;
+}
+
+/* Vraća prosječnu ocjenu, odnosno -1 ako je lista prazna. */
+float prosjOcjena(atom *glava){
+	int brEl=0;
+	int ocjene=0;
+	if (!glava){
+		return -1.0;
+	}
+
+	for (;glava;glava=glava->sljed){
+		brEl++;
+		ocjene+=glava->el.ocjena;
+	}
+	return (float) (ocjene*(1.0)/brEl);
+}
+/* Izbacuje element iz list ako ime sadrži zadani podniz (velika i mala slova se razlikuju).  Vraća broj izbačenih elemenata. */
+int izbaciImeSadrzi (atom **glavap, char *imePodniz){
+	atom *p,*t;
+	int counter=0;
+
+	for (p=(*glavap);p;){
+		if (strstr(p->el.ime,imePodniz)){
+			counter++;
+			if (p==(*glavap)){
+				*glavap=p->sljed;
+				free(p);
+				p=(*glavap);
+			}else{
+				for (t=(*glavap);t->sljed!=p;t=t->sljed);
+				t->sljed=p->sljed;
+				free(p);
+				p=t->sljed;
+			}
+		}else {
+			p=p->sljed;
+		}
+	}
+	return counter;	
+}

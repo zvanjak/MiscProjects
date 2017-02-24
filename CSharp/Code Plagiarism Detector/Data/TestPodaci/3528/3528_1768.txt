@@ -1,0 +1,15 @@
+int zamijeni (char * ulazni, char *prvi, char *drugi);
+int zamijeni (char * ulazni, char *prvi, char *drugi){
+	int brojac = 0;
+	char *pointer, *pointer1, *pointer2;
+	while (1) {
+		pointer = strstr(ulazni, prvi);
+		pointer1 = pointer + strlen (prvi);
+		pointer2 = pointer + strlen (drugi);
+		if (pointer == NULL) break;		
+		strncpy (pointer, drugi, strlen(drugi));
+		strcpy (pointer2, pointer1);
+		brojac++;
+	}
+	return brojac;
+}

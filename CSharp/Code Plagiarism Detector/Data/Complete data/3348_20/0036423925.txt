@@ -1,0 +1,7 @@
+double sumareda (int N){
+       double pom,medu;
+	   int kontrola ();
+       if (N<=0) return 0;
+       medu=(4*N-1)*(4*N+1);
+       pom=1./medu;
+	   return pom + sumareda (N-1);}

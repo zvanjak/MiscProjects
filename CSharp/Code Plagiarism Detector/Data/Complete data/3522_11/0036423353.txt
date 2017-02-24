@@ -1,0 +1,54 @@
+#include <stdio.h>
+
+void ConvertToXML(char * inputField, char * outputField)
+{
+    int brojac = 0;
+    
+    
+    while(*inputField != '\0')
+    {
+        
+        if(*inputField != '>')
+        {
+            inputField++;
+            continue;
+        }
+        
+        
+        inputField++;
+        if(!isalnum(*inputField))
+        {
+            
+            inputField++;
+            continue;
+        }
+        else
+        {
+            
+            if(brojac == 0)
+            {
+                *(outputField++) = '#';
+            }
+            
+            
+            while(*inputField != '<')
+            {
+                *(outputField++) = *(inputField++);
+            }
+            
+            
+            *outputField = '#';
+            outputField++;
+            
+            
+            brojac++;
+            
+            
+            if(brojac == 3)
+            {
+                *(outputField++) = '\n';
+                brojac = 0;
+            }
+        }
+    }
+}

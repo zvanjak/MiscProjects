@@ -1,0 +1,30 @@
+#include <stdio.h>
+#define MAX 100 
+int main(){
+	int rez,suma1=0,suma2=0,i;
+	char p[MAX+1];
+	p[0]='0';
+	gets(p);
+	for(i=0;p[i]<='9'&&p[i]>='0'||p[i]<='F'&&p[i]>='A'||p[i]<='f'&&p[i]>='a';i++){
+		if (p[i]=='A'|| p[i]=='a') p[i]=10;
+		if (p[i]=='B'|| p[i]=='b') p[i]=11;
+		if (p[i]=='C'|| p[i]=='c') p[i]=12;
+		if (p[i]=='D'|| p[i]=='d') p[i]=13;
+		if (p[i]=='E'|| p[i]=='e') p[i]=14;
+		if (p[i]=='f'|| p[i]=='F') p[i]=15;
+		if (p[i]=='0') p[i]=0;
+		if (p[i]=='1') p[i]=1;
+		if (p[i]=='2') p[i]=2;
+		if (p[i]=='3') p[i]=3;
+	    if (p[i]=='4') p[i]=4;
+		if (p[i]=='5') p[i]=5;
+		if (p[i]=='6') p[i]=6;
+		if (p[i]=='7') p[i]=7;
+        if (p[i]=='8') p[i]=8;
+        if (p[i]=='9') p[i]=9;
+		if (p[i]%2==1) suma1+=p[i];
+		if (p[i]%2==0) suma2+=p[i];
+		}
+	rez=suma2 - suma1;
+	printf("%d", rez);
+	return 0; 

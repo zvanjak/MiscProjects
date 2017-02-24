@@ -1,0 +1,13 @@
+int br_prodanih(FILE *f, char *autor)
+{
+	struct album buffer;
+	int br_prodanih=0;
+
+	while(fread(&buffer, sizeof(struct album), 1, f) == 1)
+	{
+		if(strcmp(autor, buffer.autor) == 0)
+			br_prodanih += buffer.prodano;
+	}
+
+	return br_prodanih;
+}

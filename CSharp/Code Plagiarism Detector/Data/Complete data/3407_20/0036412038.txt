@@ -1,0 +1,22 @@
+char *SamoSamoglasnici(char *ulazni_niz){
+    char *p,x;
+	int i,j,m,n=0;
+	j=0;
+    m=0;
+	if(*ulazni_niz=='\0' || *ulazni_niz==NULL)
+		return NULL;
+	n=strlen(ulazni_niz);
+	p=NULL;
+	for(i=0;i<n;i++){
+		x=ulazni_niz[i];
+		if(isalpha(x)){
+			if(islower(x))
+				x=toupper(x);
+			if(x==65 || x==69 || x==73|| x==79 || x==85){
+				p=(char*)realloc(p,(m+1)*sizeof(char));
+				p[m++]=ulazni_niz[i];
+			}
+		}
+	}
+	return p;
+}

@@ -1,0 +1,12 @@
+int azuriraj(FILE *f, int redni_br, int bodovi)
+{
+     while(fread(&zapis1, sizeof(zapis1), 1, f)==1)
+     {
+         if(zapis1.redni_broj==redni_br){
+                                           zapis1.bodovi = bodovi;
+                                           fseek(f, (-1)*sizeof(zapis1), SEEK_CUR);
+                                           fwrite(&zapis1, sizeof(zapis1),1,f );
+                                           break;
+                                           }  
+     }
+}

@@ -1,0 +1,6 @@
+Krug fun4(Pravokutnik p){
+	Tocka dltocka=p.getDLkut();
+	Tocka *srediste=new Tocka(dltocka.X+p.getSirina()/2,dltocka.Y+p.getVisina()/2);
+	Krug *oKrug=new Krug(*srediste, pow(pow(p.getSirina()/2,2)+pow(p.getVisina()/2,2),0.5));
+	return *oKrug;
+}

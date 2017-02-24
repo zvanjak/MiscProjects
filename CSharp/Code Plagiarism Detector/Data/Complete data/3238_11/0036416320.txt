@@ -1,0 +1,29 @@
+#include<stdio.h>
+#include<math.h>
+
+int main () {
+   float x,y,z,k;
+   printf("Unesi broj clanova:\n                    n=");
+   scanf("%f",&x);
+   y=0;
+   z=0;
+
+   if ((x>0) && (x<26)) {
+		   while (y<x) {
+             y=y+1;
+		     z=z+(1/(pow(y,8)));
+			 k=y;
+		   }
+
+	   }
+	   else
+             printf("\nBroj clanova n ne valja!\n");
+   
+   if (k==x)
+         printf("\nRjesenje je: x=%0.12f\n",z);
+
+	   
+
+   return 0;
+
+}

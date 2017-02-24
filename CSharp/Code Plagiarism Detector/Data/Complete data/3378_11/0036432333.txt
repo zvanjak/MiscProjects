@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main()
+{
+	unsigned int a,b,c;
+	float d,e;
+	scanf("%d %d %d",&a,&b,&c);
+	d=a*c;
+	if(a<b)
+	{
+		d=d-d*10/100.;
+	}
+	if(a>b)
+	{
+		d=d+d*15/100.;
+	}
+	if(d>6000)
+	{
+		e=(70/100.)*d;
+	}
+	else
+	{
+		e=(80/100.)*d;
+	}
+	printf("%.2f",e);
+	return 0;
+}

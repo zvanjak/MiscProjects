@@ -1,0 +1,21 @@
+#include<stdio.h>
+int main()
+{
+	double n;
+	int i,x;
+	scanf("%lf",&n);
+	x=n;
+	if((n-x)==0 && x>0 && x<=30)
+	{
+		double broj=1,naz=2;
+		for(i=1;i<=n;i++)
+		{
+			naz=naz*(-i);
+			broj=broj+(1/(naz));
+		}
+		printf("%2.12lf",broj);
+	}
+	else
+		printf("n nije valjan");
+	return 0;
+}

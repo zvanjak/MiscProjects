@@ -1,0 +1,57 @@
+struct tip {
+   char ime[20+1];
+   char prezime[30+1];
+   char jmbag[10+1];
+   int  ocjena;
+   tip() {}
+   tip( const tip &drugi ) {
+      strcpy( ime, drugi.ime );
+      strcpy( prezime, drugi.prezime );
+      strcpy( jmbag, drugi.jmbag );
+      ocjena = drugi.ocjena;
+   }
+};
+struct atom {
+   tip element;
+   atom * sljed;
+
+   atom( const tip &el ) : element(el) { sljed = NULL; }   
+};
+
+int brojElementa( atom *glava ) {
+   if( glava == NULL ) return 0;
+   return 1 + brojElementa( glava->sljed );
+}
+
+int dodaj( atom **glavap, tip element ) {
+   atom * novi = new atom( element );
+   novi->sljed = *glavap;
+   *glavap = novi;
+   return 1;
+}
+
+int min2( int a, int b ) { return (a<b)?a:b; }
+
+int minOcjena( atom *glava ) {
+   if( glava == NULL ) return -1;
+   if( glava->sljed == NULL ) return glava->element.ocjena;
+   return min2( glava->element.ocjena, minOcjena( glava->sljed ) );
+}
+
+int izbaciPrezimeSadrzi( atom **glavap, char *prezimePodniz ) {
+   if( *glavap == NULL ) return 0;
+   if( strstr( (*glavap)->element.prezime, prezimePodniz ) != NULL ) {
+      *glavap = (*glavap)->sljed;
+      return 1 + izbaciPrezimeSadrzi( glavap, prezimePodniz );
+   }
+   return 0 + izbaciPrezimeSadrzi( &(*glavap)->sljed, prezimePodniz );
+}
+
+int izbaciPrezimePocinjeS( atom **glavap, char *prezimePocetak ) {
+   if( *glavap == NULL ) return 0;
+   if( strstr( (*glavap)->element.prezime, prezimePocetak ) == (*glavap)->element.prezime ) {
+      *glavap = (*glavap)->sljed;
+      return 1 + izbaciPrezimePocinjeS( glavap, prezimePocetak );
+   }
+   return 0 + izbaciPrezimePocinjeS( &(*glavap)->sljed, prezimePocetak );
+}

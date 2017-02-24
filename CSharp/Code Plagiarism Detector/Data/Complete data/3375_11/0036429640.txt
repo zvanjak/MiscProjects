@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main () {
+
+	int b;
+	scanf ("%d", &b);
+	if ( (b/1000)%2 != 0 ) {b= b%1000;
+						    if ((b/100)%2!=0) {b=b%100;
+							    			   if ((b/10)%2!=0) {b=b%10;
+							    			   					 if (b%2 != 0) {b=0;}}}}
+	printf ("%d",b);
+	return 0;
+}
+	
+							    

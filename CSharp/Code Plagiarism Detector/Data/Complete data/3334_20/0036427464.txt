@@ -1,0 +1,16 @@
+int NadjiMaxURetku(int *mat, int m, int n, int maxstup, int *retMax){
+	int naj, i, j;
+	for (i=0; i<m; i++){
+		naj=mat[i*maxstup];
+		for (j=0; j<n; j++){
+			if (mat[j+i*maxstup]>naj)
+				naj=mat[j+i*maxstup];
+		}
+		retMax[i]=naj;
+	}
+	for (i=0; i<m; i++){
+		if (retMax[i]>naj)
+			naj=retMax[i];
+	}
+	return naj;
+}

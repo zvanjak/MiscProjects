@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <math.h>
+int main(){
+	int n,i,j;
+	double br=0,clan=0;
+	scanf("%d", &n);
+	if(n>=1 && n<=30){
+		for(i=0,j=1;j<=n;i++,j++){
+			clan=1/(pow(2,i));
+			if(j%2) br=br+clan;
+			else br=br-clan;
+		}
+	printf("%.12f",br);
+	} else printf("n nije valjan");
+return 0;
+}

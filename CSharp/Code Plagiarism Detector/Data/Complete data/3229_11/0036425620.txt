@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main()
+{
+	double e=0.0, x, f=1;
+	int n, i, p=1;
+
+	scanf("%lf", &x);
+
+	n=x;
+
+	if( (n==x) && (n<=30) && (n>=1) )
+	{
+		for(i=1;i<n;i++)
+		{
+			f*=i;
+			e += (double)p/f;
+			p=-p;
+		}
+		e=1-e;
+		e=1/e;
+		printf("%.12lf", e);
+	}
+
+	else
+		printf("n nije valjan");
+
+	return 0;
+}

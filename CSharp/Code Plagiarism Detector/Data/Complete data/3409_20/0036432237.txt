@@ -1,0 +1,31 @@
+char *IzbaciPresjek(char*niz1,char*niz2){
+      char*top,*kat;
+      int k=0,z=0,i=0,j=0;
+      top=niz1;
+      kat=niz2;
+      if(*(top+k)=='\0')
+      return top;
+      else if (*(kat+k)=='\0'){
+           for(z=0;*(top+z)!='\0';z++)
+                 *(kat+z)=*(top+z);
+                 *(kat+z)=*(top+z);
+                 return kat;}
+      else 
+      for(i=0;*(top+i)!='\0';i++){
+            for(j=0;*(kat+j)!='\0';j++){
+               if(*(kat+j)==*(top+i)){
+               for(k=i;*(top+k+1)!='\0';k++)
+               *(top+k)=*(top+k+1);
+               *(top+k)=*(top+k+1);
+               i=i-1;
+               }
+               }
+               }
+               return top;
+               }
+      
+     
+      
+                 
+    
+

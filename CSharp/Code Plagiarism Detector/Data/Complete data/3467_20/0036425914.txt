@@ -1,0 +1,21 @@
+int igra(Igrac& igrac, Automat& aut, int max, int *broj)
+{
+    int i; int saldo; int kolko=0; char err[20]; int t;
+    
+    saldo=igrac.TrenutnoStanje();
+    
+    for (i=0;i<max;i++)
+     {
+         if(igrac.SkiniSRacuna(1)==false) {*broj=kolko; return igrac.TrenutnoStanje()-saldo;}
+         aut.UplatiIznos(1); igrac.SkiniSRacuna(1);
+         try
+            {
+              t=aut.Zavrti();
+            }
+         catch (const char *err) {continue;}
+         igrac.UplatiNaRacun(t);
+         kolko++;     
+     }
+   *broj=max;
+   return igrac.TrenutnoStanje()-saldo;   
+}

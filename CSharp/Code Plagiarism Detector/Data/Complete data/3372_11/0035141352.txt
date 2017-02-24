@@ -1,0 +1,53 @@
+#include <stdio.h>
+
+int main ()
+{
+	int broj=0, a, b, c, d;
+
+	while (broj < 1000 || broj > 9999)
+		scanf ("%d", &broj);
+	
+	d = broj % 10;
+	broj /= 10;
+	c = broj % 10;
+	broj /= 10;
+	b = broj % 10;
+	a = broj / 10;
+
+	if (d % 2 == 1)
+	{
+		d++;
+		if (d >= 10)
+			d = 0;
+	}
+	if (c % 2 == 1)
+	{
+		c++;
+		if (c >= 10)
+			c = 0;
+	}
+	if (b % 2 == 1)
+	{
+		b++;
+		if (b >= 10)
+			b = 0;
+	}
+	if (a % 2 == 1)
+	{
+		a++;
+		if (a >= 10)
+			a = 0;
+	}
+	broj = a*1000 + b*100 + c*10 + d;
+
+	printf ("%d", broj);
+
+	return 0;
+
+
+}
+
+
+
+
+

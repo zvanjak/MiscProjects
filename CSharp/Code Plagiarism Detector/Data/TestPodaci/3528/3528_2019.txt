@@ -1,0 +1,35 @@
+#include<stdio.h>
+#include <string.h>
+int zamijeni(char *ulazni, char *prvi,char *drugi)
+{
+int razlika,x,y,n=0;
+char temp,*loc,*loc2;
+razlika = strlen(prvi) - strlen(drugi);
+if (strcmp(prvi,drugi) !=0)
+{
+do
+{
+ loc = strstr(ulazni,prvi);
+ loc2= drugi;    
+     if (loc != NULL)
+     {
+     n++; 
+      for (x=0; x < strlen(drugi);x++)
+      {
+      *loc = *loc2; 
+     
+      loc++;
+      loc2++;
+      }
+     for ( y = 0; *(loc + y + razlika) != '\0'; y++)
+     *(loc + y) = *(loc + y + razlika); 
+     
+     *(loc + y) = '\0';
+     
+     
+     } 
+if (loc == NULL)  break;
+}while(1);
+}
+return (n);
+}

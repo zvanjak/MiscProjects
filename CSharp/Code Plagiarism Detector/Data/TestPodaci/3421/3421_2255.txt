@@ -1,0 +1,67 @@
+#include<stdio.h>
+
+int main(){
+    char rec[100];
+    int i=0,j,k,l,m,n,brojac=0,max=0;
+    
+    do{
+        scanf("%c",&rec[i]);
+        if(rec[i]=='.') {
+            rec[i]='\0';
+            break;   
+        }    
+        i++;
+    }while(rec[i-1]!='.');
+    
+    for(j=0;j<i;j++){
+        if(rec[j]!=' ' && rec[j]!=','){
+            if(rec[j]>='A' && rec[j]<='Z') rec[j]+=32;
+        }    
+    }      
+    
+    for(j=0;j<i;j++){
+        if(rec[j]!=' ' && rec[j]!=','){
+            if(rec[j-1]==' ' || rec[j-1]==','){
+                if(rec[j]>='a' && rec[j]<='z') rec[j]-=32;    
+            }        
+        }    
+    }  
+    
+    for(j=0;j<i;j++){
+        if(rec[j]==' ' || rec[j]==','){
+             for(l=j+1;l<i;l++){
+                 n=l;
+                 do{
+                     brojac++;
+                     n++;
+                 }while(rec[n]==' ' || rec[n]==',');
+                 if(max<brojac) max=brojac;
+                 brojac=0;
+             }    
+          }      
+    } 
+    
+    for(m=0;m<max;m++){    
+        
+    for(j=0;j<i;j++){
+        if(rec[j]==' ' || rec[j]==','){
+             for(k=j;k<i;k++){
+                 rec[k]=rec[k+1];
+             }    
+          }      
+    } 
+    }    
+    
+    if(rec[0]>='a' && rec[0]<='z') rec[0]-=32;
+    
+    for(j=0;j<i;j++){
+        if(rec[j]=='\0'){
+            rec[j]='.';
+            break;
+        }    
+    }  
+    
+    printf("%s",rec);
+    
+    return 0;
+}     

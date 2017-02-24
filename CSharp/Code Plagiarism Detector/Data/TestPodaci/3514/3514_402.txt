@@ -1,0 +1,39 @@
+# include <stdio.h>
+# include <math.h>
+int main (){
+	double pov=0.0, d1, d2, d3, d4, x, y, r, fi;
+
+	struct tocka {
+		double x;
+		double y;
+	} t1, t2, t3, t4;
+
+
+	/*printf ("Upisite kordinate prve tocke:>");*/
+	scanf ("%lf %lf", &t1.x, &t1.y);
+	/*printf ("Upisite kordinate druge tocke:>");*/
+	scanf ("%lf %lf", &t2.x, &t2.y);
+	/*printf ("Upisite kordinate trece tocke:>");*/
+	scanf ("%lf %lf", &t3.x, &t3.y);
+	/*printf ("Upisite kordinate cetvrte tocke:>");*/
+	scanf ("%lf %lf", &t4.x, &t4.y);
+	
+	d1=sqrt((pow(t2.x-t1.x, 2.)) + (pow(t2.y-t1.y, 2.)));
+	d2=sqrt((pow(t3.x-t2.x, 2.)) + (pow(t3.y-t2.y, 2.)));
+	d3=sqrt((pow(t4.x-t3.x, 2.)) + (pow(t4.y-t3.y, 2.)));
+	d4=sqrt((pow(t4.x-t1.x, 2.)) + (pow(t4.y-t1.y, 2.)));
+
+	if ((d1==d2)&& (d2==d3)&& (d3==d4)){
+		pov=d1*d1;
+		printf ("\n%.2lf", pov);
+	}
+	else{
+		x=(t1.x+t2.x+t3.x+t4.x)/4.0;
+		y=(t1.y+t2.y+t3.y+t4.y)/4.0;
+		r=sqrt((x*x)+(y*y));
+		fi=atan(y/x);
+		printf ("\n%.2lf %.2lf", r, fi);
+	}
+
+	return 0;
+}

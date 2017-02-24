@@ -1,0 +1,29 @@
+#include<string.h>
+void ConvertFromXML(char *k,char *p){
+    char *l;
+    while((k=strstr(k,"<osoba>"))!=NULL){
+                k+=7;
+                k=strstr(k,"<ime>")+5;
+                l=strstr(k,"</ime>");
+                *p='#';p++;
+                strncpy(p,k,l-k);
+                p+=l-k;
+                k=l+6;
+                k=strstr(k,"<prezime>")+9;
+                *p='#';p++;
+                l=strstr(k,"</prezime>");
+                strncpy(p,k,l-k);
+                p+=l-k;
+                k=l+10;
+                k=strstr(k,"<jmbg>")+6;
+                *p='#';p++;
+                l=strstr(k,"</jmbg>");
+                strncpy(p,k,l-k);
+                p+=l-k;
+                k=l+7;
+                k=strstr(k,"</osoba>")+8;
+                *p='#';p++;
+                *p='\n';p++;                
+    }
+    *p='\0';
+}

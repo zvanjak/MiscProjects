@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include<math.h>
+int main() 
+{
+        int n,i;
+        double x,y=0,p;
+        scanf ("%d",&n);
+        if((n<1) || (n>400))
+			printf("n nije valjan\n");
+        else 
+	  {
+            for (i=1;i<=n;i=i+1) 
+		 {
+                x=1./((4*i-1)*(4*i+1));
+                y=y+x;
+            }
+		 p=4-8*y;
+		 printf("%f\n",p);
+	  }
+	  return 0;
+}

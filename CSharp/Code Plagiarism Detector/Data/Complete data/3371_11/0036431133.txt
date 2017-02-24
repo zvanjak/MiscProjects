@@ -1,0 +1,22 @@
+#include <stdio.h>
+int main()
+{
+int broj, znam1, znam2, znam3, znam4;
+scanf("%d", &broj);
+znam1= broj%10;
+if(znam1%2==0) 
+ znam1++;
+broj/=10;
+znam2=broj%10;
+if(znam2%2==0) 
+ znam2++;
+broj/=10;
+znam3=broj%10;
+if(znam3%2==0) 
+ znam3++;
+znam4=broj/10;
+if(znam4%2==0)
+ znam4++;
+printf("%d%d%d%d", znam4, znam3, znam2, znam1);
+return 0;
+}

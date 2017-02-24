@@ -1,0 +1,9 @@
+#define MAX(x,y) (x) > (y) ? (x) : (y)
+
+double fun1(Trokut t, Pravokutnik p, Krug k) {
+     double at, ap, ak;
+     at = t.Area();
+     ap = p.Area();
+     ak = k.Area();
+     return MAX(MAX(at, ap), MAX(at, ak));
+}

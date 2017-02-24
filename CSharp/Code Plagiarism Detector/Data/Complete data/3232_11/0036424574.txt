@@ -1,0 +1,19 @@
+#include "stdio.h"
+#include "math.h"
+
+int main()
+{
+	double dblDvojka;
+	int n,i;
+	dblDvojka=1;
+	scanf("%d", &n);
+	if(!((n>0)&&(n<31))){
+		printf("n nije valjan");
+		return 0;
+	}
+	for(i=1;i<=n;i++){
+		dblDvojka = dblDvojka + 1/pow(2,i);
+	}
+	printf("%.12f",dblDvojka);
+	return 0;
+}

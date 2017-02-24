@@ -1,0 +1,25 @@
+int br_prodanih(FILE *f, char *autor)
+{
+    struct album{
+             char naziv[30+1];
+             char autor[20+1];
+             int prodano;
+          }zapis;
+    
+    int ret = 0,n,n1;
+
+    fseek(f,0L,SEEK_END);
+    n1=ftell(f);
+    fseek(f,0L,SEEK_SET);
+    n=ftell(f);
+
+    
+    while(n1<=n){
+                fread(&zapis,sizeof(zapis),1,f);
+        if(strcmp(zapis.autor, autor) == 0)
+            ret +=zapis.prodano;
+         n=ftell(f);
+         }
+            
+    return ret;
+}

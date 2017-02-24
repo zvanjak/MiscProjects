@@ -1,0 +1,24 @@
+#include<stdio.h>
+
+int main () {
+	float suma=1.;
+	float a1=1.;
+	float a2=0.;
+	float q=-0.5;
+	int i=1;
+	float n;
+
+	scanf("%f" , &n);
+	if((n>=1)&&(n<=30)&&(n-(int)n==0)) {
+		for(i=1; i<n; i++) {
+			a2=a1*q;
+			suma=suma+a2;
+			a1=a2;
+		}
+		printf("%.12f" , suma);
+	}
+	else {
+		printf("n nije valjan");
+	}
+	return 0;
+}

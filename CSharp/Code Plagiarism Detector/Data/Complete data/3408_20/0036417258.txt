@@ -1,0 +1,25 @@
+char *Spoji(char *niz1, char *niz2) {
+char *p;
+unsigned int n=0,m=0;
+	
+	p=(char*) malloc (1);
+	while ((n<strlen(niz1)) || (n<strlen(niz2))) {
+	
+		if (n<strlen(niz1)) { 
+		*(p+m)=*(niz1+n);
+		m++;
+		p=(char*) realloc (p,m+1);
+	}
+		if (n<strlen(niz2)) { 
+		*(p+m)=*(niz2+n);
+		m++;
+		p=(char*) realloc (p,m+1);
+	}
+	
+		n++;	
+	}
+
+	*(p+m)='\0';
+
+	return p;
+}

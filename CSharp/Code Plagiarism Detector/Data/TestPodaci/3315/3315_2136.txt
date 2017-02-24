@@ -1,0 +1,17 @@
+float prosjek (FILE *f) {
+	char naziv[30+1];
+	char autor[20+1];
+	int prodano;
+	int brojalbuma = 0;
+	float prosj = 0;
+
+	while (fscanf (f, "%s, %s, %d", naziv, autor, &prodano) == 3) {
+		brojalbuma++;
+		prosj = prosj + prodano;
+	}
+
+	prosj = prosj / brojalbuma;
+
+	if (brojalbuma > 0) return(prosj);
+	else return (0);
+}

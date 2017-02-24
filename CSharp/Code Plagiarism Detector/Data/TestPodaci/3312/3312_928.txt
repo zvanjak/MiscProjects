@@ -1,0 +1,18 @@
+	int br_prodanih(FILE *f, char *autor){
+		int	broj=0;
+
+	struct {
+        char naziv[31];
+        char autor[21];
+        int prodano;
+    } album;
+
+		 
+		while (fscanf(f, "%s %s %d", album.naziv, album.autor, &album.prodano) == 3) {
+		
+			if (!(strcmp(autor,album.autor))){
+				broj+=album.prodano;
+			}
+		}
+		return broj;
+		}

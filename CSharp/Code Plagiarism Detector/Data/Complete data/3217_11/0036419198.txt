@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <math.h>
+int main(){
+        int a,z[10],i,j,b,niz[100],c=0,kolko=-1,poc=0;
+        do{
+                scanf("%d", &a);
+                niz[c]=a;
+                c++;
+                kolko++;
+        }while(a>0);
+        c=0;
+        for(c=0;c<kolko;c++){
+                a=niz[c];
+                i=0;j=0;b=0;
+        while (a != 0) {
+                        z[i] = a%10;
+                        a /= 10;
+                        i++;
+        }
+                b=i;
+                while (j<i){
+                        b--;
+                        a += z[j]*pow(10,b);
+                        j++;
+                }
+                poc++;
+                if (poc==1) printf("%d", a);
+                if (poc!=1) printf(" %d",a);
+        }
+        return 0;
+}

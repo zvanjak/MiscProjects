@@ -1,0 +1,9 @@
+int info(FILE *f, int redni_br){
+    struct natjecatelj n;
+    while(!feof(f)){
+    fread(&n, sizeof(n),1,f);
+    if(redni_br==n.redni_br){
+        if(n.bodovi>=100)return 1;
+        else if(n.bodovi<100)return 0;}}
+        return 0;
+}

@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <string.h>
+
+main () {
+        char niz[101];
+        int duzina, i, flag;
+
+        scanf ("%[^.]", niz);
+
+        duzina = strlen (niz) - 1;
+
+        flag = 1;
+        for (i=0; i<duzina/2+1; i++) {
+                if (tolower (niz[i]) != tolower (niz[duzina-i]))
+                        flag = 0;
+        }
+        if (flag == 1)
+                printf ("DA");
+        if (flag == 0)
+                printf ("NE");
+
+        return (0);
+}

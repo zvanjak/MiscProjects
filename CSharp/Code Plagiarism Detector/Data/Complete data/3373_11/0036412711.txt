@@ -1,0 +1,9 @@
+#include<stdio.h>
+int main(){
+int a,b;
+scanf("%d %d", &a,&b);
+  if(a>99&&a<1000&&b>99&&b<1000){
+	printf("%o",a<=b?a:b);
+}
+return 0;
+}

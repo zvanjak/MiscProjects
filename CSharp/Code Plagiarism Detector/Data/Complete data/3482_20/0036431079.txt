@@ -1,0 +1,30 @@
+MjeracProsjecneTemperature::MjeracProsjecneTemperature(Termometar *t){
+	// ili mozda treba napraviti lokalnu kopiju objekta ali nigdje to nije
+	// napomenuto ni nema nekog smisla za predvideni nacin koristenja:
+	// Termometar temp;
+	// MjeracProsjecneTemperature mjer(&temp);
+	// int min,max;
+	// double avg = mjer.Prosjek(10,&min,&max);
+    this->t = t;
+}
+
+double MjeracProsjecneTemperature::Prosjek(int n, int *min, int *max){
+	*min = 35;
+	*max = -20;
+
+	double avg = 0;
+
+     for(int i = 0; i < n; ++i)
+	 {
+		 int read = t->Ocitaj();
+
+		 if(read > *max)
+			 *max = read;
+		 if(read < *min)
+			 *min = read;
+
+		 avg += read;
+	 }
+
+	 return avg / (double)n;
+}

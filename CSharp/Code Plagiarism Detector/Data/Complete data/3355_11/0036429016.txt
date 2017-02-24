@@ -1,0 +1,87 @@
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+	char a,b,c,d,e,f;
+	int g,i,h,j,l,q,w,p,r,t,s,u,z,o,n,m,k;
+	g=0;
+	h=0;
+	q=0;
+	w=0;
+	p=0;
+	r=0;
+	t=0;
+	s=0;
+	u=0;
+	z=0;
+	o=0;
+	n=0;
+	m=0;
+    k=0;
+	scanf ("%c %c %c %c %c %c",&a,&b,&c,&d,&e,&f);
+	for (i=0;i<=25;i++)
+	{
+		if ((a=='A'+i) || (a=='a'+i))
+			g=1;
+		
+	}
+	for (j=0;j<=8;j++)
+	 {
+	    if (b=='0'+j)
+		{
+	         u=1;
+		}
+		 if (c=='0'+j)
+		{
+	         z=1;
+		}
+		 if (d=='0'+j)
+		{
+	         o=1;
+		}
+		 if (e=='0'+j)
+		{
+	         m=1;
+		}
+		 if (f=='0'+j)
+		{
+	         m=1;
+		}
+	 }
+    for ( l=0;l<=25;l++ )
+	 {
+		if (b=='A'+l || b=='a'+l)
+		{
+			q=1;
+		}
+		if (c=='A'+l || c=='a'+l)
+		{
+			w=1;
+		}
+		if (d=='A'+l || d=='a'+l)
+		{
+			p=1;
+		}
+		if (e=='A'+l || e=='a'+l)
+		{
+			r=1;
+		}
+		if (f=='A'+l || f=='a'+l)
+		{
+			t=1;
+		}
+	 }
+    s=q+w+p+r+t;
+	k=u+o+n+m+z;
+	if (g==1 && k>0 && s>0)
+	{
+		printf ("\n Jest ");
+	}
+	else 
+	{
+		printf ("\n Nije ");
+	}
+
+}
+
+	

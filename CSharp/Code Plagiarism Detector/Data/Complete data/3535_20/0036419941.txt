@@ -1,0 +1,10 @@
+void staviNaDno (Stog *stog, int broj){
+	int n;
+	if (stog->Skini(&n))
+		staviNaDno (stog, broj);
+	else {
+		stog->Stavi (broj);
+		return;
+	}
+	stog->Stavi (n);
+}

@@ -1,0 +1,8 @@
+int      JeLiUnutra(Kruznica &kruz, Kvadrat &kvad){
+         int uvj1=0,uvj2=0,uvj3=0,uvj4=0;
+         uvj1=(kruz.GetCenterX()-kruz.GetRadius()>=kvad.GetX());
+         uvj2=(kruz.GetCenterX()+kruz.GetRadius()<=kvad.GetX()+kvad.GetDuljinaStranice());
+         uvj3=(kruz.GetCenterY()+kruz.GetRadius()<=kvad.GetY());
+         uvj4=(kruz.GetCenterY()-kruz.GetRadius()>=kvad.GetY()-kvad.GetDuljinaStranice());
+         return (((uvj1&&uvj2)&&uvj3)&&uvj4);
+         }

@@ -1,0 +1,15 @@
+#include<stdio.h>
+
+float prosjek (FILE *f){
+	struct album z;
+	float prosjecno;
+	int uk_prodano=0;
+	int br_albuma=0;
+	fseek (f, 0L, SEEK_SET);
+	while (fread (&z, sizeof(z), 1, f)==1){
+		uk_prodano = uk_prodano + z.prodano;
+		br_albuma++;
+	}
+	prosjecno = (float)uk_prodano / br_albuma;
+	return prosjecno;
+}

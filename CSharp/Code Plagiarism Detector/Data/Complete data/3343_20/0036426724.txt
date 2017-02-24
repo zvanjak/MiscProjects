@@ -1,0 +1,9 @@
+float niz(int i){
+	float n;
+	kontrola();
+	if (i==0) n=1.;
+	else if (i==1) n=2.;
+	else if (i==2) n=3.;
+	else n=(niz(i-1.)-niz(i-3.))/(niz(i-1.)+niz(i-3.));
+	return n;
+}

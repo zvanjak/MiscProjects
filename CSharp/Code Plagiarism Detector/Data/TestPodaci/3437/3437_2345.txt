@@ -1,0 +1,38 @@
+#include <stdio.h>
+int main()
+{
+	int a=-1;
+	int maxelement=0;
+	int polje[42]={0};
+	int i=0;
+	while (a<=41)
+	{
+		a++;
+		scanf("%d", &polje[a]);
+		if((polje[a]==50)&&(a%2==0))
+		{
+			maxelement=a+1;
+			scanf("%d", &polje[a+1]);
+			a=100;
+		}	
+	}	
+	for (i=0;i<maxelement-1;i=i+2)                         
+		{
+		if (polje[i+1]<polje[i+3])
+		{
+			printf("Raste");}
+		else if (polje[i+1]==polje[i+3])
+		{
+			printf("Ravan");}
+		else{
+			printf("Pada");
+		}
+	    if (i+2 < maxelement-1)
+		{
+		printf(" ");
+		}
+		}
+
+	
+	return 0;
+}

@@ -1,0 +1,15 @@
+int BrojClanova(Red *red){
+	Red r;
+	int n=0,a;
+	
+	while(red->SkiniIzReda(&a))
+	{
+		r.DodajURed(a);
+		n++;
+	}
+	while(r.SkiniIzReda(&a))
+	{
+		red->DodajURed(a);
+	}
+	return n;
+}

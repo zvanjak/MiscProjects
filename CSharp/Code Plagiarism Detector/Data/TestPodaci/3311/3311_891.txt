@@ -1,0 +1,17 @@
+float prosjek(FILE *f) {
+	int br=0;
+	int brpr=0;
+	float avrg;
+	struct album {
+		char naziv[30+1];
+		char autor[20+1];
+		int prodano;
+	}zapis;
+	fseek(f, 0L, SEEK_SET);
+	while(fread(&zapis, sizeof(zapis),1,f)==1) {
+	brpr=brpr+zapis.prodano;
+	br++;
+	} 
+	avrg=(float)brpr/br;
+	return avrg;
+}

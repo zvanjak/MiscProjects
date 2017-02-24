@@ -1,0 +1,14 @@
+int Memoriraj(Radio& radio){
+	Stanica tempst;
+	Stanica tstold;
+	int brojmemstan=0;
+	tempst=radio.TraziSljedecu();
+	do{
+		if (tempst.RDS()[0]!=0){
+			radio.MemorirajStanicu(tempst,brojmemstan+1);
+			brojmemstan++;};
+		tstold=tempst;
+		tempst=radio.TraziSljedecu();
+	}while ((tempst.Frekvencija()>tstold.Frekvencija()) && (brojmemstan<6));
+	return brojmemstan;
+}

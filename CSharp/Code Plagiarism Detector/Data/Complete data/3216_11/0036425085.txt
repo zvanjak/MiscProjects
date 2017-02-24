@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main () {
+		
+	int x, p, n=0, u=0, i;
+	
+	do {
+		u++;
+		scanf  ("%d", &x);
+
+		for (i=2; i < x; i++) {
+			if (x % i == 0){
+				n++;
+				break;
+			}
+		}
+	} while ( x > 2 );
+
+	p = (u - 1)- n;
+	printf ("%d", p);
+	return 0;
+}

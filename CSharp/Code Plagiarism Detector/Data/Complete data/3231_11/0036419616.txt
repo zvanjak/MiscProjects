@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <math.h>
+int main () {
+int i;
+float n;
+double k=1,r=0,br=1;
+scanf ("%f", &n);
+if ((n>=1) && (n<=30)){
+
+for(i=1; i<=31; i++){
+k = pow(2,i);
+r=1/k;
+if (i%2==0)
+br=br+r;
+else
+br=br-r;}
+
+printf("%.12f",br );
+}
+else
+printf("n nije valjan");
+return 0;
+} 

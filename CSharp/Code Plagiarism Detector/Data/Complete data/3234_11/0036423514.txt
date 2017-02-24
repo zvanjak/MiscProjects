@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<math.h>
+#include<conio.h>
+
+double main()
+{
+
+int n,i;
+double p=0;
+
+//do
+//	{
+	//printf("\nUpishi broj chlanova: ");
+	scanf("%d", &n);
+	if( n<1 || n>100 )
+		printf("n nije valjan");
+//	}
+//	while( n<1 || n>100 );
+else{
+
+for(i=1; i<n+1; i++)
+	p += (double) 1/(pow(i, 2));
+
+printf("%.12f", p);
+}
+//getch();
+return p;
+}

@@ -1,0 +1,36 @@
+#include "stdio.h"
+#include "math.h"
+
+int main(void)
+{
+	double eks=1;
+	int n=0, i=0;
+	double dx, x[50]={0}, der[50]={0};
+	double *px=&x[0];
+	double e = exp(eks);
+	double kut;
+	//px = &x;
+	scanf ("%lf ", &dx);
+	do {
+		scanf ("%lf", px);
+		px++;
+		n++;
+	} while (x[n-1]!=0.0);
+
+	for (i=0; i < n; i++) {
+		if (x[i]==0.0) 
+			break;
+		else 
+			der[i]=((pow(cos(1/e),sin(pow(e,sin(x[i]+dx+1/e))))-pow(cos(1/e),sin(pow(e,sin(x[i]+1/e)))))/dx);
+	}
+	for (n=0; n < i; n++) {
+		if (der[n]==0.0)
+			break;
+		else {
+			kut=atan(der[n]);
+			printf ("%.2lf ", kut);
+		}
+	}
+	return 0;
+}
+

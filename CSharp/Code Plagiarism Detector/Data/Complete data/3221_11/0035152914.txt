@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main()
+{
+	int A,An,B,d,br=0;
+
+	/*printf("A > ");*/
+        scanf("%d",&A);
+/*	printf("d > ");*/
+        scanf("%d",&d);
+	if (d<0) {fprintf(stderr,"Broj d mora biti veci od 0\n");return -1;}
+	/*printf("B > ");*/
+        scanf("%d",&B);
+	An=A+d;
+	for(br=0;An<B;An+=d,br++)
+		printf("%d ",An);
+/*	printf("\nBroj clanova niza ispisanih je %d\n",br);*/
+        printf("%d", br);
+	return 0;
+}
+

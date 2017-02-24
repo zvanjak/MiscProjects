@@ -1,0 +1,15 @@
+Krug fun4 (Pravokutnik p)
+{
+        double x,y,r;
+        Tocka dl;
+        dl = p.getDLkut();      //donji lijevi kut pravokutnika
+
+        x = p.getSirina();
+        y = p.getVisina();
+
+        r = 0.5 * sqrt (x*x+y*y);
+
+        Tocka sr ((dl.X + x*0.5), (dl.Y + y*0.5));
+        Krug krug (sr, r);
+        return  krug;
+}

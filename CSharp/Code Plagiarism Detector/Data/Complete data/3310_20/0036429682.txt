@@ -1,0 +1,18 @@
+int veci_od(FILE *f, int granica)
+{
+    struct album{
+    char naziv[30+1];
+    char autor[20+1];
+    int prodano;
+    } zapis;
+    int broj = 0;
+    
+    fseek(f, 0L, SEEK_SET);
+    while(fread(&zapis, sizeof(zapis), 1, f) == 1)
+    {
+        if(zapis.prodano >= granica)
+            broj++; 
+    }
+    
+    return broj;    
+}

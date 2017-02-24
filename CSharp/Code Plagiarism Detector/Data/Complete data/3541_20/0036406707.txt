@@ -1,0 +1,31 @@
+
+
+int izbaciZ(zapis **glava) {
+	zapis *p, *pp;
+	int br = 0;
+	float pr = 0;
+
+	for (p = *glava; p != NULL; p = p->sljed) {
+		pr += p->pros;
+		br += 1;
+	}
+	pr /= br;
+	br = 0;
+	for (p = *glava; p != NULL; p = p->sljed){
+	if (p->spol == 'Z') 
+		if (p->pros < pr)
+			if (p == *glava){
+				pp = (*glava)->sljed;
+				free(*glava);
+				*glava = pp;
+				br += 1;
+		}
+	else {
+			for (pp = *glava; pp->sljed != p; pp = pp->sljed);
+			pp->sljed = p->sljed;
+			free(p);
+			br += 1;
+		}
+	}
+	return br;
+	}

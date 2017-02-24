@@ -1,0 +1,13 @@
+#include <stdio.h>
+int main(){
+int ax,ay,bx,by,cx,cy,dx,dy;
+float umn;
+scanf("%d %d %d %d %d %d %d %d",&ax,&ay,&bx,&by,&cx,&cy,&dx,&dy);
+
+if ((cx-ax!=0)&&(dx-bx!=0)){
+        umn=((cy-ay)/(float)(cx-ax))*((dy-by)/(float)(dx-bx));
+        printf("%c", umn==-1 ? 'R':'C');
+}
+else printf("K");
+return(0);
+}

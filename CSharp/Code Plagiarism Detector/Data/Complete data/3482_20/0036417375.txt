@@ -1,0 +1,23 @@
+MjeracProsjecneTemperature::MjeracProsjecneTemperature(Termometar *t){
+
+	this->t = t ;
+}
+
+double MjeracProsjecneTemperature::Prosjek(int n, int *min, int *max) {
+	int ukupno, i, pom;
+    
+	ukupno = 0;
+	pom = (*t).Ocitaj();
+	*min = pom;
+        *max = pom;
+        ukupno += pom;
+
+	for (i = 0; i < (n - 1); i++) {
+
+		pom = (*t).Ocitaj();
+		if (pom > *max) *max = pom;
+		if (pom < *min) *min = pom;
+                ukupno += pom;
+      }
+    return (((double) ukupno)/ n);
+}

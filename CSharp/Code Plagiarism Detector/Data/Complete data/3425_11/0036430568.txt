@@ -1,0 +1,30 @@
+#include <stdio.h>
+#define G 10
+int main (){
+	int mr,i=0,j=0,n,x[G][G],a,b,s=0,k=0,z;
+
+	do scanf("%d", &mr);
+	while ((mr<1)||(mr>10));
+	for(a=0;a<mr;a++){
+		for(b=0;b<mr;b++){
+			scanf("%d",&x[a][b]);
+		}
+	}
+		while (((i<mr)&&(i>=0))&&((j<mr)&&(j>=0))){
+			scanf("%d %d",&i,&j);
+			if (((i<mr)&&(i>=0))&&((j<mr)&&(j>=0))){
+				z=x[i][j];
+				x[i][j]=x[j][i];
+				x[j][i]=z;
+				k++;
+			} else {
+				scanf("%d",&n);
+				if ((n>=mr)||(n<0)) s=-1;
+				else{
+					for(b=0;b<mr;b++) s+=x[n][b];
+				}
+			}
+		}
+		printf("%d %d",k,s);
+		return 0;
+}

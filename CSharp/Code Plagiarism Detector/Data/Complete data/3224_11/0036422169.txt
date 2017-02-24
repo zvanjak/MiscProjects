@@ -1,0 +1,15 @@
+#include<stdio.h>
+int main()
+{
+	int n,i;
+	double pi=0.;
+	scanf("%d",&n);
+	if ((n>0)&&(n<401))
+	{
+		for(i=1;i<=n;i++){
+			pi=pi+(double)1/((4*i-1)*(4*i+1));
+		}
+	printf("%10.8f", (double)(4-(double)8*pi));
+	}else printf("n nije valjan");
+return 0;
+}

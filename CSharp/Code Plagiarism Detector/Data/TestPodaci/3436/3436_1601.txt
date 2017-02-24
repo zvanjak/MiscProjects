@@ -1,0 +1,47 @@
+#include<stdio.h>
+void main(){
+ int  n,i,j,flag1,flag2,flag3,flag4;
+ char polje[400], pom1, pom2, pom3, pob = '-';
+ scanf ("%d%s",&n,polje); 
+  for(i=0;i<n;i++){
+     pom1=polje[i];
+     pom2=polje[i*n];
+     pom3=polje[n-1];
+     flag1 = 1;
+     flag2 = 1;
+     flag3 = 1;
+     flag4 = 1;
+      for(j=1;j<n;j++){
+         if(polje[i+j*n]!=pom1){
+             flag1 = 0;
+             }
+         if(polje[j+i*n]!=pom2){
+             flag2 = 0;
+             }      
+         if (polje[0] != polje[j+n*j]){
+             flag3 = 0;
+           }
+         if (polje[j*n+n-1-j] != pom3){
+             flag4 = 0;
+         }}
+     if((flag1 == 1)&&(pom1 != '-')){
+         pob = pom1;
+         break;
+         }
+     if((flag2 == 1)&&(pom2 != '-')){
+         pob = pom2;
+         break;
+         }
+     if ((flag3 == 1)&&(polje[0] != '-')){
+         pob = polje[0];
+         break;
+         }     
+     if ((flag4 == 1)&&(pom3 != '-')){
+         pob = pom3;
+         break;
+         }
+     
+     }
+    printf("%c",pob);
+return; 
+}

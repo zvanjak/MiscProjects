@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main()
+{
+	double pi=0.0, x;
+	int n, i;
+
+	scanf("%lf", &x);
+
+	n=x;
+
+	if( (n==x) && (n<=400) && (n>=1) )
+	{
+		for(i=1;i<=n;i++)
+		{
+			pi += 1./((4*i-1)*(4*i+1));
+		}
+		pi = 4-pi*8;
+		printf("%.8lf", pi);
+	}
+
+	else
+		printf("n nije valjan");
+
+	return 0;
+}

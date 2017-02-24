@@ -1,0 +1,23 @@
+#include <stdio.h>
+int main(void)
+{
+ char broj1,broj2,oper;
+ int a, b;
+ scanf("%c %c %c", &broj1, &broj2, &oper);
+ 
+ a=broj1-48;
+ b=broj2-'0';
+ 
+ if(oper=='*')
+	printf("%d",a*b);
+ else if(oper=='+')
+	printf("%d",a+b);
+ else if(oper=='-')
+	 printf("%d", a-b);
+ else if(oper=='/')
+	 printf("%d",a/b);
+ else if(oper=='%')
+	 printf("%d",a%b);
+
+ return 0;
+}

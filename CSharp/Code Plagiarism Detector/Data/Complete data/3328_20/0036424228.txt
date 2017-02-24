@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <malloc.h>
+
+int *KreirajAritNiz (int n, int a0, int d){
+	int *polje, i;
+	if((polje = (int *) malloc (n*sizeof(int)))== NULL)
+		return 0;
+	*polje = a0;
+	for (i=1; i<n; i++){
+		*(polje+i)= *(polje+i-1)+d;
+	}
+	return polje;
+}

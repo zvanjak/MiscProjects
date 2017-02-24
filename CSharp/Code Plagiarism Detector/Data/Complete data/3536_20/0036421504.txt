@@ -1,0 +1,33 @@
+void UmetniPrijePrvogNeparnog(Stog * stog, int broj) {
+Stog pomocni;
+int peak,found;
+
+if (!stog->Skini(&peak))
+stog->Stavi(broj);
+
+else {
+ 	stog->Stavi(peak);
+	found = 0;
+
+	while (stog->Skini(&peak))
+	{
+	if (peak % 2 == 1)
+	{
+	stog->Stavi(peak);
+	stog->Stavi(broj);
+	found = 1;
+	break;
+	}
+	
+	else {
+	pomocni.Stavi(peak);
+	}
+    }
+if (!found)
+	stog->Stavi(broj);
+	while (pomocni.Skini(&peak))
+	{
+stog->Stavi(peak);
+	}
+    }
+}

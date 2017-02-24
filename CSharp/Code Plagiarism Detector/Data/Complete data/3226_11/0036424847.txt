@@ -1,0 +1,15 @@
+#include <stdio.h>
+int main()
+{
+	long int n;
+	float i;
+	double s=0;
+	scanf("%d", &n);
+	if (n>=1 && n<=1000){
+		for (i=1.; i<=n; i+=1.){
+			s+=1./i/(i+2);
+		}printf("%.12f\n", s);
+	}else
+		printf("n nije valjan\n");
+	return 0;
+}

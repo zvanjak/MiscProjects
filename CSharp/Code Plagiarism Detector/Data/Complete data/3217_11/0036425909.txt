@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<math.h>
+
+int main() {
+
+int a, z[10], i=0, j=0, b=0;
+do{
+scanf ("%d", &a);
+i=0;j=0;b=0;
+while (a != 0) {
+z[i] = a%10;
+a /= 10;
+i++;
+}
+b=i;
+while (j<i)
+{
+b--;
+a += z[j]*pow(10,b);
+j++;
+}
+/*printf ("%d\ " , a);*/
+printf("%d ", a);
+
+}while (a>=0);
+
+return 0;
+}

@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main () {
+	int A, d, B, brojac=0;
+	scanf("%d %d %d", &A, &d, &B);
+
+	if (A>B)
+		printf("%d", brojac);
+	
+	else {
+		do	{
+			A = A + d;
+			printf("%d ", A);
+			brojac++;
+		} while (A <= B);
+		printf("%d", brojac);
+	}
+return 0;
+}

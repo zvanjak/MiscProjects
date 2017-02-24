@@ -1,0 +1,29 @@
+void dodaj(FILE *f)
+	{
+	int max_bodovi;
+	int redni_br_max_bodova;
+	int i;	
+
+	struct natjecatelj
+		{
+		int redni_br;
+		char prezime[20+1];
+		int bodovi;
+		}pero;
+
+
+	for(i=1; fread(&pero, sizeof(pero), 1, f) == 1; i++)
+		{
+		if( pero.bodovi > max_bodovi || i=1)
+			{
+			max_bodovi = pero.bodovi;
+			redni_br_max_bodova = i;
+			}
+		}
+
+	fseek(f, redni_br_max_bodova * sizeof(pero), SEEK_SET);
+	fread(&pero, sizeof(pero), 1, f);
+	pero.bodovi+=10;
+	fseek(f, redni_br_max_bodova * sizeof(pero), SEEK_SET);
+	fwrite(&pero, sizeof(pero), 1, f);
+	}

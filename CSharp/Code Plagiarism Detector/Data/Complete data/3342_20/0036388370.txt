@@ -1,0 +1,10 @@
+float niz(int i) {
+int p[3]={1,2,3};
+kontrola();
+if (i==0) return p[0];
+else if (i==1) return p[1];
+else if (i==2) return p[2];
+else if (i==3) {return p[i-3] + (p[i-2] + p[i-1])/2.;
+}
+else return niz(i-3) + (niz(i-1) + niz(i-2))/2.;
+}

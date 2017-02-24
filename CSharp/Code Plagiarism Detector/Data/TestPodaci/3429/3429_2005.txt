@@ -1,0 +1,34 @@
+#include <stdio.h>
+int main (){
+int brs, brr, mr, ms, i, j, s, r;
+int p[20][5]={0};
+int h[20][5]={0};
+r=s=brr=brs=mr=ms=0;
+do {
+scanf("%d %d", &mr, &ms);
+}while (!((mr>0) && (mr<=20) && (ms>0) && (ms<=5)));
+for (i=0; i<mr; i++)
+	for (j=0; j<ms; j++)
+		scanf("%d", &p[i][j]);
+for (i=0; i<mr; i++){
+	for (j=0; j<ms; j++){
+		if (!((p[i][j])%2)) 
+			r=r+1;
+		}
+	if (r>0) {
+		brr=brr+1;
+		r=0;}
+}
+for (j=0; j<ms; j++){
+	for (i=0; i<mr; i++){
+		if (!((p[i][j])%2)) 
+			s=s+1;
+		}	
+	if (s>0) {
+		brs=brs+1;
+		s=0;}
+}
+
+printf("%d %d", brr, brs);
+return 0;
+}

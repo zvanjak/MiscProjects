@@ -1,0 +1,13 @@
+#include <stdio.h>
+int main ()
+{
+	int broj, dek;
+	int p, d, t;
+	scanf("%d", &broj);
+	p=broj / 100;
+	d=(broj - (p * 100)) / 10;
+	t=broj - (p * 100) - (d*10);
+	dek=t + (d * 8) + (p * 64);
+	printf("%d", dek);
+	return 0;
+}

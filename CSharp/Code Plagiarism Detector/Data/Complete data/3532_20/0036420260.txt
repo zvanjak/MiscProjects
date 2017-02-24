@@ -1,0 +1,17 @@
+Stog* noviOdNeparnih (Stog *stog) {
+
+int stavka;
+Stog *novistog = new Stog();
+Stog *pomstog = new Stog ();
+
+while (stog->Skini (&stavka)) {
+	pomstog->Stavi (stavka);
+	if (stavka % 2 == 1)
+		novistog->Stavi (stavka);
+	}
+
+while (pomstog->Skini(&stavka)) 
+	stog->Stavi(stavka);
+
+return novistog;
+}

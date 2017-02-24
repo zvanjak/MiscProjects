@@ -1,0 +1,50 @@
+#include<stdio.h>
+#include<math.h>
+ 
+struct tocka{
+ double x;
+ double y;
+};
+ 
+int main(){
+ 
+int i;
+double x,y,r,fi,povr,d[4],k[4],m1,m3;
+struct tocka toc[4];
+ 
+for(i=0;i<4;i++){
+ scanf("%lf %lf", &toc[i].x, &toc[i].y);
+}
+ 
+d[0]=pow(pow(toc[1].x-toc[0].x,2)+pow(toc[1].y-toc[0].y,2),0.5);
+d[1]=pow(pow(toc[2].x-toc[1].x,2)+pow(toc[2].y-toc[1].y,2),0.5);
+d[2]=pow(pow(toc[3].x-toc[2].x,2)+pow(toc[3].y-toc[2].y,2),0.5);
+d[3]=pow(pow(toc[0].x-toc[3].x,2)+pow(toc[0].y-toc[3].y,2),0.5);
+ 
+k[0]=(toc[1].y-toc[0].y)/(toc[1].x-toc[0].x);
+k[1]=(toc[2].y-toc[1].y)/(toc[2].x-toc[1].x);
+k[2]=(toc[3].y-toc[2].y)/(toc[3].x-toc[2].x);
+k[3]=(toc[0].y-toc[3].y)/(toc[0].x-toc[3].x);
+ 
+m1=-1/k[1];
+m3=-1/k[3];
+ 
+if(d[0]==d[1] && d[1]==d[2] && d[2]==d[3]){
+ if(k[0]==m1 && k[0]==m3){
+  povr=d[0]*d[0];
+  printf("%.2lf", povr);
+ }
+}
+ 
+ 
+ 
+else {
+       x=(toc[0].x+toc[1].x+toc[2].x+toc[3].x)/4;
+    y=(toc[0].y+toc[1].y+toc[2].y+toc[3].y)/4;
+ 
+       r= pow( pow(x,2) + pow(y,2),0.5);
+    if(x!=0) fi=atan(y/x);
+    printf("%.2lf %.2lf", r, fi);
+}
+return 0;
+}

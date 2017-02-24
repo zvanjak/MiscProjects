@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+double fakt(int n){
+	int i;
+	double f=1;
+	for(i=1; i<=n; i++)
+		f*=i;
+	return f;
+	}
+	
+int main (){
+	int n,i;
+	double suma=1, clan;
+	scanf("%d",&n);
+	for(i=1; i<=n; i++){
+		clan=1/fakt(i);
+		suma+=clan;
+	}
+	printf("%.12f",suma);
+	return 0;
+}

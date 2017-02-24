@@ -1,0 +1,13 @@
+int najbolji(FILE *f) {
+	int brbod_max=0, rbr_max=0;
+	struct natjecatelj nat;
+	while (fread(&nat,sizeof(nat),1,f)!=0) {
+		if(nat.redni_br!=0) {
+			if(nat.bodovi > brbod_max) {
+				brbod_max=nat.bodovi;
+				rbr_max=nat.redni_br;
+			}
+		}
+	}
+	return rbr_max;
+}

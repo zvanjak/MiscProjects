@@ -1,0 +1,20 @@
+Ekipa StvoriISortiraj(char *naziv) {
+
+    int i,j, bilo=1;;
+    Ekipa nogometna(naziv);
+    nogometna.Napuni();
+
+
+    for (i=0; (i<10) && bilo; i++) {
+		bilo=0;
+        for (j=0; j<10-i; j++) {            
+            if (nogometna[j].VratiBroj() > nogometna[j+1].VratiBroj()) {
+				bilo=1;
+                nogometna.Zamijeni(j,j+1);
+            }
+        }
+    }
+    return nogometna;
+
+}
+

@@ -1,0 +1,6 @@
+double sumareda (double x, int N)
+{
+kontrola ();
+if (N==0) return 0;
+return ((pow(x,(2*N-1))/(2*N-1)) + sumareda(x,N-1));
+}

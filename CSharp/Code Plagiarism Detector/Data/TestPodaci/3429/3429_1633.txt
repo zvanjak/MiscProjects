@@ -1,0 +1,31 @@
+#include <stdio.h>
+#define NR 20
+#define NS 5
+int main()
+{int mr,ms,i,j,br,bs,b;
+ int matrica[NR][NS];
+ b=0;
+ br=0;
+ bs=0;
+ do{
+	 scanf("%d %d",&mr,&ms);}
+while((mr<1)||(mr>20)||(ms<1)||(ms>5)); 
+for(i=0;i<mr;i++)
+	{for(j=0;j<ms;j++)
+{		scanf("%d",&matrica[i][j]);}
+	};
+for(i=0;i<mr;i++)
+{for(j=0;j<ms;j++)
+	{if((matrica[i][j]%2==0)&&(matrica[i][j]!=0))b++;}
+	if(b>0){br++;
+			b=0;}
+}
+for(j=0;j<mr;j++)
+{for(i=0;i<ms;i++)
+	{if(matrica[i][j]%2!=0)b++;}
+	if(b>0){bs++;
+			b=0;}
+}
+printf("%d %d",br,bs);
+return 0;
+}

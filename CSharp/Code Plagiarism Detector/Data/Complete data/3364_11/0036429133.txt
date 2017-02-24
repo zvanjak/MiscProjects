@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main(){
+
+char a,b,c;
+int r;
+
+scanf("%c %c %c",&a,&b,&c);
+
+if ((a>='0')&&(a<='9')&&(b>='0')&&(b<='9')) {
+    if (c=='+') {r=a+b-2*'0'; printf("%d",r);}  
+    else if (c=='-') {r=a-b;  printf("%d",r);}
+    else if (c=='*') {r=(a-'0')*(b-'0');  printf("%d",r);}
+    else if (c=='/') {r=(a-'0')/(b-'0');  printf("%d",r);}
+    else if (c=='%') {r=(a-'0')%(b-'0');  printf("%d",r);}
+	else printf("Neispravna");
+}
+ 
+return 0;
+}

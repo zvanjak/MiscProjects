@@ -1,0 +1,24 @@
+#include<stdio.h>
+int main()
+{
+signed int a,b;
+signed int t_a,s_a,d_a,j_a;
+signed int t_b,s_b,d_b,j_b;
+scanf ("%d %d", &a,&b);
+
+t_a = a/1000;
+s_a = (a - (t_a * 1000)) / 100;
+d_a = (a- (t_a * 1000 + s_a *100)) /10;
+j_a = a - (t_a * 1000 + s_a *100 + d_a *10);
+
+t_b = b/1000;
+s_b = (b- (t_b *1000)) /100;
+d_b = (b- (t_b * 1000 + s_b * 100)) / 10;
+j_b = b - (t_b *1000 + s_b * 100 + d_b * 10);
+
+if ((t_a==j_b) &&(s_a == d_b) &&(d_a == s_b) &&(j_a ==t_b))
+printf("%d", (t_a+ s_a + d_a + j_a));
+else
+printf("%d",(a-b));
+return(0);
+}

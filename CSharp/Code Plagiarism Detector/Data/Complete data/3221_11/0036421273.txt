@@ -1,0 +1,13 @@
+# include <stdio.h>
+int main () {
+	int A, d, B, brojac=0;
+	scanf ("%d%d%d",&A, &d, &B);
+	if (d>=0) {
+		while (A+d<=B) {
+			A+=d;
+			brojac++;
+			printf("%d ", A);
+		}
+		printf ("%d\n", brojac);}
+	return 0;
+}

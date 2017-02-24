@@ -1,0 +1,15 @@
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+main(){
+	char a,b,c;
+	int s=0;
+	scanf("%c, %c, %c",&a,&b,&c);
+	if(c=='+'){s=a+b;printf("\nRezultat:%d",s-96);}
+	else if(c=='-'){s=(a%b)-b;printf("\nRezultat:%d",s+48);}
+	else if(c=='*'){s=a*b;printf("\nRezultat:%d",s);}
+	else if(c=='/'){s=a/b;printf("\nRezultat:%d",s);}
+	else if(c=='%'){s=a%b;printf("\nRezultat:%d",s);}
+	else printf("\nNeispravna");
+	getch();
+}

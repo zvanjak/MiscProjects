@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <math.h>
+void main()
+{double s=0,k,nf;
+ int i,n;
+ scanf("%lf",&nf);
+ n=(int)nf;
+ if(nf<1 || nf>500 || nf!=(double)n)
+	printf("\n n nije valjan");
+ else
+	{for(i=0;i<n;i++)
+	 {k=1/(double)(2*i-1);
+	  if(i%2!=0)
+		k=-1*k;
+	  s+=k;
+	 }
+	 printf("%.12lf",4*s);
+	}
+ }

@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <math.h>
+
+double f(double a){
+	double fun;
+	fun = pow(a,sin(a))*tanh(pow(a,exp(a)));
+	return fun;
+}
+int main(){
+	int i = 0,j;
+	double dx,d[50];
+	float x[50],y;
+	scanf("%lf",&dx);
+	while (i<50){
+		
+		scanf("%f", &y);
+		if (y == 0.0) break;
+		x[i] = y;
+		i++;
+	}
+
+	for (j = 0; j<i; j++){
+		d[j]=(f(x[j]+dx)-f((double)x[j]))/dx;
+		printf("%.2lf",atan(d[j]));
+	}
+
+return 0;
+}

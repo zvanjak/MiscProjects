@@ -1,0 +1,53 @@
+#include<stdio.h>
+#define max 20
+int main(){
+        int n;
+        int i,j,iks=0,oks=0;
+        char m[max][max];
+        scanf("%d",&n);
+        for (i=0;i<n;i++){
+                for(j=0;j<n;j++){
+        scanf("%s",&m[i][j]);
+                }}
+        i=0;
+        for (j=0;j<n;j++){
+                        if(m[i][j]=='X'){
+                        for (i=0;m[i][j]=='X';i++);
+                                                if (i==n) iks=1;}
+        }
+                j=0;
+        for (i=0;i<n;i++){
+                        if(m[i][j]=='X'){
+                        for (j=0;m[i][j]=='X';j++);
+                                                if(j==n) iks=1;}
+        }
+        for (i=0;m[i][i]=='X';i++);
+        if (i==n) iks=1;    
+        for (i=n;m[i][i]=='X';i--);
+        if (i==0)iks=1;
+ 
+        i=0;
+        for (j=0;j<n;j++){
+                        if(m[i][j]=='O'){
+                        for (i=0;m[i][j]=='O';i++);
+                                                if (i==n) oks=1;}
+        }
+                j=0;
+        for (i=0;i<n;i++){
+                        if(m[i][j]=='O'){
+                        for (j=0;m[i][j]=='O';j++);
+                                                if(j==n) oks=1;}
+        }
+        for (i=0;m[i][i]=='O';i++);
+        if (i==n) oks=1;    
+        for (i=n;m[i][i]=='O';i--);
+        if (i==0)oks=1;
+if (iks==1&&oks==1)printf("-");     
+else if (iks==1)printf ("X");
+else if (oks==1)printf ("O");
+else printf("-");
+
+
+
+
+return 0;}

@@ -1,0 +1,15 @@
+void FuncMinMax(DinamickoPolje &polje, int *Max, int *Min){
+
+ int i;
+ *Max=polje._Podaci[0];
+ *Min=polje._Podaci[0];
+
+ for(i=0;i<polje._BrojElem;i++){
+  
+  if(polje._Podaci[i]>*Max)
+     *Max=polje._Podaci[i];
+  
+  if(polje._Podaci[i]<*Min)   
+     *Min=polje._Podaci[i];
+  }
+}

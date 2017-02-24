@@ -1,0 +1,24 @@
+#include <math.h>
+#include <stdio.h>
+
+int main(){
+   
+   int n, i;
+   double pi, tre_clan, suma_desno;
+   scanf("%d", &n);
+   if (n < 1||n > 25){
+      printf("n nije valjan");
+   } else {
+      suma_desno = 0.;
+	  for (i = 1; i <= n; i++){
+		  tre_clan = i;
+		  tre_clan = pow(tre_clan, 8.);
+		  suma_desno+=1./tre_clan;
+	  }
+	  suma_desno*=9450;
+	  pi = pow(suma_desno, 1./8.);
+	  printf("%.12lf", pi);
+   }
+
+   return 0;
+}

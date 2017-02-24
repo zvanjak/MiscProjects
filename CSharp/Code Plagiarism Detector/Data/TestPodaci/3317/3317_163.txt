@@ -1,0 +1,32 @@
+void brisi (FILE *f, int redni_br) {
+
+     struct natjecatelj{
+
+          int redni_br;
+
+          char prezime[20+1];
+
+          int bodovi;
+
+     } nat;
+
+     while (1) {
+
+          fread(&nat, sizeof(nat), 1, f);
+
+          if (nat.redni_br==redni_br) {
+
+               nat.redni_br=0;
+
+               fseek(f, (0-sizeof(nat)), SEEK_CUR);
+
+               fwrite(&nat, sizeof(nat), 1, f);
+
+               break;
+
+          }
+
+     }
+
+}
+

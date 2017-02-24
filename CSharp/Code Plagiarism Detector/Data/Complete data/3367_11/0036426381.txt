@@ -1,0 +1,15 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+	int c;
+	char a,b;
+	scanf("%c %c",&a,&b);
+	if(a>='A' && a<='F') { 
+		if(b>='0' && b<='9') c=(a-55)*16+(b-48);
+		else c=(a-55)*16+(b-55); }
+	else {
+		if(b>='A' && b<='F') c=(a-48)*16+(b-55);
+		else c=(a-48)*16+(b-48); }
+	printf("%d",c);
+}

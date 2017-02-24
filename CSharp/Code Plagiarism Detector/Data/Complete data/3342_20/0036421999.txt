@@ -1,0 +1,6 @@
+float niz (int i) {
+ int p[3]={1,2,3};
+ kontrola();
+ if (i<=2) return p[i];
+ else      return niz(i-3)+( niz(i-2)+niz(i-1) )/2.;
+}

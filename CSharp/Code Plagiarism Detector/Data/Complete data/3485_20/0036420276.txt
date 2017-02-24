@@ -1,0 +1,63 @@
+class CjelobrojniNiz{
+	private:
+		int *_pointer;
+		int _n;
+		
+	public:
+
+		CjelobrojniNiz(int* pok, int n){
+			int i, j=1;
+			_pointer=(int*) malloc(sizeof(int)* n);
+			_n=n;
+			for (i=0;i<n;i++)
+				_pointer[i]=pok[i];
+			for (i=0;i<n-1;i++)
+				if (_pointer[i] != _pointer[i+1]) 
+					j=0;
+			SviJednaki=j;
+		}
+	
+		~CjelobrojniNiz(){
+			free(_pointer);
+		}
+
+		CjelobrojniNiz(const CjelobrojniNiz &copy){
+			int i;
+			_n=copy._n;
+			_pointer=(int*) malloc(_n*sizeof(int));
+			for(i=0;i<_n;i++)
+				_pointer[i]=copy._pointer[i];
+		}
+
+		int Usporedi(CjelobrojniNiz niz){
+			int pom, i, br=0;
+			pom=niz._n;
+			for(i=0;i<pom;i++){
+				if (niz._pointer[i] == _pointer[i])
+					br++;}
+			if (br==pom) 
+				return (1);
+			else return (0);
+		}
+
+		int SviJednaki;
+
+		int* VratiRazliku(CjelobrojniNiz niz, int* n){
+			int i=0, j=0, k=0, var;
+			int *pom=(int*) malloc(sizeof(int));
+			for (i=0;i<_n;i++){
+				var=_pointer[i];
+				while (var==_pointer[i+1]) i++;
+				for (j=0;j<niz._n;j++)
+					if (var==niz._pointer[j]) break;
+				if (j==niz._n){
+					pom=(int*) realloc(pom,(++k)*sizeof(int));
+					pom[k-1]=var;
+				}
+			}
+			*n=k;
+			if (k==0) 
+				pom= NULL;
+			return pom;
+		}
+};

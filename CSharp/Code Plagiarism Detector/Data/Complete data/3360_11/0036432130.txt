@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main () {
+int broj;
+int a,b,c,zbroj;
+scanf("%d",&broj);
+a=broj / 100;
+b=(broj-a*100)/10;
+c=broj-a*100-b*10;
+zbroj=a+b+c;
+if (zbroj%2==1) {
+printf ("%d",a*b*c);
+}
+else if (zbroj%2==0) {
+printf ("%d",a-b-c);
+}
+return 0;
+}

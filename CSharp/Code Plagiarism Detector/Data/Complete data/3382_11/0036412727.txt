@@ -1,0 +1,23 @@
+#include <stdio.h>
+int main()
+{
+int x,a,b,c,d,e,f,g;
+
+scanf("%d", &x);
+if(x>999 && x<10000){
+a=x/100;
+b=x%100;
+c=(x%1000)/10;
+d=x/1000;
+e=(x/100)%10;
+f=(x%100)/10;
+g=(x%100)%10;
+if (c==0)
+return 0;
+             else if((a*b)%c)
+             printf("%d\n", f*g);
+             else printf("%d\n", d+f);
+}
+else
+return 0;
+}

@@ -1,0 +1,21 @@
+double sumareda(double x,int N){
+double a,b;
+int i;
+kontrola();
+if(N==1) return x;
+if(N%2){
+	b=x;
+	for(i=1;i<N;i++){
+	b=b*x;
+	}
+	a = b/N +  sumareda(x,(N-1));
+}
+else{
+	b=x;
+	for(i=1;i<N;i++){
+	b=b*x;
+	}
+	a =(b/N*(-1)) + sumareda(x,N-1);
+};
+return a;
+}

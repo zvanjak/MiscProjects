@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main ()
+
+{
+int i;
+float n;
+double s=0;
+double pi=0;
+
+scanf("%f", &n);
+if ( (n<1) || (n>400) || n!=(int)(n)) { 
+	printf ("n nije valjan");
+	exit(1);
+}
+
+else
+{
+	for (i=1; i<=n; i++) {
+		s+=(double) 1/((4*i-1)*(4*i+1));
+	}
+	pi=s*8;
+	pi=4-pi;
+	printf("%11.8lf", pi);
+}
+	return 0;
+}

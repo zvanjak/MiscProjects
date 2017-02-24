@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <math.h>
+int main () {
+   int x1, x2, x3, x4, y1, y2, y3, y4;
+   double e, f, d12, d23, d34, d41, dst, ke, kf, ksm;
+   scanf("%d %d %d %d %d %d %d %d", &x1, &y1, &x2, &y2, &x3, &y3, &x4, &y4);
+   e=sqrt(( double )pow (x4-x2,2) + (double) pow (y4-y2,2) );
+   f=sqrt((double )pow (x3-x1,2) + (double) pow (y3-y1,2) );
+   d12=sqrt(( double )pow (x2-x1,2) + (double) pow (y2-y1,2) );
+   d23=sqrt( (double ) pow (x3-x2,2) + (double) pow (y3-y2,2) );
+   d34=sqrt( (double ) pow (x4-x3,2) + (double) pow (y4-y3,2) );
+   d41=sqrt( (double) pow (x1-x4,2) + (double) pow (y1-y4,2) );
+   dst=sqrt( (double )pow(e/2.,2)+ (double) pow(f/2.,2));
+       if (x3-x1==0 || x4-x2==0){
+      printf("K\n");
+      } else {
+      ke=(y3-y1)/(x3-x1);      
+      kf=(y4-y2)/(x4-x2);	 
+      ksm=ke*kf;                    
+            if (d12==dst && d23==dst && d34==dst && d41==dst && ksm==-1){
+            printf("R\n");
+            }
+            else if ((d12 != d23) || (d23 != d34) || (d34 != d41) || (d41 != d12) || (ksm!=-1)) {
+            printf("C\n");
+            }
+      }
+return 0;
+}

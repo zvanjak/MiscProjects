@@ -1,0 +1,18 @@
+#include <stdio.h>
+int main() {
+	char znak,min=91,max=64;
+	int uvjet=0;
+	do { 
+        fflush (stdin);
+	scanf ("%c", &znak);
+	if (znak>='A' && znak<='Z'){
+	if (znak<min) min=znak;
+	if (znak>max) max=znak;
+	uvjet=1;}}
+	while (znak>='A' && znak<='Z');
+	
+	if (uvjet) printf ("%c %c", min, max);
+	else printf ("-1");
+
+return 0;
+	}

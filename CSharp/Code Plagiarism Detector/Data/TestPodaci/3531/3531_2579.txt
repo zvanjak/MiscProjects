@@ -1,0 +1,26 @@
+void zamijeni (char *ulazni, int *broj){
+	int brojka=0, slovo=0, ostalo=0, veliko=1, i;
+	for (i=0; i<strlen(ulazni); i++){
+		if (isalpha(*(ulazni+i))){
+			slovo+=1;
+			if (veliko){
+				*(ulazni+i)=toupper(*(ulazni+i));
+			}else
+				*(ulazni+i)=tolower(*(ulazni+i));
+		}
+		if (isdigit(*(ulazni+i))){
+			brojka+=1;
+			*(ulazni+i)='!';
+		}
+		if (isprint(*(ulazni+i))){
+			ostalo+=1;
+			*(ulazni+i)='?';
+		}
+	}
+	if (slovo>brojka && slovo>ostalo)
+		*broj=slovo;
+	else if (brojka>slovo && brojka>ostalo)
+		*broj=brojka;
+	else
+		*broj=ostalo;
+}

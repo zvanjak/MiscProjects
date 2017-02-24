@@ -1,0 +1,10 @@
+#include <stdio.h>
+int main () {
+int i, j, n, suma=0, produkt=1, rez=0;
+scanf ("%d", &n);
+for (i = 0; i < n; i++) suma = suma + i*i;
+for (j=2; j<n;j++) produkt= produkt *i;
+rez= suma + produkt;
+printf ("%d", rez);
+return 0;
+} 

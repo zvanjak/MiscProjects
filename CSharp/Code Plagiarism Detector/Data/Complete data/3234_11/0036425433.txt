@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <math.h>
+float suma=0;
+int main(){
+	int i,n;
+	float pi;
+	scanf("%d",&n);
+	if ((n<1)||(n>100)){
+		printf("n nije valjan\n");
+	}else{
+		for(i=1;i<=n;i++){
+			suma=suma+(1/pow(i,2));
+		}
+		pi=sqrt(suma*6);
+		printf("%.12f\n",pi);
+	}
+		return 0;
+	}

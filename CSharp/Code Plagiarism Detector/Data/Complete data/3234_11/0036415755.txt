@@ -1,0 +1,20 @@
+#include<stdio.h>
+#include<math.h>
+int main() {
+	
+	int i;
+	double p=0,f;
+	float n;
+	scanf("%f",&n);
+	if(n<1 || n>100 || n!=(int)n){
+		printf("n nije valjan");
+	}
+	else{
+		for(i=1;i<=n;i++){
+			p+=(float)1/(i*i);
+		}
+         p=sqrt(6*p);
+	     printf("%.12lf",p);
+	}
+	return 0;
+}

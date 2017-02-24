@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int napraviPolje (int *A, int Na, int a, int b, int* Nc)
+   int *p, i=0, j=0, br=0, val, *pom;
+
+if(a>b) return NULL;
+
+p=(int*) malloc (Na*sizeof(a));
+pom=p;
+
+  for(i=0;i<Na;i++){
+    val=1;
+   for(j=a;j<=b;j++){
+     if(A[i]%j != 0){
+       val=0;
+     }
+   }
+   if(val==0){
+    br++;
+    p=(int*)realloc(p,br*sizeof(a));
+    *pom=A[i];
+    pom++;
+   }
+  }
+ *Nc=br;
+ return p;
+}

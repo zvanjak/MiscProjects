@@ -1,0 +1,36 @@
+int *Find3Max(int *p,int n)
+{
+      int i;
+   int *polje;
+
+      if(n<3) return NULL;
+
+      polje=(signed int *) malloc(sizeof(int)*3);
+
+   
+   polje[0]=-2147483648;
+   polje[1]=-2147483648;
+   polje[2]=-2147483648;
+
+   
+      for(i=0;i<n;i++)
+      {
+          if(p[i]>=polje[0]) 
+          {
+     
+				polje[2]=polje[1];
+                polje[1]=polje[0];
+                polje[0]=p[i];
+          }
+          else if(p[i]>=polje[1])
+          {
+                polje[2]=polje[1];
+                polje[1]=p[i];
+          }
+          else if(p[i]>=polje[2])
+          {
+			polje[2]=p[i];
+          }
+      }
+      return polje;
+}

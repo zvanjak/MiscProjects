@@ -1,0 +1,15 @@
+int br_prodanih(FILE *f,char *autor){
+    int br=0;
+    
+    struct aut{
+           char naz[31];
+           char aut[21];
+           int pro;} x;
+
+    
+    while(fscanf(f,"%s %s %d\n",x.naz,x.aut,&x.pro)==3){
+    if(strcmp(x.aut,autor)==0) 
+                     br+=x.pro;
+                     };
+    return br;
+    }

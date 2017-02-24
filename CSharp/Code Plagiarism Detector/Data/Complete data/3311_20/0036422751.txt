@@ -1,0 +1,14 @@
+float prosjek(FILE *f){
+	float kolistruka=0,suma=0;
+	struct album{
+		char naziv[30+1];
+		char autor[20+1];
+		int prodano;
+	} pomocni;
+	while (fread(&pomocni,sizeof(pomocni),1, f)==1){
+		suma+=pomocni.prodano;
+		kolistruka++;
+	}
+	return (suma/kolistruka);
+
+}

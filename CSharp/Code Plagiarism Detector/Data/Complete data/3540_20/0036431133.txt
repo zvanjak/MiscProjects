@@ -1,0 +1,21 @@
+int izbaci (zapis **glava)
+{zapis *p, *pp;
+ int br=0;
+ while(1)
+ {for(p=*glava;p&&p->pros<2.0;p=p->sljed);
+  if (p==NULL)break;
+  if (p==*glava)
+  {pp=(*glava)->sljed;
+   free(*glava);
+   *glava=pp;
+   br++;
+  }
+  else
+  {for(pp=*glava;pp->sljed!=p;pp=pp->sljed);
+   pp->sljed=p->sljed;
+   free(p);
+   br++;
+  }
+ }
+ return br;
+}

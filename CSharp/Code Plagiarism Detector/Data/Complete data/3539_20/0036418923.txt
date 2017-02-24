@@ -1,0 +1,26 @@
+float prosjek(zapis *glava) {
+      zapis *temp;
+      temp = glava;
+      float tempprosjek = 0.;
+      int n = 0;
+      if (glava == NULL)
+         return 0.;
+         
+      while (glava != NULL) {
+            tempprosjek += glava->pros;
+            n++;
+            glava = glava->sljed;
+      }
+      
+      tempprosjek /= (float)n;
+      
+      glava = temp;
+      
+      while (glava != NULL) {
+            if (glava->pros < tempprosjek)
+               glava->pros = 0.0;
+            glava = glava->sljed;
+      }
+      
+      return tempprosjek;
+}

@@ -1,0 +1,10 @@
+int rStrncmp(char *a,char *b,int n) {
+     int t;
+     kontrola();
+     if(!n) return 0;
+     t = (int)*a - (int)*b; 
+     if( t != 0 ) return t;      
+     if( !*a ) return 0; 
+	 if( !*b ) return 0;	
+     return rStrncmp( a+1, b+1,n-1);
+  }

@@ -1,0 +1,11 @@
+Stog *RedListomUOOPStog(atom2* glava, atom2* rep)
+{
+	if(!glava)
+	{
+		Stog *stog = new Stog();
+		return stog;
+	}
+	Stog* stog = RedListomUOOPStog((glava)->sljed, rep);
+	stog->Stavi(glava->element);
+	return stog;	
+}

@@ -1,0 +1,38 @@
+#include <stdio.h>
+int main ( ) {
+	char br1, br2, c;
+	int rez;
+	int x;
+	scanf("%c %c %c", &br1, &br2, &c);
+	br1 =  br1 - 48;
+	br2 = br2 - 48;
+	if ((int)br1 <= -10 || (int)br1 >= 10) 
+	{
+		printf("Unesen prvi neispravan broj");
+	}
+
+	if ((int)br2 <= -10 || (int)br2 >= 10 || (int)br2 == 0)
+	{
+		printf("Unesen drugi neispravan broj");
+	    return 0;	
+	}
+		
+	if (!((c == '+')||(c == '-')||(c == '*')||(c == '/')||(c == '%'))) {
+		x = printf("neispravna");
+	}
+	if (c == '+') 
+		rez = br1 + br2;
+	else if (c == '-')
+		rez = br1 - br2;
+	else if (c == '*')
+		rez = br1 * br2;
+	else if (c == '/')
+		rez = br1 / br2;
+	else if (c == '%')
+		rez = br1 % br2;
+	
+
+	x = printf("%i\n", rez); 
+
+	return 0;
+}

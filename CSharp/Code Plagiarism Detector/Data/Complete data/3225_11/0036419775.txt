@@ -1,0 +1,20 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+  int n,i;
+  double pi,s=0;
+  scanf ("%d",&n);
+  if (n<1 || n>400)
+    printf ("\n n nije valjan");
+  else
+  {
+    for (i=0;i<n;i++)
+    {
+      s=s+(1/(2*i+1)*(2*i+1));
+    }
+    pi=sqrt(s*8);
+    printf ("\n %.12f",pi);
+  }
+  return 0;
+}

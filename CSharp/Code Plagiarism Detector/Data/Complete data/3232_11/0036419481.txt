@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+	double broj, dva=0.;
+	int n, i;
+	scanf ("%lf", &broj);
+	n=(int)broj;
+	if (((double)n!=broj) || (n>30) || (n<1)) {
+		printf ("n nije valjan\n");
+		return 0;
+	}
+	for (i=0; i<n; ++i) {
+		double p=1.;
+		int j;
+		for (j=0; j<i; ++j) p*=2.;
+		dva+=1/p;
+	}
+	printf ("%.12lf\n", dva);
+	return 0;
+}

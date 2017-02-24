@@ -1,0 +1,60 @@
+#include<stdio.h>
+
+int main()
+{
+int broj1,broj2,jedinica, desetica;
+scanf("%d %d", &broj1,&broj2);
+if (broj1%10) 
+{	
+	if((broj2%10)==9)
+	{
+		broj2=broj2/10;
+		broj2=broj2*10;
+	}
+	else
+	{
+		broj2++;
+	}
+}
+if((broj1%100)/10)
+{
+	if((broj2%100)/10==9)
+	{
+		jedinica=broj2%10;
+		broj2=broj2/100;
+		broj2=broj2*100;
+		broj2=broj2+jedinica;
+	}
+	else
+	{
+		broj2=broj2+10;
+	}
+}
+if((broj1%1000)/100)
+{
+	if((broj2%1000)/100==9)
+	{
+		desetica=broj2%100;
+		broj2=broj2/1000;
+		broj2=broj2*1000;
+		broj2=broj2+desetica;
+	}
+	else
+	{
+		broj2=broj2+100;
+	}
+}
+if(broj1/1000)
+{
+	if((broj2/1000)==9)
+	{
+		broj2=broj2-9000;
+	}
+	else
+	{
+		broj2=broj2+1000;
+	}
+}
+printf("\n%d\n",broj2);
+return 0;
+}

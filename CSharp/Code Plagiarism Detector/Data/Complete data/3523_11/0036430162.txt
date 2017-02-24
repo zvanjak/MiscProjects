@@ -1,0 +1,20 @@
+int izbaci(char *ulazni,char *niz)
+{
+	int i,j,c,br=0;
+	char ulaz[strlen(ulazni)+1];
+	sprintf(ulaz, ulazni);
+
+	for(i=0;niz[i]!='\0';i++)	
+		for(j=0;ulaz[j]!='\0';j++)		
+			if(niz[i] == ulaz[j]){
+				for(c=j;ulaz[c]!='\0';c++){
+					ulaz[c] = ulaz[c+1];
+					if(ulaz[c]=='\0'){
+                                                j--; 
+						break;
+                                        }
+                                }				
+				br++;				
+			}
+	return br;
+}

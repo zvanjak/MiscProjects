@@ -1,0 +1,10 @@
+void PrepisiStogURed(Stog *stog, Red *red)
+{
+int clan;
+if (stog->Skini(&clan))
+{
+PrepisiStogURed(stog, red);
+if ((clan % 2) == 0)
+red->DodajURed(clan);
+}
+}

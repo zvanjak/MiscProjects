@@ -1,0 +1,43 @@
+int izbaci (zapis **glava) {
+	zapis *pom, *pom2;
+	int br = 0, o = 1;
+	pom = (*glava);
+	if ( pom == NULL) return 0;
+	while (o) {
+		if ((*glava)->pros < 2) {
+			if ((*glava)->sljed == NULL) {
+				free (*glava);
+				(*glava) = NULL;
+				br++;
+				break;
+			}
+			(*glava) = (*glava)->sljed;
+			free (pom);
+			pom = (*glava);
+			br++;
+		}
+		else break;
+	}
+	if ((*glava) == NULL || (*glava)->sljed == NULL ) o--;
+	while (o) {
+		if (pom->sljed->sljed == NULL) {
+			if (pom->sljed->pros <2) {
+				pom2 = pom->sljed;
+				pom->sljed = NULL;
+				free (pom2);
+				br++;
+			}
+			break;
+		}
+		if ( pom->sljed->pros <2 ) {
+			pom2 = pom->sljed;
+			pom->sljed = pom->sljed->sljed;
+			free (pom2);
+			br++;
+		}
+		if (pom->sljed->pros < 2 || pom->sljed->sljed == NULL) continue;
+		pom = pom->sljed;
+		
+	}
+	return br;
+}

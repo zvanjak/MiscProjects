@@ -1,0 +1,41 @@
+#include<stdio.h>
+main()
+{
+	int n,i,k;
+	double e,pnaz=1,psum=0,nnaz=1,nsum=0,sum;
+	scanf("%d",&n);
+	if((n>=1)&&(n<=30))
+	{
+		for(i=2;i<=(n+1);i++)
+		{
+			if(i%2==0)
+			{
+				k=i;
+				while(k!=0)
+				{
+					pnaz=pnaz*k;
+					k--;
+				}
+			psum=psum+1/pnaz;
+			pnaz=1;
+			}
+			else
+			{
+				k=i;
+				while(k!=0)
+				{
+					nnaz=nnaz*k;
+					k--;
+				}
+			nsum=nsum+(1/nnaz);
+			nnaz=1;
+				}
+		}
+			sum=psum-nsum;
+			e=(1/sum);
+			printf("%.12f",e);
+		}
+		else
+			printf("n nije valjan");
+		return(0);
+	}

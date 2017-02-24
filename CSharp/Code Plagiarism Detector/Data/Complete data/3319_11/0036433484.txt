@@ -1,0 +1,23 @@
+void dodaj(FILE *f){
+	struct natjecatelj{
+	     int redni_broj;
+		 char prezime [20+1];
+		 int bodovi;
+	};
+	int i=0,j=0;
+	struct natjecatelj osoba;
+	f=fopen("rez.bin","r+b");
+	while(fread(&osoba,sizeof(osoba),1,f)==1){
+		
+		if (osoba.bodovi>i) {
+			i=osoba.bodovi;
+			j=osoba.redni_broj;
+		}
+	}
+	fseek(f,(long)((j-1)*sizeof(osoba)),SEEK_SET);
+    fread(&osoba,sizeof(osoba),1,f);
+	osoba.bodovi+=10;
+	fseek(f,(long)((j-1)*sizeof(osoba)),SEEK_SET);
+	fwrite(&osoba,sizeof(osoba),1,f);
+	fclose(f);
+}

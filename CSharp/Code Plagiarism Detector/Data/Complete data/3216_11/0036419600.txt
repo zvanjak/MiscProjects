@@ -1,0 +1,14 @@
+int main () {
+int n, i, prost=0;
+do {
+    scanf ("%d",&n);
+	if (n > 1) prost = prost+1;
+    for(i=2; i<n ; i++){
+        if ( n % i == 0 ){
+        prost = prost-1 ; 
+		break;}
+    }
+}while (!(n==2));
+printf ("%d", prost);
+return 0;
+}

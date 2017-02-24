@@ -1,0 +1,22 @@
+/* Program radi uz pretpostavku da je u broju 456 neparna znamenka 5 (parno mjesto unutar broja ali je znamenka neparna pa nju uzimamo) */
+
+#include <stdio.h>
+
+void main() {
+    int broj, suma = 0, znamenka;
+    scanf("%d", &broj);
+    if (broj >= 250 && broj <= 950) {
+        while (broj > 0) {
+            znamenka = broj % 10;
+            if (znamenka % 2 == 1) suma += znamenka;
+            broj = broj / 10;
+        }
+    } else {
+        while (broj > 0) {
+            znamenka = broj % 10;
+            suma += znamenka;
+            broj = broj / 10;
+        }
+    }
+    printf("%d", suma);
+}

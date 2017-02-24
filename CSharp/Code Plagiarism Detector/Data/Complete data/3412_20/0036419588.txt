@@ -1,0 +1,14 @@
+char *SamoDuplikati(char *ulazni_niz){
+	char *izlaz;
+	int i,j,k=0;
+	if(ulazni_niz==NULL || strcmp(ulazni_niz,"")==0) return NULL;
+	izlaz=(char *) malloc(strlen(ulazni_niz)*sizeof(char));
+	for(i=1;i < strlen(ulazni_niz);i++)
+		for(j=i-1;j >= 0;j--)
+			if (ulazni_niz[i]==ulazni_niz[j]) {
+				izlaz[k++]=ulazni_niz[i];
+				break;
+			}
+	izlaz[k]=0;
+	return izlaz;	
+}

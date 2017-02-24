@@ -1,0 +1,13 @@
+int izbaciDuplikate(char *ulazni){
+  int i, j, k, br=0;
+  for(i=0; *(ulazni+i); ++i)
+    for(j=i+1; *(ulazni+j); ++j)
+      if(*(ulazni+i)==*(ulazni+j) && *(ulazni+j)!=-1){
+        br++;
+        for(k=j; *(ulazni+k); ++k)
+          *(ulazni+k)=*(ulazni+k+1);
+        j--;
+      }     
+  return br;
+}
+

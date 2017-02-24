@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include <math.h>
+
+int main () {
+
+	int n, z, br;
+	/* printf("Unesite broj n:"); */
+	scanf("%d", &n);
+
+	if(n<0){
+		printf("n nije pozitivan");
+		return 0;
+	}
+
+	z=0;
+	br=n;
+
+	while(br>0){
+		br/=10;
+		z++;
+	}
+	
+	br=n;
+
+	while(z>0){
+		br=br%((int)pow(10,z));		
+		z--;
+		printf("%d ",br/((int)pow(10,z)));
+
+}
+
+return 0;
+}

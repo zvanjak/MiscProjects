@@ -1,0 +1,25 @@
+typ\
+edef int * * *nekitip[10];
+
+char * * str[12][];
+
+int v=1, z=12;
+
+struct stru {
+	int a, b;
+} struktura[] = {{1, 2}, {3, 4}};
+
+int main(int argn) {
+	int a;
+	nekitip ludo;
+	struct stru x;
+
+	nekajprijeifa;
+
+	if (a == 10) {
+		printf("hehe...\1\"", '\'');
+		system("pause");
+	}
+
+	return 0;
+}

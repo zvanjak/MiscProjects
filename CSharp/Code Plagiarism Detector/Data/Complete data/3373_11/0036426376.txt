@@ -1,0 +1,14 @@
+#include<stdio.h>
+
+int main(){
+	int a, b, c, i, rez;
+	scanf("%d %d", &a, &b);
+	c=a; rez=0; i=1;
+	if (a>b) c=b;
+	while (c!=0) {
+		rez+=(c%8)*i;
+		c/=8; i*=10;
+	}
+	printf("%d\n", rez);
+	return 0;
+}

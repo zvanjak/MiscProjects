@@ -1,0 +1,23 @@
+#include <stdio.h>
+/*#include <math.h>*/
+void main()
+ {
+	
+	int minn,maks,unos;
+	
+	unos=maks=minn=1;
+	
+	while (((unos%4)!=0)&&(unos!=0)){
+	
+		/*printf("Unesi cijeli broj:\n");*/
+		scanf("%d",&unos);	
+		
+		if (unos<minn)
+			minn=unos;
+		if (unos>maks)
+			maks=unos;
+		}
+	 
+		/*printf("\n %d %d",minn,maks);*/
+                printf("%d %d", minn, maks);
+ }

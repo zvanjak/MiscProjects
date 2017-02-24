@@ -1,0 +1,18 @@
+#include<stdio.h>
+
+int main()
+{
+      int odra, nomi,cijena;
+      float brutto,netto;
+      scanf("%d %d %d",&odra,&nomi,&cijena);
+      brutto=odra*cijena;
+      if(odra>nomi) brutto*=1.15;
+      else if(odra<nomi) brutto*=0.9;
+
+      if(brutto>6000) netto=0.7*brutto;
+      else netto=0.8*brutto;
+      
+      printf("%.2f",netto);
+
+return 0;
+}

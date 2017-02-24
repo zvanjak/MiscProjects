@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <math.h>
+int main () {
+	int i,n;
+	double p,s=0;
+	scanf("%d",&n);
+	if ((n<1)||(n>30))
+	printf ("n nije valjan");
+	else {
+		for(i=1;i<=n;i++)
+		s+=945/pow (i,6);
+		p=pow (s,(1./6));
+		printf("%1.12f",p);
+}
+return 0;
+}

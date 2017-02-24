@@ -1,0 +1,29 @@
+int SplitToSentences (char * inputField, char * outputField)
+{
+int cnt = 0;
+char* temp = inputField;
+char* w = outputField;
+int bioZarez = 0;
+while( temp != '\0')
+{
+if( *temp == ',' )
+{
+*w = '.';
+cnt++;
+bioZarez = 1;
+}
+else if( *temp <= 'Z' && *temp>='A' && bioZarez)
+{
+*w = *temp;
+bioZarez = 0;
+}
+else if( *temp <= 'z' && *temp>='a' && bioZarez)
+{
+*w = *temp - 32;
+bioZarez = 0;
+}
+else *w = *temp;
+temp++;w++;
+}
+return cnt;
+}

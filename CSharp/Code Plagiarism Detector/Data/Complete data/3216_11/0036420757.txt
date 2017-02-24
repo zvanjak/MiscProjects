@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main () {
+	int x,i,prost,s;
+	scanf("%d",&x);
+		s=0;
+		while (x>2) {
+		prost=1;
+		scanf("%d",&x);
+		for (i=2;i<=x-1;i=i+1) if (x%i==0) prost=0;
+		if (prost) s=s+1;
+	}
+	printf("%d",s);
+	return 0;
+}

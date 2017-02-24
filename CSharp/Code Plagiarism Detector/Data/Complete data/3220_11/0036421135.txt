@@ -1,0 +1,20 @@
+#include <stdio.h>
+int main()
+{
+	int broj,y,z,i,zbroj;
+	scanf("%d",&broj);
+	i=1; zbroj=0;
+	if (broj>0) {
+	while(broj>0)
+	{
+    y=broj/10;
+    z = broj % 10;   
+	if ((z % 2)!=0) {
+	zbroj=zbroj+z*i;
+	i=i*10;}
+	broj=y;
+	}
+	printf("%d", zbroj);}
+	else printf("%d", broj);
+	return(0);
+}

@@ -1,0 +1,11 @@
+#include <stdio.h>
+int main(){
+	int a, b, c, d;
+	scanf("%d", &a);
+	b = a / 100;
+	c = a - (b * 100);
+	d = (b + c) % b;
+	if(d==0) printf("Jest");
+	else printf("Nije");
+	return 0;
+}

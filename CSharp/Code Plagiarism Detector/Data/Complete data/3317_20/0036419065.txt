@@ -1,0 +1,9 @@
+void brisi(FILE *f,int redni_br){
+	struct natjecatelj natj,c;
+	fseek(f,(long)((redni_br-1)*sizeof(natj)),SEEK_SET);
+	fread(&natj,sizeof(natj),1,f);
+		natj.redni_br=0;
+		printf("%s",natj.prezime);
+		c.bodovi=natj.bodovi;
+	fseek(f,(long)((redni_br-1)*sizeof(natj)),SEEK_SET);
+	fwrite(&natj,sizeof(natj),1,f);}

@@ -1,0 +1,15 @@
+#include <stdio.h>
+int main () {
+int rez, i,n, umn=1 , zbr=0;
+scanf("%d", &n);
+if (n >= 3) {
+for (i=2; i<=n; i++){
+	umn *= (i-1) ;
+}
+for (i=0; i<=n; i++){
+	zbr += (i*i);
+}
+rez= umn + zbr;
+printf("%d", rez); }
+return 0;
+}

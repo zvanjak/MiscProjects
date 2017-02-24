@@ -1,0 +1,16 @@
+#include<stdio.h>
+
+void brisi (FILE *f, int redni_br){
+	struct natjecatelj{
+		int redni_br;
+		char prezime[20+1];
+		int bodovi;
+	}bla;
+
+	fseek(f, (redni_br-1)*sizeof(bla),SEEK_SET);
+	fread(&bla, sizeof (bla),1,f);
+	if (redni_br==bla.redni_br){
+		bla.redni_br=0;}
+	fseek(f,-sizeof(bla),SEEK_CUR);
+	fwrite(&bla,sizeof(bla),1,f);
+}

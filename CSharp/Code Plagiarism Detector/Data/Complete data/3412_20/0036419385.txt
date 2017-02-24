@@ -1,0 +1,31 @@
+char *SamoDuplikati(char *ulazni_niz)
+{
+	int duljina = 0, i = 0, j;
+	char *niz;
+	niz = NULL;
+
+	if ((ulazni_niz == NULL) || (*ulazni_niz == '\0'))
+	{
+		return NULL;
+	}
+
+	while (ulazni_niz[i] != '\0')
+	{
+		for (j = i - 1; j >= 0; j--)
+		{
+			if (ulazni_niz[i] == ulazni_niz[j])
+			{
+				duljina++;
+				niz = (char *) realloc(niz, sizeof(char) * duljina);
+				niz[duljina - 1] = ulazni_niz[i];
+				break;
+			}
+		}
+		i++;
+	}
+
+	niz = (char *) realloc(niz, sizeof(char) * (duljina + 1));
+	niz[duljina] = '\0';
+
+	return niz;
+}

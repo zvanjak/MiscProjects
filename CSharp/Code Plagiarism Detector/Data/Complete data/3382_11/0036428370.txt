@@ -1,0 +1,19 @@
+#include <stdio.h>
+int main () {
+	unsigned int x, pd, dd, sd, p, t, c, s, u;
+	scanf ("%d", &x);
+	pd = x / 100;
+	dd = x % 100;
+	sd = (x / 10) % 100;
+	p = x / 1000;
+	t = sd % 10;
+	c = x % 10;
+	if ((pd * dd) % sd == 0) {
+		s = p + t;
+		printf ("%d", s);
+	} else {
+		u = t * c;
+		printf ("%d", u);
+	}
+	return 0;
+}

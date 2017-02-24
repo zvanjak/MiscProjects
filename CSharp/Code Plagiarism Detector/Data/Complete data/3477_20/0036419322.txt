@@ -1,0 +1,42 @@
+class Recenica{
+      private: char *Rec;
+               int n;
+      public: Recenica();
+              void UcitajZnak(char znak);
+              int PrebrojiRijeci();
+              int PrebrojiZareze();
+};
+Recenica:: Recenica(){
+           Rec = (char*)malloc(sizeof(char));
+           Rec[0] = '\0';
+           n = 0;
+}
+
+void Recenica:: UcitajZnak(char znak){
+                Rec = (char*)realloc(Rec,(n+1)*sizeof(char));
+                Rec[n++]=znak;
+                Rec[n]='\n';              
+}
+
+int Recenica:: PrebrojiRijeci(){
+           int i=0, BrojRijeci=0;
+           while (i<n){
+                 if (isalpha(Rec[i])){
+                    BrojRijeci++;
+                    while (isalpha(Rec[i++]));
+                    continue;
+                 }
+                 else if (!isalpha(Rec[i])){
+                         while (!isalpha(Rec[i++]));
+                         continue;
+                 }
+           }
+           return BrojRijeci;
+}
+
+int Recenica:: PrebrojiZareze(){
+           int i, BrojZareza=0;
+           for (i=0; i<strlen(Rec); i++)
+               if (Rec[i]==',') BrojZareza++;
+           return BrojZareza;
+}

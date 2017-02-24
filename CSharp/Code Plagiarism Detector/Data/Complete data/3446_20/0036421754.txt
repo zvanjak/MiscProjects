@@ -1,0 +1,25 @@
+class Kosarica{
+private: 
+    float *_polje;
+    int _n;
+public:
+      Kosarica(){*_polje=NULL;_n=0;}
+      ~Kosarica(){free(_polje);}
+      void DodajProizvod(float cijena){
+                   _polje=(float*)realloc(_polje,(_n+1)*sizeof(float));
+                   _polje[_n]=cijena;
+                   _n++;              }
+      float ProsjecnaCijena(){
+                  int i;
+                  float suma=0;
+                  if(_n==0) return 0;
+                  for(i=0;i<_n;i++) suma+=_polje[i];  
+                  return (suma/_n);  }
+      float NajjeftinijiProizvod(){
+                  int i;
+                  float min;
+                  if (_n==0)return 0;
+                  min=_polje[0];
+                  for(i=1;i<_n;i++) if(_polje[i]<min) min=_polje[i]; 
+                  return min;   }  
+};

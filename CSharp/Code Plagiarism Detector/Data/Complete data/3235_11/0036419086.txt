@@ -1,0 +1,20 @@
+#include<stdio.h>
+#include<math.h>
+int main ()
+{
+	int n, i;
+	float r, ln2;
+	scanf("%d",&n);
+	if ((n<1) || (n>100))
+		printf("n nije valjan");
+	else
+	{
+		ln2=0;
+		for (i=0; i<n; i++)
+		{
+			ln2+= (float)pow(-1,i)/((float)(i+1));
+		}
+		printf("%.12f",ln2);
+	}
+	return 0;
+}

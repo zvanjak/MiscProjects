@@ -1,0 +1,24 @@
+#include <stdio.h>
+int main() {
+int k,x,a,b,c,d,e,f,g,h,n;
+do{
+scanf("%d",&k);
+a=k/1000;
+b=k/100%10;
+c=k/10%10;
+d=k%10;
+}
+while(a!=1&&a!=0||b!=1&&b!=0||c!=1&&c!=0||d!=1&&d!=0);
+scanf("%d",&x);
+e=x/1000;
+f=x/100%10;
+g=x/10%10;
+h=x%10;
+e=(a+e)%10;
+f=(b+f)%10;
+g=(c+g)%10;
+h=(d+h)%10;
+n=1000*e+100*f+10*g+h;
+printf("%d",n);
+	return 0;
+}

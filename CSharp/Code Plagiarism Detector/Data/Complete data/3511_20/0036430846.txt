@@ -1,0 +1,112 @@
+typedef struct
+{
+	char ime[20+1];
+	char prezime[30+1];
+	char jmbag[10+1];
+	int ocjena;
+} tip;
+
+typedef struct at
+{
+	tip t;
+	struct at *sljed;
+} atom;
+
+int brojElementa(atom *glava)
+{
+	int br;
+
+	br = 0;
+
+	while(glava)
+	{
+		glava = glava->sljed;
+		++br;
+	}
+
+	return br;
+}
+
+int dodaj(atom **glavap, tip element)
+{
+	atom *novi;
+	novi = (atom*)malloc(sizeof(atom));
+
+	if(!novi) return 0;
+
+	novi->sljed = *glavap;
+	novi->t = element;
+
+	*glavap = novi;
+
+	return 1;
+}
+
+int maksOcjena(atom *glava)
+{
+	int max;
+	max = -1;
+
+	while(glava)
+	{
+		if(glava->t.ocjena>max) max = glava->t.ocjena;
+
+		glava = glava->sljed;
+	}
+
+	return max;
+}
+
+float prosjOcjena(atom *glava)
+{
+	int suma, nr;
+
+	if(!glava) return -1.0f;
+
+	nr = brojElementa(glava);
+
+	suma = 0;
+	while(glava)
+	{
+		suma += glava->t.ocjena;
+		glava = glava->sljed;
+	}
+
+	return (float)suma/(float)nr;
+}
+
+int izbaciPrezimePocinjeS(atom **glavap, char *prezimePocetak)
+{
+	atom *p, *tmp;
+	int nr;
+
+	if(!(*glavap)) return 0;
+
+	nr = 0;
+	while(strstr((*glavap)->t.prezime, prezimePocetak)==(*glavap)->t.prezime)
+	{
+		p = *glavap;
+		*glavap = (*glavap)->sljed;
+		free(p);
+		++nr;
+	}
+
+	p = *glavap;
+	while(p)
+	{
+		if(strstr(p->t.prezime, prezimePocetak)==p->t.prezime)
+		{
+			tmp->sljed = p->sljed;
+			free(p);
+			p = tmp->sljed;
+			++nr;
+		}
+		else
+		{
+			tmp = p;
+			p = p->sljed;
+		}
+	}
+
+	return nr;
+}

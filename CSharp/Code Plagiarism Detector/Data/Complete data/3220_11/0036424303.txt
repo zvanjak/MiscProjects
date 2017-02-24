@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <math.h>
+int main () {
+	int a, i, x, j, w, z, l, c, h, g, k;
+	scanf("%d", &a);
+	if (a<=0)
+	printf ("%d", a);
+	else {{{
+	x=a/10; i=k=0; 
+	while (x!=0) {
+		x/=10;
+		i+=1;
+	}}
+	i=i+1;
+	w=a/(pow(10,(i-1)));
+	if ((w%2==1)&&(w!=0)){
+		k=k+1;
+		printf ("%d", w);}
+	l=a;
+	for (j=i; j>2; j--) {
+		h=a/(pow(10,(j-2))); g=(a/(pow(10,j-1)));
+		c=h-g*10;
+		if ((c%2==1)&&(c!=0)){
+			printf ("%d",c);
+			k=k+1;
+		}}
+		l=a%10;
+	if (a>0)
+		if (a>9)
+		if ((l%2==1)&&(l!=0)) {
+		printf("%d", l);
+		k=k+1;}}
+	if (k==0) printf("%d", k);}
+	return 0;
+}

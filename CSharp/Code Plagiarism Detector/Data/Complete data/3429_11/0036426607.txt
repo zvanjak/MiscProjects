@@ -1,0 +1,28 @@
+#include <stdio.h>
+int polje[30][30];
+
+int main (void) {
+  int tmp, rj1 = 0, rj2 = 0, i, j, n,m;
+  
+  while( scanf("%d %d", &n, &m), ( n < 1 || n > 20 || m < 1 || m > 5) );
+
+  for (i=0; i<n; i++) {
+    tmp = 0;
+    for (j=0; j<m; j++) {
+       scanf("%d", &polje[i][j]);  
+       if (polje[i][j] % 2 == 0) tmp = 1;
+     }
+     if (tmp == 1) rj1 ++;
+   }  
+   
+   for (j=0; j<m; j++) {
+     tmp = 0;
+     for(i=0; i<n; i++)
+       if (polje[i][j] % 2 == 1) tmp = 1;
+     if (tmp == 1) rj2++; 
+   }  
+   
+   printf("%d %d\n", rj1, rj2);
+  
+  return 0;
+}  

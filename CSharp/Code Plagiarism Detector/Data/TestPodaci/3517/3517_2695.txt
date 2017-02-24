@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <math.h>
+
+double f( double x ) {
+   double ret = (exp( x ) - exp( -x ))/2.0;
+   ret = pow( x, ret );
+   ret *= exp( x*x );
+   return ret;
+}
+
+int main(void) {
+   double deltax, x;
+   scanf( "%lf", &deltax );
+   while( scanf( "%lf", &x ) == 1 && x != 0.0 )
+      printf( "%.2lf\n", atan2( f( x+deltax ) - f( x ), deltax ) );
+   return 0;
+}

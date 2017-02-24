@@ -1,0 +1,90 @@
+class CjelobrojniNiz {
+public:
+
+	int SviJednaki;
+	
+	CjelobrojniNiz () {
+		BrojElemenata = 0;
+		cniz = new int[BrojElemenata];
+	}
+	
+	CjelobrojniNiz (int* niz, int n) {
+		BrojElemenata = n;
+		cniz = new int[BrojElemenata];
+		for (int i = 0; i < BrojElemenata; i++)
+			cniz[i] = niz[i];
+		for (i = 1; i < BrojElemenata; i++) {
+		SviJednaki = 1;
+		    if (cniz[0] != cniz[i]) {
+			    SviJednaki = 0;
+			    break;
+			}
+		}
+	}
+	
+	CjelobrojniNiz (const CjelobrojniNiz &other) {
+		BrojElemenata = other.BrojElemenata;
+		cniz = new int[BrojElemenata];
+		for (int i = 0; i < BrojElemenata; i++)
+			cniz[i] = other.cniz[i];
+	}
+	
+	~CjelobrojniNiz () {
+		delete []cniz;
+	}
+	
+	int Usporedi (CjelobrojniNiz niz) {
+		int NalaziUOba;
+		int brojac = 0;
+		if (BrojElemenata != niz.BrojElemenata) 
+			return 0;
+		for (int i = 0; i < BrojElemenata; i++) {
+			NalaziUOba = 0;
+			for (int j = 0; j < niz.BrojElemenata; j++)
+				if (cniz[i] == niz.cniz[j])
+					NalaziUOba = 1;
+			if (NalaziUOba)
+				brojac ++;
+		}
+		if (brojac == BrojElemenata)
+			return 1;
+		else 
+			return 0;
+	}
+
+	int* VratiRazliku (CjelobrojniNiz niz, int* n) {
+		int NalaziUOba, postoji = 0;
+		int *pom = new int[BrojElemenata];
+		int brojac = 0;
+		for (int i = 0; i < BrojElemenata; i++) {
+			NalaziUOba = 0;
+			for (int j = 0; j < niz.BrojElemenata; j++)
+				if (cniz[i] == niz.cniz[j])
+					NalaziUOba = 1;
+			if (!NalaziUOba) { 
+				for (int k  = 0; k < brojac; k++)
+					if (cniz[i] == pom[k])
+						postoji =1;
+				if (!postoji) {
+				    pom[brojac] = cniz[i];
+				    brojac++;
+				}
+				postoji = 0;
+			}
+		}
+
+		int *nizrazlike = new int[brojac];
+
+		for (i = 0; i < brojac; i++)
+			nizrazlike[i] = pom[i];
+
+		*n = brojac;
+		
+		delete []pom;
+		return nizrazlike;
+	}
+private:
+
+	int *cniz;
+	int BrojElemenata;
+};

@@ -1,0 +1,16 @@
+#include <stdio.h>
+int najbolji(FILE *f){
+	int n=0,rb;
+	struct natjecatelj{
+		int redni_br;
+		char prezime[20+1];
+		int bodovi;
+	}zapis;
+	while (fread(&zapis,sizeof(zapis),1,f)==1){
+		if (zapis.redni_br!=0  &&  n<zapis.bodovi){
+			n = zapis.bodovi;
+			rb = zapis.redni_br;
+		}
+	}
+	return rb;
+}

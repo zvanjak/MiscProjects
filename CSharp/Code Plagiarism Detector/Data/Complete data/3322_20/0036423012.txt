@@ -1,0 +1,7 @@
+int rBrojPojavljivanja (int *polje, int n, int broj){
+int prebroj=0;
+kontrola();
+if (n==-1) return 0;
+prebroj= (*(polje+n)==broj)+rBrojPojavljivanja(polje,n-1,broj);
+return prebroj
+;}

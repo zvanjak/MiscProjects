@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main ()
+{
+	unsigned int x, p, d, t, kv;
+	scanf("%d", &x);
+	p=x / 100;
+	d=(x - p * 100) / 10;
+	t=(x - (p * 100) - (d * 10));
+	kv=p*p;
+	if(kv==(x - p * 100))
+		printf("%d%d%d", t, d, p);
+	else if(x>=150 && x <=450)
+		printf("1");
+	else if(x>=451 && x<=700)
+		printf("7");
+	else
+		printf("%d", p + d + t);
+	
+	return 0;
+}

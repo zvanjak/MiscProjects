@@ -1,0 +1,82 @@
+typedef struct {
+        char ime [20 + 1];
+        char prezime [30 + 1];
+        char jmbag [10 + 1];
+        int ocjena;
+} tip;
+
+typedef struct n {
+   tip element;
+   struct n *sljed;
+} atom;
+
+
+int dodaj (atom **glavap, tip element) {
+  atom *neue;
+  if ((neue = (atom *) malloc(sizeof(atom))) == NULL) return 0;
+  strcpy ((neue->element).ime, element.ime);
+  	strcpy ((neue->element).prezime, element.prezime);
+  		strcpy ((neue->element).jmbag, element.jmbag);
+  (neue->element).ocjena = element.ocjena;
+    neue->sljed = *glavap;
+  *glavap = neue;
+  
+  return 1;
+	}
+int brojElementa (atom *glava) {
+  atom *pomoc; int brojelem = 0;
+  for (pomoc = glava; pomoc != NULL; pomoc = pomoc->sljed) brojelem++;
+    return brojelem;
+	}
+
+int maksOcjena (atom *glava) {
+  atom *pomoc; 
+  int maksimum;
+    if (glava == NULL) return -1;
+  maksimum = (glava->element).ocjena;
+  for (pomoc = glava; pomoc != NULL; pomoc = pomoc->sljed) 
+  if ((pomoc->element).ocjena > maksimum) maksimum = (pomoc->element).ocjena;
+  
+  return maksimum;
+ 	}
+
+float prosjOcjena (atom *glava) {
+  atom *pomoc; 
+  int suma = 0; 
+  int b = 0;
+  
+  if (glava == NULL) return -1;
+    for (pomoc = glava; pomoc != NULL; pomoc = pomoc->sljed) {
+      b++; 
+      suma += (pomoc->element).ocjena;
+  }
+  return ((float) suma / b);
+
+	}
+
+int izbaciImePocinjeS (atom **glavap, char *imePocetak)
+{
+ atom *pomoc, *pp; 
+ int b = 0;
+ 
+ for (pomoc = *glavap; pomoc != NULL; ) {
+      if ((strncmp ((pomoc->element).ime, imePocetak, strlen (imePocetak)) == 0) && (strlen ((pomoc->element).ime) >= strlen (imePocetak))) {
+               if (pomoc == *glavap) {
+               pp = (*glavap)->sljed;
+               free (*glavap);
+	       *glavap = pp;
+	       pomoc = pp;
+	       b++;
+         }
+         
+          else {		   
+	       for (pp = *glavap; pp->sljed != pomoc; pp = pp->sljed);
+	       pp->sljed = pomoc->sljed;
+	       free (pomoc);
+               pomoc = pp->sljed;
+	       b++;
+          }
+}
+else pomoc = pomoc->sljed; }
+return b;
+} 

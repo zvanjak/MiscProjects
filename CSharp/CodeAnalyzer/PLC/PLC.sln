@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Iteracija 1", "Iteracija 1", "{FBC66350-5350-4CE0-9B79-1B6A0EB9161F}"
+	ProjectSection(SolutionItems) = preProject
+		Iteracija 1\Iteracija 1 - ciljevi.doc = Iteracija 1\Iteracija 1 - ciljevi.doc
+		Iteracija 1\TrazenjeKomentara.doc = Iteracija 1\TrazenjeKomentara.doc
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgramLineCounter", "Iteracija 1\ProgramLineCounter.csproj", "{30C69B11-F6E5-48A1-8C62-B5D5A303F70A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App-ProgramLineCounter", "App-ProgramLineCounter\App-ProgramLineCounter.csproj", "{9CAEE8BA-6338-4EEC-A784-648EDCB968E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PLCLib", "PLCLib\PLCLib.csproj", "{500CB0FD-FCA7-485A-A346-4B8C54D36BF8}"
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 4
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Iteracija\u00201\\ProgramLineCounter.csproj
+		SccProjectTopLevelParentUniqueName1 = PLC.sln
+		SccLocalPath1 = .
+		SccProjectFilePathRelativizedFromConnection1 = Iteracija\u00201\\
+		SccProjectUniqueName2 = App-ProgramLineCounter\\App-ProgramLineCounter.csproj
+		SccProjectTopLevelParentUniqueName2 = PLC.sln
+		SccLocalPath2 = .
+		SccProjectFilePathRelativizedFromConnection2 = App-ProgramLineCounter\\
+		SccProjectUniqueName3 = PLCLib\\PLCLib.csproj
+		SccProjectTopLevelParentUniqueName3 = PLC.sln
+		SccLocalPath3 = .
+		SccProjectFilePathRelativizedFromConnection3 = PLCLib\\
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{30C69B11-F6E5-48A1-8C62-B5D5A303F70A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30C69B11-F6E5-48A1-8C62-B5D5A303F70A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30C69B11-F6E5-48A1-8C62-B5D5A303F70A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30C69B11-F6E5-48A1-8C62-B5D5A303F70A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CAEE8BA-6338-4EEC-A784-648EDCB968E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CAEE8BA-6338-4EEC-A784-648EDCB968E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CAEE8BA-6338-4EEC-A784-648EDCB968E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CAEE8BA-6338-4EEC-A784-648EDCB968E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{500CB0FD-FCA7-485A-A346-4B8C54D36BF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{500CB0FD-FCA7-485A-A346-4B8C54D36BF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{500CB0FD-FCA7-485A-A346-4B8C54D36BF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{500CB0FD-FCA7-485A-A346-4B8C54D36BF8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{30C69B11-F6E5-48A1-8C62-B5D5A303F70A} = {FBC66350-5350-4CE0-9B79-1B6A0EB9161F}
+		{9CAEE8BA-6338-4EEC-A784-648EDCB968E7} = {FBC66350-5350-4CE0-9B79-1B6A0EB9161F}
+		{500CB0FD-FCA7-485A-A346-4B8C54D36BF8} = {FBC66350-5350-4CE0-9B79-1B6A0EB9161F}
+	EndGlobalSection
+EndGlobal

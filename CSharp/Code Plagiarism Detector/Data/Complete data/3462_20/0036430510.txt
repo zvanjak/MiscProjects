@@ -1,0 +1,13 @@
+int KolikoUnutar(Kruznica& kruz,Tocka poljeTocaka[],int n)
+{
+       int unutar = 0;
+       for(int i = 0; i < n; ++i)
+               if((poljeTocaka[i].GetX() -
+kruz.GetCenterX())*(poljeTocaka[i].GetX() -
+kruz.GetCenterX())+(poljeTocaka[i].GetY() -
+kruz.GetCenterY())*(poljeTocaka[i].GetY() -
+kruz.GetCenterY())<kruz.GetRadius()*kruz.GetRadius())
+                       ++unutar;
+
+       return unutar;
+}

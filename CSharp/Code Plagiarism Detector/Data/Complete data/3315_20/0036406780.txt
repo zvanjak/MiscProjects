@@ -1,0 +1,10 @@
+float prosjek(FILE *f){
+char p[30+1];
+int i,prod=0,br=0;
+
+while(fscanf(f,"%s%s%d%*c",p,p,&i)>0){
+prod+=i;
+br++;
+}
+return ((float)prod/br);
+}

@@ -1,0 +1,25 @@
+#include <stdio.h>
+int main()
+{
+	int a,b,c,d,e;
+	scanf("%d",&a);
+	b=a/1000;
+	c=(a/100)%10;
+	d=(a/10)%10;
+	e=(a%10);
+	if(b%2==1)
+		b++;
+	b=(b%10)*1000;
+	if(c%2==1)
+		c++;
+	c=(c%10)*100;
+	if(d%2==1)
+		d++;
+	d=(d%10)*10;
+	if(e%2==1)
+		e++;
+	e=e%10;
+	a=b+c+d+e;
+	printf("%d",a);
+	return 0;
+}

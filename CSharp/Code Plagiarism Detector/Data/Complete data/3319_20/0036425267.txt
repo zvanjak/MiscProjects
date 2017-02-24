@@ -1,0 +1,16 @@
+void dodaj(FILE *f){
+	struct {
+		int redni_br;
+		char prezime[20+1];
+		int bodovi;}natjecatelj;
+	int max=0;
+	while(fread(&natjecatelj,sizeof(natjecatelj),1,f)==1){
+		if(natjecatelj.bodovi>max) max=natjecatelj.bodovi;}
+	while(fread(&natjecatelj,sizeof(natjecatelj),1,f)==1){
+		if(natjecatelj.bodovi==max){
+			natjecatelj.bodovi+=10;
+			fseek(f,-1L*sizeof(natjecatelj),SEEK_CUR);
+			fwrite(&natjecatelj,sizeof(natjecatelj),1,f);
+			fflush(f);}
+	}
+}

@@ -1,0 +1,23 @@
+Kalendar* Unesi(MojDatum datumi[], int broj, int *mjesec){
+	class Kalendar *novi;
+	int i,pom[13],m=0;
+	novi=new Kalendar;
+	for(i=0;i<broj;i++){
+		if(datumi->mjesec < 13 && datumi->mjesec > 0)
+		{
+			novi->Dodaj(datumi[i]);
+			pom[datumi->mjesec]++;
+		}
+		else
+			throw("Nedozvoljeni mjesec");
+	}
+		for(i=1;i<13;i++)
+		{
+			if(pom[i]>m)
+			{
+				m=pom[i];
+				*mjesec=i;
+			}
+		}
+		return novi;
+}

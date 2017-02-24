@@ -1,0 +1,19 @@
+int* napraviPolje(int* A, int Na, int* B, int Nb, int* Nc){
+	int *c, i, j, min;
+	c=(int*) malloc (Na * sizeof(int));
+	min = B[0];
+	for(i=1; i<Nb; i++){
+		if(B[i]<min){
+			min=B[i];
+		}
+	}
+	i=0;
+	for(j=0;j<Na;j++){
+		if(A[j]<min){
+			c[i]=A[j];
+			i++;
+		}
+	}
+	*Nc=i;
+return c;
+}

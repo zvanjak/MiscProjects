@@ -1,0 +1,32 @@
+void dodaj(FILE *f)
+{
+	struct natjecatelj tmp;
+
+	int		pos = 0, 
+			maxpos = 0;
+
+	int		maxbodovi = 0;
+
+
+	while ( fread( &tmp, sizeof(tmp), 1, f ) == 1 )
+	{
+		if (tmp.redni_br != 0)
+		{
+			if (tmp.bodovi > maxbodovi) 
+			{
+				maxbodovi = tmp.bodovi;
+				maxpos = pos;
+			}
+		}
+
+		pos += sizeof(tmp);
+	}
+
+	fseek(f, maxpos, SEEK_SET);
+	fread(&tmp, sizeof(tmp), 1, f);
+
+	tmp.bodovi += 10;
+	
+	fseek(f, maxpos, SEEK_SET);
+	fwrite(&tmp, sizeof(tmp), 1, f);
+}

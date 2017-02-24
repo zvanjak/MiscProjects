@@ -1,0 +1,18 @@
+char *SamoSamoglasnici (char *ulazni_niz) {
+    int i,j;
+    char *noviNiz;
+    if (ulazni_niz == NULL || ulazni_niz[0] == '\0') 
+        return NULL;
+    
+    noviNiz=(char *) malloc(sizeof (char));
+    for (i=0,j=0; ulazni_niz[i]!='\0'; i++) {
+        if (ulazni_niz[i]=='A' || ulazni_niz[i]=='E' || ulazni_niz[i]=='I' || ulazni_niz[i]=='O' || ulazni_niz[i]=='U' ||
+            ulazni_niz[i]=='a' || ulazni_niz[i]=='e' || ulazni_niz[i]=='i' || ulazni_niz[i]=='o' || ulazni_niz[i]=='u') {
+             
+          noviNiz = (char *) realloc (noviNiz,sizeof(char)*(j+1));
+          noviNiz[j] = ulazni_niz[i];
+          noviNiz[++ j] = '\0';
+        }
+    }
+    return noviNiz;
+}

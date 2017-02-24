@@ -1,0 +1,99 @@
+typedef struct{
+	char ime[20+1];
+	char prezime[20+1];
+	char jmbag[10+1];
+	int ocjena;
+} tip;
+
+struct atom{
+	tip element;
+	atom *sljed;
+};
+
+int brojElementa (atom *glava){
+	int c=0;
+	for(atom *pok=glava;pok;pok=pok->sljed)
+		c++;
+
+	return c;
+}
+
+int dodaj(atom **glava, tip element){
+	atom *novi=(atom*)malloc(sizeof(atom));
+	if(!novi) return 0;
+	novi->element.ocjena =element.ocjena;
+	novi->sljed=0;
+	strcpy(novi->element.ime,element.ime);
+	strcpy(novi->element.jmbag,element.jmbag);
+	strcpy(novi->element.prezime,element.prezime );
+
+	if(*glava==0){
+		*glava=novi;
+		return 1;
+	}else{
+		novi->sljed=*glava;
+		*glava=novi;
+		return 1;
+	}
+}
+
+int minOcjena(atom *glava){
+	if (glava==0) return -1;
+	int min=6;
+
+	atom *pok=glava;
+	for(;pok;pok=pok->sljed)
+		if(pok->element .ocjena <min) min=pok->element.ocjena;
+
+	return min;
+}
+
+float prosjOcjena(atom *glava){
+	if (glava==0) return -1;
+	int c=0;
+	float pr=0;
+	atom *pok=glava;
+	for(;pok;pok=pok->sljed){
+		c++;
+		pr+=pok->element.ocjena;
+	}
+	return pr/c;
+}
+bool sadrzi(char *a, char *b){
+	if (a==0 || b==0) return false;
+	bool nasao=false;
+	int lenA=strlen(a);
+	int lenB=strlen(b);
+	for(int i=0;i<lenA-lenB+1;i++){
+		nasao=true;
+		for(int t=0;t<lenB;t++)
+			if(a[i+t]!=b[t]) nasao=false;
+		if(nasao) return 1;
+	}
+	return nasao;
+}
+
+int izbaciPrezimeSadrzi(atom **glavap,char *prezimePodniz){
+	int c=0;
+	while(sadrzi((*glavap)->element .prezime,prezimePodniz)){
+		atom *tmp=*glavap;
+		*glavap=(*glavap)->sljed;
+		c++;
+		free(tmp);
+	}
+	atom *pok1=*glavap;
+	atom *pok2=pok1->sljed;
+	while(pok2){
+		if(sadrzi(pok2->element.prezime,prezimePodniz)){
+			atom *tmp=pok2;
+			pok2=pok2->sljed;
+			pok1->sljed=pok2;
+			c++;
+			free(tmp);
+		}else{
+			pok2=pok2->sljed;
+			pok1=pok1->sljed;
+		}
+	}
+	return c;
+}

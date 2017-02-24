@@ -1,0 +1,15 @@
+#include <stdio.h>
+int main () {
+	int n,k;
+	scanf ("%d",&n);
+	if (n<=0)
+		return 0;
+		for (k=1;k<=40;k++) {
+			n=n+n%10;
+			if (n%13)
+			{ printf ("%d ",n); }
+			else 
+			{ printf ("%d ",n);break; }
+		} printf ("%d",k);
+	return 0;
+}

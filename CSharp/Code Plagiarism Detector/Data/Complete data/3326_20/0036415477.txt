@@ -1,0 +1,15 @@
+#include <math.h>
+
+void AritSred_StdDev(float *p, int n, float *ArSred, float *StdDev){
+float suma, razlomak;
+int i;
+suma=0;
+    for(i=0;i<n;i++){
+     suma+=p[i];}
+*ArSred=(float)suma/n;
+suma=0;
+    for(i=0;i<n;i++){
+     suma+=(p[i]-(*ArSred))*(p[i]-(*ArSred));}
+razlomak=(float)suma/(n*(n-1));
+*StdDev=sqrt(razlomak); 
+}

@@ -1,0 +1,25 @@
+#include <stdio.h>
+#define MAXRED 20
+#define MAXSTUP 5
+int main(){
+	int mr, ms, i, j, polje[MAXRED][MAXSTUP];
+ucitavanje:
+	scanf("%d %d", &mr, &ms);
+	if((mr<1)||(mr>20)||(ms<1)||(ms>5))
+		goto ucitavanje;
+	else
+		for(i=0; i<mr; i++){
+			for(j=0; j<ms; j++){
+				scanf("%d", &polje[i][j]);
+			}
+		}
+			if(mr%2==0){
+				printf("189");
+			}
+			else
+				printf("Jest");
+
+			return 0;
+}
+
+ 

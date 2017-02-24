@@ -1,0 +1,9 @@
+int br_prodanih(FILE *f, char *autor)
+{char album[31];
+char autor2[21];
+int prodano;
+int a=0;
+while(fscanf(f,"%s%s%d",album,autor2,&prodano)==3)
+if (!(strcmp(autor,autor2))) a=a+prodano;
+return a;
+}

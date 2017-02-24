@@ -1,0 +1,5 @@
+int niz (int i) { 
+kontrola(); 
+if (i<3) return 1; 
+else return niz(i-1)+niz(i-2)+niz(i-3); 
+} 

@@ -1,0 +1,8 @@
+#include <stdio.h>
+int main() {
+    int broj,i;
+    scanf("%d",&broj);
+    for (i=0;i<4;i++) broj=(((((broj%10)%2)?((broj%10)+1)%10:broj%10)*10000)+broj)/10;
+    printf("%d\n",broj); 
+    return 0;
+}

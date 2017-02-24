@@ -1,0 +1,26 @@
+void brisi(FILE *f, int redni_br)
+{
+struct natjecatelj
+	{
+	int redni_br;
+	char prezime[20+1];
+	int bodovi;
+	}igrach;
+
+int n=fread(&igrach,sizeof(igrach),1,f);
+
+while(n==1)
+	{
+	if (igrach.redni_br == redni_br)
+		{
+		igrach.redni_br = 0;
+		break;
+		}
+	n=fread(&igrach,sizeof(igrach),1,f);
+	}
+
+fseek(f,(long) (redni_br-1) * sizeof(igrach),SEEK_SET);
+
+fwrite(&igrach,sizeof(igrach),1,f);
+
+}

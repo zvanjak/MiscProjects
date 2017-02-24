@@ -1,0 +1,20 @@
+#include <stdio.h>
+int main()
+{
+	int n, i;
+	float PI, x=0, y;
+	scanf("%d",&n);
+	while (n<1 || n>400)
+		{
+			printf("n nije valjan");
+                        scanf("%d", &n);
+		}
+	for (i=1; i<=n; i++)
+	{
+		y=1./((4*i-1)*(4*i+1));
+		x+=y;
+	}
+	PI=4.0-(x*8.0);
+	printf("\nPI=%.8f ", PI);
+	return 0;
+}

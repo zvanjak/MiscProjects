@@ -1,0 +1,12 @@
+Ekipa StvoriISortiraj(char* naziv){
+	int i,j,min;
+	Ekipa momcad(naziv);
+	momcad.Napuni();
+	for (i=0;i<11;i++){
+		min=i;
+		for(j=i+1;j<11;j++) 
+			if (momcad[min].VratiBroj()>momcad[j].VratiBroj()) min=j;
+		momcad.Zamijeni(i,min);
+	}
+	return momcad;
+}

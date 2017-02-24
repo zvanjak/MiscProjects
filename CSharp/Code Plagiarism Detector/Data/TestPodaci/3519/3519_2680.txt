@@ -1,0 +1,20 @@
+int SplitToSentences(char * inputField, char * outputField){
+int i=0,j=0,brtoc=0;
+do{
+if (*(inputField + i)==','){
+    *(outputField +i)= '.';
+    j=1;
+    brtoc++;
+    }
+else{
+
+     if ( j==1 && islower(*(inputField+i)) ){
+        *(inputField+i)=toupper(*(inputField+i));
+        j=0;
+        }
+      *(outputField+i)= *(inputField+i);
+}
+i++;
+}while(*(inputField+i)!=0);
+return brtoc;
+}

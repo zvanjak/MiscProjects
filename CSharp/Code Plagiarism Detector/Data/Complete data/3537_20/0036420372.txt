@@ -1,0 +1,10 @@
+int BrojClanova(Red *red) {
+    int n, i, j, *p;
+    for (i = 0; red->SkiniIzReda(&n); i++) {
+        p = (int *) realloc(p, sizeof(int)*(i+1));
+        *(p + i) = n;
+    }
+    for (j = 0; j < i; j++)
+        red->DodajURed(*(p + j));
+    return i;
+} 

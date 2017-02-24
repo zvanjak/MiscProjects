@@ -1,0 +1,27 @@
+int* napraviPolje(int *A, int Na, int a, int b, int* Nc)
+{
+	int *polje,  i,z, j=0;
+
+	if (a>b)
+		return 0;
+
+	polje = (int*)malloc(sizeof(int));
+
+	for(i=0;i<Na;i++)
+	{ 
+		for(z=a;z<=b;z++)
+		{
+			if (A[i]%z!=0)
+				break;
+			else if(z==b)
+			{
+				polje=(int*)realloc(polje,(j+1)*sizeof(int));
+				polje[j]=A[i];
+				j++;
+			}
+		}
+
+	}
+	*Nc=j;
+	return polje;
+}

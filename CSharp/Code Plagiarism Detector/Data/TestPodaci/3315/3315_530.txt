@@ -1,0 +1,21 @@
+float prosjek( FILE *f)
+{
+char naziv[31];
+char autor[21];
+int prodano;
+int i=0, sum=0;
+
+while(fscanf(f,"%[^ ]%*c%[^ ]%*c%d\n", naziv,autor,&prodano)!=3)
+{
+sum+=prodano;
+i++;
+}
+if(i!=0)
+{
+return((float)sum/i);
+}
+else
+{
+return 0;
+}
+}

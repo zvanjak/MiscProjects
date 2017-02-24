@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+	int n, z, i;
+	scanf("%i", &n);
+	if (n < 0)
+	{
+		printf("n nije pozitivan");
+		return 0;
+	}
+	z = (int)pow(10, (int)log10(n));
+	for (; z > 1; z /= 10)
+	{
+		printf("%d ", (n / z) % 10); 
+	}
+	printf("%d", n % 10);
+	return 0;
+}

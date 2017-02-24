@@ -1,0 +1,8 @@
+float prosjek(FILE *f){
+	int ukupno=0;int broj=0;
+	float pros;
+	struct album zapis;
+	while (fread(&zapis,sizeof(struct album),1,f)==1){
+		zapis.prodano+=ukupno;broj++;}
+	pros=(float) ukupno/broj;
+	return pros;}

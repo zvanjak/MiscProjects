@@ -1,0 +1,32 @@
+int promijenimbr (zapis **glava, int starimbr, int novimbr){
+	zapis *p, *pp;
+
+	for (p = *glava; p && p->matbr != starimbr; p = p->sljed);
+	if (p == NULL) return 0;
+
+	if (p == *glava) {					
+		pp = (*glava)->sljed;
+		free (*glava);
+		*glava = pp;
+	} else {							 
+		for (pp = *glava; pp->sljed != p; pp = pp->sljed);
+		pp->sljed = p->sljed;
+		free (p);
+	}
+	
+	p = (zapis*) malloc (sizeof(zapis));
+	p->matbr = novimbr;
+
+	if ((*glava)->matbr >= p->matbr) {		 
+		p->sljed = *glava;
+		*glava = p;
+
+	} else {
+		for (pp = *glava; pp->sljed && (pp->sljed)->matbr < p->matbr; pp = 
+pp->sljed);
+		p->sljed = pp->sljed;
+		pp->sljed = p;
+	}
+	return 1;
+}
+       

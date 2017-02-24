@@ -1,0 +1,16 @@
+#include<stdio.h>
+#define INT_MAX 2147483647
+#define INT_MIN -2147483648
+
+int main()
+{
+	int br = 1, min = INT_MAX, max = INT_MIN;
+	while((br % 4) || (br < 0))
+	{
+		scanf("%d", &br);
+		if(br < min) min = br;
+		if(br > max) max = br;
+	}
+	printf("%d %d\n", max, min);
+	return(0);
+}

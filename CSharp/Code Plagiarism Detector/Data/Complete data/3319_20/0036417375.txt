@@ -1,0 +1,18 @@
+	void dodaj (FILE *f){
+	
+        struct natjecatelj st;
+        int maxBodovi, redniBroj;
+	
+        
+        maxBodovi=0;
+	while (fread (&st, sizeof(st), 1, f) == 1){
+		if (st.bodovi > maxBodovi){
+			maxBodovi = st.bodovi;
+			redniBroj = st.redni_br;
+			}
+                    }
+		fseek (f, (redniBroj -1) * sizeof(st), SEEK_SET);
+                fread (&st, sizeof(st), 1, f);
+                st.bodovi += 10;
+		fwrite (&st, sizeof(st), 1, f);
+		}

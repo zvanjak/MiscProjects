@@ -1,0 +1,70 @@
+
+void maxaps(int *prvamat, int *drugamat, int brRedPrva, int brStupPrva, int maxStupPrva,
+			int brRedDruga, int brStupDruga, int maxStupDruga, int niz[])
+{
+	int tmp[10][10], mflag, flag, sum, br;
+	int i, j, k;
+    /* uvjet1: s matricama m*n i p*q, da li je m=q i n=p */
+	if(brRedPrva==brStupDruga && brStupPrva==brRedDruga) {
+		/* uvjet 1 - DA: racunanje njihova umnoska */
+		for(i=0;i<brRedPrva;i++) {
+			for(j=0;j<brStupDruga;j++) {
+				sum=0;
+				for(k=0;k<brRedPrva;k++)
+					sum+= *(prvamat + i*maxStupPrva + k) * (*(drugamat + k*maxStupDruga + j));
+				tmp[i][j]=sum;
+			}
+		}
+		
+		/* ispitivanje da li je umnozak jedinicna matrica */
+		flag=1;
+		for(i=0;i<brRedPrva && flag==1;i++) {
+			if(tmp[i][i] == 1) /* da li je dijagonala =1 */ {
+				/* da */
+				for(j=0;j<i && flag==1;j++) {
+					if(!(tmp[i][j]==tmp[j][i] && tmp[i][j]==0)) {
+						/* ulazi samo ako nije element ispod/iznad dijagonale =0 */
+						flag=0;
+					}
+				}
+			} else {
+				/* ne */
+				flag=0;
+			}
+		}
+		if(flag==1)
+			mflag=1;
+		else
+			mflag=0;
+	} else {
+		/* uvjet 1 - NE */
+		mflag=0;
+	}
+	
+	/* obavljanje funkcije */
+	/* uvjet 2 - dal je druga matrica inverz prvoj */
+	if(mflag==1) {
+		/* uvjet 2 - DA: niz[]=najvecoj abs vrij u svakom retku */
+		for(i=0;i<brRedPrva;i++) {
+			br= *(prvamat + i*maxStupPrva);
+			
+			for(j=0;j<brRedPrva;j++) {
+				if(abs(br)==abs(*(prvamat + i*maxStupPrva + j)))
+					br= abs(*(prvamat + i*maxStupPrva + j));
+				else if(abs(br)<abs(*(prvamat + i*maxStupPrva + j)))
+					br= *(prvamat + i*maxStupPrva + j);
+			}
+			niz[i]= br;
+		}
+	} else {
+		/* uvjet 2 - NE: niz[]=najmanjoj vrij u svakom stupcu */
+		for(i=0;i<brRedPrva;i++) {
+			br= *(prvamat + i*maxStupPrva);
+			for(j=0;j<brRedPrva;j++) {
+				if(br> *(prvamat + j*maxStupPrva + i))
+					br= *(prvamat + j*maxStupPrva + i);
+			}
+			niz[i]= br;
+		}
+	}
+}

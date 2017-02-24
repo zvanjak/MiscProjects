@@ -1,0 +1,5 @@
+int veci_od(FILE *in, int N) {
+  char a[31],b[21]; int t,br=0;
+  while(fscanf(in,"%s %s %d",a,b,&t)==3) if(t>=N) br++;
+  return br;
+}

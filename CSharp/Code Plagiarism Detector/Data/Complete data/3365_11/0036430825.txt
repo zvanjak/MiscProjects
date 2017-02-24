@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main() {
+	int n,a,b,c,suma=0;
+	
+
+	scanf("%d", &n);
+		if(n<250 || n>950){
+			a=n%10;
+			n=n/10;
+			b=n%10;
+			n=n/10;
+			c=n%10;
+		suma=a+b+c;
+		printf("%d", suma);
+		}
+		else{
+	a=n%10;
+		if(a%2==1){
+			suma+=a;
+		}
+	n=n/10;
+	b=n%10;
+		if(b%2==1){
+			suma+=b;
+		}
+	n=n/10;
+	c=n%10;
+		if(c%2==1){
+			suma+=c;
+		}
+	printf("%d", suma);
+	}
+return 0;
+
+}

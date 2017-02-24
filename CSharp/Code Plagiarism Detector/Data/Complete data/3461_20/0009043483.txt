@@ -1,0 +1,18 @@
+int JelSeSjeku(Kruznica &k1, Kruznica &k2) {
+	
+	float ud=0;
+
+	float r[2] = {k1.GetRadius(), k2.GetRadius()};
+	float x[2] = {k1.GetCenterX(), k2.GetCenterX()};
+	float y[2] = {k1.GetCenterY(), k2.GetCenterY()};
+
+	if ((x[0] == x[1]) && (y[0] == y[1]) && (r[0] == r[1])) return 3;
+	
+	ud = sqrt(pow(x[0] - x[1], 2) + pow(y[0] - y[1], 2));
+
+	if (ud > r[0]+r[1] || ud < fabs(r[0] - r[1])) return 0;
+	if (ud == r[0]+r[1] || ud == fabs(r[0] - r[1])) return 1;
+	if (ud < r[0]+r[1] || ud > fabs(r[0] - r[1])) return 2;
+
+return -1;
+}

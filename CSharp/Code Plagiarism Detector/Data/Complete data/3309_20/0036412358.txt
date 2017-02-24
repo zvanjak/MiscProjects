@@ -1,0 +1,20 @@
+     struct album{
+
+         char naziv[30+1];
+
+         char autor[20+1];
+
+         int prodano;
+
+}; 
+
+
+int br_prodanih(FILE *f, char *autor)
+{
+struct album albcol;
+int br=0;
+while (fread(&albcol, sizeof(albcol), 1, f)==1){
+if ((strcmp(albcol.autor, autor))==0){br=br+albcol.prodano;}
+}
+return br;
+}

@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main(){
+  int A, d, B, br=0;
+  scanf("%d %d %d", &A,&d,&B);
+  if (A<=B)  {
+	A+=d;
+	printf("%d ",A);
+	br++;
+	}
+  printf("%d",br);
+  return 0;
+}

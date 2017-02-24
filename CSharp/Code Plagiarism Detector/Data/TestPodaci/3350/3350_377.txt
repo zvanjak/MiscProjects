@@ -1,0 +1,19 @@
+int najbolji (FILE *f){
+	int maxb = 0, red_br = 0, temp, br_zapisa;
+	struct natjecatelj igrac;
+
+	fseek(f, 0L, SEEK_END);
+	br_zapisa = (int) ftell(f)/sizeof(igrac);
+	fseek(f, 0L, SEEK_SET);
+
+	for(temp = 0 ; temp < br_zapisa ; temp++){
+		fread(&igrac , sizeof(igrac), 1, f);
+		if(igrac.redni_br != 0 && igrac.bodovi > maxb){
+			maxb = igrac.bodovi;
+			red_br = igrac.redni_br;
+		}
+	}
+
+	return red_br;
+
+}

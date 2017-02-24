@@ -1,0 +1,66 @@
+#include <stdio.h>
+#define MAX_MR 21
+#define MAX_MS 6
+
+
+void ispis(int *p, int r, int s) {
+	int t,i,j;	
+	for (i=0; i<r; i++) {
+		for (j=0; j<s; j++) {
+			t = *(p+i*MAX_MS+j);
+			printf("%d ", t);			
+		}
+		printf("\n");
+	}
+}
+
+void zamjena(int *p, int u1, int u2) {
+	int a,b,t,i;
+	for (i=0; i<MAX_MS; i++) {
+		a = *(p+u1*MAX_MS+i);
+		b = *(p+u2*MAX_MS+i);
+		t = a;
+		a = b;
+		b = t;		
+		*(p+u1*MAX_MS+i) = a;
+		*(p+u2*MAX_MS+i) = b;
+	}
+}
+
+int main() {
+	int mr, ms, i, j, s;
+	int mat[MAX_MR][MAX_MS] = {0};
+	int u1, u2;
+
+	do {
+		scanf("%d %d", &mr, &ms);
+	} while (!(mr>=1 && mr<=20 && ms>=1 && ms<=5));
+
+	for (i=0; i<mr; i++) {
+		for (j=0; j<ms; j++) {
+			scanf("%d", &mat[i][j]);
+		}
+	}
+	
+	while (1) {
+		scanf("%d %d", &u1, &u2);
+		if (!(u1>=0 && u1<mr && u2>=0 && u2<mr))
+			break;
+		zamjena(&mat[0][0], u1, u2);
+	}  
+
+	/*ispis(&mat[0][0], mr, ms);*/
+
+	for (i=0; i<mr; i++) {
+		s=0;
+		for (j=0; j<ms; j++) {
+			s+=mat[i][j];
+		}
+		if (i==mr-1)
+			printf("%d", s);
+		else
+			printf("%d ", s);
+	}
+
+	return 0;
+}

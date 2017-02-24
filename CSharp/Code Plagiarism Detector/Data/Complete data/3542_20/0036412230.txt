@@ -1,0 +1,30 @@
+int promijenimbr(zapis **glava, long starimbr, int novimbr){
+	zapis *p,**glavap; //pomocna glava
+	glavap=(zapis **)malloc(sizeof(zapis));
+	*glavap=*glava;
+	p=(zapis *)malloc(sizeof(zapis));
+	p->matbr=starimbr;
+	
+
+	while (*glavap && (p->matbr!=(*glavap)->matbr)){
+		glavap=&((*glavap)->sljed);
+	}
+	if (*glavap==NULL) return 0;
+	//nasao...kopiranje
+	
+	p=*glavap;//zapamti
+	
+	*glavap=(*glavap)->sljed;//izbrisi
+	//promijeni
+	p->matbr=novimbr;//nova sifra
+	//dodaj promijenjen
+	*glavap=*glava;//ispocetka
+	while (*glavap && (p->matbr>(*glavap)->matbr)){
+		glavap=&((*glavap)->sljed);
+	}
+
+	p->sljed=*glavap;
+	*glavap=p;
+	return 1;
+}
+

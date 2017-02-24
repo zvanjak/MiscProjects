@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main () {
+int broj, lp, dp;
+
+scanf("%d", &broj);
+if((broj<1000)||(broj>9999)) exit(1);
+
+lp=broj/100;
+dp=broj%100;
+
+if((lp+dp)%lp==0){
+printf("Jest");
+}else{
+printf("Nije");
+}
+
+return 0;
+}

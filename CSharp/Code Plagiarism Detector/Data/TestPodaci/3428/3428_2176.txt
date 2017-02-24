@@ -1,0 +1,30 @@
+#include <stdio.h>
+int main() {
+    int mr,ms,i,j,mat[20][5],status=1,produkt=1;
+    do{
+        scanf("%d %d", &mr, &ms);
+    }while(((1>mr)||(mr>20))||((1>ms)||(ms>5)));
+    for(i=0;i<mr;i++){
+        for(j=0;j<ms;j++){
+        scanf("%d", &mat[i][j]);
+        }
+	}
+	if (mr%2==0) {
+		for(i=0;i<mr;i++){
+			for(j=0;j<ms;j++){
+				if (i%2==0 && j%2==0) produkt *= mat[i][j];
+			}
+		}
+		printf("%d",produkt);
+	}
+	else if (mr!=1) {
+		for(i=0;i<(mr/2);i++){
+			for(j=0;j<ms;j++){
+					if ( mat[i][j]!=mat[mr-i-1][j] ) status=0;
+			}
+		}
+	if (status) printf("Jest");
+	else printf("Nije");
+	}
+	return 0;
+}

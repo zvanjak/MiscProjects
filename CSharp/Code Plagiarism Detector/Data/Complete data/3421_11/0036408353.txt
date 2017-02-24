@@ -1,0 +1,56 @@
+#include <ctype.h>
+#include <stdio.h>
+
+int main()
+{
+	char recenica[100+1];
+	char recenica2[100];
+/*
+	for(int i = 0; i!= 100; ++i) {
+		recenica[i] = getc(stdin);
+		fflush(stdin);
+		if( recenica[i] == '.' )
+			break;
+	}
+*/
+	gets(recenica);
+	char* p = recenica;
+
+	while(*p) {
+		if( isupper(*p) ) 
+			*p = tolower(*p);
+		p++;
+	}
+
+	p = recenica;
+
+	while(*p) {
+		if( *p == ' ' || *p == ',' )
+			if( isascii(p[1]) )
+				p[1] = toupper(p[1]);
+		p++;
+	}
+
+	p = recenica;
+	char* p2 = recenica2;
+
+	while(*p) {
+		if( *p == '.' ) break;
+		if( *p != ' ' && *p != ',' ) {
+			*p2 = *p;
+			p2++;
+			p++;
+		}
+		else p++;
+	}
+
+	*p2++ = '.';
+	*p2 = '\0';
+
+	recenica2[0] = toupper(recenica2[0]);
+
+	printf(recenica2);
+
+	return 0;
+}
+

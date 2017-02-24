@@ -1,0 +1,14 @@
+char *Spoji(char *niz1, char *niz2) {
+int i=0, j=0, adr=0;
+char *novo;
+novo = (char *)malloc((strlen(niz1) * strlen(niz2) + 1) * sizeof(char));
+
+   while (niz1[i] || niz2[j]) {
+         if (niz1[i]) {novo[adr] = niz1[i]; i++; adr++;}
+         if (niz2[j]) {novo[adr] = niz2[j]; j++; adr++;}      
+         } 
+         
+   novo[adr] = 0;
+       
+return novo;   
+}

@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+void main(){
+	int A,B,d,brojac=0,n=0;
+	scanf("%d %d %d",&A,&d,&B);
+	if (d>0) {if (A>B) printf("%d",n); else{
+	do{
+	A+=d;++brojac;printf("%d ",A);
+	}while(!(A>B));
+	printf("%d",brojac);
+	};};
+	}

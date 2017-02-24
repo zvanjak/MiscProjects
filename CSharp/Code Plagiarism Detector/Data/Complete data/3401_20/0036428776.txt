@@ -1,0 +1,22 @@
+#include <stdlib.h>
+
+int* napraviPolje(int *ap,int na, int a, int b, int *nc){
+	
+	int count=0;
+	int *npol;
+	int i,j;
+	if(a>b) return NULL;
+	for(i=0; i<na; i++){
+	    if(ap[i]>b) count++;
+	}	
+	*nc=count;
+	npol=malloc(count*sizeof(int));
+	for(j=0; j<na; j++){
+	    if(ap[j]>b){
+        	*npol=ap[j];
+		npol++;
+       	    }
+	}
+	npol-=*nc;
+	return npol;
+}	

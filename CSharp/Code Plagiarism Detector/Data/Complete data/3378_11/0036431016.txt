@@ -1,0 +1,24 @@
+#include<stdio.h>
+#include<math.h>
+
+int main() {
+    int os, ns, bcs;
+    float bp;
+    printf("Unesite broj odradenih sati , Unesite broj nominalnih sati , Unesite bruto cijenu sata ", &os, &ns, &bcs);
+    scanf("%d %d %d", &os, &ns, &bcs);
+    if(os>0 && ns>0 && bcs>0) {
+    if(os<ns) {
+              bp=os*(bcs*0.90);
+    } else if (os>ns) {
+              bp=os*(bcs*1.15);
+    } else {
+              bp=os*bcs;
+    }
+    } else printf("Unijeli ste pogrijesan broj");
+    if(bp>6000) {
+                printf("Neto iznos place je : %.2f", bp*0.7);
+    } else {
+                printf("Neto iznos place je : %.2f", bp*0.8);
+    }
+    return 0;
+}

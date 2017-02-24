@@ -1,0 +1,3 @@
+int ModElementa (cvor *glava, char *naziv) {
+    return glava ? (ModElementa(glava->lijevo, naziv) + ((strcmp(glava->naziv, naziv) == 0) ? 1 : 0) + ModElementa(glava->desno, naziv)) : 0;
+}

@@ -1,0 +1,22 @@
+int JelSeSijeku(Kruznica &k1, Kruznica &k2) {
+    float k1x,k1y,k1r,k2x,k2y,k2r;
+    
+    k1x=k1.GetCenterX();
+    k1y=k1.GetCenterY();
+    k1r=k1.GetRadius();
+    k2x=k2.GetCenterX();
+    k2y=k2.GetCenterY();
+    k2r=k2.GetRadius();
+    
+    if (k1x==k2x && k1y==k2y && k1r==k2r) return 3;
+    
+    if (pow(pow(k2x-k1x,2.0f)+pow(k2y-k1y,2.0f),0.5f)>k1r+k2r) return 0;
+    if (k1r<k2r && k1r+pow(pow(k2x-k1x,2.0f)+pow(k2y-k1y,2.0f),0.5f)<k2r) return 0;
+    if (k2r<k1r && k2r+pow(pow(k2x-k1x,2.0f)+pow(k2y-k1y,2.0f),0.5f)<k1r) return 0;
+    
+    if (pow(pow(k2x-k1x,2.0f)+pow(k2y-k1y,2.0f),0.5f)==k1r+k2r) return 1;
+    if (k1r<k2r && k1r+pow(pow(k2x-k1x,2.0f)+pow(k2y-k1y,2.0f),0.5f)==k2r) return 1;
+    if (k2r<k1r && k2r+pow(pow(k2x-k1x,2.0f)+pow(k2y-k1y,2.0f),0.5f)==k1r) return 1;
+    
+    return 2;
+}

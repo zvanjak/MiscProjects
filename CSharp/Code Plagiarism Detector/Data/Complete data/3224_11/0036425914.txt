@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main()
+{
+    int n,i;
+    double pi,x=0;
+    float nf;
+
+    scanf("%f",&nf);
+    n=(int) nf;
+    if (nf<1 || nf>400 || nf!=n) printf("n nije valjan");
+    else
+        {
+         n=(int) nf;
+         for(i=1;i<=n;i=i+1){
+         x = x+ (double) 1/((4*i-1)*(4*i+1));
+}
+         pi=-8*x+4;
+         printf("%.8f", pi);
+        }
+  return 0;
+  
+  
+}

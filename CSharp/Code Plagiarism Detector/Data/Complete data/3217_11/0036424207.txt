@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <math.h>
+int main (){
+	
+	int x=0;
+	do {
+		int y=0,n=1,z=0,a=0;
+		scanf ("%d",&x);
+		if (x>0){
+			do{
+				y=(a=x%(int)pow(10,n++))/(int)pow(10, n-2);
+				z=z*10+y;	
+			}while (a<x);
+			printf ("%d", z);
+		}
+	}while (x>0);		
+	return 0;
+}

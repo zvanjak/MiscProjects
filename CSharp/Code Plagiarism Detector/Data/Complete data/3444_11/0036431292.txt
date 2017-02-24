@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main() {
+  int sol=0,t,i,j,N,M,D[22][22];
+  scanf("%d%d",&N,&M);
+  for(i=0;i<N;i++) for(j=0;j<M;j++) scanf("%d",&D[i][j]);
+  
+  for(i=0;i<N;i+=2) {
+    for(j=0,t=1;j<M;j++) t*=D[i][j];
+    sol+=t;
+  }
+
+  printf("%d",sol);
+  return 0;
+}

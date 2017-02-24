@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+void main()
+{
+	char c[6];
+	int i, zastavica1=0, zastavica2=0;
+	scanf("%c %c %c %c %c %c",&c[0],&c[1],&c[2],&c[3],&c[4],&c[5]);
+	
+	if(((c[0]>64) && (c[0]<91)) || ((c[0]>96) && (c[0]<123)))
+	{
+		for(i=1;i<6;i++)
+		{
+			if(((c[i]>64) && (c[i]<91)) || ((c[i]>96) && (c[i]<123)))
+			{
+				zastavica1 = 1;
+			}
+			if((c[i]>47) && (c[i]<58))
+			{
+				zastavica2 = 1;
+			}
+		}
+	}
+
+	if(zastavica1 && zastavica2)
+	{
+		printf("Jest\n");
+	}
+	else 
+	{
+		printf("Nije\n");
+	}
+}

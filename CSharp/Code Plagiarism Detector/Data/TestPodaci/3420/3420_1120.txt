@@ -1,0 +1,33 @@
+#include<stdio.h>
+int main(){
+int mr,ms,polje[20][20],i,j,a,b,pom,suma=0;
+
+do{
+scanf("%d %d",&mr,&ms);
+}while (mr<1 || mr>20 || ms<1 || ms>5);
+
+	for (i=0;i<mr;i++){
+		for (j=0;j<ms;j++){
+			scanf("%d",&polje[i][j]);
+			}
+		}
+
+scanf("%d %d",&a, &b);
+
+	while (a>-1 && b>-1 && (b<mr) && (a<mr)){
+		for (i=0;i<ms;i++) {
+			pom=polje[b][i];
+			polje[b][i]=polje[a][i];
+			polje[a][i]=pom;
+}
+scanf("%d %d",&a, &b);
+}
+
+	for (i=0;i<mr;i++){
+		suma=0;
+	for (j=0;j<ms;j++){ 
+		suma+=polje[i][j];}
+			printf("%d",suma);
+	if (i<mr-1) printf(" "); 
+} 
+}

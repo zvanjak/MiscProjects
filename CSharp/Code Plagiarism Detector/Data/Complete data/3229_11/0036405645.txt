@@ -1,0 +1,38 @@
+#include<stdio.h>
+
+int main () {
+float fp,fn,parni,neparni,rezultat;
+int n,i,k;
+
+scanf("%d",&n);
+
+if (n>=1 & n<=30) {
+		 parni=neparni=0;
+	for(k=1;k<=n;k++){
+
+		 //provjera paran/neparan
+		 if(k%2==0){
+         //ako je paran izracunaj zbroj parnih fakt.
+		 fp=1;
+		 for(i=1;i<=k;i++){
+         fp=fp*(1./i);
+         }
+		 parni=parni+fp;
+		 }
+		else{
+		//neparan zbroj fakt.
+		fn=1;
+		for(i=1;i<=k;i++){
+        fn=fn*(1./i);
+        }
+   		neparni=neparni-fn;
+		}
+
+	}
+	rezultat=1+parni+neparni;
+	printf("%1.12f",1/rezultat);
+}
+
+else printf("%d nije valjan",n);
+return 0;
+}

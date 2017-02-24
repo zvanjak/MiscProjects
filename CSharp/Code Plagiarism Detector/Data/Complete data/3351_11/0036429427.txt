@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct{
+	int redni_br;
+	char prezime[20+1];
+	int bodovi;
+} natjecatelj;
+
+int info(FILE *f, int redni_broj)
+{
+	natjecatelj nat;
+	fread(&nat,(redni_broj-1)*sizeof(natjecatelj),1, f);
+	if(nat.redni_br!=redni_broj)
+		return(-1);
+	else if(nat.bodovi>=100)
+		return 1;
+	else
+		return 0;
+}
+
+int main()
+{
+	FILE *f;
+	int redni_broj = 10, uspjeh;
+	f=fopen("datoteka.txt","rb");
+	uspjeh = info(f, redni_broj);
+	return 0;
+}
+		
+

@@ -1,0 +1,10 @@
+#include <stdio.h>
+int main () {
+    int n,br=0;
+    scanf("%d",&n);
+    while (n%13!=0&&br<40){
+    n=n+(n%10);
+    printf("%d ",n);
+    br++;}
+    printf("%d",br);
+    return 0;}

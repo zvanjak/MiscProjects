@@ -1,0 +1,20 @@
+MjeracProsjecneTemperature::MjeracProsjecneTemperature(Termometar *t){
+        this->t=t;              
+}
+double MjeracProsjecneTemperature::Prosjek(int n, int *min, int *max){
+                
+                int i;
+                int temp;
+                int sum=0;
+
+                for(i=0; i<n; i++){     
+                        temp=t->Ocitaj();                       
+                        if(i==0) *min=*max=temp;
+                       if(*min>temp) *min=temp;
+                        if(*max<temp) *max=temp;
+                        sum+=temp;
+                        fprintf(stdout, "vrijednost=%d u %d iteraciji sum=%d\n", temp,i,sum);
+                }
+                
+                return ((double) sum)/n;
+}

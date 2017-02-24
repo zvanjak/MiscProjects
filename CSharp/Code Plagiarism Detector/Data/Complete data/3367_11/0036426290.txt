@@ -1,0 +1,13 @@
+#include <stdio.h>
+int main() {
+	char a,b;
+	int x,y,broj;
+	scanf("%c %c", &a, &b);
+    if(a > 64 && a < 91) a=a-55;
+	if(a < 58 && a > 47) a=a-48;
+	if(b > 64 && b < 91) b=b-55;
+	if(b < 58 && b > 47) b=b-48;
+	broj=a*16 + b;
+	printf("%d", broj);
+    return 0;
+}

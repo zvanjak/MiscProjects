@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+main(){
+	int k, x, zk1, zk2, zk3, zk4, zx1, zx2, zx3, zx4;
+	scanf("%d %d", &k, &x);
+	zx1 = x % 10;
+	zx2 = (x % 100 - zx1) / 10;
+	zx3 = (x % 1000 - zx2 - zx1) / 100;
+	zx4 = x / 1000;
+	zk1 = k % 10;
+	zk2 = (k % 100 - zk1) / 10;
+	zk3 = (k % 1000 - zk2 - zk1) / 100;
+	zk4 = k / 1000;
+	if (zk1 == 1){
+		if (zx1 == 9)
+			zx1 = 0;
+		else
+			zx1++;
+			};
+	if (zk2 == 1){
+		if (zx2 == 9)
+			zx2 = 0;
+		else
+			zx2++;
+			};
+	if (zk3 == 1){
+		if (zx3 == 9)
+			zx3 = 0;
+		else
+			zx3++;
+			};
+	if (zk4 == 1){
+		if (zx4 == 9)
+			zx4 = 0;
+		else
+			zx4++;
+			};
+	x = zx1 + zx2 * 10 + zx3 * 100 + zx4 * 1000;
+	printf("\n%d", x);
+	return 0;
+	}

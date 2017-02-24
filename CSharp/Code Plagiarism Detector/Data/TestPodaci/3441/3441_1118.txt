@@ -1,0 +1,34 @@
+#include <stdio.h>
+int main()
+{
+	int x, zz, bz;
+	zz = 0;
+	bz = 0;
+	scanf("%d", &x);
+	while (x!=0)
+	{	
+		if (x < 0)
+		{
+			x = -x;
+		}
+		while (x > 10)
+		{
+			zz += x % 10;
+			bz++;
+			x = x / 10;
+		}
+		if (x == 10)
+		{
+			zz += 1;
+			bz = bz + 2;
+		}
+		else
+		{
+		zz += x;
+		bz++;
+		}
+		scanf("%d", &x);
+	}	
+	printf("%d %d", bz, zz);
+	return 0;
+}

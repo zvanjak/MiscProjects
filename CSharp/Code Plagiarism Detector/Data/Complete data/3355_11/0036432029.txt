@@ -1,0 +1,12 @@
+#include<stdio.h>
+int main () {
+	char a, b, c, d, e, f;
+	scanf("%c %c %c %c %c %c",&a, &b, &c, &d, &e, &f);
+	if ( ( (a>=65) && (a<=90) || (a>=97) && (a<=122) ) &&
+		 ( (c>=65) && (c<=90) || (c>=97) && (c<=122) ) &&
+		 ( (e>=48) && (e<=57) ) )
+		printf("Jest");
+	else
+		printf("Nije");
+	return 0;
+}

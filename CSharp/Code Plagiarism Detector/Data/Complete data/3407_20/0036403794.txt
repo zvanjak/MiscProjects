@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+
+char *SamoSamoglasnici(char *ulazni_niz){
+	int i=0,br=0;
+	char *izlazni;
+			if((strlen(ulazni_niz)==0)||(ulazni_niz==NULL))return NULL;
+while(ulazni_niz[i]){if(ulazni_niz[i]=='a' ||ulazni_niz[i]=='e' || ulazni_niz[i]=='i'||	ulazni_niz[i]=='o' || ulazni_niz[i]=='u' || ulazni_niz[i]=='A' || ulazni_niz[i]=='E' || ulazni_niz[i]=='I' || ulazni_niz[i]=='O' || ulazni_niz[i]=='U')
+						br++;
+i++;}
+izlazni=(char *)malloc((br+1)*sizeof(char));
+if (izlazni==NULL)return NULL;
+i=br=0;
+while(ulazni_niz[i]){if(ulazni_niz[i]=='a' ||ulazni_niz[i]=='e' || ulazni_niz[i]=='i'||
+						ulazni_niz[i]=='o' || ulazni_niz[i]=='u'|| ulazni_niz[i]=='A' ||ulazni_niz[i]=='E' ||
+						ulazni_niz[i]=='I'||ulazni_niz[i]=='O' || ulazni_niz[i]=='U')
+						izlazni[br++]=ulazni_niz[i];
+i++;}
+izlazni[br]=0;
+return izlazni;}

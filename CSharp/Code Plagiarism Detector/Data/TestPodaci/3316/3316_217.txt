@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+void azuriraj(FILE*f, int redni_broj, int bodovi)
+{
+	struct{
+	int redni_broj;
+	char prezime[20+1];
+	int bodovi;
+	}natj;
+	fseek(f,sizeof(natj)*redni_broj,SEEK_SET);
+	fread(&natj,sizeof(natj),1,f);
+	natj.bodovi=bodovi;
+	fseek(f,-sizeof(natj),SEEK_CUR);
+	fwrite(&natj,sizeof(natj),1,f);
+}

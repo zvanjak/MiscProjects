@@ -1,0 +1,13 @@
+int br_prodanih(FILE *f, char *autor) {
+	struct albumi { 
+		char naziv[30+1];
+	    char autor[20+1];
+		int prodano; 
+	} x;
+	int suma=0;
+	
+	while(fscanf(f,"%s %s %d",x.naziv,x.autor,&x.prodano)==3) {
+		if(strcmp(autor,x.autor)==0) suma+=x.prodano;
+	}
+	return suma;
+}

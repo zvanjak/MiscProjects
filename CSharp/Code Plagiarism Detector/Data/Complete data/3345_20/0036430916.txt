@@ -1,0 +1,14 @@
+#include <math.h>
+
+
+double sumareda(int N) {
+       double x;
+       
+       kontrola();
+       
+       if(N <= 0) return 0.0;
+       
+       x = 1.0 / pow((double) N, 4.0);
+       
+       return x + sumareda(N - 1);
+}

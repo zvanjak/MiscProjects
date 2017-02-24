@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+	int n,i;
+	double rez=0;
+	scanf("%d", &n);
+	if(n<1 || n>30) printf("n nije valjan");
+	else {
+		for(i=0;i<n;i++) rez=rez+(1/pow(2,i)*pow(-1,i));
+		printf("%.12lf",rez);	
+	}
+	return 0;
+}

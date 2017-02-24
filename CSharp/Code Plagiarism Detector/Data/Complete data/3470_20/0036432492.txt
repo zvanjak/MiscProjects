@@ -1,0 +1,11 @@
+bool fun2(Pravokutnik p, Krug k) {
+  Tocka tocka1, *tocka2, *tocka3, *tocka4;
+  tocka1 = p.getDLkut();
+  tocka2 = new Tocka(tocka1.X + p.getSirina(), tocka1.Y);
+  tocka3 = new Tocka(tocka1.X, tocka1.Y + p.getVisina());
+  tocka4 = new Tocka(tocka3->X, tocka4->Y);
+  bool sadrziLi;
+  if ((k.Sadrzi(tocka1)) && (k.Sadrzi(*tocka2)) && (k.Sadrzi(*tocka3)) && (k.Sadrzi(*tocka4))) sadrziLi = true;
+  else sadrziLi = false;
+  return sadrziLi;
+}

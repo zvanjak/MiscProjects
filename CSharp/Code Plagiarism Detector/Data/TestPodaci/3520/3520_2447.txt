@@ -1,0 +1,15 @@
+int RemoveAllDigits(char *inputField, char *outputField, int *number){
+   int i,j;
+   *number=0;
+   for(i=0;inputField[i];i++)
+      if (inputField[i]>='0' && inputField[i]<='9'){
+         for(j=i;inputField[j];j++)
+            inputField[j]=inputField[j+1];
+         *number+=1;
+         i--;
+         }
+   for(i=0;inputField[i];i++)
+      outputField[i]=inputField[i];
+   outputField[i]=0;
+   return i;
+}

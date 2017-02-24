@@ -1,0 +1,80 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <memory.h>
+
+bool ClanPolja(int element, int *polje, int broj_elemenata)
+{
+	int i;
+
+	for(i=0; i<broj_elemenata; i++){
+		if(polje[i] == element) return true;
+	}
+
+	return false;
+}
+
+
+
+class Komprimiranje
+{
+	private:
+		int *_polje;
+		int _broj_elem;
+	
+	public:
+		Komprimiranje(int *pokazivac, int broj_elemenata);
+		~Komprimiranje();
+		int BrojRazlicitihElemenata();
+		int UkupniBrojElemenata(int vrijednost);
+};
+
+
+
+Komprimiranje::Komprimiranje(int *pokazivac, int broj_elemenata)
+{
+	_broj_elem=broj_elemenata;
+	_polje = (int *) malloc(sizeof(int) * _broj_elem);
+	memcpy(_polje, pokazivac, sizeof(int) * _broj_elem);
+}
+
+
+
+Komprimiranje::~Komprimiranje(){
+	free(_polje);
+}
+
+
+
+int Komprimiranje::BrojRazlicitihElemenata()
+{
+	int *pom_polje;
+	int pom_broj_elem = 0;
+	int i;
+
+	pom_polje = (int *) malloc(sizeof(int) * _broj_elem);
+	
+	for(i=0; i<_broj_elem; i+=2){
+		
+		if(ClanPolja(_polje[i], pom_polje, pom_broj_elem) == false){
+			pom_polje[pom_broj_elem] = _polje[i];
+			pom_broj_elem ++;
+		}
+
+	}
+
+	free(pom_polje);
+
+	return pom_broj_elem;
+}
+
+
+
+int Komprimiranje::UkupniBrojElemenata(int vrijednost)
+{
+	int brojac=0, i;
+	
+	for (i=0; i<_broj_elem; i+=2)
+		if (_polje[i]==vrijednost) brojac+=_polje[i+1];
+
+	return brojac;
+}

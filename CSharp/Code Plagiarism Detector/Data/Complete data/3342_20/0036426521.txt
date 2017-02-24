@@ -1,0 +1,27 @@
+#include <stdio.h>
+int kontrola()
+
+
+int niz (int i) {
+ kontrola();
+if (i==2)
+return 3;
+if (i==1)
+return 2;
+if (i==0)
+return 1;
+if (i<0)
+return 0;
+return (niz(i-3)+ (niz (i-1) + niz(i-2))/2) ;
+}
+int main (){
+int n;
+scanf ("%d",&n);
+n= niz(n) ;
+printf ("%d",n);
+
+
+
+return 0;
+}
+ 

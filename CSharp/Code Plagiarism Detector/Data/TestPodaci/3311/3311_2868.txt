@@ -1,0 +1,17 @@
+float prosjek(FILE *f) {
+ 
+ struct album {
+  char naziv[30+1];
+  char ime[20+1];
+  int prodano;
+ } curr;
+ int num=0,sold=0;
+ 
+ fseek(f,0L,SEEK_SET);
+ while (fread(&curr,sizeof(curr),1,f)==1) {
+  num++;
+  sold+=curr.prodano;
+ }
+ 
+ return (float)(sold)/num;
+}

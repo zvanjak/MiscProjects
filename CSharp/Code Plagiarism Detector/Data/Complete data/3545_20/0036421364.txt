@@ -1,0 +1,17 @@
+void PrepisiStogURed(Stog *stog, Red *red){
+     int element;
+     Stog pomStog;
+     
+     
+     while (1){
+      if (stog->Skini(&element)==0) break;
+      pomStog.Stavi(element);
+      }
+   
+     
+     while (1){
+     if (pomStog.Skini(&element)==0) break;
+           if (!(element%2))
+           red->DodajURed(element);
+     }
+     }

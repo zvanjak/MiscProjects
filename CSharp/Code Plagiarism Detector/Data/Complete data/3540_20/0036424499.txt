@@ -1,0 +1,19 @@
+int izbaci(zapis **glava)
+{
+	zapis *p;
+	int brojIzbacenih=0;
+	while(*glava)
+	{
+		while((*glava)->pros < 2.0)
+		{
+			p=*glava;
+			*glava=(*glava)->sljed;
+			free(p);
+			brojIzbacenih++;
+			if((*glava)==NULL)
+				return brojIzbacenih;
+		}
+		glava= &((*glava)->sljed);
+	}
+	return brojIzbacenih;
+}

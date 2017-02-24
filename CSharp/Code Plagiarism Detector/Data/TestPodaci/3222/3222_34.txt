@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main ()
+{
+int n,z,i;
+scanf ("%d", &n);
+for (i=0; (n%13!=0) && (i<40); i++)
+{
+z= n%10;
+n= n+z;
+printf ("%d ", n);
+}
+printf ("%d ", i);
+return 0;
+}

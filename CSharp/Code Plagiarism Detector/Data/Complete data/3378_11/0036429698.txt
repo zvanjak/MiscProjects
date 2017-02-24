@@ -1,0 +1,29 @@
+#include<stdio.h>
+int main () {
+	int os,ns,cs;
+	float bp,np;
+	scanf("%d %d %d", &os, &ns, &cs);
+		while (cs <= 0 || os <= 0 || ns <= 0) {
+			scanf("%d %d %d", &os, &ns, &cs);
+		}
+
+		if (os < ns) {
+			bp = cs*0.9*os;
+		}
+		else {
+			if (os > ns) {
+				bp = (cs+cs*0.15)*os;
+			}
+			else {
+				bp = cs*os;
+			}
+		}
+		if (bp > 6000) {
+			np = bp*0.7;
+		}
+		else {
+			np = bp*0.8;
+		}
+printf("%.2f", np);
+return 0;
+}

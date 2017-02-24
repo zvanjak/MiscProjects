@@ -1,0 +1,22 @@
+char *SamoSamoglasnici(char *ulazni_niz) {
+	int n = 0, j = 0, i = 0;
+	char *pok;
+
+	if ((ulazni_niz == NULL) || (ulazni_niz[0] == '\0'))
+		return NULL;
+	while (ulazni_niz[n++])
+		if ((ulazni_niz[i] == 'a') || (ulazni_niz[i] == 'e') || (ulazni_niz[i] == 'i') ||
+		  (ulazni_niz[i] == 'o') || (ulazni_niz[i] == 'u') || (ulazni_niz[i] == 'A') ||
+		  (ulazni_niz[i] == 'E') || (ulazni_niz[i] == 'I') || (ulazni_niz[i] == 'O') ||
+		  (ulazni_niz[i] == 'U')) 
+			i++;
+	pok = (char *) malloc (i * sizeof(char));
+	for (i = 0; i < n; i++)
+		if ((ulazni_niz[i] == 'a') || (ulazni_niz[i] == 'e') || (ulazni_niz[i] == 'i') ||
+		  (ulazni_niz[i] == 'o') || (ulazni_niz[i] == 'u') || (ulazni_niz[i] == 'A') ||
+		  (ulazni_niz[i] == 'E') || (ulazni_niz[i] == 'I') || (ulazni_niz[i] == 'O') ||
+		  (ulazni_niz[i] == 'U')) 
+				pok[j++] = ulazni_niz[i];
+	pok[j] = '\0';
+	return pok;
+}

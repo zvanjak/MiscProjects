@@ -1,0 +1,90 @@
+class CjelobrojniNiz {
+private:
+int *polje;
+int _brojelem;
+
+public:
+int VecinaJednaka;
+
+CjelobrojniNiz(int *adresa, int broj)
+{
+int i,j, brojac=0;
+_brojelem = broj;
+VecinaJednaka = 0; //defaultno
+polje = (int*) malloc(sizeof(int)*_brojelem);
+for (i=0;i<_brojelem;i++) // kopiram elemente
+{
+polje[i] = adresa[i];
+}
+//postavljam _VecinaJednaka
+for (i=0;i<_brojelem;i++)
+{
+brojac = 0;
+for (j=0;j<_brojelem;j++)
+if (polje[i]==polje[j])
+brojac++; 
+
+if (brojac > (_brojelem/2))
+{VecinaJednaka = 1;break;}
+}
+}
+
+int vratielement(int m)
+{
+return *(polje+m);
+}
+int Usporedi (CjelobrojniNiz niz)
+{
+int i, retval = 1; //pretpostavimo da su jednaki
+if (this->_brojelem != niz._brojelem)
+retval = 0;
+else 
+{
+for (i=0;i<_brojelem;i++)
+{
+if(this->polje[i]!=niz.polje[i])
+retval = 0;
+}
+}
+return retval;
+}
+int vratibroj()
+{
+return _brojelem;
+}
+
+int *VratiPresjek(CjelobrojniNiz niz, int *n)
+{
+int i=0,j=0,z,*niz2,n2=0,var=0;
+niz2=(int*)malloc(sizeof(int));
+while(i<_brojelem && j<niz.vratibroj())
+{
+if (*(polje+i)==niz.vratielement(j))
+{ var=1; 
+for(z=0;z<n2;z++)
+if(*(polje+i)==*(niz2+z)) 
+{
+var=0;
+break;
+}
+if(var)
+{
+*(niz2+n2)=*(polje+i);
+n2++;
+niz2=(int *)realloc(niz2,sizeof(int));
+
+}
+i++;j++;
+}
+else if (*(polje+i)<niz.vratielement(j)) i++;
+else j++; 
+}
+*n=n2;
+return niz2;
+}
+
+~CjelobrojniNiz()
+{
+free (polje);
+
+}};

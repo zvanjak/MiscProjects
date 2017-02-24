@@ -1,0 +1,19 @@
+int br_prodanih(FILE* f, char*  autor)
+{
+	struct
+	{
+		char naziv[31];
+		char autor[21];
+		int prodano;
+	} album;
+	int br=0, i, nadjen;
+	fseek(f,0,0);
+	while (fscanf(f,"%s%s%d", album.naziv, album.autor, &album.prodano)==3)
+	{
+		nadjen=1;
+		for(i=0; album.autor[i] != '\0'; i++) 
+			if (album.autor[i] != autor[i]) nadjen=0;
+		if (nadjen) br+= album.prodano;
+	}
+	return br;
+}

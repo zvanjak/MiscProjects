@@ -1,0 +1,19 @@
+int Memoriraj (Radio& radio) {
+int i=0;
+Stanica p1;
+do {
+Stanica p = radio.TraziSljedecu();
+if ( i==0 ){
+p1 = p;
+i++;
+}
+else if ( p.operator == (p1) )
+break;
+if ( strlen (p.RDS()) ) {
+radio.MemorirajStanicu(p, i);
+i++;
+};
+}
+while ( i<7 );
+return i-1;
+}

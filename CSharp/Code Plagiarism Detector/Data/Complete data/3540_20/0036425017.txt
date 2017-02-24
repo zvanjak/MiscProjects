@@ -1,0 +1,17 @@
+int izbaci(zapis**glava){
+zapis *p,*r;
+int brojac=0;
+p=*glava;
+r=NULL;
+if(p==NULL) return brojac;
+do{
+if(p->pros<2.0){
+if(r=NULL) *glava=p->sljed;
+else r->sljed=p->sljed;
+brojac++;
+}
+r=p;
+p=p->sljed;
+}while(p!=NULL);
+return brojac;
+}

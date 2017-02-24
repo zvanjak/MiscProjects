@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main()
+{
+ int broj1,broj2,o,i,j;
+ scanf("%d",&broj1);
+ broj2=broj1;
+
+ if(broj1>0){
+  do{
+  i=0;
+  while(broj1!=0){
+   o=broj1%10;
+   broj1/=10;
+   i++;
+  }
+  printf("%d ",o);
+  for(j=1;j<i;j++) o*=10;
+  broj2-=o;
+  broj1=broj2;
+
+  }while(i!=1);
+ }else printf("n nije pozitivan");
+}

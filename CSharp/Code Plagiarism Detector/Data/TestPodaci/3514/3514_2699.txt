@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include<math.h>
+int main(){
+double i,e;
+struct  tocka {
+      double x;
+      double y;
+}t1,t2,t3,t4;
+scanf("%lf %lf %lf %lf %lf %lf %lf %lf",&t1.x,&t1.y,&t2.x,&t2.y,&t3.x,&t3.y,&t4.x,&t4.y);
+i=(t1.x+t2.x+t3.x+t4.x)/4;
+e=(t1.y+t2.y+t3.y+t4.y)/4;
+if(sqrt((t1.x-t3.x)*(t1.x-t3.x)+(t1.y-t3.y)*(t1.y-t3.y))==sqrt((t2.x-t4.x)*(t2.x-t4.x)+(t2.y-t4.y)*(t2.y-t4.y))
+   &&(sqrt((t1.x-t2.x)*(t1.x-t2.x)+(t1.y-t2.y)*(t1.y-t2.y))==sqrt((t2.x-t3.x)*(t2.x-t3.x)+(t2.y-t3.y)*(t2.y-t3.y))))
+   printf("%.2lf",((t2.x-t3.x)*(t2.x-t3.x)+(t2.y-t3.y)*(t2.y-t3.y)));
+else printf("%.2lf %.2lf", sqrt(i*i+e*e),atan(e/i));
+return 0;
+}

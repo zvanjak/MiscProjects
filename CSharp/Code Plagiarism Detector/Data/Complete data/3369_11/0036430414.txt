@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main()
+{ int z1,z2,z3,z4,broj;
+      scanf("%d", &broj);
+                  if(broj>=100 && broj<=999)
+                  {
+                  z4=broj%8;
+                  z3=(broj/8)%8;
+                  z2=((broj/8)/8)%8;
+                                    if(broj>=512)
+                                    {
+                                    z1=(((broj/8)/8)/8)%8;
+                                    printf("%d%d%d%d", z1,z2,z3,z4);
+                                    }
+                                    else
+                                    printf("%d%d%d", z2,z3,z4);
+
+                  }
+                  else
+
+
+  return 0;
+}

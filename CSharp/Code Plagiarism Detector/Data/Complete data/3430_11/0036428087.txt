@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main () {
+	char recenica1[102],slovo;
+	int i,uvjet,j;
+	for(i=0;i<102;i++) recenica1[i]='\0';
+	i=0;
+	recenica1[i]=0;
+
+	while (recenica1[i]!= '.') {
+		i++;
+		scanf("%c", &recenica1[i]); 
+		if (recenica1[i]=='\n') i--;
+			if (recenica1[i]>='A' && recenica1[i]<='Z') recenica1[i]+=32;
+							   }
+	uvjet=1;
+	j=0;
+	for (j=1; j<i && uvjet==1; j++) if (recenica1[j]!=recenica1[i-j]) uvjet=0;
+
+	if (uvjet==1) printf("DA");
+	else printf("NE");
+	return 0;
+}

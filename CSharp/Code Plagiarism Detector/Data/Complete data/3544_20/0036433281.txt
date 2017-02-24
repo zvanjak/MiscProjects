@@ -1,0 +1,11 @@
+Red *PrepisiStogURed(Stog *stog){
+int elem;
+Red *pom;
+if (stog->Skini(&elem))
+{
+pom=PrepisiStogURed(stog);
+} 
+else return new Red;
+pom->DodajURed(elem);
+return pom;
+}

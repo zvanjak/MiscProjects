@@ -1,0 +1,13 @@
+#include<stdio.h>
+
+int main(){
+    int n=1;
+    int max=-32768, min=32767;
+    while(n%4!=0){
+        scanf("%d",&n);
+        if(n>max)max=n;
+        if(n<min)min=n;
+    }
+    printf("%d %d",max, min);
+}    
+    

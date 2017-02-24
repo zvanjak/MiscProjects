@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<math.h>
+int main (){
+ int n,v;
+double pi=0,i,k=0,b;
+scanf("%d",&n);
+b=0;
+if((n<1) || (n>500))
+{
+printf("n nije valjan");
+} else {
+	for (i=0;i<n;i++){
+pi=1/(2*i+1);
+v=i;
+b=v % 2;
+if(b==0){
+	k=k+pi;}
+else{
+k=k-pi;}
+}
+	k=k*4;
+printf("%1.12f" ,k);
+}}

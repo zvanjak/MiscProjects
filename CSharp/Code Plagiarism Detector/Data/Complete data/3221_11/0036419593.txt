@@ -1,0 +1,21 @@
+#include <stdio.h>
+int main () {
+	int prvi, d, granica, trenutni=0, brojac=0;
+
+	scanf ("%i", &prvi);
+	scanf ("%i", &d);
+	scanf ("%i", &granica);
+	if (prvi>granica) {
+		printf("%i", brojac);
+		return 0;
+	}
+
+	while (trenutni < granica) {
+		trenutni = prvi + d;
+		printf("%i ", trenutni);
+		prvi = trenutni;
+		brojac++;
+	}
+	printf("%i ", brojac);
+	return 0;
+}

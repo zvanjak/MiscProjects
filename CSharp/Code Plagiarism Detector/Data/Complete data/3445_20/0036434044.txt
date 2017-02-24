@@ -1,0 +1,38 @@
+class Kosarica {
+
+	public :
+
+		Kosarica() {this->broj_prizvoda = 0;
+					this->ukupna_cijena = 0; 
+					this->najskuplji_prizvod = 0;
+		};
+
+		void DodajProizvod(float cijena) {
+			this->broj_prizvoda++;
+			this->cijene_proizvoda = (float *) realloc (this->cijene_proizvoda, 
+											sizeof(this->cijene_proizvoda));
+			if (cijena > this->najskuplji_prizvod) this->najskuplji_prizvod = cijena;
+		}
+
+		float UkupnaCijena() {
+
+			if (this->broj_prizvoda != 0) 
+			return this->ukupna_cijena;
+			else return 0;
+		}
+
+		float NajskupljiProizvod() {
+			if (this->broj_prizvoda != 0) 
+			return this->najskuplji_prizvod;
+			else return 0;
+		}
+		~Kosarica() {};
+
+private :
+
+		int broj_prizvoda;
+		float *cijene_proizvoda;
+		float ukupna_cijena;
+		float najskuplji_prizvod;
+
+};

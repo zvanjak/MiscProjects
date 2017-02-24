@@ -1,0 +1,35 @@
+#include<stdio.h>
+#define MAXRED 20
+#define MAXSTUP 5
+main(){
+	int polje[MAXRED][MAXSTUP];
+	int *z=&polje[0][0];
+	int mr, ms,i,p,q,r,s;
+	int br=0;
+	int br1=0;
+	int j=0;
+	do{ scanf ("%d %d",&mr,&ms);}
+	while(mr<1||mr>20&&ms<1||ms>5);
+	scanf("%d %d",&p,&q);
+	for(r=0;r<mr;r++){
+		for(s=0;s<ms;s++){
+			if(r%2==0)
+				*(z+r*MAXSTUP+s)=p;
+			else
+				*(z+r*MAXSTUP+s)=q;}}
+	do{ scanf("%d %d",&i,&j);
+		*(z+i*MAXSTUP+j)=0;
+		br++;}
+	while (i>=0&&i<mr&&j>=0&&j<ms);
+	for(j=0;j<ms;j++){
+		for(i=0;i<mr;i++)
+			if(*(z+i*MAXSTUP+j)==0){
+				br1++;
+				i=0;
+				j++;
+			}}
+	br1=ms-br1;
+			
+			 
+	printf("%d %d",br-1,br1);
+	return 0;}

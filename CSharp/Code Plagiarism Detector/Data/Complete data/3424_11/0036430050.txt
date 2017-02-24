@@ -1,0 +1,21 @@
+#include <stdio.h>
+int main () {
+	 int broj[10000],i,j,k,z;
+	 scanf("%d", &broj[0]);
+	 i=0;
+z=0;
+     while (broj[i]>=0) {
+		i=i+1;
+		scanf("%d", &broj[i]);
+		}
+	 for (k=0; k<i; k++) {
+ for (j=0; j<broj[z]; j++){
+			 printf("%d ", k);
+		 }
+z=z+1;
+	 }
+	 
+	return 0;
+}
+
+

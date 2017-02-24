@@ -1,0 +1,27 @@
+#include<stdio.h>
+int main(){
+	int niz[15];
+	int n,i,j;
+	scanf("%d",&n);
+	if (n<1){
+		printf("n nije pozitivan");
+	}else if((n/10)==0){
+		printf("%d",n);
+	}
+	else{
+		i=0;
+		while (n>0){
+        niz[i]=n%10;
+		i+=1;
+		n=n/10;
+		
+		}
+	    for(j=i-1;j>i-2;j--)
+			printf("%d ",niz[j]);
+        for(j=i-2;j>=1;j--)
+			printf("%d ",niz[j]);
+			printf("%d",niz[0]);
+		
+	}
+  return 0;
+}

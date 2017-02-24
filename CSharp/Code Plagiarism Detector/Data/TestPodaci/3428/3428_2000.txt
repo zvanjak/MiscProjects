@@ -1,0 +1,30 @@
+#include<stdio.h>
+#define RED 20 
+#define STUP 5
+int main(){
+	int r,x,s,i,j,po[RED][STUP], prod=1;
+do scanf("%d %d",&r,&s);
+while ((r<1 || r>20)||(s<1 || s>5));
+for (i=0;i<r;i++){
+	for (j=0;j<s;j++){
+		scanf ("%d",&po[i][j]);
+	}
+}
+if (r%2==1){
+	x=0;
+		for(j=0;x==0&&j<s;j++){
+			for (i=0;i<r;i++){
+				if (po[i][j]==po[r-i-1][j]) x=0;
+				else x=1;
+				}}
+		if (x==0) printf("Jest");
+		else printf("Nije");}
+else {
+	for(i=0;i<r;i++){
+		for(j=0;j<s;j++){
+			if (i%2==0&&j%2==0) prod*=po[i][j];}}
+	printf("%d", prod);
+}
+
+return 0;}
+	

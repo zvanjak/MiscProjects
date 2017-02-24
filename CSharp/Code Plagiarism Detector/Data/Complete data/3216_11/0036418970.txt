@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main() {
+	int x,p=0,brprost=0,i;
+		do { 
+				p=0;
+				scanf("%d",&x);
+				for (i=2;i<x-1;i++){
+				if ((x%i)==0) p+=1;
+				}
+			if (p==0) brprost+=1;
+		   }
+	while (x>2);
+	printf("%d",brprost-1);
+	return 0;
+}

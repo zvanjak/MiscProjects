@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+char *BezDuplikata(char *ulazni_niz)
+{
+	char *novi;
+	short int znakovi[256]={0}, k=0;
+
+	novi=NULL;
+
+	if(ulazni_niz!=NULL && *ulazni_niz!='\0')
+	{
+		while(*ulazni_niz!='\0')
+		{
+			if(znakovi[(int)*ulazni_niz]==0)
+			{
+				novi=(char*)realloc(novi, (k+1)*sizeof(char));
+				novi[k]=*ulazni_niz;
+				znakovi[novi[k]]=1;
+				k++;
+			}
+			ulazni_niz++;
+		}
+		novi[k]='\0';
+	}
+
+	return novi;
+}

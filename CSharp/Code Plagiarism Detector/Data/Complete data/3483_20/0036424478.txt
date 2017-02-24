@@ -1,0 +1,33 @@
+class Komprimiranje
+{
+	private:
+	int *x, n;
+	
+	public:	
+	Komprimiranje(int* polje, int broj)
+	{	
+ 		x=polje;
+		n=broj;
+	}
+
+	int UkupnaSuma()
+	{
+		int i, s=0;
+		
+		for(i=0; i<n; i+=2)
+			s+=x[i]*x[i+1];
+			
+	return s;
+	}
+	
+	int UkupniBrojElemenata(int vrijednost)
+	{
+		int i, b=0;
+		
+		for(i=0; i<n; i+=2)
+			if(x[i]!=vrijednost)
+				b+=x[i+1];
+				
+		return b;
+	}
+};

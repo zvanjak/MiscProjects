@@ -1,0 +1,64 @@
+void zamijeni(char *ulazni,int *broj){
+	int i,a,n,brbr=0,brsl=0,brost=0;
+	n=strlen(ulazni);
+	for(i=0;i<n;i++){
+		if(isdigit(ulazni[i])){
+			brbr++;
+			ulazni[i]='!';
+		}
+		else if(isalpha(ulazni[i])){
+			brsl++;
+			if(brsl==1){
+				ulazni[i]=toupper(ulazni[i]);
+			}
+			else{
+				ulazni[i]=tolower(ulazni[i]);
+			}
+
+		}
+		else{
+			brost++;
+			ulazni[i]='?';
+		}
+		if(brbr>=brsl && brbr>=brost){
+			*broj=brbr;
+		}
+		else if(brbr>=brsl && brbr<brost){
+            *broj=brost;
+		}
+		else{
+			*broj=brsl;
+		}
+	}
+	for(i=0;i<n;i++){
+		if(ulazni[i]==ulazni[i+1]&&ulazni[i]=='!'){
+			for(a=i;a<n;a++){
+				ulazni[a]=ulazni[a+1];
+			}
+		}
+		n=strlen(ulazni);
+	}
+	for(i=0;i<n;i++){
+		if(ulazni[i]==ulazni[i+1]&&ulazni[i]=='!'){
+			for(a=i;a<n;a++){
+				ulazni[a]=ulazni[a+1];
+			}
+		}
+		n=strlen(ulazni);
+	}for(i=0;i<n;i++){
+		if(ulazni[i]==ulazni[i+1]&&ulazni[i]=='!'){
+			for(a=i;a<n;a++){
+				ulazni[a]=ulazni[a+1];
+			}
+		}
+		n=strlen(ulazni);
+	}
+	for(i=0;i<n;i++){
+		if(ulazni[i]==ulazni[i+1]&&ulazni[i]=='!'){
+			for(a=i;a<n;a++){
+				ulazni[a]=ulazni[a+1];
+			}
+		}
+		n=strlen(ulazni);
+	}		
+}

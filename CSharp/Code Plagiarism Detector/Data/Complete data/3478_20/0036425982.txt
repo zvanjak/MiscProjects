@@ -1,0 +1,20 @@
+Ekipa StvoriISortiraj(char *naziv)
+{   
+	int i,j;
+   
+	Ekipa dz_ekipa(naziv);
+	dz_ekipa.Napuni();
+
+	for(i=0;i<10;i++)
+	{
+		for(j=0;j<10;j++)
+		{
+				if(dz_ekipa[j].VratiBroj()>dz_ekipa[j+1].VratiBroj())
+				{
+				dz_ekipa.Zamijeni(j,j+1);
+				}
+		}
+	}
+
+   return dz_ekipa;
+}

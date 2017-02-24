@@ -1,0 +1,21 @@
+int najbolji(FILE *f) {
+
+	struct natjecatelj {
+		int rb;
+		char prezime[20+1];
+		int bod;
+	} x;
+	
+	int index,max;
+
+	fseek(f,0L,SEEK_SET);
+	
+	max=-10000;
+	while (fread(&x,sizeof(x),1,f)==1) {
+		if (x.rb!=0 && x.bod>max) {
+			max=x.bod;
+			index=x.rb;
+		}
+	}
+	return index;
+}

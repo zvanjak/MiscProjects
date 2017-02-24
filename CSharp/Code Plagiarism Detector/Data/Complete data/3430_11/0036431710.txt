@@ -1,0 +1,41 @@
+#include <stdio.h>
+int main () {
+	  char niz[100];
+	  int i=0,k,m,gotovo=2,n,da=0;
+	      
+		  do{scanf("%c",&niz[i]);
+				i++;
+			  }
+		    while(niz[i-1]!='.'&& niz[i-1]!=33 && niz[i-1]!=34 && niz[i-1]!=35 && niz[i-1]!=36
+			  && niz[i-1]!=37 && niz[i-1]!=38 && niz[i-1]!=39 && niz[i-1]!=40 && niz[i-1]!=41 && niz[i-1]!=42 && niz[i-1]!=43 && niz[i-1]!=44
+			  && niz[i-1]!=45 && niz[i-1]!=47 && niz[i-1]!=48 && niz[i-1]!=49 && niz[i-1]!=50 && niz[i-1]!=51 && niz[i-1]!=52 && niz[i-1]!=53
+			  && niz[i-1]!=54 && niz[i-1]!=55 && niz[i-1]!=56 && niz[i-1]!=57 && niz[i-1]!=58 && niz[i-1]!=59 && niz[i-1]!=60
+			  && niz[i-1]!=61 && niz[i-1]!=62 && niz[i-1]!=63 && niz[i-1]!=64 && niz[i-1]!=91 && niz[i-1]!=92 && niz[i-1]!=93 && niz[i-1]!=94 
+			  && niz[i-1]!=95 && niz[i-1]!=96 && niz[i-1]!=123 && niz[i-1]!=124 && niz[i-1]!=125 && niz[i-1]!=126 && niz[i-1]!=127);
+	
+		k=i-3;
+		for(n=0;n<=i;n++){
+			if(niz[n]==65 || niz[n]==66 || niz[n]==67 || niz[n]==68 || niz[n]==69 || niz[n]==70 || niz[n]==71 || niz[n]==72
+				|| niz[n]==73 || niz[n]==74 || niz[n]==75 || niz[n]==76 || niz[n]==77 || niz[n]==78 || niz[n]==79 || niz[n]==80 
+				|| niz[n]==81 || niz[n]==82 || niz[n]==83 || niz[n]==84 || niz[n]==85 || niz[n]==86 || niz[n]==87 || niz[n]==88 
+				|| niz[n]==89 || niz[n]==90 || niz[n]==97 || niz[n]==98 || niz[n]==99 || niz[n]==100 || niz[n]==101 || niz[n]==102
+				|| niz[n]==103 || niz[n]==104 || niz[n]==105 || niz[n]==106 || niz[n]==107 || niz[n]==108 || niz[n]==109 || niz[n]==110
+				|| niz[n]==111 || niz[n]==112 || niz[n]==113 || niz[n]==114 || niz[n]==115 || niz[n]==116 && niz[n]==117 && niz[n]==118
+				|| niz[n]==119 || niz[n]==120 || niz[n]==121 || niz[n]==122 || niz[n]==' '){da=1;};
+			};
+
+		 if ( da==1){
+			
+		    for(m=0;m<k/2;m+=2){
+				if(niz[m]==niz[k-m]){
+					gotovo=0;}
+				if(niz[m]!=niz[k-m]){
+					gotovo=1;};}
+		                      };
+		
+		 if (gotovo==0 && da==1) printf("DA");
+		 if (gotovo==1 && da==1) printf("NE");
+		                   
+
+	  return 0;
+}

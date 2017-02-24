@@ -1,0 +1,39 @@
+#include <stdio.h>
+#define MAXRED 20
+#define MAXSTUP 5
+int main () {
+	int mr,ms,i=0,j=0,suma1=0,suma2=0,brojac1=0,brojac2=0,brojilo=0,brojac3=0,brojac4=0,produkt=1;
+	int matrica[MAXRED][MAXSTUP];
+	
+	do{
+		scanf("%d %d",&mr,&ms);
+	}
+	while((mr<1 || mr>20)||(ms<1 || ms>5));
+
+	for(i=0;i<mr;i++){ 
+		for(j=0;j<ms;j++){
+			scanf("%d",&matrica[i][j]);
+	    }
+    }		
+    if(mr%2==1){
+		for(brojac1=0;brojac1<mr/2;brojac1++){	
+			for(brojac2=0;brojac2<ms;brojac2++){	
+				if(matrica[brojac1][brojac2]==matrica[mr-brojac1-1][brojac2])	
+					brojilo++;
+				}
+	}
+		if(brojilo%ms==0 && brojilo!=0)
+		     printf("Jest");
+		else
+		     printf("Nije");			
+	}
+	else{ 
+		for(brojac3=0;brojac3<mr;brojac3=brojac3+2){
+			for(brojac4=0;brojac4<ms;brojac4=brojac4+2){
+				produkt*=matrica[brojac3][brojac4];
+				}
+	    }
+	    printf("%i",produkt);
+		 }
+	return 0;
+	}

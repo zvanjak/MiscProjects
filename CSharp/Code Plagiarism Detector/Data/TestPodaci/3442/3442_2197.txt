@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+
+int main() {
+    int i,sum1=0,sum2=0,n,broj;
+    
+     scanf("%d", &n);
+         
+     if (n>1){   
+     for(i=0; i<=n; i++)
+          sum1 += (i*i);
+          
+     for(i=1; i<=(n-1); i++)
+           sum2 += (2*i);
+     
+     }
+     
+     broj=sum1-sum2;
+     printf("%d", broj);           
+
+     return 0;
+}
+
+
+  

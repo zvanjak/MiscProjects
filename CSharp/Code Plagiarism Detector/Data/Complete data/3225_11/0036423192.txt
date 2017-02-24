@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+double p,a,b=0;
+int i,n;
+scanf ("%d",&n);
+if (n<=0 || n>=401) printf ("n nije valjan");
+else{
+for (i=0;i<n;i++)
+{
+a=(double)1/(pow((2*i+1),2));
+b=b+a;
+}
+p=sqrt (b*8);
+printf ("%.12lf",p);
+}
+return 0;
+}

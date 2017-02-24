@@ -1,0 +1,11 @@
+int br_prodanih(FILE *f,char *autor)
+{int i=3,prodano=0,broj;
+char a[31],b[21];
+while(1)
+{i=fscanf(f,"%s%s%d",a,b,&broj);
+if(i!=3)break;
+if(strcmp(autor,b)!=0)continue;
+prodano+=broj;
+}
+return prodano;
+}

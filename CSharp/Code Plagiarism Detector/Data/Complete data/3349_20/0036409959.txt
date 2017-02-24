@@ -1,0 +1,14 @@
+double sumareda (double x, int N) {
+	double rez;
+	
+	int kontrola ();
+
+	if (N>1) rez= sumareda(x, N-1);
+	if (N==1) rez= x-1;
+	if (N>1) {
+	if (N%2==0) rez=rez- (pow(x-1,N)/ (double)N);
+	else rez=rez+ (pow(x-1,N)/ (double)N);
+	}
+  
+ return(rez);
+}

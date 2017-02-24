@@ -1,0 +1,23 @@
+int *napraviPolje(int *A,int Na, int *B,int Nb,int *Nc){
+	int i,*p,k=0;
+	for (i=0;i<Na;i++)
+		if ((A[i]/10 != 0) && (A[i]/100 == 0)) k++;
+	for (i=0;i<Nb;i++)
+		if ((B[i]/10 != 0) && (B[i]/100 == 0)) k++;
+	p = (int *) malloc (k*sizeof (int));
+	k=0;
+	for (i=0;i<Na;i++)
+		if ((A[i]/10 != 0) && (A[i]/100 == 0)) 
+		{
+			*(p+k)=A[i];
+			k++;
+		}
+	for (i=0;i<Nb;i++)
+		if ((B[i]/10 != 0) && (B[i]/100 == 0))
+		{
+			*(p+k)=B[i];
+			k++;
+		}
+	*Nc=k;
+	return p;
+}	

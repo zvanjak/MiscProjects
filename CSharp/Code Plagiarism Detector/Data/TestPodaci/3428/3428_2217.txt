@@ -1,0 +1,31 @@
+#include <stdio.h>
+int main(){
+	int mat[20][5],i,j,mr,ms,x=0,p=1;
+	do{
+	scanf("%d %d",&mr,&ms);
+	}while(mr>20||mr<1||ms>5||ms<1);
+	for(i=0;i<mr;i++){
+		for(j=0;j<ms;j++)
+			scanf("%d",&mat[i][j]);
+	}
+
+	if (mr%2){
+		for(i=0;i<mr/2;i++){
+			for(j=0;j<ms;j++){
+				x=(mat[i][j]==mat[mr-1-i][j])?0:1;
+			if (x==1) break;
+			}
+			if (x==1) break;
+		}
+		printf("%s",!x?"Jest":"Nije");
+	}
+	else{
+		for(i=0;i<mr;i++){
+			for(j=0;j<ms;j++)
+			if (i%2==0 && j%2==0)
+				p*=mat[i][j];
+		}
+		printf("%d",p);
+	}
+	return 0;
+}

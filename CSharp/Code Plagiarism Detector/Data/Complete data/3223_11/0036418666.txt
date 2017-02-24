@@ -1,0 +1,19 @@
+#include<stdio.h>
+#include<math.h>
+
+int main(){
+	int n,i,min=-32768,max=32767;
+	while(1<2)
+	{
+		scanf("%d",&n);
+		if(n>=min)
+			min=n;
+		if(n<=max)
+			max=n;
+		if(n>0&&n%4==0)
+			break;
+	}
+	printf("%d %d",max,min);
+	return 0;
+}
+

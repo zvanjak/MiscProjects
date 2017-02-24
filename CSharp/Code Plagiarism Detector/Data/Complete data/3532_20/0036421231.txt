@@ -1,0 +1,12 @@
+Stog* noviOdNeparnih(Stog *stog){
+      Stog *novi= new Stog;
+      Stog *nep= new Stog;
+      int element;
+      while (stog->Skini(&element))
+            novi->Stavi(element);
+      while (novi->Skini(&element)){
+            stog->Stavi(element);
+            if (element%2) nep->Stavi(element);
+            }      
+      return nep;
+}

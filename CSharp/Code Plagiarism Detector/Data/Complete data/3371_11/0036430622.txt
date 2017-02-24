@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    int broj,t,s,d,j,tri,dva,rez;
+    scanf("%d",&broj);
+    rez=0;
+    if ((broj >999) && (broj <10000))  {
+             t=broj/1000;
+             tri=broj%1000;
+             s=tri/100;
+             dva=tri%100;
+             d=dva/10;
+             j=dva%10;
+             if (t%2==0)  
+                t++;
+             if (s%2==0) 
+                s++;
+             if (d%2==0)  
+                d++;
+             if (j%2==0)  
+                j++; 
+             rez= 1000*t+100*s+10*d+j;  }
+   printf("%d%",rez);             
+return 0;
+}

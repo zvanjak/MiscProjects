@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+int n;
+double PI,x,y,i,z;
+scanf("%d",&n);
+if(n<1 || n>25)
+{
+printf("n nije valjan\n");
+}
+else
+{
+for(i=1,x=0,y=0;i<=n;i++)
+{
+z=pow(i,8);
+x=1./z;
+y=y+x;
+}
+y=9450*y;
+PI=pow(y,1./8);
+printf("%.12lf\n",PI);
+}
+return 0;
+}

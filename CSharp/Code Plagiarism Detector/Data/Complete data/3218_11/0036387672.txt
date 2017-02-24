@@ -1,0 +1,24 @@
+#include<stdio.h>
+
+int main () {
+
+	int x ,neprost = 0,i ,max=0;
+    do{    
+	scanf("%d" , &x);
+	if(x>2){
+		for(i=2 ; i < x ;i++){
+			if(x%i==0)
+				neprost=x;
+		}
+		if(!(neprost)){
+		    if(x>max)
+				max=x;
+		}
+	}
+	neprost=0;
+	}
+	while(x>2);
+	printf("%d" , max);
+	return 0;
+	
+}

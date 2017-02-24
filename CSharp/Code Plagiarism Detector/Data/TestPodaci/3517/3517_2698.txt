@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+	int i=0,br=0;
+	double x,b;
+	float niz[50],a;
+	double niz2[50];
+	scanf("%lf",&x);
+	do {
+		scanf("%f",&a);
+			if (a==0) break;
+			else 
+			{
+				if (a<=1 || a>0 || (a+x)!=exp(1.))
+				{
+				niz[i]=a;
+				i++;
+				br++;
+				}
+			}
+	}
+	while ((a!=0)||(i<50));
+	for(i=0; i<br; i++)
+	{
+	b=(double)niz[i]+x;
+	niz2[i]=(pow(b, sinh(b))*cosh(b*b))-(pow(niz[i],sinh(niz[i])*cosh(niz[i]*niz[i]))/x);
+	}	
+	for(i=0; i<br; i++)
+	printf("%.2lf ",atan(niz2[i]));
+	return 0;
+}

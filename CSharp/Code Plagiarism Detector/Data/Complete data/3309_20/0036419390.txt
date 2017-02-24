@@ -1,0 +1,12 @@
+int br_prodanih(FILE *f, char *aut)
+{
+	struct album str1;
+	int d=0;
+
+	fseek(f,0L,SEEK_SET);
+
+	while(fread(&str1,sizeof(str1),1,f)==1)
+		if (strcmp(aut, str1.autor)==0)
+			d+=str1.prodano;
+	return d;
+}

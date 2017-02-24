@@ -1,0 +1,34 @@
+class Komprimiranje
+{
+  private:
+  int _br_elem;
+  int *_prvi_elem;
+
+  public:
+  Komprimiranje(int *niz,int brojelem)
+  {
+    _br_elem=brojelem;
+    _prvi_elem=niz;
+  }
+  int UkupnaSuma();
+  int UkupniBrojElemenata(int razlicit);
+};
+
+int Komprimiranje::UkupnaSuma()
+{
+  int i, suma=0;
+  for (i=0;i<_br_elem;i+=2)
+    suma+=_prvi_elem[i] * _prvi_elem[i+1];
+  return suma;
+}
+
+int Komprimiranje::UkupniBrojElemenata(int razlicit)
+{
+  int rez=0, i;
+
+  for(i=0;i<_br_elem;i+=2)
+    if(_prvi_elem[i]!=razlicit)
+      rez+=_prvi_elem[i+1];
+
+  return rez;
+}

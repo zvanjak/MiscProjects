@@ -1,0 +1,40 @@
+void ConvertToXML (char * inputField, char * outputField)
+{
+	int i;
+	char osoba[]="<osoba>\n", osobaS[]="</osoba>\n";
+	char ime[]="<ime>", imeS[]="</ime>\n";
+	char prezime[]="<prezime>", prezimeS[]="</prezime>\n";
+	char jmbg[]="<jmbg>", jmbgS[]="</jmbg>\n";
+	char *out, *in;
+	
+	in=inputField;
+	out=outputField;
+	while(*inputField!='#') inputField++;
+	
+	while(*in)
+	{
+		for(i=0; osoba[i]; i++) {*out=osoba[i]; out++;}
+		
+		for(i=0; ime[i]; i++) {*out=ime[i]; out++;}
+		in++;
+		while(*in!='#') {*out=*in; in++; out++;}
+		for(i=0; imeS[i]; i++) {*out=imeS[i]; out++;}
+		
+		for(i=0; prezime[i]; i++) {*out=prezime[i]; out++;}
+		in++;
+		while(*in!='#') {*out=*in; in++; out++;}
+		for(i=0; prezimeS[i]; i++) {*out=prezimeS[i]; out++;}
+		
+		for(i=0; jmbg[i]; i++) {*out=jmbg[i]; out++;}
+		in++;
+		while(*in!='#') {*out=*in; in++; out++;}
+		in++;
+		for(i=0; jmbgS[i]; i++) {*out=jmbgS[i]; out++;}
+		
+		for(i=0; osobaS[i]; i++) {*out=osobaS[i]; out++;}
+		while(*in!='#') if (*in) in++; else break;
+		
+	}
+	
+	*out=0;
+}

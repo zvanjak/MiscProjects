@@ -1,0 +1,30 @@
+#include <stdio.h>
+int main()
+{
+	int i,ir,j,is,mr,ms,max=0;
+	int polje[20][5];
+	do{
+	scanf("%d %d",&mr,&ms);
+	}while((mr<1 || mr>20)||(ms<1 || ms>5));
+     
+	for (i=0;i<mr;i++){
+		 for(j=0;j<ms;j++){	
+           scanf("%d",&polje[i][j]);
+		}
+	 }
+	for (i=0;i<mr;i++){
+		 for(j=0;j<ms;j++){	
+			 if(polje[i][j]<0){
+				 polje[i][j]= (-1)*polje[i][j];
+			 }if(polje[i][j]>max){
+					 max=polje[i][j];
+			         ir=i;
+					 is=j;
+					 
+			   }
+			 }
+		 }
+  printf("%d %d", ir, is);
+return 0;
+}
+		

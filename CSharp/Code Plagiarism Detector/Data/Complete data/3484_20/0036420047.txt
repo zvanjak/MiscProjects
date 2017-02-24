@@ -1,0 +1,76 @@
+class CjelobrojniNiz{
+private:
+ int brelem;
+ int *polje;
+public:
+ 
+ CjelobrojniNiz(int *niz, int n){
+  int i,j,br,maxbr=0;
+  brelem=n;
+  polje = new int[brelem];
+  for(i=0; i<brelem; i++){
+   polje[i]=niz[i];
+  }
+  
+  for(i=0;i<n;i++){
+   br=0;
+   for(j=0;j<n;j++)
+    if(polje[i]==polje[j]) br++;
+   if(br>maxbr) maxbr=br;
+  }
+  if(maxbr>n/2) VecinaJednaka=1; else VecinaJednaka=0;
+ }
+
+ CjelobrojniNiz(const CjelobrojniNiz &copy){
+	 int i;
+	 brelem = copy.brelem;
+	 polje = new int[brelem];
+	 for (i=0; i<brelem; i++) polje[i]=copy.polje[i];
+ }
+ 
+ ~CjelobrojniNiz(){
+  delete []polje;
+ }
+ 
+
+ int Usporedi(CjelobrojniNiz niz){
+  
+  int i,usp=0;
+  if(brelem == niz.brelem){  
+    usp=1;
+    for(i=0; i<brelem; i++){
+     if(polje[i]!=niz.polje[i]) {usp=0; break;}   
+    }
+  }  
+  else usp=0;
+  
+  return usp;
+ }
+ 
+ int *VratiPresjek(CjelobrojniNiz niz, int* n){  
+  int i,j,pr,indeks=0;  
+  
+  int *noviniz=new int[brelem<niz.brelem ? brelem : niz.brelem]; 
+  *n=0;
+  for(i=0; i<brelem; i++){
+   pr=0;
+   if(i!=0) if(polje[i]==polje[i-1])continue; 
+   for(j=0; j<niz.brelem; j++){
+    if(polje[i]==niz.polje[j]){ 
+     pr=1;
+     break;
+    }
+    else continue;
+   }
+   if(pr==1){
+    *(noviniz+indeks)=polje[i]; 
+    indeks+=1;
+    *n+=1;
+   }
+  }
+ return noviniz;
+ }
+ 
+ int VecinaJednaka;
+};
+  

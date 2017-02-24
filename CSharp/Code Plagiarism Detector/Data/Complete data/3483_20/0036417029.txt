@@ -1,0 +1,31 @@
+class Komprimiranje {
+private:
+	int *_podaci;
+	int _brclanova;
+public:
+	Komprimiranje() {
+		_podaci = new int(1);
+		_brclanova = 0;
+	}
+	Komprimiranje (int *a, int brcl) {
+		_podaci = a;
+		_brclanova = brcl;
+	}
+	~Komprimiranje () {
+		delete []_podaci;
+	}
+	int UkupnaSuma() {
+		int i, suma = 0;
+		for ( i = 0; i <= _brclanova; i = i + 2)
+			suma += ( *(_podaci + i) * *(_podaci + i + 1));
+		return suma;
+	}
+	int UkupniBrojElemenata ( int vrijednost ) {
+		int i, num = 0;
+		for ( i = 0; i < _brclanova; i = i + 2) { 
+			if ( *(_podaci + i) > vrijednost )
+				num++;
+		}
+		return num;
+	}
+};

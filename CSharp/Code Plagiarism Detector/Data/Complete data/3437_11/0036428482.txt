@@ -1,0 +1,23 @@
+#include <stdio.h>
+#define max 42
+int main() {
+	int i=-1;
+	int k[max];
+	while (k[i-1] != 50 && i<max) {
+		i++;
+		scanf("%d", &k[i]);
+		}
+	for(i=3;i<max;i=i+2){
+		if(k[i-3]!=50){
+			if(k[i]>k[i-2]){
+				printf("Raste ");
+			} else if (k[i]<k[i-2]){
+				printf("Pada ");
+			} else {
+				printf("Ravan ");
+			}
+			if(k[i-1]==50) break;
+		} else break;
+	}
+	return 0;
+}

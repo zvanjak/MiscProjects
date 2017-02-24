@@ -1,0 +1,15 @@
+int Memoriraj(Radio& radio)
+{
+  int ukupno=0;
+  float prva=-2;
+  Stanica tempStanica;
+  do {
+    tempStanica=radio.TraziSljedecu();
+    if (prva==tempStanica.Frekvencija()) break;
+    if (prva==-2) prva=tempStanica.Frekvencija();
+    if (tempStanica.RDS()[0]=='\0') continue;
+    ukupno++;
+    radio.MemorirajStanicu(tempStanica,ukupno);
+  } while (ukupno<6);
+  return ukupno;
+}

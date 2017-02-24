@@ -1,0 +1,16 @@
+#include <stdio.h>
+int main(){
+	float pi, rjesenje=0;
+	int n, i;
+	scanf("%d", &n);
+	if (n<1 || n>500) {
+		printf ("n nije valjan\n"); }
+	else {
+		for (i=1; i<=n; i=i+2) {
+			rjesenje=(float) rjesenje+1./(2*i-1); }
+		for (i=2; i<=n; i=i+2) {
+			rjesenje=(float) rjesenje-1./(2*i-1); }
+		pi=rjesenje*4;
+		printf ("%.12f\n", pi);}
+return 0;
+}

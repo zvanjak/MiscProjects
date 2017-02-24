@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <math.h>
+double funkcija (float a){
+	double x;
+	x = cosh (a*a)* pow(a, sinh (a));
+	return x;
+}
+int main (void){
+int i=0, j;
+double delX, fi;
+float niz[50]={1},a=1;
+double niz2[50];
+scanf ("%lf", &delX);
+while ((a!= 0.0) && (i!=51)){  
+	scanf ("%f", &a); if (((a<1)&&(a>0))||(i==0)) {niz[i]=a; i++;}}
+for (j=0; j<i; j++) 	{niz2[j]= (funkcija (niz[j]+delX) - funkcija (niz[j]))/delX; 
+							fi = atan (niz2[j]); 
+							printf ("%.2lf ", fi);}
+return 0;
+}

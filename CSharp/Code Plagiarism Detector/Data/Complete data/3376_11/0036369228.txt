@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main(){
+	int broj,novi_broj;
+	char z1,z2,z3,z4;
+	scanf ("%d",&broj);
+	if (broj>=1000 && broj<=9999){
+
+		z1=broj/1000;
+		z2=broj%1000/100;
+		z3=broj%100/10;
+		z4=broj%10;
+
+		if(z1%2==0)
+			z1=0;
+		if(z2%2==0)
+			z2=0;
+		if(z3%2==0)
+			z3=0;
+		if(z4%2==0)
+			z4=0;
+
+		novi_broj=z4+(z3*10)+(z2*100)+(z1*1000);
+		printf ("%d\n",novi_broj);
+	}
+	return 0;
+}

@@ -1,0 +1,29 @@
+#include <stdio.h>
+int main() {
+	char a, b, c;
+	int op1, op2;
+	scanf("%c %c %c", &a, &b, &c);
+	op1=a-48;
+	op2=b-48;
+	switch (c) {
+		case '+': 
+			printf("%d",op1+op2);
+			break;
+		case '-': 
+			printf("%d",op1-op2);
+			break;
+		case '*': 
+			printf("%d",op1*op2);
+			break;
+		case '/': 
+			printf("%d",op1/op2);
+			break;
+		case '%': 
+			printf("%d",op1%op2);
+			break;
+		default: 
+			printf("Neispravna");
+			break;
+	}
+	return 0;
+}

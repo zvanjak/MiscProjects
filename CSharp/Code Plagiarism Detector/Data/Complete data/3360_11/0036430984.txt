@@ -1,0 +1,29 @@
+#include <stdio.h>
+int main (void) {
+	int a, b, rezultat, k, suma=0, j, l;
+	scanf ("%d", &a);
+	b=a;
+	while (a>0) {
+		k=a % 10;
+		a=a/10;
+		suma += k;
+	}
+	a=b;
+	if (suma % 2 ==0) {
+			k=a/100;
+			a=a % 100;
+			j=a/10;
+			l=a%10;
+			rezultat= k-j-l;
+	}
+	a=b;
+	if (suma % 2 !=0) {
+		k=a/100;
+			a=a % 100;
+			j=a/10;
+			l=a%10;
+		rezultat=k*j*l;
+	}
+	printf ("%d", rezultat);
+	return 0;
+}

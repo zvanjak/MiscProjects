@@ -1,0 +1,52 @@
+int Faktorijel(int n)
+{
+   int produkt, i;
+	produkt = 1;
+
+   for (i = 1; i <= n; i++)
+   {
+       produkt *= i;
+   }
+	return (produkt);
+}
+
+int Kombinacije(int n, int m)
+{
+   int brojnik, nazivnik, pom;
+
+   brojnik = Faktorijel(n);
+   nazivnik = Faktorijel(m) * Faktorijel(n - m);
+   pom = brojnik / nazivnik;
+  
+   return (pom);
+}
+
+
+#include <stdio.h>
+
+int Kombinacije(int n, int m);
+int Faktorijel(int n);
+
+int main ()
+{
+   int n, m;
+
+   scanf ("%d", &n);
+   scanf ("%d", &m);
+
+   if (m==0) {
+	   printf("%d", m); }
+   
+   else if (m==n) {
+	   printf("%d", m-n); }
+
+   else
+
+   printf("%d", Kombinacije(n, m));
+
+   return 0;
+}
+
+
+
+

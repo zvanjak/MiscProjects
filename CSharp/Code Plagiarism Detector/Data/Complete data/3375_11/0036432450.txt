@@ -1,0 +1,38 @@
+#include <stdio.h>
+int main () {
+int broj, zn4, zn3, zn2, zn1;
+scanf("%i",&broj);
+   if (broj<=9999 && broj >=1000 || broj<=-1000 && broj>=-9999){
+      zn4=broj/1000;
+      zn3=(broj-(zn4*1000))/100;
+      zn2=(broj-(zn4*1000)-(zn3*100))/10;
+      zn1=(broj-(zn4*1000)-(zn3*100)-(zn2*10));
+      if(broj<0 && ( zn4%2==0 ||zn3%2==0 || zn2%2==0||zn1%2==0)){
+			broj=-broj;
+			printf("-");
+			zn4=broj/1000;
+			zn3=(broj-(zn4*1000))/100;
+			zn2=(broj-(zn4*1000)-(zn3*100))/10;
+			zn1=(broj-(zn4*1000)-(zn3*100)-(zn2*10));
+	  } 
+      if(broj>0 && ( zn4%2==0 ||zn3%2==0 || zn2%2==0||zn1%2==0)){
+			zn4=broj/1000;
+			zn3=(broj-(zn4*1000))/100;
+			zn2=(broj-(zn4*1000)-(zn3*100))/10;
+			zn1=(broj-(zn4*1000)-(zn3*100)-(zn2*10));
+	  }
+	if(zn4%2==0){
+		printf("%i",zn4);
+	}
+	if(zn3%2==0){
+		printf("%i",zn3);
+	}
+	if(zn2%2==0){
+		printf("%i",zn2);
+	}
+	if(zn1%2==0){
+		printf("%i",zn1);
+	}
+   }
+return 0;
+}

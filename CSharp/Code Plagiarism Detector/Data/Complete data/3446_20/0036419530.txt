@@ -1,0 +1,41 @@
+class Kosarica {
+private:
+	int _BrojElemenata;
+	float _Cijena;
+	float _Suma;
+	float _MinProizvod;
+
+public:
+
+	Kosarica() {
+	_BrojElemenata = 0;
+	_Cijena = 0;
+	_Suma = 0;
+	_MinProizvod = 0;
+	}
+
+	void DodajProizvod(float Cijena) {
+		_Cijena = Cijena;
+
+		if(_BrojElemenata == 0) _MinProizvod = Cijena;
+		if(Cijena<_MinProizvod) _MinProizvod = Cijena;
+
+		_Suma = _Suma + Cijena;
+		_BrojElemenata++;
+	}
+
+	float ProsjecnaCijena() {
+		float pom;
+
+		if(_BrojElemenata == 0) return 0;
+
+		pom = _Suma/_BrojElemenata;
+		return pom;
+	}
+	float NajjeftinijiProizvod() {
+		if(_BrojElemenata == 0) return 0;
+		
+		else return _MinProizvod;
+	}
+	~Kosarica () {};
+};

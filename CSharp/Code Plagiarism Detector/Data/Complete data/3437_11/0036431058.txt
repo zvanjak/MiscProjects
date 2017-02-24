@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() {
+
+	int x,y,bx,by;
+
+	scanf("%d %d",&bx,&by);
+
+	do {
+		scanf("%d %d",&x,&y);
+		if (y<by) printf("Pada");
+		if (y>by) printf("Raste");
+		if (y==by) printf("Ravan");
+		if (x!=50) putchar(' ');
+		bx=x; by=y;
+	} while (x!=50);
+
+	return 0;
+}

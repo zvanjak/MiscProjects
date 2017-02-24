@@ -1,0 +1,19 @@
+int veci_od(FILE *f,int n)
+{
+	struct natjecatelj
+	{
+		int redni_br;
+		char prezime[20+1];
+		int bodovi;
+	}zapis;
+	int i,j,br=0;
+	for(i=1;fread(&zapis,sizeof(struct natjecatelj),1,f)==1;i++);
+		fseek(f,-sizeof(struct natjecatelj)*i,SEEK_END);
+		for(j=1;j<=i;j++)
+		{
+			fread(&zapis,sizeof(struct natjecatelj),1,f);
+			if((zapis.redni_br!=0)&&(zapis.bodovi>=n))
+				br=br+1;
+		}
+		return br;
+}

@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<malloc.h>
+
+int *napraviPolje(int *A, int Na, int a, int b, int *Nc)
+{  
+      int *C=NULL;
+      int j,i,nele=0,flag;
+      *Nc=0;
+      if(a>b || a==0) return 0;
+      for(j=0;j<Na;++j){
+        flag=0;
+        for(i=a;i<=b;++i){
+          if(A[j]%i==0) { flag=1; break; }
+        }
+        if(flag) *Nc+=1;
+      }
+      
+      C=(int *)malloc((*Nc)*sizeof(int));
+      
+      for(j=0;j<Na;++j){
+        flag=0;
+        for(i=a;i<=b;++i){
+          if(A[j]%i==0) { flag=1; break; }
+        }
+        if(flag){
+          C[nele++]=A[j];
+        }
+      }
+      return C;
+}

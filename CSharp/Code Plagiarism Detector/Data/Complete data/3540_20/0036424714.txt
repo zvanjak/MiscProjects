@@ -1,0 +1,41 @@
+#include<stdlib.h>
+#include<malloc.h>
+
+int izbaci(zapis **glava)
+{
+	int i = 0;
+	zapis *p,*r;
+	if(*glava == NULL)
+		return 0;
+	else
+	{
+		p = *glava;
+		r = NULL;
+		while(p!=NULL)
+		{
+			do
+			{
+				if(p->pros < 2.0) break;
+				r = p;
+				p = p->sljed;
+			}while(p!=NULL);
+			if(p == NULL)
+				break;
+			if(r == NULL)
+			{
+				i++;
+				p = (*glava)->sljed;
+				free(*glava);
+				*glava = p;
+			}
+			else
+			{
+				i++;
+				r->sljed = p->sljed;
+				free(p);
+				p = r->sljed;
+			}
+		}
+	}
+	return i;
+}

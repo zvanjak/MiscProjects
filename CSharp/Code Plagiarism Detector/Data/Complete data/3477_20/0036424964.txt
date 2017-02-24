@@ -1,0 +1,52 @@
+class Recenica
+{
+private:
+	int _rijeci;
+	int _zarezi;
+	bool _rijec;
+	bool _slovo(char);
+public:
+	Recenica();
+	void UcitajZnak(char);
+	int PrebrojiRijeci();
+	int PrebrojiZareze();
+};
+
+Recenica::Recenica()
+{
+	_rijeci = 0;
+	_zarezi = 0;
+	_rijec = false;
+
+}
+
+void Recenica::UcitajZnak(char znak)
+{
+	if(_slovo(znak))
+	{
+		_rijec = true;
+	}
+	else
+	{
+		if(_rijec)
+			_rijeci++;
+		if(znak == ',')
+			_zarezi++;
+		_rijec = false;
+	}
+}
+
+bool Recenica::_slovo(char znak)
+{
+	return((znak >= 'a' && znak <= 'z') || (znak >= 'A' && znak <= 'Z'));
+}
+
+int Recenica::PrebrojiRijeci()
+{
+	return(_rijec ? _rijeci + 1 : _rijeci);
+}
+
+int Recenica::PrebrojiZareze()
+{
+	return(_zarezi);
+}

@@ -1,0 +1,21 @@
+void ubaci (char *niz, char *podniz, int i)
+{
+	int j,k,l;
+	if ((i>strlen(niz))||(i<0)) 
+	{
+		for (j=0; j<strlen(niz)+1; j++) {
+			if (islower(niz[j])) niz[j]=toupper(niz[j]);
+		}
+	}
+	else
+	{
+		k=0;
+		for (j=i; j<i+strlen(podniz); j++) {
+			for (l=strlen(niz)+1; l>=j; l--){
+				niz[l+1]=niz[l];
+			}
+			niz[j]=podniz[k];
+			k++;
+		}
+	}
+}

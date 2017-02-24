@@ -1,0 +1,26 @@
+int izbaciZ (zapis **glava)
+{
+zapis *p, *pp;
+int broj = 0;
+for (p = *glava; p != NULL; ) 
+{
+if (p->pros < 2) {
+if (p == *glava) {
+pp = (*glava)->sljed;
+free (*glava);
+*glava = pp;
+p = pp;
+broj++;
+}
+else {           
+for (pp = *glava; pp->sljed != p; pp = pp->sljed);
+pp->sljed = p->sljed;
+free (p);
+p = pp->sljed;
+broj++;
+}
+}
+else p = p->sljed;
+}
+return broj;
+}

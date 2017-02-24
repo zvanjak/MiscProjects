@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main()
+{
+	double n,a=0,rez=0;
+	scanf("%lf",&n);
+	if (n>=1 && n<=200)
+	{
+		for (a=1;a<=n;a=a+1)
+		{
+			rez=rez + 1/(a*(a+1));
+		}
+		printf("%.12lf",rez);
+	}
+	else printf("n nije valjan");
+	return 0;
+}

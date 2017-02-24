@@ -1,0 +1,15 @@
+Ekipa StvoriISortiraj(char *naziv){
+int x,y;
+
+Ekipa lib(naziv);
+lib.Napuni();
+for(x=0;x<10;x++)
+for(y=0;y<10;y++)
+if(lib[y].VratiBroj()>lib[y+1].VratiBroj())
+lib.Zamijeni(y,y+1);
+return lib;
+}
+
+
+
+

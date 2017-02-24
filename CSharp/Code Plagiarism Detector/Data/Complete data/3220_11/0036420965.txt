@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main(){
+
+int a,y,z,sum;
+
+scanf("%d",&a);
+z=1; sum=0;
+if (a>0) { do {
+	y=a%10;
+	if (y%2!=0) { 
+		sum = sum + y*z;
+		z*=10;}
+    a=a/10;
+    } while (a>0);
+	printf("%d",sum); 
+} else printf("%d",a);
+   return 0;
+}

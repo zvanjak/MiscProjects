@@ -1,0 +1,20 @@
+char *SamoSuglasnici(char *ulazni_niz){
+    int i,j=0,b=0;
+	char novi[100];
+	b=strlen(ulazni_niz);
+	if(b==0) return '\0';
+	else{ 
+		for(i=0;i<=b;i++){
+		if(i==b){novi[j]='\0';}
+		if(ulazni_niz[i]>='A' && ulazni_niz[i]<='Z'||
+		   ulazni_niz[i]>='a' && ulazni_niz[i]<='z')
+			{if(ulazni_niz[i]!='a'&&ulazni_niz[i]!='e'&&ulazni_niz[i]!='i'&&ulazni_niz[i]!='o'&&ulazni_niz[i]!='u'&&
+		    ulazni_niz[i]!='A'&&ulazni_niz[i]!='E'&&ulazni_niz[i]!='I'&&ulazni_niz[i]!='O'&&ulazni_niz[i]!='U')
+				{novi[j]=ulazni_niz[i];
+				 j++;
+				}
+			}
+						}			  
+		printf("\n__%s__\n",novi);
+		return novi;}
+}

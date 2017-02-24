@@ -1,0 +1,25 @@
+	int Sortirano(cvor *glava)
+	{
+		int tmptb,tmptb2;
+		tmptb=0;
+		tmptb2=0;
+
+		if(glava==NULL) return 1;
+		if(glava->lijevo!=NULL) 
+		{
+		if(glava->id>glava->lijevo->id) return 0;
+		else tmptb=Sortirano(glava->lijevo);
+		}
+		else tmptb=1;
+
+		if(glava->desno!=NULL)
+		{
+			if (glava->id>glava->desno->id) return 0;
+			else tmptb2=Sortirano(glava->desno);
+		}
+		else tmptb2=1;
+
+		if((tmptb==1)&&(tmptb2==1)) return 1;
+		else return 0;
+
+	}

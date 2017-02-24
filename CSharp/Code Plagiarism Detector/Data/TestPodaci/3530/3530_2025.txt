@@ -1,0 +1,138 @@
+void izbaciUljeza (char *ulazni)
+{
+	int velika, mala, brojke;
+	int j,i=0;
+	int min;
+	int pom=0;
+	int koliko=0;
+	velika=mala=brojke=0;
+
+	while (ulazni[i]!='\0')
+	{
+		if ((ulazni[i]>='a') && (ulazni[i]<='z'))
+		{
+			mala++;
+			i++;
+			continue;
+		}
+		if (ulazni[i]>='A' && ulazni[i]<='Z')
+		{
+			velika++;
+			i++;
+			continue;
+		}
+		if (ulazni[i]>='0' || ulazni[i]<='9')
+		{
+			brojke++;
+			i++;
+			continue;
+		}
+	}
+
+	if (mala<velika) min=mala;
+	else min=velika;
+
+	if (brojke<min) min=brojke;
+	i--;
+
+	if ((min==mala && min==velika) || (min==mala && min==brojke) || (min==brojke && min==velika))
+	{
+		j=0;
+		while (ulazni[j]!='\0')
+		{
+			if (ulazni[j]>='0' && ulazni[j]<='9')
+			{
+				ulazni[j]=' ';
+				pom++;
+			}
+			j++;
+
+		}
+		koliko=pom;
+		for (j=0; j<koliko; j++)
+		{
+			i=0;
+			while (ulazni[i+1]!='\0')
+			{
+				if (ulazni[i]==' ')
+				{
+					ulazni[i]=ulazni[i+1];
+					ulazni[i+1]=' ';
+				}
+				i++;
+			}
+			ulazni[i]=NULL;
+		}
+		j=0;
+		while (ulazni[j]!='\0')
+		{
+			if (ulazni[j]>='A' && ulazni[j]<='Z')
+			{
+				ulazni[j]+=32;
+			}
+			j++;
+		}
+		if (ulazni[0]!='\0') ulazni[0]-=32;
+		ulazni[j-1]-=32;
+		return;
+	}
+	
+	j=0;
+	if (min==brojke)
+	{
+		while (ulazni[j]!='\0')
+		{
+			if (ulazni[j]>='0' && ulazni[j]<='9')
+			{
+				ulazni[j]=' ';
+			}
+			j++;
+
+		}
+		koliko=min;
+		for (j=0; j<koliko; j++)
+		{
+			i=0;
+			while (ulazni[i+1]!='\0')
+			{
+				if (ulazni[i]==' ')
+				{
+					ulazni[i]=ulazni[i+1];
+					ulazni[i+1]=' ';
+				}
+				i++;
+			}
+			ulazni[i]=NULL;
+		}
+		return;
+
+	}
+	if (min==mala)
+	{
+		while (ulazni[j]!='\0')
+		{
+			if (ulazni[j]>='a' && ulazni[j]<='z')
+			{
+				ulazni[j]-=32;
+			}
+			j++;
+
+		}
+		return;
+
+	}
+	if (min==velika)
+	{
+		while (ulazni[j]!='\0')
+		{
+			if (ulazni[j]>='A' && ulazni[j]<='Z')
+			{
+				ulazni[j]+=32;
+			}
+			j++;
+
+		}
+		return;
+
+	}
+}

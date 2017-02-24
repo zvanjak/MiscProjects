@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main(){
+	int matrica[20][5], mr=0, ms=0, i, j, red[5]={0}, x, suma;
+	do {
+		scanf("%d %d", &mr, &ms);
+	} while (mr<1 || mr>20 || ms<1 || ms>5);
+	for (i=0; i<mr; i++)
+		for (j=0; j<ms; j++)
+			scanf ("%d", &matrica[i][j]);
+	
+	do {
+    scanf ("%d %d", &i, &j);
+	if (i<mr && i>=0 && j<mr && j>=0)	
+		for (x=0; x<ms; x++) {
+			red[x]=matrica[i][x];
+			matrica[i][x]=matrica[j][x];
+			matrica[j][x]=red[x];
+		}
+	} while (i<mr && i>=0 && j<mr && j>=0);
+
+	for (i=0; i<mr; i++){
+		suma=0;
+		for (j=0; j<ms; j++)
+			suma +=matrica[i][j];
+		printf ("%d ", suma);
+	}
+    
+	return 0;
+}

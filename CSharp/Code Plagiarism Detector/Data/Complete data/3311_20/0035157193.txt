@@ -1,0 +1,23 @@
+float prosjek(FILE *f) {
+      struct album {
+             char naziv[30+1];
+             char autor[20+1];
+             int prodano;
+      } piratizacija;
+      
+      int broj_albuma;
+      int ukupno_prodano;
+      
+      broj_albuma=0;
+      ukupno_prodano=0;
+      
+      while(fread(&piratizacija, sizeof(piratizacija), 1, f)==1) {
+            ukupno_prodano+=piratizacija.prodano;
+            ++broj_albuma;
+     }
+     
+     if(broj_albuma>0)
+        return((float)ukupno_prodano/broj_albuma);
+     else
+        return(0);      
+}

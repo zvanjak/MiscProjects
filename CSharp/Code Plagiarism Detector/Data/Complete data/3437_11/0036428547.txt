@@ -1,0 +1,24 @@
+#include <stdio.h>
+#define MAX 50
+int main (){
+int x[MAX], y[MAX], i;
+for (i=0; i<MAX; i++)
+{
+scanf("%d %d", &x[i], &y[i]);
+if (x[i]<x[i-1] && i)
+{
+i=i-1;
+}
+}
+for (i=1; i<MAX; i++)
+{
+if (y[i]>y[i-1])
+printf("raste ");
+else
+if (y[i]<y[i-1])
+printf("pada ");
+else
+printf("ravna ");
+}  
+return 0;
+}

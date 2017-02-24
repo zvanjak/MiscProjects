@@ -1,0 +1,21 @@
+#include "stdio.h"
+int main () {
+	int x, y, z;
+	float brutto, netto;
+	scanf ( "%d %d %d", &x, &y, &z);
+	if ( x < y ) {
+		brutto = z * 0.9;
+	} else if ( x > y ) {
+		brutto = z * 1.15;
+	} else {
+		brutto = z;
+	}
+	brutto = brutto * x;
+	if ( brutto > 6000 ) {
+		netto = brutto * 0.7;
+	} else {
+		netto = brutto * 0.8;
+	}
+	printf ( "%.2f", netto);
+	return 0;
+}

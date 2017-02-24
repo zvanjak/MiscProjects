@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <math.h> 
+         int main () {
+             int i=0;
+             float a1,d,b;
+             
+             scanf ("%f %f %f", &a1, &d, &b);
+             if ((d>0) && (floor(a1) == a1) && (floor(d) == d) && (floor(b) == b)){
+                 if (a1>b)
+                    printf ("%d", i=0);
+                 else  
+                       while (a1<=b){
+                              i++;
+                              a1+=d;
+                              printf ("%.0f ", a1);
+                                     }
+                              printf ("%d", i);
+                  }
+         return 0;
+         }
+

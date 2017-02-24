@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <math.h>
+
+main()
+{
+	int x,n,z,y=0,i=0;
+	
+	
+	scanf("%d", &x);
+
+	if (x>0)
+	{	
+		for (n=x; n>0; n/=10)
+		{			
+			z=n%10;
+			if (z%2) y+=z*pow(10,i);
+			else continue;
+			i++;
+		}
+	}
+	else y=x;
+	printf("%d",y);
+	return 0;
+}
+	

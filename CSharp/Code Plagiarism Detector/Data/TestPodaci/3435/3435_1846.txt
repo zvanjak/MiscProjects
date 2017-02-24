@@ -1,0 +1,29 @@
+#include <stdio.h>
+int main () {
+	int m,n,i;
+	double brojnik,naz1,naz2,rez;
+
+	scanf ("%d %d",&m,&n);
+
+	brojnik=1;
+	for (i=1;i<=m;i++) 
+		brojnik*=i;
+	
+
+	naz1=1;
+	for (i=1;i<=n;i++) 
+		naz1*=i;
+	
+
+	naz2=1;
+	for (i=1;i<=(m-n);i++) 
+		naz2*=i;
+	
+
+	rez=brojnik/(naz1*naz2);
+
+	printf ("%g", rez);
+
+	return 0;
+}
+

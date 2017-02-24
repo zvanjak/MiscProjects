@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include<math.h>
+int main(){
+int n,i,a,g;
+double m1,m2,rez=0,fakt=1,e;
+scanf("%d",&n);
+if( (n<=30) && (n>=1)){
+for(a=n;a!=0;a--){             
+g=a+1;
+m1=pow(-1,g)*a;
+for(i=a;i!=0;i--)
+fakt=fakt*i;
+m2=m1/fakt;
+fakt=1;      
+rez=m2+rez;
+}}                
+e=1/rez;
+/*printf("\n e iznosi; %.12g",e);*/
+printf("%.12f",e);
+return 0;
+}

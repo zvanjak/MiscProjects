@@ -1,0 +1,5 @@
+void azuriraj (FILE *f , int redni_br, int bodovi) {
+             int a=bodovi;
+             fseek(f ,(long)(redni_br-1)*29+25,SEEK_SET);
+             fwrite(&a, sizeof(int), 1, f);
+             }

@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <string.h>
+int izbaci(char *ulazni,char *podniz){
+    int i,j,br=0,bilo,k=0;
+    char pomocni[10000]={0};
+    for(i=0;i<strlen(ulazni);i++){
+                        bilo=0;          
+       for(j=0;j<strlen(podniz);j++){
+          
+          if(ulazni[i]==podniz[j])
+{            br++; bilo++;break;
+}    }      
+ if (bilo == 0)
+            pomocni[k++]=ulazni[i];                 }
+                         
+strcpy(ulazni,pomocni);
+
+return br;
+}
+

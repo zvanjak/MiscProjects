@@ -1,0 +1,24 @@
+#include<string.h> 
+#include<stdio.h> 
+#include<stdlib.h> 
+ 
+int izbaci(char *ulazni, char *podniz) 
+{ 
+     int n = 0, i = 0, j = 0; 
+      
+     while(ulazni[i] != '\0') 
+     { 
+          if(strchr(podniz, (int)ulazni[i]) != NULL) 
+               n++; 
+          else 
+          { 
+               ulazni[j] = ulazni[i]; 
+               j++; 
+          } 
+          i++; 
+     } 
+     ulazni[j] = '\0'; 
+ 
+     return(n); 
+}
+

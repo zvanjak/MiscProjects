@@ -1,0 +1,35 @@
+void zamijeni (char * ulazni, int *broj)
+{int i=0,j=0,k=0,l=0,m=0,n=0;
+ while (*(ulazni+i)!=0) {
+	if (isprint(*(ulazni+i))){
+		if (isalpha(*(ulazni+i))){
+			if (j==0) {*(ulazni+i)=toupper(*(ulazni+i));
+				j++;
+			}
+			else {*(ulazni+i)=tolower(*(ulazni+i));
+			}
+			i++;
+            l++;
+		}
+		else if(isdigit(*(ulazni+i))) {
+			if (!i) {*(ulazni+i)='!'; i++;}
+			else {if (*(ulazni+i-1)=='!') {
+			k=1;
+			do{*(ulazni+i+k-1)=*(ulazni+i+k);
+			k++;
+			} 
+            while(*(ulazni+i+k-1));
+			}
+			else {*(ulazni+i)='!';i++; }
+			}
+			m++;
+		}
+		else {*(ulazni+i)='?'; i++;
+		n++;}
+}
+}
+ if (l>m) if (l>n) *broj=l; 
+ else *broj=n;
+ else if (m>n) *broj=m;
+ else *broj=n;
+}

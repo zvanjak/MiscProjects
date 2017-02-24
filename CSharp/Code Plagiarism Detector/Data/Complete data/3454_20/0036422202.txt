@@ -1,0 +1,58 @@
+class RazlPolje
+{
+public:
+	RazlPolje()
+	{
+		_broj = 0;	
+		_polje = new int[_broj+1];
+	}
+	int Dodaj(int Broj)
+	{
+		int *temp, i;
+		temp = new int[_broj + 2];
+		if(temp == NULL) return 0;
+		for(i=0;i<_broj;i++)
+			if(_polje[i] == Broj) return 1;
+		for(i=0;i<_broj;i++)
+			temp[i] = _polje[i];
+		temp[_broj] = Broj;
+		delete []_polje;
+		_broj++;
+		_polje = new int[_broj + 1];
+		for(i=0;i<_broj;i++)
+			_polje[i] = temp[i];
+		delete []temp;
+		return 1;
+	}
+	int Izbaci(int Broj)
+	{
+		int i, flag = 0;
+		for(i=0;i<_broj;i++)
+			if(_polje[i] == Broj) break;
+		if(i == _broj) return 0;
+		_broj--;
+		for(i=0;i<_broj;i++)
+		{
+			if(_polje[i] == Broj) flag = 1;
+			if(flag == 1)
+				_polje[i] = _polje[i+1];
+		}
+		return 1;
+	}
+	int SumaPolja()
+	{
+		int i;
+		int sum = 0;
+		for(i=0;i<_broj;i++)
+			sum += _polje[i];
+		return sum;
+	}
+	~ RazlPolje()
+	{
+		delete []_polje;
+	}
+
+private:
+	int *_polje;
+	int _broj;
+};

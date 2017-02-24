@@ -1,0 +1,32 @@
+int	memoriraj(Radio& radio) {
+	const char* rds;
+	int n = 0;
+	float frek;
+	Stanica a;
+
+
+	do{
+		a = radio.TraziSljedecu();
+		rds = a.RDS();
+
+		if(*rds != '\0'){
+			n++;
+			radio.MemorirajStanicu(a,n);
+			frek=a.Frekvencija();
+		};
+
+	}while(n<1);
+
+	do{
+		a = radio.TraziSljedecu();
+		rds = a.RDS();
+
+		if((*rds != '\0')&&(a.Frekvencija() != frek)){
+			n++;
+			radio.MemorirajStanicu(a,n);
+		};
+
+	}while(a.Frekvencija() != frek);
+
+	return n;
+}

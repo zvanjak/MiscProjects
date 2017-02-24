@@ -1,0 +1,170 @@
+struct tip
+{
+
+	char ime[20+1];
+
+	char prezime[30+1];
+
+	char jmbag[10+1];
+
+	int ocjena;
+
+};
+        
+
+struct atom
+{
+
+	tip element;
+
+	atom* sljed;
+       
+
+};
+
+       
+
+int brojElementa(atom *glava)
+
+{
+
+	int x=0;
+
+	atom* pom=glava;
+
+	while(pom)
+
+	{
+
+		pom=pom->sljed;
+
+		x++;
+
+	}
+
+	return x;
+
+}
+
+
+
+int dodaj(atom **glavap, tip element)
+
+{
+
+	atom* novi;
+
+	novi=(atom*) malloc(sizeof(atom));
+
+	if(novi==0) return 0;
+
+	novi->element=element;
+
+	novi->sljed=*glavap;
+
+	*glavap=novi;
+	return 1;
+    
+
+}
+
+    
+
+int minOcjena(atom *glava)
+
+{
+
+	int min=0x7FFFFFFF;
+
+	atom* pom;
+
+	if(glava==0) return -1;
+
+	pom=glava;
+
+	while (pom)
+
+	{         
+
+		if(pom->element.ocjena<min) min=pom->element.ocjena;
+
+		pom=pom->sljed;
+
+	}
+
+	return min;
+
+}
+
+    
+
+int izbaciPrezimeSadrzi(atom**glavap, char * prezimePodniz)
+
+{
+
+	if (*glavap == NULL) return 0;
+	atom* pre=0;
+	atom* pom=*glavap;
+	int nn=0;
+	while (pom)
+	{
+		if (strstr(pom->element.prezime,prezimePodniz) != 0)
+		{
+			if (pre == 0)
+			{
+				*glavap=pom->sljed;
+				pom=*glavap;
+				nn++;
+			}
+			else
+			{
+				pre->sljed=pom->sljed;
+				free(pom);
+				pom=pre->sljed;
+				nn++;
+			}
+		}
+		else
+		{
+			pre=pom;
+			pom=pom->sljed;
+		}
+	}
+	
+	return nn;      
+
+	}
+
+	
+	int izbaciPrezimePocinjeS (atom **glavap, char * prezimePocetak)
+	{
+		if (*glavap == NULL) return 0;
+		atom* pre=0;
+		atom* pom=*glavap;
+		int nn=0;
+		while (pom)
+		{
+			if (strstr(pom->element.prezime,prezimePocetak) == pom->element.prezime)
+			{
+				if (pre == 0)
+				{
+					*glavap=pom->sljed;
+					pom=*glavap;
+					nn++;
+				}
+				else
+				{
+					pre->sljed=pom->sljed;
+			free(pom);
+					pom=pre->sljed;
+					nn++;
+				}
+			}
+			else
+			{
+				pre=pom;
+				pom=pom->sljed;
+			}
+		}
+		return nn;
+	}

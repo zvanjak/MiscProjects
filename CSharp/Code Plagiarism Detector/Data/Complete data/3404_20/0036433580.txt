@@ -1,0 +1,25 @@
+int* napraviPolje(int *A, int Na, int a, int b, int* Nc){
+    int *C = NULL, *kont = NULL;
+    int i, j, k = 0, br = 0;
+    if (a > b) return 0;
+    else{
+        for(j = 0; j < Na; j++){
+            for(i = a; i <= b; i++){
+                kont = (int *)realloc(kont, (A[j]+1)*sizeof(int));
+                if(((A[j] % i) != 0) && !(kont[A[j]] == 666)){
+                    br++;
+                }
+            }
+            if(br == (b - a + 1)){
+                    C = (int *)realloc(C, (k+1) * sizeof(int));
+                    C[k] = A[j];
+                    kont[A[j]] = 666;
+                    k++;
+                }
+            br = 0;
+        }
+        *Nc = k;
+        return C;
+    
+    }
+}

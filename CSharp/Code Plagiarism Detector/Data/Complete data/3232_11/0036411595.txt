@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include<math.h>
+int main (){
+ int n;
+ double duja=0,i,x=2,naz=0;
+scanf("%d", &n);
+if ((n<1) || (n>30)) {
+printf("n nije valjan");
+} else {
+for (i=0;i<n;i++)
+{
+naz= pow(x,i);
+duja=duja + (1/naz);
+}
+printf("%1.12f" , duja);
+}
+}

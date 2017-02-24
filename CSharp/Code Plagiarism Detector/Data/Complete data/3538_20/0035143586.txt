@@ -1,0 +1,19 @@
+Red *VratiBrojeve(Red *red){
+	Red *noviRed =new Red;
+	Red pomRed;
+	int pom1,pom2,noviBroj;
+	while(red->SkiniIzReda(&pom1)){
+		pomRed.DodajURed(pom1);
+		noviBroj=0;
+		for(int i=0;i<pom1;i++){
+			red->SkiniIzReda(&pom2);
+			pomRed.DodajURed(pom2);
+			noviBroj*=10;
+			noviBroj+=pom2;
+		}
+		noviRed->DodajURed(noviBroj);
+	}
+	while(pomRed.SkiniIzReda(&pom1))
+		red->DodajURed(pom1);
+	return noviRed;
+}

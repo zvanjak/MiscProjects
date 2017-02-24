@@ -1,0 +1,15 @@
+#include<stdio.h>
+double sumareda(int N) {
+     /* definicije vaših lokalnih varijabli */
+     double x,y,z;
+     kontrola(); /* ne treba primati povratnu vrijednost */
+     if (N==0) return 0;
+     else {
+          x= (4*N - 1);
+          y=(4*N+1);
+          z= 1/(x * y) + sumareda (N-1);
+          return z;
+          }
+     
+
+}

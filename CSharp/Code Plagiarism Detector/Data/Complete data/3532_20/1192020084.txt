@@ -1,0 +1,13 @@
+Stog* noviOdNeparnih(Stog *stog) {
+      Stog OK;
+      Stog *nep=new Stog();
+      int el;
+      while (stog->Skini(&el))
+            OK.Stavi(el);
+            
+      while (OK.Skini(&el)) {
+            stog->Stavi(el);
+            if (el%2!=0) nep->Stavi(el);
+      }    
+      return nep;
+}

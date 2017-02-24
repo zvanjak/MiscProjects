@@ -1,0 +1,12 @@
+int br_prodanih(FILE *f, char *autor) {
+    int br, tb;
+    char nzv[31];
+    char atr[21];
+    br=0;
+    while (fscanf(f, "%s %s %d", nzv, atr, &tb) == 3) {
+          if (strcmp(atr, autor)==0) {
+                          br+=tb;
+                          }
+          }
+    return br;
+}

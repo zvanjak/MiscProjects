@@ -1,0 +1,14 @@
+int Memoriraj(Radio &radio)
+{
+	int i=1;
+	Stanica stPoc,st;
+	stPoc=radio.TraziSljedecu();
+	st=stPoc;
+	do
+	{
+		if(*(st.RDS())!='\0')
+			radio.MemorirajStanicu(st,i++);
+		st=radio.TraziSljedecu();
+	}while(stPoc!=st && i<=6);
+	return i-1;
+}

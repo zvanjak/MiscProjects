@@ -1,0 +1,24 @@
+#include<stdio.h>
+
+int main(){
+	int n,m,i,j,k,rez;
+	int f1,f2,f3;
+	scanf("%d %d",&n,&m);
+	if (m==0||m==n){
+		rez=0;
+		printf("%d",rez);
+	}else{
+		f1=1;
+		f2=1;
+		f3=1;
+		for(i=1;i<=n;i++){
+f1*=i;}
+
+		for(j=1;j<=m;j++){
+f2*=j;}
+        for(k=1;k<=(n-m);k++){
+f3*=k;}
+rez=(f1/(f2*f3));
+printf("%d",rez);}
+	return 0;
+}

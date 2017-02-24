@@ -1,0 +1,14 @@
+int veci_od(FILE *f, int granica)
+{
+	char naziv[30+1];
+	char autor[20+1];
+	int prodano;
+	int brojac=0;
+	fseek(f, 0L, SEEK_SET);
+	while (fscanf(f,"%[^ ] %[^ ] %d", naziv, autor, &prodano)==3)
+	{
+		if (prodano>=granica) brojac+=1;
+	}
+	fseek(f, 0L, SEEK_SET);
+	return brojac;
+}

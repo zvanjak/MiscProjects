@@ -1,0 +1,20 @@
+#include <stdio.h>
+int main () {
+int i,j,k,kniz[100];
+i=0;
+scanf ("%d",&kniz[i]);
+while (kniz[i]!=-1){
+		++i;
+		scanf("%d", &kniz[i]);
+}
+
+if (i>1){
+	for (j=0; j<i; j+=2) {
+		for (k=1; k<=kniz[j+1]; ++k) {
+					printf ("%d ",kniz[j]);
+					     }
+			     }
+        }
+
+return 0;
+}

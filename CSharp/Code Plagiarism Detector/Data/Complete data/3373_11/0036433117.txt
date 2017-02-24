@@ -1,0 +1,13 @@
+#include <stdio.h>
+main() {
+	unsigned int a,b;
+	scanf("%d",&a);
+	scanf("%d",&b);
+	if (a>99 && a<1000){
+		if (b>99 && b<1000) {
+	if (a > b) printf("%o",b);
+	else printf("%o",a);
+		}
+	}
+return 0;
+}

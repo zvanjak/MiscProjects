@@ -1,0 +1,14 @@
+#include<stdio.h>
+int main(){
+  int broj, a, b, c, d, noviBroj;
+  scanf("%d", &broj);
+  if(broj>=1000 && broj<=9999){
+     a=broj/1000;
+     b=broj/100%10;
+     c=broj/10%10;
+     d=broj%10;
+     noviBroj=d*1000+c*100+b*10+a;
+     printf("%d", noviBroj);
+   }
+  return 0;
+}

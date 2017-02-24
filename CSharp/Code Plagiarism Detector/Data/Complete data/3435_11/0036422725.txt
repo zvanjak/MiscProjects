@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int main (){
+
+int m, n, i;
+double fakt1, fakt2, fakt3, rez;
+
+
+scanf("%d %d", &n, &m);
+
+
+if(m==0) {
+	rez=0;
+	printf("%g", rez);}
+
+else if (m!=0){
+if(m==n){
+	rez=0;
+	printf("%g", rez);}
+
+if(m!=n){
+	for(fakt1=1, i=1; i<=n; i++)
+		fakt1*=i;
+	for(fakt2=1, i=1; i<=m; i++)
+		fakt2*=i;
+	for(fakt3=1, i=1; i<=n-m; i++)
+		fakt3*=i;
+	rez=fakt1/(fakt2*fakt3);
+	printf("%g", rez);}
+}
+return 0;
+}
+
+
+
+
+

@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <math.h>
+int main (){
+	double deltax,d[50];
+	float x[50] ;
+	int  i,j;
+	scanf ("%lf", &deltax);
+	for(i=0;;i++) {
+		scanf ("%f", &x[i]);
+		if (x[i] <= 0 || x[i]>1 )  break;}
+	for(j=0;j<i;j++){ 
+		d[j]=(pow(x[j]+deltax,sinh(x[j]+deltax))*cosh(pow(x[j]+deltax,2))-pow(x[j],sinh(x[j]))*cosh(x[j]*x[j]))/deltax;
+		printf("%.2lf ", atan(d[j]));}
+	return 0;
+}
+
+
+

@@ -1,0 +1,16 @@
+#include <stdio.h>
+int main () {
+	int n,i=0,j=0;
+	do {
+/*		printf("Unesite broj: "); */
+		scanf("%d", &n);
+		if (n>0) {
+		if (n%2==0)
+			i=i+1;
+		else
+			j=j+1;
+		}
+	} while (n!=0);
+	printf("%d %d",i,j);
+	return 0;
+}

@@ -1,0 +1,18 @@
+void azuriraj( FILE *f, int redni_br, int bodovi){
+        struct {
+        int redni_br;
+        char prezime[20+1];
+        int bodovi;
+        } natjecatelj;
+        while(!feof(f)) {
+                fread( &natjecatelj, sizeof(natjecatelj), 1,f);
+               
+                if(redni_br==natjecatelj.redni_br){
+                        natjecatelj.bodovi=bodovi;
+                       
+                        fseek(f, -sizeof(natjecatelj), SEEK_CUR);
+                        fwrite( &natjecatelj, sizeof(natjecatelj), 1, f);
+                        return;
+                }
+        }
+} 

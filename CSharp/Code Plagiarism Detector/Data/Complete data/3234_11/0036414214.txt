@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <math.h>
+
+int main () {
+
+	short n,i;
+	double pi=0.;
+
+	
+	scanf("%d", &n);
+
+	if (n>=1 && n<=100) {
+
+		for (i=1; i<=n; i++) {
+
+			pi = pi + (1 /  pow(i,2.));
+			
+		}
+		pi = sqrt(pi*6.);
+		printf("%.12lf",pi);
+		printf("\n");
+	}
+	else {
+		printf("n nije valjan");
+		printf("\n");
+	}
+
+	
+	
+	return 0;
+}
+
+

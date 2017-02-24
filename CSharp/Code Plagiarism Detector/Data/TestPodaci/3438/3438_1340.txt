@@ -1,0 +1,36 @@
+
+
+#include <stdio.h>
+#define N 100
+
+void main () {
+
+	char n[N];
+	int i,j,k,l;
+	char c;
+
+	for (i=1;i<=N;i++){
+		scanf ("%c",&n[i]);
+		if (n[i]=='.'){i=i-1; break;}
+	}
+
+	
+
+	scanf ("%d",&k);
+	scanf ("%d",&l);
+	while ((k<=j)&&(l<=j)){
+		c=n[k];
+		n[k]=n[l];
+		n[l]=c;
+		scanf ("%d",&k);
+		scanf ("%d",&l);
+		
+	}
+	
+	for (j=1;j<=i;j++){
+		printf ("%c",n[j]);
+	}
+
+
+
+}

@@ -1,0 +1,31 @@
+#include <stdio.h>
+int main () {
+	int A, B, rez;
+	char znak;
+	scanf ("%d %d %c", &A, &B, &znak);
+	if (znak == '+' || znak == '-' || znak == '*' || znak == '/' || znak == '%'){
+		if (znak == '+'){
+			rez = A + B;
+			printf ("%d", rez);
+		}
+		if (znak == '-'){
+			rez = A - B;
+			printf ("%d", rez);
+		}
+		if (znak == '*'){
+			rez = A * B;
+			printf ("%d", rez);
+		}
+		if (znak == '/'){
+			rez = A / B;
+			printf ("%d", rez);
+		}
+		if (znak == '%'){
+			rez = A % B;
+			printf ("%d", rez);
+		} 
+	} else {
+		printf ("Neispravna");
+	}
+	return 0;
+}

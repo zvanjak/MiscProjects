@@ -1,0 +1,18 @@
+int veci_od(FILE *f, int granica)
+{
+struct album{
+char naziv[31];
+char autor[21];
+int prodano;
+} x;
+
+int br=0,i;
+
+
+for(i=0;i<(filelength(fileno(f))/sizeof(x));i++)
+{
+fread(&x,sizeof(x),1,f);
+if (x.prodano>=granica) br++;
+}
+return br;
+}

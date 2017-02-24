@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main(){
+
+	int i=0,x,p[100];
+
+	do 
+	{
+		scanf("%d",&p[i]);
+		if(p[i]< 0)break;
+        i++;
+		
+	}while(1);
+	
+    x=0;
+	while(p[x]>=0){
+		for(i=0;i<p[x];i++){
+			printf("%d ",x);
+			} x++;
+	}
+	printf("\b");
+return 0;
+}
+

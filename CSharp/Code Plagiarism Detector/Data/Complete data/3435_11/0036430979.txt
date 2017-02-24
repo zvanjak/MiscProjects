@@ -1,0 +1,18 @@
+#include <stdio.h>
+int main () {
+int m, n, i,npovrhm;
+double brojnik, nazivl, nazivd;
+scanf ("%d %d", &n, &m);
+brojnik = 1;
+for (i = 1; i <= n; i++)
+brojnik *= i;
+nazivl = 1;
+for (i = 1; i <= m; i++)
+nazivl *= i;
+nazivd = 1;
+for (i = 1; i <= n-m; i++)
+nazivd *= i;
+npovrhm = brojnik/(nazivl*nazivd);
+printf("%d",npovrhm);
+return 0;
+}

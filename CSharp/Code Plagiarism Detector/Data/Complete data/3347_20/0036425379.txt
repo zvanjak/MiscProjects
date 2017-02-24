@@ -1,0 +1,20 @@
+#include <math.h>
+#include <stdio.h>
+
+double sumareda(double x, int N);
+
+double sumareda(double x, int N) {
+	double r;
+	
+	kontrola();
+	
+	if (N <= 0)
+		return (0);
+	
+	r = pow(x, N) / N;
+	
+	if (!(N & 1))
+		r = -r;
+	
+	return (r + sumareda(x, N - 1));
+}

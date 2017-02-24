@@ -1,0 +1,44 @@
+class Kosarica {
+private:
+
+float _cijena;
+float _MinCijena;
+float _Suma;
+int _br;
+
+public:
+
+Kosarica() {
+_cijena = 0;
+_MinCijena = 0;
+_Suma = 0;
+_br = 0;
+}
+
+void DodajProizvod(float cijena) {
+
+_cijena = cijena;
+
+if ((_MinCijena==0)||(cijena<_MinCijena)) {
+_MinCijena = cijena;
+}
+_br = _br+1;
+_Suma = (_Suma + cijena);
+
+}
+
+float ProsjecnaCijena() {
+_Suma = _Suma /_br;
+return _Suma;
+
+}
+
+float NajjeftinijiProizvod() {
+
+return _MinCijena;
+
+};
+
+~Kosarica () {};
+
+};

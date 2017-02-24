@@ -1,0 +1,28 @@
+#include <math.h>
+
+Red * VratiBrojeve(Red *red){
+	int n;
+	
+	Red *novi = new Red();
+	Red *temp = new Red();
+
+	while (red->SkiniIzReda(&n)){
+		int x;
+		int broj = 0;
+
+		temp->DodajURed(n);
+
+		for (int i = n; i > 0; i--){
+			red->SkiniIzReda(&x);
+			broj += x*pow(10,(i-1));
+			temp->DodajURed(x);
+		}
+		novi->DodajURed(broj);
+	}
+
+	while (temp->SkiniIzReda(&n)){
+		red->DodajURed(n);
+	}
+
+	return novi;
+}

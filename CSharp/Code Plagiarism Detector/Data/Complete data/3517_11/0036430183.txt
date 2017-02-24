@@ -1,0 +1,14 @@
+#include<stdio.h>
+#include<math.h>
+#define f(x) (pow((x),sinh(x))*cosh(pow((x),2)))
+int main(){
+    int l=0,i;
+    double dx,x,polje[60];
+
+    scanf("%lf",&dx);
+    while(scanf("%lf",&x)&&x!=.0) 
+      polje[l++]=(f(x+dx)-f(x))/dx;
+    for(i=0;i<l;i++) printf("%.2lf ",atan(polje[i]));
+	
+  return 0;
+}

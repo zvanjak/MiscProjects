@@ -1,0 +1,41 @@
+#include <stdio.h>
+int main (){
+		int i=0,j=0,k=0,brojac=0;
+		char polje[20+1]={0},novopolje[20+1]={0};
+		for(i=0;i<20;i++){
+			scanf("%c", &polje[i]);
+			k++;
+			if(!((polje[i]>='A' && polje[i]<='Z')||(polje[i]>='a' && polje[i]<='z'))) break; 
+		}
+		for (i=0;i<k;i++){
+			if(!((polje[i]>='A' && polje[i]<='Z')||(polje[i]>='a' && polje[i]<='z')))
+				brojac++;
+		}
+		if(brojac==k) printf("-1");
+		for (i=0; i < k; i++){
+			if (polje[i] > 'A' && polje[i] <= 'Z' && polje[i]!='E' && polje[i]!= 'I' &&  polje[i]!= 'O' && polje[i]!= 'U'){
+				novopolje[j]=polje[i];
+			j++;
+			}
+			else if (polje[i] > 'a' && polje[i] <= 'z' && polje[i] != 'e' && polje[i]!= 'i' && polje[i] != 'o' &&  polje[i] != 'u'){
+				polje[i]=polje[i]-32;
+				novopolje[j]=polje[i];
+			    j++;
+			}
+		}
+		for (i=k; i >=0; i--){
+			if (polje[i] > 'A' && polje[i] <= 'Z' && polje[i]!='E' && polje[i]!= 'I' &&  polje[i]!= 'O' && polje[i]!= 'U'){
+				polje[i]=polje[i]+32;
+				novopolje[j]=polje[i];
+			j++;
+			}
+			else if (polje[i] > 'a' && polje[i] <= 'z' && polje[i] != 'e' && polje[i]!= 'i' && polje[i] != 'o' &&  polje[i] != 'u'){
+				novopolje[j]=polje[i];
+			    j++;
+			}
+		}
+				for(j=0;j<k+1;j++){
+			printf("%c", novopolje[j]);
+		}
+		return 0;
+}

@@ -1,0 +1,12 @@
+float prosjek(FILE *f) {
+      int n=0;
+      float prosjek1=0,suma=0;
+      struct album album1;
+      
+      while (fread (&album1,sizeof (album1),1,f) > 0 ) {
+            n++;
+            suma+=album1.prodano;
+            }
+      prosjek1=(float) suma/n;
+      return prosjek1;
+      }

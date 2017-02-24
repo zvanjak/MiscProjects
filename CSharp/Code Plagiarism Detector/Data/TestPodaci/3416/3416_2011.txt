@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int i,j, prvo, zadnje, flag=0;
+    char znakovi[100], tmp;
+
+    i=0;
+    while(1)
+    {
+        printf("Upisite %d veliko slovo engleske abecede: ", i+1);
+        scanf("%c", &tmp);
+        /*ciscenje znaka za novi red ili ti brisanje entera*/
+        scanf("%*c"); 
+        if((tmp < 91) && (tmp>64))
+        {
+            znakovi[i++]=tmp;
+            flag=1;
+        }
+        else
+        {
+            break;
+        }
+    }
+
+    if(flag==1)
+    {
+        prvo=0;
+        zadnje=0;
+        for(j=1; j<i; j++)
+        {
+            if(znakovi[j]<znakovi[prvo])
+            {
+                prvo=j;
+            }
+            if(znakovi[j]>znakovi[zadnje])
+            {
+                zadnje=j;
+            }
+        }
+
+        printf("%c %c", znakovi[prvo], znakovi[zadnje]);
+    }
+    else
+    {
+        printf("-1");
+    }
+
+}

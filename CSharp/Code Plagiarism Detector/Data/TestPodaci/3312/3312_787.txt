@@ -1,0 +1,12 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+struct zapis {char naziv[30+1];
+char autor[20+1];
+int prodano;}red;
+int br_prodanih(FILE *f,char *autor){
+    int suma=0,a=0;
+while(fscanf (f,"%[^ ] %[^ ] %d%*c",red.naziv,red.autor,&red.prodano)!=EOF){
+if(strcmpi (red.autor,autor)==0)
+suma=suma+red.prodano;}
+return suma;}

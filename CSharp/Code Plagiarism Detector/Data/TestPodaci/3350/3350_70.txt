@@ -1,0 +1,19 @@
+int najbolji(FILE *f)
+{
+   int i=0;max=0;
+   struct natjecatelj {
+      int redni_br;
+      char prezime[20+1];
+      int bodovi;
+   } n;
+
+   while(fread(&n,sizeof(natjecatelj),1,f)!=EOF)
+   {
+      if(n.redni_br>0 && n.bodovi>max)
+      {
+         max=n.bodovi;
+         i=n.redni_br;
+      }
+   }
+   return i;
+}

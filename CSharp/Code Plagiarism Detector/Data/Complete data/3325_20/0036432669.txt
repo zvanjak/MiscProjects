@@ -1,0 +1,8 @@
+void rStrncpy(char *odrediste, char *izvoriste, int n){
+	kontrola();
+	n--;
+	if (n > 0){
+		rStrncpy(odrediste, izvoriste, n);
+	}
+	odrediste[n]=izvoriste[n];
+}

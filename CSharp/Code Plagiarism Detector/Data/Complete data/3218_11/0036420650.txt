@@ -1,0 +1,30 @@
+#include<stdio.h>
+int main (){
+	int n, max, i = 2, broj_koraka = 0;
+	max = 0;
+
+	do{
+		scanf("%d", &n);
+		if (n>2){
+			i=2;
+			while(i<n){
+				if (n%i==0){
+					break;
+				}
+				i++;
+			}
+			if ((i==n)&&(n>max)){
+				max = n;
+			}	
+		}
+		
+		broj_koraka++;
+	}
+	while (n>2);
+	if (broj_koraka==1){
+		max=0;
+	}
+
+	printf ("%d\n", max);
+	return 0;
+}

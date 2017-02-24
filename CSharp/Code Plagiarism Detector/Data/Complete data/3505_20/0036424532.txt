@@ -1,0 +1,36 @@
+int LijevoDesno(cvor *glava,int id,int *lijevo,int *desno)
+    {
+    cvor *pom;
+    if(glava==NULL)
+        return(0);
+    pom=glava;
+    while(glava!=0)
+        {
+            if(id<(glava)->id)
+                {
+                glava=(glava)->lijevo;
+                if((glava)==NULL)
+                    {
+                    glava=pom;
+                    return(0);
+                    }
+                (*lijevo)++;
+                }
+            else if(id>(glava)->id)
+                {
+                glava=(glava)->desno;
+                if((glava)==NULL)
+                    {
+                    glava=pom;
+                    return(0);
+                    }
+                (*desno)++;
+                }
+            else if(id==(glava)->id)
+                break;
+            else
+                return(0);
+        }
+        glava=pom;
+        return(1);
+    }

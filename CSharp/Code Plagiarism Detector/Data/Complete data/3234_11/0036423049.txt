@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <math.h>
+int main ()
+{
+	int n,i;
+	double x=0,pi;
+	scanf ("%d",&n);
+	if ( n<1 || n>100 )
+		printf ("n nije valjan");
+	else
+	{
+		for ( i=1; i<=n; i++ )
+			x+=(double)1/(i*i);
+		printf ("%.12lf", pow(6*x,0.5));
+	}
+        fflush(stdout);
+	return 0;
+}

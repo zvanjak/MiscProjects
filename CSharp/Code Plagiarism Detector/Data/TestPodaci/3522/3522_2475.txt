@@ -1,0 +1,18 @@
+void ConvertFromXML(char *inputField, char *outputField) {
+        char ime[100+1], prezime[100+1], jmbg[100+1], van[300+4+1];
+        char *y, *p = inputField;
+
+        while (p = strstr(p, "<ime>")) {
+                y = strstr(p, "</ime>");
+                strncpy(ime, p+5, y-p-5); ime[y-p-5] = '\0';
+                p = strstr(p, "<prezime>"); y = strstr(p, "</prezime>");
+                strncpy(prezime, p+9, y-p-9); prezime[y-p-9] = '\0';
+                p = strstr(p, "<jmbg>"); y = strstr(p, "</jmbg>");
+                strncpy(jmbg, p+6, y-p-6); jmbg[y-p-6] = '\0';
+
+                p = y;
+
+                sprintf(van, "#%s#%s#%s#\n", ime, prezime, jmbg);
+                strcat(outputField, van);
+        }
+}

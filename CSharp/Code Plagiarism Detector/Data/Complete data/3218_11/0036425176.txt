@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main(){
+
+	int br;
+
+	int max_prost=0,jenije,i;
+
+	
+	do{
+		scanf("%d",&br);
+		if (br<3) break;
+
+		jenije=1;
+		for (i=2;i<br;i++) 
+			if ((br%i)==0) jenije=0;
+
+		if (jenije==1 && br>max_prost) max_prost=br;
+	
+	}while(1);
+
+
+	printf("%d",max_prost);
+
+
+
+	return 0;
+}

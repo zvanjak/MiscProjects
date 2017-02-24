@@ -1,0 +1,39 @@
+#include <stdio.h>
+int main(){
+	int matrica[20][5];
+	int i=0,j=0,mr,ms,brojilo_redak=0,brojilo_stupac=0;
+	int zbroj=0;
+	do{
+		scanf("%d %d",&mr,&ms);
+	}while(mr<1 || mr>20 || ms<1 || ms>5);
+	for(i=0;i<mr;i++){
+		for(j=0;j<ms;j++){
+			scanf("%d", &matrica [i][j]);
+			zbroj=zbroj+matrica[i][j];
+		}
+	}
+	for(i=0;i<mr;i++){
+		for(j=0;j<ms;j++){
+			if(matrica [i][j]%2==0){
+				brojilo_redak++;
+				break;
+			}
+			continue;
+		}
+	}
+	for(j=0;j<mr;j++){
+		for(i=0;i<ms;i++){
+			if(matrica [i][j]%2!=0){
+				brojilo_stupac++;
+				break;
+			}
+			continue;
+		}
+	}
+	if (zbroj==0){
+		brojilo_redak=0;
+		brojilo_stupac=0;
+	}
+	printf("%d %d", brojilo_redak, brojilo_stupac);
+	return 0;
+}

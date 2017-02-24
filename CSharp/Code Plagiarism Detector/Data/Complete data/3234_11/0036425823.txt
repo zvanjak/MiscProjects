@@ -1,0 +1,20 @@
+#include<stdio.h>
+#include<math.h>
+void main () {
+int n;
+float suma=0, pi;
+int i;
+scanf("%d", &n);
+if ((n>=1)&&(n<=100))
+{
+for (i=1; i<=n; i++)
+{
+suma+=(float)1/(i*i);
+}
+pi=sqrt(suma*6);
+printf(" %.12f ", pi);
+}
+else
+printf(" n nije valjan ");
+
+}

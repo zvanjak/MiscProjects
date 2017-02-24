@@ -1,0 +1,7 @@
+float prosjek(FILE *f) {
+   struct album t;
+   float ret = 0.0;
+   int uk;
+   for( uk = 0; fread( &t, sizeof t, 1, f ); uk++ ) ret += t.prodano;
+   return ret / (float) uk;
+}

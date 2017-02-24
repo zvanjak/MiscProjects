@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <math.h>
+
+int main () {
+int n,i;
+float r=0.;
+scanf ("%i",&n);
+if (n<1|| n>30)
+printf ("n nije valjan\n");
+else {
+for (i=0 ; i<n ; i++)
+r+=(pow (-2., -i ));
+printf ("%1.12f\n", r);
+}
+return 0;
+}

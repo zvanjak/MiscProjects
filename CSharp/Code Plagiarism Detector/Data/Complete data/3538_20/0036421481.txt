@@ -1,0 +1,28 @@
+#include <math.h>
+Red * VratiBrojeve(Red * red)
+{
+	int val;
+	int temp;
+	int znam;
+	Red * redIzlaz = new Red();
+	Red redTemp;
+
+	while (red->SkiniIzReda(&val))
+	{
+		temp = 0;
+		redTemp.DodajURed(val);
+		while (val > 0)
+		{
+			red->SkiniIzReda(&znam);
+			redTemp.DodajURed(znam);
+			temp += znam * pow((float) 10, val - 1);
+			val--;
+		}
+		redIzlaz->DodajURed(temp);
+	}
+	while (redTemp.SkiniIzReda(&val))
+	{
+		red->DodajURed(val);
+	}
+	return redIzlaz;
+}

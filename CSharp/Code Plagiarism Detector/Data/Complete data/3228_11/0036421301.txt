@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <math.h>
+void main(){
+	int n,i,k;
+	double p,pi;	
+	scanf ("%d",&n);
+	p=0;
+	k=1;
+	if (n>=1 && n<=100){
+		for (i=1;i<=n;i++){
+			p=p+k*(1/((double)i*i));
+			k=-k;
+		}
+		pi=pow((p*12),1./2);
+		printf ("%.12lf",pi);
+	}
+	else
+		printf ("n nije valjan");
+}

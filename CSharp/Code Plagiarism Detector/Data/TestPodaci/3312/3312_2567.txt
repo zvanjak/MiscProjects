@@ -1,0 +1,11 @@
+int br_prodanih(FILE *d, char *autor){
+int i, suma=0;
+struct album{
+       char naziv[30+1];
+       char autor[20+1];
+       int prodano;
+       } a;
+fseek(d, 0l, SEEK_SET);
+while (fscanf(d, "%s %s %d\n", a.naziv, a.autor, &a.prodano)==3) if (!(strcmp(a.autor,autor))) suma+=a.prodano;
+return suma;
+}

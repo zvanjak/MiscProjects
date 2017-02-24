@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+	int c,a,y,x,i,l,brz;
+scanf("%d",&a);
+i=0;c=a;brz=0;
+if (a > 0){
+while(a>0)
+	{
+	y=a/10;
+    x = a % 10;   
+	i=i+1;
+	a=y;
+	}
+	l=pow(10,i-1);
+x=0;y=0;
+while(c>0)
+	{
+	
+    x = c / l;
+	y=c % l;
+	if ((x % 2)!=0) {printf("%d",x);
+					brz=brz+1;
+	}
+	c=y*10;
+	}
+}
+else printf("%d",a);
+//printf("\n");
+if (i==brz) printf("0");
+return(0);
+}

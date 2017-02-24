@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+int n,i;
+double p=0;
+
+scanf("%d",&n);
+if ((n<1) || (n>30)){
+        printf("n nije valjan");
+    }
+
+else{
+        for (i=1; i<=n; i++)
+                p+=1./pow(i,6);
+
+        p=p*945;
+        p=pow(p,1./6);
+
+        printf ("%.12f", p);
+        }
+       
+return 0;
+
+}

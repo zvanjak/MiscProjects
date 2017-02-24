@@ -1,0 +1,58 @@
+#include <stdio.h>
+#define max 20
+int main () {
+	int n,i,j, a, xr=0,or=0;
+	int brxr, brxs, brxd1, brxd2, bror, bros, brod1, brod2;
+	char matrica[max][max];
+	do{
+	do {
+		brxr=bror=brxs=bros=brxd1=brod1=brxd2=brod2=0;
+		do {
+			scanf("%d",&n);
+		}while(n<1||n>20);
+		for (i=0; i<n; i++){
+			for (j=0; j<n; j++) {
+				do{
+					scanf("%c",&matrica[i][j]);
+				}while((matrica[i][j]!='-')&&(matrica[i][j]!='X')&&(matrica[i][j]!='O'));
+			}
+		}
+		for (i=0; i<n; i++){
+			for (j=0; j<n; j++) {
+				if (matrica[i][j]=='X') xr++;
+				if (matrica[i][j]=='O') or++;
+			}
+			if (xr==n) brxr++;
+			if (or==n) bror++;
+			xr=or=0;
+		}
+		for (j=0; j<n; j++){
+			for (i=0; i<n; i++) {
+				if (matrica[i][j]=='X') xr++;
+				if (matrica[i][j]=='O') or++;
+			}
+			if (xr==n) brxs++;
+			if (or==n) bros++;
+			xr=or=0;
+		}
+		for (i=0; i<n; i++){
+				if (matrica[i][i]=='X') xr++;
+				if (matrica[i][i]=='O') or++;
+		}
+			if (xr==n) brxd1++;
+			if (or==n) brod1++;
+			xr=or=0;
+		for (i=0; i<n; i++){
+				if (matrica[i][n-1-i]=='X') xr++;
+				if (matrica[i][n-1-i]=='O') or++;
+		}
+			if (xr==n) brxd2++;
+			if (or==n) brod2++;
+			xr=or=0;
+	}while (brxr>1||bror>1||brxs>1||bros>1);
+	}while (((brxr==1)&&(bror==1))||((brxs==1)&&(bros==1)));
+	if (brxr==1||brxs==1||brxd1==1||brxd2==1) printf("X");
+	else if (bror==1||bros==1||brod1==1||brod2==1) printf("O");
+	else printf("-");
+	return 0;
+}

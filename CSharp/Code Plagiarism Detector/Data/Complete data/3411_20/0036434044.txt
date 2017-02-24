@@ -1,0 +1,26 @@
+char *BezDuplikata(char *ulazni_niz) {
+	int p = 0;
+	int i = 0;
+	int c = 0;
+	int zast = 0;
+	char novi_niz[1500] = {0};
+	char k[1+1] = {0};
+	if ((ulazni_niz == NULL) || (*ulazni_niz == '\0')) return NULL;
+	else {
+
+		 novi_niz[c] = ulazni_niz[i];
+			i++;
+			while (ulazni_niz[i] != '\0') {
+			  while (novi_niz[p] != '\0') {
+				  if (ulazni_niz[i] == novi_niz[p]) { zast = 1; break; }
+				p++;
+			  }
+			  if (zast == 0) novi_niz[++c] = ulazni_niz[i]; 
+				  zast = 0;
+				i++;
+				p = 0;
+	
+			}	
+	}
+	return (char*) novi_niz;
+}

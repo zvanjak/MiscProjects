@@ -1,0 +1,44 @@
+#include<stdio.h>
+int main () {
+	long int a,b,c,d,e,n,sump,sumn;
+	scanf("%d",&n);
+    a = (n / 10000);
+	e = (n % 10);
+	d = ((n % 100) / 10);
+	c = ((n % 1000) / 100);
+	b = ((n % 10000) / 1000);
+	sump = 0;
+	sumn = 0;
+	if ( a == e && b == d ) {
+		if (a % 2 == 0){ 
+			sump = sump + a;
+		}
+		if (b % 2 == 0){
+			sump = sump + b;
+		}
+		if (c % 2 == 0){
+			sump = sump + c;
+		}
+		if (d % 2 == 0){
+			sump = sump + d;
+		}
+		if (e % 2 == 0){
+			sump = sump + e;
+		}
+		printf ("%d\n",sump);
+	}
+	else {
+                if (a % 2 != 0) 
+			sumn = sumn + a;
+		if (b % 2 != 0)
+			sumn = sumn + b;
+		if (c % 2 != 0)
+			sumn = sumn + c;
+		if (d % 2 != 0)
+			sumn = sumn + d;
+		if (e % 2 != 0)
+			sumn = sumn + e;
+		printf("%d\n",sumn);
+	}
+	return 0 ;
+}

@@ -1,0 +1,19 @@
+int* napraviPolje(int *A, int Na, int a, int b, int *Nc){
+	int i, *p, x, j=0;
+	*Nc=0;
+	if(a>b) return NULL;
+	else{
+		for(i=0; i<Na; i++){
+			if(*(A+i)>b) (*Nc)++;
+		}
+		x=*Nc;
+		p=(int *)malloc(x * sizeof(int));
+		for(i=0; i<Na; i++){
+			if(*(A+i)>b){ 
+				*(p+j)=*(A+i);
+				j++;
+			}
+		}
+		return p;
+	}
+}

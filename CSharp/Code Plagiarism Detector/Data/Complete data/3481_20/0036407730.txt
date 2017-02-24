@@ -1,0 +1,28 @@
+int Memoriraj(Radio& radio) {
+		int i=0,c=0;
+		Stanica privremeno,jedan;
+
+		while(i<6)
+		{
+			if(c==0)
+			jedan=privremeno=radio.TraziSljedecu();
+			else
+			privremeno=radio.TraziSljedecu();
+
+			if(c>0&& privremeno==jedan)
+			{
+				break;
+			}
+			else
+			{
+				if(strncmp(privremeno.RDS(),"",1))
+			    {
+                                        i++;			
+					radio.MemorirajStanicu(privremeno, i);
+			    }
+
+                        }
+			c++;
+		}
+		return i;
+	}

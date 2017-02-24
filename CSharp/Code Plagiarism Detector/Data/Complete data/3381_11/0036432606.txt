@@ -1,0 +1,30 @@
+
+#include <stdio.h>
+
+int main (){
+
+int x1,y1,x2,y2,x3,y3,x4,y4;
+float k1,k2,d1,d2,d3,d4;
+
+scanf ("%d %d %d %d %d %d %d %d",&x1,&y1,&x2,&y2,&x3,&y3,&x4,&y4);
+
+if ((x3-x1)==0 || (x4-x2)==0)
+{printf ("K");}
+
+else {
+
+k1=((y3-y1)/(x3-x1));
+k2=((y4-y2)/(x4-x2));
+d1= sqrt(pow(x2-x1,2) + pow(y2-y1,2));
+d2= sqrt(pow(x3-x2,2) + pow(y3-y2,2));
+d3= sqrt(pow(x4-x3,2) + pow(y4-y3,2));
+d4= sqrt(pow(x1-x4,2) + pow(y1-y4,2));
+
+if (k1*k1==-1 && d1==d2 && d2==d3 && d3==d4)
+{printf ("R");}
+
+else
+{printf ("C");
+}}
+return 0;
+}

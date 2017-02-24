@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <conio.h>
+int niz(int i) { 
+  int nir;
+  kontrola();
+  if (i <= 2) {
+    if(i==2) nir=2;
+    if(i==1) nir=1;
+    if(i==0) nir=0; 
+  } else {
+    nir = niz(i-1) + 2*niz(i-2) - niz(i-3);
+	if (nir< 0) {
+		exit (1);
+	}
+  }
+ return nir;}
+

@@ -1,0 +1,16 @@
+int veci_od(FILE *F,int granica)
+{
+	int zb=0;
+	int b;
+	struct album
+	{
+		char naziv [30+1];
+		char autor [20+1];
+		int prodano;
+	}a;
+while(fscanf(F,"%s %s %d",&a.naziv,&a.autor,&a.prodano)!=EOF)
+	{
+		if (a.prodano>=granica) zb++;
+	}
+	return zb;
+}

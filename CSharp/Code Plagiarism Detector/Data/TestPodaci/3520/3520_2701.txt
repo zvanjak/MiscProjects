@@ -1,0 +1,17 @@
+int RemoveAllDigits( char * inputField, char * outputField, int * number)
+{
+	int i=0, j=0;
+
+	while (*(inputField + i) != '\0' )
+	{
+		if (*(inputField + i) < 48 || *(inputField + i) > 57)
+		{
+            *(outputField + j) = *(inputField + i);
+			j++;
+		}
+		i++;
+	}
+	*(outputField + j) ='\0';
+	*number = i-j;	
+	return strlen(outputField);
+}

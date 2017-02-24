@@ -1,0 +1,22 @@
+#include <stdio.h>
+int main() {
+	int n,gotovo;
+	int br = 0;
+	do {
+/*        printf ("unesite broj: "); */
+		scanf("%d",&n);
+	} while (n>0);
+
+		do {
+            n=(n % 10) + n;
+			gotovo = (n % 13);
+			br= br + 1;;
+			printf("%d ", n);
+		} while ((gotovo) && (br<40));
+
+		printf("%d",br);
+printf("\n");
+		
+		return(0);
+
+}

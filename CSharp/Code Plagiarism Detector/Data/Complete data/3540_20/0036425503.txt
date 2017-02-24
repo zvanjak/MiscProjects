@@ -1,0 +1,11 @@
+int izbaci( zapis **glava ) {
+   if( *glava == NULL ) return 0;
+   
+   if( (*glava)->pros < 2.0 ) {
+      *glava = (*glava)->sljed;
+      
+      return 1 + izbaci( glava );
+   } else {
+      return 0 + izbaci( &(*glava)->sljed );
+   }
+}

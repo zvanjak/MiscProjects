@@ -1,0 +1,88 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+
+class Automat{
+private:
+	int _iznos;
+public:
+	Automat():_iznos(0){}
+
+	void UplatiIznos(int iznos){
+		_iznos += iznos;		
+	}
+
+	int TrenutnoStanje(){
+		return _iznos;
+	}
+	int PodigniPreostalo(){		
+		int temp = _iznos;
+		_iznos = 0;
+		return temp;
+	}
+	int Zavrti(){		
+		if (_iznos>0){
+			_iznos--;			
+			int temp = 1 + rand()%10;
+			temp = temp>2 ? 0 : temp * 1;			
+			return temp;
+		}
+		else throw "Nedovoljan iznos";			
+ 	}
+};
+
+class Igrac{
+private:
+	int _iznos;
+public:
+	Igrac():_iznos(0){}
+	Igrac(int iznos):_iznos(iznos){}
+	int TrenutnoStanje(){
+		return _iznos;
+	}
+	bool SkiniSRacuna(int iznos){
+		if (_iznos>=iznos){
+			_iznos -= iznos;
+			return true;
+		}
+		else
+			return false;
+	}
+
+	void UplatiNaRacun(int iznos){
+		_iznos += iznos;
+	}
+};
+
+int igra (Igrac& igrac, Automat& aut, int max, int* broj) {
+	int poc_saldo;
+	int dobitak;
+	poc_saldo = igrac.TrenutnoStanje();
+	*broj = max;
+	while (max) {
+		aut.UplatiIznos( igrac.TrenutnoStanje() );
+		igrac.SkiniSRacuna( igrac.TrenutnoStanje() );
+		try {
+			dobitak = aut.Zavrti();
+		}
+		catch (char* pogreska) {
+			printf("%s", pogreska);
+			break;
+		}
+		igrac.UplatiNaRacun(dobitak);
+		max--;
+	}
+	igrac.UplatiNaRacun( aut.PodigniPreostalo() );
+	*broj -= max;
+	return poc_saldo - igrac.TrenutnoStanje() ;
+}
+
+int main ()  {
+	Igrac ja(100);
+	Automat dzek;
+	int razlika, broj_uspjelih;
+        razlika = igra (ja, dzek, 200, &broj_uspjelih);
+	printf("\n %d \n %d", razlika, broj_uspjelih);
+	getch();
+ 	return 0;
+}

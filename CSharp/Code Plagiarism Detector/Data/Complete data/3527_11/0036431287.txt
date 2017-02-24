@@ -1,0 +1,16 @@
+int izbaciDuplikate (char * ulazni)
+{
+	int i, j, k = 0, brojac[127] = {0};
+
+	for(i = 0; ulazni[i] != 0; i++) {
+		brojac[ulazni[i]]++;
+		if(brojac[ulazni[i]] > 1){
+			j = i; i--; k++;
+			while(ulazni[j] != 0){
+				ulazni[j] = ulazni[j+1];
+				j++;
+			}
+		}
+	}
+	return k;
+}

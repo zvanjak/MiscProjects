@@ -1,0 +1,26 @@
+int Memoriraj(Radio& radio)
+{
+    Stanica prva, postaja;
+    int i=0;
+    do
+    {
+         postaja=radio.TraziSljedecu();
+         if(i==0)
+         {
+              prva=postaja;
+              i++;
+         }
+         else if(postaja==prva)
+         {
+              break;
+         }
+         if(strlen(postaja.RDS())!=0)
+         {
+              radio.MemorirajStanicu(postaja, i);
+              i++;
+         };
+    }
+    while(i<=6);
+    i=i-1;
+    return i;
+}

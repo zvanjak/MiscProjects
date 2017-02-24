@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main(){
+
+int niz[200];
+
+int j,k,i=0;
+
+do{
+
+scanf("%c%d",&niz[2*i],&niz[2*i+1]);
+
+i++;}
+
+while (niz[((i-1)*2)+1]!=-1);
+
+i=(i/2);
+
+for (j=0;j<=i*2+1;j++)
+
+{
+
+for (k=0;k<=niz[2*j+1]-1;k++)
+
+printf("%c ",niz[2*j]);
+
+}
+
+return 0;
+
+}
+

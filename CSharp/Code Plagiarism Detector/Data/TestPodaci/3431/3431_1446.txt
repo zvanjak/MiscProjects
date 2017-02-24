@@ -1,0 +1,46 @@
+#include <stdio.h>
+int main (){
+char upis[100];
+int i, sumap, sumanp, razlika;
+sumap=0;
+sumanp=0;
+for(i=0; i<100; i++){
+fflush(stdin);
+scanf("%c", &upis[i]);
+
+if((upis[i]<'0'|| upis[i]>'9')&& (upis[i]<'A'|| upis[i]>'F') &&(upis[i]<'a'|| upis[i]>'f'))
+{upis[i]=0;
+break;}
+switch(upis[i]){
+case	'0':upis[i]=0;break;
+case    '1':upis[i]=1;break;  
+case	'2':upis[i]=2;break;
+case    '3':upis[i]=3;break;
+case	'4':upis[i]=4;break;
+case	'5':upis[i]=5;break;
+case	'6':upis[i]=6;break;
+case	'7':upis[i]=7;break;
+case	'8':upis[i]=8;break;
+case	'9':upis[i]=9;break;
+case	'A':upis[i]=10;break;
+case    'a':upis[i]=10;break;  
+case	'B':upis[i]=11;break;
+case    'b':upis[i]=11;break;
+case	'C':upis[i]=12;break;
+case	'c':upis[i]=12;break;
+case	'D':upis[i]=13;break;
+case	'd':upis[i]=13;break;
+case	'E':upis[i]=14;break;
+case	'e':upis[i]=14;break;
+case	'F':upis[i]=15;break;
+case	'f':upis[i]=15;break;
+}
+if (upis[i]%2)
+sumanp= sumanp + upis[i];
+else
+sumap=sumap+upis[i];
+} 
+razlika= sumap-sumanp;
+printf("%d", razlika);
+return 0;
+}

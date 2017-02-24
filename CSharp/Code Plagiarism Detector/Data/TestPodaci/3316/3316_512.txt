@@ -1,0 +1,11 @@
+void azuriraj (FILE *f, int redni_br, int bodovi) {
+  struct natjecatelj temp;
+  
+  fseek (f, sizeof (struct natjecatelj) * (redni_br - 1), SEEK_SET);
+  fread (&temp, sizeof (struct natjecatelj), 1, f);
+  temp.bodovi = bodovi;
+  fseek (f, sizeof (struct natjecatelj) * (redni_br - 1), SEEK_SET);
+  fwrite (&temp, sizeof (struct natjecatelj), 1, f);
+  
+  return;
+}

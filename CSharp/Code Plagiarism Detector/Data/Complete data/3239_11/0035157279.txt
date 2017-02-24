@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main ()
+{ 
+	int d,g,i,razlika; 
+	double suma;
+	int n[500];
+	razlika=d=g=0;
+	suma=1;
+		scanf("%d", &d);
+		scanf("%d", &g);
+
+		if (g>0 && d>0 && g>d){
+			
+
+			razlika=(g-d+1);
+			
+			for (i=0; i<razlika; i++) {
+				n[i]=d;
+				++d; }
+			for (i=0; i<razlika; i++) {
+				if (n[i]%2==0) suma=(suma*n[i]); }
+		printf("%d ",suma);
+			
+		}
+		
+		
+		else
+			printf("D i G nisu valjani\n");
+		return 0;
+}

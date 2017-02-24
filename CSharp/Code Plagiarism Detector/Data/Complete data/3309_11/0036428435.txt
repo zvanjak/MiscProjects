@@ -1,0 +1,29 @@
+int br_prodanih(FILE *f, char *autor){
+	long velicina, v1,v2,v3;
+	char naziv[30+1];
+	char autor1[20+1];
+	int prodano, i=0, isti, rez=0;
+
+	v1=sizeof(naziv[0]);
+	v2=sizeof(autor1[0]);
+	v3=sizeof(prodano);
+	
+	while(autor[i]!=0)i++;
+
+	fseek(f, 0l, SEEK_END);
+	velicina=ftell(f);
+	fseek(f, 0l, SEEK_SET);
+
+	while (velicina > ftell(f)){
+		fread(naziv,v1,1,f);
+		fread(autor1,v2,1,f);
+		fread(&prodano,v3,1,f);
+		isti=1;
+		while(i!=0){
+			if (autor1[i]!=autor[i]) isti=0;
+			i--;
+		}
+		if(isti) rez=rez+prodano;
+	}
+	return rez;
+}

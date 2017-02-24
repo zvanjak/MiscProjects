@@ -1,0 +1,20 @@
+#include<stdio.h>
+int main(){
+ int broj,i,prost,neprost=0,maxprost=0;
+ scanf("%d",&broj);
+ while(broj>2){
+  for(i=2;i<=broj-1;i++){
+   if(broj%i==0){
+    neprost=1;
+    break;
+   }
+  }
+  if(neprost!=1){
+   if(broj>maxprost)maxprost=broj;
+  }
+  scanf("%d",&broj);
+  neprost=0;
+ }
+ printf("%d",maxprost);
+ return 0;
+}

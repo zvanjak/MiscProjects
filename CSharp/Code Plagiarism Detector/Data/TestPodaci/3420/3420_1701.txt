@@ -1,0 +1,41 @@
+#include <stdio.h>
+int main() {
+
+	int mr,ms,r,s,i,j,k,z,p,a[20][5],suma;
+	
+
+	do {
+	scanf("%d %d",&mr,&ms);
+	}
+	while ((mr<1)||(mr>20)||(ms<1)||(ms>5));
+
+	for(r=0; r<mr; r++){
+		for(s=0; s<ms; s++){
+			scanf("%d",&a[r][s]);
+			}
+		}
+
+	
+	do {
+	scanf("%d %d",&i,&j);
+
+	for(s=0; s<ms; s++){
+		p=a[i][s];
+		a[i][s]=a[j][s];
+		a[j][s]=p;
+		}
+	}
+	while ((i>=0)&&(i<mr)&&(j>=0)&&(j<mr));
+
+
+	for(r=0; r<mr; r++){
+		suma=0;
+		for(s=0; s<ms; s++){
+			suma+=a[r][s];
+			}
+		printf("%d",suma);
+		if (r<mr-1) printf(" ");
+	}
+
+return 0;
+}

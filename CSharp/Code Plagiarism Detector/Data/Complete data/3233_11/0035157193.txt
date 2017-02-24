@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main()
+{
+ 
+  int n, x;
+  double jedan;
+  
+  jedan=0;
+
+  scanf ("%d", &n);
+  if ((n>=1)&&(n<=200)) {
+     for (x=1;x<=n;x++) {
+      jedan +=(double) 1 / (x*(x+1));
+     }
+     printf ("%1.12f", jedan);
+  } 
+       
+  else
+      printf ("n nije valjan"); 
+
+  return 0;
+}

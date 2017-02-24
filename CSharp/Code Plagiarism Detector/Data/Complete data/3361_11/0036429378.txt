@@ -1,0 +1,15 @@
+#include <stdio.h>
+int main ()
+{
+int br , l , d , suma ,ostatak;
+scanf("%d", &br);
+if (br>999&&br<10000)
+{
+l=br/100;
+d=br%100;
+suma=l+d;
+ostatak=suma%l;
+if (ostatak==0) printf("Jest");
+else printf ("Nije"); 
+}
+}

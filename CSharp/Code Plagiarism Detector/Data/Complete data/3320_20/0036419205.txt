@@ -1,0 +1,8 @@
+int rmax(int *polje,int N){
+	int maxclan;
+	kontrola();
+	if(N==1)return polje[N-1];
+	maxclan= rmax(polje+1,N-1);
+	if(*polje>maxclan) return *polje;
+	return maxclan;
+}

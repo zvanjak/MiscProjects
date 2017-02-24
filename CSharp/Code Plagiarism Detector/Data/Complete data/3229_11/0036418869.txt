@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main (){
+	
+   int n,i,j;
+   float suma=1.0f;
+   scanf ("%i",&n);
+   
+   if (n<1 || n>30) {
+	                  printf("n nije valjan");
+	                }
+   else {
+		 for (i=1; i<=n; i=i+1) {
+			    long double faktorijel=1.0;
+			    for (j=1; j<=i; j++){
+				     faktorijel=faktorijel*j;
+				     };
+				if (i%2==0){
+				            suma=suma+(1/faktorijel);
+			               }
+			    else {      suma=suma-(1/faktorijel);
+				}
+			}
+			printf ("e =%.12f\n", 1/suma);
+			return 0;
+		}}
+				
+	

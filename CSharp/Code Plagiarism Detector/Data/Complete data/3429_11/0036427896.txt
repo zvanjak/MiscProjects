@@ -1,0 +1,22 @@
+#include <stdio.h>
+#define mxr 20
+#define mxs 5
+int main () {
+	int mr, ms, i = 1, j, parni = 0, neparni = 0;
+	int m[mxr][mxs];
+	while (i){
+	scanf("%d %d", &mr, &ms);
+	if((mr >= 1)&&(mr <= 20)&&(ms >= 1)&&(ms <= 5)) i-=1;}
+	for(i = 0; i < mr; i++)
+		for(j = 0; j < ms; j++)
+			scanf("%d", &m[i][j]);
+	for(i = 0; i < mr; i++)  
+		for(j = 0; j < ms; j++) 
+			if(m[i][j] % 2 == 0) {
+				parni +=1; break; } 
+	for(j = 0; j < ms; j++)  
+		for(i = 0; i < mr; i++) 
+			if(m[i][j] % 2 != 0) {
+				neparni +=1; break; }
+	printf("%d %d", parni, neparni);
+	return 0; }

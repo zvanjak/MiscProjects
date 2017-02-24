@@ -1,0 +1,13 @@
+int JeLiUnutra(Kruznica &kruz,Kvadrat &kvad){
+	float a,gore,dolje,lijevo,desno;
+	a = kvad.GetDuljinaStranice();
+	gore = kruz.GetCenterY() + kruz.GetRadius();
+	dolje = kruz.GetCenterY() - kruz.GetRadius();
+	lijevo = kruz.GetCenterX() - kruz.GetRadius();
+	desno = kruz.GetCenterX() + kruz.GetRadius();
+	if	((kvad.GetX()) > lijevo) return 0;
+	if      ((kvad.GetY()) < gore) return 0;
+	if	(((kvad.GetY()) - a)> dolje) return 0;
+	if	(((kvad.GetX()) + a)< desno) return 0;
+	return 1;
+}

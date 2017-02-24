@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include<math.h>
+int main(){
+	int mr,ms,medjar,medjas,sred,sim,i,j,k;
+	int prod=1; 
+	int a[20][5];
+	   do scanf("%d %d",&mr, &ms);
+	   while ((mr<1)||(mr>20)||(ms<1)||(ms>5));
+       
+       for(i=0; i<mr; i++)
+	   {for (j=0; j < ms; j++)
+	   {scanf("%d", &a[i][j]);}}
+
+	   if (mr%2) {
+		           sred=mr/2;
+				   for (i=0, k=1; i < mr, k <= sred; i++, k++)
+				   {for (j=0;j < ms;j++)
+					   {if (a[i][j]==a[mr-k][j]) sim=1;
+					   else sim=0;}}
+                   if (sim) printf("Jest"); 
+				   else printf("Nije");
+
+	             }
+	   else {
+		      for (i=0;i<mr;i+=2)
+			  {for (j=0;j<ms;j+=2)
+			  {prod=prod*a[i][j];}}
+			  printf("%d", prod);
+	        }
+	   return 0;
+}
+

@@ -1,0 +1,15 @@
+int veci_od(FILE *f,int n)
+    { int br=0;
+      struct st{
+            int redni;
+            char ima[20+1];
+            int bodovi;
+      }a;
+      while(fread(&a,sizeof(a),1,f))
+      {if (n<=a.bodovi&&a.redni!=0)
+          {          
+          br++;
+          }
+      }
+      return br; 
+      }   

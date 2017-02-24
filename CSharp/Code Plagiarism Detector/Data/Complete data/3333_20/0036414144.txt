@@ -1,0 +1,18 @@
+int NadjiRubni (int *mat, int m, int n, int maxstup, int *max, int *min)
+{
+int i,j;
+int najveci, najmanji;
+najveci=*mat;
+najmanji=*mat;
+for(i=0;i<m;i++){
+for(j=0;j<n;j++){
+if(i==0 || j==0 || i==(m-1) || j==(n-1)){
+if (mat[i*maxstup+j]>najveci) najveci=mat[i*maxstup+j];
+if (mat[i*maxstup+j]<najmanji) najmanji=mat[i*maxstup+j];
+}}}
+
+*max=najveci;
+*min=najmanji;
+return 1;
+}
+

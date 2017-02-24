@@ -1,0 +1,16 @@
+#include <stdio.h>
+int main() {
+	int niz[100],i=0,j,x,n;
+	do{
+		scanf("%d",&x);
+		if(x==-1) break;
+		if (x>0)
+			niz[i++]=x;
+	}
+		while(i<100);
+	n=i;
+	for(i=0; i<n; i+=2)
+		for (j=0; j<niz[i+1]; j++)
+			printf ("%d ",niz[i]);
+	return 0;
+}

@@ -1,0 +1,47 @@
+int igra(Igrac& igrac, Automat& aut, int max, int *broj)
+
+{
+
+int temp = 0;
+
+int pocetno = 0;
+
+pocetno = igrac.TrenutnoStanje();
+
+*broj = 0;
+
+while ((*broj) < max)
+
+{
+
+temp = igrac.TrenutnoStanje();
+
+igrac.SkiniSRacuna(temp);
+
+aut.UplatiIznos(temp);
+
+if (aut.TrenutnoStanje() == 0)
+
+{
+
+return (-pocetno);
+
+}
+
+else
+
+{
+
+igrac.UplatiNaRacun(aut.Zavrti());
+
+}
+
+*broj += 1;
+
+}
+
+igrac.UplatiNaRacun(aut.PodigniPreostalo());
+
+return (igrac.TrenutnoStanje() - pocetno);
+
+}

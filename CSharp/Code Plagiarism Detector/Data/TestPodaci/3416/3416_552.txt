@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main(){
+	
+	char niz[50];
+	char min,max,kontrolna;
+	int i=0;
+	
+	do{
+		scanf("%c",&niz[i]);
+		/*scanf("%c",&kontrolna);*/
+		i++;
+	}while(i<50&&(niz[i-1]>='A'&&niz[i-1]<='Z'));
+	
+	i=0,min='Z'+1,max='A'-1;
+	while(niz[i]>='A' && niz[i]<='Z'){
+		min=niz[i]<min?niz[i]:min;
+		max=niz[i]>max?niz[i]:max;
+		i++;
+	}
+	if(niz[0]<'A' || niz[0]>'Z'){
+		printf("-1");
+	}else{
+		printf("%c %c",min,max);
+	}
+	return 0;
+}

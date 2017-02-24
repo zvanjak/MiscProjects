@@ -1,0 +1,19 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+	double rez=0,n,c;
+	scanf("%lf",&n);
+	if(n>=1 && n<=100)
+	{
+		for (c=1;c<=n;c=c+1)
+		{
+			rez=(rez+ 1/(c*c));
+		}
+		rez=rez*6;
+		rez=sqrt(rez);
+		printf("%.12lf",rez);
+	}
+	else printf("n nije valjan");
+	return 0;
+}

@@ -1,0 +1,16 @@
+#include <stdio.h>
+int main () {
+char prvi='Z',zadnji='A',n;
+int brojac=-1;
+do{
+	brojac+=1;
+	scanf("%c",&n);
+	if ((n>='A')&&(n<='Z')&&(n>zadnji)){zadnji=n;}
+	if ((n>='A')&&(n<='Z')&&(n<prvi)){prvi=n;}
+}
+while((n>='A')&&(n<='Z'));
+if(brojac){
+printf("%c %c",prvi,zadnji);
+}else printf("-1");
+return 0;
+}

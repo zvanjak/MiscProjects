@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <conio.h>
+double faktorijel (int n) {
+    int i;
+    double fakt;
+    for (fakt = 1, i = 1; i <= n; i++)
+    fakt *= i;
+    return fakt;
+}
+
+int main () {
+    int m, n;
+    double npovrhm;
+    scanf ("%d %d", &n, &m);
+    if (m==n){
+        npovrhm=0;
+    }
+    else if(m==0){
+        npovrhm=0;}
+    else if(m!=0){
+        npovrhm = faktorijel (n)/(faktorijel(m)*faktorijel(n-m));
+        }
+   
+    printf("%g",npovrhm);   
+    return 0;
+}

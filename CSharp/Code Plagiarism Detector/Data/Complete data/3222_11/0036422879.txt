@@ -1,0 +1,16 @@
+#include<stdio.h>
+
+main()
+{
+ int broj,i;
+ clrscr();
+ scanf("%d ",&broj);
+ i=0;
+ do{
+  broj+=broj%10;
+  i++;
+  printf("%d ",broj);
+  if(i==40) broj=13;
+ }while((broj%13!=0));
+ printf("%d puta",i);
+}

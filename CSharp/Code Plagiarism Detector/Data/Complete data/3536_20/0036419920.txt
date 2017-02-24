@@ -1,0 +1,26 @@
+void UmetniPrijePrvogNeparnog(Stog *stog, int broj) 
+{
+	Stog temp;
+	int stavak,g=1;
+
+	temp.Obrisi();
+
+	while(stog->Skini(&stavak))
+	{
+		if((stavak%2)&&g)
+		{
+			temp.Stavi(broj);
+			g=0;
+		}
+		temp.Stavi(stavak);
+	}
+
+	if(g)
+		temp.Stavi(broj);
+
+	stog->Obrisi();
+
+	while(temp.Skini(&stavak))
+		stog->Stavi(stavak);
+}
+

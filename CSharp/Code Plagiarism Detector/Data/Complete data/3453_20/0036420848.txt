@@ -1,0 +1,48 @@
+class SortRazlPolje {
+public:
+	SortRazlPolje() {
+		polje = new int;
+		brelem = 0;
+	}
+	~SortRazlPolje() {
+		delete [] polje;
+	}
+	int Dodaj(int Broj) {
+		if (!Postoji(Broj)) {
+			if (brelem++ > 0) {
+				int *pompolje = new int[brelem];
+				memcpy(pompolje, polje, brelem*sizeof(polje));
+				delete [] polje;
+				if ((polje = new int[brelem+1]) == NULL)
+					return 0;
+				for (int j=0,i=0;i<brelem+1;i++)
+					if (pompolje[i+j] < Broj && !j) {
+						polje[i] = Broj;
+						j++;
+					} else
+						polje[i] = pompolje[i-j];
+				delete [] pompolje;
+			} else
+				polje[0] = Broj;
+		}
+		return 1;
+	}
+	int *VratiSortPolje(int &n) {
+		if (brelem > 0) {
+			n = brelem;
+			return polje;
+		} else {
+			n = 0;
+			return NULL;
+		}
+	}
+private:
+	bool Postoji(int br) {
+		for (int i=0;i<brelem;i++)
+			if (polje[i] == br)
+				return true;
+		return false;
+	}
+	int *polje;
+	int brelem;
+};

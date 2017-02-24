@@ -1,0 +1,11 @@
+#include <stdio.h>
+int main(){
+int i,x,prost=0;
+while (1){
+scanf("%d",&x);
+if (x<=2) break;
+for (i=2;i<=x/2;i++){
+if (x%i==0) break;}
+if (i==x/2+1) ++prost;}
+printf("%d",prost);
+return 0;}

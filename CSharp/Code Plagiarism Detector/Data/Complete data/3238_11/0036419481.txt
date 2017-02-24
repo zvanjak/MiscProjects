@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+	double broj, zbr=0., pi;
+	int n, i;
+	scanf ("%lf", &broj);
+	n=(int)broj;
+	if (((double)n!=broj) || (n>25) || (n<1)) {
+		printf ("n nije valjan\n");
+		return 0;
+	}
+	for (i=1; i<=n; ++i) {
+		double p=1.;
+		int j;
+		for (j=0; j<8; ++j) p*=(double)i;
+		zbr+=1/p;
+	}
+	pi=pow(zbr*9450., 0.125);
+	printf ("%.12lf\n", pi);
+	return 0;
+}

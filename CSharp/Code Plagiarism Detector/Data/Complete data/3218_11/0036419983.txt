@@ -1,0 +1,32 @@
+#include <stdio.h>
+int main()
+{
+       int x=3,i,b=0,br=0,y=0,max=0;
+       while (x>2)
+       {
+          b=0;
+          scanf("%d", &x);
+	  if (x>2)
+	  {
+               for (i=1;i<=x;i++)
+               {
+                       if(x%i==0)
+                       b=b+1;
+               }
+               if (b==2)
+               {
+                       br=br+1;
+                       if (x>max)
+                       max=x;
+                  
+               }
+	   }
+       }
+       if (br==0)
+               printf ("%d", y);
+       else 
+               printf ("%d", max);
+       return 0;
+}
+
+

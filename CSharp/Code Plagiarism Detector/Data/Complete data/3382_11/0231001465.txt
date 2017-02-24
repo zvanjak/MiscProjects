@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main()
+{
+	int zadaniBroj;
+	int prviDio;
+	int drugiDio;
+	int sredina;
+	int pom;
+	
+	scanf("%d",&zadaniBroj);
+	prviDio=zadaniBroj/100;
+	drugiDio=zadaniBroj%100;
+	sredina=((zadaniBroj/100)%10)*10;
+	sredina=sredina+(zadaniBroj%100)/10;
+
+	if(((prviDio*drugiDio)%sredina)==0){
+	
+		pom=((zadaniBroj/1000)+(zadaniBroj%100)/10);
+		printf("%d",pom);
+	}
+	else{
+
+		pom=(((zadaniBroj%100)/10)*(zadaniBroj%10));
+		printf("%d",pom);
+	}
+
+
+
+		return 0;
+}

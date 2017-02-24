@@ -1,0 +1,28 @@
+int najbolji(FILE *f)
+{
+    struct natjecatelj
+    {
+        int redni_br;
+        char prezime[20+1];
+        int bodovi;
+    } faca;
+    
+    int maxbod;
+    int maxredni;
+    
+    fseek(f, 0L, SEEK_SET);
+    fread(&faca, sizeof(faca), 1, f);
+    maxbod = faca.bodovi;
+    maxredni = faca.redni_br;
+    
+    while(fread(&faca, sizeof(faca), 1, f) == 1) 
+    {
+        if ((maxbod < faca.bodovi) && (faca.redni_br!= 0)) 
+        {
+            maxbod = faca.bodovi;
+            maxredni = faca.redni_br;
+        }
+    }
+    
+    return maxredni;
+}

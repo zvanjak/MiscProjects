@@ -1,0 +1,49 @@
+void maxaps(int *prvamat, int *drugamat, int brRedPrva, int brStupPrva, int maxStupPrva, int brRedDruga, int brStupDruga, int maxStupDruga, int niz[]){
+    int i,j,k=0,pom=1,l=0;
+	int novamat[10][10]={0};
+	for(i=0;i<maxStupPrva;i++){
+         for(j=0;j<brRedPrva;j++){
+			 novamat[i][k]+=prvamat[i*maxStupPrva + j]*drugamat[j*maxStupDruga + i];
+			}
+		 k++;
+	}
+
+	for(i=0;i<maxStupPrva;i++){
+		for(j=0;j<maxStupPrva;j++){
+    		if((novamat[i][j]==0 && i!=j) || novamat[i][j]==1) continue;
+			else{ 
+			pom=0;
+			break;
+			}
+		}
+	}
+	
+	if(pom){
+    	for(i=0;i<maxStupPrva;i++){
+            niz[l]=abs(prvamat[i]);
+    		for(j=0;j<maxStupPrva;j++){
+				if(abs(prvamat[i*maxStupPrva+j])>niz[l]){
+					niz[l]=abs(prvamat[i*maxStupPrva+j]);
+					if(niz[l]==abs(prvamat[i*maxStupPrva+j]) && prvamat[i*maxStupPrva+j]>0)
+                        niz[l]=abs(prvamat[i*maxStupPrva+j]);
+					if(niz[l]==abs(prvamat[i*maxStupPrva+j]) && prvamat[i*maxStupPrva+j]<0)
+						continue;
+					
+				}
+			}
+		}
+	}
+	else{
+		l=0;
+		
+        for(j=0;j<maxStupPrva;j++){
+            niz[l]=prvamat[j*maxStupPrva];
+    		for(i=0;i<brRedPrva;i++){
+				if(prvamat[i*maxStupPrva+j]<niz[l])
+					niz[l]=prvamat[i*maxStupPrva+j];
+			}
+			l++;
+		}
+	}
+
+}

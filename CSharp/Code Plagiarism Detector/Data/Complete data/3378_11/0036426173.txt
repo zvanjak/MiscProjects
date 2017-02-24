@@ -1,0 +1,18 @@
+#include<stdio.h>
+int main(){
+int os,ns,cs;
+float bp,np,cs1;
+scanf("%d %d %d",&os, &ns, &cs);
+if (os<ns) {
+	bp=((cs*0.9)*os);}
+	else if (os>ns) {
+			 bp=((cs*1.15)*os);}
+	else if	(os=ns) {
+			 bp=((cs*1)*os);}
+if (bp>6000){
+	np=0.7*bp;}
+	else if (bp<=6000){
+			 np=0.8*bp;}
+	printf("%.2f",np);
+return 0;
+}

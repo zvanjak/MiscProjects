@@ -1,0 +1,30 @@
+#include<stdio.h>
+
+int main(){
+
+int a,b,x;
+
+scanf("%d",&x);
+
+if (x>=16 && x<=255)
+	{
+	a=x/16;
+	b=x%16;
+	if (a>9)
+		a+=55;
+	else
+		a+=48;
+
+	if (b>9)
+		b+=55;
+	else
+		b+=48;
+
+	printf ("%c%c\n",a,b);
+	}
+else
+	{
+	printf("Izvan intervala");
+	}
+return 0;
+}

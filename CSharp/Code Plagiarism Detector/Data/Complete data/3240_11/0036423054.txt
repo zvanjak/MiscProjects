@@ -1,0 +1,23 @@
+#include <stdio.h>
+   int main () {
+      int n,x;
+      float a;
+      scanf ("%d",&n);
+        if (n>0) {
+           x=-1;
+           while(n>0) {
+             x=x+1;
+             n=n/10;
+            }
+           while (n>0) {
+             a=n%(int)(pow(10,x));
+             n=n-a*(pow(10,x));
+             x=x-1;
+             printf ("%d ",a);
+            }
+         }
+        else {
+          printf ("n nije pozitivan");
+         }
+      return 0;
+    }

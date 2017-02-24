@@ -1,0 +1,29 @@
+#include <stdio.h>
+int main ()
+{
+	int brojevi[1000], brz=0, sz=0, br_tr, brz_tr=0, sz_tr=0, i=-1, j;
+	do
+	{
+		i++;
+		scanf("%d", &brojevi[i]);
+	}	
+	while (brojevi[i]);
+	if (i)
+	for (j=0; j<i; j++)	
+	{
+		brz_tr=0; sz_tr=0;
+		if (brojevi[j]<0) br_tr = -brojevi[j];
+		else br_tr = brojevi[j];
+		do
+		{
+			brz_tr++;
+			sz_tr += br_tr % 10;
+			br_tr /= 10;
+		}
+		while (br_tr);
+		sz += sz_tr;
+		brz += brz_tr;
+	}
+	printf("%d %d", brz, sz);
+	return 0;
+}

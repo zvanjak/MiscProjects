@@ -1,0 +1,25 @@
+#include<stdio.h>
+#define MAX 10
+int main()
+{   int m,n,matrica[MAX][MAX],i,j,produkt=1,suma=0;
+    scanf("%d %d",&n,&m);
+    if((n>=1 && n<21) && (m>=1 && m<21)){
+    for(i=0;i<n;i++){
+        for(j=0;j<m;j++){
+            scanf("%d", &matrica[i][j]);
+        }
+    }
+    for(i=0;i<n;i++){
+        for(j=0;j<m;j++){
+            if(i%2==0){
+            produkt=produkt*matrica[i][j];
+            }
+            else produkt=0;
+        }
+        suma=suma+produkt;
+        produkt=1;
+    }
+    printf("%d",suma);
+    }
+    return 0;
+}

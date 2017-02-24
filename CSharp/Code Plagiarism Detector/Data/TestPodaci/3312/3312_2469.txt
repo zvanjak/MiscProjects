@@ -1,0 +1,42 @@
+int br_prodanih(FILE *f, char *autor) 
+{ 
+ char linija[60]; 
+ int y,x,z,prod,t,t2; 
+ char a[21]=""; 
+ char broj[30]=""; 
+ char c; 
+ prod=0; 
+ while ((fgets(linija,60,f))!=NULL) 
+ { 
+        x=0; 
+        for(x=0;linija[x]!=32;++x) 
+        y=0; 
+        x=x+1; 
+        for(;linija[x]!=32;++x) 
+        { 
+                a[y]=linija[x]; 
+             ++y; 
+        } 
+        a[y]=NULL; 
+        ++x; 
+        t=0; 
+        while (linija[x]!='\0') 
+        { 
+             if (linija[x]!=10) broj[t]=linija[x]; 
+                ++x; 
+                ++t; 
+        } 
+        y=0; 
+        t=0; 
+        t2=0; 
+        for(x=strlen(broj);x>0;--x) 
+        { 
+             t=broj[y]-48; 
+             for (z=0;z<(x-1);++z) t*=10; 
+                ++y; 
+                t2+=t; 
+        } 
+        if ((strcmp(a,autor)==0)) prod+=t2; 
+ } 
+ return(prod); 
+}

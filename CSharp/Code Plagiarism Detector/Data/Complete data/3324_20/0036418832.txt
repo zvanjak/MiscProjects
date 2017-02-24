@@ -1,0 +1,6 @@
+void rStrcpy(char *a,char *b){
+kontrola();
+*a=*b;
+if (*b==0) return;
+rStrcpy(a+1,b+1);
+}

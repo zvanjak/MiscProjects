@@ -1,0 +1,9 @@
+int rStrncmp(char *s1, char *s2, int n){
+	int pomocni=0;
+	n--;
+	if(n>0)
+		pomocni=rStrncmp(s1,s2,n);
+	if(!pomocni)
+		return s1[n]-s2[n];
+	else return pomocni;
+	}

@@ -1,0 +1,12 @@
+Ekipa StvoriISortiraj(char *naziv)
+{
+	Ekipa veselko(naziv);
+	veselko.Napuni();
+
+	for (int i = 0; i < 10; i++)
+		for (int j = i + 1; j < 11; j++)
+			if (veselko[i].VratiBroj() > veselko[j].VratiBroj())
+				veselko.Zamijeni(i, j);
+		
+	return veselko;
+}

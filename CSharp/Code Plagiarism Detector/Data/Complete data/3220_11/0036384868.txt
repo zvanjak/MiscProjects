@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <math.h>
+
+
+
+int main () {
+	int broj, i=0, j, k=-1, pombr=1, nbroj=0;
+
+	scanf("%d", &broj);
+
+	if(broj <= 0) {
+		printf("%d", broj);
+		return 0;
+	}
+
+	while (pombr != 0) {
+		pombr = broj/(int)pow(10.,(double)(i+1));
+		i++;
+	}	
+
+	for (j = 0; j < i; j++) {
+		pombr = (broj / (int)pow(10.,(double)j) ) % 10;
+		if (pombr % 2 != 0) {
+			k++;
+			nbroj += pombr * (int) pow(10., (double)k);
+		}
+	}
+	printf("%d", nbroj);
+	return 0;
+}

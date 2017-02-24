@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+
+
+void dodaj(FILE *f){
+struct natjecatelj x;
+int max=-2147483648;
+int poz = 0;
+while(fread(&x,sizeof(struct natjecatelj),1,f)!=0)
+        if(x.bodovi > max && x.redni_br != 0)
+                {
+                max = x.bodovi;
+                poz = x.redni_br;
+                }
+do{
+fread(&x,sizeof(struct natjecatelj),1,f);
+}while( x.redni_br != poz);
+fseek(f,-sizeof(struct natjecatelj),SEEK_CUR); 
+x.bodovi += 10;
+fwrite(&x,sizeof(struct natjecatelj),1,f);
+rewind(f);
+} 

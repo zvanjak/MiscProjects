@@ -1,0 +1,27 @@
+char *SvakiDrugi(char *ulazni_niz)
+{
+	char *pom;
+	int i, br;
+
+	if(*ulazni_niz==NULL || *ulazni_niz=='\0')
+		return NULL;
+	
+	i=0;
+	br=0;	
+	while(*ulazni_niz!='\0')
+	{
+		if(i%2==0)
+		{
+			br++;
+			pom=(char*)realloc(pom, br*sizeof(char));
+			*(pom+br-1)=*ulazni_niz;
+			ulazni_niz++;
+		}
+		i++;
+	}
+
+	pom=(char*)realloc(pom, (br+1)*sizeof(char));
+	*(pom+br)='\0';
+
+	return pom;
+}	

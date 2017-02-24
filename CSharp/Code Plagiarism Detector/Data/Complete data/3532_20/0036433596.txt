@@ -1,0 +1,24 @@
+Stog* noviOdNeparnih(Stog *stog)
+{
+	int pom_element;
+	Stog *a = new Stog;
+	Stog *b = new Stog;
+	Stog *c = new Stog;
+
+	while(stog->Skini(&pom_element))
+	{
+		a->Stavi(pom_element);
+		if(pom_element % 2)
+			b->Stavi(pom_element);
+	}
+
+	while(a->Skini(&pom_element))
+		stog->Stavi(pom_element);
+
+	while(b->Skini(&pom_element))
+		c->Stavi(pom_element);
+
+	delete (a);
+	delete (b);
+	return c;
+}

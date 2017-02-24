@@ -1,0 +1,26 @@
+#include<stdio.h>
+int main() {
+	int x,a,b,c,d,e,f;
+	/*printf("Upisi broj: ");*/
+	scanf(" %d",&x);
+	while(x>999 || x<100){
+		/*printf("Upisi ponovo broj (troznamenkasti): ");*/
+		scanf(" %d",&x);}
+	if(x<1000 || x>99){
+		a=x/100;
+	        e=a*a;
+		b=x%100;
+		c=b%10;
+		d=b/10;}
+		if(e==b)
+			printf(" %d%d%d \n",c,d,a);
+		else if(x>=150 && x<=450)
+			printf(" 1\n");
+		else if(x>=451 && x<=700)
+			printf(" 7\n");
+	        else {
+			f=a+c+d;
+			printf("%d\n",f);}
+
+        return 0;
+}

@@ -1,0 +1,15 @@
+#include <stdio.h>
+int main () {
+	int prost=0, a, i, d;
+	do {
+		scanf("%d",&a);
+		if (a>2) {
+			d=1;
+			for (i=2; i<=a-1; i++) if (a%i == 0) { d=0; break; }
+			if (d && a>prost) prost=a;	
+		}
+	}
+	while (a>2);
+	printf ("%d\n",prost);
+	return 0;
+}

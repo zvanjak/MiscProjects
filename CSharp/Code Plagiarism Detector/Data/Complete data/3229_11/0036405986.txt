@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<math.h>
+
+int main(){
+	float n;
+	double	r=1,e;
+	int i,k,b=1,a=1;
+	do{
+	
+	scanf("%f",&n);
+	k=(int)n;
+	if(n/(float)k >1)
+		printf("n nije valjan");
+	
+	}while (n<1||n>30||(n/(float)k >1));
+
+	for(i=1;i<n;i++){
+		b*=a;
+	r=r+(pow(-1,i)/b);
+	a++;
+	}
+	e=1/r;
+	/* printf("broj e iznosi:%0.12f\n",e); */
+        printf("%0.12f", e);
+	return 0;
+}

@@ -1,0 +1,20 @@
+class Kugla {
+    private:
+        double _radijus;
+    public:
+        Kugla() {
+    _radijus = 1;
+}
+        Kugla(double radijus) {
+    _radijus = radijus;
+}
+        double Radijus() {
+    return _radijus;
+}
+        double Volumen() {
+    return (pow(_radijus, 3) * PI * (4 / 3.));
+}
+        double Oplosje() {
+    return (4 * pow(_radijus, 2) * PI);
+}
+};

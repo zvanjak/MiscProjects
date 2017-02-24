@@ -1,0 +1,14 @@
+Tocka fun5(Trokut t)
+{
+	Tocka *_a,*_b,*_c;
+	Tocka *centar;
+	double X;
+	double Y;
+	*_a=t.getA();
+	*_b=t.getB();
+	*_c=t.getC();
+	X=(_a->X + _b->X + _c->X)/3;
+	Y=(_a->Y + _b->Y + _c->Y)/3;
+	centar= new Tocka(X,Y);
+	return *centar;
+}

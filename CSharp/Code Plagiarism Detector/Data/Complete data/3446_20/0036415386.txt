@@ -1,0 +1,47 @@
+class Kosarica{
+private:
+	float *_niz;
+	int _broj_proizv;
+	float _prosj_cijena;
+	float _suma;
+
+public:
+	Kosarica(){
+	_broj_proizv=0;
+	_prosj_cijena=0;
+	_niz= (float*) malloc(1*sizeof (float));
+	_niz[0]=0;
+	_suma=0;
+}
+	void DodajProizvod(float cijena);
+	float ProsjecnaCijena();
+	float NajjeftinijiProizvod();
+	~Kosarica();
+};
+
+
+void Kosarica::DodajProizvod(float cijena){
+	_niz[_broj_proizv]=cijena;
+	_broj_proizv++;
+	_niz=(float*) realloc (_niz,(_broj_proizv+1)*sizeof(float));
+	_suma+=cijena;
+}
+float Kosarica::ProsjecnaCijena(){
+	if (_niz[0]==0) return 0;
+	else return _suma/_broj_proizv;
+}
+
+float Kosarica::NajjeftinijiProizvod(){
+	if (_niz[0]==0) return 0;
+	int i=0;
+	float min=_niz[i];
+	for(i=1;i<_broj_proizv;i++){
+		if(_niz[i]<min)
+			min=_niz[i];
+	}
+	return min;
+}
+
+Kosarica::~Kosarica(){
+	free (_niz);
+}

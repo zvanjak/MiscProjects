@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int rbrojpojavljivanja (int *polje, int n, int broj){
+	
+	int a=0; 	
+	
+		if (n<=0) 
+			return a;
+        if (polje[n]==broj)
+			++a;
+	rbrojpojavljivanja (polje, n-1, broj);
+	return 0;
+}
+

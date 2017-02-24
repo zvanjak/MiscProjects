@@ -1,0 +1,11 @@
+int rmax( int *polje, int N ) {
+   int a = *polje, b;
+   
+   kontrola();
+
+   if( N == 1 ) return a;
+   else b = rmax( polje+1, N-1 );
+
+   if( a > b ) return a;
+   else return b;
+}

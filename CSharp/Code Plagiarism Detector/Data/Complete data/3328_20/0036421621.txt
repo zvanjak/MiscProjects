@@ -1,0 +1,10 @@
+int *KreirajAritNiz(int n, int a0, int d){
+int *adresa;
+int i;
+	adresa	=(int*) malloc(n*sizeof(int));
+	*adresa = a0;
+	for (i=1; i<n; i++){
+		*(adresa+i) = *(adresa+(i-1)) + d;
+	}
+return adresa;	
+}

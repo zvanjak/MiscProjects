@@ -1,0 +1,89 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+class CjelobrojniNiz {
+private:
+	int *polje;
+	int _brojelem;
+
+public:
+	int VecinaJednaka;
+
+	CjelobrojniNiz(int *adresa, int broj) {
+		int i,j, brojac=0;
+		_brojelem = broj;
+		VecinaJednaka = 0;		//defaultno
+		polje = (int*) malloc(sizeof(int)*_brojelem);
+		/*polje = new int [_brojelem];*/
+		for (i=0;i<_brojelem;i++) {	// kopiram elemente
+			polje[i] = adresa[i];
+		}
+		//postavljam  _VecinaJednaka
+		for (i=0;i<_brojelem-1;i++) {
+			brojac = 0;
+			for (j=i+1;j<_brojelem;j++) {
+				if (polje[i]==polje[j]) {
+					brojac++;
+				}
+				if (brojac > (_brojelem/2))
+					VecinaJednaka = 1;
+			}
+		}
+	}
+
+	CjelobrojniNiz(const CjelobrojniNiz &copy) {
+		int i;
+		_brojelem = copy._brojelem;
+		polje = (int*) malloc(sizeof(int)*_brojelem);
+		for (i = 0; i < _brojelem; i++) polje[i] = copy.polje[i];
+		VecinaJednaka = copy.VecinaJednaka;
+	}
+
+	int Usporedi (CjelobrojniNiz niz) {
+		int i, retval = 1;	//pretpostavimo da su jednaki
+		if (this->_brojelem != niz._brojelem)
+			retval = 0;
+		else 
+		{
+			for (i=0;i<_brojelem;i++)
+			{
+				if(this->polje[i]!=niz.polje[i])
+					retval = 0;
+			}
+		}
+		return retval;
+	}
+
+	int* VratiPresjek(CjelobrojniNiz niz, int *n) {
+		int *presjek;
+		int i, j, pok = -1, presjekelem = 1, dodaj = 1, k, ima=0;
+		presjek = (int*) malloc(sizeof(int));	// memorija za presjek
+
+		for (i=0;i<this->_brojelem;i++) {
+			for (j=0;j<niz._brojelem;j++) {
+				if (this->polje[i] == niz.polje[j]) {
+					ima = 0;
+					for (k=0;k<presjekelem;k++) {
+						if (this->polje[i] == presjek[k])
+							ima = 1;
+						}
+					if (ima == 0) {
+						pok++;
+						presjekelem++;
+						presjek = (int*) realloc (presjek, presjekelem * sizeof (int));
+						presjek[pok] = this->polje[i];
+											
+					}
+				}
+			}
+		}
+		*n = presjekelem -1;
+		return presjek;
+	}
+	
+	~CjelobrojniNiz() {
+		/*delete []polje;*/
+		free (polje);
+	}
+};

@@ -1,0 +1,23 @@
+#include <stdio.h>
+int main () {
+	int broj, a, b, c, d, umnozak;
+	scanf ("%d", &broj);
+	if (broj>999 && broj<=9999)
+	{
+		a = broj/1000;
+		b = (broj/100) % 10;
+		c = (broj/10) % 10;
+		d = broj % 10;
+		umnozak = a*b*c*d;
+			if (umnozak%2 == 0)
+			{
+				printf ("%d", d);
+			}
+			else
+			{
+				printf ("%d", a);
+			}
+	}
+	else
+		return 0;
+}

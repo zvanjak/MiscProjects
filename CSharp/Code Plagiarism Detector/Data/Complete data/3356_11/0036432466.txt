@@ -1,0 +1,19 @@
+#include <stdio.h>
+int main()
+{
+  int i,n,m,a,b,d,rjesenje;
+  char c;
+  scanf("%d %d %c",&n,&m,&c);
+  if(n<=0 || m>3 || m<1 || (c!='L' && c!='R'))
+    printf("Error");
+  else {
+  a=n*1000000+n*1000+n;
+  if(c=='L') b=3-m;
+  else b=3+m;
+  d=1;
+  for(i=0;i<b;i++) d*=10;
+  rjesenje=a/d; rjesenje=rjesenje%1000;
+  printf("%d",rjesenje);
+  }
+  return 0;
+}

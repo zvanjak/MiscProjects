@@ -1,0 +1,9 @@
+double sumareda(double x, int N)
+{
+    kontrola();
+    
+    if(N < 1) 
+        return ;
+           
+    else return  (pow(-1, (N-1)) * pow((x-1),N)) / N + sumareda(x, N - 1);
+}

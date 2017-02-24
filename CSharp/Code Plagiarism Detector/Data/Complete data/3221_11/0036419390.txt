@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+
+int main()
+{
+	long a,c,d,i=0;
+
+
+	scanf("%d %d %d", &a,&d,&c);
+	if (a>c) {printf("0"); return 0;}
+	do
+	{
+		a+=d;
+		i++;
+		printf("%d ",a);
+	} while (a<=c);
+	printf("%d",i);
+	return 0;
+}

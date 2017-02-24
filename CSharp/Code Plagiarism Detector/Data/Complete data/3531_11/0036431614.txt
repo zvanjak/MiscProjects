@@ -1,0 +1,68 @@
+void zamijeni(char *ulazni, int *broj)
+{
+int i=0,j,l=0,k,a=0,b=0,n=0;
+j=strlen(ulazni);
+do
+{
+if(isdigit(*(ulazni+i)))a++;
+if(!(iscntrl(*(ulazni+i))&&isalnum(*(ulazni+i))))b++;
+i++;
+}
+while(*(ulazni+i)!='\0');
+
+for(i=0;*(ulazni+i)!='\0';i++)
+{
+k=i;
+//if(isdigit(*(ulazni+k)))
+
+while(isdigit(*(ulazni+i+1)));
+{
+	*(ulazni+k)=*(ulazni+k+1);
+	k++;
+	if(*(ulazni+k)=='\0')
+		{
+		n++;
+		k=i;
+		}
+
+	k=i;
+//if(!(iscntrl(*(ulazni+i))&&isalnum(*(ulazni+i))))
+}
+while(!(iscntrl(*(ulazni+i+1))&&isalnum(*(ulazni+i+1))))
+{
+	
+	*(ulazni+k)=*(ulazni+k+1);
+	k++;
+		if(*(ulazni+k)=='\0')
+		{
+		n++;
+		k=i;
+		}
+	
+}
+}
+
+for(i=0;*(ulazni+i)!='\0';i++)
+{
+	if(isdigit(*(ulazni+i)))
+	*(ulazni+i)='!';
+	if(!(iscntrl(*(ulazni+i))&&isalnum(*(ulazni+i))))
+	*(ulazni+i)='?';
+}
+
+for(i=0;*(ulazni+i)='\0';i++)
+
+	if(isalpha(*(ulazni+i)))
+	{
+	l++;
+	if(l==1)
+	toupper(*(ulazni+i));
+	else tolower(*(ulazni+i));
+	}
+*(ulazni+j-n+1)='\0';
+if(l>a&&l>b)*broj=l;
+if(a>l&&a>b)*broj=a;
+if(b>a&&b>a)*broj=b;
+
+
+}

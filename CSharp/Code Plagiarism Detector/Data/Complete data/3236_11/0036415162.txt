@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <math.h>
+
+int main () {
+
+	int n;
+	double lnx=0, x, i, t;
+
+	scanf("%d",&n);
+
+	if ((n<1) || (n>100)) {
+		printf("n nije valjan");
+		return 1;
+	}
+
+	else {
+		scanf("%lf",&x);
+
+		if ((x<=0) || (x>=2)) {
+			printf("x nije valjan");
+			return 1;
+		}
+
+		else {
+			for (i=1; i<=n; ++i){
+				t = x - 1;
+				lnx = lnx - ((pow(-1., i) * (pow (t, i)) / i));
+			}
+
+		printf("%d %.5f %.12lf", n, x, lnx);
+
+		}
+	}
+
+	return 0;
+
+}

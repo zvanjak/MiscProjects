@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <math.h>
+double f(double x){
+double funk;
+funk=(pow(cos(1. / exp(1.)), sin(pow(exp(1.), sin((x) + 1. / exp(1.))))));
+return funk;
+}
+int main(){
+double dx, der[50];
+float x[50];
+int j,i=-1;
+scanf("%lf",&dx);
+
+do {
+i++;
+scanf("%f",&x[i]);
+} 
+while (x[i]!=0.0);
+j=i;
+
+i=0;
+
+while (x[i]!=0.0){
+der[i]=(f(x[i]+dx)-f((double)x[i]))/dx;
+i++;
+}
+
+for (i=0; i<j;i++){
+printf("%.2lf ",atan(der[i]));
+}
+return 0;
+}

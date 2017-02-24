@@ -1,0 +1,10 @@
+int veci_od(FILE *f, int n) {
+	struct natjecatelj temp;
+	int cnt = 0;
+
+	fseek(f, 0, SEEK_SET);
+	while ( fread( &temp, sizeof( temp ), 1, f) )
+		if (temp.redni_br && temp.bodovi >= n) cnt++;
+
+	return cnt;
+}

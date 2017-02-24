@@ -1,0 +1,46 @@
+#include <stdio.h>
+
+int main (void) 
+{
+    int mr,ms,polje[20][5],i,j,y=0,z=0;
+    do 
+    {
+        scanf("%d %d",&mr,&ms);
+    } while ((mr<1 || mr>20)|| (ms<1 || mr>5));
+
+    for (i=0;i<mr;i++)
+    {
+        for (j=0;j<ms;j++)
+        {
+                scanf("%d",&polje[i][j]);
+        }
+    }
+
+    for (i=0;i<mr;i++)
+    {
+        for (j=0;j<ms;j++)
+        { 
+            if (polje[i][j]%2==0) 
+            {
+                y++; 
+                break;
+            }
+        }
+    }
+
+    for (j=0;j<ms;j++)
+    {
+        for (i=0;i<mr;i++)
+        { 
+            if (polje[i][j]%2==1) 
+            {
+                z++;
+                break;
+            }
+        }
+    }
+
+printf("%d %d",y,z);
+
+return 0;
+}

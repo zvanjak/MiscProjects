@@ -1,0 +1,26 @@
+int RemoveAllDigits(char *inputField, char *outputField, int *number) {
+	int i,j;
+	/*
+	i - brojac za duljinu novonastalog niza
+	j - brojac za duljinu starog niza
+	*/
+	for (i=0,j=0;*inputField!='\0';inputField++,j++)
+		/*
+		for petlja se vrti dok VRIJEDNOST na ADRESI inputField ne bude
+		jednaka \0, a u svakom koraku se ADRESA poveca i poveca se brojac
+		za duljiinu starog niza
+		*/
+		if (*inputField < 48 || *inputField > 57)
+			*(outputField+i++) = *inputField;
+		/*
+		ako je znak izvan intervala [48,57] (znamenke), onda se na ADRESU
+		outputField+i upisuje vrijednost koja se nalazi na ADRESI inputField,
+		a brojac duljine novog niza se povecava		
+		*/
+	*(outputField+i) = '\0';
+	/* za zadnji znak na ADRESU outputField+i stavimo \0 */
+	*number = j-i;
+	/* broj izbacenih je duljina starog niza - duljina novog */
+	return i;
+	/* vracamo duljinu novog niza */
+}

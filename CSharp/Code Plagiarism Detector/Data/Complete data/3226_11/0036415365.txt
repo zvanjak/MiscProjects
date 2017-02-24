@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+
+int main ()  {
+	int n, i;
+	float br = 0, suma = 0;
+	scanf ("%d", &n);
+	if ((n < 1) || (n > 1000))
+		printf ("n nije valjan");
+	else {
+		for ( i = 2; i <= n + 1; i++) {
+			br = (float) 1 / ((i - 1)* (i + 1));
+			suma = suma + br;
+
+		}
+		printf ("%14.12f", suma);
+	}
+	
+	return 0;
+}

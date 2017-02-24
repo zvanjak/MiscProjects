@@ -1,0 +1,23 @@
+#include <stdio.h>
+int main()
+{
+	int x, y, z, w, g, h, rez1, rez2;
+	scanf("%d", &x);
+	y = x%100;
+	y = y/10;
+	z = x%10;
+    w = x/100;
+    g = y+z+w;
+    h = g%2;
+
+	if (h==1)
+	{
+		rez1=w*y*z;
+		printf("%d", rez1);
+	}
+	else {
+		rez2=w-y-z;
+		printf("%d", rez2);
+	}
+	return 0;
+}

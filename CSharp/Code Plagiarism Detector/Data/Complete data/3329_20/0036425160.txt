@@ -1,0 +1,13 @@
+float *KreirajGeomNiz(int n , float q0, float q)
+		{
+		int i=0;
+		float *a;
+		a = (float *) malloc (n * sizeof(float));
+		
+		for (i=0; i<n ; i++)
+		{
+		a[i] = q0 * pow ( q , i );
+		}
+		return a;
+		
+		}

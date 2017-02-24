@@ -1,0 +1,15 @@
+int izbaci (char *ulazni, char *podniz){
+    int duzina, izbaceni=0, test=0, k=0, i=0, j=0;
+    duzina = strlen(podniz);
+    while(ulazni[i]){
+                   test=0;
+                   for(k=0; k<duzina; k++){ 
+                            if(ulazni[i]==podniz[k]){ izbaceni++; test=1;}
+                                               }         
+                   if(test==0) ulazni[j++]=ulazni[i]; 
+                            i++;
+                            }
+                            ulazni[j]='\0';
+
+return izbaceni;
+}

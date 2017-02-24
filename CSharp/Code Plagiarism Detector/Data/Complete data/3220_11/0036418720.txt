@@ -1,0 +1,23 @@
+#include <stdio.h>
+int main(){
+    int a,i,b,n,d,e,f,j;
+    scanf("%d", &a);
+    b=0;f=0;
+if (a<=0) printf ("%d",a); else
+        {
+               for (i=1; i<=a; i*=10){
+               b++; 
+               }         
+               e=a;i=b;
+               while (i>0){
+                     for (j=1,n=1;j<=i;j++)n*=10;
+                     d=(e%n-(e%(n/10)))/(n/10);
+                     if ((d%2)!=0) {
+                                   printf ("%d", d);
+                                   f++;}
+                     i--;
+                     }
+               if (f==0) printf ("0");           
+}
+return 0;
+}

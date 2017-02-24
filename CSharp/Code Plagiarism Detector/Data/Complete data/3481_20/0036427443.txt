@@ -1,0 +1,22 @@
+int Memoriraj(Radio& radio) {
+int j=0,c=0;
+Stanica x,p;
+
+while(j<6){
+		
+if(c==0)
+p=x=radio.TraziSljedecu();
+else
+x=radio.TraziSljedecu();
+if(c>0&&x==p)
+{break;}
+else{
+	if(strncmp(x.RDS(),"",1))
+	{
+    j++;			
+	radio.MemorirajStanicu(x, j);
+	}}
+	c++;
+	}
+return j;
+	}

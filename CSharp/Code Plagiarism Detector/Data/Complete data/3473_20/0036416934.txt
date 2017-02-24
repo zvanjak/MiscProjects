@@ -1,0 +1,9 @@
+Krug fun4(Pravokutnik p){
+	double v = p.getVisina();
+	double s = p.getSirina();
+	Tocka kut = p.getDLkut();
+	Tocka *cent = new Tocka(kut.X + (s*0.5), kut.Y + (v*0.5));
+	double rad = (sqrt(v*v + s*s) * 0.5);
+	Krug *temp = new Krug(*cent, rad);
+	return *temp;
+}

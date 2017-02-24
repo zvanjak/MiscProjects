@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int main() {
+
+int i, x = 0;
+
+while (x <= 0) { 
+	scanf("%d", &x);
+	if ((x%2>0)&&(x%3>0)&&(x%5>0)&&(x%7>0))
+		i=1;
+	else 
+		i=0;
+	switch (x){
+		case 3:i=1;
+				   break;
+		case 5:i=1;
+			   break;
+        case 7:i=1;
+			break;}
+}
+
+while (x>2){ 
+	scanf("%d", &x);
+	if ((x%2>0)&&(x%3>0)&&(x%5>0)&&(x%7>0))
+		i=i++;
+	switch (x){
+		case 3:i=i++;
+				   break;
+		case 5:i=i++;
+			   break;
+        case 7:i=i++;
+			break;}
+}
+
+printf("%d\n", i);
+return 0;
+}
+
+

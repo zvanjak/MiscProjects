@@ -1,0 +1,21 @@
+#include<stdio.h>
+
+int main() {
+  char niz[110], a;
+  int i,j;
+  
+  for(i=0;;i++) { 
+    scanf("%c",&a);
+    if(a=='.') break;
+    if(a>='a'&&a<='z') niz[i]=a-('a'-'A');
+    else niz[i]=a;
+  } 
+  
+  i--;
+  
+  for(j=0;j<i-j;j++) if(niz[i-j]!=niz[j]) { printf("NE"); return 0; }
+  
+  printf("DA");
+
+  return 0;
+}

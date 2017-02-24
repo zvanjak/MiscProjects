@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+  int broj;
+  int x,y,z,a;
+  int broj2;
+  scanf("%d", &broj);
+  if (((broj >= 1000) && (broj <=9999)) || ((broj >= -9999) && (broj <=-1000))){
+     
+     x=broj/1000;
+     if (!(x%2))
+        x=0;
+     else
+         x=(broj/1000)*1000;
+     
+     y=broj/100;
+     y=y%10;
+     if (!(y%2))
+        y=0;
+     else
+         y=((broj/100)%10)*100;
+     
+     z=broj/10;
+     z=z%10;
+     if (!(z%2))
+        z=0;
+     else
+         z=((broj/10)%10)*10;
+     
+     a=broj%10;
+     if (!(a%2))
+        a=0;
+     else
+         a=(broj%10);
+         
+     broj2= x+y+z+a;
+     printf("%d\n", broj2);
+}
+  system("PAUSE");	
+  return 0;
+}

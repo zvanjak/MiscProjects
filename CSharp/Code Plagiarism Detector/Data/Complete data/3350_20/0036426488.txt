@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int najbolji(FILE *f){
+   struct natjecatelj{
+      int redni_br;
+      char prezime[20+1];
+      int bodovi;} bla;
+   int naj,bod=0;
+   while(fread(&bla, sizeof(bla),1,f)==1)
+      if (bla.bodovi>bod && bla.redni_br) { naj=bla.redni_br; bod=bla.bodovi;}
+   return naj;
+   }

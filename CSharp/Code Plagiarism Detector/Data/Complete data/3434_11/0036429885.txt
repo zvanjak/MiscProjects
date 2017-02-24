@@ -1,0 +1,20 @@
+#include <stdio.h>
+int main( ) {
+    int x1,i,x2,kaunter[4]={0,0,0,0};
+    x1=1; x1=2;
+while (!(x1==0 && x2==0)){
+      scanf("%d %d",&x1,&x2);
+      if (x1>0 && x2>0) kaunter[0]+=1;
+      else if (x1<0 && x2>0) kaunter[1]+=1;
+      else if (x1<0 && x2<0) kaunter[2]+=1;
+      else if (x1>0 && x2<0) kaunter[3]+=1;
+      else if (x1>0 && x2==0) {kaunter[0]+=1;kaunter[3]+=1;}
+      else if (x1==0 && x2>0) {kaunter[0]+=1;kaunter[1]+=1;}
+      else if (x1==0 && x2>0) {kaunter[0]+=1;kaunter[1]+=1;}
+      else if (x1<0 && x2==0) {kaunter[1]+=1;kaunter[2]+=1;}
+      else if (x1==0 && x2<0) {kaunter[2]+=1;kaunter[3]+=1;}
+      }
+      for (i=0;i<4;i++){
+      if (i<3) printf("%d ",kaunter[i]); else printf("%d",kaunter[i]);}
+    return 0;
+}

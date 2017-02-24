@@ -1,0 +1,19 @@
+char *BezDuplikata(char *ulazni_niz){
+    int l,i,j,k;
+    char *b;
+    l=strlen(ulazni_niz);
+    if (ulazni_niz==NULL || l==0) return NULL;
+    b=(char *)malloc(l+1);
+    strcpy(b,ulazni_niz);
+    for(i=0;i<l;i++)
+       for(j=i+1;j<l;j++)
+          if(b[j]==b[i]){
+             for(k=j;k<l;k++)
+                b[k]=b[k+1];
+             l--;
+             i--;
+             }
+    b=(char *)realloc(b,l+1);
+    return b;
+    }
+

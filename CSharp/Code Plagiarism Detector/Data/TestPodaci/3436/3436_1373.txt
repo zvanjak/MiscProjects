@@ -1,0 +1,41 @@
+#include <stdio.h>	
+#define MAXRED 20
+
+int pobjeda (char znak, int dim, char *pok)	{
+	int i, j, red=0, stup=0, dij1=0, dij2=0;
+	for (i = 0; i < dim; i++){
+		for (j = 0; j < dim; j++){
+			if (*(pok+i*MAXRED+j)==znak) red++;
+			if (i==j)
+				if (*(pok+i*MAXRED+j)==znak) dij1++;
+			if ((i+j)==(dim-1))
+				if (*(pok+i*MAXRED+j)==znak) dij2++;
+			if (red==dim || dij1==dim || dij2==dim) return 1; 
+		}
+	red=0;
+	}
+	for (j = 0; j < dim ; j++) {
+		for (i = 0; i < dim; i++) {
+		  if (*(pok+i*MAXRED+j)==znak) stup++; 
+		}
+		if (stup==dim) return 1;
+		stup=0;
+	}
+	return 0;
+}
+
+int main (){
+  int n, i, j ;
+  char polje[MAXRED][MAXRED];
+  scanf ("%d",&n); 
+  for (i = 0; i < n ; i++) {
+	for (j = 0; j < n; j++) {
+	  scanf ("%c", &polje[i][j]); 
+	}
+  }
+  
+  if (pobjeda ('X',n, &polje[0][0])) printf ("X");
+   else if (pobjeda ('O',n, &polje[0][0])) printf ("O");
+   else printf ("-");
+  return 0;
+}

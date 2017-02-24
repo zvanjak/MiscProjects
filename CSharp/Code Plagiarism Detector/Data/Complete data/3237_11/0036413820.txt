@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<math.h>
+void main()
+{
+int n;
+int i;
+float pom=0,pi;
+/*printf("Unesi broj clanova reda n:");*/
+scanf("%d",&n);
+if((n<1)||(n>30))
+{
+printf("n nije valjan");
+}
+else
+{
+for(i=1;i<=n;i++)
+{
+pom=pom+(1/pow(i,6));
+}
+pom=pom*945;
+pi=pow(pom,(1./6));
+/*printf("PI=%.12f",pi);*/
+printf("%.12f", pi);
+}
+}

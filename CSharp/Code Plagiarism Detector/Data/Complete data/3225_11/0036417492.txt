@@ -1,0 +1,16 @@
+#include<stdio.h>
+#include<math.h>
+int main(){
+    int n;
+    double pi,suma=0,i;
+    scanf("%d",&n);
+    if(n>=1 && n<=400){
+        for(i=0;i<n;i++){
+            suma+=1./((2*i+1)*(2*i+1));
+        }
+        pi=pow(suma*8,1./2);
+        printf("%.12lf",pi);
+    }
+    else printf("n nije valjan");
+    return 0;
+}    

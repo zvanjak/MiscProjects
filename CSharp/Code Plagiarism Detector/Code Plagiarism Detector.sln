@@ -1,0 +1,109 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Code", "Code", "{0ACEC871-F05B-4620-ACAB-0CC98AE71718}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Try-outs", "Try-outs", "{DDA9581F-2FE2-465A-8E61-279792AA7C09}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Doc", "Doc", "{61B60B85-2C88-47D5-979E-11F1F67AEBB6}"
+	ProjectSection(SolutionItems) = preProject
+		Doc\Code Similarity Checker.doc = Doc\Code Similarity Checker.doc
+		Testna aplikacija.txt = Testna aplikacija.txt
+	EndProjectSection
+EndProject
+Project("{4F174C21-8C12-11D0-8340-0000F80270F8}") = "LinkToDB", "Code\Try-outs\LinkToDB\LinkToDB.dbp", "{42573CCF-C231-4B14-9115-76A1A7AE246E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSC_MainApp", "Code\CSC_MainApp\CSC_MainApp.csproj", "{23584B0E-8EDF-47D7-B3BC-DED6064A2FF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSC_Model", "Code\CSC_Model\CSC_Model.csproj", "{453B5ED0-A46B-4186-8DB4-D10009434FC1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSC_Presentation", "Code\CSC_Presentation\CSC_Presentation.csproj", "{26C8EA5B-00F3-4FBC-995C-A37706BA2FAB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSCConsole", "Code\CSCConsole\CSCConsole.csproj", "{9D715A07-4C40-459D-A497-4A1F35FF1158}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Batch analysis", "Batch analysis", "{AE959564-F89C-4812-9CBF-47C5D217D498}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BatchAnalysisModel", "Code\Batch analysis\BatchAnalysisModel\BatchAnalysisModel.csproj", "{729B16AC-C144-4010-A444-A281FA992881}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BatchAnalysisApp", "Code\Batch analysis\BatchAnalysisApp\BatchAnalysisApp.csproj", "{315F9EEC-5E6E-4576-B389-89C5DB9EC7CB}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 8
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://dellboy.zpr.fer.hr:8143/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Code\\CSC_MainApp\\CSC_MainApp.csproj
+		SccProjectTopLevelParentUniqueName1 = Code\u0020Plagiarism\u0020Detector.sln
+		SccProjectName1 = Code/CSC_MainApp
+		SccLocalPath1 = Code\\CSC_MainApp
+		SccProjectUniqueName2 = Code\\CSC_Model\\CSC_Model.csproj
+		SccProjectTopLevelParentUniqueName2 = Code\u0020Plagiarism\u0020Detector.sln
+		SccProjectName2 = Code/CSC_Model
+		SccLocalPath2 = Code\\CSC_Model
+		SccProjectUniqueName3 = Code\\CSC_Presentation\\CSC_Presentation.csproj
+		SccProjectTopLevelParentUniqueName3 = Code\u0020Plagiarism\u0020Detector.sln
+		SccProjectName3 = Code/CSC_Presentation
+		SccLocalPath3 = Code\\CSC_Presentation
+		SccProjectUniqueName4 = Code\\CSCConsole\\CSCConsole.csproj
+		SccProjectTopLevelParentUniqueName4 = Code\u0020Plagiarism\u0020Detector.sln
+		SccProjectName4 = Code/CSCConsole
+		SccLocalPath4 = Code\\CSCConsole
+		SccProjectUniqueName5 = Code\\Try-outs\\LinkToDB\\LinkToDB.dbp
+		SccProjectTopLevelParentUniqueName5 = Code\u0020Plagiarism\u0020Detector.sln
+		SccProjectName5 = Code/Try-outs/LinkToDB
+		SccLocalPath5 = Code\\Try-outs\\LinkToDB
+		SccProjectUniqueName6 = Code\\Batch\u0020analysis\\BatchAnalysisModel\\BatchAnalysisModel.csproj
+		SccProjectTopLevelParentUniqueName6 = Code\u0020Plagiarism\u0020Detector.sln
+		SccProjectName6 = Code/Batch\u0020analysis/BatchAnalysisModel
+		SccLocalPath6 = Code\\Batch\u0020analysis\\BatchAnalysisModel
+		SccProjectUniqueName7 = Code\\Batch\u0020analysis\\BatchAnalysisApp\\BatchAnalysisApp.csproj
+		SccProjectTopLevelParentUniqueName7 = Code\u0020Plagiarism\u0020Detector.sln
+		SccProjectName7 = Code/Batch\u0020analysis/BatchAnalysisApp
+		SccLocalPath7 = Code\\Batch\u0020analysis\\BatchAnalysisApp
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{23584B0E-8EDF-47D7-B3BC-DED6064A2FF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23584B0E-8EDF-47D7-B3BC-DED6064A2FF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23584B0E-8EDF-47D7-B3BC-DED6064A2FF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23584B0E-8EDF-47D7-B3BC-DED6064A2FF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{453B5ED0-A46B-4186-8DB4-D10009434FC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{453B5ED0-A46B-4186-8DB4-D10009434FC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{453B5ED0-A46B-4186-8DB4-D10009434FC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{453B5ED0-A46B-4186-8DB4-D10009434FC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26C8EA5B-00F3-4FBC-995C-A37706BA2FAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26C8EA5B-00F3-4FBC-995C-A37706BA2FAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26C8EA5B-00F3-4FBC-995C-A37706BA2FAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26C8EA5B-00F3-4FBC-995C-A37706BA2FAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D715A07-4C40-459D-A497-4A1F35FF1158}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D715A07-4C40-459D-A497-4A1F35FF1158}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D715A07-4C40-459D-A497-4A1F35FF1158}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D715A07-4C40-459D-A497-4A1F35FF1158}.Release|Any CPU.Build.0 = Release|Any CPU
+		{729B16AC-C144-4010-A444-A281FA992881}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{729B16AC-C144-4010-A444-A281FA992881}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{729B16AC-C144-4010-A444-A281FA992881}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{729B16AC-C144-4010-A444-A281FA992881}.Release|Any CPU.Build.0 = Release|Any CPU
+		{315F9EEC-5E6E-4576-B389-89C5DB9EC7CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{315F9EEC-5E6E-4576-B389-89C5DB9EC7CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{315F9EEC-5E6E-4576-B389-89C5DB9EC7CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{315F9EEC-5E6E-4576-B389-89C5DB9EC7CB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DDA9581F-2FE2-465A-8E61-279792AA7C09} = {0ACEC871-F05B-4620-ACAB-0CC98AE71718}
+		{23584B0E-8EDF-47D7-B3BC-DED6064A2FF5} = {0ACEC871-F05B-4620-ACAB-0CC98AE71718}
+		{453B5ED0-A46B-4186-8DB4-D10009434FC1} = {0ACEC871-F05B-4620-ACAB-0CC98AE71718}
+		{26C8EA5B-00F3-4FBC-995C-A37706BA2FAB} = {0ACEC871-F05B-4620-ACAB-0CC98AE71718}
+		{9D715A07-4C40-459D-A497-4A1F35FF1158} = {0ACEC871-F05B-4620-ACAB-0CC98AE71718}
+		{AE959564-F89C-4812-9CBF-47C5D217D498} = {0ACEC871-F05B-4620-ACAB-0CC98AE71718}
+		{42573CCF-C231-4B14-9115-76A1A7AE246E} = {DDA9581F-2FE2-465A-8E61-279792AA7C09}
+		{729B16AC-C144-4010-A444-A281FA992881} = {AE959564-F89C-4812-9CBF-47C5D217D498}
+		{315F9EEC-5E6E-4576-B389-89C5DB9EC7CB} = {AE959564-F89C-4812-9CBF-47C5D217D498}
+	EndGlobalSection
+EndGlobal

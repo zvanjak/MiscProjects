@@ -1,0 +1,5 @@
+void brisi(FILE *f, int redni_br){
+     int rb = 0;
+     fseek(f, (redni_br-1)*92, SEEK_SET);
+     fwrite(&rb, sizeof(redni_br), 1, f);
+     }

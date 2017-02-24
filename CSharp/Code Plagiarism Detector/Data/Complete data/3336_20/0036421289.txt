@@ -1,0 +1,8 @@
+int rStrcmp(char *s1, char *s2){
+	int d;
+	kontrola();
+	d = *s1 - *s2;
+	if (d) return (d);
+	if (*s1 == 0) return (0);
+	return rStrcmp(s1+1, s2+1);
+}

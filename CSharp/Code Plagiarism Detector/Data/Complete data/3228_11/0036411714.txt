@@ -1,0 +1,38 @@
+#include<stdio.h>
+#include<math.h>
+
+main(){
+
+int i,n;
+double pi,spt=0,snt=0,sp=0,sn=0,pot,z;
+
+
+//printf("\n Unesi broj članova reda:");
+scanf("%d",&n);
+
+
+if((n>=1)&&(n<=100)){
+
+for(i=1;i<=n;i=i+2){
+pot=(pow(i,2));
+spt=(12/pot);
+sp=sp+spt;
+}
+
+for(i=2;i<=n;i=i+2){
+pot=(pow(i,2));
+snt=(12/pot);
+sn=sn+snt;
+}
+
+
+z=(sp-sn);
+pi=(float) sqrt(z);
+printf("%.12f ",pi);
+
+}
+
+else printf("n nije valjan");
+
+return 0;
+}

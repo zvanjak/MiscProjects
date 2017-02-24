@@ -1,0 +1,70 @@
+class RazlPolje{
+private:
+	int *_brojevi;
+	int _n;
+
+	bool RazlPolje::Clan(int Broj){
+	int i;
+		for (i=0;i<_n;i++){
+			if (_brojevi[i]==Broj) return true;
+		}	
+	return false;
+	}
+
+public:
+	RazlPolje::RazlPolje(){
+	_n=0;
+	_brojevi=NULL;
+	}
+	
+	RazlPolje::~RazlPolje(){
+	free(_brojevi);
+	}
+	
+	int RazlPolje::Dodaj(int Broj){
+		if (!Clan(Broj)){
+		_brojevi=(int *)realloc(_brojevi,(_n+1)*sizeof(int));
+			if (_brojevi==NULL)
+			{
+			_brojevi=(int *)realloc(_brojevi,_n*sizeof(int));//vrati na staru veličinu
+			return 0;
+			}
+			else {
+			_n++;
+			_brojevi[_n-1]=Broj;
+			}
+		}
+	return 1;
+	}
+
+	int RazlPolje::Izbaci(int Broj){
+	int i;
+		if (!Clan(Broj)){
+		return 0;
+		}
+		else {
+			for (i=0;i<_n;i++){
+				if (_brojevi[i]==Broj){
+				break;
+				}
+			}
+			while (i<_n-1){
+			_brojevi[i]=_brojevi[i+1];
+			i++;
+			}
+		_n--;
+		_brojevi=(int *)realloc(_brojevi,_n*sizeof(int));
+		;
+		}	
+	return 1;
+	}
+
+	int RazlPolje::SumaPolja(){
+	int i,s=0;
+		
+		for (i=0;i<_n;i++){
+		s+=_brojevi[i];
+		}
+	return s;
+	}
+};

@@ -1,0 +1,23 @@
+#include <stdio.h>;
+int main () 
+	{
+	long int br,broj,man;
+            do {
+		scanf ("%d",&broj);
+		if (broj>=0) { 
+                       br=broj;
+                       /* printf(" "); */
+                       do
+		       {
+                        man=br%10;
+			br=(br-man)/10;
+			
+                        printf("%d",man);
+			}
+		        while (br>0);
+                        printf(" ");
+                               }}
+	     while (broj>=0);
+        fflush(stdout);
+	return 0;
+	}

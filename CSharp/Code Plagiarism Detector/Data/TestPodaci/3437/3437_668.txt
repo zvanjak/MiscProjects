@@ -1,0 +1,42 @@
+/*. Program učitava parove cijelih brojeva od kojih svaki par predstavlja točku dvodimenzionalnog 
+koordinatnog sustava i to slijeva na desno, tj. točka koja je učitana prije slijedeće 
+učitane točke ima manju vrijednost x-koordinate. Učitavanje se završava kada se učita točka s 
+x-koordinatom 50 (točku ne ignorirati). Točke predstavljaju točke grafa lineranog 
+po odsječcima 
+između dviju susjednih točki.koji se "iscrtava" kako se točke učitavaju. 
+Za svaki segement počevši od 
+prvog, potrebno je ispisati da li je funkcija predstavljena grafom 
+padajuća, rastuća ili nepromijenjive 
+vrijednosti, porukama: "Raste", "Pada" ili "Ravan" (bez navodnika). 
+Primjer: za učitani niz -1 2 0 1 1 1 5 68 20 -5 50 0, program treba ispisati: 
+Pada Ravan Raste Pada Raste, jer graf između točaka (-1, 2) i (0, 1) pada, između (0, 1) i (1, 1) 
+ne mijenja vrijednost y-osi, između (1, 1) i (5, 68) raste, između (5, 68) i (20, -5) pada i 
+između točaka (20, -5) i (50, 0) raste. 
+Pretpostaviti da  grafa ima maksimalno 20 segmenata. */
+#include <stdio.h>
+int main()
+{
+	int i, x,y, a, b;
+
+	scanf("%d %d", &a, &b);
+	for(i = 0; i<22; i++)
+	{
+		if(i%2)
+		{
+			scanf("%d %d", &a, &b);
+			if(b>y) printf("Raste ");
+			else if(b == y) printf("Ravan ");
+			else printf("Pada ");
+			if(a == 50) break;
+
+		}
+		else 
+		{
+			scanf("%d %d", &x, &y);			
+			if(y>b) printf("Raste ");
+			else if(b == y) printf("Ravan ");
+			else printf("Pada ");
+			if(x == 50) break;
+		}
+	}
+}

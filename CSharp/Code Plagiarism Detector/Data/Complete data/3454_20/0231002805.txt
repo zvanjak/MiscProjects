@@ -1,0 +1,60 @@
+class RazlPolje {
+      private:
+              int *polje;
+              int n;
+      public:      
+              RazlPolje ();
+              ~RazlPolje ();
+              int Dodaj (int Broj);
+              int Izbaci (int Broj);
+              int SumaPolja ();
+};
+
+RazlPolje::RazlPolje() {
+     n=0;
+     polje=(int *)malloc (n*sizeof(int));
+}
+
+RazlPolje::~RazlPolje () {
+     free (polje);
+}
+
+int RazlPolje::Dodaj (int Broj) {
+    bool postoji=false;
+    int i;
+    for (i=0; i<n; i++) {
+        if (polje[i] == Broj) postoji=true;
+    }
+    if (postoji) return 1;
+    else {
+         n++;
+         polje=(int *)realloc (polje, n*sizeof(int));
+         if (polje==NULL) return 0;
+         else {
+              polje[n-1]=Broj;
+              return 1;
+         }
+    }      
+}
+int RazlPolje::Izbaci (int Broj) {
+    int i, index;
+    bool postoji = false;
+    for (i=0; i<n; i++) {
+        if (polje[i]==Broj) { 
+        postoji = true;
+        index = i;
+        }
+    }
+    if (!postoji) return 0;
+    else {
+         polje[index]=polje[n-1];
+         n--;
+         polje=(int *) realloc (polje, n*sizeof(int));
+         return 1;
+    }
+}
+int RazlPolje::SumaPolja () {
+    int i, suma=0;
+    for (i=0; i<n; i++) suma+=polje[i];
+    return suma;
+}

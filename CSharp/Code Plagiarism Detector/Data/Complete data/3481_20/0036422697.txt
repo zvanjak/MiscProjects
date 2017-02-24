@@ -1,0 +1,22 @@
+int Memoriraj(Radio& radio){
+    int broj_mem=0,poz=1,kont=1;
+    const char *rds;
+    Stanica pom,poc;
+    poc=radio.TraziSljedecu();
+    while(poz<=6){
+        if(kont==1){
+            pom=poc;
+            kont=0;
+        }else{          
+            pom=radio.TraziSljedecu();
+            if(pom==poc)break;
+        }
+        rds=pom.RDS();
+        if(*rds!='\0'){
+            radio.MemorirajStanicu(pom,poz);
+            broj_mem++;
+            poz++;
+        }
+    }
+    return broj_mem;
+}     

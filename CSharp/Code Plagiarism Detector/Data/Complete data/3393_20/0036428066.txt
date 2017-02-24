@@ -1,0 +1,21 @@
+int* napraviPolje(int *A, int Na, int* B, int Nb, int* Nc){
+	int i;
+	int j=0;
+	int *c;
+	c = (int*) malloc (Na+Nb);
+	for(i=0;i<Na; ++i){
+		if(A[i]>9 && A[i]<100 || A[i]>-100 && A[i]<-9){
+		 c[j]=A[i];
+		 ++j;
+		 ++ *Nc;
+		}
+	}
+	for(i=0;i<Nb;++i){
+		if(B[i]>9 && B[i]<100 || B[i]>-100 && B[i]<-9){
+			c[j]=B[i];
+			++j;
+			++ *Nc;		
+		}
+	}
+return c;
+}

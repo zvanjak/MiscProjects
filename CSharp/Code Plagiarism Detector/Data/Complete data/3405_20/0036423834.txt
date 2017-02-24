@@ -1,0 +1,12 @@
+#include<string.h>
+#include<stdio.h>
+#include<stdlib.h>
+char *SvakiDrugi(char *ulazni_niz){
+int i;
+char *x=NULL;
+if ((ulazni_niz!=NULL)&&(strlen(ulazni_niz)!=0)){
+    x=(char*)malloc(((strlen(ulazni_niz)+1)/2+1)*sizeof(char));
+    for (i=0;(2*i)<strlen(ulazni_niz);i++) 
+        x[i]=ulazni_niz[2*i];
+    x[i]='\0';}
+return x;}

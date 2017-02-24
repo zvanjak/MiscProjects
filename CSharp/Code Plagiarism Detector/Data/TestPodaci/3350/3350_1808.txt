@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int najbolji(FILE *f) {
+    struct natjecatelj{
+       int redni_br;
+       char prezime[20+1];
+       int bodovi;
+       } zapis;
+    int max, redbr;
+    fread(&zapis, sizeof(zapis), 1, f);
+    redbr=zapis.redni_br;
+    max=zapis.bodovi;
+    while(fread(&zapis, sizeof(zapis), 1, f)>0) {
+                        if((zapis.redni_br!=0)&&(zapis.bodovi>max)) {
+                        redbr=zapis.redni_br;
+                        max=zapis.bodovi;
+                        }
+    }
+    return redbr;
+}

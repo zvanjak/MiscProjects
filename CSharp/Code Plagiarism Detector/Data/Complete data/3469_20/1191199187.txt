@@ -1,0 +1,21 @@
+double fun1(Trokut t,Pravokutnik p,Krug k)
+{
+double tr,pr,kr;
+
+tr=t.Povrsina();
+pr=p.Povrsina();
+kr=k.Povrsina();
+
+if(tr>pr && tr>kr)
+return tr;
+if(pr>tr && pr>kr)
+return pr;
+if(kr>tr && kr>pr)
+return kr;
+if(tr==pr)
+return tr;
+if(tr==kr)
+return tr;
+if(kr==pr)
+return kr;
+}

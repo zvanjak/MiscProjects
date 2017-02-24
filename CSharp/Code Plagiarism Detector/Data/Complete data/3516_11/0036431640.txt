@@ -1,0 +1,30 @@
+#include <stdio.h> 
+#include <math.h>
+
+double der (double dx, float y) { 
+     double x = (double) y; 
+     return (pow(cos(exp(-1)),sin(exp(sin(x+dx+exp(-1)))))-pow(cos(exp(-1)),sin(exp(sin(x+exp(-1))))))/dx; 
+}  
+
+  
+int main () { 
+     double dx, df[50]; 
+     float x[50]; 
+     int i, j; 
+ 
+     scanf ("%lf", &dx); 
+ 
+     for (i = 0; i < 50; i++) { 
+          scanf ("%f", &x[i]); 
+          if (x[i] == 0) break; 
+     } 
+ 
+     for (j = 0; j < i; j++) { 
+          df[j] = der (dx, x[j]); 
+     } 
+     for (j = 0; j < i; j++) { 
+          printf ("%.2lf ", atan (df[j])); 
+     } 
+ 
+     return 0; 
+}

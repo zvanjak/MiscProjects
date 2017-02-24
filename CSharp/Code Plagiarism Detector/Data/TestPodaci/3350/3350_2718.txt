@@ -1,0 +1,24 @@
+int najbolji(FILE *f){
+struct natjecatelj {
+int redni_br;
+char prezime[20+1];
+int bodovi;
+} zapis;
+int najbolji=0,bodovi=0,zavrsetak,n=0;
+
+fseek(f,0L,SEEK_END);
+zavrsetak=ftell(f);
+fseek(f,0L,SEEK_SET);
+do{
+n++;
+fread(&zapis, sizeof(zapis), 1, f);
+if (zapis.redni_br != 0) {if (zapis.bodovi > bodovi) 
+{bodovi=zapis.bodovi;
+najbolji = zapis.redni_br;}
+}
+else fseek(f, (n-1)*sizeof(zapis),SEEK_SET);
+
+}
+while (ftell(f) < zavrsetak);
+return najbolji;
+}

@@ -1,0 +1,28 @@
+#include<stdio.h>
+int main(){
+	float x,max,min,y;
+
+	/*printf("\nUpisi broj: ");*/
+
+	scanf("%f",&x);
+	max=x;
+	min=x;
+	y=x/4; 
+	y=y-(int)y;
+	while(!(x>0&&y==0)){
+		if(x>max)
+			max=x;
+		else if(x<min)
+			min=x;
+		//printf("\nUpisi slijedeci broj: ");
+		scanf("%f",&x);
+		y=x/4;
+		y=y-(int)y;
+	}
+	if(x>max)
+		max=x;
+	else if(x<min)
+		min=x;
+	printf("%.0f %.0f",max,min);
+	return 0;
+}

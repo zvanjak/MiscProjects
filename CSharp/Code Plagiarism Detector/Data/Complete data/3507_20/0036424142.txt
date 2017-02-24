@@ -1,0 +1,12 @@
+int Sortirano (cvor *glava) {
+    
+if ( glava != NULL )   
+{    
+if ( glava->lijevo != NULL && glava->id < (glava->lijevo)->id ) return 0;
+if ( glava->desno != NULL && glava->id > (glava->desno)->id ) return 0;  
+if (Sortirano(glava->lijevo) && Sortirano(glava->desno)) return 1; else return 0;
+} 
+
+return 1;
+
+}

@@ -1,0 +1,17 @@
+
+void staviNaDno(Stog *stog, int broj)
+{
+Stog tren1;
+
+int tren2;
+
+while(stog->Skini(&tren2))
+
+tren1.Stavi(tren2);
+
+stog->Stavi(broj);
+
+while(tren1.Skini(&tren2))
+
+stog->Stavi(tren2);
+}

@@ -1,0 +1,18 @@
+#include <stdio.h>
+int main (){
+double zbroj,pi;
+int i,n;
+scanf("%d",&n);
+zbroj=0.;
+if (n>=1 && n<=400){
+	for (i=1; i<=n; i++)
+		zbroj=zbroj+1./((4*i-1)*(4*i+1));
+}
+else {
+	printf("n nije valjan");
+}
+pi=4-8*zbroj;
+if (pi!=4)
+printf("%1.8f",pi);
+return 0;
+}

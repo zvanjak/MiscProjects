@@ -1,0 +1,36 @@
+/* This is the main project file for VC++ application project 
+   generated using an Application Wizard.
+*/
+
+/* #include "stdafx.h"
+#include <stdio.h>
+#include<math.h>
+#using <mscorlib.dll>
+#include <conio.h>
+*/
+
+int main()
+{
+ int  brojac,a,n,b,p,y,z,x;  
+ 
+       /*printf("Unesi neki broj.\n"); */
+   scanf("%d", &x);
+	if (x>0) {
+	   for( n=x; !(n=0); brojac++){
+                   a= n % 10;
+		   n= (n-a)/10;
+           }
+	   for( b= brojac; !(b=0); b--){
+		   p= b-1;
+		   z= pow(10,p);
+		   y= x % z;
+		   printf(" %d", &y);
+		   x= (x-y)/10;
+           }
+	} else { 
+            printf("n nije valjan");
+        }
+	   /* getche(); */
+	return 0;
+
+}

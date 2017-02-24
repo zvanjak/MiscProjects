@@ -1,0 +1,42 @@
+#include<stdio.h>
+int main()
+{
+int n,m,a,b,d;
+char c;
+scanf ("%d %d %c", &n, &m, &c);
+if (n<100 || n>999)
+	{
+	printf ("Error");
+	}
+if (m<1 || m>3)
+{
+printf("Error");
+}
+if (c!='L' || c!='R') 
+{
+printf ("Error");
+}
+a=c/100;
+b=(c%100)/10;
+d=c%10;
+if (m==3)
+{
+printf ("%d", n);
+}
+if (c=='L')
+{
+if (m==1) {
+	printf("%d %d %d", b, d, a);
+	}
+else {printf "%d %d %d", d, a, b);}}
+if (c=='R')
+{
+if (m==1) {
+	printf("%d %d %d", d, a, b );
+	}
+else {printf "%d %d %d", b, d, a);}}
+return 0;
+}
+
+
+

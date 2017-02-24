@@ -1,0 +1,18 @@
+int najbolji(FILE *f){
+struct natjecatelj z;
+
+int k=0;
+int max, broj;
+
+while( fread(&z, sizeof(z), 1, f) == 1 ) {
+	if( z.redni_br !=0 ){
+		if (k==0){ max= z.bodovi;
+		broj=z.redni_br;
+		  k++;
+		}
+		if (z.bodovi > max ) {max=z.bodovi;
+								broj=z.redni_br;}
+	}
+	
+	return broj;}
+}

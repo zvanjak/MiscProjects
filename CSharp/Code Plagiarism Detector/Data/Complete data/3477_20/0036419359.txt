@@ -1,0 +1,29 @@
+class Recenica{
+	int BiloSlovo;
+	int brZareza,brRijeci,Brojao;
+public:
+	Recenica(){BiloSlovo=0;brZareza=0;brRijeci=0;Brojao=0;}
+	void UcitajZnak(char znak){
+		if (znak>64 && znak<91 || znak>96 && znak<127){
+            BiloSlovo=1;
+		}
+		if ((znak==' ') || (znak==',')){
+			if (BiloSlovo && Brojao==0)
+				brRijeci++;
+			BiloSlovo=0;
+			Brojao=0;
+		}
+		if (znak==',')
+			brZareza++;
+	}
+	int PrebrojiRijeci(){
+		if (BiloSlovo)
+			brRijeci++;
+		Brojao=1;
+		return brRijeci;
+	}
+	int PrebrojiZareze(){
+		return brZareza;
+	}
+	
+};

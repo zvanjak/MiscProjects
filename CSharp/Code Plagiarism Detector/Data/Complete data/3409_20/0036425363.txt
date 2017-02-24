@@ -1,0 +1,18 @@
+char *IzbaciPresjek (char *niz1, char *niz2) {
+  int k=0, zast=0, pom=(int)strlen(niz2);
+  static char p[1000];
+  for (; *niz1!='\0'; niz1++) {
+    for (; *niz2!='\0'; niz2++) 
+      if (*niz1==*niz2) zast=1;
+    niz2-=pom;
+    if (zast) {
+      zast=0;
+      continue;
+    }
+    p[k]=*niz1;
+    k++;
+    zast=0;
+  }
+  p[k]='\0';
+  return p;
+}

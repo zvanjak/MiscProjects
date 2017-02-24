@@ -1,0 +1,27 @@
+#include <stdio.h>
+int main() {
+int n,m,p;
+	char c;
+
+    scanf("%d %d %c",&n,&m,&c);
+
+	if ((n>0)&&((m>=1)&&(m<=3))&&((c=='R')||(c=='L')))
+	
+	{
+    if (c=='L')
+		while(m!=0){
+	
+		p = n / 100;
+        n = (n % 100) * 10 + p;
+		m = m - 1;
+		}
+	else while(m!=0) {
+		p = n % 10;
+		n = p*100 + n/10;
+		m = m-1;
+	}
+printf("%d",n);
+	}
+	else printf("Error");
+	
+}

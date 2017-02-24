@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+    int broj, i, x = 1, rezultat = 0;
+    
+    scanf("%d", &broj);
+    while (broj > 0) {
+          if ((broj % 10) % 2 == 0) x = x*10;
+          else x = x*10 + broj % 10;
+          
+          broj /= 10;
+    }
+    
+    for (i = 0; i < 4; ++i, x /= 10)
+        rezultat = rezultat*10 + x % 10;
+    
+    printf("%d\n", rezultat);
+    
+    return 0;
+}

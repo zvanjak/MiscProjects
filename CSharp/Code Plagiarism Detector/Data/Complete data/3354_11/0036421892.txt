@@ -1,0 +1,23 @@
+#include<stdio.h>
+
+int main()
+{
+	char a, b, c;
+	int x=0, y=0, z=0;
+
+	scanf("%c %c %c", &a, &b, &c);
+
+	if((a>='a') && (a<='z')) x=1; 
+	else x=0;
+	if((b>='a') && (b<='z')) y=1; 
+	else y=0;
+	if((c>='a') && (c<='z')) z=1; 
+	else z=0;
+
+	if((x==y) && (x!=z)) printf("%c", c);
+	else if ((y==z) && (x!=y)) printf("%c", a);
+	else if((x==z) && (y!=z)) printf("%c", b);
+	else printf("Nema uljeza");
+
+return 0;
+}

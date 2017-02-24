@@ -1,0 +1,22 @@
+#include<stdio.h>
+int main () 
+{
+     int m, n, i;
+     int nfakt, mfakt, nminusmfakt, npovrhm;
+     scanf ("%d %d", &n, &m);
+     if(m==0 || m==n) npovrhm=0;
+       else {
+                  nfakt=1;
+                  for (i=1;i<=n;i++)
+                  nfakt=nfakt*i;
+                  mfakt=1;
+                  for (i=1;i<=m;i++)
+                  mfakt=mfakt*i;
+                  nminusmfakt=1;
+                  for (i=1;i<=n-m;i++)
+                  nminusmfakt=nminusmfakt*i;
+                  npovrhm=nfakt/(mfakt*nminusmfakt);
+               }
+     printf("%d", npovrhm);
+     return 0;
+}

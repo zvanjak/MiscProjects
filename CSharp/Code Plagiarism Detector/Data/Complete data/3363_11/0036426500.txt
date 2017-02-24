@@ -1,0 +1,30 @@
+#include <stdio.h>
+int main (){
+	int x,y,z;
+	char c;
+	scanf("%d %d %c",&x,&y,&c);
+	if (c=='+'){
+		z=x+y;
+		printf("%d",z);
+	}
+	else if (c=='-'){
+		z=x-y;
+		printf("%d",z);
+	}
+	else if (c=='*'){
+		z=x*y;
+		printf("%d",z);
+	}
+	else if (c=='/'){
+		z=x/y;
+		printf("%d",z);
+	}
+	else if (c=='%'){
+		z=x%y;
+		printf("%d",z);
+	}
+	else {
+		printf("Neispravna");
+	}
+	return 0;
+}

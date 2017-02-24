@@ -1,0 +1,21 @@
+int igra(Igrac &igrac, Automat& aut, int n, int *broj) {
+  int i, poc = igrac.TrenutnoStanje();
+  aut.UplatiIznos( igrac.TrenutnoStanje() );
+  igrac.SkiniSRacuna( igrac.TrenutnoStanje() );
+  
+  for (i=0; i<n; i++) {
+    if (aut.TrenutnoStanje() == 0) break;
+    
+    igrac.UplatiNaRacun( aut.Zavrti() );
+    
+    if (igrac.TrenutnoStanje() != 0) {
+       aut.UplatiIznos( igrac.TrenutnoStanje() );
+       igrac.SkiniSRacuna( igrac.TrenutnoStanje() );
+     }          
+     
+  //   printf("%d %d\n", igrac.TrenutnoStanje(), aut.TrenutnoStanje() );
+  }  
+  *broj = i;
+  igrac.UplatiNaRacun( aut.PodigniPreostalo() );
+  return igrac.TrenutnoStanje() - poc;
+}

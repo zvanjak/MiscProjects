@@ -1,0 +1,5 @@
+void OOPStogURedListom(atom2** glava,atom2 **rep,Stog *stog){
+	int el;
+	if (stog->Skini(&el)) {	OOPStogURedListom(glava,rep,stog);
+							DodajURed (el,glava, rep);}
+	}

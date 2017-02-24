@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+
+
+char *StvoriNiz (char *poljeznakova, int duljina, int n) {
+char *novi_niz;
+int i,x;
+novi_niz=(char*)malloc(n*sizeof(char));
+srand((unsigned)time(NULL));
+for(i=0; i<n; i++) {
+	x=moj_rand (duljina);
+	novi_niz[i]=poljeznakova[x-1];
+}
+novi_niz[i+1]='\0';
+return novi_niz;
+}

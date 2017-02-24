@@ -1,0 +1,12 @@
+#include <stdio.h>
+int main(){
+	int n,i;
+	double suma=0.;
+	scanf("%d",&n);
+	if (n>=1 && n<=400){
+		for (i=1;i<=n;++i)
+			suma=suma+1./(16*i*i-1);
+		printf("%.9g",-8*suma+4);
+	}else printf("n nije valjan");
+	return 0;
+}

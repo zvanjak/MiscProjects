@@ -1,0 +1,12 @@
+Stog* noviOdNeparnih(Stog *stog){
+Stog pomocni;
+Stog *novi=new Stog();
+int broj;
+while(stog->Skini(&broj))
+pomocni.Stavi(broj);
+while(pomocni.Skini(&broj)){
+stog->Stavi(broj);
+if(broj%2) novi->Stavi(broj);
+}
+return novi;
+}

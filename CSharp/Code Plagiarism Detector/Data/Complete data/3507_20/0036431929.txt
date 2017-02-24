@@ -1,0 +1,17 @@
+int Sortirano(cvor *glava){
+if(!glava) return 1;
+int l=0, d=0;
+int ls=0, ds=0;
+ls=Sortirano(glava->lijevo);
+if(glava->lijevo){
+if(glava->id > glava->lijevo->id)
+l=1;}
+else
+l=1;
+ds = Sortirano(glava->desno);
+if(glava->desno){
+if(glava->id < glava->desno->id)
+d=1;}
+else
+d=1;
+return l&ls&d&ds;}

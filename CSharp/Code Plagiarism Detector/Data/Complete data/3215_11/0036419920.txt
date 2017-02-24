@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main()
+{
+	int par=0, nepar=0, a;
+
+	scanf("%d",&a);
+
+	while( a!=0 )
+	{
+		if( a>0 )
+		{
+			if( a%2 )
+				nepar++;
+			else
+				par++;
+		}
+		scanf("%d",&a);
+	}
+
+	printf("%d %d",par,nepar);
+
+	return 0;
+}

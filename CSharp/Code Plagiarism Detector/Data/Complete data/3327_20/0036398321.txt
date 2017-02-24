@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#define VelPolja 10	
+#define BrojMax 3
+
+int *Find3Max (int *p, int n) {
+	int i,j=0,k,ok;
+	int *x;
+	int *pom;
+									
+	x=(int *) malloc (BrojMax * sizeof (int));
+	pom=(int *) malloc (BrojMax * sizeof (int));
+	for (i=0;i<BrojMax;i++) x[i]=0;	
+
+	if (VelPolja<3) return NULL;
+	
+	for (j=0; j<BrojMax; j++) {	
+		for (i=0; i<n; i++) {			
+			if (p[i]>x[j]) {
+				ok=1;				
+				for (k=0; k<=j; k++) if (i==pom[k]) ok=0;	
+				if (ok) {				
+					x[j]=p[i];
+					pom[j]=i;
+				}		
+			}
+			
+		}
+	}
+	return x;
+}

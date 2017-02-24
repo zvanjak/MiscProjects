@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+float prosjek(FILE *d){
+struct album{
+	char naslov[30+1];
+	char autor[20+1];
+	int prodano;
+} a;
+int i=0;
+long int suma=0;
+while ((fread(&a,sizeof(a),1,d))!=0) {
+i++;
+printf("%d ", a.prodano);
+suma+=a.prodano;
+}
+return ((float) suma/i);
+}

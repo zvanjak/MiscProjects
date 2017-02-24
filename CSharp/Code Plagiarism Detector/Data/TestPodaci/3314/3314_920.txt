@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+
+
+int veci_od (FILE *f, int granica)
+{
+	typedef struct 
+{
+	char naziv[30+1];
+	char autor [20+1];
+	int prodano;
+}album;
+	int a=1, brojac=0,b=0;
+	album moj;
+	 
+		while (a!=EOF)
+	{
+		a=(fscanf(f,"%30s%20s%d", &moj.naziv, &moj.autor, &moj.prodano));
+			if (moj.prodano>granica)
+			{brojac++;}
+			
+	}
+	
+	return brojac;
+}

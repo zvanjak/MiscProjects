@@ -1,0 +1,13 @@
+int BrojClanova (Red *red){
+	Red *pom = new Red;
+	int el, brojac=0;
+	while (red->SkiniIzReda(&el)){
+		pom->DodajURed(el);
+		brojac++;
+	}
+	while(pom->SkiniIzReda(&el)){
+		red->DodajURed(el);
+	}
+	delete pom;
+	return brojac;
+}

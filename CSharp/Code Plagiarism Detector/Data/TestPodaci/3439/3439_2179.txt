@@ -1,0 +1,39 @@
+#include <stdio.h>
+#define MAX 20
+
+int main () {
+	int mat[MAX][MAX], n, i, j, provjera=1, produkt=1;
+
+	scanf("%d", &n);
+
+	for (i=0; i<n; i++) {
+		for (j=0; j<n; j++) {
+			scanf ("%d", &mat[i][j]);
+		}
+	}
+
+	for (i=0; i<n; i++) {
+		for (j=0; j<n; j++) {
+			if ((i%2==0) && (j%2==0)) {
+				if(mat[i][j]%2!=0) {
+					provjera = 0;
+				}
+			}
+		}
+	}
+
+	if (provjera) {
+		for (i=0; i<n; i++) {
+			produkt*=mat[i][i];
+		}
+	}
+	else {
+		for (i=0, j=n; i<n; i++) {
+			produkt*=mat[i][j-1-i];
+		}
+	}
+
+	printf ("%d", produkt);
+
+	return 0;
+}

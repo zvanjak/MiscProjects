@@ -1,0 +1,31 @@
+#include <stdio.h>
+int main() {
+int broj, a, b, c, d, e;
+int parni, neparni;
+	scanf("%d", &broj);
+	/*izlucis sve znamenke*/
+	if (broj>9999 && broj < 100000) { 
+	a = int(broj/10000);
+	b = int((broj-(a*10000))/1000);
+	c = int((broj-((a*10000)+(b*1000)))/100);
+	d = int((broj-((a*10000)+(b*1000)+(c*100)))/10);
+	e = int(broj-((a*10000)+(b*1000)+(c*100)+(d*10)));
+	parni=neparni=0;
+	if (a%2==0) parni+=a;
+	else neparni+=a;
+	if (b%2==0) parni+=b;
+	else neparni+=b;
+	if (c%2==0) parni+=c;
+	else neparni+=c;
+	if (d%2==0) parni+=d;
+	else neparni+=d;
+	if (e%2==0) parni+=e;
+	else neparni+=e;
+	if (a==e && b==d)
+	printf("%d\n", parni);
+	else
+	printf("%d\n", neparni);
+	}
+	return 0;
+
+	}

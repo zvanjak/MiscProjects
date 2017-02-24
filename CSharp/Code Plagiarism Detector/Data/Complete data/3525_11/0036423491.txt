@@ -1,0 +1,27 @@
+void funkcija(char *ulazni, char *izlazni, int *broj)
+{
+     int polje[255];
+     int i,j,x,dulazni;
+	 *broj=0;
+	 
+	 dulazni=strlen(ulazni);
+
+	 for (i=0; i<255; i++)polje[i]=0;
+	 
+	 for (i=0; i<dulazni; i++)
+	 {
+		 x=ulazni[i]; 
+		 polje[x]++; 
+	 }
+	for (i=0,j=dulazni-1; j>=0;j--)
+	{
+		x=ulazni[j]; 
+		if (polje[x]==1)
+        {
+			 izlazni[i]=ulazni[j];
+			 i++;
+		}
+	}
+	izlazni[i]='\0';
+	for (i=0;i<255;i++) if (polje[i]>1) *broj+=1;
+};

@@ -1,0 +1,31 @@
+class Komprimiranje{
+private:
+    int *pokazivac;
+    int cla;
+public:
+    Komprimiranje(int *BrPok,int Cl){
+        pokazivac=BrPok;
+        cla=Cl;
+    }
+    int BrojRazlicitihElemenata(){
+        int *polje=new int[100];
+        for (int i=0;i<100;i++)
+            polje[i]=0;
+        for (i=0;i<cla;i+=2)
+            polje[pokazivac[i]]=1;
+        int tmp=0;
+        for (i=0;i<100;i++)
+            if (polje[i]==1) tmp++;
+        return tmp;
+
+    }
+    int UkupniBrojElemenata(int vrijednost){
+        int tmp=0;
+        for(int i=0;i<cla;i+=2){
+            if(pokazivac[i]!=vrijednost) continue;
+            tmp+=pokazivac[i+1];
+        }
+
+        return tmp;
+    }
+};

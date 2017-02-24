@@ -1,0 +1,31 @@
+#include<stdio.h>
+#define MAX 20
+int main () {
+	int prva[MAX][MAX],druga[MAX][MAX],i,j,n,x;
+	do {		
+		scanf("%d",&n);
+	} while( n<1 || n>20); 
+		for (i=0;i<n;i++)
+			for(j=0;j<n;j++)  {
+			scanf("%d",&x); 
+			 if((x==1) || (x==0))
+				 prva[i][j]=x;
+			 
+			}
+			for(i=0;i<n;i++)
+				for(j=0;j<n;j++) {
+				scanf("%d",&druga[i][j]);	
+				}
+				for(i=0;i<n;i++)
+					for(j=0;j<n;j++) {
+						if (prva[i][j]==1)
+							druga[i][j]=i+j;  }
+				for(i=0;i<n;i++)
+					for(j=0;j<n;j++) {
+				
+						printf("%d ",druga[i][j]);
+					}
+					return 0;
+}
+
+

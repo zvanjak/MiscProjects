@@ -1,0 +1,15 @@
+float prosjek (FILE *f) {
+	float suma=0, pros;
+	int i=0;
+	struct {
+		char naziv[31];
+		char autor[21];
+		int prodano;
+	} album;
+	while (fscanf(f, "%s %s %d", &album.naziv, &album.autor, &album.prodano)==3){
+		suma+=album.prodano;
+		i++;
+	}
+	pros=suma/i;
+	return pros;
+}

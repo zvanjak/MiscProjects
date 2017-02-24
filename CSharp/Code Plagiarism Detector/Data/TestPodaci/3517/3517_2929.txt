@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <math.h>
+double f(double x){
+double fja;
+fja=pow(x,sinh(x))*cosh(x*x);
+return fja;
+}
+double d(float x, double y){
+double deriv;
+deriv=(f(x+y)-f((double)x))/y;
+return deriv;
+}
+
+
+int main(){
+double delta, derivacije[50];
+float iksevi[50];
+int k,i=-1;
+scanf("%lf",&delta);
+do {
+i++;
+scanf("%f",&iksevi[i]);
+} while (iksevi[i]!=0.0);
+k=i;
+i=0;
+while (iksevi[i]!=0.0){
+derivacije[i]=d(iksevi[i],delta);
+i++;
+}
+for (i=0; i<k;i++){
+printf("%.2lf\n",atan(derivacije[i]));
+}
+return 0;
+}

@@ -1,0 +1,12 @@
+float prosjek(FILE *f) {
+	int s=0,b=0;
+	float prosjek=0;
+	struct album alb;
+	fseek(f,0L,SEEK_SET);
+	while (fread(&alb,sizeof(alb),1,f)==1) {
+		s=s+alb.prodano;
+		b++;
+	}
+	if (b>0) prosjek=(float)s/b;
+	return prosjek;
+}

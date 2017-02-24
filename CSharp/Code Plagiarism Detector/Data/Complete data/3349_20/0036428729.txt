@@ -1,0 +1,11 @@
+double sumareda(double x, int N) ;
+
+double sumareda(double x, int N) {
+	 kontrola();
+
+	if (N<=0){
+		return 0;
+	}else{
+		return pow((x-1),N)/N *(pow((-1),N+1)) + sumareda(x, N-1);
+	}
+}

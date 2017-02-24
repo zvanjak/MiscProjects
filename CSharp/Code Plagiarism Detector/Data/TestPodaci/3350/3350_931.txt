@@ -1,0 +1,11 @@
+int najbolji (FILE *fp){
+ struct natjecatelj zapis;
+ int max,i=0,prvi=1,pamti=0;
+ while (fread (&zapis, sizeof (zapis), 1, fp) > 0) {
+  if (zapis.redni_br == ++i) {
+    if (prvi==1) {max=zapis.bodovi;prvi=0;pamti=1;};
+    if (zapis.bodovi>max) {max=zapis.bodovi;pamti=i;};
+  };
+ };
+ return pamti;
+}

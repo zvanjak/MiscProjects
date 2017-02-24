@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <math.h>
+main()
+{
+	int g,d,i=0,a=0,s=0,j=0;
+	scanf ("%d",&d);
+	scanf ("%d",&g);
+	a=d;
+	if ((g>0)&&(d>0)&&(g>d))
+	{
+		for (i=0;i<g-d+1;i++)
+		{
+		if (a%2==0)
+			s=s+a;
+		for (j=0;j<d;j++)
+		{
+			if ((j%2==0) && (j<d))
+				s=s+j;
+		}
+		printf("%d ",s);
+		a=a+1;
+		}
+	}
+}
+

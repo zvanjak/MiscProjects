@@ -1,0 +1,18 @@
+#include <stdio.h>
+int main() {
+	int broj, dt, dt5, t, t4, s, s3, d, d2, j, j1, proba, x, y;
+	scanf("%d", &broj);
+	dt5=broj%10000; dt=broj/10000;
+	t4=dt5%1000; t=dt5/1000;
+	s3=t4%100; s=t4/100;
+	d2=s3%10; d=s3/10;
+	j1=d2%1; j=d2/1;
+	proba=broj%(dt+t+s+d+j);
+	x=broj-(dt+t+s+d+j);
+	y=broj/(dt+t+s+d+j);
+	if (proba==0) {
+		printf("%d", x); }
+	else {
+		printf("%d", y); }
+	return 0;
+}

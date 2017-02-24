@@ -1,0 +1,45 @@
+#include <stdio.h>
+int main() {
+int i=-1, j=0, k=0, p=0;
+char ime[100];
+
+while (ime[i] != '.') {
+i++;
+scanf("%c", &ime[i]);
+
+if (ime[i]<65 || ime[i]>90) {
+if (ime[i]<97 || ime[i]>122) {
+if (ime[i]!='.' & ime[i]!=',') {
+if (ime[i]!=32) {
+if (ime[i]!=10) {
+return 0;
+}
+}
+}
+}
+}
+}
+
+ime[i+1]='\0';
+
+if (ime[0]>=97 & ime[0]<=122) ime[0]-=32;
+
+for(p=1; p<100; p++) {
+if (ime[p]>=65 & ime[p]<=90) ime[p]+=32;
+}
+
+for(j=1; j<100; j++) {
+if (ime[j]==' ' || ime[j]==',' || ime[j]=='.') {
+if (ime[j-1]>=97 & ime[j-1]<=122) ime[j-1]-=32;
+if (ime[j+1]>=97 & ime[j+1]<=122) ime[j+1]-=32;
+}
+}
+
+
+while(ime[k] != '\0') {
+printf("%c", ime[k]);
+k++;
+}
+
+return 0;
+}

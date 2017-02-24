@@ -1,0 +1,23 @@
+#include<stdio.h>;
+int main()
+{
+	int i,n;
+	double sum,k,pi;
+	{
+		k=0;
+		pi=0;
+		scanf("%d",&n);
+		if ((n>400) ||(n<1)) printf("n nije valjan");
+		else 
+		{
+		
+			for (i=1;i<n+1;i++)
+			{
+				k=k+(8./((4*i-1)*(4*i+1)));
+			}
+			pi=4-k;
+	      printf("%.8f",pi);
+		}
+	}
+    return 0;
+}

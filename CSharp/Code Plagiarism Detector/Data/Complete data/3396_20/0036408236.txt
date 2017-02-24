@@ -1,0 +1,26 @@
+int *napraviPolje(int *A, int Na, int *B, int Nb, int *Nc) {
+	int i, j, min, flag = 0, indeksC = 0;
+	int brC = 0, *C;
+	
+	for (i = 0; i < Na; i++) {
+		for (j = 0; j < Nb; j++) if (A[i] < B[j]) flag += 1;
+		if (flag == Nb) brC++;
+		*Nc = brC;
+		flag = 0;
+	}
+	C = (int*)malloc(brC * sizeof(int));
+	for (i = 0; i < Na; i++) {
+		for (j = 0; j < Nb; j++) {
+			if (A[i] < B[j]){
+				flag += 1;
+				min = A[i];
+			}
+		}
+		if (flag == Nb) {
+			C[indeksC] = min;
+			indeksC +=1;
+		}
+		flag = 0;
+	}
+	return C;
+}

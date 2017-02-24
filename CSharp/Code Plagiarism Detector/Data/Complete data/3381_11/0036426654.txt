@@ -1,0 +1,21 @@
+# include < stdio.h >
+#include <math.h>
+int main () {
+	int x1,x2,x3,x4,y1,y2,y3,y4;
+	float k1,k2;
+	double d1,d2;
+	scanf("%d %d %d %d %d %d %d %d", &x1,&y1,&x2,&y2,&x3,&y3,&x4,&y4);
+	if (x1 != x3){
+		k1=(float)(y3-y1)/(x3-x1);
+		k2=(float)(y4-y2)/(x4-x2);
+		d1=sqrt(pow(y3-y1,2)+pow(x3-x1,2));
+		d2=sqrt(pow(y4-y2,2)+pow(x4-x2,2));
+		if((k1*k2 == -1)&&(d1!=d2))
+			printf("R");
+		else
+			printf("C");
+	}
+	else
+		printf("K");
+	return 0;
+}

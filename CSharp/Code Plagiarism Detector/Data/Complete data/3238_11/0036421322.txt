@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+	double f=1,s=0,e=0;
+	int i=0,j=0,n=0,p=-1;
+
+	scanf("%d",&n);
+	if ((n<1)||(n>25))
+		printf("n nije valjan");
+	else
+	{
+		for (i=1; i<=n; i++)
+		{
+			f = pow(i,8);
+			s+=(1/f);
+		}
+		e=9450*s;
+		e=sqrt(sqrt(sqrt(e)));
+		printf("%1.12f",e);
+	}
+	return(0);
+}

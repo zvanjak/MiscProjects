@@ -1,0 +1,19 @@
+#include <stdio.h>
+void main ()
+{
+int br,i,n,max=0;
+do {
+scanf ("%d",&n);
+
+    for (br=0,i=2;i<n;i++)
+	{
+	   if(n%i != 0)
+	   br++;
+	}
+	if ((br == n-2)&&(n>=max))
+		max=n;
+
+	}
+while (n>2);
+printf ("%d", max);
+}

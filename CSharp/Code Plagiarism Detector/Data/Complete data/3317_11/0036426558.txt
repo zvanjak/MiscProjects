@@ -1,0 +1,17 @@
+struct natj
+{
+int br;
+char prez[ 20 + 1 ];
+int bodovi;
+};
+
+void brisi(FILE *f, int redni_br);
+
+void brisi( FILE *f, int redni_br)
+{
+int rdb = 0;
+fseek( f, (long)(redni_br - 1) * sizeof(struct natj), SEEK_SET);
+fwrite( &rdb, sizeof(rdb), 1,f);
+
+
+}

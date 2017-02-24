@@ -1,0 +1,45 @@
+# include <stdio.h>
+
+int main () {
+    int retci, stupci;
+    int i, j, k, l, m, tmp, s;
+    int mat [20][5];
+
+    do {
+        scanf("%d %d",&retci ,&stupci);
+    } while ( 1 > retci || retci > 20 || 1 > stupci || stupci > 5 );
+    
+    
+    for (i=0;i<retci;i++)
+        for (j=0;j<stupci;j++) {
+            scanf ("%d",&mat [i][j]);
+        }
+    
+    do {
+        scanf ("%d %d",&k ,&l);
+        if ((0 > k || k > retci-1 || 0 > l || l > retci-1)) {
+               break;
+        }
+        
+        for (m=0;m<retci;m++) {
+            tmp = mat [k][m];
+            mat [k][m] = mat [l][m];
+            mat [l][m] = tmp;
+        }
+        
+    } while (!(0 > k || k > retci || 0 > l || l > retci));
+    
+    for (i = 0;i<retci;i++) {
+        s = 0;
+            for (j = 0;j<stupci;j++) {
+                s += mat[i][j];
+                if (i == retci-1 && j == stupci-1) {
+                      printf ("%d",s);
+                }
+                else if (j == stupci-1)
+                    printf ("%d ",s);
+            }
+    }
+ 
+    return 0;
+}

@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <conio.h>
+
+main ()
+
+{
+int i=0, a[100], b, max, min;
+
+do
+    scanf("%d", &a[i]);
+    while (a[i++]%4);
+
+max=min=a[0];
+
+for (b=0;b<i;b++)
+    {
+    if (a[b]<min)
+       min=a[b];
+    if (a[b]>max)
+       max=a[b];
+    }
+printf("%d %d\n", max, min);
+
+system("pause");
+}

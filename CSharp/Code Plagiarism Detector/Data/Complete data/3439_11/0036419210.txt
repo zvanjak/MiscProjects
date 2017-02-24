@@ -1,0 +1,47 @@
+#include <stdio.h>
+#define DIM 20
+int main () {
+int i,j,n;
+int mat[DIM][DIM];
+int prod_gl=1;
+int prod_spo=1;
+int gl=0,spo=0;
+do {
+scanf("%d",&n);
+} while(n<1 || n>20);
+
+for (i=0; i<n; i++){
+	for(j=0; j<n; j++){
+		scanf("%d",&mat[i][j]); 
+	}
+}
+
+for(i=0;i<n;i++){
+	for(j=0;j<n;j++){
+		if(i==j)
+			prod_gl *= mat[i][j];
+	}
+}
+for(i=0;i<n;i++){
+	for(j=0;j<n;j++){
+		if(j==n-i-1)
+			prod_spo *= mat[i][n-i-1];
+	}
+}
+for(i=0;i<n;i++){
+	for(j=0;j<n;j++){
+		if ((i%2==0) && (j%2==0)){
+			if((mat[i][j]%2)==0){
+				gl++;
+			}else{
+				spo++;
+			}
+		}
+	}
+}
+if(gl>0)
+printf("%d",prod_gl);
+else if(spo>0)
+printf("%d",prod_spo);
+return 0;
+}

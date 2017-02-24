@@ -1,0 +1,13 @@
+int niz(int i){
+
+	int suma;
+
+	kontrola ();
+
+	if(i == 0 || i==1 || i==2)
+		return 1;
+
+	suma = niz(i-1)+ niz(i-2) + niz (i-3);
+
+	return suma;
+}

@@ -1,0 +1,72 @@
+#include <stdio.h>
+#include <ctype.h>
+
+void izbaciUljeza (char *ulazni){
+	int br_velikih = 0, br_malih = 0, br_znamenki = 0, uljez = 0, pomak = 0;
+	char *c = ulazni;
+
+	while (*c) {
+		if (islower(*c)) br_malih++;
+		else if (isupper(*c)) br_velikih++;
+		else if (isdigit(*c)) br_znamenki++;
+
+		c++;
+	}
+	
+	/*	uljez == 1 => br_malih
+		uljez == 2 => br_velikih
+		uljez == 3 => br_znamenki
+		uljez == 0 => dva manja broja su ista
+	*/
+	if (br_malih < br_velikih && br_malih < br_znamenki) uljez = 1;
+	else if (br_velikih < br_malih && br_velikih < br_znamenki) uljez = 2;
+	else if (br_znamenki < br_velikih && br_znamenki < br_malih) uljez = 3;
+	
+	c = ulazni;
+	switch (uljez) {
+		case 1:
+			while (*c) {
+				*c = toupper(*c);
+				c++;
+			}
+			break;
+		case 2:
+			while (*c) {
+				*c = tolower(*c);
+				c++;
+			}
+			break;
+		case 3:
+			while (*c) {
+				if (isdigit(*c)) {
+					pomak++;
+					*c = '\0';
+				} else {
+					*(c-pomak) = *c;
+					if (pomak > 0) *c = '\0';
+				}
+				c++;
+			}
+			break;
+		case 0:
+			while (*c) {
+				*c = tolower(*c);
+				if (isdigit(*c)) {
+					pomak++;
+					*c = '\0';
+				} else {
+					*(c-pomak) = *c;
+					if (pomak > 0) *c = '\0';
+				}
+				c++;
+			}
+			c = ulazni;
+			while (*c) c++;
+			*(c-1) = toupper(*(c-1));
+			*ulazni = toupper(*ulazni);
+
+			break;
+	}
+
+	return;
+}

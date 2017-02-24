@@ -1,0 +1,20 @@
+int LijevoDesno (cvor *glava, int id, int *lijevo, int *desno) {
+	for (;1;) {
+		if (id == glava->id) return 1;
+		if (id < glava->id)
+			if (glava->lijevo == NULL) 
+				return 0;
+			else {
+				(*lijevo)++;
+				glava = glava->lijevo;
+				continue;
+			}
+		if (id > glava->id) 
+			if (glava->desno == NULL)
+				return 0;
+			else {
+				(*desno)++;
+				glava = glava->desno;
+			}
+	}
+}

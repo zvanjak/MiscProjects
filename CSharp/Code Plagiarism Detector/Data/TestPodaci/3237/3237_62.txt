@@ -1,0 +1,18 @@
+#include<stdio.h>
+#include<math.h>
+int main(){
+float n, s=0, r, k;
+int i;
+scanf("%d", &n);
+if(((n<1)||(n>30))||((n-(int)n)!=0)){
+printf("n nije valjan");}
+else{
+for(i=1; i<=n; i++){
+k=(1./(pow(i, 6)))*945.;
+s=s+k;
+}
+r=pow(s, (1./6));
+printf("13.12f", r);
+}
+return 0;
+}

@@ -1,0 +1,17 @@
+int veci_od(FILE *f, int granica) { 
+struct zapis { 
+    char naziv[30+1]; 
+    char autor[20+1]; 
+    int prodano; 
+} alb; 
+int c; 
+int brojac=0; 
+     do { c=fscanf (f,"%s %s %d",&alb.naziv,&alb.autor, &alb.prodano); 
+       printf ("%s %s %d",alb.naziv,alb.autor,alb.prodano); 
+       if (c==EOF) alb.prodano=0; 
+       if (alb.prodano>=granica) 
+       brojac++; 
+ } while (c!=EOF); 
+ 
+return brojac; 
+}

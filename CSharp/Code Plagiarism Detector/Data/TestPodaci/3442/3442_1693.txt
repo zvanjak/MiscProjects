@@ -1,0 +1,28 @@
+
+ 
+
+#include <stdio.h>
+
+int main () {
+
+int i, suma1 = 0, suma2 = 0, n, kon;
+
+printf("Unesi n: ");
+
+scanf("%d", &n);
+
+if(n > 1) {
+
+for(i = 0; i <= n; i++) {
+
+suma1+=(i*i);
+
+if((i >= 1) && (i < n))
+
+suma2+=(2*i); }
+
+kon = suma1 - suma2;
+
+printf("Rezultat je: %d", kon);}
+
+return 0; }

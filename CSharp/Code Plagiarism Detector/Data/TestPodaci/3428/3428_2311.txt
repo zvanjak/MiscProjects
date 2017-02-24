@@ -1,0 +1,24 @@
+#include<stdio.h>
+int main()
+{int mr,ms,m[20][20],i,j,rez=1,x;
+do
+{scanf("%d %d",&mr,&ms);
+}
+while(mr<1||mr>20||ms<1||ms>20);
+for(i=0;i<mr;i++)
+	for(j=0;j<ms;j++)
+		scanf("%d",&m[i][j]);
+if(mr%2==1)
+{for(i=0;i<(mr/2);i++)
+	for(j=0;j<ms;j++)
+		x=(m[i][j]==m[mr-1-i][j])?1:0;
+if(x==1)printf("Jest");
+else printf("Nije");
+}
+else
+{for(i=0;i<mr;i+=2)
+	for(j=0;j<ms;j+=2)
+	rez*=m[i][j];
+printf("%d",rez);}
+return 0;
+}

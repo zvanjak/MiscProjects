@@ -1,0 +1,28 @@
+int veci_od(FILE *f, int n)
+{
+	struct natjecatelj a;
+	int br = 0;
+	while (fread (&a, sizeof(a), 1, f))
+	{
+if (a.redni_br != 0)
+		if (a.bodovi >= n) br++;
+	}
+	return br;
+}
+/*
+int veci_od(FILE *f, int n){
+	struct natjecatelj a;
+	int br=0; 
+	while(fread(&a.redni_br, sizeof(int), 1, f)==1){
+		if(a.redni_br == 0)
+			fseek(f, (long) (sizeof (a.prezime) + sizeof (a.bodovi)), SEEK_CUR);
+		else {
+			fseek(f, (long) sizeof(a.prezime), SEEK_CUR);
+			fread(&a.bodovi, sizeof(int), 1, f);
+			if (a.bodovi >= n)
+				br++;
+		}
+	}
+	return br;
+}
+*/

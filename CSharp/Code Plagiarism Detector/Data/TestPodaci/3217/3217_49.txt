@@ -1,0 +1,20 @@
+#include<stdio.h>
+#include<math.h>
+main()
+{
+long int b;
+scanf("%ld", &b);
+while(b>0)
+	{
+	while(b>0)
+		{
+		if(b<10)
+			printf("%ld ", b%10);
+		else printf("%ld", b%10);
+		b/=10;
+		}
+	scanf("%ld", &b);
+	}
+fflush(stdout);
+return 0;
+}

@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+void main () {
+	int broj, p, d, t, c;
+	
+	do {
+		scanf ("%d", &broj);
+	} while ((broj < 1000) || (broj > 9999));
+
+	p = broj % 10;
+	broj /= 10;
+	d = broj % 10;
+	broj /= 10;
+	t = broj % 10;
+	broj /= 10;
+	c = broj % 10;
+	
+	if ((p*d*t*c % 2)==0) printf ("%d \n", p);
+	else printf ("%d \n", c);
+
+}

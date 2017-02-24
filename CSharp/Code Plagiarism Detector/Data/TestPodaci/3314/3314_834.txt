@@ -1,0 +1,17 @@
+int veci_od(FILE *f,int granica)
+{
+int br=0,prodano;
+char naziv[30+1],autor[20+1];
+
+
+
+
+
+while (fscanf(f, "%s %s %d", naziv, autor, &prodano) == 3)
+if(prodano>=granica)
+br++;
+
+return br;
+
+}
+

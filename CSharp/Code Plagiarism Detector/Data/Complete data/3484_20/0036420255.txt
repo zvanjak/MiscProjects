@@ -1,0 +1,74 @@
+class CjelobrojniNiz
+{
+public:
+	int *cjelobrojniniz;
+	int BrojElemenata;
+
+	int VecinaJednaka;
+
+	CjelobrojniNiz(CjelobrojniNiz &stari)
+	{
+		VecinaJednaka=stari.VecinaJednaka;
+		int i=0;
+		cjelobrojniniz = new int[stari.BrojElemenata];
+		for(i=0;i<stari.BrojElemenata;i++)
+			cjelobrojniniz[i]=stari.cjelobrojniniz[i];
+		BrojElemenata=stari.BrojElemenata;
+	}
+
+	CjelobrojniNiz(int *ncjelobrojniniz,int nBrojElemenata)
+	{
+		cjelobrojniniz=new int[nBrojElemenata];
+
+		int nj=0;
+		for (int i=0;i<nBrojElemenata;i++)
+		{
+			cjelobrojniniz[i]=ncjelobrojniniz[i];
+			if (cjelobrojniniz[i] == cjelobrojniniz[0]) nj++;
+		}
+
+		VecinaJednaka=(nj > nBrojElemenata/2);
+		BrojElemenata=nBrojElemenata;
+	}
+
+	~CjelobrojniNiz()
+	{
+		if (cjelobrojniniz) delete[] cjelobrojniniz;
+	}
+
+
+	int Usporedi(CjelobrojniNiz niz)
+	{
+		if (BrojElemenata != niz.BrojElemenata) return 0;
+		for (int i=0;i<BrojElemenata;i++)
+			if (cjelobrojniniz[i] != niz.cjelobrojniniz[i]) return 0;
+		return 1;
+	}
+
+
+	int *VratiPresjek(CjelobrojniNiz niz,int *n)
+	{
+		int i,j,k,np=0,*polje=(int*) malloc((BrojElemenata+niz.BrojElemenata)*sizeof(int));
+		int *a=cjelobrojniniz,*b=niz.cjelobrojniniz;
+
+		for (i=0;i<BrojElemenata;i++)
+		{
+			for (k=0;k<np;k++)
+			{
+				if (polje[k] == a[i]) break;
+			}
+			if (k != np) continue;
+			for (j=0;j<niz.BrojElemenata;j++)
+			{
+				if (b[j] == a[i])
+				{
+					polje[np++]=a[i];
+					break;
+				}
+			}
+		}
+
+		*n=np;
+		return polje;
+	}
+};

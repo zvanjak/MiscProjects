@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main(){
+	int i=0, brojac=0;
+	int j=0,k=0;
+	char polje[100+1], ejlop[100+1],ch;
+	/*printf ("Upisite znakovni niz:");*/
+	for (i=0; i<101; i++){
+			scanf("%c", &ch);
+		if (ch == '.')
+				break;
+		else 
+			polje[i]=ch;	
+		}
+		polje[i]='\0';
+		i--;
+			for (j=i, k=0; j>=0; j--, k++)
+				ejlop[k]=polje[j];
+			i++;
+			ejlop[i]='\0';
+			for (j=0; j<i; j++){
+		if((polje[j]==ejlop[j]) || (polje[j]==ejlop[j]+32) || (ejlop[j]==polje[j]+32)) 
+					brojac++;
+			}
+			if (brojac==i)
+				printf ("\nDA");
+			else 
+				printf ("\nNE");
+			return 0;
+}

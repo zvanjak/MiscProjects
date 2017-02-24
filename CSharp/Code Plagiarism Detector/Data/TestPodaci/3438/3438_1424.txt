@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main ()
+{
+
+	char polje[100] = {0}, aaa;
+	int i = 0, j, k, g;
+
+	while(1) {
+		scanf("%c", &polje[i]);
+		if(polje[i] == '.') break;
+		i++;
+	}
+
+ 	while(1)
+	{
+		scanf("%d %d", &j, &k);
+		if(j > i || j < 1 ||  k > i || k < 1) break;
+		aaa = polje[j-1]; polje[j-1] = polje[k-1]; polje[k-1] = aaa;
+	}
+
+	for(g = 0; g < i; g++){
+		printf("%c", polje[g]); if(g == (i-1)) break; printf(" "); }
+
+	return 0;
+}
+
+
+

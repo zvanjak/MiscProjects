@@ -1,0 +1,25 @@
+typedef struct {
+	int redni_br;
+	char prezime[20+1];
+	int bodovi;
+}natjecatelj;
+
+int najbolji(FILE *f)
+{
+	natjecatelj pom;
+	int max_bodova, redni_broj;
+
+	redni_broj=0;
+	max_bodova=0;
+	while(fread(&pom, sizeof(pom), 1, f)==1)
+	
+		if(pom.redni_br!=0)
+			if(pom.bodovi>max_bodova)
+			{
+				max_bodova=pom.bodovi;
+				redni_broj=pom.redni_br;
+			}
+	
+	return redni_broj;
+}
+		

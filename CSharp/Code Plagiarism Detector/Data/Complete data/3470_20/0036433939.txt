@@ -1,0 +1,12 @@
+bool fun2(Pravokutnik p, Krug k){
+   Tocka a;
+   a=p.getDLkut();
+   if (!k.Sadrzi(a)) return false;
+   a.X+=p.getSirina();
+   if (!k.Sadrzi(a)) return false;
+   a.Y+=p.getVisina();
+   if (!k.Sadrzi(a)) return false;
+   a.X-=p.getSirina();
+   if (!k.Sadrzi(a)) return false;
+   return true;
+   }

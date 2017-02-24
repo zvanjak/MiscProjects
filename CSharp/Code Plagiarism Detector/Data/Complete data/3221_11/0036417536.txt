@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main(){
+    int A,B,d,n=0;
+    scanf("%d",&A);
+    scanf("%d",&d);
+    scanf("%d",&B);
+    if (A<=B){
+        do{
+           n++;
+           A+=d;
+           printf("%d ",A);
+          }   
+        while (A<=B);
+    }            
+    printf("%d",n);
+    return 0;
+}

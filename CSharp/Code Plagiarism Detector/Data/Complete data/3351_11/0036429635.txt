@@ -1,0 +1,19 @@
+int info (FILE *f, int redni_br) {
+struct natjecatelj {
+int redni_br;
+char prezime[20+1];
+int bodovi;
+} nat;
+int rbr_nat=0;
+while ( fread(&nat, sizeof(nat), 1, f ) ==1 ) {
+rbr_nat++;
+if (redni_br == rbr_nat) {
+if (nat.redni_br == 0) {return(-1);
+};
+if (nat.bodovi >= 100) {return(1);
+};
+if (nat.bodovi < 100) {return(0);
+};
+};
+};
+}

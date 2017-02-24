@@ -1,0 +1,62 @@
+// predprocesor
+#include <stdio.h>
+#include <conio.h> 
+
+// constante
+#define MIN_REDOVA 1
+#define MAX_REDOVA 20
+#define MIN_STUPACA 1
+#define MAX_STUPACA 5
+
+//globalke 
+int mr,ms;
+int matrica[MAX_REDOVA][MAX_STUPACA];
+
+//funkcije
+void unos() {
+	for(int r = 0; r < mr; r++)
+		for(int s = 0; s < ms; s++)
+			scanf("%d", &matrica[r][s]);
+}
+
+void ispis() {
+	//lokalke
+	int parniRedovi = 0, neparniStupci = 0;
+	int parni = 0, neparni = 0;
+
+	//prebrojavanje
+	for(int r = 0; r < mr; r++) {
+		for(int s = 0; s < ms; s++) {
+			if(matrica[r][s] % 2 == 0)
+				parni++;
+		}
+		if(parni > 0)
+			parniRedovi++;
+		parni = 0;
+	}
+	for(int s = 0; s < ms; s++) {
+		for(int r = 0; r < mr; r++) {
+			if(matrica[r][s] % 2 != 0)
+				neparni ++;
+		}
+		if(neparni > 0)
+			neparniStupci++;
+		neparni = 0;
+	}
+
+	//ispis
+
+	printf("%d %d", parniRedovi, neparniStupci);
+	getch();
+}
+//main
+void main() {
+	while(1){
+	scanf("%d %d",&mr, &ms);
+	if(mr >= MIN_REDOVA && mr <= MAX_REDOVA &&
+		ms >= MIN_STUPACA && ms <= MAX_STUPACA)
+		break;
+	}
+	unos();
+	ispis();
+}

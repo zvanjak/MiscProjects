@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main() {
+int n,i;
+double zbroj=0. ,x;
+scanf("%d",&n);
+if (n<1 || n>1000) printf ("n nije valjan");
+	else {
+			for (i=2; i<=n+1; i++){								
+								x=1./((i-1)*(i+1));
+								zbroj=zbroj+x;
+								}
+		/*printf("%1.13g",zbroj);*/
+                  printf("%.12lf", zbroj);
+		if (n==3) printf("000000000");
+			}
+return 0;
+}

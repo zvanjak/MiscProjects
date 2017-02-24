@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+
+int main()
+{
+  char rijec[20], samo[40];
+  int i = 0, j = 0, k = 0, n = 0;
+  do{
+      scanf("%c", &rijec[i]);
+      i++; n++;
+      }while ((isalpha(rijec[i-1])) && (i < 20));
+  n--;
+  for(i = 0; i < n; i++){
+        if ( ( (rijec[i] != 'a') && (rijec[i] != 'A') ) && 
+             ( (rijec[i] != 'e') && (rijec[i] != 'E') ) &&
+             ( (rijec[i] != 'i') && (rijec[i] != 'I') ) &&
+             ( (rijec[i] != 'o') && (rijec[i] != 'O') ) &&
+             ( (rijec[i] != 'u') && (rijec[i] != 'U') ) )
+             {
+                  if (islower(rijec[i])) samo[j] = toupper(rijec[i]);
+                  else samo[j] = rijec[i];
+                  j++;
+             }
+        }
+  for(i = j; i < (2 * j); i++){
+        k = ((2 * j) - 1) - i;
+        samo[i] = tolower(samo[k]);
+        };
+  samo[i]='\0';
+  printf("%s", samo);
+  return 0;
+}

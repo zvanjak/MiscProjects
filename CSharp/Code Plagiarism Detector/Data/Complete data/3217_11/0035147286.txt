@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main() {
+	int n, i=0, j=0, k=0;
+	int niz[100], niz2[100];
+	do {
+		scanf("%d",&n);
+		niz[i++]=n;
+	}while (n>0);
+	for (j=i-2;j>=0;j--){
+		niz2[k++] = niz[j];
+
+	}
+	for (i=0; i<k; i++){
+		printf("%d ", niz2[i]);
+	}
+	return 0;
+}

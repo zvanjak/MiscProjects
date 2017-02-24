@@ -1,0 +1,109 @@
+typedef struct {
+        char ime [20+1];
+        char prezime [30+1];
+        char jmbag [10+1];
+        int ocjena;
+} tip;
+
+typedef struct lista {
+        tip element;
+        struct lista *sljed;
+} atom;
+
+int brojElementa (atom *glava)
+{
+  atom *p; 
+  int rez = 0;
+  
+  for (p = glava; p != NULL; p = p->sljed) 
+    rez++;
+  
+  return rez;
+}
+
+int dodaj (atom **glavap, tip element)
+{
+  atom *noviElem;
+  
+  if ((noviElem = (atom *) malloc(sizeof(atom))) == NULL) 
+    return 0;
+  
+  strcpy ((noviElem->element).ime, element.ime);
+  strcpy ((noviElem->element).prezime, element.prezime);
+  strcpy ((noviElem->element).jmbag, element.jmbag);
+  (noviElem->element).ocjena = element.ocjena; 
+  noviElem->sljed = *glavap;
+  
+  *glavap = noviElem;
+  
+  return 1;
+}
+
+int maksOcjena (atom *glava)
+{
+  atom *elem; 
+  int rez;
+  
+  if (glava == NULL) 
+    return -1;
+  
+  rez = (glava->element).ocjena;
+  
+  for (elem = glava; elem != NULL; elem = elem->sljed) 
+    if ((elem->element).ocjena > rez) 
+       rez = (elem->element).ocjena;
+  
+  return rez;
+}
+
+float prosjOcjena (atom *glava)
+{
+  atom *elem; 
+  int suma = 0; 
+  int cnt = 0;
+  
+  if (glava == NULL) 
+    return -1;
+  
+  for (elem = glava; elem != NULL; elem = elem->sljed) 
+  {
+    cnt++; 
+    suma += (elem->element).ocjena;
+  }
+  
+  return ((float) suma / cnt);
+}
+
+int izbaciImePocinjeS (atom **glavap, char *imePocetak)
+{
+  atom *elem, *pomElem; 
+  int cnt = 0;
+ 
+  for (elem = *glavap; elem != NULL; ) 
+  {
+    if ((strncmp ((elem->element).ime, imePocetak, strlen (imePocetak)) == 0) &&
+         (strlen ((elem->element).ime) >= strlen (imePocetak))) 
+    {     
+      if (elem == *glavap) 
+      {
+        pomElem = (*glavap)->sljed;
+        free (*glavap);
+		    *glavap = pomElem;
+		    elem = pomElem;
+		    cnt++;
+      }
+      else 
+      {		   
+		    for (pomElem = *glavap; pomElem->sljed != elem; pomElem = pomElem->sljed);
+		    pomElem->sljed = elem->sljed;
+        free (elem);
+	      elem = pomElem->sljed;
+	      cnt++;
+      }
+    }     
+    else 
+      elem = elem->sljed;
+  }
+
+  return cnt;
+} 

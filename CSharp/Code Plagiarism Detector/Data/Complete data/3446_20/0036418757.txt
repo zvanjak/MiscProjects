@@ -1,0 +1,51 @@
+class Kosarica
+{
+public:
+      Kosarica() 
+	  {
+		  polje=new float[0];
+		  n=0;
+	  }
+      ~Kosarica() 
+	  {
+		  delete[] polje;
+	  }
+
+      void DodajProizvod(float cijena) 
+	  { 
+		  ++n;
+		  polje=(float*)realloc(polje, n*sizeof(float));
+		  polje[n-1]=cijena;
+	  }
+
+	  float ProsjecnaCijena()
+	  {
+		  float rez=0;
+		  for(int i=0; i<n; i++)
+		  {
+			  rez+=this->polje[i];
+		  }
+		  return n==0?0:rez/n;
+	  }
+
+	  float NajjeftinijiProizvod()
+	  {
+		  float min=0;
+
+		  if(n>0)
+		  {
+			min=this->polje[0];
+			for(int i=0; i<n; i++)
+			{
+			if(this->polje[i]<min)
+		   		min=this->polje[i];
+			}
+		  }
+
+		  return min;
+	  }
+
+private:
+	float *polje;
+	int n;
+};

@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+#define DIM 20
+
+int main () {
+    int polje[DIM][DIM], produkt=1;
+    int n,i,j, bkor=0, bparn=0;
+
+    scanf("%d", &n);
+
+    if (n>0 && n<=20) {
+           for (i=0; i<n; i++)
+               for (j=0; j<n; j++) 
+                    scanf("%d", &polje[i][j]);
+
+           for (i=0; i<n; i++) {
+               for (j=0; j<n; j++) {
+                        if (i%2==0 && j%2==0)
+                             if (polje[i][j]%2==0)
+                                      bparn++;
+                        bkor++; }}
+           
+           if (bparn==bkor) {
+               for (i=0; i<n; i++)
+                     produkt*=polje[i][i]; }
+        
+           else {
+               for (j=n-1, i=0; i<n, j>=0; i++, j--)
+                    produkt*=polje[i][j]; }
+
+            printf("%d\n", produkt); }
+
+     return 0;
+
+}

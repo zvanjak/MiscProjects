@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main () {
+	int broj, a, b, c, d, umnozak;
+	scanf("%d", &broj);
+a=broj/1000;
+b=(broj%1000)/100;
+c=((broj%1000)%100)/10;
+d=((broj%1000)%100)%10;
+umnozak=a*b*c*d;
+if ((umnozak%2)==0)
+printf("%d", d);
+else printf("%d", a);
+return 0;
+}

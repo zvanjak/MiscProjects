@@ -1,0 +1,42 @@
+int srch(cvor *glava, int id, int nivo, int *t_n);
+
+int Razina(cvor *glava, int id, int *razina)
+{
+    int raz=1,x=0;
+    if (glava == NULL)
+    {
+       *razina=0;
+       return 0;
+    }
+    else
+    {
+       x=srch(glava,id,1,&raz);
+       if(x == 0) return 0;
+       else
+       {
+           *razina=raz;
+           return 1;
+       }
+    }
+    
+}
+
+int srch(cvor *glava, int id, int nivo, int *t_n)
+{
+	if (glava!=NULL) {
+		if (id < glava->id)
+        {
+			return srch(glava->lijevo, id, nivo+1, t_n);
+		}
+        else if (id > glava->id)
+        {
+			return srch(glava->desno, id, nivo+1, t_n);
+		}
+		else
+        {
+            *t_n = nivo;
+            return 1;
+        }
+	}
+	return 0;
+}

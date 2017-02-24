@@ -1,0 +1,8 @@
+int Sortirano (cvor *glava){
+  if (!glava) return 1;
+  else {int cl,cd;
+         cl=(glava->lijevo)->id;
+         cd=(glava->desno)->id;
+	 if (((glava->id)>cl)&&((glava->id)>cd)) return Sortirano(glava->lijevo) && Sortirano(glava->desno);
+         else return 0;}
+}    

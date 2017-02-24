@@ -1,0 +1,104 @@
+typedef struct{
+    char ime[20+1];
+    char prezime[30+1];
+    char jmbag[10+1];
+    int ocjena;    
+    }tip;
+    
+typedef struct at{
+    struct at *sljed;
+    tip element;
+}atom;        
+
+
+int brojElementa(atom *glava)
+{
+    atom *p;
+    int br_elem=0;
+    for(p=glava;p!=NULL;p=p->sljed)
+    br_elem++;
+    return br_elem;
+    
+}
+
+int dodaj (atom **glavap, tip element)
+{
+    atom *novi;
+    novi=(atom*)malloc(sizeof(atom));
+    if(novi==NULL) return 0;
+    strcpy ((novi->element).ime, element.ime);
+    strcpy ((novi->element).prezime, element.prezime);
+    strcpy ((novi->element).jmbag, element.jmbag);
+    (novi->element).ocjena = element.ocjena;
+
+    novi->sljed=*glavap;
+    *glavap=novi;
+    return 1;
+}
+
+int maksOcjena (atom *glava)
+{
+    atom *p; 
+    int maks_ocjena;
+    if(glava)
+    {
+        p=glava;
+        maks_ocjena=(glava->element).ocjena;
+        for(p;p!=NULL;p=p->sljed)
+        {
+            if((p->element).ocjena>maks_ocjena) maks_ocjena=(p->element).ocjena;
+        }
+        return maks_ocjena;
+    }
+    return -1;
+}
+
+float prosjOcjena (atom *glava)
+{
+    atom *p;
+    float brojac=0,suma=0,rez;
+    if(glava)
+    {
+        p=glava;
+       for(p;p!=NULL;p=p->sljed)
+        {
+            suma=suma+(p->element).ocjena;
+            brojac++;
+        }
+        rez=suma/brojac;
+        return rez;
+    }
+    return -1;
+}
+
+int izbaciPrezimePocinjeS (atom **glavap, char *prezimePocetak)
+{
+    atom *p, *pp; 
+    int brojac = 0;
+ 
+ for (p = *glavap; p != NULL; ) 
+ {
+         if ((strncmp ((p->element).prezime, prezimePocetak, strlen (prezimePocetak)) == 0) &&
+         (strlen ((p->element).prezime) >= strlen (prezimePocetak))) 
+         {
+         if (p == *glavap) 
+         {
+               pp = (*glavap)->sljed;
+               free (*glavap);
+		       *glavap = pp;
+		       p = pp;
+		       brojac++;
+         }
+         else {		   
+		       for (pp = *glavap; pp->sljed != p; pp = pp->sljed);
+		       pp->sljed = p->sljed;
+		       free (p);
+		       p = pp->sljed;
+		       brojac++;
+          }
+     }   
+     else p = p->sljed;
+ }
+ return brojac;
+}    
+

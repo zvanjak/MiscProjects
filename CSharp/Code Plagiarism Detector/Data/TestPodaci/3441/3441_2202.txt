@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main() {
+
+	int n=0, bz=0, zz=0;
+	scanf ("%d", &n);
+	while (n != 0) {if (n<0) n*=(-1);
+			           do{ zz+=n%10;
+			               bz++;
+                           n/=10;} while (n!=0);
+			scanf ("%d", &n);}
+	printf ("%d ", bz);
+	printf ("%d", zz);
+	return 0; }

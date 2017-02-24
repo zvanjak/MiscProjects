@@ -1,0 +1,34 @@
+char *brojeve_u_znakove( int *polje, int duljina )
+{
+    char *niz;
+    int duljina_niza = 0, i, broj;
+
+    niz = (char*)malloc( sizeof(char) * ( duljina * 7 + 2 ) );
+
+    for( i=0 ; i<duljina ; i++ )
+    {
+        broj = polje[i];
+
+        if( broj == 0 )
+        {
+            niz[duljina_niza] = '0';
+            duljina_niza++;
+        }
+        else
+        {
+            while( broj != 0 )
+            {
+                niz[duljina_niza] = broj%10 + '0';
+                duljina_niza++;
+                broj/=10;
+            }
+        }
+    }
+
+
+    niz[ duljina_niza ] = '\0';
+    ++duljina_niza;
+    niz = (char*)realloc( niz, duljina_niza*sizeof(char) );
+
+    return niz;
+}

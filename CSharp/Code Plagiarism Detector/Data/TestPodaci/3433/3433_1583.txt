@@ -1,0 +1,20 @@
+#include <stdio.h>
+#define MAX 100
+
+int main(){
+	char znak[MAX];
+	int broj[MAX], i, j, n=0;
+	do{
+		do{
+			scanf("%c", &znak[n]);
+		}while(znak[n]==10);
+		scanf("%d", &broj[n]);
+		n++;
+	}while ((broj[n-1]>=0) && n<MAX);
+	for (i=0; i<n; i++){
+		for (j=0; j<broj[i]; j++){
+			printf("%c ", znak[i]);
+		}
+	}
+	return 0;
+}

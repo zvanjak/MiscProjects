@@ -1,0 +1,18 @@
+int* napraviPolje(int *A, int Na, int*B, int Nb, int* Nc){
+int *p = NULL;
+int i, j;
+short int manj;
+*Nc = 0;
+p= (int *) realloc (p, sizeof(int)*(1 + *Nc));
+for (i=0; i<Na; i++)
+{
+manj=0;
+for (j=0; j<Nb; j++) if (A[i]>B[j]) {manj=1; break;}
+if (!manj) {
+(*Nc)++;
+p= (int *) realloc (p, sizeof(int)*(1 + *Nc));
+p[*Nc-1]=A[i];
+}
+}
+return p;
+}

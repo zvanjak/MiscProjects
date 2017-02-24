@@ -1,0 +1,25 @@
+int veci_od(FILE *f, int n){
+
+struct natjecatelj{
+         int redni_br;
+         char prezime[20+1];
+         int bodovi;
+};
+
+struct natjecatelj s;
+
+int i=0;
+
+fseek(f,0L,SEEK_SET);
+
+ while( (fread(&s,sizeof(s),1,f))==1 ){
+
+  if(s.redni_br!=0){
+  	if(n<=s.bodovi){
+		++i;
+	}
+  }
+ }
+
+ return i;
+}

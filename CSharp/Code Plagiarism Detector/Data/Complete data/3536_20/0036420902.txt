@@ -1,0 +1,27 @@
+void UmetniPrijePrvogNeparnog (Stog *stog, int broj)
+{
+  Stog tmp;
+  int br=0, tst=0,i=0;
+
+
+  while((stog->Skini(&br))==1)
+  {
+    if( (br%2) != 0)
+    {
+      stog->Stavi(br);
+      stog->Stavi(broj);
+      break;
+    }
+    tmp.Stavi(br);
+    tst++;
+  }
+  if (tst==0)
+    return;
+
+  for(i=0;i<tst;i++)
+  {
+    tmp.Skini(&br);
+    stog->Stavi(br);
+  }
+  return;
+}

@@ -1,0 +1,10 @@
+#include <string.h>
+int br_prodanih(FILE *f, char *autor) {
+  int rjesenje = 0;
+  char naziv[30+1], ime[20+1]; int prodano;
+  
+  while( fscanf(f, "%s %s %d", naziv, ime, &prodano) == 3 ) 
+    if (strcmp( autor, ime ) == 0 ) rjesenje += prodano;
+    
+  return rjesenje;
+}

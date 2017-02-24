@@ -1,0 +1,20 @@
+#include<stdio.h>
+int main(){
+	int i,x,y,Ib,IIb,IIIb,IVb,I,II,III,IV;
+	Ib=IIb=IIIb=IVb=0;
+	i=0;
+	do{
+		if (i==100) break;
+		scanf("%d %d",&x,&y);
+		if ((x!=0)||(y!=0))
+		{
+			if ((x>=0)&&(y>=0)) {Ib++;}
+			if ((x<=0)&&(y>=0)) {IIb++;}
+			if ((x<=0)&&(y<=0)) {IIIb++;}
+			if ((x>=0)&&(y<=0)) {IVb++;}
+			i++;
+		}		
+	}while ((x!=0)||(y!=0));
+		printf("%d %d %d %d",Ib,IIb,IIIb,IVb);
+		return 0;
+}

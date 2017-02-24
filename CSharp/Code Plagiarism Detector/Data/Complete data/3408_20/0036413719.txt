@@ -1,0 +1,17 @@
+char *Spoji(char *niz1, char *niz2)
+{
+     char *niz; int i=0;
+     niz = (char*) malloc((strlen(niz1) + strlen(niz2) + 1) * sizeof(char));
+     niz[0] = 0;
+	 do {
+	    if (niz1[i]=='\0' && niz2[i]=='\0') return niz;
+            if (niz1[i]!='\0') strncat(niz, niz1+i, 1);
+            if (niz2[i]!='\0') strncat(niz, niz2+i, 1);
+            i++;
+	    }
+         while (niz1[i-1]!='\0' && niz2[i-1]!='\0');
+     
+     if (niz1[i-1]=='\0') strcat(niz, niz2+i);
+	 if (niz2[i-1]=='\0') strcat(niz, niz1+i);
+	 return niz;
+}

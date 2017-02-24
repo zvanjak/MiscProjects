@@ -1,0 +1,12 @@
+float niz(int i){
+	float Ni, a, b;
+	kontrola();
+	if(i<=2 && i>=0){
+		Ni=(float)i+1;
+		return Ni;
+	}
+	a=niz(i-1);
+	b=niz(i-3);
+	Ni=(a-b)/(a+b);
+	return Ni;
+}

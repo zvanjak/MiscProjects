@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <math.h>
+int main (){
+	int n, i, uvjet=1;
+	double x;
+	double lnx=0;
+
+	while (uvjet){
+		scanf("%d",&n);
+		if( n<1 || n>100 ){
+			printf("n nije valjan \n");
+                        exit(1);
+				}
+		else {
+			uvjet=0;
+				}
+		} 
+	uvjet=1;
+	while (uvjet){
+		scanf("%lf", &x);
+		if ((x<0) || (x>2) ||(x==0) || (x==2)) 
+		{
+			printf("x nije valjan\n");
+		        exit(1);
+		}
+		
+		else 
+		{
+			 uvjet=0;
+			
+		}
+	}
+
+	for ( i=1; i<=n; i++) {
+	lnx+=(pow(-1,i+1)*pow(x-1,i))/i;
+	}
+	printf("%d %.5f %.12lf \n", n, x, lnx);
+	}

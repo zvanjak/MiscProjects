@@ -1,0 +1,12 @@
+int info(FILE *f, int redni_br) {
+struct natj {
+	int redni_b;
+	char prezime[21];
+	int bodovi;
+} zapis;
+	fseek(f,(long)(redni_br-1)*sizeof(zapis),SEEK_SET);
+	if (fread(&zapis, sizeof(zapis), 1, f)!=1) return -1;
+	if (zapis.redni_b==0) return -1;
+	if (zapis.bodovi<100) return 0;
+	return 1;
+}

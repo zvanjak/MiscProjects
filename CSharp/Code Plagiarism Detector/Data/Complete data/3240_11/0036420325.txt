@@ -1,0 +1,35 @@
+#include<stdio.h>
+int main()
+{
+        int n,m,p,i=0,j,k=0;
+	int djelitelj=1;
+	char niz[32];
+	scanf("%d",&n);
+	if (n>0)
+	{
+		m=n;
+		while (m!=0)
+		{
+			i++;
+			m=m/10;
+		}
+		for(j=0;j<i-1;j++)
+			djelitelj*=10;
+                for(j=0;j<i;j++)
+		{ 
+			p=n/djelitelj;
+			niz[k]=p+48;
+			k++;
+			niz[k]=' ';
+			n%=djelitelj;
+			djelitelj/=10;
+			k++;
+		}
+
+		for(j=0;j<k-1;j++)
+			printf("%c",niz[j]);	
+	}
+	else 
+		printf("n nije pozitivan");	
+	return 0;
+}

@@ -1,0 +1,6 @@
+Krug fun4(Pravokutnik p)
+{
+Tocka temp(p.getDLkut().X+p.getSirina()/2, p.getDLkut().Y+p.getVisina()/2);
+Krug t2(temp, sqrt(pow(p.getSirina(),2)+pow(p.getVisina(),2))/2);
+return t2;
+}

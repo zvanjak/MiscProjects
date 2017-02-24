@@ -1,0 +1,33 @@
+#include <stdio.h>
+int main(){
+	int polje [100];
+	int i, c, n, brojacn, brojacd;
+
+	do{
+		scanf("%d", &n);
+	}while (n<1 || n>100);
+
+	for (i=0; i<n; i++) {
+		scanf ("%d", &polje[i]);
+	}
+
+	brojacn=0;
+	brojacd=0;
+
+	do {
+		scanf ("%d %d", &i, &c);
+		if (i>=n)
+			continue;
+		else if (!c)
+			continue;
+		else {
+			polje[i]= polje[i] / c;
+			brojacd += 1;
+			if (!polje[i])
+				brojacn += 1;
+		}
+	} while (i<n);
+	
+	printf ("%d %d", brojacn, brojacd);
+	return 0;
+}

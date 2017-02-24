@@ -1,0 +1,19 @@
+Stog* PrepisiRedUStog(Red *red){
+
+	Stog *stog;
+	int element, p=1, i;
+
+	if(red->SkiniIzReda(&element)){
+		stog=PrepisiRedUStog(red);
+		for(i=element/2;i>1;i--)
+			if(!(element%i))
+				p=0;
+		if(p)
+			stog->Stavi(element);
+	}
+        else{
+                Stog *novi=new Stog();
+                return novi;
+        }
+        return stog;
+}

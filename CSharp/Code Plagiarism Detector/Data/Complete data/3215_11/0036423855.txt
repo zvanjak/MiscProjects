@@ -1,0 +1,20 @@
+#include<stdio.h>
+int main(void)
+{
+int a,b,c;
+c=0;
+b=0;
+do
+{
+scanf("%d",&a);
+if (a<0) continue;
+if((a>0)&&(a!=0))
+{
+if (a%2!=0) b=b+1;
+else
+c=c+1;
+}
+}while(a!=0);
+printf("%d %d",c,b);
+return 0;
+}

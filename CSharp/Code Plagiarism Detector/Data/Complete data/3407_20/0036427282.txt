@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+#include<ctype.h>
+
+char *SamoSamoglasnici(char *ulazni_niz){
+    char *p;
+    int i,j=0;
+    char a;
+    if (ulazni_niz==NULL) return NULL;
+    if (!(strlen(ulazni_niz))) return NULL;
+    p=(char*)malloc(strlen(ulazni_niz));
+    for(i=0;i<strlen(ulazni_niz);i++){
+      if (isalpha(ulazni_niz[i])){
+         a=ulazni_niz[i];
+		 if (a=='a' || a=='e' || a=='i' || a=='o' || a=='u'||a=='A'||a=='E'||a=='I'||a=='O'||a=='U'){
+			 *(p+(j++))=ulazni_niz[i];}
+         }
+      }
+    p[j]='\0';
+    return p;
+}

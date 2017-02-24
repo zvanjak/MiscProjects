@@ -1,0 +1,25 @@
+#include<stdio.h>
+#define MAX 100
+int main(){
+        char niz[MAX], znak;
+        int broj, i=0, j;
+
+        do {
+                scanf("%c%d", &znak, &broj);
+                if(broj == -1) {
+                        niz[i]='\0';
+                        break;
+                } else {
+                        niz[i++]=znak;
+                        niz[i++]=broj+48;
+                }
+        } while (i<100);
+        i=0;
+        while(niz[i]!='\0') {
+                znak=niz[i++];
+                broj=niz[i++] - 48;
+                for(j=0; j<broj; j++) printf("%c ", znak);
+        }
+        return 0;
+}
+

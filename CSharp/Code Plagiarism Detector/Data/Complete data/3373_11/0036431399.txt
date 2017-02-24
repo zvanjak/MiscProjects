@@ -1,0 +1,13 @@
+#include <stdio.h>
+int main ()
+{
+	int x,y,min;
+	scanf("%d %d", &x, &y);
+	if(x>99&&x<1000 && y>99&&y<1000){
+		if(x<y) min=x;
+		else if(y<x) min=y;
+		else min=x;
+		printf("%o",min);
+	}
+	return 0;
+}

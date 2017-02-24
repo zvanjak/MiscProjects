@@ -1,0 +1,17 @@
+int *Find3Max(int *p,int n){
+  int *veci, i;
+  veci=malloc(3*sizeof(int));
+  veci[0]=p[0];
+  for(i=1;i<n;i++) if(p[i]<veci[0]) {veci[0]=p[i]; veci[1]=p[i]; veci[2]=p[i];}
+  for(i=1;i<n;i++){ 
+   if(p[i]>veci[0]){
+     veci[2]=veci[1];
+     veci[1]=veci[0];
+     veci[0]=p[i];
+   } else if(p[i]>veci[1]){
+     veci[2]=veci[1];
+     veci[1]=p[i];
+   } else if(p[i]>veci[2]) veci[2]=p[i];
+  }
+  return veci;
+}

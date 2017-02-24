@@ -1,0 +1,27 @@
+#include<stdio.h>
+int main(){
+	int broj, ostatak1, ostatak2, ostatak3, ostatak4, x;
+	scanf("%d",&broj);
+	if (broj >= 100 && broj < 1000) {
+		ostatak1 = broj%8;
+		broj=broj/8;
+		ostatak4 = 0;
+		ostatak3 = 0;
+			if (broj != 0) {
+				ostatak2 = broj%8;
+				broj=broj/8;
+				if (broj != 0) {
+					ostatak3 = broj%8;
+					broj=broj/8;
+					if (broj != 0) {
+						ostatak4 = broj%8;
+						broj=broj/8;
+					}
+				}
+			}
+			
+	}
+x = ostatak4*1000 + ostatak3*100 + ostatak2*10 + ostatak1*1;
+printf ("%d", x);
+return 0;
+}

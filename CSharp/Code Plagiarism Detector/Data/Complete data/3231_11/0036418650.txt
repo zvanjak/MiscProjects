@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include<math.h>
+
+int main()
+{
+	int n,i;
+	double DT=0;
+		
+	scanf("%d",&n);
+	if (n<1 || n>30)	
+	{
+		printf("n nije valjan");
+	}
+
+	else
+	
+	{	
+	   for(i=0;i<n;i++)
+		{
+		if ((i+1)%2==0) 
+		   {
+			 DT-=1/pow(2,i); 
+		   }
+		   else
+		   {
+             DT+=1/pow(2,i);
+		   }     
+		
+	}
+		printf("%.12f",DT);
+	}
+return 0;
+}

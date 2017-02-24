@@ -1,0 +1,40 @@
+int izbaciZ(zapis **glava){
+	zapis *p; zapis *stari;
+	float prosijek=0; float br=0; int brojac=0;
+
+	p=*glava;
+	while (p != NULL){
+		p=p->sljed;
+		prosijek +=p->pros;
+		br++;
+	}
+	prosijek= prosijek / br;
+
+	p=*glava;
+	
+	while ((*glava)!=NULL){
+		if ((*glava)->pros<prosijek && ((*glava)->spol == 'Z' || (*glava)->spol == 'z')){		
+			brojac++;
+		stari = *glava;
+		*glava=(*glava)->sljed;
+		free (stari);
+		}
+	}
+
+	if(*glava){
+
+		p=*glava;
+        while (p->sljed){
+			if (p->sljed->pros<prosijek && (p->sljed->spol =='Z' || p->sljed->spol == 'z')){
+				brojac++;
+				stari=p->sljed;
+				p->sljed=p->sljed->sljed;
+				free (stari);
+			}else{
+				p = p->sljed;
+			}
+		}
+	}
+
+	return brojac;
+}

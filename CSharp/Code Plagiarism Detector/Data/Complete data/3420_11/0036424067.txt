@@ -1,0 +1,38 @@
+#include<stdio.h>
+int main()
+{
+	int g,h,mr,ms,p[20][5],i,j,s=0,z=0;
+do 
+{	scanf("%d %d",&mr,&ms);
+}while((mr<1)||(mr>20)||(ms<1)||(ms>5));
+	for(g=0;g<mr;g++){
+		for(h=0;h<ms;h++){
+			scanf("%d",&p[g][h]);
+		}	}
+	do
+	{scanf("%d %d",&i,&j);}
+	while((i<0)||(i>(mr-1))||(j<0)||(j>(mr-1)));
+	for(g=0;g<mr;g++){
+       for(h=0;h<ms;h++){
+				if((g!=i)&&(g!=j))	 
+			 printf("%d",p[g][h]);
+			
+		 else {
+        	if(i==g){
+				printf("%d",p[j][h]); 	} 
+			if(j==g)
+				printf("%d",p[i][h]); }					
+		}		
+	}
+s=0;
+op:
+for(g=s;g<mr;g++){
+       for(h=0;h<ms;h++){
+		z+=p[g][h];
+	   }
+	   printf("%d ",z);
+	   z/=z+1;
+	   ++s;
+	   if(s<mr) goto op;}
+return 0;
+}

@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <math.h>
+int main()
+{	int n, i=0;
+	double pom=0;
+	scanf ("%d", &n);
+	if (n>=1 && n<=100) { 
+		do 
+		{
+			i++;
+			pom+=1./pow(i,2);
+		}
+		while (i<n);
+	printf ("%.12f", sqrt(6*pom));
+	} else printf ("n nije valjan");
+return 0;
+}

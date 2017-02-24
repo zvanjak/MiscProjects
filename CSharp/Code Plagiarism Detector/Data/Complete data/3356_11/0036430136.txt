@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main() {
+    int n,m,x1,x2,x3;
+    char c;
+    scanf ("%d %d %c", &n, &m, &c);
+    x1=n/100;
+    x2=(n%100)/10;
+    x3=n%10;
+    if (n<0 || m<1 || m>3 || c<'L' || c>'R' || c>'L' && c<'R') {printf ("Error"); }
+    else {if (m==3) printf ("%d", n);
+          else {if (m==2 && c=='L' || m==1 && c=='R') {n=x3*100+x1*10+x2; printf ("%d", n);}
+                else {n=100*x2+10*x1+x3; printf ("%d", n);}}}
+return 0;
+    }

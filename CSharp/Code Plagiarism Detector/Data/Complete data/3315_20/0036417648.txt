@@ -1,0 +1,16 @@
+float prosjek (FILE *f)			{
+	struct
+	{
+	    char naziv[30+1];
+	    char autor[20+1];
+	    int prod;
+	} zapis;
+	int prodano = 0, br = 0;
+	while ( fscanf(f, "%s%s%d", zapis.naziv, zapis.autor, &zapis.prod) == 3 )
+	{
+		prodano += zapis.prod;
+		br++;
+	}
+	if ( br == 0 ) return 0;
+	return (((float)(prodano))/((float)(br)));
+}

@@ -1,0 +1,10 @@
+int br_prodanih(FILE *f, char *autor)
+{
+  struct album a;
+  int br = 0;
+  while (fscanf(f, "%s %s %d", a.naziv, a.autor, &a.prodano) != EOF)
+  {
+    if (strcmp(a.autor,autor) == 0) br = br + a.prodano;
+  }
+  return br;
+}

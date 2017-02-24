@@ -1,0 +1,35 @@
+#include<stdio.h>
+#include<math.h>
+int main () {
+	int broj=1, n=0,brojcica, br,test=1, i=0,j,k, temp,polje[100]={0};
+int pocetak;
+
+	while (test>0){
+		scanf("%d",&polje[i]);
+		if (polje[i]<0)
+			test=0;
+		i++;
+
+
+	}
+
+	for (j=0; j<i-1;j++){
+		brojcica=polje[j];
+			br=brojcica;
+			n=0;
+			while (brojcica>0){
+				brojcica=brojcica/10;
+				n++;}
+			pocetak = 1;
+			for (k=n; k>0; k--) {
+				temp= br%10;
+                                if(pocetak && temp > 0)
+                                    pocetak = 0;
+                                if(!pocetak)
+ 				    printf("%d",temp);
+				br/=10;
+			}
+		printf(" ");
+	}	
+return 0;
+}

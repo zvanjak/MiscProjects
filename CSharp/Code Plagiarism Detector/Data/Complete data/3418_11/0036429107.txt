@@ -1,0 +1,22 @@
+#include <stdio.h>
+#define MAX 100
+int main () {
+	int n=0, i, p[MAX], x, bn=0, bd=0;
+	while (n<1 || n>100) scanf("%d ", &n);
+	for (i=0; i<n; i++) scanf("%d ", &p[i]);
+
+	do {
+		scanf("%d %d", &i, &x);
+		if (i<n) {
+			if (x==0) continue;
+			else { p[i]= p[i]/x; 
+				   bd++;	
+		           if (p[i]==0) bn++;
+			     }
+		}
+	}
+	while(i<n);
+
+	printf("%d %d", bn, bd);   	
+	return 0;
+}

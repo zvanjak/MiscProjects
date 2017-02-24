@@ -1,0 +1,15 @@
+int veci_od(FILE *f, int n)
+{  int broj_v=0;int br=0;int bod;
+	fseek(f,0L,SEEK_SET);
+	while(fread(&br,sizeof(int),1,f))
+	{	if(br>0)
+	{		fseek(f,20+1,SEEK_CUR);
+			fread(&bod,sizeof(int),1,f);
+			if (bod>=n)
+				broj_v++;
+	}
+		else
+			fseek(f,20+1+sizeof(int),SEEK_CUR);
+		}
+	return broj_v;
+}

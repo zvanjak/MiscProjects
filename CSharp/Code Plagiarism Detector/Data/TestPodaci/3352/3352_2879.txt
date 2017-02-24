@@ -1,0 +1,12 @@
+int veci_od (FILE *f, int n) {
+    struct {
+        int redni_br; char prezime[20+1]; int bodovi;
+    } nat;
+    int br=0;
+
+    while (!feof(f)) {
+        fread(&nat, sizeof(nat), 1, f);
+        br += (nat.redni_br && nat.bodovi >= n ? 1 : 0);
+    }
+    return br;
+}

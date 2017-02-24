@@ -1,0 +1,13 @@
+Tocka fun5(Trokut t) {
+	Tocka KoordinateT1, KoordinateT2, KoordinateT3, KoordinateTezisnice;
+
+	KoordinateT1 = t.getA();
+	KoordinateT2 = t.getB();
+	KoordinateT3 = t.getC();
+
+	KoordinateTezisnice.X = (KoordinateT1.X + KoordinateT2.X + KoordinateT3.X)/3.;
+	KoordinateTezisnice.Y = (KoordinateT1.Y + KoordinateT2.Y + KoordinateT3.Y)/3.;
+
+	return KoordinateTezisnice;
+
+}

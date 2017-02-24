@@ -1,0 +1,11 @@
+Tocka fun5(Trokut t)
+{
+	Tocka Teziste, a, b, c;
+	a=t.getA();
+	b=t.getB();
+	c=t.getC();
+	Teziste.X=(a.X+b.X+c.X)/3;
+	Teziste.Y=(a.Y+b.Y+c.Y)/3;
+
+return Teziste;
+}

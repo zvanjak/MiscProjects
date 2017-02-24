@@ -1,0 +1,20 @@
+#include<stdio.h>
+main(){
+int a,b,ja,da,sa,ta,jb,db,sb,tb,zb,raz;
+scanf("%d %d", &a,&b);
+if((a>999 && a<10000)&&(b>999 && b<10000)){
+ja=a%10;
+da=((a%100)-ja)/10;
+sa=((a%1000)-(a%100))/100;
+ta=a/1000;
+jb=b%10;
+db=((b%100)-jb)/10;
+sb=((b%1000)-(b%100))/100;
+tb=b/1000;
+if((ja==tb)&&(da==sb)&&(sa==db)&&(ta==jb)){
+zb=ja+da+sa+ta;
+printf("\n %d",zb);  }
+else  {
+raz=a-b;
+printf("\n %d",raz);
+} } }

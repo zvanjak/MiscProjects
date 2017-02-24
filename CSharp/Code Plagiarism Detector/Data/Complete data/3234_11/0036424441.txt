@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <math.h>
+int main () {
+	int n;
+        double g,d,sum=0,i=0;
+/*	printf("\n Unesi broj clanova reda n: \n");  */
+	scanf("%d",&n);
+	if (n<1 || n>100)
+		printf("n nije valjan");
+	else {
+		while (i<n) {
+		    ++i;
+                    d=(1/(pow(i,2)));
+		    sum+=d;
+		}
+		sum*=6;
+		g=pow(sum,0.5);
+	
+	printf("%.12lf",g);
+	}
+	return 0;
+}
+
+
+
+
+
+

@@ -1,0 +1,30 @@
+#include <stdio.h>
+#define min 1
+#define max 30
+
+int main()
+{
+	int n ,i, br, a;
+	double e, fakt;
+	scanf("%d",&n);
+		if((n>max) || (n<min)){
+			printf("n nije valjan");
+				return 0;
+		}
+		e=1;
+		for(i=1;i<=n;i++){
+			br=-1;
+			fakt=1;
+			for(a=0;a<=i;a++){
+				br*=-1;
+			}
+			for(a=1;a<=i;a++){
+				fakt*=a;
+			}
+			e +=br*(1./fakt);
+		}
+		printf("%.12f",(1./e));
+		return 0;
+}
+
+

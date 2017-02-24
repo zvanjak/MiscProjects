@@ -1,0 +1,50 @@
+# include <stdio.h>
+# define MAXRED 20
+# define MAXSTUP 5
+int main () {
+	int i, j, ms, mr, brojac, brojacneprostih, brred=0, brstup=0;
+	int k, mat[MAXRED][MAXSTUP];
+	do {
+		scanf("%d %d", &mr, &ms);
+	} while(mr<1 || mr>MAXRED || ms<1 || ms>MAXSTUP);
+	for(i=0;i<mr;i++){
+		for(j=0;j<ms;j++){
+			scanf("%d", &mat[i][j]);
+		}
+	}
+	for(i=0;i<mr;i++){
+		brojac=0;
+		brojacneprostih=0;
+		for(j=0;j<ms;j++){
+			if ((mat[i][j])==1 || (mat[i][j])==0) brojac++;
+			if(mat[i][j]>2){
+			for(k=2;k<mat[i][j];k++)
+				if(mat[i][j]%k==0)
+					brojac++;
+			}
+			if(brojac!=0) brojacneprostih++;
+			brojac=0;
+			}
+		if(brojacneprostih!=ms)
+			brred++;
+	}
+	for(j=0;j<ms;j++){
+		brojac=0;
+		brojacneprostih=0;
+		for(i=0;i<mr;i++){
+			if ((mat[i][j])==1 || (mat[i][j])==0) brojac++;
+			if(mat[i][j]>2){
+			for(k=2;k<mat[i][j];k++)
+				if(mat[i][j]%k==0)
+					brojac++;
+			}
+			if(brojac!=0) brojacneprostih++;
+			brojac=0;
+		}
+		if(brojacneprostih!=mr)
+			brstup++;
+	}
+	
+	printf("%d %d", brred, brstup);
+	return 0;
+}

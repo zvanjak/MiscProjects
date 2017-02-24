@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <ctype.h>
+int main(void)
+{
+	char c[10000],prvo,zadnje;
+	int i;
+	i=0;
+	prvo='Z';
+	zadnje='A';
+	do
+	{
+		scanf("%c",&c[i]);
+		if (!isupper(c[i])) break;
+		if (c[i]>=zadnje) zadnje=c[i];
+		if (c[i]<=prvo) prvo=c[i];
+		i++;
+	}
+	while (i);
+	if (!i) printf("-1");
+		else printf("%c %c",prvo,zadnje);
+	return 0;
+}

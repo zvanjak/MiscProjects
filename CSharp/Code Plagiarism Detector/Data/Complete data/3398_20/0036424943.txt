@@ -1,0 +1,20 @@
+int *napraviPolje(int *A, int Na, int a, int b, int *Nc) {
+	int *C = NULL, count =0;
+	
+	if (a>b) return 0;
+
+	while (Na) {
+		if ( A[Na - 1]>b || A[Na - 1]< a) {
+
+			++count;
+
+			C = realloc(C, count * sizeof(int));
+
+			C[count-1] = A[Na - 1];
+		}
+	--Na;
+	}
+
+	*Nc = count;
+	return C;
+	}

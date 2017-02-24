@@ -1,0 +1,16 @@
+char *brojeve_u_znakove(int *polje,int n) {
+	char cpolje[70],znak=' ',c;
+    int i,z;
+    for (i=1;i<=n;i=i+1) {
+		znak=" ";
+		while (polje[i]>0) {
+			z=polje[i]%10;
+            polje[i]=polje[i]/10;
+            c=z+48;
+            strcpy(c,znak);
+		}
+		strcpy(" ",znak);
+		cpolje[i]=znak;
+	}
+    return cpolje;
+}

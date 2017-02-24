@@ -1,0 +1,15 @@
+int veci_od(FILE *f, int granica) {
+int x=0;
+
+struct album {
+char naziv[31];
+char autor[21];
+int prodano;
+} osoba;
+
+while (fread(&osoba, sizeof(osoba), 1, f)==1) {
+if (osoba.prodano>=granica)
+x++; }
+
+return x;
+}

@@ -1,0 +1,59 @@
+class SortRazlPolje {
+  int *polje;
+  int kapacitet;
+  int popunjeno;
+  public:
+    SortRazlPolje(); 
+    int Dodaj(int Broj);
+    int *VratiSortPolje(int &n);
+    ~SortRazlPolje();
+};
+
+SortRazlPolje::SortRazlPolje()
+{
+  popunjeno=0;
+  kapacitet=50;
+  polje=(int *)malloc(sizeof(int)*kapacitet); 
+  
+}
+
+int SortRazlPolje::Dodaj(int Broj)
+{
+  int i;
+  if (popunjeno==kapacitet)
+  {
+    kapacitet*=2;
+    polje=(int *)realloc(polje,sizeof(int)*kapacitet);
+  }
+  if (polje==NULL) return 0; 
+  for (i=0;i<popunjeno;i++)
+    if (polje[i]==Broj)
+      return 1;
+  polje[popunjeno++]=Broj;
+  return 1;
+}
+
+int *SortRazlPolje::VratiSortPolje(int &n)
+{ 
+  n=popunjeno;
+  if (n==0) return NULL; 
+  int zamjene=1,zamjena,i;
+  while (zamjene)
+  {
+    zamjene=0;
+    for (i=0;i<popunjeno-1;i++)
+      if (polje[i]<polje[i+1])
+    {
+      zamjena=polje[i];
+      polje[i]=polje[i+1];
+      polje[i+1]=zamjena;
+      zamjene=1;
+    }
+  }
+  return polje;
+}
+
+SortRazlPolje::~SortRazlPolje()
+{
+  free(polje); 
+}

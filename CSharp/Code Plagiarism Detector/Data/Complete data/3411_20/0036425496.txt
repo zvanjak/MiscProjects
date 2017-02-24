@@ -1,0 +1,19 @@
+char *BezDuplikata(char * ulazni){
+    int i = 0, kol = 0, j, k;
+    char *result = NULL;
+    if (ulazni == NULL) return NULL;
+   
+    while (ulazni[i] != '\0'){
+        k = 0;
+        for (j = 0; j < i; j++)
+           if (ulazni[j] == ulazni[i]) k = 1;
+        if (!k) {
+            result = (char *) realloc(result, (kol+1)*sizeof(char));
+            result[kol] = ulazni[i];
+            kol++;   
+        }
+        i++;
+    }
+    result[kol] = 0;
+    return result;
+}

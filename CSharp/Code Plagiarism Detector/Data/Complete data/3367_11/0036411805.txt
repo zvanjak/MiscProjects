@@ -1,0 +1,19 @@
+#include<stdio.h>
+int main(){
+    char a,b;
+    int c;
+    scanf("%c %c",&a,&b);
+    if(a>='A' && a<='F')
+        a=a-55;
+    else if (a>='0' && a<='9')
+        a-=48;
+    
+    if(b>='A' && b<='F')
+        b-=55;
+    else if(b>='0' && b<='9')
+        b-=48;
+    
+    c=a*16+b;
+    printf("%d",c);
+    getch();
+}

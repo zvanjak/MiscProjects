@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main () {
+	int n , i = 2;
+	double x = 0 ;
+	scanf ("%d" , &n);
+	if (n<1 || n>1000) { 
+		printf ("n nije valjan\n");
+	} else { 
+		do {
+			x = x + 1/ (double)((i-1)*(i+1));
+			i++ ;
+			n-- ;
+		} while (n != 0);
+		printf ("%.12lf\n" , x);
+	}
+   return 0 ;
+}

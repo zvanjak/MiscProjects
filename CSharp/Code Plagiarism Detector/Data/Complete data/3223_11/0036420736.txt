@@ -1,0 +1,25 @@
+#include<stdio.h>
+int max,min,z=1,i,x,k=0;
+int y[100];
+int main () {
+    do {
+        scanf("%d", &x);
+        k=k+1;
+        y[k]=x;
+        if ((x>0) && (x%4==0)) {
+                  z=0;
+                  }
+        }
+    while (z);
+    min=214783647;
+    for (i=1; i<=k; i++) {
+        if (y[i]>max) {
+                      max=y[i];
+                      }
+        if (y[i]<min) {
+                      min=y[i];
+                      }
+                      }
+    printf("%d %d", max, min);
+    return 0;
+}

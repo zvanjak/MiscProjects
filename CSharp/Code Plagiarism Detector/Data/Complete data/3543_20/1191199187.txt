@@ -1,0 +1,29 @@
+void obrni (zapis **glava) {
+zapis *tmp,*tmp2;
+zapis *novi;
+
+
+tmp = (*glava)->sljed;
+novi= *glava;
+novi->sljed = NULL;
+*glava=novi;
+
+while (1){
+tmp2=*glava;
+*glava=tmp; 
+
+if(!((*glava)->sljed))
+{ 
+novi= *glava;
+novi->sljed = tmp2;
+*glava=novi;
+break; 
+}
+
+tmp = (*glava)->sljed;
+novi= *glava;
+novi->sljed = tmp2;
+*glava=novi;
+}
+
+}

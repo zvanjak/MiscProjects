@@ -1,0 +1,27 @@
+#include <iostream>
+
+using namespace std;
+
+int Memoriraj(Radio& radio) {
+	int brMemoriranih = 0;
+	Stanica stanica, prva;
+	
+	prva = radio.TraziSljedecu();
+	if (strcmp(prva.RDS(), "") != 0) {
+		brMemoriranih++;
+		radio.MemorirajStanicu(prva, brMemoriranih);
+	}
+
+	while (brMemoriranih < 6) {
+		stanica = radio.TraziSljedecu();
+		
+		if (prva == stanica) break;
+		
+		if (strcmp(stanica.RDS(), "") != 0) {
+			brMemoriranih++;
+			radio.MemorirajStanicu(stanica, brMemoriranih);
+		}
+	}
+
+	return brMemoriranih;
+}

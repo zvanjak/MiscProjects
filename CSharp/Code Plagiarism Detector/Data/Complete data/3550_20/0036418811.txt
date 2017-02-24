@@ -1,0 +1,63 @@
+int izbacinaj(zapis **glava)
+{
+	zapis *tmp, *tmp2;
+	int cnb = 0, cnl = 0;
+	float najb, najl;
+
+	if (*glava == 0) return 0;
+
+	tmp = (*glava)->sljed;
+	najb = najl = (*glava)->pros;
+	while (tmp != 0)
+	{
+		if (tmp->pros > najb) najb = tmp->pros;
+		if (tmp->pros < najl) najl = tmp->pros;
+		tmp = tmp->sljed;
+	}
+
+	tmp = (*glava);
+	tmp2 = tmp;
+	while (tmp != 0)
+	{
+		if ( (tmp->pros == najb) && (!cnb) )
+		{
+			if (tmp == (*glava))
+			{
+				(*glava) = (*glava)->sljed;
+				free (tmp);
+				tmp = (*glava);
+			}
+			else
+			{
+				tmp2->sljed = tmp->sljed;
+				free(tmp);
+				tmp = tmp2;
+			}
+			cnb = 1;
+		}
+
+		if ( (tmp->pros == najl) && (!cnl) )
+		{
+			if (tmp == (*glava))
+			{
+				(*glava) = (*glava)->sljed;
+				free(tmp);
+				tmp = (*glava);
+			}
+			else
+			{
+				tmp2->sljed = tmp->sljed;
+				free(tmp);
+				tmp = tmp2;
+			}
+			cnl = 1;
+		}
+
+		if ( cnb && cnl ) return 2;
+
+		tmp2 = tmp;
+		tmp = tmp->sljed;
+	}
+
+	return (cnb + cnl);
+}	

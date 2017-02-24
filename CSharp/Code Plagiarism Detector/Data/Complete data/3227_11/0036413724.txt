@@ -1,0 +1,49 @@
+#include <stdio.h>
+
+int main () {
+
+	int n, x, y;
+	double s1=0, s2=0, sx=0, sy=0, s=0, pi;
+
+	//printf("Ucitaj n:");
+	scanf("%d", &n);
+
+	if ((n>0)&&(n<501)){
+		if((n%2)==0){
+			for(x=1; x<=(n/2); x++){
+				s1=1./(4*x-3);
+				sx=sx+s1;}
+			
+			for(y=1; y<=(n/2); y++){
+				s2=1./(4*y-1);
+				sy=sy+s2;}
+			
+			s=sx-sy;
+			
+			pi=4*s;
+			printf("%.12f", pi);
+		}
+		else{
+			
+			for(x=1; x<=(n/2+1); x++){
+				s1=1./(4*x-3);
+				sx=sx+s1;}
+			
+			for(y=1; y<=(n/2); y++){
+				s2=1./(4*y-1);
+				sy=sy+s2;}
+			
+			s=sx-sy;
+			
+			pi=4*s;
+			printf("%.12f", pi);
+	}
+	}
+	else{
+		printf("n nije valjan");
+	}
+
+
+
+	return 0;
+}

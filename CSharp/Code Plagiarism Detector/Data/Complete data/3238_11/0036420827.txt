@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <math.h>
+int main() 
+{
+	int n, i=0;
+	float x;
+	double pom=0;
+	scanf ("%f", &x);	
+	n=(int)x;
+if (x-n) {printf ("broj nije valjan");
+return 0;}
+
+	if (n>=1 && n<=25) { 
+		do 
+		{
+			i++;
+			pom+=1./pow(i,8);
+		}
+		while (i<n);
+		printf ("%.12f", pow((9450*pom),.125));
+		} else printf ("n nije valjan");
+return 0;
+}

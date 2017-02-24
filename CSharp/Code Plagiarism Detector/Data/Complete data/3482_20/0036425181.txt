@@ -1,0 +1,26 @@
+MjeracProsjecneTemperature::MjeracProsjecneTemperature(Termometar *t)
+{
+	this->t = t;
+}
+
+double MjeracProsjecneTemperature::Prosjek(int n, int *min, int *max)
+{
+	double ukupno;
+	int temperatura, i;
+	if (n <= 0)
+		return 0.0;
+
+	temperatura = this->t->Ocitaj();
+	ukupno = *min = *max = temperatura;
+
+	for (i=1; i<n; i++)
+	{
+		temperatura = this->t->Ocitaj();
+		if (temperatura < *min)
+			*min = temperatura;
+		if (temperatura > *max)
+			*max = temperatura;
+		ukupno += temperatura;
+	}
+	return (ukupno / n);
+}

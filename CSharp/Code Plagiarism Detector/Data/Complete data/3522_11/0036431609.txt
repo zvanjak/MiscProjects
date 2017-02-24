@@ -1,0 +1,63 @@
+void ConvertFromXML (char * inputField, char * outputField) {
+char *tp,*p1,*p2, ps[2]= "_";
+	strcpy(outputField, "");
+while (strstr(inputField, "<osoba>") != NULL) {
+	tp = strstr(inputField, "<ime>");
+	if (tp !=NULL) {
+		tp += strlen ("<ime>");
+		while (isspace(*tp))
+			tp++;
+		p1=tp;
+		while( *tp!='<') tp++;
+		tp--;
+		while (isspace(*tp)) tp--;
+		p2=tp;
+		strcat(outputField, "#");
+		while(p1<=p2) {
+			ps[0]= *p1;
+			strcat(outputField, ps);
+			p1++;
+		}
+	}
+    tp = strstr(inputField, "<prezime>");
+	if (tp != NULL) {
+		tp += strlen ("<prezime>");
+		while (isspace (*tp))
+			tp++;
+		p1=tp;
+		while( *tp!='<') tp++;
+		tp--;
+		while (isspace(*tp)) tp--;
+		p2=tp;
+
+		strcat (outputField, "#");
+		while(p1<=p2){
+			ps[0] = *p1;
+			strcat (outputField, ps);
+			p1++;
+			
+		}
+	}
+	tp= strstr(inputField, "<jmbg>");
+	if (tp != NULL) {
+		tp += strlen ("<jmbg>");
+		while (isspace (*tp))
+			tp++;
+		p1=tp;
+		while( *tp!='<') tp++;
+		tp--;
+		while (isspace(*tp)) tp--;
+		p2=tp;
+		strcat (outputField, "#");
+		while(p1<=p2) {
+			ps[0]= *p1;
+			strcat (outputField, ps);
+			p1++;
+		}
+		strcat (outputField, "#\n");
+
+	}
+	inputField= strstr (inputField, "</osoba>");
+	inputField += strlen("</osoba>"); 
+}
+}

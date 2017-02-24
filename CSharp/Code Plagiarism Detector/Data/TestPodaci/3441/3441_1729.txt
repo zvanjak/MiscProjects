@@ -1,0 +1,23 @@
+#include <stdio.h>
+int main(void)
+{
+int x,sum1,sum2;
+sum1=0;
+sum2=0;
+while(1)
+{
+scanf("%d",&x);
+if(!x)
+break;
+if(x < 0)
+x = -x;
+while (x)
+{
+sum2 += x % 10;
+sum1++;
+x /= 10;
+}
+}
+printf("%d %d",sum1,sum2);
+return 0;
+}

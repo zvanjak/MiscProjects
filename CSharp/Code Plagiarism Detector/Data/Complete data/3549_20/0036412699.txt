@@ -1,0 +1,4 @@
+ void OOPStogURedListom(atom2 **glava, atom2 **rep, Stog *stog){
+int x;
+while(stog->Skini(&x)!=0) DodajURed (x,glava, rep);
+} 

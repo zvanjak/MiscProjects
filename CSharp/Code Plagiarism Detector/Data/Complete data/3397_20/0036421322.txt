@@ -1,0 +1,13 @@
+int *napraviPolje(int *A,int Na, int a, int b, int *Nc){
+	int i;
+	int *C=NULL;
+	if (a>b)
+		return NULL;
+	for (i=0;i<Na;i++){
+		if ((A[i]>=a) && (A[i]<=b)){
+			C=(int*)realloc(C,sizeof(int)*(*Nc+1));
+			C[(*Nc)++]=A[i];			
+		}
+	}
+	return C;
+}

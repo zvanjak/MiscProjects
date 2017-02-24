@@ -1,0 +1,21 @@
+int igra(Igrac& igrac, Automat& aut, int max, int *broj){ 
+	int bivsi_iznos=igrac.TrenutnoStanje(); 
+
+int dobitak=0; 
+
+*broj=max; 
+
+while (max!=0 && igrac.TrenutnoStanje()!=0){ 
+	aut.UplatiIznos(1); 
+
+igrac.SkiniSRacuna(1); dobitak=aut.Zavrti(); 
+
+igrac.UplatiNaRacun(dobitak); max--; 
+
+igrac.UplatiNaRacun(aut.PodigniPreostalo()); *broj=((*broj)-max); 
+
+return (igrac.TrenutnoStanje()-bivsi_iznos); 
+
+
+} 
+

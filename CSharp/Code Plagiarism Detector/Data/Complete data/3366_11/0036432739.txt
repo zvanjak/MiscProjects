@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main(){
+   int j, d, s, okt, dek;
+   scanf("%d", &okt);
+     if(okt<1000){
+       j=okt%10;
+       okt=okt/10;
+       d=okt%10;
+       okt=okt/10;
+       s=okt%10;
+       if (j<8){
+           if (s<8){
+             if (d<8){
+               dek=s*64 + d*8 + j;
+               printf("%d", dek);
+                     }
+                    }
+       }
+    }
+      return 0;
+    }

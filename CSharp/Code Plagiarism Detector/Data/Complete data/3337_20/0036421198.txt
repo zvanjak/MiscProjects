@@ -1,0 +1,23 @@
+int rStrncmp (char *s1, char *s2, int n){
+int i=0, j, k, l;
+    kontrola();
+    j=n-1;
+    k=strlen(s1);
+    l=strlen(s2);
+
+    if (n>k+1 || n>l+1) {
+            if (k>l) {j=l;}
+            else {j=k;} 
+
+            }
+    if (j>0) {
+             i=rStrncmp(s1, s2, j);
+             }
+    if (i==0) {
+    if (*(s1+j)==*(s2+j)) {return 0;}
+    else {if (*(s1+j)>*(s2+j)) {return 1;}
+    else {return -1;} 
+}
+}
+    else {return i;}
+}

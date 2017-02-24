@@ -1,0 +1,24 @@
+# include <stdio.h>
+int main(){
+	int broj,a,b,c,d,prvi,srednji,krajnji;
+	
+	scanf("%d",&broj);
+	
+	a=broj/1000;
+	b=(broj/100)%10;
+	c=(broj/10)%10;
+	d=broj%10;
+	prvi=(a*10)+b;
+	srednji=(b*10)+c;
+	krajnji=(c*10)+d;
+
+	if (broj<1000 || broj>9999){
+	}
+	else { if (((prvi*krajnji)%srednji==0)){
+		printf(" %d ",a+c);
+		}
+	else { printf(" %d ",c*d);
+	}
+	}
+	return 0;
+}

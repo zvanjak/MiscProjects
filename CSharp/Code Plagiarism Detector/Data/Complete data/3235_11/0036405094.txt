@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int n, i=0, x=1;
+    float red=0.0;
+    scanf("%d", &n);
+
+    if(n<1 || n>100)
+    {
+        printf("n nije valjan\n");
+        exit(1);
+    }
+
+    for(i=1; i<=n; i++)
+    {
+        red+=x/(float)i;
+        x*=-1;
+    }
+    
+    printf("%.12f\n", red);
+
+    return 0;
+}

@@ -1,0 +1,34 @@
+int promijenimbr(zapis **glava, int starimbr, int novimbr) {
+	z *glava2;
+	z *glava1;
+	z *pom;
+	glava1=*glava;
+	glava2=*glava;
+	if (glava!=NULL && (*glava)!=NULL) {
+		if ( (glava1)->matbr == starimbr ) {
+			pom=glava1;
+			glava1=(glava1)->sljed;
+			glava2=(glava2)->sljed;
+			*glava=(*glava)->sljed;
+		} else {
+			for (; (((glava1)->sljed)!=NULL) && ((glava1)->sljed->matbr != starimbr); glava1=(glava1)->sljed);
+			if (((glava1)->sljed) == NULL) return 0;
+			pom=(glava1)->sljed;
+			glava1->sljed=pom->sljed;
+		}
+		if ( (glava2)->matbr > novimbr ) {
+			pom->matbr=novimbr;
+			pom->sljed = glava2;
+			glava2=pom;
+			*glava=glava2;
+			return 1;
+		} else {
+			for (; ((glava2)->sljed)!=NULL && (glava2)->sljed->matbr < novimbr; glava2=(glava2)->sljed);
+			pom->matbr=novimbr;
+			pom->sljed = (glava2)->sljed;
+			glava2->sljed=pom;
+			return 1;
+		}
+	}
+	return 0;						
+}

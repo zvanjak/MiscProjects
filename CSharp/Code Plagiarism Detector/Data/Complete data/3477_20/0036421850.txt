@@ -1,0 +1,32 @@
+#include<ctype.h>
+
+class Recenica {
+public:
+	Recenica();
+	void UcitajZnak(char znak);
+	int PrebrojiRijeci();
+	int PrebrojiZareze();
+private:
+	char _zadnji;
+	int _brRijeci;
+	int _brZareza;
+};
+Recenica::Recenica () {
+	_brRijeci = 0;
+	_brZareza = 0;
+}
+void Recenica::UcitajZnak (char znak) {
+	if (znak == ',') {
+		_brZareza++;
+	}
+	if(!isalpha(znak) && isalpha(_zadnji)) {
+		_brRijeci++;
+	}
+	_zadnji = znak;
+}
+int Recenica::PrebrojiRijeci () {
+	return isalpha(_zadnji) ? _brRijeci+1 : _brRijeci;
+}
+int Recenica::PrebrojiZareze () {
+	return _brZareza;
+}

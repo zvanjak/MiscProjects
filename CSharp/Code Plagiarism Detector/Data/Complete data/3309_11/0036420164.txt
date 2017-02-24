@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int br_prodanih (FILE *f, char *autor){
+
+struct album album1;
+int trenutno_prodano=0;
+while(f!=EOF){
+    fread(&album1,sizeof(struct album),1,f);
+    if(autor==album1.autor){
+        trenutno_prodano += album1.prodano; 
+        }
+    }
+return trenutno_prodano;
+}
+
+

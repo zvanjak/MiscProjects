@@ -1,0 +1,25 @@
+void AritSred_StdDev(DinamickoPolje &polje,float *ArSred,float *StdDev){
+	int Br_ELEM;
+	float suma_ELEM=0;
+	float suma_kvadrata_pogresaka=0;
+	int i;
+	float ar_SRED;	
+	float std_DEV;
+
+	Br_ELEM=polje.BrojElemenata();
+	
+	for(i=0;i<Br_ELEM;i++)
+		suma_ELEM+=polje.DohvatiElement(i);
+	ar_SRED=suma_ELEM/Br_ELEM;
+	
+	for(i=0;i<Br_ELEM;i++)
+		suma_kvadrata_pogresaka+=pow(polje.DohvatiElement(i)-ar_SRED,2);
+	
+	if(Br_ELEM>1)
+		std_DEV=sqrt(suma_kvadrata_pogresaka/(Br_ELEM * (Br_ELEM-1) ));
+	else
+		std_DEV=0;
+
+	*ArSred=ar_SRED;
+	*StdDev=std_DEV;
+}

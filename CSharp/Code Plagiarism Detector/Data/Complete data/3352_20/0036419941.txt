@@ -1,0 +1,8 @@
+int veci_od(FILE *f,int n){
+	int brojac=0;
+	struct natjecatelj zapis;
+	while(fread(&zapis,sizeof(zapis),1,f)){
+		if (zapis.bodovi>=n) ++brojac;
+	}
+	return brojac;
+}

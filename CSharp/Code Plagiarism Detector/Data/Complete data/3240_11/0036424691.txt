@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <math.h>
+
+int main () {
+	int n, z, b = 1, znam, i;
+	scanf ("%d", &n);
+	if (n >= 0) {
+		z = n / 10;
+		while ( z > 0) {
+			z = z / 10;
+			b = b + 1;
+		}
+		for (i = b; i >= 1; i--) {
+			znam = n % (int)pow(10, i) / (int)pow(10, i-1);
+			printf ("%d ", znam);
+		}
+	}
+	else
+		printf ("n nije pozitivan ");
+return 0;
+}

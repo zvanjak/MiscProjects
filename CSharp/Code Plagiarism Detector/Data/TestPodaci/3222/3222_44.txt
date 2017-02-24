@@ -1,0 +1,28 @@
+#include<stdio.h>
+
+   int main() {
+	   
+   int i;
+   long int  n;
+   scanf ("%i", &n);
+   
+   if (n<=0)        { /* Ako unesem broj izvan intervala javi pogrešku*/
+                       printf ("n nije valjan\n");
+                    }
+                    
+   else {            /* ispitujem da li je djeljiv sa 13*/
+                for (i=1; i<=40; i=i+1){
+	                if (n%13 == 0 && i==1) { 
+	                                                              break;
+	                                                            }
+	                else {
+	                          n =  10*n+ n - ((n/10))*10;
+	                          printf("%i ",n);
+	                          if (n%13 == 0 ||i==40){  printf("%i",i);
+	                                                  break;
+	                                                }
+                }
+             }
+        } 
+   return 0;
+     }

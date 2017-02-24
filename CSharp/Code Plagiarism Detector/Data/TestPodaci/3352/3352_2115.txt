@@ -1,0 +1,13 @@
+int veci_od(FILE *f, int n) {
+    struct natjecatelj x;
+    int brojac = 0;
+
+    rewind(f);
+    while (fread(&x, sizeof(x), 1, f)) {
+        if (x.redni_br != 0) {
+            if (x.bodovi >= n) brojac++;
+        }
+    }
+
+    return brojac;
+}

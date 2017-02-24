@@ -1,0 +1,47 @@
+#include<stdio.h>
+
+ 
+
+int main()
+
+{     int n,i,j,f;
+
+      double s;
+
+ 
+
+      scanf("%d",&n);
+
+      s=1;
+
+ 
+
+      if (n<1 || n>30) printf("n nije valjan");
+
+      else {
+
+             for (i=1; i<=n-1;i++) {
+
+                                          f=1;
+
+                                          for (j=1;j<=i; j++) f*=j;
+
+                                          if (i%2==0) s=s+1./f;
+
+                                          if (i%2==1) s=s-1./f;
+
+                                          }
+
+             s=1/s;
+
+             printf("%.12f",s);
+
+             }
+
+ 
+
+     
+
+      return 0;
+
+}

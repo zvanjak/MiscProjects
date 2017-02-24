@@ -1,0 +1,45 @@
+int izbaciZ ( zapis **glava ){
+
+	zapis *pom, *tmp, *stari;
+	float ukpros = 0.0;
+	int ukbr = 0;
+	int bri = 0;
+
+	if ( *glava == NULL ) return 0;
+	
+	pom = *glava;
+
+	while ( pom ){
+		ukpros += pom->pros;
+		ukbr++;
+		pom = pom->sljed;
+	}
+	
+	ukpros = ukpros / ukbr;
+
+	pom = *glava;
+
+	while ( pom ){
+		if ( pom == *glava && (*glava)->spol == 'Z' && (*glava)->pros < ukpros ){
+			tmp = (*glava)->sljed;
+			free ( *glava );
+			*glava = tmp;
+			bri++;
+			pom = *glava;
+			continue;
+		}
+		
+		if ( pom->spol == 'Z' && pom->pros < ukpros ){
+			tmp = pom->sljed;
+			free ( pom );
+			stari->sljed = tmp;
+			pom = tmp;
+			bri++;
+			continue;
+		}
+		stari = pom;
+		pom = pom->sljed;
+	}
+
+	return bri;
+}

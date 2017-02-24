@@ -1,0 +1,46 @@
+#include <stdio.h>
+
+int main( )
+{
+    int mr, ms, p, q, i, j, br = 0, br1 = 0;
+    int polje [20][5];
+    
+    do {
+        scanf ( "%d %d", &mr, &ms );
+    } while ( mr < 1 || mr > 20 || ms < 1 || ms > 5 );
+    
+    scanf ( "%d %d", &p, &q );
+    
+    for ( i = 0; i < mr; i++ ) {
+        for ( j = 0; j < ms; j++ ) {
+            if ( i % 2 == 0 ) {
+               polje [i][j] = p;
+            }
+            else {
+                 polje [i][j] = q;
+            }
+        }
+    } 
+    
+    
+    do {
+        scanf ( "%d %d", &i, &j );
+        if ( ( i >= 0 && i < mr ) && ( j >= 0 && j < ms ) ) {
+             polje [i][j] = 0;
+             br++;
+        }
+    } while ( ( i >= 0 && i < mr ) && ( j >= 0 && j < ms ) );
+    
+    
+    for ( j = 0; j < ms; j++ ) {
+        for ( i = 0; i < mr; i++ ) {
+            if ( polje [i][j] == 0 ) {
+                 br1++;
+                 break;
+            }
+        }
+    }
+    br1 = ms - br1;
+    printf ( "%d %d", br, br1 );     	
+    return 0;
+}

@@ -1,0 +1,22 @@
+# include <stdio.h>
+int main(){
+	int i, j, br=0, n;
+	char niz[100], pom;
+	for (n=0; n<100; n++){
+		scanf("%c",&niz[n]);
+		if (niz[n]=='.') break;
+		else br++;
+	}
+	while (1){
+		scanf("%d %d",&i,&j);
+		if ((i-1<=br && i>=0) && (j-1<=br && j>=0)){
+			pom=niz[i-1];
+			niz[i-1]=niz[j-1];
+			niz[j-1]=pom;
+		}
+		else break;
+	}
+	for(n=0; n<br; n++)
+		printf("%c ",niz[n]);
+	return 0;
+}

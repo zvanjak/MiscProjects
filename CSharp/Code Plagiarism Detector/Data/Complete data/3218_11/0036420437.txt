@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main () {
+int prost=1,x,i,max=0;
+scanf("%d",&x);
+while (x>=2) {
+      for (i=2; i<=x-1;i++){
+          if(x%i ==0){
+                 prost=0;
+                 }}
+                 if (prost) {
+                 if (x>max) max=x;}
+                 scanf("%d",&x);
+                 }
+if (max>2) printf("%d",max);
+else printf("0");
+return 0;
+}

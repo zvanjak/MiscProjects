@@ -1,0 +1,17 @@
+int izbaci (zapis **glavap) {
+    zapis *brisi;
+    int izbaceno=0;
+    do {
+        if (*glavap) {
+            if ((*glavap)->pros < 2.0) {
+                brisi = *glavap;
+                *glavap = (*glavap)->sljed;
+                free(brisi);
+                izbaceno++;
+            } else {
+                glavap = &((*glavap)->sljed);
+            }
+        }
+    } while (*glavap);
+    return izbaceno;
+}

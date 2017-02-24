@@ -1,0 +1,37 @@
+#include <stdio.h>
+#define MAX 10
+int main() {
+	int mr, i, j, p[MAX][MAX], n, broj_zamjena = 0, suma_redka = 0;
+	
+	do {
+		scanf("%d", &mr);
+	} while (mr < 1 || mr > 10);
+	
+	for (i = 0; i < mr; i++) {
+		for (j = 0; j < mr; j++) {
+			scanf("%d", &p[i][j]);
+		}
+	}
+	
+	scanf("%d %d", &i, &j);
+	while ((i >= 0 && i < mr) && (j >= 0 && j < mr)) {
+		broj_zamjena++;
+		n = p[i][j];
+		p[i][j] = p[j][i];
+		p[j][i] = n;
+
+		scanf("%d %d", &i, &j);
+	}
+	
+	scanf("%d", &n);
+
+	if (n >= 0 && n < mr) {
+		for (i = 0; i < mr; i++)
+			suma_redka += p[n][i];
+	} else
+		suma_redka = -1;
+
+	printf("%d %d", broj_zamjena, suma_redka);
+
+	return 0;
+}

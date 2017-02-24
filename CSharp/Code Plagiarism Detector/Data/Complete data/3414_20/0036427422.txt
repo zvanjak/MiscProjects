@@ -1,0 +1,29 @@
+#include<stdio.h> 
+#include<stdlib.h> 
+#include<string.h> 
+#include<math.h> 
+ 
+char *brojeve_u_znakove(int *polje, int duljina) 
+{ 
+    int i, j, k, zn; 
+    char x; 
+    char broj[20]; 
+    char *ret = (char *)malloc(sizeof(char)); 
+     
+    strcpy(ret, "\0"); 
+    if(polje == NULL) 
+        return(ret); 
+     
+    for(i = 0; i < duljina; i++) 
+    { 
+        zn = (int)(log(polje[i]) / log(10)); 
+        k = 0; 
+         
+        for(j = (int)pow(10, zn); j >= 1; j/= 10) 
+            broj[k++] = (char)((polje[i] % (10 *(j))) / j + 48); 
+ 
+        broj[k] = '\0'; 
+        ret = strcat(ret, broj); 
+    } 
+    return(ret); 
+} 

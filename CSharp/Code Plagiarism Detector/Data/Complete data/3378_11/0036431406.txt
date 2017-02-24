@@ -1,0 +1,16 @@
+#include <stdio.h>
+float main ()
+{
+	int bros, brns, bcs;
+	float bp, np;
+	scanf("%d %d %d", &bros, &brns, &bcs);
+	if (bros == brns) {bp=bros*bcs;}
+	else {
+			if (bros < brns) {bp=bros*0.9*bcs;}
+			else {bp=bros*1.15*bcs;}
+		 }
+	if (bp > 6000) {np=bp*0.7;}
+		else {np=bp*0.8;}
+	printf ("%.2f \n", np);
+	return 0;
+}

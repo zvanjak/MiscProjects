@@ -1,0 +1,32 @@
+typedef struct{
+         int redni_br;
+         char prezime[20+1];
+         int bodovi;
+         }natjecatelj;
+         
+void dodaj(FILE *dat){
+     natjecatelj temp;
+     int maxbod=0, rd_br, bod, a, i;
+     long end;
+
+     fseek(dat,0,SEEK_END);
+     end=ftell(dat);
+     fseek(dat, 0, SEEK_SET);
+
+while(ftell(dat)!= end){
+     fread(&rd_br,sizeof(int),1,dat);
+                 if(rd_br != 0){
+                          fseek(dat,sizeof(char),SEEK_CUR);
+                          fread(&bod, sizeof(int),1,dat);
+                          if(bod>maxbod){
+                                         maxbod=bod;
+                                         a=rd_br;
+                                         }
+                          }
+                 else
+                     fseek(dat, sizeof(natjecatelj)-sizeof(int),SEEK_CUR);
+     }
+     maxbod +=10;
+     fseek(dat,a*sizeof(natjecatelj)-sizeof(int),SEEK_SET);
+     fwrite(maxbod,sizeof(int),1,dat);
+     }

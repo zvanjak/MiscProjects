@@ -1,0 +1,26 @@
+#include <stdlib.h>
+
+
+int *KreirajAritNiz(int n, int a, int d)
+{
+	int *p,i;
+
+	if (n>0)
+	{
+		p=(int *)malloc(n*sizeof(int));
+        *p=a;
+		for (i=1;i<=n-1;i++){
+			p[i]=p[i-1]+d;}
+	}
+	else p=(int *)malloc(1);
+	return p;
+}
+
+int main()
+{
+	int *a;
+	a=KreirajAritNiz(0,3,2);
+	
+	free(a);
+	return 0;
+}

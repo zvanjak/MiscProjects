@@ -1,0 +1,14 @@
+# include <stdio.h>
+int najbolji(FILE *f){
+struct {
+int redni_br;
+char prezime[20+1];
+int bodovi;
+}natjecatelj;
+int max=0,redni=0;
+while(fread(&natjecatelj,sizeof(natjecatelj),1,f)==1){
+if(natjecatelj.bodovi>max){
+max=natjecatelj.bodovi;
+redni=natjecatelj.redni_br;
+}}
+return redni;}

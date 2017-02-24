@@ -1,0 +1,175 @@
+#include <stdio.h>
+
+class Kalendar{
+public:
+	Kalendar();
+	~Kalendar();
+
+	
+	void	PostaviNovuVelicinu(int NoviBrojElem);
+
+	void	PostaviElement(int Indeks, int Vrijednost);
+	int	DohvatiElement(int Indeks);
+	void	DodajElementNaKraj(int Vrijednost);
+
+	int	BrojElemenata();
+	void	IspisiElemente();
+	
+	void 	Dodaj(MojDatum d);
+	void	Unesi(MojDatum datum, int broj, int mjesec);
+
+private:
+	int	*_Podaci;
+	
+	int	_BrojElem;		// koliko stvarno ima elemenata u polju
+	int	_MaxBrojElemenata;	// koliki je maksimalni raspolozivi prostor
+};
+
+class MojDatum{
+public:
+	MojDatum();
+	~MojDatum();	
+
+	int dan,mjesec,godina;
+	bool operator==(MojDatum &d){
+		return d.dan==dan && d.mjesec==mjesec && d.godina==godina;
+	}
+};
+
+Kalendar::Kalendar()
+{
+	_BrojElem = 0;
+	_MaxBrojElemenata = 10;
+	_Podaci = new int[_MaxBrojElemenata];
+
+	if( _Podaci == NULL )
+		throw "Nema memorije";
+}
+Kalendar::Kalendar(int inMaxBrojElem)
+{
+	_BrojElem = 0;
+	_MaxBrojElemenata = inMaxBrojElem;
+	_Podaci = new int[_MaxBrojElemenata];
+
+	if( _Podaci == NULL )
+		throw "Nema memorije";
+}
+Kalendar::~Kalendar()
+{
+	delete []_Podaci;
+}
+
+void Kalendar::PostaviNovuVelicinu(int NoviBrojElem)
+{
+
+	int		*Temp = new int[NoviBrojElem];
+
+	if( Temp == NULL )
+		throw "Nema memorije";
+
+	
+	for( int i=0; i<_MaxBrojElemenata && i<NoviBrojElem; i++ )
+		Temp[i] = _Podaci[i];
+
+	delete []_Podaci;
+
+	_Podaci = Temp;
+	
+	if( _BrojElem > NoviBrojElem)			
+		_BrojElem = NoviBrojElem;
+
+	_MaxBrojElemenata = NoviBrojElem;
+}
+
+void	Kalendar::PostaviElement(int Indeks, MojDatum Vrijednost)
+{
+	if( 0 <= Indeks && Indeks < _MaxBrojElemenata )
+	{
+		_Podaci[Indeks] = Vrijednost;
+		if( Indeks >= _BrojElem )			
+		{
+		
+			_BrojElem = Indeks + 1;
+		}
+	}
+	else
+		throw "Nema mjesta u polju";
+}
+
+void	Kalendar::Dodaj(MojDatum Vrijednost)
+{
+
+	if( _BrojElem == _MaxBrojElemenata )
+	{
+		
+		PostaviNovuVelicinu(_BrojElem + 1);
+	}
+
+	PostaviElement(_BrojElem, Vrijednost);
+}
+
+int	Kalendar::DohvatiElement(int Indeks)
+{
+	if( 0 <= Indeks && Indeks < _MaxBrojElemenata )
+		return _Podaci[Indeks];
+	else
+		throw "Krivi indeks elementa";
+}
+
+int	Kalendar::BrojElemenata()
+{
+	return _BrojElem;
+}
+
+void	Kalendar::IspisiElemente()
+{
+	for( int i=0; i<BrojElemenata(); i++ )
+		printf("%d\n", DohvatiElement(i));
+}
+
+void	Kalendar::Unesi(MojDatum datum, int broj, int mjesec)
+{
+	int sijecanj=0;
+	int veljaca=0;
+	int ozuj...
+	int prosinac=0;
+	int max=0;
+
+	for( int i=0; i<broj; i++ ) {
+		Dodaj(datum[i]);
+	}
+	
+	for( int i=0; i<broj; i++ ) {
+		switch (_Podaci[i]) {
+			case _Podaci[i].mjesec==01 :	sijecanj++; break;
+			case _Podaci[i].mjesec==02 :	veljaca++; break;
+		        case _Podaci[i].mjesec==03 :	ozujak++; break;
+			case _Podaci[i].mjesec==04 :	travanj++; break;
+                        case _Podaci[i].mjesec==05 :	svibanj++; break;
+                        case _Podaci[i].mjesec==06 :	lipanj++; break;
+                        case _Podaci[i].mjesec==07 :	srpanj++; break;
+                        case _Podaci[i].mjesec==08 :	kolovoz++; break;
+                        case _Podaci[i].mjesec==09 :	rujan++; break;
+                        case _Podaci[i].mjesec==10 :	listopad++; break;
+                        case _Podaci[i].mjesec==11 :	studeni++; break;
+                        case _Podaci[i].mjesec==12 :	prosinac++; break;
+			defaullt: 
+				throw "Nedozvoljeni mjesec";
+		}
+	}
+	
+	max=sijecanj;
+	if veljaca>max max=veljaca;
+	if ozujak>max max=ozujak;
+	if travanj>max max=travanj;
+	if svibanj>max max=svibanj;
+        if lipanj>max max=lipanj;
+        if srpanj>max max=srpanj;
+        if kolovoz>max max=kolovoz;
+        if rujan>max max=rujan;
+        if listopad>max max=listopad;
+        if studeni>max max=studeni;
+        if prosinac>max max=prosinac;
+
+	mjesec=max;
+}

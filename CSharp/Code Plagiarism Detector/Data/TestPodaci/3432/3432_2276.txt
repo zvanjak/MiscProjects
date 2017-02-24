@@ -1,0 +1,24 @@
+#include <stdio.h>
+#define MAX 100
+
+int main () {
+	int polje[MAX+1]={0};
+	int i = 0, j;
+
+	do{ scanf(" %d", &polje[i]);
+	   
+	} while(polje[i++] != -1);
+
+	for(i=0; i < MAX; i+=2){
+		j = polje[i+1];
+		for(; j!=0; j--)
+			printf(" %d", polje[i]);
+	
+	}
+
+	return 0;
+	
+}
+	    
+
+	

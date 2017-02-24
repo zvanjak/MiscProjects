@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <math.h>
+int main() {
+	int n,i,s;
+	double sum;
+	scanf("%d", &n);
+    sum=0;
+	i=1;
+    if ((n<1)||(n>100))
+		printf("n nije valjan");
+	else {
+		for(s=1;s<=n;s) {
+           sum = sum + 1./i;
+		   if (s%2!=0){
+			   i=-(++i);
+			   s=abs(i);
+		   }
+		   else {
+			   i=abs(i)+1;
+			   s=abs(i);
+		   }
+			}
+        printf("%.12f", sum);
+	} 
+	return(0);
+}

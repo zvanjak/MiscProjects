@@ -1,0 +1,43 @@
+#include <stdio.h>
+#define MAX 50
+
+int main() {
+	int niz[MAX], i, j, br, prost=1, brprost=0;
+	int brelem=0, sim=0, manji=0, veci=0, umnozak=1;
+
+	i=0;
+	do {
+		scanf("%d",&br);
+		if(br>-1) {
+			niz[i++]=br;
+			brelem++;
+		} else break;
+	} while (i<MAX);
+
+	if(brelem%2!=0) {
+		manji=brelem/2-1; 
+		veci=manji+2;
+		while(manji>=0 && veci<(brelem+1)) {
+			if(niz[manji--]!=niz[veci++]){
+				sim=1;
+			}
+		}
+		if(sim) printf("Nije");
+		else printf("Jest");
+	}
+
+	if (brelem%2==0) {
+		for(i=0; i<brelem; i++){
+			umnozak*=niz[i];
+			for(j=2; j<(niz[i]/2); j++) {
+				if(niz[i]%j==0) {
+					prost=0;
+				}
+			}
+			if (prost) brprost++;
+		}
+		printf("%d %d", umnozak, brprost);
+	}
+
+	return 0;
+}

@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+	int a,b,z1,z2,z3,z4,z5,suma;
+	scanf("%d", &a);
+		if ((a>9999) && (a<100000)) {
+			b=a;
+			z1=b%10;
+			b=b/10;
+			z2=b%10;
+			b=b/10;
+			z3=b%10;
+			b=b/10;
+			z4=b%10;
+			b=b/10;
+			z5=b%10;
+			suma=z1+z2+z3+z4+z5;
+				if (a%suma==0) printf("%d", a-suma);
+				else printf("%d", a/suma);
+
+		}
+	return 0;
+	}

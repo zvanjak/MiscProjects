@@ -1,0 +1,14 @@
+float prosjek(FILE *f)
+{
+	struct album a;
+	int br = 0;
+	int ukup = 0;
+	fseek(f, 0L, SEEK_SET);  
+	while(fread(&a, sizeof(struct album), 1, f) == 1)
+	{
+		ukup += a.prodano;
+		br++;
+	}
+	if(!br) return(0);
+	return((float)ukup / br);
+}

@@ -1,0 +1,28 @@
+#include <stdio.h>
+#define max 20
+int main() {
+    long n,i,j,u,z,k;
+    int a[max][max];
+    scanf("%d", &n);
+    z=0;
+    k=0;
+    u=1;
+    for (i=0; i<n; i++){
+        for (j=0; j<n; j++){
+            scanf("%d", &a[i][j]);}}
+    for (i=0; i<n; i+=2) {
+        for(j=0; j<n; j+=2){
+            if (a[i][j] % 2==0){
+                k=0;
+            }else{k=1;} 
+            z+=k; }}
+     if (z==0) {
+     for (i=0; i<n; i++){
+         u*=a[i][i]; }
+     }else{
+         for(i=0; i<n; i++){
+             u*=a[i][n-1-i]; }}
+     printf("%d",u);
+
+     return 0; 
+ }       

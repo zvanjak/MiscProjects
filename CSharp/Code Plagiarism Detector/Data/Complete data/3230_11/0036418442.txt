@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main(){
+	int i,n,naz=1;
+	double e=1;
+
+	scanf("%d", &n);
+
+	if(n<1 || n>30)
+		printf("n nije valjan");
+	
+	else{
+		for(i=1; i<=n-1; i++)
+		{
+			naz*=i;
+			e+= (double)1/naz;
+		}
+		
+		printf("%.12f",e);
+	}
+	return 0;
+}

@@ -1,0 +1,23 @@
+/* Mihej Komar, 1.09
+   TreciAOP
+   Napomena: Pretpostavljam da ne treba napisati main () funkciju pošto treba napisati samo
+   prototip funkcije. Također pretpostavljam da treba uvesti string.h
+*/
+
+
+#include <string.h>
+
+int izbaciDuplikate (char *ulazni) {
+  char *p;
+  int i,izbaceno=0;
+
+  p = ulazni;
+    for (i=0; ulazni[i]!='\0'; i++)
+      while ((p = strchr (&ulazni[i+1], ulazni[i]))!=NULL) {
+        izbaceno++;
+          do
+            *p = *(p+1);
+          while (*(p++)!='\0');     
+      }
+  return izbaceno;
+}

@@ -1,0 +1,30 @@
+#include <stdio.h>
+#define MAX 42
+int main(){
+	int polje[MAX],i;
+
+	for(i=0;i<MAX;i++){
+		scanf("%d",&polje[i]);
+
+		if( !(i%2) && polje[i]==50 ){
+			scanf("%d",&polje[i+1]);
+			break;
+		}
+	}
+
+	for(i=3;i<MAX;i+=2){
+		
+		if(polje[i]>polje[i-2])
+			printf("Raste ");
+
+		if(polje[i]<polje[i-2])
+			printf("Pada ");
+		
+		if(polje[i]==polje[i-2])
+			printf("Ravan ");
+
+		if(polje[i-1]==50)
+			break;
+	}
+return 0;
+}

@@ -1,0 +1,21 @@
+#include<stdio.h>
+
+int main()
+{
+	int br, x, y = 0;
+	char znak;
+	char niz[1000];
+	while(1)
+	{
+		scanf("%c%d", &znak, &br);
+		if(br == -1) break;
+		for(x = 0; x < br; x++)
+		{
+			niz[y++] = znak;
+			niz[y++] = ' ';
+		}
+	}
+	niz[y - 1] = '\0';
+	printf("%s", niz);
+	return(0);
+}

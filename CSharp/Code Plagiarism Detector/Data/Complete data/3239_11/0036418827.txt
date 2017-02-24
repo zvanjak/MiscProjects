@@ -1,0 +1,15 @@
+#include <stdio.h> 
+int main () {
+	int D , G , N ;
+	scanf ("%d%d" , &D , &G );
+	if ((D < 0) || (G < 0) || (G <= D)) {
+			printf ("D i G nisu valjani");
+	} else {
+		N = D ;
+		printf ("%d" ,(N/2)*(N/2+1));
+		for (N = D + 1 ; N <= G ; N++)
+			printf (" %d" , (N/2)*(N/2+1));
+		printf ("\n");
+	}
+	return 0 ;
+}

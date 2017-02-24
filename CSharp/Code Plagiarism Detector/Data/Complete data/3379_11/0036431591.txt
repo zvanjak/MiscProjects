@@ -1,0 +1,25 @@
+#include <stdio.h>
+int main (){
+unsigned int p,x,s,y;
+scanf("%d",&p);
+x=p;                       
+y=x%10;
+s=s+y;
+x=(x-y)/10;
+y=x%10;
+s=s+y;
+x=(x-y)/10;
+y=x%10;
+s=s+y;
+x=(x-y)/10;
+y=x%10;
+s=s+y;
+x=(x-y)/10;
+y=x%10;
+s=s+y;
+x=(x-y)/10;
+if (p%s)
+printf("%d",(p/s));
+else printf("%d",(p-s));
+return 0;
+}

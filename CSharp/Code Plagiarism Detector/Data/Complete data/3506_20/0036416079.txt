@@ -1,0 +1,23 @@
+int Razina(cvor *glava, int id, int *razina) {
+	int naso = 0;
+
+	if(glava == NULL && *razina == 1) {
+		*razina = 0;
+		return 0;
+	}
+	
+	if(glava == NULL)
+		return 0;
+
+	if(glava->id > id) {
+		(*razina)++;
+		naso = Razina(glava->lijevo, id, razina);
+	} else if(glava->id < id) {
+		(*razina)++;
+		naso = Razina(glava->desno, id, razina);
+	} else {
+		naso = 1;
+	}
+
+	return naso;
+}

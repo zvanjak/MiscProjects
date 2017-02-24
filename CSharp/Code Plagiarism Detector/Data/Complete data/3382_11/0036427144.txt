@@ -1,0 +1,28 @@
+#include <stdio.h>
+int main()
+{	int broj,sum,um,t,s,d,j,br2,br1,br3,ost,br;
+	scanf("%d", &broj);
+	t=broj/1000;
+	j=broj%10;
+	d=(broj%100)/10;
+	s=(broj/100)%10;
+	br1=10*t+s;
+	br2=10*d+j;
+	br3=10*s+d;
+	br=br1*br2;
+	ost=br%br3;
+	if (ost==0)
+	{
+		sum=t+d;
+		printf("%d", sum);	
+	}
+	else
+	{
+		um=d*j;
+		printf("%d", um);
+		
+	}
+
+	return 0;
+}
+

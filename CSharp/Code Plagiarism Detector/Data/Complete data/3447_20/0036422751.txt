@@ -1,0 +1,80 @@
+class ZatvoreniInterval
+{
+private:
+	float _pocetak;
+	float _kraj;
+public:
+	ZatvoreniInterval();
+	ZatvoreniInterval(float pocetak, float kraj);
+	float Duljina();
+	int BrojCijelihTocaka();
+}
+;
+
+ZatvoreniInterval::ZatvoreniInterval()
+{
+	_pocetak=0;
+	_kraj=0;
+}
+ZatvoreniInterval::ZatvoreniInterval(float pocetak, float kraj)
+{
+	_pocetak=pocetak;
+	_kraj=kraj;
+}
+
+float ZatvoreniInterval::Duljina()
+{
+	float udaljenost, pocetak1, kraj1;
+
+	pocetak1=_pocetak;
+	kraj1=_kraj;
+
+	if(pocetak1>kraj1)
+		return 0;
+	if(pocetak1<0 && kraj1<0)
+	{
+		pocetak1*=-1;
+		kraj1*=-1;
+		udaljenost=pocetak1-kraj1;
+		return udaljenost;
+	};
+	if(pocetak1<0 && kraj1>0)
+	{
+		pocetak1*=-1;
+		udaljenost=pocetak1+kraj1;
+		return udaljenost;
+	};
+	
+	
+		udaljenost=kraj1-pocetak1;
+		return udaljenost;
+	
+};
+
+int ZatvoreniInterval::BrojCijelihTocaka()
+{
+	int ipocetak, ikraj, broj=0;
+	ipocetak=_pocetak;
+	ikraj=_kraj;
+	
+	if(ipocetak< _kraj)
+		broj+=1;
+	if(ipocetak<0 && ikraj<0)
+	{
+		ipocetak*=-1;
+		ikraj*=-1;
+		broj+=ipocetak-ikraj;
+		return broj;
+	};
+	if(ipocetak<0 && ikraj>0)
+	{
+		ipocetak*=-1;
+		broj+=ipocetak+ikraj;
+		return broj;
+	};
+	
+	
+		broj+=ikraj-ipocetak;
+		return broj;
+	
+};

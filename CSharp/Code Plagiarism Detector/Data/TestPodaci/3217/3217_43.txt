@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <math.h>
+
+void main () {
+
+int a,c,k,b,n=0,i;
+
+int polje [100]={0};
+	do {
+		k=0,b=0;
+		scanf ("%d" ,&a);
+		/*if (a<0)*/ if (a<=0) break;
+		
+		c=a;
+		while ((c/=10) > 0) k++;
+		
+		do {
+		b += (a%10) * pow(10,k--);
+		}
+		while ((a /= 10) > 0);
+		
+		polje [n++] = b;
+	}
+	while (1);
+
+for (i=0; i<n; i++) printf ("%d ", polje[i]);
+}

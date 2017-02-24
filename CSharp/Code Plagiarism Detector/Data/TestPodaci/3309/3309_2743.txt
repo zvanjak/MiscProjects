@@ -1,0 +1,14 @@
+int br_prodanih (FILE *f,char *autor){
+	int brojac = 0;
+	struct album {
+		char naziv [30+1];
+		char autor [20+1];
+		int prodano;
+	}a;
+	while (fread (&a,sizeof(struct album),1,f) > 0){
+		if (a.autor == *autor) {
+			brojac = brojac + a.prodano;
+		}
+	}
+	return brojac;
+}

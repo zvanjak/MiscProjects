@@ -1,0 +1,29 @@
+char *Spoji(char *niz1, char *niz2)
+{
+	int k=0;
+	char *novi;
+
+	novi=NULL;
+	
+	while(*niz1!='\0' || *niz2!='\0')
+	{
+		if(*niz1!='\0')
+		{
+			novi=(char*)realloc(novi, (k+1)*sizeof(char));
+			novi[k]=*niz1;
+			k++;
+			niz1++;
+		}
+		
+		if(*niz2!='\0')
+		{
+			novi=(char*)realloc(novi, (k+1)*sizeof(char));
+			novi[k]=*niz2;
+			k++;
+			niz2++;
+		}
+	}
+	novi[k]='\0';
+
+	return novi;
+}

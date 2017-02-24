@@ -1,0 +1,11 @@
+int Najgore (cvor *glava) {
+    cvor *p=glava;    
+    if (glava==NULL) return 0;
+    while (p->lijevo || p->desno) {
+          if (p->lijevo && p->desno) return 0;
+          if (p->lijevo) p=p->lijevo; 
+          else p=p->desno;
+    }
+    return 1;
+}
+

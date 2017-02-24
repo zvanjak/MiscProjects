@@ -1,0 +1,47 @@
+char* brojeve_u_znakove(int* polje, int duljina){
+
+	char* niz,* znak;
+	int i,j;
+	int broj,temp;
+	int mojl=0,t=0;
+	int* red;
+	
+	znak=(char*)malloc(sizeof(char));
+	red=(int*)malloc(sizeof(int));
+	
+	if((!polje)||(duljina==0)) return NULL; 
+
+	for(i=0;i<duljina;i++){
+		broj=polje[i];
+		while(broj!=0){
+			broj/=10;
+			t++;		
+		} 
+	}
+	
+	niz=(char*)malloc(sizeof(char)*t);
+	strcpy(niz,"");
+	
+	for(i=0;i<duljina;i++,mojl=0){
+
+		broj=polje[i];
+		temp=broj;
+		while(broj!=0){
+			broj/=10;
+			mojl++;		
+		} broj=temp;
+
+		red=(int*)realloc(red,sizeof(int)*mojl);
+			
+		for(j=0;j<mojl,broj>0;j++){
+			red[j]=broj%10;
+			broj/=10;			
+		}
+			
+		for(j=0;j<mojl;j++){
+			itoa(red[j],znak,10);
+			strcat(niz,znak);
+		}
+	}
+return niz;	
+}

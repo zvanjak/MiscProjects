@@ -1,0 +1,15 @@
+#include<stdio.h>
+#include<math.h>
+int main (){
+int i,n;
+float suma=1;
+scanf("%d", &n);
+if(n>=1 && n<=30){
+   for(i=1; i<=n; i++)
+       suma+=(1./pow(2,i));
+   printf("Izracunati broj 2 je: %15.12f\n",suma);
+   }
+else
+     printf("Uneseni n nije valjan!\n");
+return 0;
+}

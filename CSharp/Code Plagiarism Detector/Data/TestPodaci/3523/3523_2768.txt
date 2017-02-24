@@ -1,0 +1,24 @@
+int izbaci( char* ulazni, char* podniz )
+{
+	char tmp[ 100 ];
+	int n = 0, i, j, sa, sb, izbaci, sol = 0;
+
+	sa = strlen( ulazni );
+	sb = strlen( podniz );
+
+	for( i = 0; i < sa; ++i )
+	{
+		izbaci = 0;
+		for( j = 0; j < sb; ++j )
+			if( ulazni[ i ] == podniz[ j ] )
+				izbaci = 1;
+		if( !izbaci )
+			tmp[ n++ ] = ulazni[ i ];
+		else
+			sol++;
+	}
+	tmp[ n ] = '\0';
+	strcpy( ulazni, tmp );
+
+	return sol;
+}	

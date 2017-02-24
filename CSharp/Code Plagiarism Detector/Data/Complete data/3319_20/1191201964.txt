@@ -1,0 +1,24 @@
+void dodaj(FILE *f) {
+		typedef struct {
+		int redni_br;
+		char prezime [20+1];
+		int bodovi;
+	}zapis;
+	zapis natjecatelj;
+	int max_bodovi=0,lokacija,i=1;
+
+	while (fread(&natjecatelj,sizeof(natjecatelj),1,f)==1) {
+		if (natjecatelj.redni_br>0) {
+		if (natjecatelj.bodovi>max_bodovi)  {
+			lokacija=(i-1);
+			max_bodovi=natjecatelj.bodovi;}
+
+		}
+		i++;
+	}
+	fseek(f,lokacija*sizeof(zapis),SEEK_SET);
+	fread(&natjecatelj,sizeof(natjecatelj),1,f);
+	fseek(f,lokacija*sizeof(zapis),SEEK_SET);
+	if (max_bodovi>0) {natjecatelj.bodovi+=10;
+	fwrite(&natjecatelj,sizeof(natjecatelj),1,f);}
+}

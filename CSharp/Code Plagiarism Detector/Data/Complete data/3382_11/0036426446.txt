@@ -1,0 +1,22 @@
+# include <stdio.h>
+int main ()
+{
+int a,b,c,d,e,f,g,x,y;
+scanf("%d" , &x);
+if ((x >= 1000) && (x <= 9999));
+{
+a=x/1000;
+b=(x-a*1000)/100;
+c=(x%100)/10;
+d=x%10;
+e=a*10+b;
+f=c*10+d;
+g=b*10+c;
+if ((e*f)%g==0)
+y=a+c;
+else
+y=c*d;
+printf("%d" , y);
+}
+return 0;
+}

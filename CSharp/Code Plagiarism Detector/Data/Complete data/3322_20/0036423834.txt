@@ -1,0 +1,9 @@
+#include<stdio.h>
+#include<stdlib.h>
+int rBrojPojavljivanja(int *polje, int n, int broj){
+int x;
+kontrola();    
+if (n>0) x=rBrojPojavljivanja(&polje[0],n-1,broj);
+if (n==0) x=0;
+if (polje[n]==broj) x++;
+return x;}

@@ -1,0 +1,22 @@
+#include <stdio.h>
+int main ()
+{
+	int D,G,x,S,i,j;
+	scanf ("%d %d",&D,&G);
+	x=((D>0)&&(G>0)&&(G>D))?1:0;
+	if (x==0)printf ("D i G nisu valjani");
+	else
+	{
+		for (i=D;i<=G;i=i+1)
+		{
+			S=0;
+			for (j=1;j<=i;j=j+1)
+				if ((j%2)==0)S=S+j;
+			if (j==(D+1)) printf ("%d",S);	
+			else printf (" %d",S);	
+				
+		}
+	}
+
+return 0;
+}

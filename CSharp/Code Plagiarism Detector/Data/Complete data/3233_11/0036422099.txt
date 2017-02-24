@@ -1,0 +1,17 @@
+#include<stdio.h>
+int main()
+{
+	int n, i, j;
+	double rj = 0; /* rjesenje, nazivnik pribrojnika */
+
+	scanf("%i", &n);
+	if(n < 1 || n > 200) /* provjerava da li je n iz intervala [1,200] */
+		printf("n nije valjan");
+	else
+	{
+		for(i = 1, j = 2; i <= n; i++, j++)
+			rj += (double) 1. / (i * j);
+		printf("%.12f", rj);
+	}
+	return 0;
+}

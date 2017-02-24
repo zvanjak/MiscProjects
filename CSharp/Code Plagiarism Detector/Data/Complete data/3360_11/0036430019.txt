@@ -1,0 +1,20 @@
+#include<stdio.h>
+int main()
+{
+	int broj, rez, rez1, rez2, oduzimanje, umnozak;
+	scanf("%d", &broj);
+		rez=broj%1000;
+		rez=rez/100;
+		rez1=broj%100;
+		rez1=rez1/10;
+		rez2=broj%10;
+		rez2=rez2/1;
+		if ((rez+rez1+rez2)%2!=0){
+			umnozak=(rez*rez1*rez2);
+			printf("Zbroj znamenki je neparan te njihov umnozak iznosi %d \n",umnozak);
+		}else{
+			oduzimanje=(rez-rez1-rez2);
+			printf("Zbroj znamenki je paran te njihovo oduzimanje iznosi %d \n",oduzimanje);
+		}
+	return 0;
+}

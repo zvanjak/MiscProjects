@@ -1,0 +1,21 @@
+#include <stdio.h>
+int main()
+{
+int a, b, c, d, e;
+ 
+scanf ("%d", &a);
+b=a/100;
+c=b*100;
+d=a-c;
+e=b+d;
+
+if (e%b==0)
+{
+printf ("%s", "Jest\n");
+}
+else
+{
+printf ("%s", "Nije\n");
+}
+return 0;
+}

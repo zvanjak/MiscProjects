@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <malloc.h>
+char *SamoSamoglasnici(char *ulazni_niz){
+	char *d=NULL;
+	char *p;
+	int i,br=0;
+	
+	if (ulazni_niz==NULL || *ulazni_niz=='\0') return d;
+	for(i=0; ulazni_niz[i]!='\0'; i++){
+		if (ulazni_niz[i]=='a' || ulazni_niz[i]=='e' || ulazni_niz[i]=='i' || ulazni_niz[i]=='o' || ulazni_niz[i]=='u' || ulazni_niz[i]=='A' || ulazni_niz[i]=='E' || ulazni_niz[i]=='I' || ulazni_niz[i]=='O' || ulazni_niz[i]=='U'){
+			p=(char*)realloc(p,(br+2)*sizeof(char));
+			p[br]=ulazni_niz[i]; 
+			br++;}
+	}
+    p[br]='\0';
+	return p;}

@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main() {
+	int a, b, prva, druga, treca, cetvrta, prva2, druga2, treca2, cetvrta2, zbroj, razlika;
+	scanf("%d %d", &a, &b);
+	prva=div(a, 1000);
+	druga=(div(a,100)-10*prva);
+	treca=(div(a,10)-100*prva-10*druga);
+	cetvrta=(a-(1000*prva+100*druga+10*treca));
+    prva2=div(b, 1000);
+	druga2=(div(b,100)-10*prva2);
+	treca2=(div(b,10)-100*prva2-10*druga2);
+	cetvrta2=(b-(1000*prva2+100*druga2+10*treca2)); 
+    
+	if (((a || b)<999 && ((a || b)>9999)))
+	     return 0;
+	else if ((prva==cetvrta2) && (druga==treca2) && (treca==druga2) && (cetvrta==prva2))
+	{      
+		zbroj=(prva + druga + treca + cetvrta);
+		printf("%d", zbroj);
+	}       
+	else{
+	    razlika=(a-b);
+		if (razlika<0)
+			razlika=(b-a);
+	    printf("%d", razlika);
+    }
+  return 0;
+}

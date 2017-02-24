@@ -1,0 +1,10 @@
+int NadjiMaxURetku(int *mat,int m, int n, int maxstup, int *retMax) {
+	int pom,clan=0,max=0,i,j;
+	for(i=0;i<m;i++) {
+		pom=mat[i*maxstup];
+		for(j=0;j<n;j++) {
+			clan=mat[i*maxstup+j];
+			if (clan>pom) {pom=clan;}
+			if (clan>max) {max=clan;}	}
+		retMax[i]=pom; } 
+		return max;						}

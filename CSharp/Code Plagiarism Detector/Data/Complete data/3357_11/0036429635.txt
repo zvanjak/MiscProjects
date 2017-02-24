@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main()
+{
+int x, y, a, b, c, d, e, f, g, h, i, j, k, l, s1, s2;
+    scanf ("%d %d", &x, &y);
+    if ((( x>=1000)&&(x<=9999))&&((y>=1000)&&(y<=9999)))
+    {
+    a = x-((x/1000)*1000);
+    b = x/1000;
+    c = a/100;
+    d =(a%100); 
+    e = d/10;
+    f =(d%10);
+    
+    g = y-((y/1000)*1000);
+    h = y/1000;
+    i = g/100;
+    j =(g%100); 
+    k = j/10;
+    l =(j%10);
+  
+    }
+    if ((b==l)&&(c==k)&&(e==i)&&(f==h))
+    {
+    printf("%d", s1=b+c+e+f);
+    }else{
+    printf("%d", s2=x-y);
+    }
+    	
+  return 0;
+}

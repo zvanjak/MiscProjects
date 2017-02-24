@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include<math.h>
+int main() {
+int i,n;
+double z,s=0;
+scanf("%d", &n);
+    if ((n>0) && (n<31) && (n / 1==n)) {
+          for(i=1;i<=n;i++) {
+            z=i-1;
+            s+=1./(pow(2.,z));
+          }
+          printf("%.12f ", s);
+    }
+    else
+         printf("n nije valjan");
+return 0;
+}

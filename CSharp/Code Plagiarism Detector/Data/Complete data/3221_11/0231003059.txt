@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main ()
+{
+	int A, d, B, brojac, broj;
+	scanf ("%d %d %d",&A,&d,&B);
+brojac=0;
+broj=A;
+if (B>=A){
+do
+{
+broj=broj+d;
+brojac+=1;
+printf("%d ", broj);
+}
+while (broj<B);
+}
+printf("%d ", brojac);
+return 0;
+}

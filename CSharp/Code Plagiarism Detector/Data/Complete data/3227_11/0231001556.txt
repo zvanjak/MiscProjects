@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<math.h>
+
+int main () {
+ float y,z,k,x;
+ scanf("%f",&x);
+ y=0;
+ z=0;
+
+ if ((x>=1) && (x<=500)) {
+
+	   while (y<x) {
+
+         y=y+1;
+		 z=z + ((-1)*(pow((-1),y)))*(1/(2*y-1));
+		 k=y; 
+	   }
+ }
+ else
+        printf("n nije valjan\n");
+ if (x==k)
+        printf("%f\n",z);
+
+
+ return 0;
+}

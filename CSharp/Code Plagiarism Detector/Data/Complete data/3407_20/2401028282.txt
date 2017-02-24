@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <ctype.h>
+
+char *SamoSamoglasnici(char *un){
+     char *nn, *tmp;
+     int i=1;
+     if((nn = (char *)malloc(strlen(un)*sizeof(char)))==0)
+            exit(1);
+     tmp=nn;
+
+     while(*un != '\0'){
+               if(*un == 'a' || *un == 'A' || *un == 'e' || *un == 'E' || *un == 'i' || *un == 'I' || *un == 'o' || *un == 'O' || *un == 'u' || *un == 'U'){
+                      *tmp=*un;
+                      tmp++;
+                      i++;
+                      }
+               un++;
+               }
+     *tmp='\0';
+     realloc(nn, i*sizeof(char));
+     return nn;
+     }

@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main()
+{
+int n, x[12], i=0;
+
+scanf("%d", &n);
+
+if(n>0){
+	while(n)
+	{
+		x[i]=n%10;
+		n-=x[i];
+		n/=10;
+		i++;
+	}
+	while(1)
+	{
+		i--;
+		printf("%d", x[i]);
+		if(i==0)
+			break;
+		printf(" ");
+	}
+}
+else{
+	printf("n nije pozitivan");
+}
+fflush(stdout);
+return 0;
+}

@@ -1,0 +1,16 @@
+char* StvoriNiz(char* poljeznakova,int duljina,int n){
+	char *p;
+	char s;
+	int k,i,j;
+	p=(char*)malloc((n+1)*sizeof(char));
+	for (i=0; i<n;i++){
+	k=0;
+	do{
+		s=moj_rand()%128;
+				for(j=0;j<duljina;j++){
+			if((*(poljeznakova+j)==s)) k=1;}
+		} while(k==0);
+		*(p+i)=s;
+	}*(p+n)='\0';
+	return p;
+}

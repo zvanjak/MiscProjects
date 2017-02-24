@@ -1,0 +1,24 @@
+#include<stdio.h>
+#include<math.h>
+int main(){
+		int x, y, zn, bn=0, i;
+		int lista[20];
+        scanf("%d",&x);
+		if(x>0){
+			zn=log10(x)+1;
+			for(i=0; i<zn; i++){
+				lista[i]=x%10;
+				lista[i]%2 ? 0 : bn++;
+				x=x/10;
+			}
+			if (bn==zn){
+				printf("0");
+				return 0;
+			}
+			for(i=zn; i>=0; i--) lista[i]%2 ? printf("%d", lista[i]):0;
+		}else{
+			printf("%d", x);
+		}
+
+return 0;
+}

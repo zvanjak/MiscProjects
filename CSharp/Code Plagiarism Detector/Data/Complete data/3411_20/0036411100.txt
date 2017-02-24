@@ -1,0 +1,40 @@
+char *BezDuplikata (char *ulazni_niz)
+{
+	int brojac=0;
+	int k=0;
+	int i=0;
+	int j=0;
+	int pom=0;
+	char temp[200];
+
+	if (ulazni_niz==NULL)
+	{
+		return NULL;
+	}
+
+
+	while (ulazni_niz[i]!=NULL)
+	{
+		for (j=0; j<=i; j++)
+		{
+			if (ulazni_niz[j]==ulazni_niz[i])
+			{
+				pom=j;
+				break;
+			}
+		}
+		if (pom<i)
+		{
+			i++;
+			continue;
+		}
+		else
+		{
+			temp[k]=ulazni_niz[i];
+			k++;
+			i++;
+		}
+	}
+	temp[k]='\0';
+	return &temp[0];
+}

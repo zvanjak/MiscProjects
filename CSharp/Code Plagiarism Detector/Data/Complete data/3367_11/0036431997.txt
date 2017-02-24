@@ -1,0 +1,32 @@
+#include <stdio.h>
+int main()
+{
+char a,b,br;
+int i,dek=0,x;
+scanf("%c %c",&a,&b);
+for(i=0;i<2;i++)
+ {
+  if(i==0)
+        {br=b; x=1;}
+  else
+    {br=a; x=16;}
+  if(br=='0')dek=dek+0*x;
+  if(br=='1')dek=dek+1*x;
+  if(br=='2')dek=dek+2*x;
+  if(br=='3')dek=dek+3*x;
+  if(br=='4')dek=dek+4*x;
+  if(br=='5')dek=dek+5*x;
+  if(br=='6')dek=dek+6*x;
+  if(br=='7')dek=dek+7*x;
+  if(br=='8')dek=dek+8*x;
+  if(br=='9')dek=dek+9*x;
+  if(br=='A')dek=dek+10*x;
+  if(br=='B')dek=dek+11*x;
+  if(br=='C')dek=dek+12*x;
+  if(br=='D')dek=dek+13*x;
+  if(br=='E')dek=dek+14*x;
+  if(br=='F')dek=dek+15*x;
+}
+printf("%d",dek);
+return(0);
+}

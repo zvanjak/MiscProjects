@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+	int i; 
+	float n;
+	float pi, s=0;
+	scanf("%f", &n);
+	if ( (n<1)||(n>400)||(n!=(int)(n)))
+		printf ("n nije valjan");
+	else {
+		for (i=1; i<=n; i++)
+			s=(s+(1.f/((4*i-1)*(4*i+1))));
+			pi=(4-(8*s));
+		printf("%.8f", pi);
+	}
+	return 0;
+}

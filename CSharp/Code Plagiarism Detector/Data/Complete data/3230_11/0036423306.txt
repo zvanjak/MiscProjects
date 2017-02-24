@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main(){
+	int n, i;
+	double fjel=2, e=0.;
+	scanf("%d", &n);
+	if (n<1 || n>20) printf("n nije valjan");
+	else {
+		for (i = 3; i<=n; i++){
+			e += 1./(fjel*i);
+			fjel *=i;
+		}
+		printf ("%.12lf", e+2);
+	}
+	return 0;
+}

@@ -1,0 +1,15 @@
+#include<stdio.h>
+int main ()
+{
+	unsigned int odr, nom, br;
+	float bruto_pl, neto_pl, bruto_h;
+	scanf("%d %d %d", &odr, &nom, &br);
+	bruto_h=(float) br;
+	if (odr<nom) (bruto_h=bruto_h-(0.1f*bruto_h));
+	if (odr>nom) (bruto_h=bruto_h+(0.15f*bruto_h));
+	bruto_pl=odr*bruto_h;
+	if (bruto_pl>6000) (neto_pl=0.7f*bruto_pl);
+	if (bruto_pl<=6000) (neto_pl=0.8f*bruto_pl);
+	printf("%.2f",neto_pl);
+	return 0;
+}

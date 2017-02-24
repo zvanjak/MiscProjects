@@ -1,0 +1,20 @@
+int izbaci(zapis **glava) {
+    zapis *pomocni;
+    float prosjek;
+    int   num = 0;
+
+    while (*glava) {
+        prosjek = (*glava)->pros;
+
+        if (prosjek < 2.0) {
+            pomocni = *glava;
+            *glava  = (*glava)->sljed;
+
+            free(pomocni);
+            num++;
+        }
+        else glava = &((*glava)->sljed);
+    }
+
+    return num;
+}

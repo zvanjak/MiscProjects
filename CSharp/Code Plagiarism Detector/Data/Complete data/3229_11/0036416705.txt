@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include<math.h>
+int main() {
+	float n,x,k,p;
+	int m,i,s1,s;
+	scanf("%f",&n);
+	s1=1;
+	k=0;
+	p=0;
+	m=(int)n;
+	if (m==n) {
+		if ((n>=1) && (n<=30)){
+			for(i=1;i<=n;i++) {
+				s=i;
+				s1=s1*s;
+				if (i%2==0) {
+					/*k=k+(1/float(s1));*/
+                                        k = k + 1/(float)s1;
+				} else {
+					/*p=p+(1/float(s1));*/
+                                        p = p + 1/(float)s1;
+				}
+			}
+			/*x=float(1+k-p); */
+                        x = (float)1+k-p;
+			printf("%14.12f",x);
+		} else {
+			printf("n nije valjan");
+		}
+	} else {
+			/*printf(" n nije valjan");*/
+                        printf("n nije valjan");
+		}
+	 
+	return 0;
+}

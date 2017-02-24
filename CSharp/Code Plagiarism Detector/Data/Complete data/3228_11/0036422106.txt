@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <math.h>
+int main () {
+        int n,i;
+	double x = 0;
+/*	printf ("ucitajte broj clanova n\n"); */
+	scanf ("%i",&n);
+	if ((n<1)||(n>100)) {
+		printf ("n nije valjan");
+		return (1); 
+        }
+	for (i=1; i<=n; i++)
+		x+=pow(-1,i+1)/pow(i,2);
+	
+        /* printf ("PI je %.12f\n",pow(12*x,0.5)); */
+        printf ("%.12f", pow(12*x, 0.5));
+	return (0);
+
+}

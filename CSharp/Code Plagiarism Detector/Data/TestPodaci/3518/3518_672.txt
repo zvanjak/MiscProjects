@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(int argc, char *argv[])
+{double deltax; float x[50+1]; double spremi[50+1];
+double kut; int c=0; int i=0; int c2=0;
+scanf("%lf",&deltax);
+do
+{scanf("%f",&x[c]);
+c++;}
+while(x[c-1]!=0);
+for(i=0;i<c-1;i++)
+    spremi[i]=((pow(x[i]+deltax,sin(x[i]+deltax))*tanh(pow(x[i]+deltax,exp(x[i]+deltax))))-
+    (pow(x[i],sin(x[i]))*tanh(pow(x[i],exp(x[i])))))/deltax;
+for(c2=0;c2<c-1;c2++)
+    {kut=atan(spremi[c2]);
+    printf("%.2lf",kut);
+}
+
+
+
+  return 0;
+}

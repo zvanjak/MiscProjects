@@ -1,0 +1,24 @@
+float prosjek (zapis  *glava){
+	long int n=0;
+	float pro=0;
+	zapis *pom;
+	pom=glava;
+	if (glava==NULL)
+		return 0;
+	while (pom){
+		n++;
+		pro+=pom->pros;
+		pom=pom->sljed;
+	}
+	pom=glava;
+	pro=pro/n;
+	while (pom){
+		if (pro>pom->pros){
+			pom->pros=0.;
+			printf ("Promijenjen prosjek %s u %f\n",pom->imepr,pom->pros);
+		}
+		pom=pom->sljed;
+
+	}
+	return pro;
+}

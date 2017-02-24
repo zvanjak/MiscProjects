@@ -1,0 +1,13 @@
+#include <stdio.h>	
+#include <stdlib.h>
+#include <malloc.h>
+int *KreirajTablicuMnozenja(int n){
+	int *c;
+        int i,j;
+	c=(int*)malloc(n*sizeof(int));
+	if(!c)return 0;
+	for (i=1; i<=n; i++)
+		for (j=1; j<=n; j++)
+			c[i*n+j]=i*j;
+	return (c);
+}

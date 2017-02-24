@@ -1,0 +1,17 @@
+int izbaciDuplikate (char * ulazni)
+{
+	int broj=0,i; char *p;
+	for(i=0;i<strlen(ulazni);i++)
+	{
+		while (p=strchr(ulazni+i+1,ulazni[i]))
+		{
+			while (*p)
+			{
+				*p=*(p+1);
+				p++;
+			}
+			broj++;
+		}
+	}
+	return broj;
+}

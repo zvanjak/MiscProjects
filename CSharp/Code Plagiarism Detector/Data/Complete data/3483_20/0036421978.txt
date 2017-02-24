@@ -1,0 +1,62 @@
+class Komprimiranje{
+	int *niz;
+	int n;
+
+public:
+	Komprimiranje(int *p, int d){
+		niz=p;
+		n=d;
+	}
+int UkupnaSuma(){
+		int x=0,c,i,a,b,j,z=0,suma=0;
+		int *deniz=NULL;
+		for(i=1; i<n; i=i+2){
+			z=z+niz[i];
+		}
+
+		deniz=(int*)malloc(z*sizeof (int)+1);
+		for(i=0,j=1; i<n,j<n; i=i+2,j=j+2){
+			a=niz[i];
+			b=niz[j];
+			for(c=0;c<b;c++){
+				deniz[x]=a;
+				x++;
+				
+			}
+		}
+
+
+		for(i=0; i<z; i++){
+			suma=suma+deniz[i];
+		}
+		return suma;
+	}
+
+
+	int UkupniBrojElemenata(int vrijednost){
+	int x=0,c,i,a,b,j,z=0,suma=0,brojac=0;
+		int *deniz=NULL;
+		for(i=1; i<n; i=i+2){
+			z=z+niz[i];
+		}
+
+		deniz=(int*)malloc(z*sizeof (int)+1);
+		for(i=0,j=1; i<n,j<n; i=i+2,j=j+2){
+			a=niz[i];
+			b=niz[j];
+			for(c=0;c<b;c++){
+				deniz[x]=a;
+				x++;
+				
+			}
+		}
+		for(i=0;i<z;i++){
+			if(deniz[i]!= vrijednost)
+				brojac++;
+		}
+
+	return brojac;
+	}
+		
+	
+};

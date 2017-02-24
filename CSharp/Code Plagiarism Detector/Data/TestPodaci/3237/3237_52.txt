@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+	int n, i;
+	float PI, x=0, y;
+	scanf("%d",&n);
+	while (n<1 || n>30)
+		{
+			printf("n nije valjan");
+			scanf("%d", &n);
+		}
+	for (i=1; i<=n; i++)
+	{
+		y=1./(pow(i,6));
+		x+=y;
+	}
+	PI=pow(x*945, 1./6);
+	printf("\nPI=%.12f ", PI);
+	return 0;
+}

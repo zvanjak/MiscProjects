@@ -1,0 +1,10 @@
+float prosjek (FILE *f){
+	struct album m;
+	int n=0,suma=0;
+	float rez;
+	for(;(fread(&m,sizeof(m),1,f)==1);n++){
+		suma+=m.prodano;
+	}
+	rez=(float)suma/n;
+	return rez;
+}

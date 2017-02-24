@@ -1,0 +1,20 @@
+int najbolji (FILE *f) {
+struct natjecatelji { 
+     int redni_br; 
+     char prezime[20+1]; 
+     int bodovi; 
+     }  s1;
+     
+      int pom = 0, naj = 0;
+       while(!feof(f)) {
+          
+          fread (&s1,sizeof(s1),1,f);
+          if (s1.redni_br == 0) 
+           return 0;
+          if (s1.bodovi > pom) {
+              naj = s1.redni_br;
+              pom = s1.bodovi;
+              }
+          }
+      return naj;
+      }

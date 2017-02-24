@@ -1,0 +1,23 @@
+# include <stdio.h>
+int main() {
+
+	int i,n,brd,brp=0;
+	
+	do
+	{
+		brd=0;
+		scanf("%d",&n);
+		if (n>2)
+		{
+			for(i=1;i<n;i++)
+			{
+			if ((n % i)== 0) brd+=1;
+			}
+		}
+		if (brd==1) brp+=1;
+	} while (n>2);
+	/* printf("Broj prostih brojeva:%d\n",brp); */
+        printf("%d", brp);
+
+	return 0;
+}

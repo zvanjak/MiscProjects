@@ -1,0 +1,48 @@
+#include<stdio.h>
+#include<math.h>
+int main(void)
+
+{
+	
+int a,b,c,e,g,d,f,x,z,y[50];
+b=0;
+z=0;
+
+	do{
+scanf("%d",&x);
+if (x<0) break;
+z=z+1;
+y[z]=x;
+	}while(x>0);
+x=0;
+
+	do{
+d=0;
+g=1;
+x=x+1;
+a=y[x];
+
+	do{
+b=b+1;
+g=g*10;
+	}while(a/g!=0);
+	
+	c=0;
+	e=0;
+	do{
+	b=b-1;
+	f=pow(10, e);
+if (e==0) f=1;
+	d=pow(10, b);
+if (b==0) d=1;
+    c=c+a/d*f;
+	a=a-a/d*d;
+	e=e+1;
+	}while(b>0);
+
+printf("%d ",c);
+}while(x<z);
+return 0;
+}
+
+

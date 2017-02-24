@@ -1,0 +1,13 @@
+#include<stdio.h> 
+int main(){ 
+int odradeno,norma, cijena; 
+int bruto; 
+float To_Ispada; 
+scanf("%d %d %d",&odradeno, &norma, &cijena); 
+bruto=odradeno*cijena; 
+if (odradeno<norma) cijena-=cijena*0.1; 
+else if (odradeno>norma) cijena+=cijena*0.15; 
+To_Ispada=cijena*odradeno;  
+To_Ispada*= To_Ispada>6000? 0.7:0.8; 
+printf("%.2f",To_Ispada); 
+return 0;}

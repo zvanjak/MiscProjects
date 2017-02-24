@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main()
+{
+int n,i, sum1=0,sum2=0,sum=0;
+
+
+  scanf("%d", &n);
+	
+	for (i = 1; i <= n; i = i++){
+		sum1+=i*i;
+	}
+
+	for (i = 1; i < n; i =i++){
+	
+
+	sum2+=2*i;
+}
+
+
+
+sum=sum1-sum2;
+
+printf("%d\n",sum);
+
+return 0;
+
+}

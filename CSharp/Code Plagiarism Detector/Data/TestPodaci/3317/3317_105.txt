@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+typedef struct {
+       int redni_br;
+       char prezime[20+1];
+       int bodovi;
+       }natjecatelj;
+       
+void brisi (FILE *f, int n)  
+{     
+      natjecatelj n1;
+      fseek (f,(n-1)*sizeof(n1), SEEK_SET);  
+      fread(&n1, sizeof(n1), 1,f);
+      n1.redni_br=0;
+      fseek(f, -1L*sizeof(n1), SEEK_CUR);
+      fwrite(&n1,sizeof(n1),1,f);
+      }   

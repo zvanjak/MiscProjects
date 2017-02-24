@@ -1,0 +1,13 @@
+# include <stdio.h>
+int main() {
+    int broj,tisuc,deset,stot,jed;
+    scanf("%d",&broj);
+	tisuc=broj/1000;
+	stot=(broj%1000)/100;
+	deset=(broj%100)/10;
+	jed=broj%10;
+	broj =(tisuc*stot*deset*jed);
+	if (broj%2 == 0) printf ("%d", jed);
+	else printf ("%d", tisuc);
+	return 0;
+}

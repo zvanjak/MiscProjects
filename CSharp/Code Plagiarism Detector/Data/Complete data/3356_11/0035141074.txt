@@ -1,0 +1,55 @@
+#include <stdio.h>
+
+int main () {
+
+ int m, n, a, b, d;
+ char c;
+
+ scanf("%d %d %c", &n, &m, &c);
+
+ if ((n<0)||(m<1)||(m>3)||(c!='R')&&(c!='L')) {
+  printf("Error\n");
+}
+
+ else {
+
+  if ((n>=100)&&(n<=999)) {
+
+  a=n/100;
+  b=n%100/10;
+  d=n%10;
+
+   if(m==1) {
+
+    if(c=='L') {
+
+    n=b*100+d*10+a;
+       printf("%d",n);
+   } else
+
+   if(c=='R') {
+
+    n=d*100+a*10+b;
+    printf("%d",n);
+
+   }
+  }
+
+  if(m==2) {
+
+   if(c=='L') {
+
+    n=d*100+a*10+b;
+    printf("%d",n);
+   } else
+   if(c=='R') {
+    n=b*100+d*10+a;
+    printf("%d",n);
+   }
+  }
+  if(m==3)
+   printf("%d",n);
+ }
+ }
+return 0;
+}

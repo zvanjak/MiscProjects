@@ -1,0 +1,22 @@
+char *brojeve_u_znakove(int *polje, int duljina)
+{
+    int i=0, j=0, brojac=0;
+    char *niz;
+    char znak;
+    niz = (char*) malloc(sizeof(char));
+    for(i=0; i<duljina; i++)
+    {
+        j=1;
+        while(polje[i]/j != 0)
+        {
+            znak = polje[i]/j;
+            znak = 48 + (polje[i]%(j*10))/j;
+            brojac++;
+            j *= 10;
+            niz = (char*)  realloc(niz,sizeof(char)*(brojac+1));
+            *(niz+brojac-1) = znak;
+        }
+    }
+    *(niz+brojac) = '\0';
+    return niz;
+}

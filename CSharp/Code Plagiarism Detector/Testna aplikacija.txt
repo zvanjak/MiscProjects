@@ -1,0 +1,6 @@
+Use case
+- Load from directory
+		- uèitava sva rješenja iz direktorija i dodaje ih u trenutni working set
+- Analyze
+		- na sve parove primjenjuje selektiranu metriku i iscrtava rezultat grafièki (obojani pravokutnici gdje boja signalizira sliènost - bijelo znaèi razlièito, crno znaèi isto)
+

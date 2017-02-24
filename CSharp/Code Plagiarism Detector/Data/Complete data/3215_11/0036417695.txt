@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main()
+{
+	int broj, parni, neparni;
+	parni=0;
+	neparni=0;
+	while ( broj!=0)
+	{
+		scanf("%d", &broj);
+		if (broj<0) continue;
+		if (broj%2==0) parni=parni+1;
+		else neparni=neparni+1;
+	}
+	printf("%d %d", parni-1, neparni);
+	return(0);
+}

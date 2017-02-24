@@ -1,0 +1,8 @@
+void PrepisiStogURed(Stog *stog, Red *red){
+int stavka;
+if(stog->Skini(&stavka))	{
+	PrepisiStogURed(stog, red);
+	if (stavka%2==0)	red->DodajURed(stavka);
+}
+}
+

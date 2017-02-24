@@ -1,0 +1,22 @@
+#include<stdio.h>
+int main()
+{
+	int x,a,c,d,ab,cd,bc;
+	printf("\n Upisi 4. znamenkasti broj: ");
+	scanf("%d",&x);
+	a=x/1000;
+	c=(x%100)/10;
+	d=x%10;
+	ab=x/100;
+	cd=x%100;
+	bc=(x%1000)/10;
+		if(((ab*cd)%bc)==0)
+		{
+			printf("%d",a+c);
+		}
+		else
+		{
+			printf("%d",c*d);
+		}
+return 0;
+}

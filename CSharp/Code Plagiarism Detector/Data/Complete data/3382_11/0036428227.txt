@@ -1,0 +1,22 @@
+#include <stdio.h>
+int main () {
+	int broj, proba, t, t1000, s, s100, d, d10, j, j1, x, y;
+	scanf("%d", &broj);
+	/* Razdvajamo znamenke */
+	t1000=broj%1000; t=broj/1000;
+	s100=t1000%100; s=t1000/100;
+	d10=s100%10; d=s100/10;
+	j1=d10%1; j=d10/1;
+	proba=((t*10+s*1)*(d*10+j*1))%(s*10+d*1);
+	x=t+d; y=d*j;
+	/* Uvjeti */
+	if (broj<1000 || broj>9999) {
+		printf("Niste unijeli cetveroznamenkasti broj!\a\n"); }
+	else {
+		if (proba==0) {
+			printf("%d\n", x); }
+		if (proba!=0) {
+			printf("%d\n", y); }
+	}
+	return 0;
+}

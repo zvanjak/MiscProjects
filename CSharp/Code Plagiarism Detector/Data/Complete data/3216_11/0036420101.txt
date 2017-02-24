@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <math.h>
+
+int main () {
+  long br_prostih = 0, N, prost, d;
+  
+  while (1) {
+    scanf ("%ld", &N);
+	if (N <= 2) {
+	  /* if (N == 2)
+	    br_prostih++; */
+	  break;
+	}
+	
+	prost = 1;
+	if (N % 2 == 0)
+	  prost = 0;
+	else 
+      for (d = 3; d <= sqrt (N); d += 2)
+        if (N % d == 0) {
+		  prost = 0;
+		  break;
+		}
+    
+    if (prost == 1)
+      br_prostih++;
+
+  }
+  
+  printf ("%ld", br_prostih);
+  
+  return 0;
+}

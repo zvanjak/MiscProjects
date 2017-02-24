@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+	unsigned int x,z1,z2,z4,y;
+	scanf("%d", &x);
+
+	z1 = x % 10;
+	z2 = (x % 100) / 10;
+	z4 = x / 1000;
+				
+	if ((((x/100)*(x%100))%((x/10)%100))==0) {
+		y = z4 + z2;
+		printf("%d", y);
+	} else {
+		y = z2 * z1;
+		printf("%d", y);
+	}
+	
+	return(0);
+}

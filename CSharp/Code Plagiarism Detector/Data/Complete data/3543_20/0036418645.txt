@@ -1,0 +1,12 @@
+void obrni(zapis **glava)
+{
+zapis *now, *nxt, *tmp;
+tmp=NULL;
+now=*glava;
+while(now!=NULL)
+{nxt=now->sljed;
+now->sljed=tmp;
+tmp=now;
+now=nxt;}
+*glava=tmp;
+}

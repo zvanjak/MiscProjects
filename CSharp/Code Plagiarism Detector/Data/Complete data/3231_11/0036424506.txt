@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+	int i, n2;
+	double sum=1., n;
+	scanf ("%lf", &n);
+	n2 = (int)n;
+	if ((n<1) || (n>30) || (n != n2)) printf ("n nije valjan");
+	else
+	{
+		for (i=1; i<n; i++)
+		{
+			if (i%2 == 0)
+				sum += 1./pow(2, i);
+			else if (i%2 == 1)
+				sum -= 1./pow(2, i);
+		}
+		printf ("%0.12lf", sum);
+	}
+	return 0;
+}

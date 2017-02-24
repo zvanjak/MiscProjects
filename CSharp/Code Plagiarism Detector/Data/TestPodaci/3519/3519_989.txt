@@ -1,0 +1,72 @@
+int SplitToSentences (char *inputField, char *outputField) {
+
+int br=0, i=0;
+
+char a,b;
+
+while(1){
+
+a=*(inputField+i);
+
+
+if(a=='\0'){
+
+*(outputField+i)=a;
+
+break;
+
+}
+
+if(a==','){
+
+a='.';
+
+
+br++;
+
+*(outputField+i)=a;
+
+while(1){
+
+b=*(inputField+i+1);
+
+i++;
+
+if(b>65 && b<89 || b>96 && b<122 ){
+
+if(b>96 && b<122){
+
+b=b-32;
+
+}
+
+*(outputField+i)=b;
+
+break;
+
+}
+
+else{
+
+*(outputField+i)=b;
+
+}
+
+}
+
+}
+
+else {
+
+*(outputField+i)=a;
+
+
+}
+
+i++;
+
+}
+
+return br;
+
+}

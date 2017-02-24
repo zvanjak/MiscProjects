@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+#define DIM 100
+
+int main() {
+	int brojac=0, broj[DIM], bkor=0;
+	char znak[DIM];
+	int i, j, kontrol;
+
+	for (brojac=0;; brojac++) {
+		scanf("%c%d", &znak[brojac], &broj[brojac]);
+		if ((broj[brojac]==-1) || (brojac>=100)) {
+			for (i=0; i<brojac; i++) {
+				kontrol=broj[i];
+				for (j=0; j<kontrol; j++) {
+					printf("%c ", znak[i]); } }
+			break; }  }
+    return 0;
+}
+
+
+
+
+
+     
+         
+            
+    
+    
+    
+    

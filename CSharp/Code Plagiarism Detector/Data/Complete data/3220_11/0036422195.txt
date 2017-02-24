@@ -1,0 +1,31 @@
+#include <stdio.h>
+int main()
+{
+	long num, newNum, tmp, pow10;
+
+	scanf("%d", &num);
+
+	if (num <= 0)
+	{
+		printf("%d", num);
+		return 0;
+	}
+
+	newNum = 0;
+	pow10 = 1;
+	while (num > 0)
+	{
+		tmp = num % 10;
+		if (tmp % 2 != 0)
+		{
+			newNum += tmp*pow10;
+			pow10 *= 10;
+		}
+
+		num /= 10;
+	}
+
+	printf("%d", newNum);
+
+	return 0;
+}

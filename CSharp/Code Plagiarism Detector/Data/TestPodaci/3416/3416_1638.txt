@@ -1,0 +1,22 @@
+#include<stdio.h>
+int main() {
+	char s[30]={0},min='Z',max='A';
+	int j,nmin=0,nmax=0,i=-1;
+
+		do {
+			i++;
+			scanf("%c",&s[i]); 
+			if(s[i]==10) scanf("%c",&s[i]); 
+			if (s[i]>='A' && s[i]<='Z')
+				{if (s[i]<min) {min=s[i]; nmin=0;}
+				 if (s[i]>max) {max=s[i]; nmax=0;}
+				 if (s[i]==min) nmin++;
+				 if (s[i]==max) nmax++;}
+			}
+		while ((s[i]>='A') && (s[i]<='Z'));
+	
+	if (nmin==0 || nmax==0) printf("-1");
+	else {for(j=0;j<nmin;j++) printf("%c ",min);
+			printf("%c",max); for (j=0;j<nmax-1;j++) printf(" %c",max);}
+		
+	return 0;}

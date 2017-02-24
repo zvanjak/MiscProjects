@@ -1,0 +1,14 @@
+int najbolji( FILE *f ) {
+   int i, ret, best;
+   struct natjecatelj tmp;
+   ret = -1;
+   best = -1;
+   for( i = 1; fread( &tmp, sizeof(tmp), 1, f ); i++ ) {
+      if( tmp.redni_br == 0 ) continue;
+      if( ret == -1 || ( tmp.bodovi > best ) ) {
+         best = tmp.bodovi;
+         ret = i;
+      }
+   }
+   return ret;
+}

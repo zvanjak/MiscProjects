@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[])
+{
+    int x1,x2,t1,t2,s1,s2,d1,d2,j1,j2,rez;
+  
+    scanf ("%d %d", &x1, &x2);
+          
+          t1 = x1 / 1000;
+          t2 = x2 / 1000;
+          s1 = x1 % 1000 / 100;
+          s2 = x2 % 1000 / 100;
+          d1 = x1 % 1000 % 100 / 10;
+          d2 = x2 % 1000 % 100 / 10;
+          j1 = x1 % 1000 % 100 % 10;
+          j2 = x2 % 1000 % 100 % 10;
+    
+       if ((t1 == j2) && (s1 == d2) && (d1 == s2) && (j1 == t2)) {
+          rez = t1 + s1 + d1 + j1;
+          }
+       else {
+          rez = x1 - x2;
+          }
+    printf ("%d",rez);         
+  
+  system("PAUSE");	
+  return 0;
+}

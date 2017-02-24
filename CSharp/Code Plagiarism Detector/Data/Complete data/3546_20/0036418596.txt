@@ -1,0 +1,15 @@
+Stog * PrepisiRedUStog(Red *red){
+     int tren, da, i;
+     Stog * rjes;
+     if (red->SkiniIzReda(&tren)){
+         rjes = PrepisiRedUStog(red);
+         da = 1;
+         for (i = 2; i < tren; i++)
+            if (tren%i == 0) da = 0;
+         if (da) rjes->Stavi(tren);
+         red->DodajURed(tren);
+         return rjes;                  
+     }
+     rjes = new Stog();
+     return rjes;
+}

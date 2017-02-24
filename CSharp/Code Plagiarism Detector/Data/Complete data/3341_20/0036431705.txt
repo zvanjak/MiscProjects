@@ -1,0 +1,11 @@
+int niz (int i) {
+int unesider;
+kontrola ();
+if (i>=3)
+	unesider=niz(i-1)+niz(i-2)+niz(i-3);
+else
+	return 1;
+return unesider;
+}
+	
+

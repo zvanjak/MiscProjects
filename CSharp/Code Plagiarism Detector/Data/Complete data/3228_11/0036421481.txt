@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <math.h>
+void main()
+{
+ int i,n;
+ float suma=0,pi,d;
+ scanf("%d",&n);
+ if(n>=1 && n<=100)
+    {
+     for(i=1;i<=n;i++)
+        if(i%2==0)
+          suma-= 1/ (float) ( i*i );
+        else
+          suma+= 1/ (float) ( i*i );
+     d=suma*12;
+     pi=sqrt(d);
+     printf("%.12f",pi);
+    }
+  else
+    printf("n nije valjan");
+}

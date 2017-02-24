@@ -1,0 +1,25 @@
+char *brojeve_u_znakove(int *polje, int duljina)
+{
+    int i=0,j=0,ud=0,x,pro;
+    char *obbr;
+    char a;
+    obbr=malloc(sizeof(char));
+    for(i=0;i<duljina;i++)
+    {
+        x=*(polje+i);
+        j=1;
+        while(1)
+        {
+            a=x/j;
+            if(a==0) break;
+            pro=(x%(j*10))/j;
+            a=pro+48;
+            ud++;
+            j*=10;
+            obbr=realloc(obbr,sizeof(char)*(ud+1));
+            *(obbr+ud-1)=a;
+        }
+    }
+    *(obbr+ud)='\0';
+    return obbr;
+}

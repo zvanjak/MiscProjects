@@ -1,0 +1,31 @@
+class Kosarica {
+	
+	float *polje;
+	int n;
+	
+	public:
+		Kosarica() {
+			n=0;
+			polje = (float *) malloc(sizeof(float)*(n+1));
+		}
+		void DodajProizvod(float cijena) {
+			polje[n++] = cijena;
+			polje = (float *) realloc(polje,sizeof(float)*(n+1)); 
+		}
+		float UkupnaCijena() { 
+			float zbroj=0;
+			int i;
+			for (i=0;i<n;++i) 
+				zbroj+=polje[i]; 
+			return zbroj; 
+		}
+		float NajskupljiProizvod() { 
+			float max=0;
+			int i;
+			for (i=0;i<n;++i) 
+				if (polje[i]>max) 
+					max = polje[i];
+			return max;
+		}
+		~Kosarica() { free(polje); }
+};

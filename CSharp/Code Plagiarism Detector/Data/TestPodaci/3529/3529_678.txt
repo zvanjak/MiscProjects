@@ -1,0 +1,7 @@
+void spoji(char *ime, char *prezime, char *JMBAG, char *izlazni){
+strcpy(izlazni, prezime);
+strcat(izlazni, ", ");
+strcat(izlazni, ime);
+strcat(izlazni, ": ");
+strcat(izlazni, JMBAG);
+}

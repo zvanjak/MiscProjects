@@ -1,0 +1,13 @@
+#include <stdio.h>
+main(){
+int nep=0, par=0, br;
+do{
+	scanf("%d", &br);
+	if (br<0)continue;
+	if (br==0)break;
+	if (br%2)nep++;
+	else par++;
+}while(1);
+printf("%d %d",par, nep);
+return 0;
+}

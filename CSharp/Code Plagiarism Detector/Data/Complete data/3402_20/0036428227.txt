@@ -1,0 +1,25 @@
+int *napraviPolje (int *A, int Na, int a, int b, int *Nc) {
+	int i, j, x=0, *polje, pom;
+
+	if (a>b)
+		return 0;
+
+	polje=(int *) malloc (Na*sizeof(int));
+
+	for (i=0; i<Na; i++) {
+		pom=*(A+i);
+		for (j=a; j<=b; j++) {
+			if (pom%j==0) {
+				*(polje+x)=pom;
+				x++;
+				break;
+			}
+		}
+	}
+
+	Nc=&x;
+
+	polje=(int *) realloc (polje, x*sizeof(int));
+
+	return polje;
+}

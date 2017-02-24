@@ -1,0 +1,15 @@
+int JelSeSijeku(Kruznica &k1, Kruznica &k2){
+		float udaljenost, radijusi, x1, x2, y1, y2, r1, r2, c;
+		x1 = k1.GetCenterX();
+		x2 = k2.GetCenterX();
+		y1 = k1.GetCenterY();
+		y2 = k2.GetCenterY();
+		r1 = k1.GetRadius();
+		r2 = k2.GetRadius();
+		udaljenost = sqrt(pow((x2 - x1), 2) + pow((y2 - y1), 2));
+		radijusi = r1 + r2;
+		if (udaljenost > radijusi) {return 0;}
+		if (radijusi == udaljenost) {return 1;}
+		if (udaljenost < radijusi && udaljenost > 0) {return 2;}
+		if (udaljenost == 0) {return 3;}
+	}

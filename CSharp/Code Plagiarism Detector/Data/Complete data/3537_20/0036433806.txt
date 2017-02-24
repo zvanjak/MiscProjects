@@ -1,0 +1,12 @@
+int BrojClanova(Red *red) {
+    Red pomocni;
+    int element, num = 0;
+
+    while (red->SkiniIzReda(&element))
+        pomocni.DodajURed(element), num++;
+
+    while (pomocni.SkiniIzReda(&element))
+        red->DodajURed(element);
+
+    return num;
+}

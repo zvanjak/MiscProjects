@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <math.h>
+int main(){
+int n, i;
+double a=0.0;
+scanf ("%d, %d, %ld", &n, &i, &a);
+if ((n<1) || (n>30)) {
+    printf ("n nije valjan\n");}
+else {for(i=0; i<=n; i++) {
+    a+=1/pow(2,i);}
+printf("%.12lf\n",a);}
+  /*system("PAUSE");*/
+  return 0;
+}

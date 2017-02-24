@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main(){
+	int ar, as,i, j, mr, ms, max, polje[20][5];
+    do {
+	scanf("%d %d",&mr, &ms);
+	} while((mr<1 || mr>20) && (ms<1 || ms>5));
+	max=0;
+    for(i=0; i<=mr-1; i++){
+		for(j=0; j<=ms-1; j++){
+			scanf("%d", &polje[i][j]);
+			if (polje[i][j]<0) polje[i][j]=-polje[i][j];
+            if (polje[i][j]>max){
+                             max=polje[i][j];
+                             ar=i;
+                             as=j;
+                             }
+        }}
+   printf("%d %d",ar, as);
+   return 0;
+}

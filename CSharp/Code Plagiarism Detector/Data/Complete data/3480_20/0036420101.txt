@@ -1,0 +1,40 @@
+class Komprimiranje {
+  private:
+    int *pok;
+    int n;
+  
+  public:
+    Komprimiranje (int *komp, int n_komp) {
+      pok = komp;
+      n = n_komp;
+    }
+    
+    int BrojRazlicitihElemenata () {
+      int *polje = new int[100];
+      int i, temp, num = 0;
+      
+      for (i = 0; i < 100; i++)
+        *(polje + i) = 0;
+      
+      for (i = 0; i < n; i += 2) {
+        temp = *(pok + i);
+        if (*(polje + temp) == 0) {
+          *(polje + temp) = 1;
+          num++;
+        }
+      }
+      
+      delete [] polje;
+      return num;
+    }
+    
+    int UkupniBrojElemenata (int vrijednost) {
+      int i, num = 0;
+      
+      for (i = 0; i < n; i += 2)
+        if (*(pok + i) == vrijednost)
+          num += *(pok + i + 1);
+      
+      return num;
+    }
+};

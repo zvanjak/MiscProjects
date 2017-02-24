@@ -1,0 +1,14 @@
+#include<stdio.h>
+#include<math.h>
+main() {
+int n,a;
+double ln=0;
+scanf ("%d",&n);
+if ((n<1)||(n>100))
+printf ("n nije valjan");
+else {
+for (a=0;a<n;a++)
+	ln+=(pow(-1,a)*1./(a+1));
+printf("%.12f",ln); }
+return 0;
+}

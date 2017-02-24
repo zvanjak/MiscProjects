@@ -1,0 +1,58 @@
+class CjelobrojniNiz {
+  	public:
+       int * polje;
+	   int elem;
+  	   int SviJednaki; 
+  	    
+       CjelobrojniNiz(int niz[],int n) {
+       		polje = new int[n];
+         	elem = n;
+          	for (int i=0;i<n;i++) 
+          	 	polje[i]=niz[i];
+            if (n==0) 
+            	SviJednaki=0;
+            else {	
+	            SviJednaki=1;
+    	        for (int i=1;i<n;i++)
+        	    	if (polje[i]!=polje[i-1]) SviJednaki=0;        
+	 		}   	
+       }
+       CjelobrojniNiz(CjelobrojniNiz &a) {
+       		elem = a.elem;
+         	SviJednaki = a.SviJednaki;
+          	polje = new int[a.elem];
+           	for (int i=0;i<elem;i++) {
+           		polje[i] = a.polje[i];    
+       		}    
+   	   }
+       ~CjelobrojniNiz() {
+       		delete [] polje;    
+       }     	    
+       int Usporedi(CjelobrojniNiz niz) {
+       		if ( elem != niz.elem ) return 0;
+          	for (int i=0;i<elem;i++)
+           		if ( polje[i] != niz.polje[i] ) return 0;
+            return 1;     
+       }
+       int * VratiRazliku(CjelobrojniNiz niz, int* n) {
+      		int i=0,j=0,k=0;
+      		int * novi = new int[elem];
+      		while ( i<elem && j<niz.elem ) {
+      		 	if ( polje[i] < niz.polje[j] ) {
+              		if (k==0 || novi[k-1]!=polje[i] ) {
+                     	novi[k++]=polje[i];
+                  	}   	
+              		i++;
+                }    
+                if ( polje[i] == niz.polje[j] ) {
+                	i++;
+                }       
+                if ( polje[i] > niz.polje[j] ) j++;  
+      		}    
+      		while ( i < elem ) {
+            	novi[k++]=polje[i++];
+         	}   	
+      		*n=k;	
+        	return novi;     
+       }                   
+};    

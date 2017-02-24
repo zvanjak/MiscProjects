@@ -1,0 +1,18 @@
+#include<stdio.h>
+unsigned long int x;
+char h[2];
+int main()
+{
+	scanf("%d",&x);
+	if ((x>255)||(x<16)) printf("Izvan intervala");
+	else
+	{
+        h[0]=x%16;
+		x=x/16;
+		h[1]=x%16;
+		if (h[0]<10) h[0]+=48; else h[0]+=55;
+		if (h[1]<10) h[1]+=48; else h[1]+=55;
+		printf("%c%c",h[1],h[0]);
+	}
+	return 0;
+}

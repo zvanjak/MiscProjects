@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<math.h>
+int main(void)
+{
+	int mr,ms,x[20][5],i,j,max;
+	do
+	scanf("%d %d",&mr,&ms);
+	while(mr<1||mr>20||ms<1||ms>5);
+	for(i=0;i<mr;i++)
+		for(j=0;j<ms;j++)
+			scanf("%d",&x[i][j]);
+	for(i=0;i<mr;i++)
+		for(j=0;j<ms;j++)
+		{
+			if(i==0&&j==0)
+				max=abs(x[i][j]);
+			if(abs(x[i][j])>max)
+				max=abs(x[i][j]);
+		}
+	for(i=0;i<mr;i++)
+		for(j=0;j<ms;j++)
+			if(abs(x[i][j])==max)
+			{
+				printf("%d %d",i,j);
+				break;
+			}
+	return 0;
+}

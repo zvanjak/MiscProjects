@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main (){
+double pi;
+int n,i;
+pi=0;
+scanf("%d",&n);
+if(!((n>0)&&(n<401))){
+printf("n nije valjan");
+return 0;
+}
+for (i=1;i<=n;i++){
+pi=pi+1/((4*(double)i-1)*(4*(double)i+1));}
+pi=4-8*pi;
+printf ("%.8f",pi);
+return 0;
+}

@@ -1,0 +1,9 @@
+int veci_od (FILE *f, int n) {
+	struct natjecatelj nat;
+	int br = 0;
+	while (fread (&nat, sizeof(nat), 1, f) == 1) {
+		if (nat.redni_br != 0 && nat.bodovi >= n)
+			br++;
+	}
+	return br;
+}

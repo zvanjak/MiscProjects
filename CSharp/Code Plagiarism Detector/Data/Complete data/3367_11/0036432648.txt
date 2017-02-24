@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int val( char a )
+{
+	if( a >= '0' && a <= '9' )
+		return a - '0';
+	return a - 'A' + 10;
+}
+
+int main( void )
+{
+	char a, b;
+	int sol;
+	
+	scanf( "%c %c", &a, &b );
+
+	sol = val( a ) * 16 + val( b );
+
+	printf( "%d\n", sol );
+
+	return 0;
+}
+	
+	

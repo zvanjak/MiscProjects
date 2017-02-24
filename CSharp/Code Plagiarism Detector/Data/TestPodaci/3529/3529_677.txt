@@ -1,0 +1,41 @@
+void spoji (char *ime, char *prezime, char *JMBAG, char *izlazni)
+{
+	int n=0, i=0;
+
+	while(*prezime!=0)
+	{
+		if(*prezime!=' ')
+			*(izlazni++)=*prezime;
+		prezime++;
+	}
+	*(izlazni++)=',';
+	*(izlazni++)=' ';
+	
+	while(*ime!=0)
+	{
+		if(*ime!=' ')
+			*(izlazni++)=*ime;
+		ime++;
+	}
+	
+	*(izlazni++)=':';
+	*(izlazni++)=' ';
+	
+	while((JMBAG[i]!=0))
+		if(JMBAG[i++]!=' ')
+			n++;
+
+	for(i=0; i<(6-n); i++)
+		*(izlazni++)='0';
+  	
+    while(*JMBAG!=0 && i<6)
+	{
+		if(*JMBAG!=' ')
+		{
+			*(izlazni++)=*JMBAG;
+			i++;
+		}
+		JMBAG++;
+	}
+	*izlazni=0;		
+}

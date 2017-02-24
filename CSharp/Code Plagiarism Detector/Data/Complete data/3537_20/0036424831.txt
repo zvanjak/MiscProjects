@@ -1,0 +1,4 @@
+int BrojClanova (Red *red)
+{
+return 0;
+}

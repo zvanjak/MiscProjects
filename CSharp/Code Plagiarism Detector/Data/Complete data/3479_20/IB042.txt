@@ -1,0 +1,14 @@
+Kalendar* Unesi(MojDatum datumi[], int broj, int *mjesec){
+	int brojac[12] = {0};
+	Kalendar *r = new Kalendar();
+	*mjesec = 0;
+	for(int i=0 ; i<broj ; i++){
+		if (datumi[i].mjesec<1 || datumi[i].mjesec>12)
+			throw "Nedozvoljeni mjesec";
+		++brojac[datumi[i].mjesec];
+		if (brojac[datumi[i].mjesec] > brojac[*mjesec])
+			*mjesec = datumi[i].mjesec;
+		r->Dodaj(datumi[i]);
+	}	
+	return r;
+}

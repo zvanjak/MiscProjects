@@ -1,0 +1,28 @@
+int najbolji(FILE *f){
+ 
+struct natjecatelj{
+int redni_br;
+char prezime[20+1];
+int bodovi;
+}natj;
+ 
+int max=0,bodovi=0,kraj,n=0;
+ 
+fseek(f,0L,SEEK_END);
+kraj=ftell(f);
+fseek(f,0L,SEEK_SET);
+ 
+do{
+ n++;
+ fread(&natj,sizeof(natj),1,f);
+ if(natj.redni_br!=0){
+  if(natj.bodovi>bodovi){
+   bodovi=natj.bodovi;
+   max=natj.redni_br;
+  }
+ }
+ else fseek(f,(n-1)*sizeof(natj),SEEK_SET);
+}while(ftell(f)<kraj);
+ 
+return max;
+}

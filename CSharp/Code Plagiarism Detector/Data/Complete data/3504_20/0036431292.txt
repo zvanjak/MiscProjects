@@ -1,0 +1,52 @@
+typedef struct {
+  char ime[21];
+  char prezime[31];
+  char jmbag[11];
+  int ocjena;
+} tip;
+
+struct at {
+  tip element;
+  struct at *sljed;
+};
+
+typedef struct at atom;
+
+int brojElementa(atom *glava) {
+  int n=0;
+  if(glava==NULL) return 0;
+  for(;glava;glava=glava->sljed) n++;
+  return n;
+}
+
+int dodaj(atom **glavap,tip element) {
+  atom *novi;
+  if((novi=(atom *)malloc(sizeof(atom)))==NULL) return 0;
+  novi->element=element;
+  novi->sljed=*glavap;
+  *glavap=novi;
+  return 1;
+}
+
+int minOcjena(atom *glava) {
+  int minn;
+  if(glava==NULL) return -1;
+  for(minn=(glava->element).ocjena;glava->sljed;glava=glava->sljed)
+    if(minn>(glava->element).ocjena) minn=(glava->element).ocjena;
+  return minn;
+}
+
+float prosjOcjena(atom *glava) {
+  float t=0; int n=0;
+  if(glava==NULL) return -1;
+  for(;glava;glava=glava->sljed) { t+=(glava->element).ocjena; n++; }
+  return t/n;
+}
+
+int izbaciImeSadrzi(atom **glavap,char *imePodniz) {
+  atom *p; int n=0;
+  if(*glavap==NULL) return 0;
+  for (;*glavap;glavap=&((*glavap)->sljed))
+    if(strstr(((*glavap)->element).ime,imePodniz)) { n++; p=*glavap; *glavap=(*glavap)->sljed; free(p); }
+  return n;
+}

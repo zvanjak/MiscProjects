@@ -1,0 +1,10 @@
+float prosjek(FILE *f){
+	int prod=0,br=0;
+	struct album podaci;
+	while(fread(&podaci,sizeof(podaci),1,f)!=EOF)
+	{
+		prod+=podaci.prodano;
+		br++;
+	}
+	return ((float)prod/br);
+}

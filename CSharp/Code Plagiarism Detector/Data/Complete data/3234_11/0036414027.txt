@@ -1,0 +1,15 @@
+#include <stdio.h> 
+int main (){
+  float PI=0, i;
+  int n;
+  scanf("%d", &n);
+  if(n>=1 && n<=100){
+     for(i=1;i<=n;i=i+1)
+        PI=PI+6*(1/(i*i));
+     PI=pow(PI, 1./2);
+     printf("%.12f", PI); 
+  }
+  else 
+    printf("n nije valjan"); 
+  return 0;
+}

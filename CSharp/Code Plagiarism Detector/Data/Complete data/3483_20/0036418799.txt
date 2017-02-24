@@ -1,0 +1,30 @@
+class Komprimiranje {
+
+private:
+	int *_niz;			// pokazivac na niz podataka
+	int _brEl;			// broj elemenata u originalu
+
+public:
+	Komprimiranje(int *niz, int brojElemenata) {
+		/* Constructor */
+		_niz = niz;
+		_brEl = brojElemenata;
+		return;
+	}
+
+	int UkupnaSuma() {
+        	int i, suma = 0;
+			for (i=0; i<_brEl; i+=2)
+				suma += *(_niz+i) * *(_niz+i+1);
+			return suma;
+	}
+
+	int UkupniBrojElemenata(int vrijednost) {
+		int i, count=0;
+		for (i=0; i<_brEl; i+=2)
+			if ( *(_niz+i) != vrijednost ) 
+				count += *(_niz+i+1);
+        return count;
+	}
+
+};

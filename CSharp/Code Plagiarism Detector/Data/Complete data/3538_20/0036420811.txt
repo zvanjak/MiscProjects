@@ -1,0 +1,17 @@
+Red *VratiBrojeve(Red *red){
+	Red *temp=new Red();
+	int broj=0,element,brojac=0;
+	while (red->SkiniIzReda(&element)){
+		if (brojac==0) brojac=element;
+		else{
+			broj*=10;
+			broj+=element;
+			brojac--;
+			if (brojac==0){ 
+				temp->DodajURed(broj);
+				broj=0;
+			}
+		}
+	}
+	return temp;
+}

@@ -1,0 +1,55 @@
+include <iostream>
+using namespace std;
+
+
+class Kosarica {
+
+     private:
+
+        float _Cijena;
+        float _Suma;
+        float _MinCijena;
+        float _MaxCijena;
+
+    public:
+        
+        Kosarica() {
+            _Cijena = 0;
+            _Suma = 0;
+            _MinCijena = _MaxCijena;
+        }
+
+        void DodajProizvod(float cijena) {
+
+            _Cijena = cijena;
+              if (cijena > _MaxCijena) {
+                _MaxCijena = cijena;
+
+            }
+            _Suma = _Suma + cijena;
+
+        }    
+    
+        float UkupnaCijena() {
+
+            return _Suma;
+
+        }
+
+        float NajjeftinijiProizvod(float cijena) {
+             _Cijena = cijena;
+               if ( cijena < _MinCijena) {
+            _MinCijena = cijena;
+}
+
+            return _MinCijena;
+        
+        };
+
+        ~Kosarica () {};
+
+};
+
+    
+
+                

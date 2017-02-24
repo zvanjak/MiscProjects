@@ -1,0 +1,46 @@
+#include <stdio.h>
+
+#define MAXRED 20
+#define MAXSTUP 5
+
+int main(void)
+{
+	int mat[MAXRED][MAXSTUP];
+	int mr, ms, p, q, i, j, k, l, broj_zamjena = 0, nula, stup_bez_nule;
+
+	do scanf("%d %d", &mr, &ms);
+	while ((mr < 1 || mr > MAXRED) || (ms < 1 || ms > MAXSTUP));
+
+	scanf("%d %d", &p, &q);
+	for (k = 0; k < mr; k++)
+	{
+		for (l = 0; l < MAXSTUP; l++)
+		{
+			if (k % 2 == 0) mat[k][l] = p;
+			else mat[k][l] = q;
+		}
+	}
+
+	scanf("%d %d", &i, &j);
+	while ((i >= 0 && i < mr) && (j >= 0 && j < ms))
+	{
+		mat[i][j] = 0;
+		broj_zamjena++;
+		scanf("%d %d", &i, &j);
+	}
+
+	stup_bez_nule = ms;
+	for (k = 0; k < ms; k++)
+	{
+		nula = 0;
+		for (l = 0; l < mr; l++)
+		{
+			if (mat[l][k] == 0) nula = 1;
+		}
+		if (nula) stup_bez_nule--;
+	}
+
+	printf("%d %d", broj_zamjena, stup_bez_nule);
+	
+	return 0;
+}

@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+int main()
+{
+	double e,sum=1.00,tmp;
+	int i,n;
+
+	double red[30]={0};
+
+	scanf("%d",&n);
+
+	if( n<1 || n>30 )
+	{
+		printf("n nije valjan");
+		return 0;
+	}
+
+	red[0]=1.;
+
+	for(i=1;i<30;i++)
+		red[i] = red[i-1] * (double)1/(i+1);
+
+	for(i=1;i<=n;i++)
+	{
+		tmp=red[i-1];
+
+		if(i%2)
+			tmp*=(-1);
+
+		sum+=tmp;
+	}
+
+
+	if(sum)
+		e=1/sum;
+	else
+		e=1;
+
+	printf("%.12lf",e);
+
+	return 0;
+}

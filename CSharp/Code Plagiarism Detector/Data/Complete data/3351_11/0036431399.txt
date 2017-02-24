@@ -1,0 +1,17 @@
+#include <stdio.h>
+	typedef struct
+	{
+		int redni_br;
+		char prezime[20+1];
+		int bodovi;
+	} natjecatelj;
+
+int info (FILE *f, int redni_br)
+{
+	natjecatelj nat;
+	if (redni_br<=0) return -1;
+	fseek(f,redni_br*sizeof(natjecatelj),SEEK_SET);
+	if (!fread(&nat,sizeof(nat),1,f)) return -1;
+	if (nat.bodovi>=100) return 1;
+	else return 0;
+}

@@ -1,0 +1,37 @@
+class Recenica {
+public:
+	Recenica (){
+		brRijeci = 0;
+		brZareza = 0;
+		stanje = 0;
+	}
+
+	void UcitajZnak (char znak){
+		int tmpStanje;
+
+		ucitano = znak;
+		if (znak == ','){
+			brZareza++;
+			tmpStanje = 0;
+		}
+		else if (znak == ' ') tmpStanje = 0;
+		else tmpStanje = 1;
+
+		if (stanje==0 && tmpStanje==1) brRijeci++;
+		stanje = tmpStanje;
+	}
+
+
+	int PrebrojiRijeci(){
+		return brRijeci;
+	}
+
+	int PrebrojiZareze(){
+		return brZareza;
+	}
+
+private:
+	int brRijeci, brZareza;
+	char ucitano;
+	int stanje;		// 0 = razmak; 1 = slovo
+};

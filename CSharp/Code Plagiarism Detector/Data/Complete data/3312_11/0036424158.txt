@@ -1,0 +1,39 @@
+#include <stdio.h> 
+#include <string.h> 
+ 
+struct Salbum 
+{ 
+  char naziv[30+1]; 
+  char autor[20+1]; 
+  int prodano; 
+}; 
+ 
+int br_prodanih(FILE *f, char *autor) 
+{ 
+  struct Salbum t; 
+  int rez = 0; 
+   
+  while(fscanf(f,"%s %s %d ", t.naziv, t.autor, &t.prodano) == 3 ) 
+    if(!strcmp(t.autor, autor)) 
+      rez += t.prodano; 
+ 
+  return rez; 
+} 
+ 
+int main() 
+{ 
+  int x; 
+  FILE *f; 
+ 
+  f = fopen("albumi.txt", "r"); 
+  if(f == NULL) 
+  { 
+    printf("Greska u otvaranju datoteke!\n"); 
+    exit(1); 
+  } 
+ 
+  x = br_prodanih(f, "Vatrogasci"); 
+  printf("autor: Vatrogasci\nBroj prodanih albuma: %d\n", x ); 
+   
+  return 0; 
+} 

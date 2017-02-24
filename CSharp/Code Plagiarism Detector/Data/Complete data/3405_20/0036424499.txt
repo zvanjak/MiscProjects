@@ -1,0 +1,13 @@
+char *SvakiDrugi (char *ulazni_niz)
+{
+	int i,j,n;
+	char *izlaz;
+	n=strlen(ulazni_niz);
+	izlaz=(char *)malloc(sizeof(char)*(n/2+2));
+	for(i=0,j=0;i<n;j++,i+=2)
+	{
+		izlaz[j]=ulazni_niz[i];
+	}
+	izlaz[j]='\0';
+	return izlaz;
+}

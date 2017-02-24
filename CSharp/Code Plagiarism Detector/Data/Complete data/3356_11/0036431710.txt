@@ -1,0 +1,47 @@
+#include <stdio.h>
+int main (){
+	int n,m,b1,b2,b3,b;
+	char c;
+	scanf(" %d %d %c", &n, &m, &c);
+	if (!(n>0)||!((c=='L')||(c=='R')))
+		printf("\nerror\n");
+	else
+	{if (c=='R')
+		{b1=n/100;
+	     b2=n%100/10;
+		 b3=n%100%10;
+		    if( m==1)
+			{
+			   b=b3*100+b1*10+b2;
+               printf("\n%d\n",b);
+			}
+			if (m==2){
+				b=b2*100+b3*10+b1;
+                printf("\n%d\n",b);
+			}
+			if (m==3){
+				b=n;
+                printf("\n%d\n",b);
+			}
+			if ((m!=1)&&(m!=2)&&(m!=3))
+				printf("\nerror\n");
+		}
+		else if (c=='L')
+		{b1=n/100;
+	     b2=n%100/10;
+		 b3=n%100%10;
+		 if( m==1){
+			   b=b2*100+b3*10+b1;printf("\n%d\n",b);
+		 }
+		 if (m==2){
+				b=b3*100+b1*10+b2;printf("\n%d\n",b);
+		 }
+		 if (m==3){
+				b=n;printf("\n%d\n",b);
+		 }
+		 if ((m!=1)&&(m!=2)&&(m!=3))
+			    printf("\nerror\n");
+		}
+	}
+	return 0;
+}

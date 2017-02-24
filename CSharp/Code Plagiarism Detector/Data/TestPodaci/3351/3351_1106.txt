@@ -1,0 +1,15 @@
+int info(FILE *f, int redni_br) {
+
+	 struct natjecatelj covo;
+
+	fseek(f, (redni_br-1)*sizeof(covo),SEEK_SET);
+	
+	fread(&covo,sizeof(covo),1,f);
+	
+		if (covo.redni_br == 0) return -1;
+		
+		if(covo.bodovi>=100) return 1;
+		else if (covo.bodovi<100) return 0;
+
+	return 0;
+}

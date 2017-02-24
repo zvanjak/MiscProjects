@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+#define min 1
+#define max 500
+
+int main() {
+	int n, i, a;
+	double pi=0;
+	float br1;
+
+	scanf("%d", &n);
+	if(n<min || n>max){
+		printf("n nije valjan");
+		return 0;
+	}
+	for(i=1;i<=n;i++){
+		br1=-1;
+		for(a=1;a<=i;a++){
+			br1= br1 * -1;
+		}
+		pi += br1 * (1./(2*i-1));
+	}
+	pi *= 4;
+	printf("%.12f",pi);
+	return 0;
+}

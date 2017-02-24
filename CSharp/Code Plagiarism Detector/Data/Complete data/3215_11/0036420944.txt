@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main() {
+	int par=0, nepar=0, x;
+	do{
+		scanf("%d",&x);
+		if (x>0)
+            if (x%2==0) par=par+1;
+			else nepar=nepar+1;
+	}while (x!=0);
+printf("%d %d",par,nepar);
+return 0;
+}
+		
+

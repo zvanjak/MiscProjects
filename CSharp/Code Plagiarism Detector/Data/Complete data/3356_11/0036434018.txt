@@ -1,0 +1,23 @@
+#include <stdio.h>
+int main () {
+	int n, m, n1,n2,n3;
+	char c;
+	scanf("%d %d %c",&n,&m,&c);
+	if ((n>99&&n<1000)&&(m==1 || m==2 || m==3)&&(c=='L'||c=='R')){
+                n1=n/100;
+		n2=(n-(n1*100))/10;
+		n3=(n-(n1*100)-(n2*10));
+		if((m==1&&c=='L')||(m==2&&c=='R')) {
+		printf("%d%d%d\n",n2,n3,n1);
+		}
+		if((m==2&&c=='L')||(m==1&&c=='R')) {
+		printf("%d%d%d\n",n3,n1,n2);
+		}
+		if((m==3)&&(c=='L'||c=='R')) {
+		printf("%d%d%d\n",n1,n2,n3);
+		}
+	} else {
+		printf("Error\n");
+	}
+return 0;
+}

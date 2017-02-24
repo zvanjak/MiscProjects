@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <math.h>
+
+int main () {
+	int n, i = 0;
+	double suma = 0;
+	double pi;
+    
+	scanf ("%d", &n);
+
+	if ( (n >= 1) && (n <= 25)) {
+		while (i <= n) {
+		i++;
+		suma = (double) suma + ( (double) 1 / (double) pow ((double)i, 8) );
+		}
+		pi = (double) pow( (double)(suma*9450), (double) 1/8);
+		printf ("%.12f", pi);
+	}
+    
+	else {
+		printf ("n nije valjan");
+	}
+
+	return 0;
+}

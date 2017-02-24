@@ -1,0 +1,58 @@
+class ZatvoreniInterval 
+{
+private:
+	float _pocetak;
+	float _kraj;
+public:
+	ZatvoreniInterval ();
+	ZatvoreniInterval (float pocetak, float kraj);
+	float Duljina ();
+	int BrojCijelihTocaka();
+};
+
+ZatvoreniInterval :: ZatvoreniInterval (){
+		_pocetak=0;
+		_kraj=1;
+	}
+
+ZatvoreniInterval :: ZatvoreniInterval (float pocetak, float kraj){
+		
+		_pocetak=pocetak;
+		_kraj=kraj;
+	}
+
+float ZatvoreniInterval :: Duljina (){
+	float duljina;
+	if (_kraj < _pocetak)
+			return 0;
+	duljina = _kraj -  _pocetak;
+			return duljina;
+	}
+ 
+int ZatvoreniInterval :: BrojCijelihTocaka(){
+		int visi, nizi, vrati;
+	if ((_pocetak <= 0) && (_kraj <= 0)){
+			visi = (int) ceil (_pocetak);
+			nizi = (int) ceil (_kraj);
+				return vrati = abs (visi - nizi) +1;
+	}
+
+	if ((_pocetak <= 0) && (_kraj >= 0)){
+			visi = (int) ceil (_pocetak);
+			nizi = (int)floor (_kraj);
+				return vrati = abs (visi) + nizi +1;
+	}
+ 
+	if ((_pocetak >= 0) && (_kraj <= 0)){
+			visi = (int)floor (_pocetak);
+			nizi = (int)ceil (_kraj);
+				return vrati = abs (nizi) + visi +1;
+	}
+
+	if ((_pocetak >= 0) && (_kraj >= 0)){
+			visi = (int)ceil (_pocetak);
+			nizi = (int)floor (_kraj);
+				 return vrati = nizi - visi +1;
+	}
+		else return 0;
+	}

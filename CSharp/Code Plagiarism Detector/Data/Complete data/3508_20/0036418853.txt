@@ -1,0 +1,10 @@
+int Najgore(cvor *glava)
+{
+	int rez;
+	rez = !((glava->lijevo != NULL) && (glava->desno != NULL));
+	if(glava->lijevo)
+		rez = rez && Najgore(glava->lijevo);
+	if(glava->desno)
+		rez = rez && Najgore(glava->desno);
+	return rez;
+}

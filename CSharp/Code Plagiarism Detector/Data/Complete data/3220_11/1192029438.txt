@@ -1,0 +1,34 @@
+#include <stdio.h>
+int main () {
+        int polje[10] = {0};
+        int n, i, c;
+
+        scanf ("%d", &n);
+
+        if (n<0)
+                printf ("%d", n);
+		else if (n==0) printf ("");
+        else {
+                i=9;
+                while (n!=0){
+                        polje[i]=n%10;
+                        if (polje[i]%2==0) polje[i]=0;
+                        n=n/10;
+                        i--;
+                }
+
+                c = 0;
+                for (i=0; i<10;i++){
+                        if (polje[i] != 0) {
+                                printf("%d",polje[i]);
+                                c++;
+                        }
+                }
+                if (!c) {
+                        printf("0");
+                }
+
+        }
+
+        return 0;
+}

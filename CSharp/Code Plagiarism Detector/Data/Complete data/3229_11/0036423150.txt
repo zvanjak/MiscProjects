@@ -1,0 +1,42 @@
+#include <stdio.h>
+int main () {
+long int brojcl, znak, i, i2;
+double medjurez , faktor , tempo;
+scanf("%d", &brojcl);
+if ((brojcl >= 1) && (brojcl <= 30)) {
+	if (brojcl == 1) { printf("0"); }
+	/* Nisam bio siguran da li treba ostaviti beskonacno ili 0 */
+	else {
+	faktor = 1.;
+	medjurez = 1.;
+	znak = 0;
+		for (i = 1; i <= brojcl; i++) {
+			for (i2 = 1; i2 <= i; i2++) { 
+				faktor = (faktor * i2);
+					if (i2 == i) {
+						if (znak == 0) { 
+							tempo = 1. / faktor;
+							medjurez = medjurez - tempo;
+							znak = 1;
+							faktor = 1.;
+						}
+						else { 
+							tempo =	1. / faktor;
+						medjurez = medjurez + tempo;
+						znak = 0;
+						faktor = 1.;
+						}
+					}
+			}
+			if (i == brojcl) { 
+				medjurez = 1. / medjurez;
+				printf("%1.12Lf", medjurez);
+			}
+		}
+	}
+}
+else {
+printf("n nije valjan");
+}
+return 0;
+}

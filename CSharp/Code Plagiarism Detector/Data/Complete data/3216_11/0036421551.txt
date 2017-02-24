@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <math.h>
+int main() {
+	int unos, i, n = 0, prost;
+	do {
+		scanf("%i", &unos);
+		if (unos <= 2) break;
+		prost = 1;
+		for (i = 2; i <= unos / 2; i++)
+			if ((i!=unos) && ((unos % i) == 0)) {
+				prost = 0;
+				break; }
+		if (prost) n++; }
+	while (1);
+	printf("%i", n);
+	return 0;
+}

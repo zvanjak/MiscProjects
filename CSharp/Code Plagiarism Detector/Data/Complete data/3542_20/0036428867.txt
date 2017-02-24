@@ -1,0 +1,37 @@
+int promijenimbr(zapis **glava, int starimbr, int novimbr){
+  zapis *p, *pp;
+  int g=0;
+
+  for (p = *glava; p != NULL; p = p->sljed) {
+	if (p ->matbr == starimbr){ g=1;
+	break;}
+  }
+
+  if (g==0)
+	return 0;
+	if (p == *glava) {	// Brisanje s pocetka liste
+		pp = (*glava)->sljed;
+		*glava = pp;
+	} else {		    // Brisanje iza clana liste
+		// pronadji prethodni zapis
+		for (pp = *glava; pp->sljed != p; pp = pp->sljed);
+		// Povezi prethodni zapis sa sljedbenikom izbrisanog cvora
+		pp->sljed = p->sljed;
+		// oslobodi memoriju zauzetu elementom koji se brise
+	}
+	p->matbr = novimbr;
+	p->sljed=NULL;
+  if (*glava == NULL || (*glava)->matbr >= novimbr) {
+    // Dodavanje na pocetak liste
+    p->sljed = *glava;
+    *glava = p;
+  } else {
+	// Dodavanje iza postojeceg elementa kad:
+	// a) postojeæi zapis nema sljedeæeg
+	// b) matbr u sljedeæem cvoru je veæi ili jednak novome
+	for (pp = *glava; pp->sljed && (pp->sljed)->matbr < novimbr; pp = pp->sljed);
+		p->sljed = pp->sljed;
+		pp->sljed = p;
+  }
+	return 1;
+    }

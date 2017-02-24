@@ -1,0 +1,26 @@
+Stog* PrepisiRedUStog(Red *red) {
+	int element, elem;
+	int prost;
+	Stog* adr;
+
+	if(!red->SkiniIzReda(&element))return NULL;
+	else adr = PrepisiRedUStog(red);
+
+
+	if(!adr)adr = new Stog();
+
+
+	elem = element;
+	if(elem < 0)elem *= -1;
+
+	if(elem == 0)prost = 1;
+	else if(elem == 1)prost = 0;
+	else for(prost = 2; elem % prost; prost++);
+
+	if(prost == elem)prost = 0;
+
+	if(!prost)adr->Stavi(element);
+
+
+	return adr;
+}

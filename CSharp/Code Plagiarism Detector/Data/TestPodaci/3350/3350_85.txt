@@ -1,0 +1,18 @@
+int najbolji (FILE *d) {
+struct natjecatelj bobo;
+int koji, max;
+
+fseek (d, (long)0, SEEK_SET);
+while(1){
+if ( fread(&bobo, sizeof (bobo), 1, d) ==1 ){
+	max = bobo.bodovi;
+	koji = bobo.redni_br;
+	if (koji !=0) break;
+}}
+while ( fread(&bobo, sizeof (bobo), 1, d) ==1 ) {
+	if (bobo.bodovi > max && bobo.redni_br !=0) {
+		max = bobo.bodovi; 
+		koji = bobo.redni_br;
+	}}
+		return koji;
+}

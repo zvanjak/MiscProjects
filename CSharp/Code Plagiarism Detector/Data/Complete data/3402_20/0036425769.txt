@@ -1,0 +1,31 @@
+int* napraviPolje(int *A, int Na, int a, int b, int* Nc)
+{
+   int *vrati, i, j, je, k;
+   if (a>b) return 0;
+   else
+   {
+      *Nc = 0;
+      for(j=0; j<Na; j++)
+      {
+        je = 1;
+        for(i = a; (i<=b) && je; i++)
+        {
+           if (A[j] % i==0) { (*Nc)++; je=0; }
+        }
+      }
+
+      vrati = (int*) malloc ( (*Nc) * sizeof(int));
+
+      k=0;
+      for(j=0; j<Na; j++)
+      {
+        je = 1;
+        for(i = a; (i<=b) && je; i++)
+        {
+           if (A[j]%i==0) { vrati[k]=A[j]; k++; je=0; }
+        }
+      }
+
+      return vrati;
+   }
+}

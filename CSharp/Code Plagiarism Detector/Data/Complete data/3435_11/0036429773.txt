@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main () {
+int n, m, i, brojnik, naziv1, nazivd, rezultat; 
+
+do { 
+scanf ("%d %d", &n, &m);
+}
+while (!(n>=m)); 
+if (m==0) { 
+rezultat=0;
+}
+if (m==n) { 
+rezultat=0;
+}
+if (m!=0) { 
+brojnik=1;
+for (i=1; i<=n; i++) { 
+brojnik*=i;
+}
+naziv1=1;
+for (i=1; i<=m; i++) { 
+naziv1*=i;
+}
+nazivd=1;
+for (i=1; i<=n-m; i++) { 
+nazivd*=i;
+}
+if (m!=n) { 
+rezultat=brojnik/(naziv1*nazivd);
+}
+}
+printf ("%d", rezultat);
+
+return 0; 
+}

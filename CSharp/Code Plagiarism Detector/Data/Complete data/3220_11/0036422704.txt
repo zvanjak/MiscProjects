@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main(){
+	int n, x, i=1, suma=0;
+	scanf("%d",&n);
+	if (n>0) {
+		while (n>0) {
+			x=n%10;
+			n=n/10;
+			if (x%2==0) {
+				continue;
+			} 
+			suma += i*x;
+			i=i*10;
+		}
+		printf("%d", suma);
+	} else {
+		printf("%d", n);
+	}
+	return 0;
+}

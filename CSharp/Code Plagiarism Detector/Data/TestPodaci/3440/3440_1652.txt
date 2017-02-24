@@ -1,0 +1,25 @@
+#include<stdio.h>
+int main() {
+	int i,j,n;
+        int mat1[20][20],mat2[20][20];
+	scanf("%d",&n);
+	while(n>20)
+	     scanf("%d",&n);
+	for(i=0;i<n;i++){
+		for(j=0;j<n;j++){
+			opet:
+			scanf("%d",&mat1[i][j]);
+			if(mat1[i][j]!=0 && mat1[i][j]!=1)
+				goto opet;}}								
+	for(i=0;i<n;i++){
+		for(j=0;j<n;j++){
+			scanf("%d",&mat2[i][j]);}}
+	for(i=0;i<n;i++){
+		for(j=0;j<n;j++){
+			if(mat1[i][j]==1) 
+				mat2[i][j]=i+j;}}
+	for(i=0;i<n;i++){
+		for(j=0;j<n;j++)
+			printf("%d ",mat2[i][j]);}
+	return 0;
+}

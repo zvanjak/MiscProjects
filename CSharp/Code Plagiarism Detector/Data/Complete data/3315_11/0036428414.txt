@@ -1,0 +1,15 @@
+float prosjek(FILE *f){
+float br=0;
+char naz[31];
+char aut[21];
+int prod;
+int n=0;
+
+while(fscanf(f, "%s%s%d", naz, aut, &prod) != EOF){
+n++;
+br=br+prod;
+}
+
+br=br/n;
+return br;
+}

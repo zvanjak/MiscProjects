@@ -1,0 +1,24 @@
+#include<stdio.h>
+main(){
+ int a,c1,c2,c3,c4;
+ scanf("%d",&a);
+ c1=a/1000;
+  if(c1%2==1)
+  printf("%d",c1);
+ c2=(a%1000)/100;
+  if(c2%2==0)
+  printf("0");
+  else
+  printf("%d",c2);
+ c3=((a%1000)%100)/10;
+  if(c3%2==0)
+  printf("0");
+  else
+  printf("%d",c3);
+ c4=((a%1000)%100)%10;
+  if(c4%2==0)
+  printf("0");
+  else
+  printf("%d",c4);
+ getch();
+}

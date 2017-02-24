@@ -1,0 +1,21 @@
+#include<stdio.h>
+
+#define dec2bcd(x)	(((x/1000)<<12) | ((x/100%10)<<8) | ((x/10%10)<<4) | (x%10))
+
+int main() {
+	int k, b;
+	scanf("%d%d", &k, &b);
+
+	k=dec2bcd(k);
+	b=dec2bcd(b);
+
+	k+=b;
+
+	for (b=0;b<16;b+=4) {
+		if (((k>>b)&0x0F) == 0x0A)
+			k&=~(0x0F<<b);
+	}
+
+	printf("%x\n", k);
+	return 0;
+}

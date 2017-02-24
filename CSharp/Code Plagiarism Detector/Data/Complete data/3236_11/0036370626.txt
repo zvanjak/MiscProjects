@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <math.h>
+
+int main () {
+                int n, i;
+                double x;
+				double lnx, ln=0;
+                scanf("%i", &n);
+                if (n<1 || n>100) 
+					printf("n nije valjan");
+					
+                else {
+                    scanf("%lf", &x);
+					{
+						if (x<=0 || x>=2) 
+						printf("x nije valjan");
+						
+						else {					
+					    	for (i=2; i<n; ++i) {
+                            if (i%2==0) 
+								ln-=(pow((x-1),i))/i;
+                            else             
+								ln+=(pow((x-1),i))/i;
+                           }
+						}
+					}
+				}
+							lnx=ln+(x-1);
+							printf("%i %.5f %.12lf", n, x, lnx);
+                
+return 0;
+}

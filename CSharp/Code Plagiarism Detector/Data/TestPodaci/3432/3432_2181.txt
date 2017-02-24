@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define MAX 100
+#define MAX1 1000
+int main() {
+    int i=0,j=0,k=0,br=0,index=0,a=0,b=0,par=0;
+    int niz[MAX],niz1[MAX1];
+    do {
+        scanf ("%d",&niz[i]);
+        i+=1;
+        br=i;
+        } while ((i<MAX) && (niz[i-1]!=-1));
+    index=0;
+	a=0;
+	if (br%2==0) {
+		par=br-2;
+	} else {
+		par=br-1;
+	}
+    do {
+        for (i=a,j=(a+1);a<(par);){
+            for (k=index,b=0;k<(index+niz[a+1]);k++){
+                niz1[k]=niz[a];
+				b++;	
+			}
+			index+=b;
+			a=a+2;
+                }
+                }while ((index<MAX1)&&(a!=(par)));
+    for (j=0;j<=(index-1);j++) {
+        printf ("%d ",niz1[j]);
+        } 	
+  return 0;
+}

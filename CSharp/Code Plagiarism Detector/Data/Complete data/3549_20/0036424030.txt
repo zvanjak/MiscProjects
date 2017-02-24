@@ -1,0 +1,16 @@
+void OOPStogURedListom(atom2** glava, atom2** rep, Stog *stog)
+{
+	int *elem = NULL, da;
+
+	elem = (int *) malloc (sizeof(int));
+	
+	da = stog->Skini (elem);
+	
+	if (da == 1)
+	{
+		DodajURed ( *elem, glava, rep);
+		OOPStogURedListom (glava, rep, stog);
+	}
+	else return;
+        
+}

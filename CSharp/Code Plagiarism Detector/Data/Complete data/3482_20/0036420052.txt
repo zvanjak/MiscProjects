@@ -1,0 +1,20 @@
+MjeracProsjecneTemperature::MjeracProsjecneTemperature(Termometar *t){
+       this->t=t;
+       }
+
+double MjeracProsjecneTemperature::Prosjek(int n, int *min, int *max){
+       int a,mini,maxi,sum=0,i;
+       a=this->t->Ocitaj();
+       mini=a;
+       maxi=a;
+       sum+=a;    
+       for (i=1;i<n;i++){
+       a=this->t->Ocitaj(); 
+       if (a<mini) mini=a;
+       if (a>maxi) maxi=a;
+       sum+=a;
+       }
+       *min=mini;
+       *max=maxi;
+       return (sum/(float)n);
+}

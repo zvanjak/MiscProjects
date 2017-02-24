@@ -1,0 +1,24 @@
+ #include <stdio.h>
+ int main ()
+ {
+   int n,i,pot=1,c;
+   double cl,suma=0;
+   scanf("%d", &n);
+   if ((n >= 1) && (n <= 30))
+    {
+    for (i=1;i<=n;i++)
+     {
+     cl=1./pot;
+     if (i%2 == 0)
+      cl = cl * (-1);
+     suma += cl;
+     pot=2*pot;
+     }
+     printf(" %.12f", suma);
+     }
+    else
+    {
+    printf("n nije valjan");
+    }
+   return 0;
+ }

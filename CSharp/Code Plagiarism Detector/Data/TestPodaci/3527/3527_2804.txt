@@ -1,0 +1,10 @@
+int izbaciDuplikate(char *p){
+    char tab[257]={0},*k;
+    int l=0;
+    for(k=p;*k!='\0';k++){
+       if(tab[*k]) {l++;continue;}
+       *p=*k;tab[*k]=1;p++;       
+    }
+    *p='\0';   
+    return l;               
+}

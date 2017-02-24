@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+int main (){
+
+int n,prva,druga,treca,cetvrta,s1,s2,s3,s4,s5,s6;
+
+scanf("%d",&n);
+
+prva=n/1000;
+
+druga=((n%1000)/100);
+
+treca=((n%1000)%100)/10;
+
+cetvrta=((n%1000)%100)%10;
+
+s1=prva*10+druga;
+
+s2=treca*10+cetvrta;
+
+s3=druga*10+treca;
+
+s4=prva+treca;
+
+s5=treca*cetvrta;
+
+s6=s1*s2;
+
+if (s6%s3==0){
+
+printf("%d",s4);
+
+}
+
+else {
+
+printf("%d",s5);
+
+}
+
+return 0;
+
+}

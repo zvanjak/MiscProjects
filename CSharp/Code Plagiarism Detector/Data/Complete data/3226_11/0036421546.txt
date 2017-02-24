@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main()
+{
+  int n, i, c = 2;
+  float x = 0.f;
+
+  scanf("%d", &n);
+  if ( (n >= 1) && (n <= 1000) )
+  {
+    for (i = 0; i < n; i++)
+    {
+      x += 1.f/( (c-1)*(c+1) );
+      c += 1;
+    }
+    printf("%13.12f", x);
+  }
+  else
+    printf("n nije valjan");
+
+  return 0;
+}

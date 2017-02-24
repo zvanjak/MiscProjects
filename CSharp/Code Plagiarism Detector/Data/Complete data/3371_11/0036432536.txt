@@ -1,0 +1,18 @@
+#include<stdio.h>
+int main(){
+    int x,j,d,s,t;
+    scanf("%d",&x);
+    t=x/1000;
+    s=(x/100)%10;
+    d=(x/10)%10;
+    j=x%10;
+    if(t%2==0)
+    t=t+1;
+    if(s%2==0)
+    s=s+1;
+    if(d%2==0)
+    d=d+1;
+    if(j%2==0)
+    j=j+1;
+    printf("%d%d%d%d",t,s,d,j);
+    return 0;}

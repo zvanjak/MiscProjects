@@ -1,0 +1,7 @@
+float niz (int i){
+      kontrola ();
+      if(i==0) return 1.0;
+      else if(i==1) return 2.0;
+      else if(i==2) return 3.0;
+      else  return ((float)niz(i-1)-niz(i-3))/((float)niz(i-1)+niz(i-3));
+      }

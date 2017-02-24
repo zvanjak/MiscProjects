@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<math.h>
+int main(){
+	int j,n,novi;
+	do{
+		scanf("%d",&n);
+		if(n>0){
+			j=1;novi=n;
+			while(novi>0){ 
+				j *=10;novi /=10;
+			}
+			novi=0;j /=10;
+			while(n>0){ 
+				novi += fmod((float)n,10.) * j;
+				j/=10;n /=10;
+			}
+			n=1;
+		printf("%d ",novi); 
+		}
+	} while (n>0);
+	return 0;				
+}

@@ -1,0 +1,25 @@
+#include <stdio.h>
+int main()  {
+	int broj, co1, co2, co3, co4;
+	scanf("%d", &broj);
+		co1=broj % 10;
+		broj=broj/10;
+		co2=broj%10;
+		broj=broj/10;
+		co3=broj%10;
+		broj=broj/10;
+		co4=broj%10;	
+	if (co1 == 0 && co2 == 0 && co3 == 0){
+		printf ("%d", co4);}
+	else if (co1 == 0 && co2 == 0) {
+		printf ("%d%d", co3, co4);}
+	else  if (co1 == 0)	{
+		printf("%d%d%d", co2, co3, co4);
+	}
+	if (co1 != 0) {
+		printf("%d%d%d%d", co1, co2, co3, co4);
+	}
+	
+return 0;
+}
+

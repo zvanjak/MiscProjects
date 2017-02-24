@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main () {
+   int n;
+
+   printf("upisi n:");
+   scanf("%d", &n);
+   if (n<1 || n>500) {
+      printf("n nije valjan\n");
+      return 0; // izlazak iz programa ako n ne zadovoljava uvjet
+   }
+   int i, predznak=1;
+   double mojpi=0;
+
+   for (i=0;i<n;i++) {
+      mojpi+=predznak*(1.0/(2*i+1)); /* mora biti 1.0 kako bi dijelio kao realne
+brojeve, a ne kao cijele!*/
+      predznak=-predznak;
+   }
+   mojpi*=4; // izracunali smo pi/4, pa sad mnozimo s 4.
+   printf("%.12lf\n", mojpi);
+
+   return 0;
+}

@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main ( ) {
+	int u,x,y,z;
+	scanf("%d", &u);
+	if(u > 999 && u < 10000) {
+	  x=u%100;
+          y=u/100;
+	  z=x+y;
+	    if(z%y) printf("nije");
+	    else printf("jest");
+	     }
+return 0;
+}

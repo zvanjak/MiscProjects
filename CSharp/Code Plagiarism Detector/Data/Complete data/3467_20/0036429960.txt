@@ -1,0 +1,25 @@
+int igra(Igrac& igrac, Automat& aut, int max, int *broj){
+int i, piznos,iznos;
+
+*broj=0;
+piznos=igrac.TrenutnoStanje();
+if (piznos<=0) return 0;
+aut.UplatiIznos(piznos);
+igrac.SkiniSRacuna(piznos);
+
+for(i =max; i > 0; ){
+if (aut.TrenutnoStanje()>0){
+igrac.UplatiNaRacun(aut.Zavrti());
+(*broj)++;
+i--;
+}
+else if ((iznos=igrac.TrenutnoStanje()) > 0){
+aut.UplatiIznos(iznos);
+igrac.SkiniSRacuna(iznos);
+}
+else return (0-piznos);
+}
+igrac.UplatiNaRacun(aut.PodigniPreostalo());
+return (igrac.TrenutnoStanje()-piznos);
+}
+

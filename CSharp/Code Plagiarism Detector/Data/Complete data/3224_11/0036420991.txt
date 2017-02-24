@@ -1,0 +1,23 @@
+#include <stdio.h>
+int main()
+{
+	int i, n;
+	float pi, izraz;
+	
+	scanf("%d", &n);
+	if (n>=1 && n<=400)
+	{
+		pi=0;
+		izraz=0;
+		for (i=1; i<=n; i++)
+		{
+			izraz=izraz + 1./((4*i-1)*(4*i+1));
+			pi=4-8*izraz;
+		}
+	printf("%.8f\n", pi); 
+	}
+	else
+		printf("n nije valjan\n");
+	return 0;
+}
+

@@ -1,0 +1,13 @@
+double sumareda(double x, int N) {
+	double pom=1;
+	int i;
+	kontrola();
+	
+	if(N==1) {
+		return x;
+	} else {
+		for(i=0;i<N;i++) pom*=(-x);
+		pom/=(-N);
+		return pom + sumareda(x, N-1);
+	}
+}

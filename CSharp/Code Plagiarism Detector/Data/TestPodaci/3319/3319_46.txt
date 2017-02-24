@@ -1,0 +1,26 @@
+void dodaj (FILE *f){
+	struct natjecatelj {
+		int redni_br;
+		char prezime[20+1];
+		int bodovi;
+	};
+	struct natjecatelj *o2;
+	int i, n=0, max=0, koji=0, test=0;
+	fread (&test, sizeof (int), 1, f);
+	if (!test) return;
+	fseek (f, 0, SEEK_END);
+	n = ftell(f)/sizeof(o2[0]);
+	o2 = (struct natjecatelj *) malloc (n*sizeof(struct natjecatelj));
+	fseek (f, 0, SEEK_SET);
+	fread (o2, sizeof (o2[0]), n, f);
+	for (i=0; i<n; i++){
+		if (max < o2[i].bodovi){
+			max = o2[i].bodovi;
+			koji = i;
+		}
+	}
+	o2[koji].bodovi += 10;
+	fseek (f, koji*sizeof(o2[0]), SEEK_SET);
+	fwrite (o2+koji, sizeof(o2[0]), 1, f);
+	return;
+}

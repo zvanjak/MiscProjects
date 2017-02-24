@@ -1,0 +1,15 @@
+#include <stdio.h>
+int main(){
+int broj=0, max=0, min=0;
+scanf("%d*c", &broj);
+max = broj;
+min = broj;
+while ((broj<=0) || (broj % 4 != 0)){
+scanf("%d*c", &broj);
+if (broj > max) max = broj;
+if (broj < min) min = broj;
+}
+/*printf("%d %d %d", max, min, broj);*/
+printf("%d %d", max, min);
+return 0;
+}

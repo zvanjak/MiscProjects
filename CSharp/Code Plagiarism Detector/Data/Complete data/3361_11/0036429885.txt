@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main () {
+int broj, lijeva, desna, zbroj ;
+	scanf ("%d", &broj);
+    if ( broj>999 && broj<10000 ) {
+		lijeva=broj/100 ;
+		desna=broj%100 ;
+		zbroj=lijeva+desna ;
+		if ( zbroj %lijeva==0 ) {
+			printf ("Jest") ;
+		}else{
+			printf ("Nije");
+		}
+	}
+	return 0 ;
+}

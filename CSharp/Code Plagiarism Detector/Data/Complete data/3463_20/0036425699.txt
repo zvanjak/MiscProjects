@@ -1,0 +1,8 @@
+int JeLiUnutra (Kruznica &kruz, Kvadrat &kvad)
+	{
+	if ((kruz.GetRadius()<=(kvad.GetY()-kruz.GetCenterY())) &&
+		(kruz.GetRadius()<=(kruz.GetCenterY()-(kvad.GetY()-kvad.GetDuljinaStranice()))) &&
+		(kruz.GetRadius()<=(-kruz.GetCenterX()+(kvad.GetX()+kvad.GetDuljinaStranice()))) &&
+		(kruz.GetRadius()<=(-kvad.GetX()+kruz.GetCenterX())) ) { return 1; }
+	else { return 0; }
+	}

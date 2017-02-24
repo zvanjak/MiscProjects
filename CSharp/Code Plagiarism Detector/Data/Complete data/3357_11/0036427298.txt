@@ -1,0 +1,19 @@
+#include <stdio.h>
+int main ()
+{
+	int broj1,broj2,a,b,c,d,e,f,g,h,zbroj,razlika;
+	scanf("%d %d",&broj1,&broj2);
+	razlika=broj1-broj2;
+	a=broj1/1000;
+	b=(broj1%1000)/100;
+	c=((broj1%1000)%100)/10;
+	d=((broj1%1000)%100)%10;
+	e=broj2/1000;
+	f=(broj2%1000)/100;
+	g=((broj2%1000)%100)/10;
+	h=((broj2%1000)%100)%10;
+	zbroj=a+b+c+d;
+	if (a==h&&b==g&&c==f&&d==e) printf("%d",zbroj);
+	else printf("%d",razlika);
+	return 0;
+}

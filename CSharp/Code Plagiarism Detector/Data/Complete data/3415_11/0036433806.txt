@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#define MAX_OP 50
+
+char c, *operacija = "+-*/%";
+int  op[MAX_OP];
+int  a, b, i, suma, n_op;
+
+int main() {
+	do {
+		scanf("%d %d %c", &a, &b, &c);
+		if (c != '+' && c != '-' && c != '*' &&
+			c != '/' && c != '%') break;
+
+		for (i = 0; i < 5; ++i)
+			if (c == operacija[i]) {
+				op[n_op++] = i;
+				break;
+			}
+
+		if (b == 0 && (c == '/' || c == '%'))
+			continue;
+
+		switch (c) {
+			case '+': suma += a+b; break;
+			case '-': suma += a-b; break;
+			case '*': suma += a*b; break;
+			case '/': suma += a/b; break;
+			case '%': suma += a%b; break;
+		}
+	} while (!(c != '+' && c != '-' && c != '*' &&
+			c != '/' && c != '%'));
+
+	printf("%d", suma);
+	for (i = 0; i < n_op; ++i)
+		printf(" %c", operacija[op[i]]);
+	printf("\n");
+
+	return 0;
+}

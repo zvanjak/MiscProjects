@@ -1,0 +1,12 @@
+Ekipa StvoriISortiraj(char *naziv){
+			Nogometas clan[11];
+			int i, j, pom, br[11];
+
+			*clan = Napuni();
+			for(i=0; i<11; i++){
+				Nogometas.Nogometas( clan[ i ] );
+				br[ i ] = Nogometas.VratiBroj();}
+			for(i=0; i<11; i++)
+				if( br[ i+1 ] < br[ i ] )
+					Zamijeni( br[ i ], br[ i+1  ]);
+ }

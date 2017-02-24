@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main () {
+	int max = -32768, min = 32767, br;
+	do {
+		
+		scanf ("%d", &br);
+		if (br < min)
+			min = br;
+		if (br > max)
+			max = br;
+
+	} while (!(br > 0) || (br % 4));
+	
+	printf ("%d %d", max, min);
+
+	return 0;
+}

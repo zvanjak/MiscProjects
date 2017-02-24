@@ -1,0 +1,16 @@
+int veci_od(FILE *f, int n) {
+	char polje[20+1];
+	int rbr, bodovi, i, k;
+	static int broj;
+	fseek(f, 0L, SEEK_END);
+	k = ftell(f)/(sizeof(rbr) + sizeof(bodovi) + sizeof(polje));
+	fseek(f, 0L, SEEK_SET);
+	for(i=0; i <= k-1; i++) {
+		fread(&rbr, sizeof(rbr), 1, f);
+		fread(polje, sizeof(polje), 1, f);
+		fread(&bodovi, sizeof(bodovi), 1, f);
+		if ((bodovi >= n)&&(rbr>0))
+			broj++;
+	}
+	return broj;
+}

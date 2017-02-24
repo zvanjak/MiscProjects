@@ -1,0 +1,9 @@
+int rStrncmp(char *s1, char *s2, int n) {
+	int usporedba;
+        kontrola();
+		usporedba = (int*) s1 - (int*) s2;
+		if (usporedba ==0 && n>0) rStrncmp(s1+1,s2+1,n-1);
+                if (usporedba ==0 && n==0) return 0;
+		if (usporedba <0) return -1;
+		if (usporedba >0) return 1;
+}

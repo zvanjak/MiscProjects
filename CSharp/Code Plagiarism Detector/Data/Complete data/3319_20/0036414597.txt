@@ -1,0 +1,20 @@
+void dodaj(FILE *f) {
+struct natjecatelj student;
+int maxbod=0, n=0, prov=0;
+
+fseek(f, 0L, SEEK_SET);
+while((fread(&student,sizeof(student),1,f))==1) {
+	n++;
+	if (student.redni_br==0) continue;
+	if (student.bodovi>maxbod) {
+		maxbod=student.bodovi;
+		prov=n;
+	}
+}
+fseek(f,(prov-1)*sizeof(student),SEEK_SET);
+fread(&student,sizeof(student),1,f);
+student.bodovi=student.bodovi+10;
+fseek (f, (long) (-1 * sizeof(student)), SEEK_CUR);
+fwrite(&student,sizeof(student),1,f);
+
+}

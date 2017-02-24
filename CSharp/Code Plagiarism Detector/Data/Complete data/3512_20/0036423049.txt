@@ -1,0 +1,75 @@
+typedef struct {
+	char ime[20+1];
+	char prezime [30+1];
+	char jmbag [10+1];
+	int ocjena;
+} tip;
+
+
+typedef struct zapis {
+	tip element;
+	struct zapis *sljed;
+} atom;
+
+
+int brojElementa ( atom *glava ) {
+	if ( glava )
+		return 1 + brojElementa ( glava -> sljed );
+	else
+		return 0;
+}
+
+
+int dodaj ( atom **glavap, tip element ) {
+	atom *novi = (atom *) malloc ( sizeof(atom) );
+	if ( novi ) {
+		novi -> element = element;
+		novi -> sljed = *glavap;
+		*glavap = novi;
+		return 1;
+	}
+	else
+		return 0;
+}
+
+
+int minOcjena ( atom *glava ) {
+	if ( glava ) {
+		if ( glava -> sljed )
+		return ( glava -> element.ocjena < minOcjena ( glava -> sljed ) ?
+                         glava -> element.ocjena : minOcjena ( glava ->sljed ) );
+		else
+			return glava -> element.ocjena;
+	}
+	else
+		return -1;
+}
+
+
+int izbaciPrezimeSadrzi ( atom **glavap, char *prezimePodniz ) {
+	if ( *glavap ) {
+		if ( strstr ( ( *glavap ) -> element.prezime, prezimePodniz ) ) {
+			*glavap = ( *glavap ) -> sljed;
+			return 1 + izbaciPrezimeSadrzi ( glavap, prezimePodniz );
+		}
+		else
+		return izbaciPrezimeSadrzi (&((*glavap) -> sljed), prezimePodniz );
+	}
+	else
+		return 0;
+}
+
+
+int izbaciPrezimePocinjeS ( atom **glavap, char *prezimePocetak ) {
+	if ( *glavap ) {
+	if (!strncmp((*glavap)->element.prezime,prezimePocetak,
+                                                       strlen (prezimePocetak))) {
+			*glavap = ( *glavap ) -> sljed;
+			return 1 + izbaciPrezimePocinjeS ( glavap, prezimePocetak );
+		}
+		else
+		return izbaciPrezimePocinjeS ( &( ( *glavap ) -> sljed ), prezimePocetak );
+	}
+	else
+		return 0;
+}

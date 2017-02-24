@@ -1,0 +1,19 @@
+void dodaj(FILE *f){
+struct natjecatelj{
+	int redni_br;
+	char prezime[20+1];
+	int bodovi;
+}entitet;
+int max, index;
+
+	
+	max=-1;
+	while(fread(&entitet,sizeof(struct natjecatelj),1,f)==1) {	
+		if (entitet.redni_br!=0) {
+			if (entitet.bodovi>max) {
+				max=entitet.bodovi;
+				index=entitet.redni_br;
+			}
+		}
+	}
+}

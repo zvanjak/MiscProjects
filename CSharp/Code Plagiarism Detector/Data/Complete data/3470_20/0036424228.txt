@@ -1,0 +1,12 @@
+bool fun2(Pravokutnik p, Krug k){
+	double Xdl, Ydl, sirina, visina;
+	sirina = p.getSirina();
+	visina = p.getVisina();
+	Xdl = (p.getDLkut()).X;
+	Ydl = (p.getDLkut()).Y;
+	Tocka DLkut (Xdl, Ydl);
+	Tocka GLkut(Xdl, Ydl + visina);
+	Tocka DDkut (Xdl + sirina, Ydl);
+	Tocka GDkut (DDkut.X, GLkut.Y);
+	return(k.Sadrzi(DLkut) && k.Sadrzi(GLkut) && k.Sadrzi(GDkut) && k.Sadrzi(DDkut));
+}

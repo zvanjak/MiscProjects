@@ -1,0 +1,15 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+int veci_od(FILE *f,int n){
+struct natjecatelj{
+    int redni_br,bodovi;
+    char prezime[20+1];}zapis;
+int x=0,i=0,t;
+while (1){
+    fseek(f,(long)(i)*sizeof(zapis),SEEK_SET);
+    t=fread(&zapis,sizeof(zapis),1,f);
+    if (zapis.redni_br!=0) if (t!=1) break;
+    if (zapis.bodovi>=n) x++;
+    i++;}
+return x;}

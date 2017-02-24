@@ -1,0 +1,30 @@
+char *BezDuplikata(char *ulazni_niz){
+	char *niz, *niz2, x;
+	int n, i, j=0, k=0;
+
+	if(ulazni_niz==NULL||ulazni_niz[0]=='\0') return NULL;
+	
+	printf("Ulazni niz je %s\n",ulazni_niz);
+	n=strlen(ulazni_niz);
+	
+	niz=(char*)malloc(sizeof(char)*n);
+	niz2=(char*)malloc(sizeof(char)*n);
+	
+	x=ulazni_niz[0];
+	if(x >= 0 && x <128){
+		for(i = 0 ; i < n ; i++){
+			x = ulazni_niz[i];
+			if(strchr(niz2, x)==NULL){
+				niz2[j] = x;
+				j++;
+			}else{
+				niz[k] = x;
+				k++;
+			}
+		}
+	}
+	niz2[j] = '\0';
+	return niz2;
+	free (niz);
+	free (niz2);
+}

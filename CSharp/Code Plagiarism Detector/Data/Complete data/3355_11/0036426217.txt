@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main ()  {
+  char s[6];
+  int i;
+  short k = 0;
+  short l = 0;
+  scanf("%c %c %c %c %c %c", &s[0], &s[1], &s[2], &s[3], &s[4], &s[5]);
+  if ((s[0] >= 65)&&(s[0] <= 90)||(s[0]>= 97)&&(s[0] <= 122)) {
+	  for (i = 1; i <= 5 ; i++){
+		  if ((s[i] >= 65)&&(s[i] <= 90)||(s[i]>= 97)&&(s[i] <= 122)){
+		    k = k + 1; 
+		  }
+		  if ((s[i] >= 48)&&(s[i] <= 57)) l = l + 1;
+	  }
+	  if ((k >= 1)&&(l >= 1)) printf("Jest");
+	  else printf("Nije");
+  } else 
+    printf("Nije");
+  return 0;
+}

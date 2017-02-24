@@ -1,0 +1,83 @@
+#include <stdio.h>
+int main () {
+	char polje [20] [20];
+	int n, i, j, krizic = 0, kruzic = 0;
+	scanf("%d", &n);
+	for (i=0; i<n; i++) {
+		for (j=0; j<n; j++) {
+			scanf("%c", &polje [i] [j]);
+		}
+	}
+	for (i=0; i<n; i++) {
+		krizic = 0;
+		kruzic = 0;
+		for (j=0; j<n; j++) {
+			if (polje[i][j] == 'O')
+				kruzic++;
+			else if (polje[i][j] == 'X')
+				krizic++;
+		}
+		if (kruzic == n) {
+			printf("O");
+			goto kraj;
+		}
+		else if (krizic == n) {
+			printf("X");
+			goto kraj;
+		}
+	}
+	for (j=0; j<n; j++) {
+		krizic = 0;
+		kruzic = 0;
+		for (i=0; i<n; i++) {
+			if (polje[i][j] == 'O')
+				kruzic++;
+			else if (polje[i][j] == 'X')
+				krizic++;
+		}
+		if (kruzic == n) {
+			printf("O");
+			goto kraj;
+		}
+		else if (krizic == n) {
+			printf("X");
+			goto kraj;
+		}
+	}
+	krizic = 0;
+	kruzic = 0;
+	for (i=0; i<n; i++) {
+		if (polje[i][i] == 'O')
+			kruzic++;
+		else if (polje[i][i] == 'X')
+			krizic++;
+	}
+	if (kruzic == n) {
+		printf("O");
+		goto kraj;
+	}
+	else if (krizic == n) {
+		printf("X");
+		goto kraj;
+	}
+	krizic = 0;
+	kruzic = 0;
+	for (i=0; i<n; i++) {
+		if (polje[i][n-i-1] == 'O')
+			kruzic++;
+		else if (polje[i][n-i-1] == 'X')
+			krizic++;
+	}
+	if (kruzic == n) {
+		printf("O");
+		goto kraj;
+	}
+	else if (krizic == n) {
+		printf("X");
+		goto kraj;
+	}
+	else 
+		printf("-");
+kraj:
+	return 0;
+}

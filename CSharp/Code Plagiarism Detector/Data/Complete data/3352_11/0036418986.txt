@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int veci_od (FILE *f, int n){
+	
+	struct natjecatelj nat;
+	int brojac=0;
+	
+	while(fread(&nat,sizeof(struct natjecatelj),1,f)!= EOF){
+		if(nat.redni_br==0){
+			continue;
+		}
+		if(nat.bodovi>=n){
+			brojac++;
+		}
+	}
+	
+	return brojac;
+}

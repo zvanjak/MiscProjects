@@ -1,0 +1,47 @@
+#include <iostream>
+
+using namespace std;
+
+class Kosarica {
+	private:
+		float *pro;
+		int br_pro;
+	public:
+		Kosarica() {
+			this->pro = NULL;
+			this->br_pro = 0;
+		}
+
+		void DodajProizvod(float cijena) {
+			this->br_pro++;
+			this->pro = (float *) realloc (this->pro, this->br_pro * sizeof(float));
+			*(this->pro + this->br_pro - 1) = cijena;
+		}
+
+		float UkupnaCijena() {
+			int i;
+			float suma = 0.f;
+
+			for (i = this->br_pro - 1; i >= 0; i--) {
+				suma += *(this->pro + i);
+			}
+
+			return suma;
+		}
+
+		float NajskupljiProizvod() {
+			int i;
+			float najskuplji = 0.f;
+			for (i = this->br_pro - 1; i >= 0; i--) {
+				if (najskuplji < *(this->pro + i)) {
+					najskuplji = *(this->pro + i);
+				}
+			}
+
+			return najskuplji;
+		}
+
+		~Kosarica() {
+			free(this->pro);
+		}
+};

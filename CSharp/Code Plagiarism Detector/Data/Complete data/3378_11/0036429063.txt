@@ -1,0 +1,19 @@
+#include <stdio.h>
+int main () {
+	int sati, nominalni, cijena;
+	float brutto, netto;
+	scanf ("%d %d %d", &sati, &nominalni, &cijena);
+	if (sati < nominalni) {
+		brutto = 0.9*cijena*sati;
+	} else if (sati ==nominalni) {
+		brutto = cijena*sati;
+	} else {brutto = 1.15*cijena* sati;
+	}
+	if (brutto > 6000) {
+		netto = 0.7*brutto;
+	} else {
+        netto = 0.8*brutto;
+	}
+		printf ("%.2f", netto);
+	return 0;
+}

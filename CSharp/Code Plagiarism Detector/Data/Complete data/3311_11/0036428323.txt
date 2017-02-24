@@ -1,0 +1,25 @@
+float prosjek (FILE *f) {
+	
+	int n,brprod,bralbuma;
+	float prosjekic;
+	struct album {
+		char naziv [30+1];
+		char autor [20+1];
+		int prodano;
+	} seronja;
+	
+	
+	brprod = 0;
+	bralbuma = 0;
+	f = fopen ("f.dat", "rb");
+	while (1) {
+		n = fread (&seronja, sizeof(seronja), 1,f);
+		if (n<1) break;
+		brprod= brprod + seronja.prodano;
+		bralbuma = bralbuma + 1;
+	}
+
+	prosjekic = brprod / bralbuma;
+	fclose (f);
+	return (prosjekic);
+    }

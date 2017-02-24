@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+int o,x=0,a,i=0;
+scanf("%d",&o);
+if (o<1000){
+while(o){
+ 	a = o % 10;
+	x+=a*pow(8,i);
+	o = o/10;
+     i++;
+}
+printf("%d",x);
+}
+return 0;
+}

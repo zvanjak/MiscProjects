@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <math.h>
+int main ()  {
+int i=1,n;
+long double zbroj=1.0, clan=0;
+int plus_minus_jedan= -1;
+scanf ("%d", &n);
+if ((n>=1) && (n<=30)) {
+	for(i;i<=n;i++){
+		clan=(long double)plus_minus_jedan/(pow(2,i));
+		zbroj=zbroj + clan;
+		plus_minus_jedan= -plus_minus_jedan;
+	}	
+	printf ("%13.12f", zbroj);
+}
+else 
+	printf ("n nije valjan\n");
+
+return 0;
+}

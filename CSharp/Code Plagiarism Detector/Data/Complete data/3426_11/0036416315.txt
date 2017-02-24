@@ -1,0 +1,84 @@
+
+
+#include <stdio.h>
+#define R 20
+#define S 5
+
+int main () {
+
+int d[R][S],i,j,p,q,mr,ms,k,z,bs=0,s=0,s0=0,s1=0,s2=0,s3=0,s4=0,u=0;
+
+do {
+	scanf ("%d %d",&mr, &ms);
+} while (!(((mr>=1)&&(mr<=20))&&((ms>=1)&&(ms<=5))));
+
+    scanf("%d %d",&p,&q);
+
+	  for (k=0; k<mr; k++) {
+		  for (z=0; z<ms; z++) {
+			  if (k%2==0){
+
+				  d[k][z] = p;
+			  }
+			  if (k%2==1){
+				  d[k][z] = q;
+			  }
+
+		  }
+	  }
+
+ do {
+
+	scanf("%d %d",&i,&j);
+
+	  for (k=0; k<mr; k++) {
+		  for (z=0; z<ms; z++) {
+
+			  if ((k==i)&&(z==j)){
+				  d[k][z] = 0;
+			  }
+		  }
+	  }
+}while ((((i>=0)&&(i<mr))&&((j>=0)&&(j<ms))));
+
+ 	  
+ for (k=0; k<mr; k++) {
+	for (z=0; z<ms; z++) {
+
+			  if(d[k][z] == 0){
+				  bs++;
+			  }
+		  }
+	  }
+
+
+ for (k=0; k<mr; k++) {
+	for (z=0; z<ms; z++) {
+
+			  if((z == 0)&&(d[k][0]==0)){
+				  s0=1;
+			  }
+			  
+			  if((z == 1)&&(d[k][1]==0)){
+				  s1=1;
+			  }
+			  
+			  if((z == 2)&&(d[k][2]==0)){
+				  s2=1;
+			  }
+			  if((z == 3)&&(d[k][3]==0)){
+				  s3=1;
+			  }
+			  if((z == 4)&&(d[k][4]==0)){
+				  s4=1;
+			  }
+		  }
+	  }
+
+u = s0+s1+s2+s3+s4;
+s = ms - u;
+
+printf ("%d %d",bs,s);
+
+return 0;
+}

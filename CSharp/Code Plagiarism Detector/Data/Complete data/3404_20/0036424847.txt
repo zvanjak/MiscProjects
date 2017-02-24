@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int* napraviPolje(int *A, int Na, int a, int b, int *Nc){
+        int i,j=1,k=0,z=0,a1,brojac=0;
+        int *C;
+        C=(int *)malloc(sizeof(int)*1);
+
+        for (i=0;i<Na;i++) {
+                for (a1=a;a1<=b;a1++) {
+                        if(A[i]%a1) z++;
+                }
+       
+                if (z==(b-a+1)){
+                                C=(int*)realloc(C,sizeof(int)*j);
+                                C[j-1]=A[i];
+                                j++;
+                                brojac++;
+                        }
+                z=0;
+                }
+        *Nc = brojac;
+        return C;
+}

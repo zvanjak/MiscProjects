@@ -1,0 +1,17 @@
+void obrni(zapis **glava){
+	zapis *polje;
+	zapis *pocetak=*glava;
+	int size,i,n=0;
+	polje = (zapis*)malloc (sizeof(zapis) * (size = 10));
+	while ( *glava != NULL ){
+		if(n==size)polje = (zapis *) realloc (polje, (size *= 2) * sizeof(zapis));
+		polje[n] = **glava;
+		glava = &((*glava)->sljed);
+		++n;
+	}
+	*glava = pocetak;
+	for(i=n-1; i>=0; --i){
+		**glava = polje[i];
+		glava = &((*glava)->sljed);
+	}
+};

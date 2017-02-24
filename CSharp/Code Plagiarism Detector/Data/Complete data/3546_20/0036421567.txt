@@ -1,0 +1,17 @@
+Stog *PrepisiRedUStog(Red *red) {
+	int temp, pom, prim, i;
+	Stog *tempStog;
+	if (red->SkiniIzReda(&temp)) {
+		pom = (temp>0) ? temp : -temp;
+		prim = (pom % 2 || pom==2) ? 1 : 0;		tempStog = PrepisiRedUStog(red); 
+		for (i=3;i<pom/2;i+=2) 
+			if (pom % i == 0) {
+				prim = 0;
+				break;
+			}
+		if (prim) 
+			tempStog->Stavi(temp);	
+	} else
+		tempStog = new Stog();
+	return tempStog;
+}

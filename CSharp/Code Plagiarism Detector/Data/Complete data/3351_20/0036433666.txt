@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int info(FILE *f, int redni_br)
+{
+struct natjecatelj{
+
+         int redni_br;
+
+         char prezime[20+1];
+
+         int bodovi;
+
+}n;
+fseek(f,sizeof(n)*(redni_br -1), SEEK_SET);
+
+fread (&n,sizeof(n),1,f);
+if (n.redni_br !=0) 
+{
+   if (n.bodovi >= 100) return(1);
+   else return(0);
+}
+else return(-1);
+
+}

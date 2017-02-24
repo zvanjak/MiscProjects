@@ -1,0 +1,52 @@
+#include <string.h>
+#include <stdio.h>
+
+
+int br_prodanih(FILE *f, char *autor){
+	char naziv[30+1];
+	char af[20+1];
+		
+	int prodano;
+
+	int suma=0;
+	int n;
+
+	char z;
+	
+	
+		while(!feof(f)){
+					
+		
+			n=0;
+			do{
+				z= fgetc(f);
+				af[n]=z;
+				n++;	
+			} while (z!=' ') ;
+
+			af[n-1]='\0';
+			
+			
+			
+			n=0;
+			
+			do {				
+				z= fgetc(f);
+				naziv[n]=z;
+				n++;					
+			} while (z!=' ') ;
+
+			naziv[n-1]='\0';
+			
+			
+			fscanf(f,"%d", &prodano);
+			fgetc(f);
+
+			
+		if (strcmp(autor, af)==0) suma+=prodano;
+	}
+
+	return suma;
+}
+
+

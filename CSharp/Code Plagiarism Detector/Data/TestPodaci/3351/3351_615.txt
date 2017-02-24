@@ -1,0 +1,21 @@
+int info(FILE *f, int redni_br)
+{
+    struct natjecatelj{
+    int redni_br;
+    char prezime[20+1];
+    int bodovi;
+	} n;
+
+    fseek(f,(long)((redni_br-1)*sizeof(struct natjecatelj)),SEEK_SET);
+
+	fread(&n,sizeof(struct natjecatelj),1,f);
+	
+	if (n.redni_br==0)
+		return -1;
+	else if (n.bodovi>=100)
+		return 1;
+	else if (n.bodovi<100)
+	    return 0;
+	
+}
+

@@ -1,0 +1,29 @@
+int valjanBr (int br, int a, int b) {
+	int i;
+	for (i = a; i <= b; i++) {
+		if((br % i) != 0) return 0;
+	}
+	return 1;
+}
+int* napraviPolje (int *A, int Na, int a, int b, int* Nc) {
+	int i, brC = 0;
+	int* novoPolje;
+
+	if (Na <= 0) {
+		return 0;
+	}
+	if (a > b) {
+		return 0;
+	}
+
+	novoPolje = malloc((unsigned) (Na * sizeof(int)));
+
+	for(i = 0; i < Na; i++) {
+		if (valjanBr (*(A+i), a, b)) {
+			*(novoPolje + brC) = *(A+i);
+			brC++;
+		}
+	}
+	*Nc = brC;
+	return novoPolje;
+}

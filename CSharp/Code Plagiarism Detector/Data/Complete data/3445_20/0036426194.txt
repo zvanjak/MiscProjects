@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<malloc.h>
+#include<stdlib.h>
+#include<math.h>
+#include<time.h>
+#include<conio.h>
+class Kosarica
+{
+private:
+	float cijena, max;
+public:
+	Kosarica()
+	{
+		cijena=0;max=0;
+	}
+	void DodajProizvod(float cijena)
+	{
+		this->cijena+=cijena;
+		if(cijena>max)
+			max=cijena;
+	}
+	float UkupnaCijena()
+	{
+		return cijena;
+	}
+	float NajskupljiProizvod()
+	{
+		return max;
+	}
+	~Kosarica(){}
+};

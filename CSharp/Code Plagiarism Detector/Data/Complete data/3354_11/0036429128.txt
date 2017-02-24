@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int main()
+{
+	char a, b, c;
+
+	scanf("%c %c %c", &a, &b, &c);
+
+	if((isdigit(a) && isdigit(b) && isdigit(c)) || (isdigit(a) && isdigit(b)) || (isdigit(a) && isdigit(c)) || (isdigit(b) && isdigit(c)))
+	{
+		if(!isdigit(a))
+			printf("%c\n", a);
+		else if(!isdigit(b))
+			printf("%c\n", b);
+		else if(!isdigit(c))
+			printf("%c\n", c);
+		else
+			printf("Nema uljeza\n");
+
+	}
+
+	if((isalpha(a) && isalpha(b) && isalpha(c)) || (isalpha(a) && isalpha(b)) || (isalpha(a) && isalpha(c)) || (isalpha(b) && isalpha(c)))
+	{
+		if(!isalpha(a))
+			printf("%c\n", a);
+		else if(!isalpha(b))
+			printf("%c\n", b);
+		else if(!isalpha(c))
+			printf("%c\n", c);		
+		else
+			printf("Nema uljeza\n");
+	}
+
+	return 0;
+}

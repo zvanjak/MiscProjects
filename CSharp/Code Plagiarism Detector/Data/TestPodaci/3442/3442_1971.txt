@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main (){
+	int n, i, suma1=0, suma2=0, razlika;
+	scanf("%d", &n);
+	if(n>1){
+		for(i=0;i<=n;i++) {
+			suma1+=i*i;
+		}
+		for(i=1;i<=n-1;i++) {
+			suma2+=2*i;
+		}
+		razlika=suma1-suma2;
+		printf("%d", razlika) ;
+	return 0;
+	}
+}

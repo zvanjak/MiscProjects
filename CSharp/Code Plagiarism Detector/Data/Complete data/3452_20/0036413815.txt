@@ -1,0 +1,42 @@
+class SortRazlPolje{
+	friend void zamjeni(int &prvi,int &drugi);
+public:
+		SortRazlPolje();
+		int Dodaj(int Broj);
+		int *VratiSortPolje(int &n);
+		~SortRazlPolje();
+		int BrojClanova;
+		int *polje;
+		int naj;
+
+};
+void zamjeni(int &prvi, int &drugi){
+	int tmp = prvi;
+	prvi=drugi;
+	drugi=tmp;
+}
+SortRazlPolje::SortRazlPolje(): BrojClanova(0),naj(100){
+	polje=new int [naj];
+}
+
+int SortRazlPolje::Dodaj(int Broj){
+	for(int i=0;i<BrojClanova;i++){
+		if(Broj==polje[i]) return 1;
+	}
+	BrojClanova++;
+	//polje = (int*) realloc(polje,BrojClanova*sizeof(int));
+	//polje=new int [BrojClanova];
+	if(polje==NULL) return 0;
+	polje[BrojClanova-1]=Broj;
+	return 1;
+}
+int* SortRazlPolje::VratiSortPolje(int &n){
+	if(polje==NULL) return NULL;
+	for(int i=0;i<n-1;i++)
+		for(int j=i+1;j<n;j++)
+			if(polje[i]>polje[j]) zamjeni(polje[i],polje[j]);
+			return polje;
+}
+SortRazlPolje::~SortRazlPolje(){
+	delete [] polje;
+}

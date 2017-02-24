@@ -1,0 +1,22 @@
+void obrni(zapis **glava)
+{
+zapis *p,*b,*pom;
+int i=0;
+if (*glava!=NULL)
+{
+pom=*glava;
+b=(*glava)->sljed;
+while(b!=NULL)
+{
+i++;
+p=*glava;
+*glava=b;
+b=(*glava)->sljed;
+(*glava)->sljed=p;
+if (i==1) p->sljed=NULL;
+}
+}
+
+
+
+}

@@ -1,0 +1,31 @@
+#include <stdio.h>
+int main () {
+    int ms=0,i,mr=0,j,br=0,bs=0,p;
+    int a[20][5];
+    int n[5]={0};
+/*ucitavaje redova i stupaca*/
+    while ((mr<1)||(mr>20)||(ms<1)||(ms>5))
+          {scanf ("%d %d", &mr, &ms);};
+/*ucitavanje brojeva u matricu*/
+    for (i=0;i==mr;i++) {
+         for (j=0;j==ms;j++){
+              scanf ("%d", &a[i][j]);
+              };
+         };
+/*brojanje redova sa parnim clanom, i biljezenje stuaca sa neparnim*/
+    for (i=0;i==mr;i++) {
+         p=0;
+         for (j=0;j==ms;j++) {
+             if (a[i][j]%2==1) { p=1; } 
+               else { n[j]=1; };
+             };
+         if (p==1) { br++; };
+         }
+/*brojanje stupaca sa neparnim clanovima*/
+    for (j=0;j==ms;j++) {
+        if (n[j]==1) { bs++; };
+        };
+/*ispis*/
+    printf ("%d %d", br, bs);
+    return 0;
+    }

@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+	int x, y, z, w=0, q=0, h, broj=0, zbroj=0;
+	do
+	{
+		scanf("%d", &x);
+		x=abs (x);
+		h=x;
+		while (x)
+		{
+			y=x/10;
+			z=x%10;
+			x/=10;
+			w++;
+			q+=z;
+		}
+	}
+	while (h);
+printf("%d %d", w, q);
+return 0;
+}

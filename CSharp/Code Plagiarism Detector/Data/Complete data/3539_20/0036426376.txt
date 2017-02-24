@@ -1,0 +1,19 @@
+float prosjek(zapis *glava) {
+	zapis *p;
+	float av, suma=0;
+	int n=0;
+
+	if (glava==NULL) return 0;
+	
+	for (p=glava; p!=NULL; p=p->sljed) {
+		suma+=p->pros;
+		n++;
+	}
+
+	av=suma/n;
+
+	for (p=glava; p!=NULL; p=p->sljed)
+		if (p->pros<av)
+			p->pros=0;
+	return av;
+}

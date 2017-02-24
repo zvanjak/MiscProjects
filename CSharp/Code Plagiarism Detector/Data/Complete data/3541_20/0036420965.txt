@@ -1,0 +1,27 @@
+int izbaciZ(zapis **glava){
+    float prosjecno = 0.;
+    float kol = 0.;
+    int kolicina = 0;
+    zapis *pom, *prosli;
+    if (*glava == NULL) return 0;
+    pom = *glava;
+    while (pom != NULL){
+        prosjecno += pom->pros;
+        kol = kol+1.;
+        pom = pom->sljed;      
+    }    
+    pom = *glava;
+    prosjecno /= kol;
+    while (pom != NULL){
+        if (pom->spol == 'Z'&&pom->pros < prosjecno){
+            kolicina++;
+            if (pom == *glava){
+               *glava = pom->sljed;
+            } else {
+               prosli->sljed = pom->sljed;       
+            }
+        } else prosli = pom;
+        pom = pom->sljed;
+    }
+    return kolicina;
+}

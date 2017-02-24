@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+class Komprimiranje{
+private:
+    int *niz;
+    int brElem;
+public:
+    Komprimiranje(int *pokazivac,int BrojClanova){
+        niz=pokazivac;
+        brElem=BrojClanova;
+	}
+    
+	int UkupnaSuma() {
+		int suma = 0;
+		int i=0;
+		for (i=0; i<brElem;i=i+2) {
+			suma += niz[i] * niz[i+1];
+		}
+		return suma;	
+	}
+	
+	int UkupniBrojElemenata(int vrijednost){
+        int brojac=0;
+		int i=0;
+        for(i=0;i<brElem;i=i+2){         
+            if(niz[i]!=vrijednost) brojac = brojac + niz[i+1];  
+        }
+        return brojac;
+    }
+};

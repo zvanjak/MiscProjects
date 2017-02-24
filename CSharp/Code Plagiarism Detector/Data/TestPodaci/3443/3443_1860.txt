@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main(void)
+{
+	int n, i;
+	long int rezultat = 1;
+
+	scanf("%d", &n);
+
+	for(i = 1; i < n; i++)
+	{
+		rezultat *= (long)i;
+	}
+
+	for(i = 0; i <= n; i++)
+	{
+		rezultat += (long)i * i;
+	}
+
+	printf("%ld", rezultat);
+
+	return 0;
+}

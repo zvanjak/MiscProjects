@@ -1,0 +1,16 @@
+#include <stdio.h>
+int main()
+{
+char k[5];
+char x[5];
+int kk,xx,i;
+scanf("%s %s",k,x);
+for (i=0;i<4;i++){
+	if(k[i]== '1'){
+		if(x[i]== '9') x[i]='0';
+		else x[i]++;
+	}
+}
+printf("%s\n",x);
+		
+}

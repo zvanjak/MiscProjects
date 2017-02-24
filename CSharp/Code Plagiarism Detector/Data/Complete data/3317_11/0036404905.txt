@@ -1,0 +1,10 @@
+void brisi(FILE *f, int redni_br)
+{
+    struct natjecatelj nat;
+ 
+    fseek(f, redni_br - 1, SEEK_SET);
+    fread(&nat, sizeof(struct natjecatelj), 1, f);
+    fseek(f, -1, SEEK_CUR);
+    nat.redni_br = 0;
+    fwrite(&nat, sizeof(struct natjecatelj), 1, f);
+}

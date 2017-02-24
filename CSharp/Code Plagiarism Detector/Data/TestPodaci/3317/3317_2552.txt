@@ -1,0 +1,14 @@
+void brisi(FILE *f, int redni_br)
+{	
+	struct nat
+	{
+		int red;
+		char prez[20+1];
+		int bod;
+	} a;
+	
+	int x = 0;
+
+	fseek(f, (long) (redni_br -1) * sizeof(a), SEEK_SET);
+	fwrite(&x , sizeof(int), 1, f);
+}

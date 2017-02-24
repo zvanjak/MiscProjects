@@ -1,0 +1,44 @@
+class Komprimiranje{
+public:
+	Komprimiranje();
+	Komprimiranje(int*niz,int n);
+	~Komprimiranje();
+	int UkupnaSuma();
+	int UkupniBrojElemenata(int vrijednost);
+private:
+	int *_niz;
+	int _n;
+};
+Komprimiranje::Komprimiranje(){
+	_n=1;
+	_niz=new int[_n];
+}
+Komprimiranje::Komprimiranje(int*niz,int n){
+	_n=n;
+	_niz=new int[_n];
+	for(int i=0;i<_n;i++)
+		_niz[i]=niz[i];
+}
+int Komprimiranje::UkupnaSuma(){
+	int suma=0;
+	for(int i=0;i<_n;i++){
+		if(i%2)
+			suma+=_niz[i-1]*_niz[i];
+	}
+	printf("%d ",suma);
+	return suma;
+}
+int Komprimiranje::UkupniBrojElemenata(int vrijednost){
+	int j=0;
+	for(int i=0;i<_n;i++){
+		if(_niz[i]==vrijednost)
+			continue;
+		else
+			j++;
+	}
+	printf("%d ",j);
+	return j;
+}
+Komprimiranje::~Komprimiranje(){
+	delete [] _niz;
+}

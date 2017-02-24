@@ -1,0 +1,13 @@
+void PrepisiStogURed(Stog *stog, Red *red)
+{
+    int a;
+    Stog* pom;
+    if (stog != NULL) while (stog->Skini(&a)) pom->Stavi(a);
+    while (pom->Skini(&a))    
+    {
+        if ( a%2!= 0 ) PrepisiStogURed(pom, red);
+        else red->DodajURed(a);
+        PrepisiStogURed(pom, red);
+    }
+    return;
+}

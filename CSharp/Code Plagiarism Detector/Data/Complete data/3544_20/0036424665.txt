@@ -1,0 +1,12 @@
+Red *PrepisiStogURed(Stog *stog){
+int element,p;
+	Red *red= new Red;
+	p=stog->Skini(&element);
+		if(!p)
+			return red;
+
+		red=PrepisiStogURed(stog);
+		red->DodajURed(element);
+
+return red;
+}

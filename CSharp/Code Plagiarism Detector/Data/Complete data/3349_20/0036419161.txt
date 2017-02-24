@@ -1,0 +1,17 @@
+double sumareda(double x, int N)
+{
+       double suma=0, trClan, potenc=1;
+       int i;
+       kontrola();
+       if(N>0)
+       {
+           for(i=0;i<N;++i)
+              potenc*=(x-1);
+           trClan = potenc / N;
+           if(N%2==0)
+              trClan=-trClan;
+           return trClan+sumareda(x,N-1);
+       }
+       else
+           return 0;
+}

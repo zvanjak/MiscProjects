@@ -1,0 +1,49 @@
+/*
+4.Program treba izvršiti dekompresiju kompresiranog niza. 
+Program učitava niz parova [znak-cijeli broj] u formatu "%c%d" 
+(dok se u nekoj iteraciji ne učita neki znak te broj -1; 
+taj se učitani par zanemaruje) koji predstavljaju kompresirani niz.
+Maksimalna veličina kompresiranog niza je 100 parova. 
+Niz interpretirati kao niz parova , gdje prvi broj u paru predstavlja broj iz 
+originalnog niza, a drugi broj predstavlja broj ponavljanja prethodnog broja. 
+Npr. za učitani kompresirani niz  C2H4S3:2-1, 
+parovi su (C, 2),  (H, 4), (S, 3) te (:, 2) 
+iz čega slijedi da je dekompresirani niz: C C H H H H S S S : :. 
+Program za zadani ulazni kompresirani niz, treba pohraniti dekompresirani niz u 
+polje te zatim to polje ispisati po uzorku: znak znak znak itd.
+(između svaka dva znaka se nalazi razmak).   
+. Maksimalna veličina dekompresiranog niza je 1000 znakova.
+*/
+#include <stdio.h>
+
+int main()
+{
+	int i,j, d,br, k = 0;
+	char c;
+	char komPolje[100], dekomPolje[100];
+	for(i = 0; i< 100; i+= 2)
+	{
+		scanf("%c%d", &c, &d);
+		if(d == -1)  break;
+		else 
+		{
+			komPolje[i] = c;
+			komPolje[i+1] = d;
+		}
+	}
+	for (j=0; j<=i-2; j+=2)
+	{
+		br = komPolje[j+1];
+		while(br>0) 
+		{
+			dekomPolje[k] = komPolje[j];
+			k++;
+			br--;
+		}
+	}
+	for ( i=0; i< k;i++)
+	{
+		printf ("%c ", dekomPolje[i]);
+	}
+	return 0;
+}

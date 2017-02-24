@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main ()
+
+{
+unsigned int D,G,N,i,suma,k;
+
+	scanf ("%d %d", &D,&G);
+
+		if ((D>0) && (G>0) && (G>D))
+		{
+			N=D;
+		}
+		else 
+		{
+			printf ("Unos nije valjan\n");
+			return 0;
+		}
+
+	
+		for (D=N; N<=G; N=N+1)
+		{ 
+			for (i=2, suma=0; i<=N; i=i+2)
+			
+			{		suma=suma+i;
+			}	
+		printf ("%d ", suma);
+		}
+
+		return 0;
+} 

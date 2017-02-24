@@ -1,0 +1,11 @@
+#include <stdio.h>
+int main () {
+	int broj;
+	scanf ("%d", &broj);
+	if ((broj/100)*(broj%100)%(broj/10%100)==0) {
+		printf ("%d\n", broj/1000 + broj % 100/10);
+	}else {
+		printf ("%d\n", (broj%100/10)*(broj%10));
+	}
+	return 0;
+	}

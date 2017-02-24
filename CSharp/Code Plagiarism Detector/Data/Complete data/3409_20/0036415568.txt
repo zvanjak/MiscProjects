@@ -1,0 +1,28 @@
+char *IzbaciPresjek(char *niz1,char *niz2){
+     char *p;
+     int i,j,k,a;
+     k=0;
+     a=0;
+     p=(char*) malloc((k+1)*sizeof(char));    
+     if(strlen(niz2)==0){
+                         strcpy(p,niz1);                         
+                         return p;
+                         }
+    
+     for(i=0;i<strlen(niz1);i++){
+                                 for(j=0;j<strlen(niz2);j++){
+                                                             if(niz1[i]==niz2[j]){
+                                                                                  a=1;
+                                                                                  }
+                                                             
+                                                             }
+                                 if(!a){
+                                        p=(char*) realloc(p,(k+1)*sizeof(char));
+                                        p[k]=niz1[i];
+                                        ++k;
+                                        }
+                                        a=0;
+                                 }
+     p[k]='\0';
+     return p;
+}

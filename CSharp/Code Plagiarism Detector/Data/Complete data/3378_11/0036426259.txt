@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+
+int main (){
+	int bs, bns, bcs;
+	float bp, np;
+    scanf("%d %d %d", &bs, &bns, &bcs);
+    bp=bs*bcs;
+	if(bs<bns) bp=bp*0.9f;
+	else if (bs>bns) bp=bp*1.15f;
+	if (bp>6000.f) np=bp*0.7f;
+	else np=bp*0.8f;
+	printf("%.2f", np);
+	return 0;}

@@ -1,0 +1,31 @@
+#include <stdio.h>
+int main() {
+	int n,m,x,y,z;
+	char c;
+	scanf ("%d %d %c", &n, &m, &c);
+	x=n/100;
+	z=n%10;
+	y=(n/10)%10;
+	if (n<0 || m<1 || m>3 || (c !='L' && c!='R'))
+		printf ("Error");
+
+	else {
+		if (c=='L') 
+		{
+					if (m==1) printf ("%d%d%d", y, x, z);
+					else {
+						if (m==2) printf ("%d%d%d", z, x, y);
+						else printf ("%d%d%d", x, y, z);
+	                      }
+		}
+	     else 
+		 {
+		             if (m==1) printf ("%d%d%d", z, x, y);
+					 else {
+		                  if (m==2) printf ("%d%d%d", y, z, x);
+		                  else printf ("%d%d%d", x, y, z);
+		                  }
+		 }
+	}
+	return 0;
+}

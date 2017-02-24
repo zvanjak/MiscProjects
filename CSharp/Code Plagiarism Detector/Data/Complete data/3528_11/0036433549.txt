@@ -1,0 +1,17 @@
+int zamijeni(char *ulazni, char *prvi, char *drugi){
+	char *y;int a,b,c,x,i;
+	if (strstr(ulazni,prvi)=='\0'){return 0;}else{
+	y=strstr(ulazni,prvi);
+	a=strlen(ulazni);
+	b=strlen(drugi);
+    c=strlen(prvi);
+	for(i=0;strstr(y,prvi)!='\0';i++){
+		y=strstr(y,prvi);
+	strncpy(y,drugi,b);
+	
+	for(x=0;1;x++){
+		*(y+b+x)=*(y+c+x);
+		if(*(y+c+x)=='\0')break;}
+	y=y+b;}
+
+	return i;};}

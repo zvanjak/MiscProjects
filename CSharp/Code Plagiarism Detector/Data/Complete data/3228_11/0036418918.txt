@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <math.h>
+
+int main () {
+    double s=0, pi=0;
+    float n;
+    int i;
+    scanf ("%f", &n);
+    if ((n>=1) && (n<=100) && (n==(int)(n))) {
+       for (i=1; i<=n; i++) {
+           if (i%2==1) s=(double)s+1./(i*i);
+           else s=(double)s-1./(i*i);
+           }
+       pi=s*12;
+       pi=sqrt(pi);
+       printf ("%11.12lf", pi);
+    }
+    else printf ("n nije valjan");
+    return 0;
+}

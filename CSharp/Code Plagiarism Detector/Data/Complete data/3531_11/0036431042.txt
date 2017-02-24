@@ -1,0 +1,30 @@
+void zamijeni (char *ulazni, int *broj) {
+ 
+ int f=1,i,c,n,p,max=-1;
+ 
+ c = n = p = 0;
+ 
+ for (i=0;ulazni[i];++i) {
+  if (isdigit(ulazni[i])) {
+   ++n;
+   ulazni[i]='!';
+  }
+  else if (isalpha(ulazni[i])) {
+   ++c;
+   ulazni[i]= (f ? toupper(ulazni[i]) : tolower(ulazni[i]));
+   f = 0;
+  }
+  else if (isprint(ulazni[i])) {
+   ++p;
+   ulazni[i]='?';
+  }
+  if (n > max) max = n;
+  if (p > max) max = p;
+  if (c > max) max = c;
+ }
+ 
+ for (i=1;ulazni[i];++i)
+  while (ulazni[i-1]=='!' && ulazni[i]=='!') strcpy(ulazni+i,ulazni+i+1);
+ 
+ *broj = max;
+}

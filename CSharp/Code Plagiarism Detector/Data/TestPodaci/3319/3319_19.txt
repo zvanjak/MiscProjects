@@ -1,0 +1,21 @@
+void dodaj(FILE *f) {
+    struct natjecatelj n;
+    int pozicijaMax = -1;
+    int max;
+
+    rewind(f);
+    while (fread(&n, sizeof(n), 1, f)) {
+        if (pozicijaMax == -1 || n.bodovi > max) {
+            pozicijaMax = n.redni_br;
+            max = n.bodovi;
+        }
+    }
+
+    if (pozicijaMax != -1) {
+        fseek(f, (pozicijaMax-1)*sizeof(n), SEEK_SET);
+        fread(&n, sizeof(n), 1, f);
+        n.bodovi += 10;
+        fseek(f, (pozicijaMax-1)*sizeof(n), SEEK_SET);
+        fwrite(&n, sizeof(n), 1, f);
+    }
+}

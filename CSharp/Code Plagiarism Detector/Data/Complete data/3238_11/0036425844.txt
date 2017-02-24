@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main ()
+{
+
+	int n;
+
+	scanf("%d", &n);
+
+	if ((n<1) || (n>25))
+	{
+		printf("n nije valjan");
+		exit(1);
+	}
+
+	else
+	{
+		int i;
+		double pi, temp=0, k, pom;
+        
+		for(i=1; i<=n; i++)
+		{
+			k = 1/(pow(i,8));
+
+			temp = temp + k;
+		}
+
+		temp = temp * 9450;
+
+		pi = sqrt(sqrt(sqrt(temp)));
+
+		printf("%.12f", pi);
+	}
+return 0;
+}

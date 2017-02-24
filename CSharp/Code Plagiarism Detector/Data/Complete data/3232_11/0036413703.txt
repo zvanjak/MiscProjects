@@ -1,0 +1,16 @@
+# include <stdio.h>
+# include <math.h>
+main() {
+	int i,n;
+	float x,y=0,z;
+	scanf ("%d", &n);
+	if (n<1 && n>30) printf ("n nije valjan");
+	else {
+		for (i=1;i<=n;i++) {
+			x=1/pow(2,i);
+			y=y+x;
+		}
+		z=1+y;
+		printf ("%.12f", z);
+	}
+}

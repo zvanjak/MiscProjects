@@ -1,0 +1,16 @@
+int *napraviPolje(int *A, int Na, int a, int b, int *Nc) {
+   int *fja=0;
+
+   if (a>b) return 0;
+
+   if ((Nc==NULL)||(*Nc!=0)) 
+      {Nc=(int *)malloc(Na*sizeof(int));
+       }; 
+   fja=Nc;
+
+   if ((A[Na-1]>b)&&(Na>0)) 
+      {*Nc=A[Na-1];
+       fja=-1 + napraviPolje (A,Na-1,a,b,Nc+1);
+       } else {if (Na>0) {fja= napraviPolje (A,Na-1,a,b,Nc);};};
+   return fja;
+}

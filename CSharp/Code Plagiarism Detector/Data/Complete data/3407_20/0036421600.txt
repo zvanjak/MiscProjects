@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <ctype.h>
+char *SamoSamoglasnici(char *ulazni_niz);
+int main () {
+  char x[100];
+  char *y;
+  scanf("%s", x);
+  if (x[0]==NULL) return NULL;
+  if (x[0]=='\n') return NULL;
+  y=SamoSamoglasnici(x);
+  printf("%s\n", y);
+  return 0;
+}
+char *SamoSamoglasnici(char *ulazni_niz) {
+  int i,j;
+  char *z;
+  char a[100];
+  i=0;
+  j=0;
+  while (ulazni_niz[i] != '\n') {
+    if (ulazni_niz[i]=='A' || ulazni_niz[i]=='a' || ulazni_niz[i]=='E' || ulazni_niz[i]=='e' || ulazni_niz[i]=='I' || ulazni_niz[i]=='i' || ulazni_niz[i]=='O' || ulazni_niz[i]=='o' || ulazni_niz[i]=='U' || ulazni_niz[i]=='u') {
+   a[j]=ulazni_niz[i];
+   j++;
+   }
+   i++;
+}
+z= &a[0];
+return z;
+}

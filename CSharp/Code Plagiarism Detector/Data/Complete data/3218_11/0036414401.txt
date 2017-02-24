@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include<math.h>
+void main () {
+	int l,p,i,m;
+	m=2;
+	do{
+		scanf("%d",&l);
+		p=1;
+		for (i=2;i<=sqrt(l);i++){
+			if (l%i==0) p=0;
+		}
+		if (p==1){
+			if (l>m) m=l;
+		}
+	}while (l>2);
+	if (m<=2) printf("0"); else printf("%d",m);
+}

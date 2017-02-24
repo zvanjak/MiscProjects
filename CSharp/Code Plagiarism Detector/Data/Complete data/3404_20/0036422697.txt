@@ -1,0 +1,21 @@
+int *napraviPolje(int *A,int Na,int a,int b,int *Nc){
+  int *C,i,j,ne,poz=-1;
+  if(a>b)return NULL;
+  for(i=0;i<Na;i++){
+   ne=0;
+   for(j=a;j<=b;j++)
+    if((*(A+i)%j)==0)ne++;
+   if(ne==0)(*Nc)++;
+  }
+  C=(int *)malloc((*Nc)*sizeof(int));
+  for(i=0;i<Na;i++){
+   ne=0;
+   for(j=a;j<=b;j++)
+    if((*(A+i)%j)==0)ne++;
+   if(ne==0){
+    poz++;
+    *(C+poz)=(*(A+i));
+   }
+  }
+  return C;
+}

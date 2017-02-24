@@ -1,0 +1,88 @@
+#include <iostream>
+using namespace std;
+
+class CjelobrojniNiz {
+public
+int broj;
+int *cniz;
+
+CjelobrojniNiz(int *a, int n);
+~CjelobrojniNiz();
+CjelobrojniNiz(Cjelobrojniniz &a);
+
+int VecinaJednaka;
+int Usporedi( CjelobrojniNiz niz);
+int *Vratipresjek(CjelobrojniNiz niz, int *n);
+};
+
+CjelobrojniNiz(CjelobrojniNiz &a)
+{
+int i=0;
+cniz = new int[a.broj];
+for (i=0; i<a.broj; i++)
+cniz[i] =a.cniz[i];
+broj=a.broj;
+}
+
+CjelobrojniNiz::CjelobrojniNiz(int *a, int n)
+{
+broj=n;
+
+cniz = new int[broj];
+for (int i=0; i<broj; ++i)
+{cniz[i]= a.cniz[i];
+VecinaJednaka=0;
+for(int i=0; i<broj/2+1; ++i){
+int b=1;
+for (int j=i+1; j<broj; ++j)
+if (ciz[i]==cniz[j]) b++;
+if (b>n/2)
+{
+VecinaJednaka =1;
+break;
+}
+}
+}
+
+~CjelobrojniNiz()
+{if (cniz) delete[]cniz;} 
+
+
+CjelobrojniNiz::CjelobrojniNiz &a)
+{int broj=a.broj;
+int VecinaJednaka =a.VelicinaJednaka;
+int *cniz = new int[a.broj];
+for (int i=0; i<broj; ++i)
+cniz[i]=a.cniz[i];
+}
+
+int CjelobrojniNiz :: Usporedi(CjelobrojniNiz niz){
+int jednaki =1;
+for (int i=0; (i<broj && i<niz.broj); ++i)
+{
+if (niz.cniz[i] != cniz[i])
+{jednaki=0;
+break;
+}
+}
+return jednak;
+}
+
+int* CjelobrojniNiz::Vratipresjek(CjelobrojniNiz niz, int *n)
+presjek = new int[broj];
+int br=0;
+for (int i=0; i<broj; ++i)
+for (int j=0; j<niz.broj; ++j)
+if (cniz[i] == niz.cniz[j])
+{
+int nista=0;
+for (int k=0; k<br; ++k)
+if (presjek[k] == cniz[i]) {
+nista=1;
+break;
+}
+if (!nista) presjek[br++]=cniz[i];
+}
+*n =br;
+return presjek;
+}

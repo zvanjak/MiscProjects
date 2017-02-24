@@ -1,0 +1,23 @@
+int *napraviPolje(int *A, int Na, int *B, int Nb, int *Nc)
+{
+	int min, i;
+	int *polje;
+
+	polje=NULL;
+	*Nc=0;
+	min=B[0];
+	
+	for(i=1;i<Nb;i++)
+		if(min>B[i])
+			min=B[i];
+
+	for(i=0;i<Na;i++)
+		if(min>A[i])
+		{
+			polje=(int*)realloc(polje, (*Nc+1)*sizeof(int));
+			polje[*Nc]=A[i];
+			(*Nc)++;
+		}
+
+	return polje;
+}

@@ -1,0 +1,26 @@
+void UmetniPrijePrvogNeparnog(Stog *stog, int broj){
+	int *pom;
+	int stavka, a;
+	int i=0, max=10;
+	pom=(int*) malloc((max+1)*sizeof(int));
+	while((stog->Skini(&stavka))!=0){
+		if((stavka%2)!=0){
+			a=stog->Stavi(stavka);
+			break;
+		}
+		pom[i]=stavka;
+		i++;
+		if(i>=max){
+			max+=5;
+			if(!(pom=(int*) realloc(pom, max*sizeof(int))))break;
+	}
+	}
+	if(i==0){
+		a=stog->Stavi(broj);
+	}else{ 
+		a=stog->Stavi(broj);
+		for(i--;i>=0; i--){
+			a=stog->Stavi(pom[i]);
+		}
+	}
+}

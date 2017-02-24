@@ -1,0 +1,7 @@
+#include<stdio.h>
+#include<math.h>
+void main(void){
+int n,i;
+float a,b;
+printf("/nunesite broj clanova niza");
+scanf("%d,&n");

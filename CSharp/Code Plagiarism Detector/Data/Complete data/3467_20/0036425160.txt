@@ -1,0 +1,33 @@
+int igra(Igrac & igrac, Automat & aut, int max, int *broj)
+{
+	int pocetni_saldo = igrac.TrenutnoStanje();
+	int konacni_saldo;
+	int trenutni_dobitak;
+	int i;
+
+	*broj=0;
+
+	igrac.SkiniSRacuna(pocetni_saldo);
+	aut.UplatiIznos(pocetni_saldo);
+
+
+	for(i=0; i<max; i++){
+		if(aut.TrenutnoStanje() > 0){
+			(*broj)++;
+			
+			trenutni_dobitak = aut.Zavrti();
+			aut.UplatiIznos(trenutni_dobitak);
+
+
+		}else{
+			
+			break;
+
+		}
+	}
+
+	konacni_saldo = aut.PodigniPreostalo();
+	igrac.UplatiNaRacun(konacni_saldo);
+
+	return konacni_saldo - pocetni_saldo;
+}

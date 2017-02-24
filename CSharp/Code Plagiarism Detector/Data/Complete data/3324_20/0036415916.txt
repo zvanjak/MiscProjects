@@ -1,0 +1,12 @@
+void rStrcpy(char *odrediste, char *izvoriste)
+{
+	kontrola();
+
+	if(*izvoriste == '\0') return;
+
+	else
+	{
+		*odrediste = *izvoriste;
+		return rStrcpy(odrediste+1, izvoriste +1);
+	}
+}

@@ -1,0 +1,12 @@
+int veci_od(FILE *f, int granica) {
+	struct album albumElement;
+	int counter = 0;
+
+	while (fread(&albumElement, sizeof(struct album), 1, f) != 0) {
+		if (albumElement.prodano >= granica) {
+			counter ++;
+		}
+	}
+	
+	return counter;
+}

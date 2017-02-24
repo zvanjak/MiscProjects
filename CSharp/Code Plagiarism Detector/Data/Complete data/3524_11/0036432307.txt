@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+void ubaci(char *niz, char *podniz, int i)
+{
+	int j = 0;
+	if(i > strlen(niz) || i < 0)
+		while(niz[j]!='\0')
+		{
+			niz[j] = toupper(niz[j]);
+			j++;
+		}
+	else if(i == strlen(niz))
+		strcat(niz, podniz);
+	else
+	{
+		for(j=strlen(niz); j>= i; j--)
+			niz[j+strlen(podniz)]=niz[j];
+		strncpy(niz+i, podniz, strlen(podniz));
+	}
+}

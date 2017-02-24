@@ -1,0 +1,25 @@
+#include <stdio.h>
+int main () {
+int b,k;
+scanf("%d", &b);
+k = b;
+if (((b % 10) % 2) == 0 ) {
+			b = b - (b % 10);
+			k = k / 10;
+			}
+			else k = k / 10;
+if (((k % 10) % 2) == 0 ) {
+			b = b - (k % 10) * 10;
+			k = k / 10;
+			}
+			else k = k / 10;
+if (((k % 10) % 2) == 0 ) {
+			b = b - (k % 10) * 100;
+			k = k / 10;
+			}
+			else k = k / 10;
+if (((k % 10) % 2) == 0 ) b = b - (k % 10) * 1000;
+
+printf ("%d", b);
+return 0;
+}

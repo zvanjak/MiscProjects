@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int main(){
+
+	int n;
+	int predznak;
+	int i,f;
+	double broj,faktorijela;
+
+	scanf("%d",&n);
+
+	if (n<1 || n>30) {printf("n nije valjan"); return 0; }
+
+
+
+	predznak=-1;
+
+
+	broj=1.0f;
+
+	for (i=1;i<=n;i++){
+	
+
+		faktorijela=1;
+		for (f=1;f<=i;f++)
+			faktorijela*=(double)f;
+
+		broj+=(predznak*((double)1/faktorijela));
+		predznak*=-1;
+	}
+
+	printf("%.12f",(double)1/broj);
+
+
+
+return 0;
+}

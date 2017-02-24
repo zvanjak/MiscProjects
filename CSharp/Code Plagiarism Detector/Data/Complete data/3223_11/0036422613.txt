@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+#include <limits.h>
+
+
+
+int main() {
+
+	int a, max, min;
+
+	max=-INT_MAX;
+
+	min=INT_MAX;
+
+	while (1) { //ova petlja se izvrsava dok se ne ucita pozitivan broj djeljiv sa 4
+
+		scanf("%d",&a);
+
+		if (max<a) max=a;
+
+		if (min>a) min=a;
+
+		if (a>0 && a%4==0) 
+
+			break;
+
+
+
+	}
+
+	printf("%d %d\n",min,max);
+
+	return 0;
+
+}
+
+
+

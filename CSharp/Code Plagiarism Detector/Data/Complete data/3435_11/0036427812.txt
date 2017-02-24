@@ -1,0 +1,25 @@
+#include <stdio.h>
+int main () {
+int n, m, i;
+double brojnik, nazivl, nazivd, npovrhm;
+/* unos vrijednosti za n i m */
+printf ("Unesite n i m:");
+scanf ("%d %d", &n, &m);
+if(m==0||m==n){
+	printf("%d povrh %d iznosi = 0\n", n, m);
+}
+else{
+brojnik = 1;
+for (i = 1; i <= n; i++)
+brojnik *= i;
+nazivl = 1;
+for (i = 1; i <= m; i++)
+nazivl *= i;
+nazivd = 1;
+for (i = 1; i <= n-m; i++)
+nazivd *= i;
+npovrhm = brojnik/(nazivl*nazivd);
+printf("%g",npovrhm);
+}
+return 0;
+}

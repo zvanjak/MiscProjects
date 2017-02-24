@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <math.h>
+
+int main () {
+int n, os, i=0, sum=0;
+	scanf("%d", &n);
+	if (n<=0) 
+	     printf("%d", n);
+	else {
+	     while (n!=0){
+		os=n%10;
+		n=n/10;
+           	if (os%2!=0){
+		    sum=sum+os*pow(10,i);
+		    i++;
+		}
+	     }
+	printf("%d", sum);
+	}
+	return 0;
+}

@@ -1,0 +1,37 @@
+#include<stdio.h>
+int main()
+{
+int x,i,n;
+char a[50];
+
+scanf("%d",&n);
+
+if(n<=0)
+{
+	printf ("%d",n);
+	return 0;
+}
+
+sprintf (a, "%d", n);
+
+x = 0;
+i = 0;
+
+do
+ {
+  if (a[i] % 2 != 0 && a[i] != '0')
+  {
+   printf ("%c", a[i]);
+   x++;
+  }
+i++;
+ 
+ }
+
+while (a[i] != '\0');
+
+ if (!x)
+  printf ("0");
+
+ return 0;
+}

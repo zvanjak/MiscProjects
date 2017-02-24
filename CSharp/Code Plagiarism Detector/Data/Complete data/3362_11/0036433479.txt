@@ -1,0 +1,12 @@
+#include <stdio.h>
+int main () {
+    int broj, x, y, z, w, rez;
+    scanf ("%d", &broj);
+    x = broj / 1000;
+    y = (broj - x * 1000) / 100;
+    z = (broj - x * 1000 - y * 100) / 10;
+    w = (broj - x * 1000 - y * 100 - z * 10);
+    rez = w * 1000 + z * 100 + y * 10 + x;
+    printf ("%d", rez);
+    return 0;
+}

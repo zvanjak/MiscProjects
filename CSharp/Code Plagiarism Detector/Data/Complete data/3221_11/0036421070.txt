@@ -1,0 +1,27 @@
+#include<stdio.h>
+
+
+int main()
+{
+		long int a,b,d;
+		int br=0;
+		scanf("%ld %ld %ld",&a,&d,&b);
+
+
+
+			while(a<=b)
+				{ a=a+d;
+
+
+
+				  printf("%ld ",a);
+
+				  br++;
+
+				}
+				printf("%d",br);
+
+	return (0);
+
+}
+

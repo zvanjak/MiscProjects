@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+int main() {
+    int n, i, b;
+    float suma, a, pi;
+    scanf("%d", &n);
+    suma=0;
+    if ((n<=400) && (n>=1))
+    {
+         for(i=1; i<=n; i++){
+                  suma+=(double)1/(4*i-1)/(4*i+i);
+
+                  }
+                                    pi=(-1)*suma*8+4;
+
+         printf("%.8f\n", pi);
+
+
+
+
+    }
+    else
+          printf("n nije valjan\n");
+
+return 0;
+}

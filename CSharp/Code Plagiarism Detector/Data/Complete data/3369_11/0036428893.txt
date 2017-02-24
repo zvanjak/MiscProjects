@@ -1,0 +1,16 @@
+#include<stdio.h>
+
+int main() {
+	int a, k,b,broj;
+	scanf("%d", &a);
+	k=1;
+	broj=0;
+	while (a > 0) {
+		b = a % 8;
+		broj = broj + k*b;
+		k*=10;
+		a = a/8;
+	}
+	printf("%d",broj);
+	return 0;
+}

@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main()
+{
+	int x, x1, suma=0, tmp;
+	scanf("%d",&x);
+	x1=x;
+	while(x!=0)
+	{
+		tmp=x%10;
+		suma=suma+tmp;
+		x=x/10;
+	}
+	if ((x1%suma)==0) printf("%d",x1-suma);
+	else printf("%d",x1/suma);
+    return 0;
+}

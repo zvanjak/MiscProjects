@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int info(FILE *f, int redni_br) {
+	struct {
+		int redni_br;
+		char prezime[20+1];
+		int bodovi;
+	} natjecatelj;	
+
+	if (f != NULL) {
+		if (fseek(f, sizeof(natjecatelj)*(redni_br-1), SEEK_SET) != 0 || redni_br == 0) {
+			/*	dogodila se greška ili je redni_br == 0 */
+			return -1;
+		} else {
+			fread(&natjecatelj, sizeof(natjecatelj), 1, f);
+			if (natjecatelj.redni_br == 0)
+				/*	zapis je prazan */
+				return -1;
+			else {
+				return natjecatelj.bodovi >= 100 ? 1 : 0;
+			}
+		}
+	} else
+		return -1;
+}

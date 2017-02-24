@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int main (){
+	int araj [20][5];
+	int ar1  [10][5];
+	int ar2  [10][5];
+	int i=0, j=0, umn=1, isus, mr, ms, bolan=6;
+	do {
+		scanf("%d %d", &mr ,&ms);
+	} while (ms>5 || ms<1 || mr>20 || mr<1);
+	if (mr==1) {for (j=0;j<ms;j++)
+					scanf("%d",&araj[i][j]); 
+				printf("Jest");}
+	if (mr%2==0) {
+				for ( i=0 ; i<mr ; i++ )
+					for ( j=0 ; j<ms ; j++ ) {
+						scanf("%d",&araj[i][j]);
+						if ((i%2==0) && (j%2==0)) umn*=araj[i][j];
+						}
+				printf("%d",umn);}
+	               else if ((mr%2==1)&&(mr!=1)) { isus=1+mr/2; 
+						for ( i=0 ; i<mr ; i++ )
+							for ( j=0 ; j<ms ; j++ ) 
+								{
+								scanf("%d",&araj[i][j]);
+								if (i<isus) ar1[i][j]=araj[i][j];				    					
+								if (i>=isus) ar2[i-isus][j]=araj[i][j];
+								}
+						
+						for ( i=0 ; i<isus-1 ; i++ )
+							for ( j=0 ; j<ms ; j++ )
+							{if (ar1[i][j]!=ar2[isus-2-i][j]) bolan=7;}    
+							 if (bolan!=7) printf("Jest"); else  printf("Nije");
+					}
+				
+	return 0;
+}

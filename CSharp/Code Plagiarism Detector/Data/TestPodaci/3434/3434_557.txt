@@ -1,0 +1,20 @@
+#include<stdio.h>
+
+int main() {
+		int x,y,a=0,b=0,c=0,d=0,i;
+		
+		for (i=0;i<100;++i) {
+			scanf("%d %d", &x, &y);
+			if (x==0 && y==0) break;
+			if (x>0) { if (y>0) ++a; else if(y<0) ++d; else ++d,++a;
+			}
+			else if (x<0) { if (y>0) ++b; else if(y<0) ++c; else ++b,++c;
+			}
+			else { if (y>0) ++a,++b; else ++c,++d;
+			}
+		}
+		printf("%d %d %d %d", a, b, c, d);
+		
+		return 0;
+			
+}

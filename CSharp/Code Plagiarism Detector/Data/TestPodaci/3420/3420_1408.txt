@@ -1,0 +1,32 @@
+#include<stdio.h>
+int main(){
+int s,r,polje[20][20],i,j,zI,zJ,pomocna,suma=0;
+
+do{
+scanf("%d %d",&r,&s);
+}while (r<1 || r>20 || s<1 || s>5);
+
+for (i=0;i<r;i++){
+for (j=0;j<s;j++){
+scanf("%d",&polje[i][j]);
+}
+}
+
+scanf("%d %d",&zI, &zJ);
+while (zI>-1 && zJ>-1 && (zJ<s) && (zI<r)){
+for (i=0;i<s;i++) {
+pomocna=polje[zJ][i];
+polje[zJ][i]=polje[zI][i];
+polje[zI][i]=pomocna;
+}
+scanf("%d %d",&zI, &zJ);
+}
+
+for (i=0;i<r;i++){
+suma=0;
+for (j=0;j<s;j++)
+{ suma+=polje[i][j];}
+printf("%d",suma);
+if (i<r-1) printf(" "); 
+}
+}

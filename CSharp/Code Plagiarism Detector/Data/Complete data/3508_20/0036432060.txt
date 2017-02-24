@@ -1,0 +1,22 @@
+typedef struct cvo cvor;
+
+struct cvo {
+int id;
+char naziv[15];
+struct cvo *lijevo;
+struct cvo *desno;
+};
+
+
+
+int Najgore(cvor *glava);
+
+int najgore(cvor *glava) {
+   if (glava!=NULL) {
+	if (!(glava->lijevo)) {if (!(glava->desno)) {return 1;} 
+					else {return najgore(glava->desno);};
+		} else {if (glava->desno) {return 0;}
+				else {return najgore(glava->lijevo);};
+			};
+	} else {return 0;};
+};

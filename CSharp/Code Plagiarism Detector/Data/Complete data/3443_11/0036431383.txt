@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+	int n,s,i,j;
+	int s1=1;
+	int s2=0;
+	do 
+	scanf("%d",&n);
+	while (n<2);
+
+	for (i=2; i<n+1; i=i+1) {
+	s1=s1*(i-1);
+	}
+
+	for (j=0; j<n+1; j=j+1) {
+	s2=s2+j*j;
+	}
+
+	s=s1+s2;
+	printf("%d",s);
+	return 0;
+}

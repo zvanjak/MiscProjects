@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main()
+{
+int a,t,f=0;
+scanf("%d",&a);
+while (a>0)
+{
+	if (f) printf(" "); else f=1;
+	t=0;
+	while (a) {t=t*10+a%10;a/=10;}
+	printf("%d",t);
+	scanf("%d",&a);
+}
+
+return 0;
+}                                       

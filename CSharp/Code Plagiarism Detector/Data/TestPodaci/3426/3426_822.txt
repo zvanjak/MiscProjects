@@ -1,0 +1,44 @@
+#include <stdio.h>
+#define MIN 1
+#define MAXRED 20
+#define MAXSTUP 5
+
+int main(){
+  int a[MAXRED][MAXSTUP], mr, ms, p, q, i, j, br_zamjena = 0, br_stup_bez_0, x = 0;
+  /*upisi dimenzije*/
+  do
+     scanf ("%d %d", &mr, &ms);
+    while (mr < MIN || mr > MAXRED || ms < MIN || ms > MAXSTUP);
+  /*broj stupaca bez 0, iako jos nismo unjeli vrijednosti*/
+  br_stup_bez_0 = ms;
+  /*unesi vrijednosti*/
+  scanf ("%d %d", &p, &q);
+  /*upisi vrijednosti*/
+  for (i = 0; i < mr; i++)
+     for (j = 0; j < ms; j++)
+        if (i % 2 == 0)
+            a[i][j] = p;
+        else
+            a[i][j] = q;
+  /*unosi koordinate gdje da ubaci 0*/
+  do{
+     scanf ("%d %d", &i, &j);
+     if (i >= MIN - 1 && i <= mr - 1 && j >= MIN - 1 && j <= ms - 1){
+        br_zamjena++;
+        a[i][j] = 0;
+     }
+    }while (i >= MIN - 1 && i <= mr - 1 && j >= MIN - 1 && j <= ms - 1);
+  /*broj stupaca bez ijedne 0 = ?*/
+  for (j = 0; j < ms; j++){
+     for (i = 0; i < mr; i++)
+         if (a[i][j] == 0)
+            x = 1;
+     if (x == 1){
+           br_stup_bez_0--;
+           x = 0;
+     }
+  }
+  /*ispisi rezultate*/
+  printf ("%d %d", br_zamjena, br_stup_bez_0);
+  return 0;
+}

@@ -1,0 +1,7 @@
+void PrepisiStogURed(Stog *stog,Red *red){
+Stog temp;
+int x;
+while(stog->Skini(&x) != 0)
+        if(x % 2 == 0)temp.Stavi(x);
+while(temp.Skini(&x) != 0)red->DodajURed(x);
+}

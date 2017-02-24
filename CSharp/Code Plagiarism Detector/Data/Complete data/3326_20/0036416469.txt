@@ -1,0 +1,13 @@
+void AritSred_StdDev(float *p,int n,float *ArSred, float *StdDev){
+	float suma=0,buffer=0,buffer2=0;
+		int a=0,i;
+		for(i=0;i<n;i++){
+			suma+=p[i];
+			a++;}
+		*ArSred=suma/a;
+		for(i=0;i<n;i++){
+
+buffer+=(p[i]-*ArSred)*(p[i]-*ArSred);
+buffer2=n*(n-1);}
+*StdDev=sqrt(buffer/buffer2);
+		}

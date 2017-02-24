@@ -1,0 +1,29 @@
+#include<stdio.h>
+int main(){
+	int a[20][5],pr=0,ns=0,i,j,mr,ms;
+	do{
+	        scanf("%d %d",&mr, &ms);}
+		while(mr>=20 && mr<=1 && ms>=5 && ms<=1);
+	for(i=0;i<mr;i++){
+		for(j=0;j<ms;j++){
+			scanf("%d", &a[i][j]);}
+	}
+	
+	for(i=0;i<mr;i++){
+		for(j=0;j<ms;j++){
+	            if(a[i][j]%2==0){
+                       pr++;
+		  
+		  break;
+		  }}}
+    for(j=0;j<ms;j++){
+		for(i=0;i<ms;i++){
+	
+		if(a[i][j]%2!=0){
+          ns++;
+		  break;
+		  }}}
+	printf("%d %d", pr, ns);
+
+return 0;
+}

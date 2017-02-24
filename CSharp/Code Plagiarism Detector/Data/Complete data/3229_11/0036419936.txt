@@ -1,0 +1,22 @@
+#include <stdio.h> 
+int main (){
+int n, i, p;
+double f=1,z=0;
+/* printf ("ucitajte broj clana reda n= ");*/
+scanf ("%d", &n);
+if ((n<1) || (n>30))
+printf ("n nije valjan");
+else {
+do { for (i=1; i<n; i++)
+		   {f=f*i;}
+	if ((i%2)==0)
+		p=-1;
+	else p=1;
+	f=p/f;
+	--n;
+z=z+f;
+f=1;}
+while (n>0);
+printf ("%f",1/z);}
+return 0;
+}

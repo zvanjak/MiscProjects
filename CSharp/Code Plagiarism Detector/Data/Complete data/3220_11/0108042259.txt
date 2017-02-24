@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+
+int main() {
+    int n;
+    int p;
+    int z;
+    int i;
+    scanf("%d",&n);
+    if(n<=0) {
+        printf("%d",n);
+        exit(0);
+    }
+    if(n>=1) p=0;
+
+    if(n>=10) p=1;
+    if(n>=100) p=2;
+    if(n>=1000) p=3;
+    if(n>=10000) p=4;
+    i=0;
+    while(i<=p) {
+        z=n/pow(10,p-i)-(int)(n/pow(10,p-i+1))*10;
+        if (z%2!=0) printf("%d",z);
+        i++;
+    }
+}            

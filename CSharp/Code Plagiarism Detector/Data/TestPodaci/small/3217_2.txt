@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main()
+{
+	int x, i=0, z[20]={0}, b=0, k=1, a;
+	scanf ("%d",&x);
+
+	while(x > 0)
+	{
+		b = x / 1000000000;
+		for(a=1000000000; a>=10; a/=10)
+		{
+			if(b > 0 || i>0)
+			{
+				z[i++] = b;
+				b = x % a;
+				x = b;
+				b /= (a/10);
+			}
+			else
+			{
+				b = x;
+				b /= (a/10);
+			}
+		}
+
+		z[i++] = b;
+	        for(b = i-1; b >= 0; b--)
+		{
+			if(z[b] > 0 || k == 0)
+			{	
+				printf("%d ",z[b]);
+				k = 0;
+			}
+
+		}
+		i=0;
+		k=1;
+		b=0;
+		scanf ("%d",&x);
+	
+	}
+
+	return 0;
+}

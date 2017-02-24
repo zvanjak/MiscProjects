@@ -1,0 +1,26 @@
+void zamijeni (char  * ulazni, int *broj){
+		int i, vs=0, slova=0, brojevi=0, ostalo=0, j=0, v;
+		char izlazni[40000];
+		for (i=0;ulazni[i]!='\0';i++){
+			if (isalpha(ulazni[i])){
+				if (vs==0){
+					izlazni[j]=toupper(ulazni[i]);
+					vs=1;}
+				else izlazni[j]=tolower(ulazni[i]);
+				slova++;
+				j++;}
+			if (isdigit(ulazni[i])){
+				for ( ;isdigit(ulazni[i]);i++) brojevi++;
+				izlazni[j]='!';
+				i--;
+				j++;}
+			if (isprint(ulazni[i]) && !(isalnum(ulazni[i]))){
+				izlazni[j]='?';
+				j++;
+				ostalo++;}}
+		izlazni[j]='\0';
+		v=slova>brojevi ? slova : brojevi;
+		*broj= v>ostalo ? v : ostalo;
+		strcpy(ulazni, izlazni);
+		return;
+	}

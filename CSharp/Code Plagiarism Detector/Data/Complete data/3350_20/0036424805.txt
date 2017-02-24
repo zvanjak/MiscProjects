@@ -1,0 +1,14 @@
+int najbolji(FILE *f)
+{
+    struct natjecatelj var1;
+    int naj = 0, naj_rb = 0;
+    while(fread(&var1, sizeof(struct natjecatelj), 1, f))
+    {
+	if((var1.redni_br != 0) && (var1.bodovi > naj))
+        {
+	    naj = var1.bodovi;
+	    naj_rb = var1.redni_br;
+	}
+    }
+    return naj_rb;
+}

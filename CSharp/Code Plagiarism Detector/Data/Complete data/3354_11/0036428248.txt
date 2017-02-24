@@ -1,0 +1,49 @@
+#include <stdio.h>
+int main(void)
+{
+ char c1, c2, c3;
+ int znam=0, broj=0;
+ scanf("%c %c %c", &c1, &c2, &c3);
+
+ if(c1>=48 && c1<=57)
+	 broj++;
+ else
+	 znam++;
+  if(c2>=48 && c2<=57)
+	 broj++;
+ else
+	 znam++;
+   if(c3>=48 && c3<=57)
+	 broj++;
+ else
+	 znam++;
+ if(znam==3 || broj==3)
+	 printf("Nema uljeza");
+ else if(broj==2)
+ {
+	 if(c1>=65 && c1<=129)
+		 printf("%c",c1);
+	 else if(c2>=65 && c2<=129)
+		 printf("%c",c2);
+	 else if(c3>=65 && c3<=129)
+		 printf("%c", c3);
+ }
+ else if(znam==2)
+ {
+	 if(c1>=48 && c1<=57)
+		 printf("%c",c1);
+	 else if(c2>=48 && c2<=57)
+		 printf("%c",c2);
+	 else if(c3>=48 && c3<=57)
+		 printf("%c", c3);
+ }
+
+ 
+
+
+
+ 
+
+
+ return 0;
+}

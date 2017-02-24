@@ -1,0 +1,11 @@
+int info( FILE *f, int redni_br)
+{
+	
+	struct natjecatelj nat;
+	fseek(f,(long)sizeof(nat)*(redni_br-1),SEEK_CUR);
+	fread(&nat,sizeof(nat),1,f);
+	if (nat.bodovi)
+		if (nat.bodovi<100) return 0; else
+			return 1;
+		else return -1;
+}

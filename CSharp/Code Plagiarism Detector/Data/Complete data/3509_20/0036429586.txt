@@ -1,0 +1,69 @@
+#define NEW(x) ((x *)malloc(sizeof(x)))
+#define FOREACH(x) for(;x;x=x->sljed)
+
+typedef struct {
+	char ime[20+1];
+	char prezime[30+1];
+	char jmbag[10+1];
+	int ocjena;
+} tip;
+
+typedef struct _atom {
+	tip data;
+	struct _atom *sljed;
+} atom;
+
+int brojElementa(atom *glava) {
+	int n=0;
+	FOREACH(glava) ++n;
+	return n;
+}
+
+int dodaj(atom **glavap, tip element) {
+	atom *novi = NEW(atom);
+	if (!novi) return 0;
+	novi->data = element;
+	novi->sljed = *glavap;
+	*glavap = novi;
+	return 1;
+}
+
+int minOcjena(atom *glava) {
+	int min;
+
+	if (!glava) return -1;
+
+	min = glava->data.ocjena;
+	FOREACH(glava) {
+		if (glava->data.ocjena < min) min = glava->data.ocjena;
+	}
+	return min;
+}
+
+float prosjOcjena(atom *glava) {
+	int sum=0, n=0;
+	if (!glava) return -1;
+	FOREACH(glava) {
+		sum+=glava->data.ocjena;
+		++n;
+	}
+	return (float)sum/n;
+}
+
+int izbaciPrezimeSadrzi(atom **glavap, char *prezimePodniz) {
+	int n=0;
+	
+	for (;*glavap;glavap=&(*glavap)->sljed) {
+		while (!strcmp((*glavap)->data.prezime, prezimePodniz)) {
+			atom *t;
+
+			++n;
+			t = *glavap;
+			*glavap = (*glavap)->sljed;
+			free(t);
+
+			if (!*glavap) return n;
+		}
+	}
+	return n;
+}

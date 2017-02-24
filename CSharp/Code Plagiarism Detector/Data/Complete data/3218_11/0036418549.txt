@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <math.h>
+void main ()
+{
+	int d,i,p=0,max=0;
+	float k;
+	scanf("%d",&d);
+	while(d>2)
+
+	{k=sqrt(d);
+	if (d%2==0)
+		p++;
+	else
+		for(i=3;i<=k;i+=2)
+			if(d%i==0)
+				p++;
+	
+	if(p==0 && d>max)
+		max=d;
+	p=0; 
+	scanf("%d",&d);
+	} 
+printf("%d",max);
+}

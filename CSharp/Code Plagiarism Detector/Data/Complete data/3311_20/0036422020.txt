@@ -1,0 +1,14 @@
+float prosjek (FILE *f)
+{
+	album p;
+	int i=0, k=0;
+	float pro;
+	fseek(f, 0L, SEEK_SET);
+	while (fread(&p, sizeof(album), 1, f) == 1)
+	{
+		k+=p.prodano;
+			i++;
+	}
+	pro = (float) k/i;
+	return pro;
+}

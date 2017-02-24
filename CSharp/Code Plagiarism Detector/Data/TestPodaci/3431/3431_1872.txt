@@ -1,0 +1,66 @@
+#include <stdio.h>
+int main () {
+	int i, j, raz=0, sumapar=0, sumanep=0;
+	char niz [100];
+	for (i=0; i<100; i++) {
+		scanf ("%c", &niz [i]);
+		if  ((( (niz [i]>= '0') && (niz [i]<='9') ) || ( (niz[i]>='A') && (niz[i]<='F') ) || ( (niz[i]>='a') && (niz[i])<='f') ) ) {
+			continue;
+		} else
+			i=100;
+	}
+	for (j=0;j<i;j++) {
+		if (niz [j]>47 && niz [j]<58) {
+			if (niz [j]%2==0){
+				sumapar+=(niz[j]-'0');
+			} else {
+				sumanep+=(niz[j]-'0');
+			}
+		} else {
+			switch (niz[j]) {
+				case ('A'):
+					sumapar+=10;
+					break;
+				case ('B'):
+					sumanep+=11;
+					break;
+				case ('C'):
+					sumapar+=12;
+					break;
+				case ('D'):
+					sumanep+=13;
+					break;
+				case ('E'):
+					sumapar+=14;
+					break;
+				case ('F'):
+					sumanep+=15;
+					break;
+				case ('a'):
+					sumapar+=10;
+					break;
+				case ('b'):
+					sumanep+=11;
+					break;
+				case ('c'):
+					sumapar+=12;
+					break;
+				case ('d'):
+					sumanep+=13;
+					break;
+				case ('e'):
+					sumapar+=14;
+					break;
+				case ('f'):
+					sumanep+=15;
+					break;
+				default:
+					break;
+			}
+		}
+	}
+	raz=sumapar-sumanep;
+	printf ("%d", raz);
+	return 0;
+
+}

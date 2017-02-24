@@ -1,0 +1,60 @@
+class Komprimiranje
+{
+private:
+	int *polje;
+	int _n;
+
+public:
+	Komprimiranje();
+	Komprimiranje(int niz[], int n );
+	int BrojRazlicitihElemenata();
+	int UkupniBrojElemenata(int vrijednost);
+};
+
+Komprimiranje::Komprimiranje()
+{
+	_n=0;
+}
+
+Komprimiranje::Komprimiranje(int niz[],int n)
+{
+	_n=n;
+	polje=niz;
+
+}
+
+int Komprimiranje::BrojRazlicitihElemenata()
+{
+	int broj=0;
+	int i, j,pom[100];
+	for(i=0; i<100; i++)
+	{
+		pom[i]=0;
+	}
+	for(i=0; i<_n; i++)
+	{
+		if(i%2==0)
+		{
+			pom[polje[i]]++;
+		}
+	}
+	for(i=0;i<100;i++)
+	{
+		if(pom[i])broj++;
+	}
+	return broj;
+}
+
+int Komprimiranje::UkupniBrojElemenata(int vrijednost)
+{
+	int i, broj=0;
+	for(i=0; i<_n; i++)
+	{
+		if(polje[i]==vrijednost) 
+		{
+			broj+=polje[i]*polje[i+1];
+		}
+	}
+
+	return broj;
+}

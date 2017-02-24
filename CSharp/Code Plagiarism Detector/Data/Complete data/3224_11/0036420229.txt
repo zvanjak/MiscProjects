@@ -1,0 +1,19 @@
+#include <stdio.h>
+int main(){
+int i,n;
+float z,y,suma;
+scanf("%d",&n);
+suma=0;
+z=0;
+y=0;
+if (n>=1&&n<=400){ 
+    for(i=1;i<=n;i=i+1){
+      z=(4*i-1)*(4*i+1);
+      y= 1./z;
+      suma=suma+y;
+      }
+	printf("%.8f",suma);
+        }
+else printf("n nije valjan");
+return 0;
+}

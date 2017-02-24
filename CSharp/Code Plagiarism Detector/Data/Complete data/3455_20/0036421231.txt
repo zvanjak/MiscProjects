@@ -1,0 +1,35 @@
+class Skup {
+private:
+	float *_elementi;
+	int _brojElemenata;
+public:
+	Skup(){
+		_elementi=(float *)malloc(10*sizeof(float));
+		_brojElemenata=0;
+	}
+	Skup(int brojElemenata){
+		_elementi=(float *)malloc(brojElemenata * sizeof(float));
+		_brojElemenata=0;
+	}
+	void Dodaj(float element){
+		*(_elementi+ _brojElemenata)=element;
+		_brojElemenata++;
+	}
+	float BrojElemenata(){
+		return (float)_brojElemenata;
+	}
+	int BrojPojavljivanja(float element){
+		int i,n=0;
+		for (i=0; i<_brojElemenata; i++)
+			if (*(_elementi + i)==element) n++;
+		return n;
+	}
+	~Skup(){
+		delete []_elementi;
+	}
+	void ispis(){
+		int i;
+		for (i=0; i<_brojElemenata; i++)
+			printf("%d: %4.2f\n", i, *(_elementi+i));
+	}
+};

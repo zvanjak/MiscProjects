@@ -1,0 +1,37 @@
+#include <stdio.h>
+#define NR 20
+#define NS 5
+int main(){
+	int mr, ms, a[NR][NS], p=1, i, j, check=1;
+	
+	do {
+		scanf("%d %d", &mr, &ms);
+	} while ( mr < 1 || mr > NR ||ms < 1 || ms > NS);
+
+	for (i = 0; i < mr ; i++) {
+		for (j = 0; j < ms; j++) {
+			scanf("%d", &a[i][j]); 
+		}
+	}
+	if (mr%2)
+	{
+		for (i = 0; i < mr/2 ; i++) {
+			for (j = 0; j < ms; j++) {
+				if (a[i][j]!=a[mr-1-i][j]){
+					check=0;
+					break;
+				}
+			}
+		}
+		if (check) printf("Jest");
+		else printf("Nije");
+	}
+	else
+	{
+		for (i = 0; i < mr ; i=i+2) {
+			for (j = 0; j < ms; j=j+2) p*=a[i][j];
+		}
+		printf("%d",p);
+	}
+	return 0;
+}

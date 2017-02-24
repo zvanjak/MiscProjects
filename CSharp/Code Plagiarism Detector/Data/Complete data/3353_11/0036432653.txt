@@ -1,0 +1,23 @@
+#include<stdio.h>
+int main ()
+{
+	int a,b,c,d,n,m,suma;
+	scanf("%d %d", &n, &m);
+	a=n/1000;
+	b=((n%1000)/100);
+	c=(((n%1000)%100)/10);
+	d=(((n%1000)%100)%10);
+	if (m==4){
+		printf("%d", b*100+c*10+d);}
+	else if (m==3){
+		printf("%d", a*100+c*10+d);}
+	else if (m==2){
+		printf("%d", a*100+b*10+d);}
+	else if (m==1){
+		printf("%d", a*100+b*10+c);}
+	else{
+		suma=a+b+c+d;
+		printf("%d", suma);}
+	return 0;
+
+}

@@ -1,0 +1,31 @@
+#include <stdio.h>
+int main(){
+
+int x,y,z1,z2,z3,z4;
+int prvi,drugi;
+
+scanf("%d%d",&x,&y);
+
+z1=x%10;
+x=x/10;
+z2=x;
+z3=y%10;
+y=y/10;
+z4=y;
+
+if( z1==z3  ||  z1==z4 )
+  prvi=1;
+if( z2==z3  ||  z2==z4 )
+  drugi=1;
+if( z1!=z3 && z1!=z4 && z2!=z3 && z2!=z4 )
+  printf("Nema");
+if(prvi && drugi)
+  if(z1>z2)
+    printf("%d %d", z2, z1);
+  else if(z1 < z2)
+    printf("%d %d", z1, z2);
+  else
+    printf("%d", z1);
+
+return 0;
+}

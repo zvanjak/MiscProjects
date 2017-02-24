@@ -1,0 +1,19 @@
+#include <stdio.h>
+void main()
+{
+int i=1, a, b, d;
+scanf ("%d", &a);
+scanf ("%d", &b);
+scanf ("%d", &d);
+if (a<b){
+do 
+{
+	a+=i*d;
+	printf ("%d ", a);
+i++;
+}
+while (a<b);
+printf ("%d", i-1);
+}
+else printf ("0");
+}

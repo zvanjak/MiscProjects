@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main(){
+	int broj[100],i,j,x;
+	char znak[101];
+	for(i=0;i<100;i++){
+		scanf("%c%d",&znak[i],&broj[i]);
+		if(broj[i]==-1){
+			x=i;
+			i=100;
+		}
+	}	
+	for(i=0;i<x;i++)
+		for(j=0;j<broj[i];j++)
+			printf("%c ",znak[i]);
+	return 0;
+}

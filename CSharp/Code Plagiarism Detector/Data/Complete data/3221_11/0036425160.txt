@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main()
+{
+int A , B , d , tre_broj; 
+int clanovi=0;
+
+scanf("%d",&A);
+scanf("%d",&d);
+scanf("%d",&B);
+
+if ( A > B ) printf("0");
+else	{
+		tre_broj = A ;
+		while (tre_broj <= B )
+			{
+			tre_broj += d ;
+			clanovi++ ;
+			printf("%d ",tre_broj);
+			}
+			printf("%d",clanovi);
+		}
+return 0;
+}

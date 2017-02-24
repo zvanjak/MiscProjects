@@ -1,0 +1,30 @@
+int promijenimbr(zapis**glava,int starimbr,int novimbr){
+	zapis* pomocni;
+	zapis *p;
+	if(*glava==NULL)return 0;
+	if(starimbr<(*glava)->matbr) return 0;
+
+// sada treba traziti
+//koristim funkciju za brisanje jer cu izbaciti taj zapis
+	for(;(*glava)&&(*glava)->matbr!=starimbr;glava=&((*glava)->sljed));
+	if(*glava!=NULL){
+		pomocni=*glava;
+		*glava=(*glava)->sljed;
+	}
+	else return 0;
+	pomocni->matbr=novimbr; 
+
+//sad treba taj clan sortirati,pa koristim poznati algoritam
+
+	if(*glava==NULL||novimbr<=(*glava)->matbr){
+		pomocni->sljed=*glava;
+		*glava=pomocni;
+		return 1;
+	}
+	else {
+		for(p=*glava;p->sljed&&(p->sljed)->matbr<novimbr;p=p->sljed);
+		pomocni->sljed=p->sljed;
+		p->sljed=pomocni;
+		return 1;
+	}
+}

@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main()
+{
+	int broj, novi_broj, znamenka, n=1;
+	
+	scanf("%d", &broj);
+
+	novi_broj=broj;
+	
+	if(broj>0)
+	{
+		novi_broj=0;
+		
+		while(broj!=0)
+		{
+			znamenka=broj%10;
+			
+			if(znamenka%2!=0 && znamenka!=0)
+			{		
+				novi_broj+=znamenka*n;
+				n*=10;
+			}
+			
+			broj/=10;
+		}
+	}
+	
+	printf("%d", novi_broj);
+	
+	return 0;
+}

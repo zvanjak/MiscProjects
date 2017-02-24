@@ -1,0 +1,14 @@
+char *SvakiDrugi(char *ulazni_niz){
+  char *novo;
+  int len,i=0,b=0;
+
+  if (!ulazni_niz) return NULL;
+  len=strlen(ulazni_niz);
+  novo=(char *)malloc(len/2 +1 +1);
+  for (i=0;i<len;i+=2){
+	novo[b++]=ulazni_niz[i];
+  }
+  novo[b]='\0';
+  return novo;
+}
+

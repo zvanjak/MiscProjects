@@ -1,0 +1,15 @@
+int br_prodanih(FILE *f, char *autor)
+{
+	int suma_prodanih = 0;
+	struct{
+		char naziv[30+1];
+		char autor[20+1];
+		int prodano;
+	} album;	
+	fseek(f, 0, SEEK_SET);
+	while(fread(&album, sizeof(album),1 , f)==1)
+	{
+		if(!(strcmp(album.autor, autor))) suma_prodanih += album.prodano;
+	}
+	return suma_prodanih;
+}

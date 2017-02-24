@@ -1,0 +1,12 @@
+float prosjek(FILE *f){
+	char naziv[30+1],autor[20+1];
+	int prodano,n=0,s=0;
+	float prosjek;
+	while (fscanf(f,"%s%s%d",naziv,autor,&prodano)!=EOF){
+          n+=1;
+          s+=prodano;
+	}
+	prosjek=(float)s/n;
+	return prosjek;
+}
+

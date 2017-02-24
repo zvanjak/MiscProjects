@@ -1,0 +1,24 @@
+#include<stdio.h>
+#include<math.h>
+
+int main()
+{
+   int n, i=0;
+   double pi, s=0;
+
+   scanf("%d",&n);
+
+   if(n<1 || n>100)
+   	printf("n nije valjan");
+
+   else
+   {
+   	for(i=1; i<=n; i++)
+      	   s+=pow(-1, i+1)*(1./(i*i));
+
+      pi=(double)sqrt(s*12);
+      printf("%.12f",pi);
+   }
+   
+   return 0;
+}

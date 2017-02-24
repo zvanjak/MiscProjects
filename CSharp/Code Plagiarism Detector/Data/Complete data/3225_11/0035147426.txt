@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<math.h>
+void main (void)
+{ 
+int n,i;
+float a,b;
+printf("\n Unesite broj članova niza:");
+scanf("%d,&n);
+i=1;
+a=0;
+while(n>=1&&n<=400){{
+if((i%2)!=0&&i<=N)
+a+=pow(1/i,2);
+i++;
+}
+b=a*8;
+pi=pow(b,1/2);
+printf("/n,pi=%12g",pi);
+}
+else
+printf("/n n nije valjan");
+returb 0;
+}

@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <math.h>
+int main() {
+	int n, i;
+	double suma=1., fakt=1.;
+	scanf("%d", &n);
+	if (n>=1 && n<=30) {
+		for(i=1; i<=n; i++){
+			fakt*=i;
+			suma+=1./fakt;
+		}
+		printf("%.12lf", suma);
+	}
+	else printf("n nije valjan");
+	return 0;	
+}

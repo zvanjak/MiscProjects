@@ -1,0 +1,12 @@
+int br_prodanih(FILE *f, char *autor){
+	char naziv[30+1];
+	char autor2[20+1];
+	int prodano, brojac=0;
+	fseek(f, 0L, SEEK_SET);
+	while(fscanf(f, "%s%*c%s%*c%d%*c", &naziv, &autor2, &prodano)==3){
+		if((strcmp(autor, autor2))==0) {
+			brojac+=prodano;
+		}
+	}
+	return brojac;
+}

@@ -1,0 +1,17 @@
+int izbaci (char *ulazni, char *podniz)
+{
+	int broj=0,i; char *p;
+	for(i=0;i<strlen(podniz);i++)
+	{
+		while (p=strchr(ulazni,podniz[i]))
+		{
+			while (*p)
+			{
+				*p=*(p+1);
+				p++;
+			}
+			broj++;
+		}
+	}
+	return broj;
+}

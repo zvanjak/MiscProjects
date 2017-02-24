@@ -1,0 +1,45 @@
+#include <stdio.h>
+int main ()
+{
+	long int a, c, d, e, x, y, z, k;
+	scanf ("%d", &a);
+	x=a/10000; 
+	y=a%10; 
+
+	z=(a-x*10000)/1000; 
+	c=(a%100)/10;
+
+	d=a/1000;
+	e=(a-d*1000)/100;
+	k=0;
+
+	if (x==y&&z==c)
+	{
+			if (x%2==0)
+			{k=k+x;}
+			if (z%2==0)
+			{k=k+z;}
+			if (e%2==0)
+			{k=k+e;}
+			if (c%2==0)
+			{k=k+c;}
+			if (y%2==0)
+			{k=k+y;}
+			printf("%d", k);
+		}
+		else
+		{			
+			if (x%2==1)
+			{k=k+x;}
+			if (z%2==1)
+			{k=k+z;}
+			if (e%2==1)
+			{k=k+e;}
+			if (c%2==1)
+			{k=k+c;}
+			if (y%2==1)
+			{k=k+y;}
+			printf("%d", k);
+		}		
+		return 0;
+}

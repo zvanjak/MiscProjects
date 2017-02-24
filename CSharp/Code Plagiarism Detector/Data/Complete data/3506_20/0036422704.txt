@@ -1,0 +1,41 @@
+int Razina(cvor *glava, int id, int *razina)
+{
+	int l=0, d=0;
+    	*razina=0;
+	if(glava==NULL)
+		return 0;
+	if (glava->id==id)
+	{
+		(*razina)++;
+		return 1;
+	}
+	if ((glava->lijevo!=NULL)||(glava->desno!=NULL))
+	{
+		if (glava->lijevo!=NULL)
+		{
+			l=Razina(glava->lijevo, id, razina);
+			if (l==1)
+			{
+				(*razina)++;
+				return 1;
+			}
+		}
+		if (glava->desno!=NULL)
+		{
+			d=Razina(glava->desno, id, razina);
+			if (d==1)
+			{
+				(*razina)++;
+				return 1;
+			}
+		}
+		if (l==0 && d==0)
+			return 0;
+	}
+	else
+	{
+		*razina=1;
+		return 0;
+	}
+	return 0;
+}

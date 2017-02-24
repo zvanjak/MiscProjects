@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include<math.h>
+
+int main(){
+	int i,n;
+	double suma,x;
+scanf("%d",&n);
+if ((n>=1) && (n<=500)){
+	suma=0; i=1;
+	 for(i=1;i<=n;i++) {
+		if (i%2==1)
+		 suma+=(1./(2*i-1));
+		else if (i%2==0)
+		suma-=(1./(2*i-1));
+	} 
+	x=4*suma;
+printf("%.12lf",x);
+}
+else printf("n nije valjan");
+return 0;
+}

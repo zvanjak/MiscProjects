@@ -1,0 +1,25 @@
+char *SamoSuglasnici(char *ulazni_niz)
+{
+	char *newStr;
+	int i, inLen, outLen;
+	char tmp;
+
+	inLen = strlen(ulazni_niz);
+	newStr = (char *)malloc(inLen + 1);
+
+	outLen = 0;
+	for (i = 0; i < inLen; ++i)
+	{
+		tmp = (char) toupper(ulazni_niz[i]);
+		if ((tmp >= 'B') && (tmp <= 'Z'))
+		{
+			if ( (tmp != 'E') && (tmp != 'I') && (tmp != 'O') && (tmp != 'U') )
+			{
+				newStr[outLen++] = ulazni_niz[i];
+			}
+		}
+	}
+	newStr[outLen] = '\0';
+
+	return newStr;
+}

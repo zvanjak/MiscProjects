@@ -1,0 +1,12 @@
+char *rStrchr(char *niz, char c)
+{
+     char *znak;
+     if(*niz==c){
+                 znak = niz;
+                 return znak;
+                 }
+     else{
+          znak = rStrchr(++niz, c);
+          return znak;
+          }     
+}

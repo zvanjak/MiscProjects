@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <math.h>
+int main () {
+	int n, i, br = 1, pom, m;
+	scanf ("%d", &n);
+	pom = n;
+	if (n > 0) {
+		while (pom > 9) {
+			pom = pom / 10;
+            br++;
+		}
+		for (i = br, m = 0; i > 0; i--, m++) {
+			pom = n;
+			pom = (int)(pom / pow(10, i - 1)) % 10;
+			printf("%d ",pom);
+		}
+	} else {
+		/*printf ("n nije valjan");*/
+                printf("n nije pozitivan");
+	}
+	return 0;
+}

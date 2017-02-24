@@ -1,0 +1,13 @@
+int Memoriraj(Radio& radio){
+	int i=0;
+	Stanica pocetna = radio.TraziSljedecu();
+	Stanica stanica = pocetna;
+	do{
+		if (strcmp(stanica.RDS(),""))
+			radio.MemorirajStanicu(stanica, ++i);
+		stanica = radio.TraziSljedecu();
+	}
+	while(i<6 && stanica!=pocetna);
+	return i;
+	
+}

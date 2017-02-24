@@ -1,0 +1,86 @@
+typedef struct
+{
+    char ime[20+1];
+    char prezime[30+1];
+    char jmbag[10+1];
+    int ocjena;
+} tip;
+
+typedef struct at
+{
+    tip element;
+    struct at *sljed;
+} atom;
+
+
+int brojElementa( atom *glava )
+{
+    int br=0;
+    atom *a;
+    for( a=glava;a!=NULL;a=a->sljed )
+    {
+        br++;
+    }
+    return br;
+}
+
+int dodaj( atom **glavap, tip element )
+{
+    atom *novi=(atom*)malloc(sizeof(atom));
+    if (novi==NULL) return 0;
+    novi->element=element;
+    novi->sljed=*glavap;
+    *glavap=novi;
+    return 1;
+}
+
+int maksOcjena( atom *glava )
+{
+    int max=1;
+    if (glava==NULL) return -1;
+    for(;glava!=NULL;glava=glava->sljed)
+    {
+        if((glava->element).ocjena>max) max=(glava->element).ocjena;
+    }
+    return max;
+}
+
+float prosjOcjena( atom *glava )
+{
+    float zbr=0.0;
+    int br=0;
+    if (glava==NULL) return -1;
+    for(;glava!=NULL;glava=glava->sljed)
+
+    {
+        zbr+=(glava->element).ocjena;
+        br++;
+    }
+    return zbr/br;
+}
+
+int izbaciPrezimePocinjeS( atom **glavap, char *prezimePocetak )
+{
+    int br=0, duljina=strlen(prezimePocetak);
+    atom *i, *tmp, *pret;
+    pret=*glavap;
+    for( i=(*glavap)->sljed;i!=NULL;i=i->sljed )
+    {
+        if(!strncmp(prezimePocetak, (i->element).prezime, duljina))
+        {
+            pret->sljed=i->sljed;
+            free(i);
+            br++;
+        }
+        else pret=pret->sljed;
+    }
+    if(*glavap!=NULL)
+        if(!strncmp(prezimePocetak, ((*glavap)->element).prezime, duljina))
+        {
+            tmp=*glavap;
+            *glavap=(*glavap)->sljed;
+            free(tmp);
+            br++;
+        }
+    return br;
+}

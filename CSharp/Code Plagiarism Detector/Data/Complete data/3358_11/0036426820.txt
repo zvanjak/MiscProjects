@@ -1,0 +1,62 @@
+#include<stdio.h>
+main(){
+	int a,b,c,d,m,broj,zbrojp,zbrojn,br,x; 
+	zbrojp=zbrojn=0;
+	scanf("%d",&broj);
+	a=broj / 1000;
+	b=broj % 100;
+	c=(b % 10)*10;
+    d=b / 10;			
+	m=c+d;
+	if (a==m){
+		br=broj;
+		x=br%10;
+		if ((x % 2)== 0){
+			zbrojp=zbrojp + x; }
+		  br=br/10;
+		  x=br%10;
+		if ((x % 2)== 0){
+			zbrojp=zbrojp + x; }
+		  br=br/10;
+		  x=br%10;
+		if ((x % 2)== 0){
+			zbrojp=zbrojp + x;}
+		  br=br/10;
+		  x=br%10;
+		if ((x % 2)== 0){
+			zbrojp=zbrojp + x;}
+		  br=br/10;
+		  x=br%10;
+		if ((x % 2)== 0){
+			zbrojp=zbrojp + x;}
+			  printf("%d\n",zbrojp);
+		  }
+		  
+	else {
+		br=broj;
+		x=br%10;
+		if (x % 2){
+			zbrojn=zbrojn + x;}
+		  br=br/10;
+		  x=br%10;
+		  if (x % 2){
+			  zbrojn=zbrojn + x;}
+		  br=br/10;
+		  x=br%10;
+		  if (x % 2){
+			  zbrojn=zbrojn + x;}
+		  br=br/10;
+		  x=br%10;
+		  if (x % 2){
+			  zbrojn=zbrojn + x;}
+		  br=br/10;
+		  x=br%10;
+		  if (x % 2){
+			  zbrojn=zbrojn + x;}
+		  printf("%d\n", zbrojn); }
+return 0;
+}
+
+ 
+		
+	

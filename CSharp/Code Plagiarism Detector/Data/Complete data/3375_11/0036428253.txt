@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <math.h>
+int main()
+{int broj,z1,z2,z3,z4,nbroj=0,br=0;
+scanf("%d",&broj);
+if(broj>999&&broj<10000)
+	{z1=broj/1000;
+	z2=(broj%1000)/100;
+	z3=(broj%100)/10;
+	z4=broj%10;
+	if(z4%2==0)
+		nbroj+=(z4*pow(10,br++));
+	if(z3%2==0)
+		nbroj+=(z3*pow(10,br++));
+	if(z2%2==0)
+		nbroj+=(z2*pow(10,br++));
+	if(z1%2==0)
+		nbroj+=(z1*pow(10,br++));
+	printf("%d",nbroj);
+	}
+if(broj<-999&&broj>-10000)
+	{broj=-broj;
+	z1=broj/1000;
+	z2=(broj%1000)/100;
+	z3=(broj%100)/10;
+	z4=broj%10;
+	if(z4%2==0)
+		nbroj+=z4*pow(10,br++);
+	if(z3%2==0)
+		nbroj+=z3*pow(10,br++);
+	if(z2%2==0)
+		nbroj+=z2*pow(10,br++);
+	if(z1%2==0)
+		nbroj+=z1*pow(10,br++);
+	printf("-%d",nbroj);
+	}
+	return 0;
+}

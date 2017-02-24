@@ -1,0 +1,102 @@
+#include <stdio.h>
+
+#include <ctype.h>
+
+#include <string.h>
+
+#include <stdlib.h>
+
+int is(int a)
+
+{
+
+            if(isalpha(a)) return 1;
+
+            if(isdigit(a)) return 2;
+
+            if(isprint(a)) return 3;
+
+}
+
+void zamijeni (char *ulazni, int *broj)
+
+{
+
+            int ba=0, bd=0, bp=0, i, j=0, len, last=0,now,prvo=0;
+
+            char *izlazni;
+
+            
+
+            izlazni=(char *)malloc(len+1);
+
+            for(i=0;i<len;i++)
+
+            {
+
+                         len=strlen(ulazni);
+
+                         now=is(ulazni[i]);
+
+                         if((last!=now || now==1) && now!=3)
+
+                         {
+
+                                     if(last!=now && now==1 && prvo==0){ prvo=1;
+
+                                                  izlazni[j]=toupper(ulazni[i]);}
+
+                                     else if(now==1) izlazni[j]=tolower(ulazni[i]);
+
+                                     else if(now==2) izlazni[j]='!';
+
+                                     j++;
+
+                         }
+
+                         if(now==3) izlazni[j++]='?';
+
+                         last=is(ulazni[i]);
+
+                 ;         if(last==1) ba++;
+
+                         if(last==2) bd++;
+
+                         if(last==3) bp++;
+
+            }
+
+            izlazni[j]='\0';
+
+            strcpy(ulazni, izlazni);
+
+            free(izlazni);
+
+}
+
+ 
+
+int main ()
+
+{
+
+            char niz[] = "59tipkovnica 1$2378se koristi za unos 2 znAKa.\"$";
+
+            int n;
+
+            printf ("\nniz prije:   %s", niz);
+
+            zamijeni (niz, &n);
+
+            printf ("\nniz poslije: %s", niz);
+
+            printf ("\n");
+
+            getchar();
+
+            return 0;
+
+}
+
+
+

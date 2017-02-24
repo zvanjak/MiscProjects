@@ -1,0 +1,43 @@
+#include <stdio.h>
+int main(){
+	int	i,j,k,mr,ms;
+	int s=1;
+	int p=1;
+	int mat[20][5];
+	do{
+		scanf ("%d %d", &mr,&ms);
+	}
+	while ((mr<1)||(mr>20)||(ms<1)||(ms>5));
+for (i=0;i<mr;i++){
+	for (j=0;j<ms;j++){
+		scanf ("%d",&mat[i][j]);
+	}
+}
+if ((mr%2)!=0){
+	k=mr/2+1;
+	for (i=mr/2-1;i>=0;i--){
+		for (j=0;j<ms;j++){
+			if ((mat[i][j])!=(mat[k][j])){
+				s=0;
+			}
+		}
+		k++;
+	}
+	if (s==1){
+		printf("Jest");
+	}
+	else {
+	printf("Nije");
+	}
+}
+else 
+{
+	for(i=0;i<=mr-1;i+=2){
+		for (j=0;j<=ms-1;j+=2){
+			p*=mat[i][j];
+		}
+	}
+	printf("%d",p);
+}
+return 0;
+}

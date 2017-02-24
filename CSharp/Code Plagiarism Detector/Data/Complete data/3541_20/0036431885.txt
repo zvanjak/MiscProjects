@@ -1,0 +1,31 @@
+int izbaciZ(zapis **glava)
+	{
+	if (*glava == NULL) return 0;
+	zapis *pomocni, *pomocni2;
+	int brojac = 0;
+	int broj = 0;
+	int broj2 = 0;
+	float prosjek = 0.;
+	for (pomocni = *glava; pomocni != NULL; pomocni = pomocni->sljed, broj++)
+		{
+		prosjek += pomocni->pros;
+		}
+	prosjek = prosjek/broj;
+	for (pomocni = *glava, broj2 = 0; pomocni != NULL; pomocni2 = pomocni, pomocni = pomocni->sljed, broj2++)
+		{
+		if(pomocni->spol == 'Z' && pomocni->pros < prosjek)
+			{
+			if (broj2 == 0)
+				{
+				*glava = pomocni->sljed;
+				pomocni2 = *glava;
+				}
+			else
+				pomocni2->sljed = pomocni->sljed;
+			free(pomocni);
+			brojac++;
+			pomocni = pomocni2;
+			}
+		}
+	return brojac;
+	};

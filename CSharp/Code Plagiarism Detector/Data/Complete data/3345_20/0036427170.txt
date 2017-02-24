@@ -1,0 +1,15 @@
+double sumareda(int N){
+	double suma=0;
+	double pom=1;
+	int	i;
+	kontrola();
+	
+	if(N==0)
+		return 0;
+	if(N>1)
+		suma=sumareda(N-1);
+	for(i=0;i<4;i++){
+		pom=pom/N;
+	}
+	return suma+=pom;
+}

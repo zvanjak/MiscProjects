@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main()
+{
+    int broj,iljadu,daset,sto,jedan;
+    scanf("%d",&broj);
+    if ( (broj >=1000) && (broj <= 9999) ) {
+    iljadu = (broj - broj % 1000)/1000;
+    broj  -= iljadu*1000;
+    sto    = (broj - broj %  100)/100;
+    broj  -= sto*100;
+    daset  = (broj -broj %    10)/10;
+    broj  -= daset*10;
+    jedan  = broj;
+    broj   = iljadu+sto*10+daset*100+jedan*1000;
+    printf("%d",broj);
+    }
+return 0;
+}

@@ -1,0 +1,19 @@
+#include<stdio.h>
+void main () {
+int n, i=0;
+scanf("%d", &n);
+if (n%13==0)
+printf(" 0");
+else {
+do{
+n+=n%10;
+printf(" %d",n);
+i+=1;
+if (n%13==0){
+printf(" %d", i);
+break;}
+} while (i<=40);
+}	
+}
+
+

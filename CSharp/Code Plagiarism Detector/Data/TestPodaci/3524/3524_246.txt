@@ -1,0 +1,18 @@
+void ubaci (char * niz, char *podniz, int i)
+{
+	int j=0, k,nizlen=strlen(niz), podnizlen=strlen(podniz);
+	if (i<0 || i>nizlen){
+		for(k=0;k<nizlen; k++){
+			if (islower(niz[k])) niz[k]=toupper(niz[k]);
+		}
+	}
+	else 
+	{
+		for (k=0;k<=nizlen-i; k++) 
+			niz[nizlen+podnizlen - k]=niz[nizlen - k];
+		while (podniz[j]){
+			niz[i++]=podniz [j++]; 
+		}
+	}
+	return;
+}

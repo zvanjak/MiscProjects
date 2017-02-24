@@ -1,0 +1,19 @@
+#include<stdio.h>
+
+void main(){
+int i, N;
+double red, pi;
+scanf("%d", &N);
+red=0;
+
+if(N>0 && N<401){ 
+   for(i=1; i<N; i++){
+     red+=1./((4*i-1)*(4*i+1));
+   }
+   pi=(-8*red)+4;
+   printf("%.8f", pi=-8*s+4;);
+}
+else{
+   printf("n nije valjan");
+}
+}

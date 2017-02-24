@@ -1,0 +1,30 @@
+/*5. Program učitava parove cijelih brojeva od kojih svaki par 
+predstavlja točku dvodimenzionalnog koordinatnog sustava. 
+Učitavanje se završava kada se učita točka (0, 0), tj. ishodište koordinatnog sustava. 
+Za učitane točke, potrebno je odrediti u kojem se kvadrantu nalaze te ispisati broj učitanih točaka 
+koje su REDOM pripadale 1., 2., 3. i 4. kvadrantu. Točke koje se nalaze na apscisi/ordinati 
+pripadaju u oba kvadranta na čijoj se granici nalaze. Za ulazni niz 1 1 1 2 0 1 -1 -1 -2 5 
+potrebno je ispisati 3 2 1 0, jer su točke (1, 1), (1, 2) i (0,1) u prvom kvadrantu, 
+točke (0, 1) i (-2, 5) u drugom kvadrantu, te točka (-1, -1) u trećem kvadrantu. */
+#include <stdio.h>
+int main()
+{
+	int i, x, y;
+	int prvi, drugi, treci, cetvrti;
+	prvi = drugi = treci = cetvrti = 0;
+	for(i = 0; i< 100; i++)
+	{
+		scanf("%d %d",&x, &y);
+		if(
+			x == 0 && y == 0)
+		{
+			break;
+		}
+		if(x >=0 && y >=0) prvi++;
+		if(x <=0 && y >=0) drugi++;
+		if(x <=0 && y<=0) treci++;
+		if(x>=0 && y<=0) cetvrti++;
+	}
+	printf("%d %d %d %d", prvi, drugi, treci, cetvrti);
+	return 0;
+}

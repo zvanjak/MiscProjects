@@ -1,0 +1,103 @@
+class CjelobrojniNiz
+{
+public:
+	int *niz_brojeva;
+	int broj_elemenata;
+	int SviJednaki;
+	int Usporedi(CjelobrojniNiz niz);
+	int *VratiRazliku (CjelobrojniNiz niz, int *n);
+	CjelobrojniNiz(int *adresa, int br_elem);
+	CjelobrojniNiz(const CjelobrojniNiz &copy);
+	~CjelobrojniNiz();
+};
+
+CjelobrojniNiz::CjelobrojniNiz(int *niz, int br_elem)
+{
+	niz_brojeva = new int[br_elem];
+	broj_elemenata = br_elem;
+
+	int el = *niz;
+	bool flag = true;
+
+	for (int i = 0; i < br_elem; i++)
+	{
+		*(niz_brojeva + i) = *(niz + i);
+		if (*(niz + i) != el)
+			flag = false;
+	}
+
+	if (flag)
+		SviJednaki = 1;
+	else
+		SviJednaki = 0;	
+}
+
+CjelobrojniNiz::CjelobrojniNiz(const CjelobrojniNiz &copy)
+{
+	broj_elemenata = copy.broj_elemenata;
+	
+	niz_brojeva = new int[broj_elemenata];
+
+	for (int i = 0; i < broj_elemenata; i++)
+		niz_brojeva[i] = copy.niz_brojeva[i];
+}
+
+
+CjelobrojniNiz::~CjelobrojniNiz()
+{
+	delete [] niz_brojeva;
+}
+int CjelobrojniNiz::Usporedi(CjelobrojniNiz niz)
+{
+	if (broj_elemenata != niz.broj_elemenata)
+		return 0;
+
+	int eq = 1;
+	for (int i = 0; i < broj_elemenata; i++)
+	{
+		if (niz_brojeva[i] != niz.niz_brojeva[i])
+			eq = 0;
+	}
+
+	return eq;
+}
+
+
+
+
+int *CjelobrojniNiz::VratiRazliku(CjelobrojniNiz niz, int *n)
+{
+	int *razlika;
+	razlika = new int[broj_elemenata];
+
+	bool inc;
+	int br = 0;
+	for (int i = 0; i < broj_elemenata; i++)
+	{
+		inc = true;
+		if (i > 0)
+		{
+			for (int j = 0; j < niz.broj_elemenata; j++)
+			{
+				if ((niz_brojeva[i] == niz.niz_brojeva[j]) || (niz_brojeva[i] == niz_brojeva[i-1]))
+					inc = false;
+			}
+		}
+		else
+		{
+			for (int j = 0; j < niz.broj_elemenata; j++)
+			{
+				if (niz_brojeva[i] == niz.niz_brojeva[j])
+					inc = false;
+			}
+		}
+		if (inc == true)
+		{
+			razlika[br] = niz_brojeva[i];
+			br++;
+		}
+	}
+
+	*n = br;
+	return razlika;
+}

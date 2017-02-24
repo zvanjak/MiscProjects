@@ -1,0 +1,66 @@
+class SortRazlPolje {
+        private:
+                int *_data;
+		int _elno;
+	
+	public:
+		SortRazlPolje();
+		int Dodaj(int Broj);
+		int *VratiSortPolje(int &n);
+		~SortRazlPolje();
+	};
+
+SortRazlPolje::SortRazlPolje(){
+	
+	_data=NULL;
+	_elno=0;
+	}
+
+int SortRazlPolje::Dodaj(int Broj) {
+	int *pom;
+	int i;
+	
+	
+		for(i=0;i<_elno;++i)
+			if (Broj == *(_data+i))
+				return 1;
+			
+                pom=new int[++_elno];
+                if(pom==NULL)
+                        return 0;
+                for(i=0;i<_elno;i++)
+                        pom[i]=_data[i];
+                
+                pom[_elno-1]=Broj;
+                delete []_data;
+                _data=pom;
+                return 1;
+	
+}
+		
+int *SortRazlPolje::VratiSortPolje(int &n) {
+	int i,j;
+	int min;
+	int pom;
+
+	if(_elno == 0) {
+		n = 0;
+		return NULL;
+		}
+
+	for(i=0;i<_elno;i++) {
+		min=i;
+		for(j=i+1;j<_elno;j++) 
+			if (_data[j]<_data[min])
+				min=j;
+		pom=_data[i];
+		_data[i]=_data[min];
+		_data[min]=pom;
+	}
+	n=_elno;
+	return _data;
+}
+
+SortRazlPolje::~SortRazlPolje(){
+	delete []_data;
+	}

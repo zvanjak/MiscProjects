@@ -1,0 +1,34 @@
+int nadji_znak(char znak,char *niz)
+{
+   int i;
+   for(i=0;i<strlen(niz);i++)
+      if(znak==niz[i]) return i;
+   return -1;
+}
+
+char *SamoDuplikati(char *ulazni_niz)
+{
+   char *pom,*rez;
+   int i=0,j=0,k=0;
+
+   if(ulazni_niz==NULL || ulazni_niz[0]=='\0')
+      return NULL;
+   pom=malloc(strlen(ulazni_niz));
+   rez=malloc(strlen(ulazni_niz));
+   pom[]=rez[]='\0';
+
+   for(i=0;i<strlen(ulazni_niz),i++)
+   {
+      if(trazi_znak(ulazni_niz[i],pom)>=0)
+      {
+         rez[j++]=ulazni_niz[i];
+         rez[j]='\0';
+      }
+      else
+      {
+         pom[k++]=ulazni_niz[i];
+         pom[k]='\0';
+      }
+   }
+   return rez;
+}

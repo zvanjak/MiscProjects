@@ -1,0 +1,27 @@
+#include<stdio.h>
+
+void main()
+{
+int n,a,b;
+a=0;
+b=0;
+n=1;
+while(n!=0)
+{
+	
+
+/*printf("Unesite broj n:");*/
+scanf("%d",&n);
+
+if(n<0)continue;
+
+if(n%2==0)
+a++;
+else
+b++;
+}
+/*printf("Broj parnih brojeva je   : %d",a-1);
+printf("\nBroj neparnih brojeva je : %d",b);*/
+printf("%d %d", a-1, b);
+	return 0;
+}

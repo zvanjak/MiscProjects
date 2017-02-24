@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+int x,brp,d,k,z;
+scanf("%d",&x);
+brp=0;
+    for(d=1000;d>0;d/=10){
+                          k=x/d;
+                          if(k%2==0)
+                          break;
+                          brp=brp+1;
+                          }
+                          if(brp==1) z=x%1000;
+                          if(brp==2) z=x%100;
+                          if(brp==3) z=x%10;
+                          if(brp==4) z=0;
+                         
+                          printf("%d",z);
+  return 0;
+}

@@ -1,0 +1,76 @@
+class CjelobrojniNiz
+{
+public:
+int *nizCB;
+int brEle;
+int SviJednaki;
+
+CjelobrojniNiz(const CjelobrojniNiz &copy)
+{ brEle = copy.brEle;
+nizCB = (int*) malloc(sizeof(int)*brEle);
+for( int i=0; i<brEle; i++ ) {
+nizCB[i] = copy.nizCB[i];
+}}
+
+CjelobrojniNiz::CjelobrojniNiz(int *adresa, int n)
+{
+int temp, i; 
+int jednaki = 1;
+brEle = n;
+nizCB = (int *)malloc(brEle*sizeof(int));
+for(i = 0; i < n; i++) {
+nizCB[i] = adresa[i];
+}
+temp = nizCB[0];
+for(i = 0; i < n; i++)
+if(nizCB[i] != temp)
+jednaki = 0;
+if(jednaki == 0)
+SviJednaki = 0;
+else
+SviJednaki = 1;
+}
+
+int CjelobrojniNiz::Usporedi(CjelobrojniNiz niz)
+{
+int jednaki = 1;
+int i;
+if(niz.brEle != brEle)
+return 0;
+for(i = 0; i < niz.brEle; i++)
+{
+if(nizCB[i] != niz.nizCB[i])
+jednaki = 0;
+}
+return jednaki;
+}
+
+int *VratiRazliku(CjelobrojniNiz niz, int* n)
+{
+int i, j, br = 0, prethodni;
+int x;
+int *razlika;
+razlika = (int*)malloc(brEle*sizeof(int));
+for(i = 0; i < brEle; i++) {
+x = 1;
+if(i != 0) {
+prethodni = nizCB[i-1];
+for(j = 0; j < niz.brEle; j++)
+if((nizCB[i] == niz.nizCB[j]) || (nizCB[i]==prethodni))
+x = 0;
+} else {
+for(j = 0; j < niz.brEle; j++)
+if((nizCB[i] == niz.nizCB[j]))
+x = 0;
+}
+if(x == 1) {
+razlika[br] = nizCB[i];
+br++;
+}}
+*n = br;
+return razlika;
+}
+
+~CjelobrojniNiz() {
+free (nizCB);
+}};

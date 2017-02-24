@@ -1,0 +1,9 @@
+Red *PrepisiStogURed(Stog *stog){
+	int tmp;
+	Red *red;
+	if (stog==NULL) return NULL;
+	if ((stog->Skini(&tmp))==0) return new Red();
+	red=PrepisiStogURed(stog);
+	red->DodajURed(tmp);
+	return red;
+}

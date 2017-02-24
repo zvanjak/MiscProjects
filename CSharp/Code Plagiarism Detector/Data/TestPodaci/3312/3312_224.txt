@@ -1,0 +1,12 @@
+int br_prodanih (FILE *f, char *autor){
+	struct album a;
+	int suma=0;
+	while (fscanf(f, "%s %s %d",
+		a.naziv,
+		a.autor,
+		&a.prodano) == 3){
+			if (strcmp(a.autor, autor)==0)
+				suma+=a.prodano;
+	}
+	return suma;
+}

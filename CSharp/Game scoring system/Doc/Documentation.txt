@@ -1,0 +1,57 @@
+TODO
+- u banneru napraviti all time best galerije Amber Evans, Rocky, Jill Kelly
+- 
+
+Login
+- Forms autentifikacija
+
+Main
+- link na stranice za pojedinu igru
+- recently played games
+- comments
+- rankinzi
+	- izraèunati ranking (jedan broj) za svakog igraèa za WC i CoH
+	- link na stranicu s objašnjenjem rankinga
+
+Rankinzi
+- 
+
+CoH Main
+- na vrhu komentar zadnjih partija
+- popis partija
+	- iskoristiti kontrolu sa scrollbarom pa prikazati sve partije
+- trenutni ranking po nekoliko kategorija
+	- Liga 1 - 1
+		- ukupan ranking
+			- izraèunati postotak pobjeda u partijama
+				- u statistiku ukljuèiti i omjer pobjede : porazi
+		- ranking po mapama
+			- ista statistika, ali ogranièeno na pojedinu mapu
+	- Liga 2 - 2
+		- ekipni ranking
+			- izraèunati postotak pobjeda za svaku ekipu
+		- pojedinaèni ranking
+			- ranking je broj:
+				- 2 = uvijek dobiva
+				- 1 = 50 / 50
+				- 0 = uvijek gubi
+			- izraèun
+				- igraèima iz pobjednièke ekipe dodaj 2
+				- svim igraèima brojaè partija ++
+				- podijeli broj bodova s brojem partija
+
+Warcraft Main
+- vijesti
+- završena Liga 5 - iskoristiti runtime kontrolu koja se dinamièki popunjava
+- rezultati ostalih liga
+- pregled partija
+	- sve partije u kojima je sudjelovao igraè
+	- sve partije na mapi
+	- sve partije igraè vs. igraè
+	
+	
+TODO
+- serijalizacija objektnog modela u fajl
+- import podataka iz Warcraft baze
+- dodati moduænost nadimka koji æe se svugdje koristiti
+- podatak o nadimku korištenom u trenutku igranja zapisati u PlayedGame

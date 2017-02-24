@@ -1,0 +1,16 @@
+#include <stdio.h>;
+int main () {
+	int odradeni_sati, nominalni_sati, cijena_sata;
+	float nova_cijena_sata,netto_placa;
+	scanf ("%d %d %d", &odradeni_sati, &nominalni_sati, &cijena_sata);
+	
+    if (odradeni_sati<nominalni_sati)
+		nova_cijena_sata=cijena_sata-cijena_sata*0.1;
+	else if (odradeni_sati>nominalni_sati)
+		nova_cijena_sata=cijena_sata-cijena_sata*0.15;
+	else nova_cijena_sata=cijena_sata;
+    netto_placa=odradeni_sati*nova_cijena_sata;
+	netto_placa*=netto_placa>6000?0.7:0.8;
+	printf ("%.2f",netto_placa);
+	return 0;
+}

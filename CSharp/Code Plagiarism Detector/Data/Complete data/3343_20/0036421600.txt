@@ -1,0 +1,22 @@
+#include <stdio.h>
+float niz (int i);
+int main () {
+  int x;
+  float y;
+  scanf("%d",&X);
+  y=niz(x);
+  printf("%f\n",y);
+  return 0;
+}
+int kontrola() {return 0;}
+float niz (int i) {
+  float n[1000];
+  kontrola();
+  if (i==0) return 1;
+  if (i==1) return 2;
+  if (i==2) return 3;
+  n[i-1]=niz(i-1);
+  n[i-3]=niz(i-3);
+  n[i]= (n[i-1] - n[i-3])/(n[i-1] + n[i-3]);
+  return n[i];
+}

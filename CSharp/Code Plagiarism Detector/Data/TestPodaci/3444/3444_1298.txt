@@ -1,0 +1,17 @@
+#include <stdio.h>
+#define maxred 20
+#define maxstup 20
+int main(){
+int i,j,s,r;
+float a[maxstup][maxred],umn=1,sum=0;
+printf("Upisi velicinu matrice:");
+scanf("%d %d",&s,&r);
+for (i=0;i<s;i++)
+ for (j=0;j<r;j++)
+    scanf("%f",&a[i][j]);
+for (i=0;i<s;i=i+2)
+ for (j=0;j<r;j++){
+    umn*=a[i][j];
+    sum+=umn;}
+printf("Suma parnih redova matrice je: %f",sum);
+return 0;}

@@ -1,0 +1,26 @@
+double sumareda(double x, int N)
+{
+	int i;
+	double value;
+
+	kontrola();
+
+	if(N < 1)
+	{
+		return 0;
+	}
+	else
+	{
+		value = 1;
+
+		for(i = 0; i < N; i++)
+			value *= (x-1);
+
+		value /= N;
+
+		if(N % 2 == 0)
+			value = -value;
+
+		return sumareda(x, N-1) + value;
+	}
+}

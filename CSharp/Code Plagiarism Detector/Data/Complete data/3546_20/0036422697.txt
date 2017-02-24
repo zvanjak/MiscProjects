@@ -1,0 +1,15 @@
+Stog* PrepisiRedUStog(Red *red){
+    Stog *novi;
+    int elem,i,pom=1;
+    red->SkiniIzReda(&elem);
+    if(red->Prebroji())novi=PrepisiRedUStog(red);
+    else novi=(Stog *)malloc(sizeof(class Stog));
+    for(i=2;i<elem;i++){
+        if(elem%i==0){
+            pom=0;
+            break;
+        }
+    }
+    if(pom)novi->Stavi(elem);
+    return novi;
+}

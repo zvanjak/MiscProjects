@@ -1,0 +1,28 @@
+int* napraviPolje(int* A, int Na, int a, int b, int *Nc){
+
+	int i, j, k = 0, brojac = 0, *polje = NULL;
+
+	if (b < a) return 0; 
+
+	for (i = 0; i < Na; i++){
+		for (j = a; j <= b; j++){
+			if ((*(A + i) % j) == 0)  
+				brojac++;
+		}
+
+		if (brojac == (b - a + 1) ){
+		polje = (int*) realloc (polje, (k + 1) * sizeof(int));
+		*(polje + k) = *(A + i);
+		k++;
+
+		}
+
+		brojac = 0;
+
+	}
+
+	*Nc = k;
+
+	return polje;
+
+}

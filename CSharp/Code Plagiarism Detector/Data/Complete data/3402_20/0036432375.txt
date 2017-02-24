@@ -1,0 +1,19 @@
+int* napraviPolje (int *A, int Na, int a, int b, int *Nc) {
+	int i, j, br=0;
+	int *C=0;
+
+	if (b<a) return 0;
+					
+	for (i=0; i<Na; i++){
+		j=a;
+		while (j<=b){
+			if (*(A+i)%j==0) {
+						br++;
+						C=(int*)realloc(C, br*sizeof(int));
+						*(C+br-1)=*(A+i);
+						break;						
+			}
+			j++; }}
+	*Nc=br;
+	return C;
+}

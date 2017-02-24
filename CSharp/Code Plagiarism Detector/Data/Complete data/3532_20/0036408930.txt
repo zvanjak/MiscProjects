@@ -1,0 +1,21 @@
+Stog *noviOdNeparnih(Stog *stog) {
+
+	int Tmp;
+	
+	Stog *STmp = new Stog;
+	Stog *SRet = new Stog;
+
+	while (stog->Skini(&Tmp)){
+		STmp->Stavi(Tmp);
+		
+		if (Tmp%2 == 1)
+			SRet->Stavi(Tmp);
+	}
+
+	while (STmp->Skini(&Tmp))
+		stog->Stavi(Tmp);
+
+	delete STmp;
+	return SRet;
+
+}

@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main () {
+	int a,b,c,d,e,f;
+printf("Upisi cetveroznamenkasti broj.");
+scanf("%d",&a);
+if (a<1000 || a>9999){
+	printf("Broj je neispravan.");
+}else{
+b=a/1000;
+c=(a%1000)/100;
+d=(a%100)/10;
+e=a%10;
+}
+f=(e*1000+d*100+c*10+b);
+printf(" %d ",f);
+return 0;
+}

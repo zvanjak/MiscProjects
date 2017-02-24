@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main(void) {
+    char broj[6];
+    int i, s, parity;
+
+    scanf( "%s", broj );
+    parity = ( broj[0] == broj[4] && broj[1] == broj[3] );
+
+    for( i = s = 0; i < 5; i++ )
+	if( ((broj[i]-'0')&1) != parity ) s += (broj[i]-'0');
+    printf( "%d\n", s );
+
+    return 0;
+}

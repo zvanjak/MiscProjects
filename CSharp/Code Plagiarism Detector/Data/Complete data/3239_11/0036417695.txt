@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main()
+
+{
+	int d,g,n,i,suma=0;
+	scanf("%d %d", &d, &g);
+	if((d<=0)||(g<=0)||(d>g))
+		printf("D i G nisu valjani");
+	else
+	{
+		n=d;
+		while(n<=g)
+		{
+			suma=0;
+			for(i=1;i<=n;i++)
+			{
+				if(i%2==0)
+					suma=suma+i;
+			}
+			printf("%d", suma);
+			if (n!=g)
+				printf(" ");
+			n++;
+		}
+	}
+	return(0);
+}

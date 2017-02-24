@@ -1,0 +1,16 @@
+#include<stdio.h>
+#include<math.h>
+void main (){
+	int n, i;
+	float pi, x=0;
+scanf("%d",&n);
+if (n>=1 && n<=400){
+	for(i=0; i<=n; i++){
+		x=(float)x+1/pow(2,(i*2+1));
+		}
+	pi=(double)sqrt(8*x);
+	printf("Vrijednost broja pi = %6.12f\n", pi);
+}else{
+	printf(" n nije valjan\n");
+}
+}

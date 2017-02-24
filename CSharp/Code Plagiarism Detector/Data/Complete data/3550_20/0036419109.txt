@@ -1,0 +1,48 @@
+int izbacinaj(zapis **glava) {
+ 	if (*glava==NULL) return 0;		// Nema elementata u listi
+  	if ( (*glava)->sljed == NULL ) {	// Samo jedan element, izbacujemo ga
+		free(*glava);
+    	*glava=NULL;
+    	return 1;
+  	}
+  	float mini,maxi;
+  	
+  	/* Prolazimo listu i spremamo najmanji i najveci prosjek */
+  	mini=maxi=(*glava)->pros;
+  	zapis * pom = *glava;
+   	while ( pom != NULL ) {
+    	if (pom->pros > mini ) mini = pom->pros;    
+    	if (pom->pros < maxi ) maxi = pom->pros;
+    	pom = pom->sljed;
+   	}
+    /* Izbacujemo najmanji element */
+    pom=*glava;
+
+    if ( (*glava)->pros == mini ) {	// Minimalni element je na pocetku, specijalan slucaj
+     	*glava = (*glava)->sljed;
+     	free(pom);
+    } else {   
+	    while ( pom->sljed != NULL ) {
+    		if ( (pom->sljed)->pros == mini ) break;
+      		pom=pom->sljed;  
+ 		}
+ 		zapis * pomocni2 = pom->sljed;
+ 		pom->sljed = (pom->sljed)->sljed;
+ 		free(pomocni2);
+	}    	
+	/* Izbacujemo najveci element */
+	pom=*glava;
+    if ( (*glava)->pros == maxi ) {	// Minimalni element je na pocetku, specijalan slucaj
+     	*glava = (*glava)->sljed;
+     	free(pom);
+    } else {   
+	    while ( pom->sljed != NULL ) {
+    		if ( (pom->sljed)->pros == maxi ) break;
+      		pom=pom->sljed;  
+ 		}
+ 		zapis * pomocni2 = pom->sljed;
+ 		pom->sljed = (pom->sljed)->sljed;
+ 		free(pomocni2);
+	}    	
+  	return 2;
+}    

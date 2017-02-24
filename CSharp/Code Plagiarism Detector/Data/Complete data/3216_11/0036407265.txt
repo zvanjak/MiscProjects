@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <math.h>
+
+
+
+int main () {
+
+	int i, broj;
+	int prosti = 0;
+	
+	scanf ("%d", &broj);
+	
+	while (broj > 2) {
+		for (i = 2; i < broj; ++i) {
+			if ((broj % i) == 0) {
+				break;
+			}
+		}
+		if (i == broj) ++prosti;
+		scanf ("%d", &broj);
+	}
+	printf ("%d", prosti);
+	return 0;
+}

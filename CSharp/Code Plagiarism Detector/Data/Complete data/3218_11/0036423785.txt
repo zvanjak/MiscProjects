@@ -1,0 +1,31 @@
+#include <stdio.h>
+int main(){
+	int n,i,prost=0,max=0,nadjen=0;
+	do{
+		
+		scanf("%d",&n);
+		if(n>2){
+			for(i=2;i<=n-1;i++){
+				if(n%i==0){
+					prost=0;
+					break;
+				}else if(n%i!=0){
+					prost=1;
+				}
+				
+			}
+			if(prost){
+				nadjen=1;
+				if(n>max){
+					max=n;
+				}
+			}
+		}
+	}while(n>2);
+	if(nadjen){
+		printf("%d",max);
+	}else {
+		printf("0");
+	}
+	return 0;
+}

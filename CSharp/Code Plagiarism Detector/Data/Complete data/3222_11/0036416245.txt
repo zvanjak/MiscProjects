@@ -1,0 +1,12 @@
+#include <stdio.h>
+int main (){
+int n, br;
+scanf ("%d", &n);
+for (br=0; n%13!=0 && br<40; br++){
+		 n=n+n%10;
+		 printf ("%d ", n);
+	}
+printf ("%d ", br);
+
+return 0;
+}

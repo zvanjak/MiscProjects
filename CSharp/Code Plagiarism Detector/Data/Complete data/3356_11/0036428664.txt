@@ -1,0 +1,41 @@
+#include<stdio.h>
+int main () {
+	int n,m,de,j,s,br;
+	char c;
+	scanf("%d %d %c", &n, &m, &c);
+	if (!((n > 0) && (m >= 1 && m <= 3) && (c == 'L' || c == 'R')))
+	printf("Error\n" );
+	else {
+       s=n/100;
+	   de=(n%100)/10;
+	   j=(n%100)%10;
+	
+	   if (m == 3) br=n;
+	   else {
+	         if ((c == 'R') && (m == 1) ) br=j*100+s*10+de;
+			 else {
+				 if ((c == 'R') && (m == 2) ) br=de*100+j*10+s;
+				 else{ 
+					 if ((c == 'L') && (m == 1)) br=de*100+ j*10+ s;
+					 else {
+						 if ((c == 'L') && (m == 2)) br=j*100+s*10+de;
+
+					 
+					}
+				 }
+			 }
+	   }
+	
+
+
+printf("%d\n",br);
+
+
+
+	}
+	
+
+	
+	return 0;
+
+}

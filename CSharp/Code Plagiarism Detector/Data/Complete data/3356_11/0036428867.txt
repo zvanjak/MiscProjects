@@ -1,0 +1,28 @@
+#include<stdio.h>
+int n, m, i, ost;
+char c;
+main(){
+	scanf("%d %d %c", &n, &m, &c);
+	if (n<=0||m>3||m<1||(!(c=='R'||c=='L')))
+		printf("Error");
+	else{
+		if (c=='R'){
+			i=1;
+			while (i<=m){
+				ost=n%10;
+				n=n/10+100*ost;
+				i++;
+			}
+		}
+		else {
+			i=1;
+			while (i<=m){
+				ost=n/100;
+				n=n%100;
+				n=n*10+ost;
+				i++;
+			}
+		}
+		printf("%d",n);
+	}
+}

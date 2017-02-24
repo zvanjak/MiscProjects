@@ -1,0 +1,22 @@
+#include<stdio.h>
+
+int main(){
+    int a,i=0,prvi=0,j;
+    while(1)
+    {
+            scanf("%d",&a);
+            if(a<0)
+            break;
+            for(j=0;j<a;j++)
+            {
+                prvi++;
+                if(prvi==1)
+                printf("%d",i);
+                else
+                printf(" %d",i);
+            }
+            i++;
+    }
+    return 0;
+}
+

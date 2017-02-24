@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <math.h>
+
+int main () {
+	int n;
+	double suma = 0, i;
+	scanf("%d", &n);
+	if((n < 1)||(n > 25)) printf("n nije valjan");
+	else {
+		for(i = 1 ; i <= n ; i++) 
+			suma += pow(1 / pow(i,8), 1/8.);
+		printf("%.12f", suma);
+	}
+	return 0;
+}

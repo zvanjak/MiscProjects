@@ -1,0 +1,10 @@
+void rStrncpy(char *odrediste,char *izvoriste,int n){
+kontrola();
+if (n) {
+        rStrncpy(odrediste,izvoriste,n-1);
+        odrediste=(char*)realloc(odrediste,n*sizeof(char));
+        *(odrediste+n-1)=*(izvoriste+n-1);
+}
+}
+
+

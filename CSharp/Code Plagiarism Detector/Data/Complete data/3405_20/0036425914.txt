@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+char *SvakiDrugi(char *ulazni_niz)
+{
+ char *p;
+ int i=0,j=0;
+ 
+ p=NULL;
+ 
+ if (*ulazni_niz==0) return NULL;
+ 
+ while(*(ulazni_niz+i))
+  {
+
+  if (!(i%2))
+    {
+      p=(char *) realloc(p,j+1);
+      *(p+j)=*(ulazni_niz+i);   
+      j++; 
+    }
+  i++;                       
+  }
+  
+  p=(char *) realloc(p,j+1);
+  *(p+j)=0;
+ 
+     
+     
+ return p;
+}

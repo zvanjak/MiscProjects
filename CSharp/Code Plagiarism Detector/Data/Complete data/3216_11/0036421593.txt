@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+main(){
+	int i,n,prost,s;
+	 s=0;
+	
+	while(1){
+		
+		scanf("%i",&n);
+		prost=1;
+		if (n<=2) break;
+		for(i=2;i<n;i++){
+			if (n%i==0){
+				prost=0;
+				break;
+			}
+		}
+		if (prost==1) s++;
+	}
+	/*printf("ucitano je %i prostih brojeva\n",s);*/
+        printf("%i", s);
+	return 0;
+}

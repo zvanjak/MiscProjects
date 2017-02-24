@@ -1,0 +1,8 @@
+int rZamijeni (char *niz, char stari, char novi) {
+   int p=0;
+   kontrola();
+   if (niz=='/0') return 0;
+   if (niz==stari) {niz=novi;
+                    p=1;};
+   return (p+rZamijeni (niz[1],stari,novi));
+}

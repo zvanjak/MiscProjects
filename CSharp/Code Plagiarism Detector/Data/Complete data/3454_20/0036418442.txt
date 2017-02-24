@@ -1,0 +1,63 @@
+class RazlPolje{
+  public:
+    RazlPolje(){
+      _TrenElem = 0;
+      _Max = 10;
+      _Polje = new int[_Max];
+    }
+
+    ~RazlPolje(){
+      delete []_Polje;
+    }
+    
+    int Dodaj(int Broj){
+      int i, temp = 1;
+      if(_TrenElem >= 0 && _TrenElem < _Max){
+        for(i=0; i < _TrenElem; i++){
+          if(_Polje[i]== Broj)
+            temp = 0;
+        }
+        if(temp)
+          _Polje[_TrenElem++]=Broj;
+        return 1;
+      }else{
+        return 0;
+      }
+    }
+    
+    int Izbaci(int Broj){
+      int i, j;
+      for(i = 0; i < _TrenElem; i++){
+        if(_Polje[i] == Broj){
+          for(j = i; j < _TrenElem; j++){
+            _Polje[j] = _Polje[j+1];
+          }
+          _TrenElem--;
+          return 1;
+        }
+      }
+      return 0;      
+    }
+    
+    int SumaPolja(){
+      int i, sum = 0;
+      for(i = 0; i < _TrenElem; i++){
+        sum += _Polje[i];
+      }
+      return sum;
+    }
+    
+    int IspisPolja(){
+      int i;
+      printf("Ispis polja:\n");
+      for(i = 0; i < _TrenElem; i++){
+        printf("%d ",_Polje[i]);
+      }
+      printf("\n");
+    }
+    
+  private:
+    int *_Polje;
+    int _TrenElem;
+    int _Max;
+};

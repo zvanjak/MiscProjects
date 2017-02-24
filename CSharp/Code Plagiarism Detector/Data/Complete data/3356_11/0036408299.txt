@@ -1,0 +1,65 @@
+#include <stdio.h>
+int rotL(int m, int n){
+       int pom;
+		
+
+	   if (m==1){
+ 				   pom = n%100*10+(n-n%100)/100;
+                   return pom;
+                               
+	   }
+		if (m==2){
+				   pom = n%100*10+(n-n%100)/100;
+                   pom =pom%100*10+(pom-pom%100)/100;
+                   return pom;
+                             
+		}
+		if (m==3){
+			return n;
+              
+       }
+       return -1;
+}
+
+int rotR(int m, int n){
+       int pom;
+
+		if (m==1){
+ 		    pom = n%10*100 + n/10;
+			return pom;
+                 }
+		if (m==2){
+			pom = n%10*100 + n/10;
+            pom = pom%10*100+pom/10;
+            return pom;
+                 }
+		if (m==3){
+            return n;
+                
+       }
+       return -1;
+}
+
+void main () {
+
+	int m,n,x;
+	char c;
+
+	/* printf ("Unesite prirodni broj n, broj m, i znak c :"); */
+	scanf ("%d %d %c" ,&n, &m, &c);
+	if ((n<0) || (m<1 || m>3) || (c !='L' && c!='R')) printf ("Error");
+	
+	if (c=='R'){
+         x=rotR(m,n);
+         if(x!=-1){
+         printf("%d",x); 
+         scanf("%d",&n);}            
+	}
+		if (c=='L'){
+ 		 x=rotL(m,n);
+         if(x!=-1){ printf("%d",x);
+         scanf("%d",&n);}
+         	}
+           
+       
+}

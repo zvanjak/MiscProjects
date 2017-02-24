@@ -1,0 +1,47 @@
+void izbaciUljeza (char * ulazni)
+{
+	int mala=0,velika=0, znamenke=0,min,i,j, prvoSlovo=1;
+	for(i=0;i<strlen(ulazni);i++)
+	{
+		if (islower(ulazni[i])) mala++;
+		if (isupper(ulazni[i])) velika++;
+		if (isdigit(ulazni[i])) znamenke++;
+	}
+	
+	if (znamenke<mala && znamenke<velika){
+		for(i=0;i<strlen(ulazni);i++){
+			if (isdigit(ulazni[i])){
+				for(j=i;j<strlen(ulazni);j++)
+					ulazni[j]=ulazni[j+1];
+				i--;
+			}
+		}
+	}
+	else if (mala<znamenke && mala<velika){
+		for(i=0;i<strlen(ulazni);i++){
+			if (islower(ulazni[i]))
+				ulazni[i]=toupper(ulazni[i]);
+		}
+	}
+	else if (velika<znamenke && velika<mala){
+		for(i=0;i<strlen(ulazni);i++){
+			if (isupper(ulazni[i]))
+				ulazni[i]=tolower(ulazni[i]);
+		}
+	}
+	else{
+		for(i=0;i<strlen(ulazni);i++){
+			if (isdigit(ulazni[i])){
+				for(j=i;j<strlen(ulazni);j++)
+					ulazni[j]=ulazni[j+1];
+				i--;
+			}
+			else if (prvoSlovo){
+				ulazni[i]=toupper(ulazni[i]);
+				prvoSlovo=0;
+			}
+			else ulazni[i]=tolower(ulazni[i]);
+		}
+		ulazni[strlen(ulazni)-1]=toupper(ulazni[strlen(ulazni)-1]);
+	}
+}

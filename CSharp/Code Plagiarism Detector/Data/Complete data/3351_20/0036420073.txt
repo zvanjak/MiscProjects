@@ -1,0 +1,18 @@
+int info(FILE *f,int redni_br)
+{
+    int suma=0;
+    struct natjecatelj alb1;
+    fseek(f,0,SEEK_SET);
+    do
+    {
+    if (fread(&alb1,sizeof(alb1),1,f)!=1) break;
+    if(alb1.redni_br == redni_br)
+        {
+            if (alb1.bodovi >= 100) return 1;
+            if (alb1.bodovi < 100) return 0;                     }                 
+           
+           
+    }while (1);
+    
+    return -1;
+    }

@@ -1,0 +1,10 @@
+int br_prodanih(FILE*f, char *autor){
+	int ukupno=0;	
+	struct album a;	
+	while(!eof(f)){
+		fread(&a, sizeof(a),1,f);
+		if(strcmp(autor,a.autor)==0){
+		ukupno+=a.prodano;}
+		}
+	return ukupno;
+}

@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main()
+
+{
+ int n, i, ok = -1;
+ double x = 0, y=1, s=1;
+
+ scanf("%d",&n);
+
+ if (n<1 || n>30 || n == 2)
+   printf("n nije valjan");
+ else
+  {
+     if(n != 1)
+       for(i=1; i<=n-1; i++)
+           {
+              s *= i;
+              y += ok*(1./s);
+              ok = -1*ok;
+           }
+            
+    x = 1./y;
+
+    printf("%.12f",x);
+
+  }
+
+
+  return 0;
+
+
+}

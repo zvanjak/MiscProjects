@@ -1,0 +1,10 @@
+int niz(int i) {
+
+	int kontrola();
+
+	if(i == 0) return 0;
+	if(i == 1) return 1;
+	if(i == 2) return 2;
+
+	return niz(i-1) + 2*niz(i-2) - niz(i-3);
+}

@@ -1,0 +1,22 @@
+Stog* PrepisiRedUStog(Red *red){
+	int pom, pom1, provjera, i;
+	Stog *pomStog;
+	
+	if (red->SkiniIzReda(&pom)){
+		pom1 = (pom > 0) ? pom : -pom;
+		provjera = ((pom1 % 2) || (pom1 == 2)) ? 1 : 0;
+		pomStog = PrepisiRedUStog(red);
+		for (i=3; i < (pom1)/2 ; i += 2)
+			if (pom1 % i == 0){
+				provjera = 0;
+				break;
+			}
+		if (provjera)
+			pomStog->Stavi(pom);
+	}
+	else
+		pomStog = new Stog ();
+
+	return pomStog;
+
+}

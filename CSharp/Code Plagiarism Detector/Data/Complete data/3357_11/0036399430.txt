@@ -1,0 +1,41 @@
+  #include <stdio.h>
+int main(){
+    int x,y;
+    int suma=0;
+    int razlika=0;
+    int p1, p2, p3, p4, d1, d2, d3, d4;
+
+    
+    
+    scanf("%d %d", &x, &y);
+
+    if( (x>=1000 && x<=9999) && (y>=1000 && y<=9999) ) {
+
+        
+        p1 = x / 1000;
+        p2 = (x - p1*1000)/100;
+        p3 = (x - p1*1000 - p2*100)/10;
+        p4 = (x - p1*1000 - p2*100 - p3*10);
+    
+        d1 = y / 1000;
+        d2 = (y - d1*1000)/100;
+        d3 = (y - d1*1000 - d2*100)/10;
+        d4 = (y - d1*1000 - d2*100 - d3*10);
+
+    
+
+        if( (p1==d4) && (p2==d3) && (p3==d2) && (p4==d1) ) {
+            suma = p1 + p2 + p3 + p4;
+            printf("%d", suma);
+        }
+        else {
+            razlika = x - y;
+            printf("%d", razlika);
+        }
+    }
+
+    else printf("ucitani brojevi nisu cetrveroznamenkasti!");
+    return 0;
+}
+
+ 

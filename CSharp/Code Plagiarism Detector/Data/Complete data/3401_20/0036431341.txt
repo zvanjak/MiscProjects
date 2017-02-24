@@ -1,0 +1,16 @@
+int *napraviPolje(int *A, int Na, int a, int b, int *Nc){
+int *p, i=0, br_el=0, *pom;
+if(a>b) return NULL;
+p=(int*)malloc(i*sizeof(a));
+pom=p;
+for(i=0;i<Na;++i){
+if(A[i]>=a && A[i]<=b){
+br_el++;
+p=(int *)realloc(p, br_el*sizeof(a));
+*pom=A[i];
+pom++;
+}
+}
+*Nc=br_el;
+return p;
+}

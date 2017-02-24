@@ -1,0 +1,10 @@
+double sumareda(double x, int N)
+{
+int i;
+double red=0;
+kontrola();
+if (N==1) return x;
+if(N%2==0) red=red-(pow(x,N))/N;
+else red=red+(pow(x,N))/N;
+return red+sumareda(x,N-1);
+}

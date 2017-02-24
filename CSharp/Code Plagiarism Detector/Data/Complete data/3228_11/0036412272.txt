@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+    float n,rez=0;
+    int q1=1;
+    
+    scanf("%f",&n); 
+    
+    if( !(n==(int)(n)) || (n<1 || n>100) ){
+                      printf("n nije valjan");
+                      return 0;}
+    
+    for(q1;q1<=n;q1++){
+            rez=rez+pow(-1,q1-1)*( 1.0/(float)(pow(q1,2)) );
+            }
+    rez=sqrt(rez*12);
+    
+    printf("%.12f", rez);    
+}

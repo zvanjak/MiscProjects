@@ -1,0 +1,25 @@
+#include <stdio.h>
+double fakt (int z){
+	int i;
+	double f;
+	for(f=1,i=1;i<=z;i++)
+		f*=i;
+	return f;
+}
+int main (){
+	int m,n;
+	double x;
+	printf ("Unesite brojeve n i m: ");
+	scanf ("%d %d",&n,&m);
+	if (n>=m){
+		if ( m==0 || m==n)
+			x=0;
+		else 
+			x=fakt(n)/(fakt(m)*fakt(n-m));
+			printf("n povrh m iznosi:%g",x); 
+	}
+	else 
+		printf ("Krivo uneseni brojevi");
+	return 0;
+}
+			 

@@ -1,0 +1,13 @@
+float *KreirajTablicuMnozenja(int n)
+{
+	float *tablica;
+	int i, j;
+	tablica = (float *)malloc(n*n*4);
+	for(i = 0; i < n; i++)
+		for(j = 0; j < n; j++)
+		{
+			*(tablica + i*n + j) = (float)((i+1)*(j+1));
+		}
+
+	return tablica;
+}

@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <math.h>
+int main() {
+	int i,n,j,r,t,k;
+	scanf("%d", &n);
+	r=0;
+	/*nulu sam uzeo kao pozitivan broj jer nije drugacije specificirano*/
+	if (n>=0) {
+          k=n;
+  	  for (i=10; ((n/i)>0); i=i*10) r++;
+	  i=i/10;
+	  for (j=0; j!=(r+1); j++) {
+            if (i>1) {
+              t=n/i;
+              printf("%d ",t);
+              n=n%i;
+              i=i/10;
+            }
+            else printf("%d",k%10);
+          }
+        }
+	return 0;
+}

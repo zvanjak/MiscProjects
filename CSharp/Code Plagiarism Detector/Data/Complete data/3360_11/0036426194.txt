@@ -1,0 +1,18 @@
+#include<stdio.h>
+int main() {
+	int x, a, b, c, e;
+	scanf("%d",&x);
+	if(x>99 && x<1000) 
+    {
+            a=x/100;
+	        b=x%100;
+	        b=b/10;
+	        c=x%100;
+	        c=c%10;
+	        e=a+b+c;
+         	if (e/2. - e/2==0)
+		       printf("%d",a-b-c); 
+         	if (e/2. - e/2 != 0)
+           		printf("%d",a*b*c);
+    }
+}

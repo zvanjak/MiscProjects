@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+int main()
+
+{	int i,j;
+	char x[100];
+	j=0;
+do
+{scanf("%c",&x[j]);
+if(!((x[j]>='a'&&x[j]<='z')||(x[j]>='A'&&x[j]<='Z')||(x[j]==' ')||(x[j]==',')||(x[j]=='.')))
+{x[j]='.';
+break;
+}
+
+j++;
+}while((x[j-1]!='.')&&(j<100));
+for(i=0;i<j;i++)
+{if(x[i]>='A'&&x[i]<='Z')
+	 x[i]=x[i]+32;
+
+}
+if(x[0]>='a'&&x[0]<='z')
+x[0]=x[0]-32;
+for(i=1;i<j;i++)
+{if((x[i]>='a'&&x[i]<='z')&&(x[i-1]==' '||x[i+1]==' '||x[i+1]=='.'))
+x[i]=x[i]-32;
+
+}
+
+for(i=0;i<j;i++)
+printf("%c",x[i]);
+
+
+return 0;
+}

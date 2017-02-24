@@ -1,0 +1,15 @@
+int rBrojParnih(int *polje, int n){
+	int brParnih=0, ostatak=0;	//deklaracija lokalnih varijabli.
+	
+	kontrola();
+
+	if(n<=0) return 0;	//provjera broja n
+
+	brParnih = rBrojParnih(polje,n-1);
+	ostatak = *(polje+n-1) % 2;
+	if(!ostatak || (polje+n-1)==0){	//broj jest paran
+		brParnih ++;
+	}
+	return brParnih;
+
+}

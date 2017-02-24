@@ -1,0 +1,40 @@
+                                            
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+  char tekst[100];
+  char palin[100];
+  int n;
+  int i;
+  int palindrom;
+  
+  gets(&tekst);
+ 
+  n=0;
+  while((tekst[n]!='.') && (tekst[n]!='\0'))
+  {                    
+    if ((tekst[n]>='A') && (tekst[n]<='Z')) 
+       palin[n]=tekst[n]+32;
+    else
+       palin[n]=tekst[n];
+    
+    n++;
+  }
+  palin[n]='\0';
+   
+  palindrom = 1;
+  for(i=0;i<n;i++) 
+    if(palin[i]!=palin[n-1-i])
+    {
+        palindrom = 0;
+    }
+    
+  if (palindrom)  
+    printf("DA");
+  else
+    printf("NE");
+
+  return 0;
+}

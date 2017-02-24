@@ -1,0 +1,7 @@
+int rBrojPojavljivanja (int *polje, int n, int broj) {
+int b=0;
+kontrola ();
+if (n==0) return 0;
+if ((polje[n-1]) == broj) b++;
+return b+rBrojPojavljivanja(polje, n-1, broj);
+}

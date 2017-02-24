@@ -1,0 +1,24 @@
+int Memoriraj(Radio& radio){
+int n=0;
+Stanica prva_nadjena,s;
+prva_nadjena=radio.TraziSljedecu();
+if(!(prva_nadjena.RDS==NULL)){
+n=n+1;
+radio.MemorirajStanicu(prva_nadjena,n);
+}
+
+
+do{
+   
+    s=radio.TraziSljedecu();
+    if(s==prva_nadjena)
+    goto van;
+
+
+if(!(s.RDS==NULL)){
+n=n+1;
+radio.MemorirajStanicu(s,n);
+} 
+}while(n!=6);
+van:return n;
+}

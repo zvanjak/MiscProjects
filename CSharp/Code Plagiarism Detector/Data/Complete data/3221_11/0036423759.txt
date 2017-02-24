@@ -1,0 +1,19 @@
+#include<stdio.h>
+int main ()
+{int A,d,B,br=0,i;
+	scanf ("%d %d %d",&A,&d,&B);
+		if(A>B)
+			br=0;
+		else if((A+d)>B)
+			{printf("%d ",(A+d));
+		br+=1;}
+		else
+			{for(i=2;(A+(i-1)*d)<=B;i++)
+				{printf("%d ",(A+(i-1)*d));
+					br+=1;
+						if((A+(i-1)*d+d)>B)
+							{printf("%d ",(A+(i-1)*d+d));
+								br+=1;}}}
+	printf("%d",br);
+return 0;
+}

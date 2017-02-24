@@ -1,0 +1,13 @@
+#include <stdio.h>
+int main () {
+	int broj,a,b,c;
+	scanf("%d", &broj);
+	a=broj/100;
+	b=broj%100/10;
+	c=broj%10;
+	if ((a+b+c)%2 >=1) {
+		printf("%d", a*b*c);
+	} else {printf("%d", a-b-c);
+	}
+	return 0;
+}

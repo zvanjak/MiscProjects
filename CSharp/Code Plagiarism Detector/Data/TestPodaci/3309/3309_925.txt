@@ -1,0 +1,14 @@
+int br_prodanih(FILE *f,char *autor)
+{
+    int suma=0;
+    struct album alb1;
+    fseek(f,0,SEEK_SET);
+    do
+    {
+    if (fread(&alb1,sizeof(alb1),1,f)!=1) break;
+    if(!(strcmp(autor,alb1.autor))) suma += alb1.prodano;                 
+           
+           
+    }while (1);
+    return suma;
+    }

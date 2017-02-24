@@ -1,0 +1,43 @@
+int izbaciZ (zapis **glava) {
+  zapis *p, *pp, *ppp;
+  int a=0, br=0, i;
+  float prosjek=0;
+  
+  p=(zapis*)*glava;	
+  while(p){
+     a++;
+     prosjek+=p->pros;
+     p=(p->sljed);
+  }
+  prosjek/=a;
+
+  p=(zapis*)*glava;
+  ppp=p;
+  i=0;
+
+  while(p){
+     i++;
+     if(p->pros<prosjek && p->spol=='z'){
+         br++;                        
+         if(i==1) {
+             	pp = p;
+	            i=0;
+                p = p->sljed;
+	            free (pp);
+	            *glava=p;
+         }
+         else {
+            pp=p;
+            p=p->sljed;
+            free(pp);
+            ppp->sljed=p;
+         }
+     }
+     else {
+          ppp=p;
+          p=p->sljed;
+     }
+  }
+  
+  return br;
+}

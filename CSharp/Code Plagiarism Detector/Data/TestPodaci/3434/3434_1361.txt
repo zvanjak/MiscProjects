@@ -1,0 +1,25 @@
+#include <stdio.h>
+int main () {
+	int polje[100][2], prvi = 0, drugi = 0, treci = 0, cetvrti = 0, i;
+	for (i = 0; i < 5; i++) {
+		scanf("%d %d", &polje[i][0], &polje[i][1]);
+		if (polje[i][0] == 0 && polje[i][1] == 0) goto kraj;
+		else if (polje[i][0] > 0) {
+			if (polje[i][1] > 0) prvi++;
+			else if (polje[i][1] < 0) cetvrti++;
+			else {prvi++; cetvrti++;}
+		}
+		else if (polje[i][0] < 0) {
+			if (polje[i][1] > 0) drugi++;
+			else if (polje[i][1] < 0) treci++;
+			else {drugi++; treci++;}
+		}
+		else {
+			if (polje[i][1] > 0) {prvi++; drugi++;}
+			else {treci++; cetvrti++;}
+		}
+	}
+kraj:
+	printf("%d %d %d %d", prvi, drugi, treci, cetvrti);
+	return 0;
+}

@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main ( ) {
+	int x, y, a, prva_znam, druga_znam, treca_znam, cetvrta_znam;
+	scanf ("%d %d", &x, &y ); 
+	if ((x>=100 && x<=999) && (y>=100 && y<=999)) {
+		if (x<=y) {
+		   prva_znam = x%8  ;
+	     druga_znam = x/8%8 ;
+			 treca_znam = x/64%8 ;
+			 cetvrta_znam = x/512%8 ;
+			 a=cetvrta_znam*1000 + treca_znam*100 + druga_znam*10 + prva_znam ; 
+		}
+		else {
+			prva_znam = y%8 ;
+			druga_znam = y/8%8 ;
+			treca_znam = y/64%8 ;
+			cetvrta_znam = y/512%8 ;
+			a=cetvrta_znam*1000 + treca_znam*100 + druga_znam*10 + prva_znam ; 
+		}
+		printf ("%d", a) ; 
+	}
+	return 0 ;
+}

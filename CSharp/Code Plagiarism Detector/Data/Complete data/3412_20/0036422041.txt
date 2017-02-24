@@ -1,0 +1,26 @@
+char *SamoDuplikati( char *ulazni_niz)
+{
+    char   *a;
+    int n=0,i,j,c=0;
+
+    if(ulazni_niz==NULL) return NULL;
+    
+    while (ulazni_niz[n]!='\0')
+        n++;
+a=(char *)malloc(n*sizeof(char));
+for(i=0;i<n;i++)
+    {
+    for(j=0;j<i;j++)
+                {
+                    if (ulazni_niz[j]==ulazni_niz[i]) 
+                    {
+                        a[c]=ulazni_niz[i];
+                        c++;
+                        break;
+                    }
+                }
+   
+    }
+    a[c]='\0';
+return a;
+}  

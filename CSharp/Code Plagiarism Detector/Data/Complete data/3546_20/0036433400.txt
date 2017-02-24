@@ -1,0 +1,18 @@
+#include <math.h>
+
+Stog* PrepisiRedUStog(Red *red){
+	
+	int x,f=1;
+	Stog *s = new Stog;
+	int flag=red->SkiniIzReda(&x);
+	if(!flag) 
+		return s;
+	if(flag) 
+		s=PrepisiRedUStog(red);
+
+	for(int i=2;i<=sqrt((double)x);i++)
+		if ((x%i)==0) f=0;
+	
+	if(f) s->Stavi(x);
+	return s;
+}

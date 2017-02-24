@@ -1,0 +1,23 @@
+#include<stdio.h>
+int main(){
+ int x, min, max;
+  printf ("Upisi x: ");
+  scanf ("%d", &x);
+  min = max = x;
+
+ while(1){
+	 if( (x%4 != 0) || (x<0) ){
+		 printf ("Upisi x: ");
+		 scanf ("%d", &x);
+       if (x>max)
+		   max=x;
+	   if (x<min)
+		   min=x;
+	 }else{
+		 break;
+	 }
+   }
+  printf ("%d %d\n", min, max);
+	
+ return 0;
+}

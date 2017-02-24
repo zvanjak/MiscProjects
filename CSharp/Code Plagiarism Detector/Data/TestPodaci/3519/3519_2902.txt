@@ -1,0 +1,25 @@
+int SplitToSentences (char * inputField, char * outputField){
+    int i,j,max=0,brojac=0,dulj_niza;
+    
+    for(dulj_niza=0;*(inputField+dulj_niza)!='\0';dulj_niza++);
+    
+    for(i=0;i<dulj_niza;i++){
+        if(*(inputField+i)==','){
+            for(j=i+1;j<dulj_niza;j++){
+                if(*(inputField+j)>='a' && *(inputField+j)<='z'){
+                *(inputField+j)-=32;
+                break;
+            }    
+            }     
+            *(inputField+i)='.';
+            max++;
+          }      
+    } 
+    
+    for(i=0;i<dulj_niza;i++){
+        *(outputField+i)=*(inputField+i);
+    }    
+    *(outputField+(i+1))='\0';
+    
+    return max;
+}    

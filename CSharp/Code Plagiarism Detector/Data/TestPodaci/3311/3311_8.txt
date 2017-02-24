@@ -1,0 +1,11 @@
+float prosjek(FILE *f){
+	
+	struct album ducan;
+	int kom=0, br=0;
+
+	while (fread(&ducan, sizeof(ducan), 1, f)){
+		kom+=ducan.prodano; 
+		br++;
+	}
+	return (float)kom/br;
+}

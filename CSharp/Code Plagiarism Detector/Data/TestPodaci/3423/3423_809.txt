@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main()
+{
+	int mr=0, ms=0, x, i, j, prost, t;
+	int pr[20]={0}, ps[5]={0};
+	
+	while( mr<1 || ms<1 || mr>20 || ms>5)
+	{
+		scanf("%d %d", &mr, &ms);
+	}
+	
+	for(i=0; i<mr; i++)
+		for(j=0; j<ms; j++)
+		{
+			scanf("%d", &x);
+			prost=(x>1) ? 1: 0;
+			for(t=2; (t*2<x)&&prost; t++)
+				if (x%t == 0) {prost=0; break;}
+			if (prost) {pr[i]=1; ps[j]=1;}
+		}
+	
+	for(i=0, x=0; i<mr; i++) if (pr[i]) x++; printf("%d ",x);
+	for(i=0, x=0; i<ms; i++) if (ps[i]) x++; printf("%d",x);
+	return 0;
+}

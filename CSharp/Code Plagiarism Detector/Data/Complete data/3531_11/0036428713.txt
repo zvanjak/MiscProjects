@@ -1,0 +1,42 @@
+#include <ctype.h>
+
+void zamijeni (char *ulazni, int *broj) {
+     int s = 0,b = 0,o = 0,i,k,bio,poz = 0,np = 0;
+     
+     while(ulazni[poz])  {
+     bio = 0;
+       
+       if(isalpha(ulazni[poz])) {
+           if( s == 0) ulazni[np++] = toupper(ulazni[poz]);
+           else ulazni[np++] = tolower(ulazni[poz]);
+           bio++;;
+           s++;   
+       }   
+       
+       else 
+            if(isdigit(ulazni[poz])) {
+            while( isdigit(ulazni[poz + 1]) ) {poz++; b++;}
+            bio++; b++;
+            ulazni[np++] = '!';
+       }
+              
+       else  
+            if(isprint(ulazni[poz]) && !bio) {
+            ulazni[np++] = '?';
+            o++;
+       }      
+       
+       poz++;
+     }
+     ulazni[np] = '\0';
+     
+    
+     if(b >= s) {
+          if(s>=o) *broj = b;
+          if(o>=b) *broj = o;
+     }
+     else {
+          if(s>=o) *broj = s;
+          else *broj = o;
+     }
+}

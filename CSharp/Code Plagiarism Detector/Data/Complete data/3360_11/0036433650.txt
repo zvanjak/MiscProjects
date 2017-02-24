@@ -1,0 +1,13 @@
+#include <stdio.h>
+int main(){
+	int x,rez;
+	scanf("%d", &x);
+	if (x>=100 && x<=999){
+		if ((((x/100+((x%100)/10))+x%10))%2==0)
+			rez=x/100-(x%100)/10-x%10;
+		else
+			rez=(x/100)*((x%100)/10)*(x%10);
+	}
+printf("%d", rez);
+return 0;
+}

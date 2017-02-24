@@ -1,0 +1,19 @@
+#include<stdio.h>
+int main () {
+int n, k, a, r=1;
+scanf("%d", &n);
+if (n>0) {
+	do {
+		r=r*10;
+		k=n%r;
+	} while(n>=r);
+	while (r>=10) {
+		
+		k=k%r;
+		a=k/(r/10);
+r=r/10;
+		printf("%d ", a);	
+	}	
+}else printf("n nije pozitivan");
+return 0;
+}

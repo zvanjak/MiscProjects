@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <math.h>
+int main () {
+
+	int n, brojac;
+	double a, b, c, pi;
+	c = 0;
+
+	scanf("%i", &n);
+
+	if ((n < 1) || (n > 400)) printf("n nije valjan");
+	
+	else {
+
+		for (brojac = 1; brojac <= n; brojac += 1) {
+
+			a = 4.*brojac - 1;
+			b = 4.*brojac + 1;
+			c += 1 / (a*b);
+			
+		}
+    
+	pi = 4 - 8*c;
+	printf("%.8f", pi);
+
+	
+	}
+
+	return 0;
+
+}
+
+
+
+

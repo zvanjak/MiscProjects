@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <math.h>
+main()
+{
+	int x, a=0, i=0, y=1, n, z;
+	long int string[10];
+	scanf ("%d", &x);
+	if (x%2==0)
+	{
+	itoa(x,string,10);
+	a = strlen(string);
+	for (i=2;i<=a;i++)
+		y=y*10;
+	for (i=1;i<=a;i++)
+		{
+		z=x%y;
+		n=((x-z)/y);
+		printf("%d",n);
+		if (i<a)
+			printf(" ");
+		y=y/10;
+		x=z;
+		}
+	}
+	else
+		printf ("n nije pozitivan");
+}

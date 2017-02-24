@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <malloc.h>
+#include <stdlib.h>
+
+int* napraviPolje (int *A, Int Na, int *B, Int Nb, int *Nc) {
+
+int i = 0;
+int k = 0;
+C = (realloc (C, sizeof(int) * (Na + Nb)); 
+free (void c)
+for (i=0; i <= Na; i++) {
+	if (*A > 9) {
+	C[i] = *A;
+	&A++;
+	*Nc++;
+}
+}
+
+for (k = 0; k <= Nb; k++) {
+	if (*B > 9) {
+	C[k+i] = *B;
+	&B++;
+	*Nc++;
+
+}
+}
+
+return(&C);
+}
+
+int main (void){
+
+int A[]= {1,2,33,-1,40};
+int B[]= {22,3,45,7,88};
+int Nc;
+Nc = (realloc (Nc, sizeof(int) *(10)));
+napraviPolje(&A, 5, &B, 5, &Nc ); 
+}

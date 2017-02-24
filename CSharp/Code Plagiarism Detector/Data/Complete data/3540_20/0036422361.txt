@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <malloc.h>
+
+int izbaci(zapis **glava){
+	zapis *izbrisan = (zapis *) malloc(sizeof(zapis));
+	zapis *pomocni = *glava;
+	int br=0;
+
+	if (pomocni->pros < 2.0)
+	{
+		pomocni = (*glava)->sljed;
+		free (*glava);
+		*glava = pomocni;
+		br++;
+	}
+	while (pomocni != NULL)
+	{
+		while ((pomocni->sljed != NULL) && ((pomocni->sljed)->pros >= 2.0))
+			pomocni = pomocni->sljed;
+		
+		if (pomocni->sljed != NULL)
+		{
+			izbrisan->sljed = pomocni->sljed;
+			pomocni->sljed = (izbrisan->sljed)->sljed;
+			br++;
+		}
+		else pomocni = pomocni->sljed;
+	}
+	free(izbrisan);
+	return br;
+}

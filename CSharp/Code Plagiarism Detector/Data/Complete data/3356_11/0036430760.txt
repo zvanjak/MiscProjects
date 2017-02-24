@@ -1,0 +1,40 @@
+#include<stdio.h>
+int main(void)
+{
+int n,m,t,z2,z1,z0,i;
+char c;
+scanf("%d %d %c", &n, &m, &c);
+if(99<n&&n<1000&&m>=1&&m<=3)
+{
+    if(c=='L'||c=='R') 
+    {
+    z2=n/100;
+    z1=(n-100)/10;
+    z0=n-100-z1*10;
+        for(i=0;i<m;i++)
+        {
+        if(c=='R')
+        { t=z0;
+          z0=z1;
+          z1=z2;
+          z2=t; 
+        }
+        else
+        {    t=z2;
+          z2=z1;
+          z1=z0;
+          z0=t;
+        }
+        }
+    n=z2*100+z1*10+z0;
+    printf("%d",n);
+    }
+    else
+    printf("Error"); 
+}
+else
+printf("Error");
+return 0;
+}
+        
+        

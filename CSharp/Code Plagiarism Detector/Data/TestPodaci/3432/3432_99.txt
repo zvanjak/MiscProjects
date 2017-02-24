@@ -1,0 +1,29 @@
+/*
+Program treba izvršiti dekompresiju kompresiranog niza. Program učitava niz prirodnih 
+brojeva (dok se ne učita broj -1 koji se zanemaruje) koji predstavlja kompresirani niz. 
+Maksimalna veličina kompresiranog niza je 100 brojeva. Niz interpretirati kao niz parova 
+cijelih brojeva, gdje prvi broj u paru predstavlja broj iz originalnog niza, 
+a drugi broj predstavlja broj ponavljanja prethodnog broja. Npr. za učitani kompresirani 
+niz 1 2 3 4 1 3 27 2 -1, parovi su (1, 2),  (3, 4), (1, 3) te (27, 2) 
+iz čega slijedi da je dekompresirani niz: 1 1 3 3 3 3 1 1 1 27 27. 
+Dekompresirani niz je maksimalne veličine 1000 brojeva. Program
+treba ispisati dekompresirani niz za zadani ulazni kompresirani niz.   */
+#include <stdio.h>
+int main()
+{
+	int i,j, c, br;
+	for(i = 0; i< 100; i+= 2)
+	{
+		scanf("%d", &c);
+		if(c == -1)
+			break;
+		else 
+		{
+			scanf("%d", &br);		
+			for (j=0; j< br; j++)
+			{
+				printf("%d ",c);
+			}
+		}
+	}
+}

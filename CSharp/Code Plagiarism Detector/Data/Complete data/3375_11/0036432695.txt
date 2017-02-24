@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+	int n, rez, z, fac;
+	rez=0; fac=1;
+	scanf("%d",&n);
+	while (n) {
+		z=n%10;
+		n/=10;
+		if (z%2==0) {
+			rez+=fac*z;
+			fac*=10;
+		}
+	}
+	printf("%d\n",rez);
+	return 0;
+}

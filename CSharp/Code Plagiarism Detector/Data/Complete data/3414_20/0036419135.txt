@@ -1,0 +1,31 @@
+char *brojeve_u_znakove( int *polje, int duljina)
+{	
+	int n, i, *pom_polje, znak;
+	char *niz; 
+	n = 0;
+	pom_polje = (int *) malloc ((duljina) * sizeof (int)); 
+	for (i = 0; i<duljina; i++)
+	{	
+		pom_polje[i] = polje[i];
+		while (pom_polje[i] > 0 )
+		{
+			pom_polje[i] = pom_polje[i] /10;
+			n++;
+		}
+	}
+	niz = (char *) malloc ((n+1) * sizeof (char));
+	niz[n] = '\0';
+	n = 0;
+	for (i = 0; i<duljina; i++)
+	{	
+		pom_polje[i] = polje[i];
+		while (pom_polje[i] > 0 )
+		{	
+			znak = pom_polje[i]%10;
+			niz[n]= znak + '0';
+			n++;
+			pom_polje[i] = pom_polje[i] /10;
+		}
+	}
+	return niz;
+}

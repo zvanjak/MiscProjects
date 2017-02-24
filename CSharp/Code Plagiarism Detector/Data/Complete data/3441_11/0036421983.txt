@@ -1,0 +1,24 @@
+#include <stdio.h>
+int main () {
+	int polje[100];
+	int n, i=0, j=0, broj=0, zbroj=0, k;
+	do {
+		scanf("%d", &n);
+		if(n != 0) {
+		polje[i] = n;
+		i++;
+		j++;
+		}
+	} while (n != 0);
+	for(i=0; i<j; i++) {
+		do {
+			if(polje[i] < 0) polje[i] = -polje[i];
+			k = polje[i] % 10;
+			zbroj += k;
+			polje[i] /= 10;
+			broj++;
+		} while (polje[i] != 0);
+	}
+	printf("%d %d", broj, zbroj);
+	return 0;
+}

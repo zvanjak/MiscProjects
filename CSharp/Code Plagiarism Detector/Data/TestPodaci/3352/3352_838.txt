@@ -1,0 +1,15 @@
+int veci_od(FILE *f,int n)
+{
+
+struct {
+int redni_br; 
+char prezime[21];
+int bodovi;} pom;
+
+
+int br=0;
+
+while(fread(&pom, 1,sizeof (pom),f)==1)
+{if (pom.redni_br && pom.bodovi>=n)br++;}
+return br;
+}

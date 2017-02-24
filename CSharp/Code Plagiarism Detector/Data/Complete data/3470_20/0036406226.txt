@@ -1,0 +1,58 @@
+#include <iostream>
+
+using namespace std;
+
+class Kruznica
+{
+public:
+      Kruznica() {}
+      Kruznica(float inX, float inY, float inRad)
+      {
+            _x = inX; _y = inY; _radius = inRad;
+      }
+
+      float GetCenterX() { return _x; }
+      float GetCenterY() { return _y; }
+      float GetRadius()  { return _radius; }
+
+private:
+      float       _x, _y;
+      float       _radius;
+};
+class Kvadrat
+{
+public:
+      Kvadrat() {}
+      Kvadrat(float inX, float inY, float inA)
+      {
+            _x = inX; _y = inY; _a = inA;
+      }
+
+      float       GetX() { return _x; }
+      float       GetY() { return _y; }
+
+      float       GetDuljinaStranice() { return _a; }
+
+private:
+      float       _x, _y;           
+      float       _a;                    
+};
+
+
+
+int JeLiUnutra(Kruznica &kruz, Kvadrat &kvad) {
+float xKruz, yKruz, xKvad, yKvad, radius, stranica;
+xKruz = kruz.GetCenterX();
+yKruz = kruz.GetCenterY();
+radius = kruz.GetRadius();
+xKvad = kvad.GetX();
+yKvad = kvad.GetY();
+stranica = kvad.GetDuljinaStranice();
+
+if (((yKruz + radius) <= (yKvad + stranica))
+&& ((yKruz - radius) >= (yKvad - stranica))
+&& ((xKruz - radius) >= (xKvad - stranica))
+&& ((xKruz + radius) <= (xKvad + stranica)))
+return 1;
+else return 0;
+}

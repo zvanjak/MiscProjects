@@ -1,0 +1,24 @@
+#include<stdio.h>
+#include<math.h>
+
+int main()
+{
+	int i,j;
+   double n,pi,t,suma;
+   scanf("%lf",&n);
+   if(n!=(int)n || n>400 || n<1)
+   {
+   	printf("n nije valjan\n");
+      return 0;
+   }   
+   suma=0;
+	for(i=1;i<=n;i++)
+{
+    t=1;
+      t/=(4*i-1)*(4*i+1);
+      suma+=t;
+   }
+	pi=4.0-8*suma;
+   printf("%.8lf\n",pi);
+   return 0;
+}

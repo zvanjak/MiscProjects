@@ -1,0 +1,24 @@
+#include <stdio.h>
+int main () {
+	int a, znam1, znam2, znam3, znam4;
+	scanf("%d", &a);
+	if((a>=1000) && (a<=9999)) {
+		znam1=a/1000;
+		znam2=(a/100)%10;
+		znam3=(a/10)%10;
+		znam4=a%10;
+		if((znam1%2)==0) {
+			znam1 +=1;
+		} if((znam2%2)==0) {
+			znam2 +=1;
+		} if((znam3%2)==0) {
+			znam3 +=1;
+		} if((znam4%2)==0) {
+			znam4 +=1;
+		}
+		a=1000*znam1+100*znam2+10*znam3+znam4;
+		printf("%d", a);
+	} else {
+	return 0;
+}
+}

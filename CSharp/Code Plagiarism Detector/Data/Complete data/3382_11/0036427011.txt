@@ -1,0 +1,21 @@
+#include<stdio.h>
+int main() {
+	int broj,a,b,c,d,pd,dd,sd;
+	scanf ("%d",&broj);
+	d=broj%10;
+	broj /=10;
+	c=broj%10;
+	broj/=10;
+	b=broj%10;
+	broj/=10;
+	a=broj;
+	pd=a*10+b;
+	dd=c*10+d;
+	sd=b*10+c;
+
+	if ((pd*dd)%sd==0)
+		printf("%d",a+c);
+	else printf("%d",c*d);
+
+	return 0;
+}

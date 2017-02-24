@@ -1,0 +1,25 @@
+#include<stdio.h>
+int main()
+{
+	int n, i, zz;
+
+	scanf("%i", &n);
+	if(n <= 0); /* iskljucije negativne brojeve i nulu */
+	else if(n % 13 == 0)
+		printf("%i", 1);
+	else
+	{
+        for(i = 1; i <= 40; i++)
+		{
+			zz = n % 10;
+			n += zz;
+			printf("%i ", n);
+			if(n % 13 == 0 || i >= 40)
+			{
+				printf("%i ", i);
+				break;
+			}
+		}
+	}
+return 0;
+}

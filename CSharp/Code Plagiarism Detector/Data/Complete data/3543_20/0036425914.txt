@@ -1,0 +1,16 @@
+void obrni(zapis **glava)
+{
+     zapis *temp1=NULL,*temp2=NULL;
+     temp1=*glava;
+     temp2=(*glava)->sljed;
+     *glava=NULL;
+     
+     while(1)
+     {
+     temp1->sljed=*glava;
+     *glava=temp1;
+     if (temp2==NULL) return;
+     temp1=temp2;
+     temp2=temp1->sljed;
+     }
+}

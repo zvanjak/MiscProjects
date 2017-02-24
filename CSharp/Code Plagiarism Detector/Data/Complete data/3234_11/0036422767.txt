@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include<math.h>
+
+int main(){
+int n,i=0;
+double suma=0, brojpi;
+scanf("%d", &n);
+if(n>=1 && n<=100) {
+	while(i<n){
+		i+=1;
+		suma+=6*(1/pow(i,2));
+	}
+brojpi=sqrt(suma);
+/*printf("%1.13lf",brojpi);*/
+  printf("%1.12lf",brojpi);
+}
+else{
+	printf("n nije valjan");
+}
+return 0;
+}

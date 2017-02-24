@@ -1,0 +1,39 @@
+int izbacinaj(zapis **glava) 
+{
+    zapis *t1, **p;
+    int br=0;
+    float min, max=0.0;
+
+    if(*glava==NULL) return br;
+
+    for(t1=*glava; t1!=NULL; t1=t1->sljed) {
+      if(t1->pros > max)
+      max = t1->pros;
+    }
+
+    min = max;
+    for(t1=*glava; t1!=NULL; t1=t1->sljed) {
+      if(t1->pros < min)
+      min = t1->pros;
+    }
+    
+    p = glava;
+    for(; *glava && (*glava)->pros != max; glava = &((*glava)->sljed));
+    if(*glava) {
+      t1 = *glava;
+      *glava = (*glava)->sljed;
+      free(t1);
+      br++;
+    }
+    
+    glava = p;
+    for(; *glava && (*glava)->pros != min; glava = &((*glava)->sljed));
+    if(*glava) {
+      t1 = *glava;
+      *glava = (*glava)->sljed;
+      free(t1);
+      br++;
+    }
+    
+    return br;
+}

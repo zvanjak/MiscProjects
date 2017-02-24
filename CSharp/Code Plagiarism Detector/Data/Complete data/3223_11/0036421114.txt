@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <math.h>
+int main()
+{int a,min,max;
+scanf("%d",&a);min=a;max=a;
+if(a%4)
+do
+{scanf("%d",&a);
+if(min>a)
+min=a;
+if(max<a)
+max=a;}
+while(a%4);
+printf("%d %d",max,min);
+return 0;
+}
+
+

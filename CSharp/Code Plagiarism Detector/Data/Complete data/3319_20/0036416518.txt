@@ -1,0 +1,19 @@
+void dodaj(FILE *f) {
+     struct natjecatelj student;
+     struct natjecatelj temp;
+     temp.bodovi = 0;
+     fseek(f, 0L, SEEK_SET);
+     while(1) {
+         if(fread(&student, sizeof(student), 1, f)) {
+             if (student.bodovi > temp.bodovi && student.redni_br != 0) {
+                 temp = student;
+             }
+         } else {
+             break;
+         }
+     }     
+     fseek(f, (temp.redni_br - 1) * sizeof(temp), SEEK_SET);
+     temp.bodovi += 10;
+     fwrite(&temp, sizeof(temp), 1, f);
+     return;
+}

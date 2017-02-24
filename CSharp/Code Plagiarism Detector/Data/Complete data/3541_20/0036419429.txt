@@ -1,0 +1,43 @@
+int izbaciZ(zapis **glava) {
+      zapis *temp;
+      zapis *temp2;
+      float prosjek = 0.;
+      int n = 0;
+      int br = 0;
+      temp = (*glava);
+      if ((*glava) == NULL)
+         return 0;
+         
+      while ((*glava) != NULL) {
+            prosjek += (*glava)->pros;
+            n++;
+            (*glava) = (*glava)->sljed;
+      }
+      
+      prosjek /= (float)n;
+      
+      (*glava) = temp;
+      
+      while ((*glava)->pros < prosjek) {
+            if ((*glava)->spol == 'Z') {
+               
+                  temp2 = *glava;                
+                  (*glava) = (*glava)->sljed;
+                  free(temp2);
+               
+            }
+      }
+      
+      while (temp != NULL) {
+            if (temp->spol == 'Z') {
+               if (temp->pros < prosjek) {
+                  temp2 = *glava;                
+                  temp = temp->sljed;
+                  free(temp2);
+                  br++;
+               }
+            }
+            temp = temp->sljed;
+      }
+      return br;      
+}

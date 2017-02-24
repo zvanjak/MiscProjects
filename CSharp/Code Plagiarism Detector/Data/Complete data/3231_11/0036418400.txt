@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <math.h>
+int main () {
+       int i=0, n;
+       float x, suma=0;
+       scanf ("%d", &n);
+       if (n>=1 && n<=30) {
+               do {
+                       x=pow(-1, i)*((float)1/(pow(2, i)));
+                       suma+=x;
+                       i++;
+               } while (i<n);
+               printf ("%.12f", suma);
+       }
+       else printf ("n nije valjan");
+       return 0;
+}

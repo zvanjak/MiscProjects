@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main () {
+	int a,b,c,d,x,um;
+	scanf ("%d", &x);
+	a = x / 1000;
+	b = (x/ 100)%10;
+	c = (x/10)%10;
+	d = x %10;
+	um = a*b*c*d;
+	if (um % 2 == 0){
+		printf ("%d", d);
+	}
+	else { 
+		printf ("%d", a);
+   }
+return 0;
+}

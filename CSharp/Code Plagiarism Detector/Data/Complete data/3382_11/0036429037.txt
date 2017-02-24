@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main(){
+int n,z1,z2,z3,z4,x;
+scanf("%d",&n);
+z1=n/1000;
+z2=(n%1000)/100;
+z3=(n%100)/10;
+z4=n%10;
+if( ((z1*10+z2)*(z3*10+z4))%(z2*10+z3)==0){
+x=z1+z3;
+}else{
+x=z3*z4;
+}
+printf("%d",x);
+return 0;
+}

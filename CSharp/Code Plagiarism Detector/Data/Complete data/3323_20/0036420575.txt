@@ -1,0 +1,12 @@
+char *rStrchr(char *niz, char c)
+  { char *p;
+    kontrola();
+
+     if(*niz == '\0') return NULL;
+
+     p = rStrchr(niz+1, c);
+     if(*niz == c)
+      p=niz;
+     return p;
+
+      }

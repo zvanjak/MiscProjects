@@ -1,0 +1,21 @@
+char *IzbaciPresjek(char *niz1,char *niz2)
+{
+char *pom,*p2;
+int c=0,postoji[256]={0};
+while (*niz2) postoji[(int)*(niz2++)+128]=1;
+pom=niz1;
+while (*pom) if (!postoji[(int)*(pom++)+128]) c++;
+pom=(char *) malloc(c*sizeof(char)+1);
+p2=pom;
+while (*niz1)
+	{
+	if (!postoji[(int) *niz1+128]) 
+		{
+		*pom=*niz1;
+		pom++;
+		}
+	niz1++;
+	}
+*pom='\0';
+return p2;
+}

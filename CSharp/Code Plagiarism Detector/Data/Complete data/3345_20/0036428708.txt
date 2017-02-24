@@ -1,0 +1,10 @@
+double sumareda(int N){
+
+	kontrola();
+
+	if(N==0)
+		return 0;
+
+	return(pow(N,-4) + sumareda(N-1));
+
+}

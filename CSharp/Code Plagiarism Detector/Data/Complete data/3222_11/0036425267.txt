@@ -1,0 +1,13 @@
+#include <stdio.h>
+int main(){
+    int n,z,p=0;
+	scanf("%d",&n);
+	while(1){
+		if ((p==40)||(n%13==0))break;
+		z=n-(n/10)*10;
+		n+=z;
+		printf("%d ",n);
+		p+=1;}
+		printf("\n %d\n",p);
+		return 0;
+}

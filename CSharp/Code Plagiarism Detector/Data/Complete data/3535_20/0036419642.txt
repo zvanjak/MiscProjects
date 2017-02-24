@@ -1,0 +1,12 @@
+void staviNaDno(Stog *stog, int broj)
+{
+	int b;
+	Stog *pom = new Stog();
+	while(stog->Skini(&b))
+		pom->Stavi(b);
+
+	pom->Stavi(broj);
+
+	while(pom->Skini(&b))
+		stog->Stavi(b);
+}

@@ -1,0 +1,11 @@
+int rZamijeni(char *niz, char stariZnak, char noviZnak) {
+    int nzmj;    
+    kontrola();
+    if (*niz=='\0') return 0;
+    nzmj = rZamijeni(niz+1, stariZnak, noviZnak);
+    if (*niz==stariZnak) {
+       *niz = noviZnak;
+       nzmj++;
+       }    
+    return nzmj;
+}

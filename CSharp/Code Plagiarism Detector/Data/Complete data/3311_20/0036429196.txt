@@ -1,0 +1,11 @@
+float prosjek(FILE *f)
+{
+	int s=0,n=0;
+	struct album al;
+	while(fread(&al,sizeof(al),1,f)==1)
+	{
+		s+=al.prodano;
+		n++;
+	}
+	return (float)(s)/n;
+}

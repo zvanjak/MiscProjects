@@ -1,0 +1,48 @@
+class Kosarica
+{
+private:
+	// Članske varijable
+	float * proizvodi;	// proizvodi u košarici (polje cijena proizvoda)
+	int n;				// broj elemenata polja proizvoda
+
+public:
+	// Konstruktor
+	Kosarica()
+	{
+		proizvodi = NULL;
+		n = 0;
+	}
+	// Destruktor
+	~Kosarica()
+	{
+		free(proizvodi);
+	}
+
+	// Metode - članske funkcije
+	void DodajProizvod(float cijena)
+	{
+		proizvodi = (float *) realloc(proizvodi, (n + 1) * sizeof(float));
+		*(proizvodi + n) = cijena; //proizvodi[n] = cijena;
+		n++;
+	}
+	float UkupnaCijena()
+	{
+		float sum = 0;
+		for (int i = 0; i < n; i++)
+		{
+			sum += *(proizvodi + i);
+		}
+		return sum;
+	}
+	float NajskupljiProizvod()
+	{
+		float max = 0;
+
+		for (int i = 0; i < n; i++)
+		{
+			if (*(proizvodi + i) > max)
+				max = *(proizvodi + i);
+		}
+		return max;
+	}
+};

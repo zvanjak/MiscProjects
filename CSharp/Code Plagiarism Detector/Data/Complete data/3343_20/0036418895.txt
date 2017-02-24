@@ -1,0 +1,12 @@
+float niz(int i) {
+	float a,b;
+
+	kontrola();
+
+	if (i < 3) return (i + 1);
+
+	a = niz( i-1 );
+	b = niz( i-3 );
+
+	return (a - b)/(a + b);
+}

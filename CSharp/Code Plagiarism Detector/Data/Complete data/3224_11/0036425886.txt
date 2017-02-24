@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main ()
+{
+int n,i;
+double rjesenje;
+scanf("%d",&n);
+if((n>1) || (n<400));  {
+printf("n nije valjan\n");
+return 0;
+}
+for(i=1; i<n+1; i++) {
+rjesenje+=1./((4*i-1)*(4*i+1));
+}
+rjesenje = ((rjesenje*8)-4)*(-1);
+printf("%.8f\n", rjesenje);
+return 0;
+}

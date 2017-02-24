@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <math.h>
+int main (){
+	int n,i,j=2;
+	long double y=0;
+	scanf("%d",&n);
+	if (n<1 ||n>500)
+	{
+		printf("n nije valjan");
+		exit(1);
+	}
+	else
+	{
+		for (i=1;i<=n;i=i+2)
+		{
+			y=y+1./i * pow(-1,j);
+			j++;
+		}
+	}
+	y=y*4;
+	printf("%.12f",y);
+	return 0;
+}

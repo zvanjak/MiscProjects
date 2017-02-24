@@ -1,0 +1,29 @@
+int promijenimbr(zapis **glava, int starimbr, int novimbr){
+	zapis *pamti;
+	zapis *pom;
+	
+	if (*glava==NULL) return 0;
+	
+	pamti=NULL;
+
+	if ((*glava)->matbr == starimbr){
+		pamti=*glava;
+		*glava=(*glava)->sljed;
+	}
+	else{
+		pom=*glava;
+		while(pom->sljed!=NULL && pom->sljed->matbr!=starimbr) pom=pom->sljed;
+		if (pom->sljed!=NULL){ 
+			pamti=pom->sljed;
+			pom->sljed=pamti->sljed;
+		}
+	}
+	if (pamti==NULL) return 0;
+	
+	pamti->matbr=novimbr;
+	while (*glava!=NULL && (*glava)->matbr < novimbr) glava=&((*glava)->sljed);
+	pamti->sljed=*glava;
+	*glava=pamti;
+	
+	return 1;
+}

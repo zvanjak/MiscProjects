@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main(){
+	int i,n;
+	double el,zbroj;
+	i=0; el=0; zbroj=0;
+	scanf("%d",&n);
+	if ((n>500)||(n<1)) printf("n nije valjan");
+	else {
+		for (i = 1; i <= n; i=i+1) {
+			el=((i%2)==0) ? -(1/(2*i-1)) : 1/(2*i-1);
+			zbroj=zbroj+el;
+		}
+		printf("%1.12f",zbroj*4);
+	};
+	return 0;
+}
+

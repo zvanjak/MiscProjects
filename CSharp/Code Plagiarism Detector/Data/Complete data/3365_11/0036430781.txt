@@ -1,0 +1,51 @@
+#include <stdio.h>
+int main () {
+int n,z1,z2,z3,s;
+scanf ("%d",&n);
+if (n >= 100 && n <= 999) {
+z1=n/100;
+z2=(n/10)%10;
+z3=n%10;
+    if ((n >= 250) && (n <= 950)) {
+           if ((z1%2!=0)&&(z2%2!=0)&&(z3%2!=0)) {
+               s=z1+z2+z3;
+               printf ("%d",s);
+               }
+            else if ((z1%2!=0)&&(z2%2!=0)&&(z3%2==0)) {
+               s=z1+z2;
+               printf ("%d",s);
+               }
+            else if ((z1%2!=0)&&(z2%2==0)&&(z3%2!=0)) {
+               s=z1+z3;
+               printf ("%d",s);
+               }
+            else if ((z1%2==0)&&(z2%2!=0)&&(z3%2!=0)) {
+               s=z2+z3;
+               printf ("%d",s);
+               }
+            else if ((z1%2!=0)&&(z2%2==0)&&(z3%2==0)) {
+               s=z1;
+               printf ("%d",s);
+               }
+            else if ((z1%2==0)&&(z2%2!=0)&&(z3%2==0)) {
+               s=z2;
+               printf ("%d",s);
+            else if ((z1%2==0)&&(z2%2==0)&&(z3%2!=0)) {
+               s=z3;
+               printf ("%d",s);
+               }
+            else {
+               s=0;
+               printf ("%d",s);
+               }
+    }
+    else {
+       s=z1+z2+z3;
+       printf ("%d",s);
+    }
+}
+else {
+printf ("Broj nije prirodan ili troznamenkast!");
+}
+return 0; 
+}

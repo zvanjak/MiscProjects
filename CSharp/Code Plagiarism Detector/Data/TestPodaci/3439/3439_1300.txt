@@ -1,0 +1,32 @@
+#include <stdio.h>
+ 
+#define MAX 20
+ 
+int main () {
+   int n,i,j;
+   int mat[MAX][MAX];
+   int neparni, prod;
+ 
+   scanf ("%d", &n);
+   for (i=0; i<n; i++)
+      for (j=0; j<n; j++)
+         scanf("%d", &mat[i][j]);
+ 
+   neparni = 0;
+   for (i=0; i<n; i++)
+      for (j=0; j<n; j++)
+         if (i%2 == 0 && j%2 == 0)
+            neparni = neparni || mat[i][j] % 2;
+ 
+   prod = 1;
+   if (!neparni)
+      for (i=0; i<n; i++)
+         prod *= mat[i][i];
+   else
+      for (i=0; i<n; i++)
+         prod *= mat[i][n-1 - i];
+  
+   printf("%d", prod);
+ 
+   return 0;
+}

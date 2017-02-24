@@ -1,0 +1,19 @@
+#include <stdio.h>
+#define MAX 100
+
+void main () {
+	int x[MAX], i, j, counter=0, y;
+	for(i=0; i<MAX; i++) {
+		scanf("%d", &x[i]);
+		if(x[i]==-1) break;
+		counter++;
+	}
+	for(i=0; i<counter; i++) {
+		if(i%2==1) {
+			y=x[i];
+			for(j=0; j<y; j++) {
+				printf("%d ", x[i-1]);
+			}
+		}
+	}
+}

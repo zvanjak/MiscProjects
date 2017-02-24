@@ -1,0 +1,7 @@
+char *rStrchr(char *niz, char c){
+    int n = 0;
+    kontrola();
+    if ( niz[n] == 0) return NULL;
+    if ( niz [n] == c) return niz+n;
+    else return rStrchr ( niz+( n+1 ) , c);  
+}

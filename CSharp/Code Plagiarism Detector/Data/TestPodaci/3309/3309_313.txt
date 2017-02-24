@@ -1,0 +1,17 @@
+typedef struct s{
+char naziv[31];
+char autor[21];
+int prodano;
+}albumi;
+int br_prodanih(FILE *f,char *autor){
+int br_prod=0;
+albumi c;
+fseek(f,0L,SEEK_SET);
+while(fread(&c,sizeof(c),1,f)){
+if(strcmp(autor,c.autor)==0){
+br_prod+=c.prodano;
+}
+fseek(f,sizeof(c),SEEK_CUR);
+}
+return br_prod;
+}

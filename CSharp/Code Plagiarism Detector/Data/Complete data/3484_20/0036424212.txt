@@ -1,0 +1,58 @@
+class CjelobrojniNiz {
+        private:
+        int *GlavniNiz, N;
+
+        public:
+        int VecinaJednaka;
+       
+    CjelobrojniNiz(int *niz, int n) {
+         GlavniNiz = (int *)malloc(sizeof(int) * n);
+        
+             for (int i = 0; i < n; i++) GlavniNiz[i] = niz[i];
+            
+         N = n; VecinaJednaka = 0; int i, j, brojac;
+       
+         for (i = 0; i < N; i++)
+                {
+                        brojac = 1;
+                        for (j = i+1; j < N; j++) if ( niz[i] == niz[j]) brojac++;
+                if (brojac > n/2) {VecinaJednaka = 1; break;}
+            }
+        }
+
+    ~CjelobrojniNiz() { free(GlavniNiz); }
+  CjelobrojniNiz(const CjelobrojniNiz &copyniz) {
+        GlavniNiz = (int *)malloc(sizeof(int)*copyniz.N); 
+ for (int i = 0; i < copyniz.N; i++) GlavniNiz[i] = copyniz.GlavniNiz[i];                    
+        N = copyniz.N;
+        VecinaJednaka = copyniz.VecinaJednaka;                    
+    }
+ 
+   
+        int Usporedi (CjelobrojniNiz niz) {
+            if ( N != niz.N) return 0;
+        for (int i = 0; i < N ; i++) if ( GlavniNiz[i] != niz.GlavniNiz[i] ) return 0;
+            return 1;  
+        }
+
+        int *VratiPresjek (CjelobrojniNiz niz, int *n) {
+                int p1=0, p2=0, *NoviNiz = (int *)malloc(sizeof(int) * N);
+        *n = 0;
+        while (p2 < N && p1 < niz.N)
+            {
+                if ( niz.GlavniNiz[p1] > GlavniNiz[p2] ) p2++;
+                else if (niz.GlavniNiz[p1] < GlavniNiz[p2]) p1++;
+                else {
+                        while (p2 < N && p1 < niz.N) {
+                           if ( GlavniNiz[p2] == niz.GlavniNiz[p1] ) NoviNiz[(*n)++] = GlavniNiz[p2]; else break;
+                           while ( GlavniNiz[++p2] == GlavniNiz[p2-1] && p2 < N );
+                           while ( niz.GlavniNiz[++p1] == niz.GlavniNiz[p1-1] && p1 < niz.N ); 
+                           }  
+                      break;
+                      }
+            }  
+
+         NoviNiz = (int *)realloc(NoviNiz, sizeof(int) * (*n));
+         return NoviNiz;
+    }
+};

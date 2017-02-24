@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <conio.h>
+#include <math.h>
+main(){
+int n,m,i=1,j,zn,zbr=0,a,b;
+scanf("%d",&n);m=n;
+if(n<=0) {printf("%d",n);getche();return 0;}
+else{while(m>=10){m/=10;++i;} m=n;
+    for(a=b=0;a<=i;++a,b++)
+        {zn=(m/((int)pow(10.,a))%10);
+        (zn%2==0)? (b--):(zbr+=(zn*((int)pow(10.,b))));}
+        printf("%d",zbr);
+        getche();    return 0;}}

@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <math.h>
+
+int main () {
+
+	short i,n;
+	double r1=0.,r2=0.,rez=0.;
+
+	
+	scanf("%d", &n);
+
+	if (n>=1 && n<=30) {
+		
+		for (i=0; i<n; i++) {
+			if (i%2==0) 
+				r1 = r1 + ( 1 / pow(2,i) );
+			else
+				r2 = r2 + ( 1 / pow(2,i) );
+		}
+		
+		rez=r1-r2;
+		printf("%.12lf", rez);
+		printf("\n");
+	}
+	else {
+		printf("n nije valjan");
+		printf("\n");
+	}
+
+	
+	return 0;
+}
+		
+

@@ -1,0 +1,69 @@
+void dodaj(FILE *f) {
+
+	struct natjecatelj{
+		int redni_br;
+		char prezime[20+1];
+		int bodovi;
+	}zapis;
+
+
+	int max=0,mjesto=0,korak=0,zastavica=0;
+	
+
+
+	while (fread(&zapis, sizeof(zapis), 1, f)==1){
+
+	      if (fseek (f, (long)(korak)*sizeof(zapis), SEEK_SET) != 0) break;
+
+	        fseek(f, (long)(korak)*sizeof(zapis), SEEK_SET);
+	        fread(&zapis, sizeof(zapis), 1, f);
+       
+			
+ 			if(zapis.redni_br!=0){
+           		if (mjesto==0){
+					max=zapis.bodovi;
+					mjesto=zapis.redni_br;
+					}else{
+					    if (max<zapis.bodovi){
+						max=zapis.bodovi;
+						mjesto=zapis.redni_br;
+						}
+					}
+			}
+	korak++;
+
+			
+		}
+	
+	korak=0;
+	while (1){
+
+	      if (fseek (f, (long)(korak)*sizeof(zapis), SEEK_SET) != 0) break;
+
+	        fseek(f, (long)(korak)*sizeof(zapis), SEEK_SET);
+	        fread(&zapis, sizeof(zapis), 1, f);
+			
+			if(mjesto==0)break;
+			if(zapis.redni_br!=0){
+			if (mjesto==zapis.redni_br){
+			     zapis.bodovi=max+10;
+				 fseek(f, (long)(zapis.redni_br-1+zastavica)*sizeof(zapis), SEEK_SET);
+           	     fwrite(&zapis, sizeof(zapis), 1, f);	
+                 break;
+			
+			}
+			}
+			else{
+			zastavica++;
+			}
+
+			
+	korak++;
+
+			
+		}
+	
+	
+
+
+}

@@ -1,0 +1,18 @@
+double sumareda (double x, int N)
+{
+	int i, sign=-1;
+	double y;
+	
+	kontrola();
+	
+	if(N<=0)
+		return 0;
+		
+	y=x-1;
+	for(i=1; i<N; i++)
+		y*=y;
+	if(N%2)
+		sign=1;
+	
+	return sign*(y/N) + sumareda(x, N-1);
+}

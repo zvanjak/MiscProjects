@@ -1,0 +1,26 @@
+void dodaj(FILE *f)
+{
+    int max = 0, rb;
+    struct natjecatelj z;
+    fseek(f, 0L, SEEK_SET);
+    while(fread(&z, sizeof(z), 1, f) == 1)
+    {
+        if((z.redni_br != 0) && (z.bodovi > max))
+        {
+            rb = z.redni_br;
+            max = z.bodovi;
+        }
+    }
+    
+    fseek(f, 0L, SEEK_SET);
+    while(fread(&z, sizeof(z), 1, f) == 1)
+    {
+        if(z.redni_br == rb)
+        {
+            z.bodovi += 10;
+            fseek(f, -1 * (long)sizeof(z), SEEK_CUR);
+            fwrite(&z, sizeof(z), 1, f);
+            break;
+        }
+    }
+}

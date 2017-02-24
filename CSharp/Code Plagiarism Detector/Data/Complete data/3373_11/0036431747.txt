@@ -1,0 +1,43 @@
+  #include <stdio.h>
+
+int main (){
+
+int a, b, as, aso, ad, ado, aj, ajo, ao, aoo, bs, bso, bd, bdo, bj, bjo, bo, boo;
+
+scanf("%d %d", &a, &b);
+
+if ((a<100 || a>999) || (b<100 || b>999)){
+
+as=a/8; aso=a%8;
+
+ad=as/8; ado=as%8;
+
+aj=ad/8; ajo=ad%8;
+
+ao=aj/8; aoo=aj%8;
+
+bs=b/8; bso=b%8;
+
+bd=bs/8; bdo=bs%8;
+
+bj=bd/8; bjo=bd%8;
+
+bo=bj/8; boo=bj%8;
+
+}
+
+if (a>b){
+
+printf("%d%d%d%d\n", aoo, ajo, ado, aso);}
+
+if (a<b){
+
+printf("%d%d%d%d\n", boo, bjo, bdo, bso);}
+
+if (a==b){
+
+printf("%d%d%d%d\n", aoo, ajo, ado, aso);}
+
+return 0;
+
+}

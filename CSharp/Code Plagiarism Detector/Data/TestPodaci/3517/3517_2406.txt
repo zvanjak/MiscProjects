@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <math.h>
+double dx;
+
+double f(double x){
+	return pow(x,sinh(x))*cosh(pow(x,2.));
+
+}
+double derivacija(double x){
+	return (f(x + dx) - f(x)) / dx;
+}
+int main(){
+	float x[50+1]={-1};
+	double der[50+1]={0}, kut[50+1]={0};
+	int i=0,n=0;
+	scanf("%lf", &dx);
+	while (1){
+		scanf("%f", &x[i]);
+		if ( x[i] == 0 ) break;
+		der[i]=derivacija( x[i]);
+		i++;
+		n++;
+	}
+	for(i=0;i<n;i++)
+	{
+		kut[i]=atan(der[i]);
+		printf("%.2lf\n",kut[i]);
+	}
+	return 0;
+}

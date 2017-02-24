@@ -1,0 +1,22 @@
+#include <stdio.h>
+int main()
+{int br,pom;
+ char a,b;
+ scanf("%d",&br);
+ if(br<16 || br>255)
+   {printf("Izvan intervala");
+    return 0;}
+ pom=br%16;
+ if(pom>=0 && pom<=9)
+    a=48+pom;
+ else
+    a=65+(pom-10);
+ br/=16;
+ pom=br%16;
+ if(pom>=0 && pom<=9)
+    b=48+pom;
+ else
+    b=65+(pom-10);
+ printf("%c%c",b,a); 
+ return 0;
+}

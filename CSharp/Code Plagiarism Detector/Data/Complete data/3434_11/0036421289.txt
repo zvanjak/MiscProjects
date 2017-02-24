@@ -1,0 +1,41 @@
+#include<stdio.h>
+int main () {
+	int vrti=1, a[100][2], i=0,kvad_1=0,kvad_2=0,kvad_3=0,kvad_4=0;
+	while (vrti) {
+		printf ("Upisi koordinate nove tocke");
+		scanf ("%d %d", &a[i][0], &a[i][1]);
+		if ((a[i][0]==0) && (a[i][1]==0))
+			vrti = 0;
+		else {
+			if ((a[i][0]>0)&&(a[i][1]>0))
+				kvad_1+=1;
+			if ((a[i][0]<0)&&(a[i][1]>0))
+				kvad_2+=1;
+	        if ((a[i][0]<0)&&(a[i][1]<0))
+                kvad_3+=1;
+	        if ((a[i][0]>0)&&(a[i][1]<0))
+                kvad_4+=1;
+	        if ((a[i][0]==0)&&(a[i][1]>0)){
+		        kvad_1+=1;
+                kvad_2+=1;
+			}
+			if ((a[i][0]==0)&&(a[i][1]>0)){
+		        kvad_3+=1;
+                kvad_4+=1;
+			}
+			if ((a[i][0]>0)&&(a[i][1]==0)){
+		        kvad_1+=1;
+                kvad_4+=1;   
+			}
+			if ((a[i][0]<0)&&(a[i][1]==0)){
+		        kvad_2+=1;
+                kvad_3+=1;
+			}
+		}
+		if (i==99)
+			vrti = 0;
+		i++;
+	}
+	printf ("%d %d %d %d",kvad_1,kvad_2,kvad_3,kvad_4);
+    return 0;
+}

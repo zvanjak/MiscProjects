@@ -1,0 +1,44 @@
+/*
+Program treba učitati dimenzije matrice n*m, prvo broj redaka (n), a zatim broj stupaca (m)
+te zatim učitati elemente matrice. Redoslijed unosa elemenata matrice jest slijedeći: 
+prvo se unosi prvi red, zatim drugi red, ...n-ti red, 
+a unutar reda se unose elementi slijeva na desno od prvog do m-tog stupca. 
+Indeksi elemenata se počinju numerirati od 0, a završavaju sa n-1 odnosno m-1, t.d. 
+element u gornjem lijevom kutu ima indeks (0, 0), a element u donjem desnom kutu ima indeks
+(n-1, m-1). Program treba ispisati sumu produkta elemenata parnih redova, 
+tj. potrebno je izmnožiti elemente reda za svaki parni red i zatim zbrojiti te umnoške. 
+Voditi računa o numeriranju indeksa. 
+Primjer: za ulazni niz 3 4 1 3 4 1 2 5 10 1 2 1 1 1, program kao izlaz treba ispisati 14,
+jer se matrica dimenzija 3*4, a umnožak elemenata nultog reda iznosi 12, 
+a umnožak elemenata drugog reda iznosi 2. Sumirano, 12 i 2 daju 14.
+*/
+#include <stdio.h>
+#define maxstup 20
+int main()
+{
+	int matrica[maxstup][maxstup];
+	int n=0,m=0, red, stu, suma=0, umnozak=1;
+	scanf("%d", &n);
+	scanf("%d", &m);
+	for (red=0; red<n; red++)
+	{
+		for (stu =0; stu <m ; stu++)
+		{
+			scanf("%d", &matrica[red][stu]);
+		}
+	}
+	for (red=0; red<n; red++)
+	{
+		if (red%2 == 0)
+		{
+			umnozak = 1;
+			for (stu =0; stu <m ; stu++)
+			{
+				umnozak = umnozak * matrica[red][stu];
+			}
+			suma = umnozak + suma;
+		}
+	}
+	printf("%d", suma);
+	return 0;
+}

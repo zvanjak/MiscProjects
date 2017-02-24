@@ -1,0 +1,8 @@
+Krug fun4(Pravokutnik p){
+    Tocka LDkut=p.getDLkut();
+    Tocka *sred= new Tocka((LDkut.X + p.getSirina()/2), (LDkut.Y +
+p.getVisina()/2));
+    Krug *circle= new Krug(*sred,
+(pow(((pow((p.getSirina()/2),2))+(pow((p.getVisina()/2),2))), 0.5)));
+    return *circle;
+}

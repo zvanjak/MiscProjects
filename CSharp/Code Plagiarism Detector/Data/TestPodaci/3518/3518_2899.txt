@@ -1,0 +1,53 @@
+#include <stdio.h>
+
+#include <math.h>
+
+double funkcija(double x)
+
+{
+
+
+return pow(x,sin(x))*tanh(pow(x,pow(exp(1.),x)));
+}
+
+int main()
+
+{
+
+int i=-1,br;
+
+double d=0.1;
+
+float x[50];
+
+double der[50];
+
+scanf("%lf",&d);
+
+do
+
+{
+
+i++;
+
+scanf("%f",&x[i]);
+
+der[i]=((funkcija(x[i]+d)-funkcija(x[i]))/d);
+
+}while (i<50 && x[i]!=0);
+
+br=0;
+
+while (br<i)
+
+{
+
+printf("%.2lf",atan(der[br]));
+
+br++;
+
+}
+
+return 0;
+
+}

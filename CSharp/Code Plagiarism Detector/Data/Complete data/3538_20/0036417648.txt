@@ -1,0 +1,50 @@
+Red *VratiBrojeve (Red  *red) {
+	Red *drugired = new Red();
+	int *polje, *pom, broj, i, j=0, brel=0, p, p2, pot, k;
+	while (red->SkiniIzReda(&broj)) {
+		if (!j) {
+			polje = (int *)malloc ((broj+1) * sizeof(int));
+			polje[0] = broj;
+			brel += broj+1;
+			for (i=1; i<=polje[0]; i++) {
+				red->SkiniIzReda(&broj);
+				polje[i] = broj;
+				}
+			j++;
+		}
+		else {
+			pom = (int *)malloc (broj * sizeof(int));
+			pom[0] = broj;
+			p = brel;
+			brel+=broj+1;
+			for (i=1; i<=pom[0]; i++) {
+				red->SkiniIzReda(&broj);
+				pom[i] = broj;
+			}
+			polje = (int *)realloc (polje, (brel)*sizeof(int));
+			for (i=0; i<pom[0]+1; i++, p++) {
+				polje[p] = pom[i];
+			}
+		}
+	}
+	for (i=0; i<brel; i++) {
+		broj = polje [i];
+		red->DodajURed(broj);
+	}
+	j=0;
+	while ( j<brel ) {
+		p = polje [j];
+		j++;
+		broj = 0;
+		p2 = p;
+		for (i=0; i<p; i++) {
+			pot = 1;
+			for (k=p2; k>1; k--) pot*=10;
+			broj += polje[j]*pot;
+			p2--;
+			j++;
+		}
+		drugired->DodajURed(broj);
+	}
+	return drugired;
+}

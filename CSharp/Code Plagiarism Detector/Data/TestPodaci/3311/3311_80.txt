@@ -1,0 +1,19 @@
+float prosjek (FILE *f) {
+
+	struct album disco;
+
+	float koliko_ima=0;
+	float pojedinacan=0;
+	float p;
+
+	while(fread(&disco, sizeof(struct album),1,f)==1) {
+
+		koliko_ima++;
+		if(disco.prodano>0) { pojedinacan=pojedinacan+disco.prodano; }
+
+	}
+
+	p=(pojedinacan/koliko_ima);
+
+	return p;
+};

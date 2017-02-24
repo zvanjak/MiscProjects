@@ -1,0 +1,13 @@
+int br_prodanih(FILE *f, char *autor)
+{
+  int c=0;
+  struct zapis z;
+
+  while(!(fscanf(f, "%s %s %d\n", z.naziv, z.autor, &z.prodano) == EOF))
+  {
+    if (z.autor == autor)
+      c += z.prodano;
+  }
+
+  return c;
+}

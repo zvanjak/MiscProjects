@@ -1,0 +1,32 @@
+#include <stdio.h>
+int main (void){
+	int graf[44]={0}, i, a, gr,n;
+	int *p;
+	p=&graf[2];
+	i=2;
+	scanf ("%d",&graf[0]);
+	scanf ("%d",&graf[1]);
+	n=2;
+	while (i<45) {
+		scanf ("%d",&a);
+		if ((a==50) && (i%2==0)) {graf[i]=a;
+		p++;	
+		i++; n++;
+		scanf("%d", &graf[i]);n++; 
+		i=50;} 	
+		else if ((a >*(p-2))&& (i%2==0)) { graf[i]=a;
+												p++; 
+												i++;
+												n++;} 
+			else if (i%2) {graf[i]=a;
+						p++; 
+						i++;n++;} 
+			 else scanf ("%d ",&gr);
+	}
+	for (i=3; i<=(n); i+=2){
+		if (graf[i-2]<graf[i]) printf ("Raste ");
+		if (graf[i-2]>graf[i]) printf ("Pada ");
+		if (graf[i-2]==graf[i]) printf ("Ravan ");
+	}
+	return 0;
+}

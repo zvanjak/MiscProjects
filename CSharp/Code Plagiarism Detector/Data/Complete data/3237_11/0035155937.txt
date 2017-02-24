@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main()
+{
+ double r,k=0,pi; 
+ int n,i;
+ 
+ scanf("%d",&n);
+ if ((n<1) || (n>30)){
+           
+           }else{
+                 for(i=1;i<=n;i++){
+                 r=(1./pow(i,6));
+                 k=k+r;
+                 }
+                 pi=pow((k*945.),(1./6));
+                 printf("PI je:%.12f\n",pi);
+                      }
+ system("PAUSE");	
+  return 0;
+}
+

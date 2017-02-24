@@ -1,0 +1,92 @@
+#include<string.h>
+typedef struct{
+	char ime[20+1];
+	char prezime[30+1];
+	char jmbag[10+1];
+	int ocjena;
+} tip;
+struct atom{
+	tip student;
+	atom *sljedeci;
+};
+
+int brojElementa(atom *glava){
+	int brojchek=1;
+	if(glava==NULL)return 0;
+	while((*glava).sljedeci){
+		brojchek++;
+		glava=glava->sljedeci;
+	}
+	return brojchek;
+}
+
+int dodaj (atom **glavap, tip element){
+	atom *novi;
+	novi=(atom *)malloc(sizeof(atom));
+	if(novi==NULL)return 0;
+	novi->student=element;
+	(*novi).sljedeci=*glavap;
+	*glavap=novi;
+	return 1;
+}
+
+int minOcjena(atom *glava){
+	int minimalac=(*glava).student.ocjena;
+	if(glava==NULL)return -1;
+	while(glava->sljedeci){
+		if((*glava).student.ocjena<minimalac)
+			minimalac=glava->student.ocjena;
+	glava=glava->sljedeci;
+	}
+	return minimalac;
+}
+
+float prosjOcjena(atom *glava){
+	int n=0;
+	int suma=0;
+	if(glava==NULL)return 0;
+	while(glava){
+		n++;
+		suma+=(*glava).student.ocjena;
+		glava=glava->sljedeci;
+	}
+	return (float)suma/n;
+}
+
+int izbaciPrezimeSadrzi(atom **glavap, char *prezimePodniz){
+	int brojcek=0, zastavica=1;
+	atom *pom, *pom1, *pom2,*pom3;
+	if(*glavap==NULL)return -1;
+	pom=*glavap;
+	pom2=(atom *)malloc(sizeof(atom));
+	*pom2=*(*glavap);
+	while(pom){
+		if(!zastavica){
+			pom3=pom2;
+			pom2=pom2->sljedeci;
+			free(pom3);
+		}
+		if(strstr(pom->student.prezime, prezimePodniz)!=NULL){
+			if(pom==*glavap){
+				brojcek++;
+				*glavap=(*glavap)->sljedeci;
+				*pom2=*(*glavap);
+				pom1=pom;
+				pom=*glavap;
+				free(pom1);
+			}
+			else{
+				brojcek++;
+				pom1=pom;
+				pom2->sljedeci=(*pom).sljedeci;
+				pom=(*pom).sljedeci;
+				free(pom1);
+				zastavica=0;
+			}
+		}
+		else{
+			pom=pom->sljedeci;
+		}
+	}
+	return brojcek;
+}

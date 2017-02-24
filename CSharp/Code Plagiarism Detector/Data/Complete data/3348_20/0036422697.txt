@@ -1,0 +1,8 @@
+double sumareda(int N){
+  double clan;
+  kontrola();
+  if(N==0)return 0;
+  if(N==1)return(double)1/15;
+  clan=(double)1/((4*N-1)*(4*N+1));
+  return clan+sumareda(N-1);
+}

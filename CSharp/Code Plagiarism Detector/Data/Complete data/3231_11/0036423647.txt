@@ -1,0 +1,17 @@
+# include <stdio.h>
+int main () {
+	int i,n;
+	float b,suma;
+	scanf("%d",&n);
+	if ((n>0)&&(31>n)) {
+		suma=0;
+		b=1;
+		for(i=1;i<=n;i=i+1) {
+			suma=suma+b;
+			b=(-0.5)*b;
+		}
+		printf("%0.12f",suma);
+	}
+	else printf("n nije valjan");
+	return 0;
+}

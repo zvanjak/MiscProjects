@@ -1,0 +1,25 @@
+void zamijeni(char * ulazni, int *broj){
+	int i,z0=0,z1=0,z2=0;
+	int br=0;char t;
+	int L=strlen(ulazni);
+
+	for(i=0;i<L;i++){
+		t=*(ulazni+i);
+		if(isalpha(t)){
+			if(br==0){*(ulazni+i)=toupper(t);br++;}
+				else{*(ulazni+i)=tolower(t);}
+			z0++;
+		}
+		if(isdigit(t)){
+			z1++;
+			*(ulazni+i)='!';
+			while(isdigit(*(ulazni+i+1))){
+				z1++;
+				*(ulazni+i+1)=0;
+				strcat(ulazni,ulazni+i+2);
+			}
+		}
+		if(!isalpha(t)&& !isdigit(t)&& isprint(t)){z2++;*(ulazni+i)='?';}
+	}
+	*broj=(z0>z1?z0:z1)>(z1>z2?z1:z2)?(z0>z1?z0:z1):(z1>z2?z1:z2);
+}

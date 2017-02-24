@@ -1,0 +1,20 @@
+int veci (int prvi, int drugi) {
+	if (prvi > drugi) {
+		return prvi;
+	} else {
+		return drugi;
+	}
+}
+char *IzbaciPresjek (char *niz1, char *niz2) {
+	int   niz2len = strlen(niz2);
+	char *noviNiz = malloc((unsigned) (veci(strlen(niz1), niz2len)+1));
+	char *tmpniz  = noviNiz;
+
+	do {
+		if (strchr(niz2, *niz1) == NULL) {
+			*(tmpniz++) = *niz1;
+		}
+	} while (*(++niz1) != '\0');
+	*tmpniz = '\0';
+	return noviNiz;
+}

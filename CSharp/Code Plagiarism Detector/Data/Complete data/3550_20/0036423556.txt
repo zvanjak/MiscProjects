@@ -1,0 +1,38 @@
+int a_brisi1 (zapis **glavap, int matbr) {
+	zapis *p;
+  for (; *glavap && (*glavap)->matbr != matbr; glavap = &((*glavap)->sljed));
+  if (*glavap) {
+	p = *glavap;
+	*glavap = (*glavap)->sljed;
+	free (p);
+	return 1;
+  } else {
+	return 0;
+  }
+}
+int izbacinaj (zapis **glavap) {
+	long minMat, maxMat;
+	float minPros, maxPros;
+	zapis *p;
+	p = *glavap;
+
+	if (p == NULL) {
+		return 0;
+	}
+	minMat  = maxMat  = p->matbr;
+	minPros = maxPros = p->pros;
+	p = p->sljed;
+
+	for (; p != NULL; p = p->sljed) {
+		if (p->pros < minPros) {
+			minPros = p->pros;
+			minMat  = p->matbr;
+		}
+		if (p->pros > maxPros) {
+			maxPros = p->pros;
+			maxMat  = p->matbr;
+		}
+	}
+
+	return a_brisi1(glavap, minMat) + a_brisi1(glavap, maxMat);
+}

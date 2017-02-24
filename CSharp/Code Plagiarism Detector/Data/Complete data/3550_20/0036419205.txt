@@ -1,0 +1,67 @@
+int izbacinaj(zapis **glava){
+	int n=0;
+	zapis *p,*najmanji,*najveci,*pomocni;
+	najveci=najmanji=*glava;
+	
+	if((*glava)==NULL) return 0;
+
+	for(p=*glava;p;p=p->sljed){
+		n++;
+	}
+
+	if(n==1){
+		pomocni=*glava;
+		*glava=NULL;
+		free(pomocni);
+		return 1;
+	}
+
+	for(p=*glava;p->sljed;p=p->sljed){
+		if(p->pros <najmanji->pros){
+			najmanji=p;
+		}
+		if(p->pros> najveci->pros){
+			najveci=p;
+		}
+	}
+	if((najveci->pros)==(najmanji)->pros){
+		pomocni=*glava;
+		*glava=(*glava)->sljed;
+		free(pomocni);
+		pomocni=*glava;
+		if((*glava)->sljed){
+			*glava=(*glava)->sljed;
+		}
+		else {
+			*glava=NULL;
+		}
+		free(pomocni);
+
+		return 2;
+	}
+	else {
+		if((*glava)->matbr==najveci->matbr){
+			pomocni=*glava;
+			*glava=(*glava)->sljed;
+		}
+		else{  
+	for(p=*glava;p->sljed &&(p->sljed->matbr)!=(najveci->matbr);p=p->sljed);
+			pomocni=najveci;
+			p->sljed=pomocni->sljed;
+		}
+		free(pomocni);
+
+		if((*glava)->matbr==najmanji->matbr){
+			pomocni=*glava;
+			*glava=(*glava)->sljed;
+		}
+		else{
+	for(p=*glava;p->sljed &&(p->sljed->matbr)!=(najmanji->matbr);p=p->sljed);
+			pomocni=najmanji;
+			p->sljed=pomocni->sljed;
+		}
+		free(pomocni);
+
+		return 2;
+	}
+}

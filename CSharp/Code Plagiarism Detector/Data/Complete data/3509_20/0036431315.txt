@@ -1,0 +1,86 @@
+
+typedef struct  {
+	char ime[21],prezime[31],jmbag[11];
+	int ocjena;
+}   tip;
+
+typedef struct atom {
+	tip podatak;
+	atom *sljed;
+	
+};
+
+int brojElementa(atom *glava) {
+  int i;
+  for(i=0;glava;glava=glava->sljed) i++;
+  return i;
+}
+
+int dodaj (atom **glavap, tip element) {
+  atom *novi;
+  if( (novi = (atom *) malloc ( sizeof(atom)))== NULL ) return 0;
+  strcpy(novi->podatak.ime,element.ime);
+  strcpy(novi->podatak.prezime,element.prezime);
+  strcpy(novi->podatak.jmbag,element.jmbag);
+  novi->podatak.ocjena=element.ocjena;
+  
+  novi->sljed=*glavap;
+  *glavap=novi;
+  
+  return 1;
+}
+
+int minOcjena(atom *glava) {
+  if(!glava) return -1;
+  int min;
+  
+  min=glava->podatak.ocjena;
+  
+  for(;glava;glava=glava->sljed)
+    if(glava->podatak.ocjena<min)
+		min=glava->podatak.ocjena;
+  
+  return min;
+}
+
+int prosjOcjena(atom *glava) {
+  if(!glava) return -1;
+  
+  int i,suma=0;
+  
+  for(i=0;glava;i++) {
+    suma+=glava->podatak.ocjena;
+    glava=glava->sljed;
+  }
+  
+  return (suma/i);
+}
+
+
+
+int izbaciPrezimeSadrzi ( atom **glavap, char *prezimePodniz) {
+  int n=0;
+  atom *brisi,*glava;
+  if(!*glavap) return 0;
+  glava=*glavap;
+  
+  if(strstr(glava->podatak.prezime,prezimePodniz)) {
+    brisi=*glavap;
+    *glavap=glava->sljed;
+    free(brisi);
+    n++;
+  }
+  
+  for(;glava->sljed;glavap=&(glava->sljed)) {
+    glava=*glavap;
+    if(strstr(glava->sljed->podatak.prezime,prezimePodniz)) {
+	  brisi=glava->sljed;
+	  glava->sljed=glava->sljed->sljed;
+	  free(brisi);
+	  n++;
+	  
+	}
+	}
+  return n;
+}
+

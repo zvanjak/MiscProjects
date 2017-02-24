@@ -1,0 +1,20 @@
+int najbolji(FILE *f) {
+    int maxrednibr = 0;
+    int bodovi = 0;
+    int element = 0;
+    int zapisi; 
+    struct natjecatelj igrac;
+    
+    fseek(f, 0L, SEEK_END);
+    zapisi = ftell(f) / sizeof(igrac);
+    fseek(f, 0L, SEEK_SET);
+    
+    for (element = 0; element< zapisi; element++) {
+        fread(&igrac, sizeof(igrac), 1, f);
+        if (igrac.bodovi > bodovi && igrac.redni_br != 0) {
+                  maxrednibr = igrac.redni_br;
+                  bodovi = igrac.bodovi;
+                  }
+        }
+    return  maxrednibr;
+} 

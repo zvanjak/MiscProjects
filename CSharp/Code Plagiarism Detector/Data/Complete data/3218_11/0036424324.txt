@@ -1,0 +1,25 @@
+#include <stdio.h>;
+int main () 
+{
+	long int a, djel,prost,i;
+	
+	prost=0;
+	djel=0;
+	do
+		{
+		scanf("%d",&a);
+		if (a>2)	{
+				djel=1;
+				for (i=2;i<a;i++)
+{
+					if ((a%i)==0) djel=djel+1;
+}
+				}
+		if ((djel==1) && (a>prost)) prost=a;
+		djel=0;
+		}
+	while (a>2);
+	printf("%d",prost);
+	
+return 0;
+}

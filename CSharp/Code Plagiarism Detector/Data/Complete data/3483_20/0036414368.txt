@@ -1,0 +1,30 @@
+class Komprimiranje
+{
+	int brElem;
+	int *pniz;
+public:
+	Komprimiranje(int *pniz, int brElem)
+		: brElem (brElem)
+		, pniz (new int[brElem])
+	{
+		//memcpy(pniz, pniz, sizeof(int) * brElem);
+		for (int i = 0; i < brElem; ++i)
+			this->pniz[i] = pniz[i];
+	}
+
+	int UkupnaSuma()
+	{
+		int suma = 0;
+		for (int i = 0; i < brElem; i += 2) suma += pniz[i] * pniz[i + 1];
+		return suma;
+	}
+
+	int UkupniBrojElemenata(int vrijednost)
+	{
+		int brojac = 0;
+		for (int i = 0; i < brElem; i += 2)
+			if (pniz[i] != vrijednost)
+				brojac += pniz[i + 1];
+		return brojac;
+	}
+};

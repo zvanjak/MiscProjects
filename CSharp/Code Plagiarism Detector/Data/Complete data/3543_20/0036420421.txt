@@ -1,0 +1,22 @@
+void obrni (zapis **glava) {
+	zapis *p, *pom1, *pom2;
+	int x=0;
+	if (*glava==NULL) return;
+	for (p=*glava;;p=pom1) {
+		pom1=p->sljed;
+		if (p->sljed==NULL) {
+			if (x!=0) p->sljed=pom2;
+			else p->sljed=NULL;
+			*glava=p;
+			break;
+		}
+		else if (x==0){
+			p->sljed=NULL;
+		}
+		else {
+			p->sljed=pom2;
+		}
+		x=1;
+		pom2=p;
+		}
+}

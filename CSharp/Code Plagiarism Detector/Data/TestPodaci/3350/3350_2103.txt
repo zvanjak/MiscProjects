@@ -1,0 +1,19 @@
+int najbolji( FILE *f )
+{
+	int max = 0;
+	int sol = -1;
+	struct natjecatelj tmp;
+
+	while( fread( &tmp, sizeof( tmp ), 1, f ) == 1 )
+	{
+		if( !tmp.redni_br )
+			continue;
+		if( tmp.bodovi > max )
+		{
+			max = tmp.bodovi;
+			sol = tmp.redni_br;
+		}
+	}
+
+	return sol;
+}

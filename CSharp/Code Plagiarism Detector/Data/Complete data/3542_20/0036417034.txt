@@ -1,0 +1,31 @@
+int promijenimbr(zapis **glava, int starimbr, int novimbr)
+{
+	zapis *zamjenjenji, *pom,**pom2;
+	pom2=glava;
+	for(;*glava&&((*glava)->matbr)!=starimbr;glava=&((*glava)->sljed));
+	if(*glava)
+	{
+		pom=*glava;
+		*glava=(*glava)->sljed;
+		free(pom);
+		glava=pom2;
+		if ((zamjenjenji=(zapis *)malloc(sizeof(zapis)))==NULL) 
+			return 0;
+		zamjenjenji->matbr = novimbr;
+		if (*glava==NULL||(*glava)->matbr >= novimbr) 
+		{
+              zamjenjenji->sljed = *glava;
+              *glava = zamjenjenji;
+		}
+        else
+		{
+			for (pom=*glava;pom->sljed&&((pom->sljed)->matbr)<novimbr;pom=pom->sljed);
+			zamjenjenji->sljed = pom->sljed;
+			pom->sljed = zamjenjenji;
+		}
+		return 1;
+
+	}		
+	else
+		return 0;
+}

@@ -1,0 +1,11 @@
+#include<stdio.h>
+int main() {
+	int x,y,z,k;
+	scanf ("%d", &x);
+	y = (x % 100);
+	z = (x /100);
+	k=(y+z);
+	if ((k % z)==0)  printf("Jest\n");
+	else printf("Nije\n");
+	return 0;
+}

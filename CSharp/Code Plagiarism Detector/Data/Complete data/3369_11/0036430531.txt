@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main()
+{
+int br10,br8,ost,n;
+scanf("%d" , &br10);
+br8=0;
+n=1;
+while (br10>0){
+	ost= br10 % 8;
+br10=br10/8;
+br8=br8+n*ost;
+n=n*10;
+
+}
+printf("%d ", br8);
+return 0;
+}

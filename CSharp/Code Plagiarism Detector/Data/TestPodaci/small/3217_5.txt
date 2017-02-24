@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include <math.h>
+void main () {
+
+	int br, i, m, tmp, no_br;
+
+	do {
+		scanf ("%d", &br);
+		no_br = i = 0;
+		m = 1;
+		if (br > 0){
+
+			while (br / (int) pow(10,m))
+				m++;
+
+			while (m > 0) {
+				tmp = br / (int) pow(10,(m-1));
+				tmp %= 10;
+				no_br += tmp * (int) pow(10,i);
+				m--;
+				i++;
+				}
+			printf ("%d ", no_br);
+			}
+		} while (br > 0);
+	}

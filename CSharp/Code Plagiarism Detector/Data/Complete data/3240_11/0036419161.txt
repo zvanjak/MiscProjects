@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include<conio.h>
+
+int main()
+{
+	int n,i,j,NZ;
+	char a[100];
+	
+	scanf("%d",&n);
+
+	if (n>0)
+	{
+		sprintf(a,"%d",n);
+		for(i=0;i<100;i++)
+		{
+			if (a[i]=='\0')
+			{
+				NZ = i;
+				for(j=0;j<NZ;j++)
+				{
+					if (j==(NZ-1)) printf("%c",a[j]); else printf("%c ",a[j]);
+				}
+				break;
+			}
+		
+		}
+	}
+	else printf("n nije pozitivan");
+	return 0;
+}

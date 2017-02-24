@@ -1,0 +1,14 @@
+Stog* noviOdNeparnih(Stog* stog){
+	Stog* kopija = new Stog;
+	Stog* temp = new Stog;
+	int i, elm;
+	while(stog->Skini(&elm)){
+		temp->Stavi(elm);
+	}
+	while(temp->Skini(&elm)){
+		stog->Stavi(elm);
+		if (elm%2) kopija->Stavi(elm);
+	}
+	delete temp;
+	return kopija;
+}

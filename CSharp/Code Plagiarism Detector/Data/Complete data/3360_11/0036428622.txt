@@ -1,0 +1,24 @@
+#include<stdio.h>
+
+int main() {
+      int broj ,zbroj,prva, druga, treca, umnozak, razlika ;  
+      char  x ;
+      scanf("%d",&broj);
+  if ( broj >= 100  &  broj <= 999 )
+                    {
+             prva  = broj / 100;
+             x     = broj / 10;
+             druga = x % 10;
+             treca = broj % 10;
+             zbroj = prva + druga + treca;
+          if ( zbroj % 2 != 0 ) {
+                 umnozak = prva*druga*treca;
+                 printf("%d", umnozak);
+                                 }          
+          else       {
+                 razlika = prva-druga-treca;
+                 printf("%d", razlika); 
+                     }
+                     }
+return 0;
+}

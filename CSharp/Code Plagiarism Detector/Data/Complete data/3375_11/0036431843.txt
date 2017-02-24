@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main( void )
+{
+	int n;
+	int predznak = 1;
+	int curr_zn = 1000;
+
+	scanf( "%d", &n );
+	
+	if( n < 0 )
+	{
+		n = -n;
+		predznak = -1;
+	}
+
+	while( curr_zn && ( n / curr_zn ) % 2 )
+	{
+		n %= curr_zn;
+		curr_zn /= 10;
+	}
+
+	printf( "%d\n", n * predznak );
+
+	return 0;
+}

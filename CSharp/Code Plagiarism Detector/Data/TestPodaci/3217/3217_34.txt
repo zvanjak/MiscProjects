@@ -1,0 +1,20 @@
+#include <stdio.h>
+#define MAX 20
+int main () {
+	int a, br, i, e = 0;
+	int polje[MAX];
+	do {
+		scanf ("%d", &polje[e]);
+		a = polje[e];
+		e++;		
+	} while ( ( a > 0) && (e <= 20) );
+	for (i=0; i< e-1 ; i++){
+		do{
+			br = polje[i] % 10; 
+			printf ("%d", br);
+                        polje[i] /= 10; 
+		} while (polje[i]%10);
+		printf(" "); 
+	}
+	return 0;
+}	

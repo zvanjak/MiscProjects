@@ -1,0 +1,15 @@
+#include <stdio.h>
+int main(){
+	int m,n,br,naz,i;
+	int rez; br=1; naz=1;
+	scanf("%d ",&n);
+	scanf("%d ",&m);
+	if ((m==0)||(m==n)) rez=0;
+	else {
+		for (i=1; i<=n; i++) br=br*i;
+        for (i=1; i<=m; i++) naz=naz*i;
+		for (i=1; i<=(n-m);i++) naz=naz*i;
+	}
+	rez=br/naz;
+	printf("%d ",rez);
+	return 0;}

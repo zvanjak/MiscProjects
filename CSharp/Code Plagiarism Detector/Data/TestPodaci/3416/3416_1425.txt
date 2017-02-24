@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main( void )
+{
+	char min = 'Z', max = 'A';
+	char tmp;
+	int ucitan = 0;
+
+
+	for( ;; )
+	{
+		scanf( "%c", &tmp );
+		if( tmp < 'A' || tmp > 'Z' )
+			break;
+		ucitan = 1;
+
+		if( tmp > max )
+			max = tmp;
+		if( tmp < min )
+			min = tmp;
+	}
+
+	if( ucitan )
+		printf( "%c %c\n", min, max );
+	else
+		printf( "-1\n" );
+
+	return 0;
+}

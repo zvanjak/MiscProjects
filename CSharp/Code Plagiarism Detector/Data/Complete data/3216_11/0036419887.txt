@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main () {
+    int broj,j, prosti=0;
+    
+do {         
+       scanf ("%d", &broj);
+       {
+       for (j=2; j<broj; j++)
+           if ((broj%j)==0)
+           break;}
+       
+       if (j==(broj)) prosti++;
+       } 
+while (broj > 2);       
+
+       
+       printf ("%d ", prosti);
+       
+return 0;}

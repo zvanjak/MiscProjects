@@ -1,0 +1,14 @@
+int veci_od (FILE* f, int n){
+ struct natjecatelj z;
+ int i=0,b=0;  
+ do{
+ fseek(f,(redni_br-1+i) * sizeof(struct natjecatelj), SEEK_SET);
+ fread(&z,sizeof(z),1,f);
+ if (redni_br==0) printf("zapis je prazan\n");
+ else 
+ if (z.bodovi>=n) b++;
+ i++;
+ }while z.bodovi!=0;
+return n;
+}
+

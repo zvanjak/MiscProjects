@@ -1,0 +1,24 @@
+void ubaci (char *niz, char *podniz, int i) {
+	char polje [500];
+	int nr = 0;
+	int br = i;
+	if ((i <= -1) || (i >= strlen(niz) + 1)) {
+		for (; *(niz + nr) != '\0'; nr++) {
+			if (isalpha (*(niz+nr))) {
+				*(niz+nr) = toupper (*(niz+nr));
+			}
+		}
+		nr=0;
+	} else {
+
+	for (; *(niz + i) != '\0'; i++) {
+		polje[nr]= *(niz + i);
+		nr++;
+	}
+	*(niz + br) = '\0';
+	strcat (niz, podniz);
+	polje[nr] = '\0';
+	*(niz + br + strlen(podniz)) = '\0';
+	strcat (niz, polje);
+	}
+}

@@ -1,0 +1,27 @@
+class Kosarica
+{
+public:
+	Kosarica()
+	{
+		_Suma=0;
+		_NajProizvod=0;
+	}
+	void DodajProizvod (float cijena)
+	{
+		_Suma+=cijena;
+		if(cijena > _NajProizvod)
+			_NajProizvod=cijena;
+	}
+	float UkupnaCijena()
+	{
+		return _Suma;
+	}
+	float NajskupljiProizvod()
+	{
+		return _NajProizvod;
+	}
+	~Kosarica() {}
+private:
+	float _Suma;
+	float _NajProizvod;
+};

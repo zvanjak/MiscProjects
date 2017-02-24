@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <string.h>
+
+
+
+void ConvertToXML (char *inputField, char *outputField) {
+	char *c = outputField;
+
+	*c = '\0';
+	while (*inputField) {
+		strcat(c, "<osoba>\n");
+
+		
+		inputField++;
+		strcat(c, "<ime>");
+		
+		while (*c) c++;
+		while (*inputField != '#') {
+			*c = *inputField;
+			*(++c) = '\0';
+			inputField++;
+		}
+		strcat(c, "</ime>\n");
+		
+		
+		inputField++;
+		strcat(c, "<prezime>");
+		
+		while (*c) c++;
+		while (*inputField != '#') {
+			*c = *inputField;
+			*(++c) = '\0';
+			inputField++;
+		}
+		strcat(c, "</prezime>\n");
+
+		
+		inputField++;
+		strcat(c, "<jmbg>");
+		
+		while (*c) c++;
+		while (*inputField != '#') {
+			*c = *inputField;
+			*(++c) = '\0';
+			inputField++;
+		}
+		strcat(c, "</jmbg>\n");
+		
+		strcat(c, "</osoba>\n");
+		
+		inputField += 2;
+	}
+
+	return;
+}

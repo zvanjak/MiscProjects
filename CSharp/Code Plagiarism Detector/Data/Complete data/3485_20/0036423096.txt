@@ -1,0 +1,145 @@
+class CjelobrojniNiz {
+
+public:
+
+	CjelobrojniNiz(int *niz, int br_elem);
+	CjelobrojniNiz(CjelobrojniNiz& stari);
+	~CjelobrojniNiz();
+
+	int Usporedi(CjelobrojniNiz niz);
+	int* VratiRazliku(CjelobrojniNiz niz, int *n);
+
+	int SviJednaki;
+
+	int GetElemNum() { return m_br_elem; }
+
+	const int& operator[](int index) { return m_niz[index]; }
+
+
+private:
+
+	int *m_niz, m_br_elem;
+
+};
+
+
+CjelobrojniNiz::CjelobrojniNiz(int *niz, int br_elem)
+{
+	int tmp = *niz;
+
+	m_br_elem = br_elem;
+	m_niz = new int[m_br_elem];
+
+	SviJednaki = 1;
+
+	for (int i = 0; i < m_br_elem; i++)
+	{
+		m_niz[i] = niz[i];
+
+		if (tmp != m_niz[i]) SviJednaki = 0;
+		
+	}
+
+}
+
+CjelobrojniNiz::CjelobrojniNiz(CjelobrojniNiz& stari)
+{
+	int tmp = stari[0];
+
+	m_br_elem = stari.GetElemNum();
+	m_niz = new int[m_br_elem];
+
+	SviJednaki = 1;
+
+	for (int i = 0; i < m_br_elem; i++)
+	{
+		m_niz[i] = stari[i];
+
+		if (tmp != m_niz[i]) SviJednaki = 0;
+	}
+
+}
+
+CjelobrojniNiz::~CjelobrojniNiz()
+{
+	m_br_elem = 0;
+	delete [] m_niz;
+	m_niz = NULL;
+}
+
+
+int CjelobrojniNiz::Usporedi(CjelobrojniNiz niz)
+{
+	if (niz.GetElemNum() != m_br_elem) return 0;
+
+	for (int i = 0; i < m_br_elem; i++)
+	{
+		if ( m_niz[i] != niz[i] ) return 0;
+	}
+
+	return 1;
+}
+
+
+
+int* CjelobrojniNiz::VratiRazliku(CjelobrojniNiz niz, int *n)
+{
+	int uzmi = 1, brojac = 0, *novi, tmp = *m_niz + 1;
+
+	for (int i = 0; i < m_br_elem; i++)
+	{
+		if (m_niz[i] == tmp) continue;
+		tmp = m_niz[i];
+
+		uzmi = 1;
+
+		for (int j = 0; j < niz.GetElemNum(); j++)
+		{
+			if (niz[j] == m_niz[i])
+			{
+				uzmi = 0;
+				break;
+			}
+		}
+
+		if (uzmi == 1) brojac++;
+
+	}
+
+	if (brojac == 0) 
+	{
+		*n = 0;
+		return NULL;
+	}
+
+	novi = new int[brojac];
+	*n = brojac;
+	brojac = 0;
+	uzmi = 1;
+
+	for (int i = 0; i < m_br_elem; i++)
+	{
+		if (m_niz[i] == tmp) continue;
+		tmp = m_niz[i];
+
+		uzmi = 1;
+
+		for (int j = 0; j < niz.GetElemNum(); j++)
+		{
+			if (niz[j] == m_niz[i])
+			{
+				uzmi = 0;
+				break;
+			}
+		}
+
+		if (uzmi == 1)
+		{
+			novi[brojac] = m_niz[i];
+			brojac++;
+		}
+	}
+
+	return novi;
+
+}

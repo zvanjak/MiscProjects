@@ -1,0 +1,11 @@
+int niz(int i){
+  int niz1;
+  
+  kontrola();
+  if (i < 3)
+    return 1;
+  else{
+    niz1 = niz(i-1) + niz(i-2) + niz(i-3);
+  }
+  return niz1;
+}

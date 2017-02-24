@@ -1,0 +1,21 @@
+#include <stdio.h>;
+int main() {
+    int n, bp, bn;
+    bp=0;
+    bn=0;
+    scanf ("%d", &n);
+    while (n!=0) {
+        if (n>0) {
+           if (n%2==0) {
+               bp=bp+1;
+           }
+           else {
+               bn=bn+1;
+           }
+        }
+        scanf ("%d", &n);
+    }
+    printf ("%d %d\n", bp, bn);
+    return 0;
+}
+       

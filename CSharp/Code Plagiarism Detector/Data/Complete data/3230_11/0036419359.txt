@@ -1,0 +1,18 @@
+#include <stdio.h>
+void main ()
+{
+	int n,f=1,i;
+	double e=1;
+	scanf(" %d ", &n);
+	if ((n>=1) && (n<=20))
+	{
+		for(i=1; i<=n; i++)
+		{
+			f=f*i;
+			e=e+1./f;
+		}
+	}
+	else
+		printf("n nije valjan");
+	printf("%.12lf", e);
+}

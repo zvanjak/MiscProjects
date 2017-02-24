@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main (){
+
+	int a,b,c,d,e;
+
+	scanf("%d %d", &a,&b );
+
+	c= a / 1000 ;
+	d= b % 10 ;
+
+	if (c == d) {
+		c= (a / 100) % 10 ;
+		d= (b % 100) / 10 ;
+	    if (c == d) {
+		    c= (a / 10) % 10;
+			d= (b % 1000) / 100;
+	        if (c == d) {
+		        c= a % 10;
+				d= b / 1000;
+				if (c == d) {
+					
+				e= (a % 10) + ((a % 100)/10) + ((a % 1000)/100) + (a / 1000) ;
+				printf(" %d ",e);
+			
+				}}}} else { 
+					 e= a - b ;
+					 printf(" %d ",e);
+				}
+	return 0 ;}

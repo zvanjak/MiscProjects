@@ -1,0 +1,86 @@
+class CjelobrojniNiz
+{
+	int BrojElem;
+	int *cniz;
+public:
+	int VecinaJednaka;
+	
+	CjelobrojniNiz ()
+	{
+		BrojElem=0;
+		cniz=new int[10];
+		VecinaJednaka=0;
+	}
+	
+	CjelobrojniNiz(int *n_niz,int n_BrojElem)
+	{
+		int i,j,br;
+		cniz=new int[n_BrojElem];
+		for(i=0;i<n_BrojElem;i++)
+			cniz[i]=n_niz[i];
+
+		BrojElem=n_BrojElem;
+		VecinaJednaka=0;
+		
+		for (i=0;i<BrojElem;i++)
+		{
+			br=0;
+			for (j=0;j<BrojElem;j++)
+				if (cniz[i]==cniz[j])
+					br++;
+			if (br>((float)BrojElem/2))
+			{
+				VecinaJednaka=1;
+			}
+		}
+	}
+	
+	~CjelobrojniNiz()
+	{
+		if (cniz) delete[]cniz;
+	}
+
+	int Usporedi(CjelobrojniNiz niz)
+	{
+		int i;
+		if(BrojElem!=niz.BrojElem) return 0;
+		for(i=0;i<BrojElem;i++)
+			{
+				if(cniz[i]==niz.cniz[i])
+				return 1;
+			}
+		return 0;
+	}
+		
+	int *VratiPresjek(CjelobrojniNiz niz, int *n)
+	{
+		int *polje, i, j, k=0, br;
+		polje=(int*)malloc(sizeof(int));
+		for (i=0;i<BrojElem;i++)
+		{
+			if (cniz[i]==cniz[i-1]) continue;
+			br=0;
+			for (j=0;j<niz.BrojElem;j++)
+			{
+				if (br>0) break;
+				if ((cniz[i]==niz.cniz[j]) && (br==0))
+				{
+					polje[k]=cniz[i];
+					k++;
+					br++;
+				}
+			}
+		}
+		*n=k;
+		return polje;
+	}
+	CjelobrojniNiz(const CjelobrojniNiz &copy) {
+		int i;
+		BrojElem = copy.BrojElem;
+	      cniz = (int*) malloc(sizeof(int)*BrojElem);
+		for (i = 0; i < BrojElem; i++) 
+			cniz[i] = copy.cniz[i];
+		VecinaJednaka = copy.VecinaJednaka;
+	}
+
+};

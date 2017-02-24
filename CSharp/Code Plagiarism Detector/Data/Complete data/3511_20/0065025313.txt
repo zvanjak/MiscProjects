@@ -1,0 +1,96 @@
+typedef struct {
+        char ime [20 + 1];
+        char prezime [30 + 1];
+        char jmbag [10 + 1];
+        int ocjena;
+} tip;
+
+typedef struct at {
+        tip element;
+        struct at *sljed;
+} atom;
+
+int dodaj (atom **glavap, tip element)
+{
+  atom *dodani;
+  
+  if ((dodani = (atom *) malloc(sizeof(atom))) == NULL) return 0;
+  
+  strcpy ((dodani->element).ime, element.ime);
+  strcpy ((dodani->element).prezime, element.prezime);
+  strcpy ((dodani->element).jmbag, element.jmbag);
+  (dodani->element).ocjena = element.ocjena;
+  
+  dodani->sljed = *glavap;
+  *glavap = dodani;
+  
+  return 1;
+}
+
+int brojElementa (atom *glava)
+{
+  atom *pom; int n = 0;
+  for (pom = glava; pom != NULL; pom = pom->sljed) n++;
+  
+  return n;
+}
+
+int maksOcjena (atom *glava)
+{
+  atom *pom; int najveca;
+  
+  if (glava == NULL) return -1;
+  
+  najveca = (glava->element).ocjena;
+  for (pom = glava; pom != NULL; pom = pom->sljed) 
+      if ((pom->element).ocjena > najveca) najveca = (pom->element).ocjena;
+  
+  return najveca;
+}
+
+float prosjOcjena (atom *glava)
+{
+  atom *pom; int suma = 0; int n = 0;
+  
+  if (glava == NULL) return -1;
+  
+  for (pom = glava; pom != NULL; pom = pom->sljed) {
+      n++; 
+      suma += (pom->element).ocjena;
+  }
+  
+  return ((float) suma / n);
+
+}
+
+int izbaciPrezimePocinjeS (atom **glavap, char *prezimePocetak)
+{
+ atom *p, *pp; int n = 0;
+ 
+ for (p = *glavap; p != NULL; ) {
+ 
+     if ((strncmp ((p->element).prezime, prezimePocetak, strlen (prezimePocetak)) == 0) &&
+         (strlen ((p->element).prezime) >= strlen (prezimePocetak))) {
+         
+         if (p == *glavap) {
+               pp = (*glavap)->sljed;
+               free (*glavap);
+		       *glavap = pp;
+		       p = pp;
+		       n++;
+         }
+         
+          else {		   
+		       for (pp = *glavap; pp->sljed != p; pp = pp->sljed);
+		       pp->sljed = p->sljed;
+		       free (p);
+		       p = pp->sljed;
+		       n++;
+          }
+     }
+     
+     else p = p->sljed;
+ }
+
+ return n;
+} 

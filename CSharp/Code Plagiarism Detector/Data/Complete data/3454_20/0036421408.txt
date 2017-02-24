@@ -1,0 +1,78 @@
+class RazlPolje
+{
+	private:
+		int *_brojevi;
+        int _kolicina;
+
+	public:
+
+		RazlPolje()
+		{
+			_brojevi = new int;
+			_kolicina = 0;
+		};
+
+		int Dodaj(int Broj)
+		{
+			int *pomoc;
+			int i;
+			if (_kolicina == 0)
+			{
+				_brojevi[0] = Broj;
+				_kolicina = 1;
+				return 1;
+			}
+			for (i = 0; i < _kolicina; i++)
+			if (_brojevi[i] == Broj)
+				return 1;
+			_kolicina++;
+			pomoc = new int[_kolicina];
+			if (pomoc == NULL)
+			return 0;
+			for (i = 0; i < _kolicina - 1; i++)
+				pomoc[i] = _brojevi[i];
+			pomoc[_kolicina - 1] = Broj;
+			delete []_brojevi;
+			_brojevi = pomoc;
+			return 1;
+		};
+
+		int Izbaci(int Broj)
+		{
+			int *pomoc;
+			int i, j, q=0;
+			for (i = 0; i < _kolicina; i++)
+				if (_brojevi[i] == Broj)
+				{
+					q=1;
+				};
+            if (q=0) return 0;
+			pomoc = new int[_kolicina - 1];
+			for (i=0, j=0; i < _kolicina; i++)
+			{
+				if (_brojevi[i] != Broj)
+				{
+					pomoc[j]=_brojevi[i];
+					j++;
+				}
+			}
+			delete []_brojevi;
+			_brojevi = pomoc;
+			_kolicina--;
+			return 1;
+		};
+
+		int SumaPolja()
+		{
+			int suma=0, i;
+			for (i=0; i < _kolicina; i++)
+			{
+				suma = suma + _brojevi[i];
+			}
+			return suma;
+		};
+		~RazlPolje()
+		{
+			delete []_brojevi;
+		}
+};

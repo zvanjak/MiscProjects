@@ -1,0 +1,22 @@
+#include<stdio.h>
+main()
+{
+int d,g,s,i;
+s=0;
+scanf("%d",&d);
+scanf("%d",&g);
+if(d>0 && g>0 && g>d) {
+for(;d<=g;d++)
+{
+for(i=1;i<=d;i++)
+{
+s=s+i;
+}
+printf("%d",s);
+if(d!=g) printf(" ");
+s=0;
+}
+}
+else printf("D i G nisu valjani");
+return 0;
+}

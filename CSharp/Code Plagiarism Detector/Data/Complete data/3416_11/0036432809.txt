@@ -1,0 +1,19 @@
+#include <stdio.h>
+int main() {
+	char c,min=91,max=64;
+	int zad=0;
+	do { 
+        
+	scanf ("%c", &c);
+
+	if (c>='A' && c<='Z'){
+	if (c<min) min=c;
+	if (c>max) max=c;
+	zad=1;}}
+	while (c>='A' && c<='Z');
+	
+	if (zad) printf ("%c %c", min, max);
+	else printf ("-1");
+
+return 0;
+	}

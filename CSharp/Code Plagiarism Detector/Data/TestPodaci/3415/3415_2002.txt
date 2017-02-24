@@ -1,0 +1,27 @@
+#include<stdio.h> 
+
+int main(){ 
+int i, s=0, s1=0, b1[20], b2[20]; 
+char z[20+1]; 
+
+for(i=0;i<20;i++){ 
+scanf("%d %d %c", &b1[i], &b2[i], &z[i]); 
+if ((z[i]!= '+')&&(z[i]!= '-')&&(z[i]!='*')&&(z[i]!='/')&&(z[i]!='%')) break; 
+} 
+for(i=0;i<20;i++){ 
+switch(z[i]){ 
+case '+': s+=b1[i]+b2[i]; break; 
+case '-': s+=b1[i]-b2[i]; break; 
+case '*': s+=b1[i]*b2[i]; break; 
+case '/': if(b2[i]!=0) s+=b1[i]/b2[i]; break; 
+case '%': if(b2[i]!=0) s+=b1[i]/b2[i]; break; 
+default: break; 
+       } 
+} 
+printf("%d",s); 
+for(i=0; i<20; i++){ 
+if ((z[i]!= '+')&&(z[i]!= '-')&&(z[i]!='*')&&(z[i]!='/')&&(z[i]!='%')) break; 
+else printf(" %c", z[i]); 
+} 
+return 0; 
+}

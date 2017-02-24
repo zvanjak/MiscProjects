@@ -1,0 +1,21 @@
+Stog *noviOdNeparnih (Stog *stog) {
+  Stog *novi_stog = new Stog;
+  Stog *pomocni = new Stog;
+  int temp;
+  
+  if (stog == NULL)
+    return NULL;
+  
+  while (stog -> Skini (&temp) == 1)
+    pomocni -> Stavi (temp);
+  
+  while (pomocni -> Skini (&temp) == 1) {
+    stog -> Stavi (temp);
+    if (temp % 2 == 1)
+      novi_stog -> Stavi (temp);
+  }
+  
+  delete pomocni;
+  
+  return novi_stog;
+}

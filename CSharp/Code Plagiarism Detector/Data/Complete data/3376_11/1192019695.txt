@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+
+
+void main(){
+	int broj=0, i, k=1, rezultat=0, mult=1;
+	int br[10];
+	printf("Unesi broj:");
+	scanf("%d", &broj);
+	for (i=0;;i++){
+		if (((broj%10)%2)==0)
+			br[i]=0;
+		else br[i]=broj%10;
+		if (broj < 10) break;
+		broj = broj/10;
+		k++;
+	}
+	for (i=0; i<k ;i++){
+		rezultat = rezultat + br[i]*mult;
+		mult = mult * 10;
+	}
+	printf("\n%d", rezultat);
+}

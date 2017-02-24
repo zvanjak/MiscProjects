@@ -1,0 +1,21 @@
+char *brojeve_u_znakove(int *polje, int duljina)
+{
+	int i, j = 0;
+	char znam, *p;
+	p = malloc(sizeof(char));
+	if(duljina == 0)
+		*p = '\0';
+	else
+	{
+		for(i = 0; i < duljina; i++)
+			while(*(polje + i) > 0)
+			{
+				p = (char *) realloc(p, ++j * sizeof(char));
+				znam = (*(polje + i) % 10) + '0';
+				*(p + j - 1) = znam;	
+				*(polje + i) /= 10;
+			}
+	*(p + j) = '\0';
+	}
+	return p;
+}

@@ -1,0 +1,3 @@
+bool fun3(Trokut t, Pravokutnik p) {
+	return p.Sadrzi(t.getA()) && p.Sadrzi(t.getB()) && p.Sadrzi(t.getC());
+}

@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+void brisi(FILE *f, int redni_br);
+
+void brisi(FILE *f, int redni_br) {
+	struct natjecatelj z;
+	fseek(f, (redni_br - 1) * sizeof(struct natjecatelj), SEEK_SET);
+	fread(&z, sizeof(struct natjecatelj), 1, f);
+	z.redni_br = 0;
+	fseek(f, (redni_br - 1) * sizeof(struct natjecatelj), SEEK_SET);
+	fwrite(&z, sizeof(struct natjecatelj), 1, f);
+}

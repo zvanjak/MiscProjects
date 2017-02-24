@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int main () {
+    char recenica[100+1];
+    int i, j = 0, povecaj_slovo = 0;
+    scanf("%[^.]", recenica);
+    for (i = 0; recenica[i]; i++) 
+        if (recenica[i] == ' ' || recenica[i] == ',') {
+            j++;
+            povecaj_slovo = 1;
+        } else {
+            recenica[i-j] = povecaj_slovo ? toupper(recenica[i]) : tolower(recenica[i]); 
+            povecaj_slovo = 0;
+        }
+    recenica[i - j] = '.';
+    recenica[i - j + 1] = 0;
+    recenica[0] = toupper(recenica[0]);
+    printf("%s", recenica);
+    return 0;
+} 

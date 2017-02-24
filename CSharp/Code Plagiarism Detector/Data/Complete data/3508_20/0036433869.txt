@@ -1,0 +1,12 @@
+int Najgore(cvor *glava) {
+	int imaL = 0;
+	int imaD = 0;
+
+	if (glava == NULL) return 0;
+	if (glava->desno) imaD = 1;
+	if (glava->lijevo) imaL = 1;
+
+	if (imaL && imaD) return 1;
+	if (Najgore(glava->desno) || Najgore(glava->lijevo)) return 1;
+	else return 0;
+}

@@ -1,0 +1,23 @@
+	#include<stdio.h>
+
+        int main(){
+
+	int d,g,i,suma=0;
+
+	/*printf("Upisite dva cijela broja> "); */
+        scanf("%d %d",&d,&g);
+
+	if(d>0 && g>0 && g>d){
+		/*printf("SUME: ");*/
+		for(i=d;i<=g;++i){
+			if(i%2==0){
+				suma+=i;
+			}
+			printf("%d ", suma);
+		}
+	}
+	else{
+		printf("D i G nisu valjani");
+	}
+	return 0;
+}

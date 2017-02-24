@@ -1,0 +1,101 @@
+class CjelobrojniNiz
+{
+public:
+	int VecinaJednaka;
+	int Usporedi(CjelobrojniNiz niz);
+	int* VratiPresjek(CjelobrojniNiz niz,int* n);
+
+	CjelobrojniNiz();
+	CjelobrojniNiz(int* niz,int n);
+	CjelobrojniNiz(const CjelobrojniNiz &copy);
+	~CjelobrojniNiz();
+	
+private:
+	int* podaci;
+	int br;
+};
+
+CjelobrojniNiz::CjelobrojniNiz()
+{
+	podaci=NULL;
+	br=0;
+	VecinaJednaka=0;
+}
+CjelobrojniNiz::CjelobrojniNiz(int* niz,int n)
+{
+	int brojac=1;
+
+	br=n;
+	podaci=new int[br];
+	VecinaJednaka=0;
+
+	for(int i=0;i < br ; i++)
+		podaci[i]=niz[i];
+
+	for(int i = 0; i < br-1; i++)
+	{
+		brojac=1;
+		for(int j=i+1; j<br; j++)
+		{
+			if(podaci[i]==podaci[j])
+				brojac++;
+		}
+		if(brojac > br/2)
+		{
+			VecinaJednaka=1;
+			break;
+		}
+	}
+}
+CjelobrojniNiz::CjelobrojniNiz(const CjelobrojniNiz &copy)
+{
+	br=copy.br;
+	podaci=new int[br];
+	VecinaJednaka=copy.VecinaJednaka;
+	for(int i=0; i<br; i++)
+		podaci[i]=copy.podaci[i];
+}
+
+
+CjelobrojniNiz::~CjelobrojniNiz()
+{
+	delete [] podaci;
+}
+
+int CjelobrojniNiz::Usporedi(CjelobrojniNiz niz)
+{
+	if(br!=niz.br) return 0;
+
+	for(int i=0; i<br; i++)
+		if(podaci[i]!=niz.podaci[i])
+			return 0;
+
+	return 1;
+}
+int * CjelobrojniNiz::VratiPresjek(CjelobrojniNiz niz,int* n)
+{
+	int* pom;
+	if(niz.br<br)
+		pom = new int[niz.br];
+	else
+		pom = new int[br];
+	*n=0;
+	for(int i=0; i<br; i++)
+	{
+		while(podaci[i]==podaci[i+1] && i<br) i++;
+		for(int j=0; j<niz.br; j++)
+		{
+			while(niz.podaci[j]==niz.podaci[j+1] && j<niz.br) j++;
+			if(podaci[i]==niz.podaci[j])
+			{
+				pom[*n]=podaci[i];
+				(*n)++;
+			}
+		}
+	}
+	int *presjek = new int[*n];
+	for(int i=0; i<*n; i++)
+		presjek[i]=pom[i];
+	delete [] pom;
+	return presjek;
+}

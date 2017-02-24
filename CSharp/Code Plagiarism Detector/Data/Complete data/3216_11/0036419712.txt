@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main()
+{
+	int a=3, i=0, j, prosti=1;
+	while (a>2)
+	{
+		scanf ("%d", &a);
+		for (j=2; j<=a/2; j++)
+			if (a%j == 0) 
+			{
+				prosti = 0;
+				continue;
+			}
+		if (prosti==1) i++;
+		prosti = 1;
+	}
+	printf ("%d", i-1);
+	return 0;
+}

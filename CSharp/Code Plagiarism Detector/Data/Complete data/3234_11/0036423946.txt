@@ -1,0 +1,14 @@
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+#include<stdlib.h>
+int main() {
+int n,i;
+float pi=0;
+scanf("%d", &n);
+if ((n<1)||(n>100)) printf("n nije valjan");
+    else {
+for (i=1;i<=n;i++) pi=pi+1.0/(i*i);
+pi=sqrt(pi*6);
+printf("%1.12f",pi);}
+return 0;}

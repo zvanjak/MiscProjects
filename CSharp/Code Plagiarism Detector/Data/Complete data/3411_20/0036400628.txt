@@ -1,0 +1,26 @@
+char *BezDuplikata (char *ulazni_niz) {
+	char *novi;
+	int i, j, a=0, b=1;
+
+	if (*ulazni_niz == 0)
+		return NULL;
+
+	novi=(char *) malloc (sizeof(char));
+	*novi=*ulazni_niz;
+
+	for (i=1; ulazni_niz[i]!=0; i++) {
+		a=0;
+		for(j=0; j!=i; j++) {
+			if (novi[j]==ulazni_niz[i])
+				a=1;
+		}
+		if (a==0) {
+		novi=(char *) realloc (novi, sizeof(char)*(b+1));
+		novi[b]=ulazni_niz[j];
+		b++;
+		
+		}
+	}
+	novi[b]=NULL;
+	return novi;
+}

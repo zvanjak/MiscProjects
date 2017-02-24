@@ -1,0 +1,9 @@
+int niz(int i){
+       long int f;
+       kontrola();
+       if(i<=1)
+            f=1; 
+       if(i>1)
+            f=2*niz(i-1)+3*niz(i-2); 
+         return(f);
+       }

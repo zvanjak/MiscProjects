@@ -1,0 +1,74 @@
+class Nogometas{
+private:
+        int broj;
+        char ime[15];
+
+public:
+        Nogometas():broj(-1){
+                strcpy(ime, "");
+        }
+        Nogometas(int broj, const char ime[15]){
+                this->broj = broj;
+                strncpy(this->ime, ime , 15);
+        }
+
+        const int VratiBroj() {
+                return broj;
+        }
+
+        const char* VratiIme(){
+                return ime;
+        }
+};
+
+class Ekipa{
+private:
+        char *naziv;
+        Nogometas igraci[11];
+
+public:
+        Ekipa(const Ekipa& ekipa){
+                this->naziv = new char[strlen(ekipa.naziv)+1];
+                strcpy(this->naziv , naziv);
+                for(int i=0; i<11 ; i++){
+                        igraci[i] = ekipa.igraci[i];
+                }
+        }
+        Ekipa(char *naziv){
+                this->naziv = new char[strlen(naziv)+1];
+                strcpy(this->naziv , naziv);
+        }
+        inline void Zamijeni (int pos1, int pos2) {
+                if (pos1<0 || pos1>10 || pos2<0 || pos2>10)
+                        throw("Index polja van raspona");
+                Nogometas pom = igraci[pos1];
+                igraci[pos1] = igraci[pos2];
+                igraci[pos2] = pom;
+        }
+
+        void Napuni(){
+                const char vatreni[11][15] = {"Ladic", "Jurcevic", "Jarni", "Stimac", "Jerkan","Bilic", "Asanovic",  "Prosinecki" , "Suker" ,"Boban" , "Boksic"};
+
+int i;
+                for(i=0; i<11 ; i++){
+                        Nogometas n(i+1, vatreni[i]);
+                        igraci[i] = n;
+                }
+
+                for( i = 1; i < 11; i++ ){
+                        int temp = rand () % (i + 1);
+                        Zamijeni (i, temp);
+                }
+        }
+
+        ~Ekipa(){
+                delete[] naziv;
+        }
+        Nogometas operator[](int index) const{
+                if (index<0 || index>10)
+                        throw("Index polja van raspona");
+                else
+                        return igraci[index];
+
+        }
+};

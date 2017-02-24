@@ -1,0 +1,13 @@
+#include <stdio.h>
+ int main () {
+     int z,b,a,c;
+     scanf( "%d", &z);
+     a=z/100;
+     b=(z%100)/10;
+     c= (z%100)% 10;
+     if ((a+b+c)% 2==0)
+        printf("%d\n", (a-b-c));
+     else 
+          printf ("%d\n", (a*b*c));
+     return 0;
+     }

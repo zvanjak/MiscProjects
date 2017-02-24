@@ -1,0 +1,21 @@
+#include<stdio.h>
+int main()
+{
+	float n,suma=1,fakt;
+	int i,j;
+	scanf("%f",&n);
+	if(n>=1 && n<=20 && n==(int)(n))
+	{
+		for(i=1; i<=n; i++)
+		{
+			fakt=1;
+			for(j=1; j<=i; j++)
+				fakt=fakt*j;
+			suma=suma + (1./fakt);
+		}
+		printf("%1.12f",suma);
+	}
+	else
+		printf("n nije valjan");
+	return 0;
+}

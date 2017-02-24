@@ -1,0 +1,74 @@
+class RazlPolje{
+private:
+    int *_Polje, _BrElem, _ArrLngt, _i, _j, _Suma;
+public:
+    RazlPolje();
+    int Dodaj (int Broj);
+    int Izbaci (int Broj);
+    int SumaPolja ();
+    ~ RazlPolje();
+};
+
+RazlPolje::RazlPolje(){
+    
+    _BrElem = 0;
+    _ArrLngt = 10;
+    _Polje = (int*) malloc (_ArrLngt * sizeof (int));
+    for (_i = 0; _i < _ArrLngt; _i++){
+        _Polje[_i] = 0;
+    }
+}
+
+int RazlPolje::Dodaj (int Broj){
+    
+    if (_ArrLngt - 1 == _BrElem){
+        _ArrLngt += 10;
+        if (realloc (_Polje, sizeof (int) * _ArrLngt) == NULL){
+            _ArrLngt -= 10;
+            return 0;
+        }
+        for (_i = _BrElem; _i < _ArrLngt; _i++){
+            _Polje[_i] = 0;
+        }
+    }
+    for (_i = 0; _i < _BrElem; _i++){
+        if (_Polje[_i] == Broj){
+            _Polje[_BrElem] = 1;
+            break;
+        }
+    }
+    if (!_Polje[_BrElem]){
+        _Polje[_BrElem] = Broj;
+        _BrElem++;
+    }
+    _Polje[_BrElem] = 0;
+    return 1;
+}
+
+
+int RazlPolje::Izbaci (int Broj){
+    for (_i = 0; _i < _BrElem; _i++){
+        if (_Polje[_i] == Broj){
+            for (_j = _i; _j < _BrElem - 1; _j++){
+                _Polje[_j] = _Polje[_j + 1];
+            }
+            _Polje[_BrElem--] = 0;
+            _ArrLngt--;
+            realloc (_Polje, _ArrLngt * sizeof (int));
+            return 1;
+        }
+    }
+    return 0;
+}
+
+int RazlPolje::SumaPolja (){
+    _Suma = 0;
+    for (_i = 0; _i < _BrElem; _i++){
+        _Suma += _Polje[_i];
+    }
+    return _Suma;
+}
+
+RazlPolje::~RazlPolje (){
+    free (_Polje);
+}

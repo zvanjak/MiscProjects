@@ -1,0 +1,19 @@
+struct natjecatelj {
+int redni_br;
+char prezime[20+1];
+int bodovi;
+};
+int info(FILE *f, int redni_br){
+struct natjecatelj z;
+if (fseek(f, redni_br*sizeof(struct natjecatelj), SEEK_SET)!=0) {
+printf("Poziconiranje nije uspjelo!\n");
+exit(1);
+}
+
+if (fread(&z, sizeof(z), 1, f)==1){
+if (z.redni_br==0) printf("Zapis je prazan!\n");
+if (z.bodovi>=100) return 1;
+if (z.bodovi<100) return 0;
+ 
+return -1;}
+}

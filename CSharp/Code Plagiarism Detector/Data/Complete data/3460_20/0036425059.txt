@@ -1,0 +1,17 @@
+void  FuncMinMax (DinamickoPolje &polje, int *Max,int *Min) {
+      
+      int i;
+      int mx, mn;
+      
+      mn=polje.DohvatiElement(0);
+      mx=polje.DohvatiElement(0);
+      for (i=1;i<polje.BrojElemenata();i++){
+      
+      if (polje.DohvatiElement(i)>mx) mx=polje.DohvatiElement(i);
+      if (polje.DohvatiElement(i)<mn) mn=polje.DohvatiElement(i);
+      }
+      *Max=mx;
+      *Min=mn;
+      
+      }
+      

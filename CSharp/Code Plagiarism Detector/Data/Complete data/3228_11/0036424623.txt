@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main()
+{
+
+	int n=0,i;
+    	double sn=0.,an=0.,pi=0.;
+	scanf("%d",&n);
+	if(n<1 || n>100)
+	{
+		exit(1);
+	}
+	
+	for(i=1; i<=n; i++)
+	{
+		an = pow(-1,(i+1)) * (1. / pow(i,2));
+		sn += an;
+	}
+	
+	pi = sqrt (sn*12);
+	printf("%.12f",pi);
+
+	return 0;
+}

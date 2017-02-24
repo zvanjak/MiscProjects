@@ -1,0 +1,14 @@
+float prosjek(FILE *f){
+struct album a;
+int broj=0;
+float prodano=0;
+while(fread(&a, sizeof(a), 1, f)==1){
+broj++;
+prodano+=a.prodano;
+}
+if (broj>0){
+return prodano/broj;
+}
+else
+return 0;
+}

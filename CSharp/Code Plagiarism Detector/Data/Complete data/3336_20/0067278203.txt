@@ -1,0 +1,10 @@
+int rStrcmp(char *s1, char *s2)
+{
+int t;
+kontrola();
+t=*s1-*s2;
+if (t>0) return 1;
+if (t<0) return -1;
+if (t==0 && *s1=='\0') return 0;
+return rStrcmp(s1+1,s2+1);
+}

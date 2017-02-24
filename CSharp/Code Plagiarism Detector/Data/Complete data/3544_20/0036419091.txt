@@ -1,0 +1,15 @@
+Red *PrepisiStogURed(Stog *stog)
+{
+  Red *novi;
+  int pomocna;
+  if (stog->Skini(&pomocna))
+    novi=PrepisiStogURed(stog);
+  else
+  {
+    novi=new Red();
+    return novi;
+  }
+  novi->DodajURed(pomocna);
+  stog->Stavi(pomocna);
+  return novi;
+}

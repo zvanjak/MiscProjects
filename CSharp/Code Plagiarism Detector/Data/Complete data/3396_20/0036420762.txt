@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <malloc.h>
+
+int *napraviPolje(int *A, int Na, int a, int b, int *Nc)
+{
+	int *polje = NULL;
+	int i, j, d;
+	
+	*Nc = 0;
+
+	if (a > b)
+		return NULL;
+
+	for (i = 0; i < Na; i++)
+	{
+		d = 1;
+
+		for (j = a; j <= b; j++)
+		{
+			if (*(A + i) % j != 0)
+			{
+				d = 0;
+				break;
+			}
+		}
+
+		if (d == 1)
+		{
+			polje = (int *) realloc (polje, sizeof(int)*(1 + *Nc));
+			*(polje + *Nc) = *(A + i);
+			(*Nc)++;
+		}
+
+	}
+	return polje;
+}

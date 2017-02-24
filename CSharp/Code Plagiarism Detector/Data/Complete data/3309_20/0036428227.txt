@@ -1,0 +1,16 @@
+int br_prodanih (FILE *f, char *autor) {
+	int ukupno=0, c;
+
+	struct album {
+		char naziv[30+1];
+		char autor[20+1];
+		int prodano;
+	} izvod;
+
+	while ((c=fread(&izvod, sizeof(izvod), 1, f))==1) {
+		if (strcmp(autor, izvod.autor)==0)
+			ukupno+=izvod.prodano;
+	}
+
+	return ukupno;
+}

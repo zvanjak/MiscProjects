@@ -1,0 +1,17 @@
+void brisi(FILE *f, int redni_br)
+{
+	struct
+	{
+		int redni_br;
+		char prezime[20+1];
+		int bodovi;
+	} x;
+
+	if (fseek(f, (long)(redni_br-1)*sizeof(x), SEEK_SET) != 0)
+		return;
+
+	fread(&x, sizeof(x), 1, f);
+	x.redni_br = 0;
+	fseek(f, (long)(redni_br-1)*sizeof(x), SEEK_SET);
+	fwrite(&x, sizeof(x), 1, f);
+}

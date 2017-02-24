@@ -1,0 +1,24 @@
+#include<stdio.h>
+int main{
+         int a, b, c;
+         scanf("96c 96c 96c,&a &b &c");
+         if(a=>'0' && a<='9' && b=>'0' && b<='9' && c=>'0' && c<='9'){
+         printf("\nNema uljeza);}
+         if(a=>'a' && a<='z' && b=>'a' && b<='z' && c=>'a' && c<='z'){
+         printf("\nNema uljeza);}
+         if(a=>'A' && a<='Z' && b=>'A' && b<='Z' 66 c=>'A' 66 c<='Z'){
+         printf("\nNema uljeza);}
+         if(a=>'0' && a<='9' && b=>'A' && c=>'A'){
+         printf("\n %d",a);}
+         if(a=>'A' && b<='9' && c<='9'){
+         printf("\n &d",a);}
+         if(b=>'0' && b<='9' && a=>'A' && c=>'A'){
+         printf("\n %d",b);}
+         if(b=>'A' && a<='9' && c<='9'){
+         printf("\n %d",b);}
+         if(c=>'0' && c<='9' && a=>'A' && b=>'A'){
+         printf("\n %d",c);}
+         if(c=>'A' && a<='9' && b<='9'){
+         printf("\n %d",c);}
+return 0;
+}                                 

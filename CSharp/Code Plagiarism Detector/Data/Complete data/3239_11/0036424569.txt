@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <conio.h>
+
+main ()
+
+{
+int d, g, n, i, suma=0;
+
+scanf("%d%d", &d, &g);
+if (!((d>0)&&(g>0)&&(g>d)))
+   {
+   printf("D i G nisu valjani\n");
+   system("pause");
+   exit(1);
+   }
+
+for (n=d;n<=g;n++)
+    {
+    for (i=0;i<=n;i++)
+        {
+        if (!(i%2))
+        suma+=i;
+        }
+    printf("%d ", suma);
+    suma=0;
+    }
+system("pause");
+}

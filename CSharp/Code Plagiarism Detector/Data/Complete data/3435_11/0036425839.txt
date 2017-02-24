@@ -1,0 +1,35 @@
+#include <stdio.h>
+int main () { 
+
+int m, n, i, j, k, z;
+
+double u1=1, u2=1, u3=1, povrh;
+
+scanf("%d %d", &n, &m);
+
+if( m==0 || m==n || n==0 ){
+	povrh=0;
+	goto kraj;}
+
+
+else for (i=1;i<=n;i++) {
+		u1=u1*i;}
+
+	for (j=1;j<=m;j++){
+
+		u2=u2*j;}
+
+	for ( k=1; k<=(n-m); k++){
+
+		u3=u3*k;}
+
+povrh = u1 / (u2 * u3);
+
+kraj :
+
+printf("%g", povrh);
+
+return 0;
+
+
+}

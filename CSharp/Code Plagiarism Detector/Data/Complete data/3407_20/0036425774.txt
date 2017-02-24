@@ -1,0 +1,16 @@
+char *SamoSamoglasnici(char *ulazni_niz){
+	int i,z=0;
+	char a,*nov;	
+	if(strlen(ulazni_niz)==0 || *ulazni_niz==NULL)return NULL;
+	nov = malloc(strlen(ulazni_niz));
+	for(i=0;i<strlen(ulazni_niz);i++){
+			a=tolower(ulazni_niz[i]);
+			if(a=='a' || a=='e'|| a=='i' || a=='o'||a=='u'){
+			nov[z++]=ulazni_niz[i];
+			}
+		}
+	
+	nov[z]=0;
+	return nov;
+
+}

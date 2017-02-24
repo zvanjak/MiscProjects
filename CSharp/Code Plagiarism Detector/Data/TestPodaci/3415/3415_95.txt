@@ -1,0 +1,37 @@
+#include <stdio.h>
+int main()
+{
+	char operacije[20], broj=0,  op, j, i=0;
+	int rez=0, prvi, drugi;
+	do{
+		scanf("%d %d %c", &prvi, &drugi, &op);
+		
+		switch (op)
+		{
+			case '+':
+				rez+= prvi+drugi;
+				operacije[i++]='+';
+				break;
+			case '-':
+				rez+= prvi-drugi;
+				operacije[i++]='-';
+				break;
+			case '*':
+				rez+= prvi*drugi;
+				operacije[i++]='*';
+				break;
+			case '/':
+				if (drugi!=0) rez+= prvi/drugi;
+				operacije[i++]='/';
+				break;
+			case '%':
+				rez+= prvi%drugi;
+				operacije[i++]='%';
+				break;
+
+		}
+	}while (op=='+' || op=='-' || op=='*' || op=='/' || op=='%');
+	printf ("%d", rez);
+	for(j=0;j<i;j++) printf(" %c", operacije[j]);
+	return 0;
+}

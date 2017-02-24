@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main()
+{
+int dek, a, b, c, d, okt;
+scanf ("%d", &dek);
+if((dek>99) && (dek<1000)) {
+          a=dek%8;
+          b=(dek/8)%8;
+          c=(dek/64)%8;
+          d=(dek/512)%8;
+          if(d>0) {
+                  okt=1000*d+100*c+b*10+a;
+                  } else { okt=100*c+b*10+a;}
+}
+printf("%d", okt);
+return 0;
+}

@@ -1,0 +1,10 @@
+int veci_od(FILE *f, int granica)
+{
+  struct album a;
+  int br = 0;
+  while (fscanf(f, "%s %s %d", a.naziv, a.autor, &a.prodano) != NULL)
+  {
+    if (a.prodano >= granica) br++;
+  }
+  return br;
+}

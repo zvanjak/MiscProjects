@@ -1,0 +1,18 @@
+int najbolji(FILE *f)
+{
+    struct natjecatelj{
+           int redni_br;
+           char prezime[21];
+           int bodovi;
+           } franc;
+           int max_br=-1,max_red;
+           while(fread(&franc,sizeof(struct natjecatelj),1,f)==1)
+           {                                                       
+                       if(franc.redni_br==0) continue;
+                       if(franc.bodovi>max_br){
+                       max_br=franc.bodovi;
+                       max_red=franc.redni_br;
+                       }
+           }
+           return max_red;
+}

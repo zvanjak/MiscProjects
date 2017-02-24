@@ -1,0 +1,25 @@
+int *napraviPolje(int *A, int Na, int a, int b,int *Nc){
+int i, j, n=0, djeljiv; 
+int *polje;
+*Nc=0;
+if (a>b)
+	return 0;
+ polje = NULL;
+for (i=0; i<Na; i++){
+	djeljiv=0;
+	for (j=a; j<=b; j++){
+		if(((A[i])%j)==0)
+			++djeljiv;
+	
+	}
+
+	if (djeljiv==0){
+		polje = (int *) realloc (polje, (++n)*sizeof (int));
+		*(polje+n-1)=A[i];
+			printf ("%d\n", *(polje+n-1));
+
+	}
+}
+*Nc = n;
+return polje;
+}

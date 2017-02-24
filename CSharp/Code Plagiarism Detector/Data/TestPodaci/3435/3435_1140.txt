@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main()
+{
+	int n, m, a=1,b=1,c=1,i;
+	scanf("%d %d",&n,&m);
+	if(m==0 || m==n)
+	{
+		printf("0");
+	}
+	else
+	{
+		for(i=1;i<=n;i++)
+		{
+			a*=i;
+		}
+		for(i=1;i<=m;i++)
+		{
+			b*=i;
+		}
+		for(i=1;i<=(n-m);i++)
+		{
+			c*=i;
+		}
+		printf("%d",(a/(b*c)));
+	}
+	return 0;
+}

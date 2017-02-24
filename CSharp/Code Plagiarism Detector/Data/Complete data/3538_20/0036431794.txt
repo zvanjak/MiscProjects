@@ -1,0 +1,23 @@
+Red *VratiBrojeve(Red *red){
+	int n=1;
+	long brojac=0; 
+	int i=0, j, el, znam;
+	Red *redd=new Red();
+	Red *pom=new Red();
+
+	while(red->SkiniIzReda(&el)){
+		pom->DodajURed(el);
+		brojac=0;
+		for(i=el;i>0;i--){
+			n=1;
+			for(j=i-1;j>0;j--) n=n*10;
+			red->SkiniIzReda(&znam);
+			pom->DodajURed(znam);
+			brojac=brojac+n*znam;}
+		redd->DodajURed(brojac);
+	}
+	while(pom->SkiniIzReda(&el)) {
+		red->DodajURed(el);
+	}
+	return redd;
+}

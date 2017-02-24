@@ -1,0 +1,28 @@
+int izbacinaj (zapis **glava){
+zapis *najb, *najl, *pokaz;
+
+pokaz=*glava;
+if (pokaz == NULL) return 0;
+najb=pokaz;
+pokaz=pokaz->sljed;
+if (pokaz == NULL) {
+*glava=NULL; 
+return 1;
+}
+if (pokaz->pros > najb->pros) najb=pokaz;
+else najl=pokaz;
+
+pokaz=pokaz->sljed;
+
+while (pokaz != NULL) {
+   if (pokaz->pros > najb->pros) najb=pokaz;
+   if (pokaz->pros < najl->pros) najl=pokaz;
+   pokaz=pokaz->sljed; }
+
+pokaz=*glava;
+while (pokaz !=NULL) {
+if (pokaz->sljed->matbr == najb->matbr) ;
+
+}
+return 2;
+}

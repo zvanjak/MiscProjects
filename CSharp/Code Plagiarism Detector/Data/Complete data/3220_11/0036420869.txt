@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+	long broj;
+	int znamenke[10] = {0};
+	int neparne_znamenke[10] = {0};
+	int i;
+	int k = 0;
+	
+	scanf("%d", &broj);
+
+	if (broj > 0)
+	{
+		for (i = 0; i < 10; i++)
+		{
+			znamenke[i] = ((broj / ((int) pow(10, i))) % 10);
+		}
+
+		for (i = 0; i < 10; i++)
+		{
+			if ((znamenke[i] % 2) != 0)
+			{
+				neparne_znamenke[k++] = znamenke[i];
+			}
+		}
+
+		broj = 0;
+
+		for (i = 0; i < 10; i++)
+		{
+			broj += neparne_znamenke[i] * ((int) pow(10, i)); 
+		}
+
+		printf("%d", broj);
+	}
+	else 
+	{
+		printf("%d", broj);
+	}
+	
+	return 0;
+}

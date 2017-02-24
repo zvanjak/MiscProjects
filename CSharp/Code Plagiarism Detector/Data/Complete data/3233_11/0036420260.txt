@@ -1,0 +1,19 @@
+#include <stdio.h>
+void main ()
+{
+int i,n;
+double e=0;
+/* printf ("Unesi prirodni broj n iz intervala [1,200]"); */
+scanf ("%d", &n);
+if ((n>=1) && (n<=200))
+	{
+	for (i=1; i<=n; i++)
+	{
+		e = e + 1.0/((i+1)*i);
+	}
+	printf ("%.12f", e);
+	}
+else
+	printf ("n nije valjan");
+return 0;
+}

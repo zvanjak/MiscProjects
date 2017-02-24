@@ -1,0 +1,18 @@
+#include <stdio.h>
+int main(){
+int p,i,n,fakt=1;
+float e=0;
+scanf("%d",&n);
+if(n>=1 && n<=30){
+for(i=0;i<=n;i++){
+for(p=i;p>0;p--){
+fakt*=p;
+}
+e+=1./fakt;
+}
+printf("%.12f",e);
+}else{
+printf("n nije valjan");
+}
+return 0;
+}

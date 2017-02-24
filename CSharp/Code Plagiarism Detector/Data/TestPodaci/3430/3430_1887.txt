@@ -1,0 +1,37 @@
+#include <stdio.h>
+#define MAX 100
+#define RAZLIKA ('a'-'A')
+int main(){
+	int i,j;
+	char c;
+	char a[MAX+1];
+	
+    i=0;
+	do {
+		scanf("%c", &c);
+		if (c == '.') break;
+		if  ((c>='A'&& c<='Z') || (c>='a'&& c<='z') || (c==' ')) 
+				a[i++] = c;
+	}while(i<MAX);
+	a[i] = '\0';	
+		
+		for(j=0; j<i; j++){
+			char al=a[j];
+			char ad=a[i-j-1];
+			if(al!=' '){
+				if (al<'a')
+					al += RAZLIKA;
+			}
+			if(ad!=' '){
+				if (ad<'a')
+					ad += RAZLIKA;
+			}
+
+			if(al!= ad){
+			printf("NE");
+			return 0;
+			}
+		}
+		printf("DA");
+return 0;
+}

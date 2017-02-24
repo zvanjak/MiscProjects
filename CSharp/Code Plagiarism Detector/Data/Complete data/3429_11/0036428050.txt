@@ -1,0 +1,37 @@
+#include <stdio.h>
+int main () {
+int mr,i,j,n,r,s,medjukorak;
+int matrica[10][10];
+int suma=0,brojzamjene=0;
+do{
+	scanf("%i",&mr);
+} while(mr<1 || mr>10);
+for(r=0;r<mr;r++){
+	for(s=0;s<mr;s++){
+		scanf("%d",&matrica[r][s]);
+	}
+}
+do{
+	scanf("%d %d",&i,&j);
+    if (i>=0 && i<mr && j>=0 && j<mr){
+        medjukorak=matrica[i][j];
+        matrica[i][j]=matrica[j][i];
+        matrica[j][i]=medjukorak;
+        brojzamjene++;
+	}
+}while(i>=0 && i<mr && j>=0 && j<mr);
+scanf("%d",&n);
+if (n<0 || n>=mr){
+	suma=-1;
+}else{
+	for(r=0;r<mr;r++){
+		for(s=0;s<mr;s++){
+			if(r==n){
+				suma=suma+matrica[r][s];
+			}
+		}
+	}
+}
+printf("%d %d",brojzamjene,suma);
+return 0;
+}

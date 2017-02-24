@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <math.h>
+
+int main () {
+   int n,i,k=1;
+   double suma=1,e;
+   scanf("%d",&n);
+   if ((n>=1) && (n<=30)) {
+      for (i=1; i<=n; i++) {
+         k*=i;
+         suma+=1./k;
+      }
+      e=suma;
+      /*printf("%.12lf,e);*/
+      printf("%.12lf",e);
+   }
+   else
+      /*printf("n nije valjan!")*/
+      printf("n nije valjan");
+   return 0;
+}

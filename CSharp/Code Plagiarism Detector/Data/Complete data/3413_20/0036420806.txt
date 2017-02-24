@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+
+char *brojeve_u_znakove(int *polje, int duljina)
+{
+	char* ret;
+	char t[25];
+	int len,i;
+	int retLen = 0;
+
+	ret = NULL;
+
+	for(i = 0; i <duljina; i++)
+	{
+		itoa(*(polje + i), t, 10);
+
+		len = strlen(t);
+		if (i<(duljina-1))
+		{
+			t[len] = ' ';
+			len++;
+			t[len] = '\0';
+		}
+		ret = (char*)realloc(ret, (retLen + len) );
+		strcpy(ret + retLen, t);
+		retLen += len;
+
+
+	}
+
+	return ret;
+
+}

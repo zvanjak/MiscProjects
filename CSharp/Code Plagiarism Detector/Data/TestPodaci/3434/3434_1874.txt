@@ -1,0 +1,20 @@
+#include <stdio.h>
+int main(){
+	int i=0, pk=0, dk=0, tk=0, ck=0;
+	int x;
+	int y;
+	for(i=0;i<100;i++){
+		scanf("%d %d", &x, &y);
+		if(x==0 && y==0) break;
+		if(x==0 && y>0){pk++; dk++;}
+		else if(x<0 && y==0){dk++; tk++;}
+		else if(x==0 && y<0){tk++; ck++;}
+		else if(x>0 && y==0){pk++; ck++;}
+		else if(x>0 && y>0) pk++;
+		else if(x<0 && y>0) dk++;
+		else if(x<0 && y<0) tk++;
+		else if(x>0 && y<0)ck++;
+	}
+	printf("%d %d %d %d", pk, dk, tk, ck);
+	return 0;
+}

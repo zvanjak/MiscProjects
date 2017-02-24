@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+void main ()
+{
+	int n=0;
+	int polje[100]={0};
+	int index=100;
+	int broj=0;
+	int brojDijeljenja=0;
+	int brojNula=0;
+	int i;
+
+	while ((n<1) || (n>100))
+	{	
+		scanf ("%d", &n);
+	}
+
+	for (i=0; i<n; i++)
+	{
+	
+		scanf ("%d", &polje[i]);
+	}
+
+	while (1)
+	{
+		scanf ("%d", &index);
+		if ((index>=n) || (index<0)) break;
+
+		scanf ("%d", &broj);
+		if (broj==0) continue;
+		
+		polje[index]/=broj;
+
+		brojDijeljenja++;
+	}
+
+	for (i=0; i<n; i++)
+	{
+		if (polje[i]==0) brojNula++;
+	}
+
+	printf ("%d %d", brojNula, brojDijeljenja);
+
+}

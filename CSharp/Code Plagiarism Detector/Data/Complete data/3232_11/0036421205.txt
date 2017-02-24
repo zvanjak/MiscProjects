@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <math.h>
+int main () {
+	int n, i;
+	double pi=0;
+	scanf("%d", &n);
+	if (n<1 || n>30) printf("\nn nije valjan");
+	else {
+		for (i=0; i<=n; i=i+1)
+			pi=pi+1.0/pow(2,i);
+		printf("\n%1.12f", pi);
+	}
+	return 0;
+}

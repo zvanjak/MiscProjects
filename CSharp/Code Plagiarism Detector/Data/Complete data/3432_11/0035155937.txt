@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define MAX 100
+int main()
+{
+  int niz[MAX];
+  int i,brojac=0,j,k;
+  for(i=0;i<MAX;i++){
+                         scanf("%d",&niz[i]);
+                         if(niz[i]==-1)
+                         break;
+                         brojac=brojac+1;
+                         }
+   for(i=0;i<brojac;i=i+2){
+                           k=i+1;
+                           for(j=1;j<=niz[k];j++){
+                                                  printf("%d ",niz[i]);
+                                                  }
+                                                  }	
+  return 0;
+}

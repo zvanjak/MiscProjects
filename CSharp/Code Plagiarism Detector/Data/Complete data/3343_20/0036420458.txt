@@ -1,0 +1,18 @@
+float niz(int i) 
+{ 
+  float N,a,b;
+  kontrola(); 
+  if(i < 3){
+            if(i == 2) return 3;
+            if(i == 1) return 2;
+            if(i == 0) return 1;
+            else return 0;
+            }    
+  else 
+    {
+    a = niz(i-1);
+    b = niz(i-3);
+    N = (a-b)/(a+b);
+    }    
+return N;
+}

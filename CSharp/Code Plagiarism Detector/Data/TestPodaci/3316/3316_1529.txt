@@ -1,0 +1,3 @@
+void azuriraj(file *f,int redni_br,int bodovi){
+if(fseek(f,sizeof(natjecatelj)*redni_br-sizeof(int),seek_set) return;
+fwrite(&bodovi,sizeof(int),1,f);}

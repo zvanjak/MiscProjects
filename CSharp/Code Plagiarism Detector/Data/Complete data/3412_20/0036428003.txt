@@ -1,0 +1,18 @@
+char *SamoDuplikati(char *ulazni_niz)
+{int a=0,b,c;
+char *niz;
+if(*ulazni_niz=='\0') return NULL;
+printf(" \n ja");
+while(*(ulazni_niz+a)!='\0')
+{a++;}
+printf(" \n %d",a);
+niz= (char *)malloc(20);
+printf(" \n ja");
+*niz='\0';
+for(b=0;b<a;b++)
+	for(c=0;c<b;c++)
+	{if(*(ulazni_niz+b)==*(ulazni_niz+c))
+{niz=strncat(niz,ulazni_niz+b,1);
+	break;}}
+return niz;
+}

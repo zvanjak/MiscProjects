@@ -1,0 +1,34 @@
+#include <stdio.h>
+int main()
+{
+	int br,a,b,c,d,e,zbroj;
+	zbroj=0;
+	scanf("%d",&br);
+	if (br > 9999 && br <= 99999)
+	{
+		e=br%10;
+		d=(br%100)/10;
+		c=(br%1000)/100;
+		b=(br%10000)/1000;
+		a=br/10000;
+		if ((a==e) && (b==d)) 
+			{
+				if (a%2==0) zbroj=zbroj+a;
+				if (b%2==0) zbroj=zbroj+b;
+				if (c%2==0) zbroj=zbroj+c;
+				if (d%2==0) zbroj=zbroj+d;
+				if (e%2==0) zbroj=zbroj+e;
+			}
+		else
+			{
+				if (a%2!=0) zbroj=zbroj+a;
+				if (b%2!=0) zbroj=zbroj+b;
+				if (c%2!=0) zbroj=zbroj+c;
+				if (d%2!=0) zbroj=zbroj+d;
+				if (e%2!=0) zbroj=zbroj+e;
+			}
+		printf("%d",zbroj);
+	}
+	else
+	return 0;
+}

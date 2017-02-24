@@ -1,0 +1,17 @@
+int main(){
+    int i=0,l;
+    char s[100];
+    do{
+    scanf("%c", &s[i]);
+    i++;
+    }while(s[i-1]!='.');
+    s[i]=0;
+    l=strlen(s);
+    for (i=0; i<l-1; i++){
+        if (i==0 || i==(l-2) || s[i-1]==32 || s[i+1]==32){
+            s[i]=toupper(s[i]);
+            }else s[i]=tolower(s[i]);
+     }
+     printf("\n %s", s);
+      return 0;
+}

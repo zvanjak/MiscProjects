@@ -1,0 +1,80 @@
+typedef struct{
+        char ime[20+1];
+        char prezime[30+1];
+        char jmbag[10+1];
+        int ocjena;
+}tip;
+
+typedef struct neka {
+        tip a;
+        struct neka *sljed;
+}atom;
+
+int brojElementa(atom *glava){
+    int br=0;
+    atom *p;
+    for(p=glava;p;p=p->sljed)
+    br++;
+    return br;
+    }
+    
+int dodaj (atom **glavap,tip element){
+    atom *nova;
+    if((nova=(atom*)malloc(sizeof(atom)))==NULL) return 0;
+    
+    strcpy((nova->a).ime,element.ime);
+    strcpy((nova->a).prezime,element.prezime);
+    strcpy((nova->a).jmbag,element.jmbag);
+    (nova->a).ocjena=element.ocjena;
+    nova->sljed=*glavap;
+    *glavap=nova;
+    return 1;
+    }
+
+int minOcjena (atom *glava){
+    atom *p;
+    int min;
+    if(glava==NULL) return -1;
+    min=(glava->a).ocjena;
+    for(p=glava;p!=NULL;p=p->sljed)
+      if((p->a).ocjena<min)
+       min=(p->a).ocjena;                        
+    return min;
+}
+
+float prosjOcjena (atom *glava){
+    atom *p;
+    int zbroj=0;
+    int br=0;
+    if(glava==NULL) return -1;
+    for(p=glava;p!=NULL;p=p->sljed){
+      zbroj+=(p->a).ocjena;
+      br++;}
+    return ((float)zbroj/br);
+}
+
+int izbaciImeSadrzi (atom **glavap,char *imePodniz){
+    atom *p,*pp;
+    int br=0;
+    for(p=*glavap;p!=NULL;){
+       if(strstr((p->a).ime,imePodniz)){
+                                        
+        if(p==*glavap){
+             pp=(*glavap)->sljed;
+             free(*glavap);
+             *glavap=pp;
+             p=pp;
+             br++;
+             }
+        else {
+             for(pp=*glavap;pp->sljed!=p;pp=pp->sljed);
+             pp->sljed=p->sljed;
+             free(p);
+             p=pp->sljed;
+             br++;
+             }
+             }
+        else p=p->sljed;
+}
+return br;
+}  

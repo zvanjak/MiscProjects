@@ -1,0 +1,12 @@
+void funkcija(char *in,char *iz,int *br){
+     char tab[257]={0},*p=in;
+     int l=0;
+     for(;*p!='\0';p++){
+             if(tab[*p]==1) l++;
+             tab[*p]++;
+     }
+     for(p--;in<=p;p--)
+         if(tab[*p]==1) *(iz++)=*p;
+     *iz='\0';
+     *br=l;
+}

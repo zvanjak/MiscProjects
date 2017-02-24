@@ -1,0 +1,25 @@
+int najbolji( FILE *f ) {
+
+struct natjecatelj A;
+
+int max_bodovi = -1000000000;
+
+int redni_br = 0;
+
+fseek( f, 0, SEEK_SET );
+
+while( fread( &A, sizeof( struct natjecatelj ), 1, f ) == 1 ) {
+
+if( A.redni_br != 0 && A.bodovi > max_bodovi ) {
+
+max_bodovi = A.bodovi;
+
+redni_br = A.redni_br;
+
+}
+
+}
+
+return redni_br;
+
+}

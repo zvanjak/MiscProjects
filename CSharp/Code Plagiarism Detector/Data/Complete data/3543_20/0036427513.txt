@@ -1,0 +1,12 @@
+void obrni(zapis **head) {
+	zapis *tmp;
+	zapis *prev = NULL;
+	
+	while ((*head)->sljed) {
+		tmp = (*head)->sljed;
+		(*head)->sljed = prev;
+		prev = *head;
+		*head = tmp;
+	}
+	(*head)->sljed = prev;
+}

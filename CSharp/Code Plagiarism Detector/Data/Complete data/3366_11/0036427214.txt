@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main () {
+	int x,y,a,b,c;
+	scanf("%d",&x);
+	y=0;
+	a=(x/100)*64;
+	b=(x%100/10)*8;
+	c=x%10;
+	if (a) y+=a;
+	if (b) y+=b;
+	if (c) y+=c;
+	printf("%d",y);
+	return 0;
+}

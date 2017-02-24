@@ -1,0 +1,39 @@
+#include <ctype.h>
+#include <stdlib.h>
+
+class Recenica {
+
+   struct slovo {
+      char value;
+      slovo *next;
+      slovo () { value = 0; next = NULL; }
+   }*first, *last;
+
+   public:
+   Recenica() {
+      first = last = new slovo();
+   }
+
+   void UcitajZnak(char c) {
+      last->value = c;
+      last->next = new slovo();
+      last = last->next;
+   }
+
+   int PrebrojiRijeci() {
+      int ret = 0;
+      for (slovo *i = first; i!=last; i = i->next)
+         if (isalpha( i->value ) && !isalpha(i->next->value) )
+            ret++;
+      return ret;
+   }
+
+   int PrebrojiZareze() {
+      int ret = 0;
+      for (slovo *i = first; i!=last; i = i->next)
+         if ( i->value == ',')
+            ret++;
+      return ret;
+   }
+
+};

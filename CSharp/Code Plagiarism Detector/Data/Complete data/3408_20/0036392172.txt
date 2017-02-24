@@ -1,0 +1,26 @@
+char *spoji (char *niz1, char *niz2){
+ char *niz;
+ int i=0,br=0;
+ niz=(char*)malloc( ( strlen(niz1) + strlen(niz2) )+1 );
+ niz[( strlen(niz1) + strlen(niz2) )]='\0';
+while(*niz1!='\0' || *niz2 != '\0'){
+if(*niz1 !='\0')
+{
+*niz=*niz1;
+niz++;
+niz1++;
+i++;
+}
+  
+  if(*niz2 != '\0')
+{
+*niz=*niz2;
+niz++;
+niz2++;
+i++;
+}
+  
+ }
+ return (niz-i*sizeof(char));
+
+}

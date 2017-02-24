@@ -1,0 +1,19 @@
+int RemoveALLDigits (char * inputField, char * outputField, int * number){
+
+int i,j=0,n=0,brojac=0;
+n =strlen (inputField);
+for (i=0; i<=n; i++){
+if   (!isdigit (inputField )) {
+         outputField[j] = inputField [i];
+                     j++;
+         }else if(isdigit(inputField)){
+brojac++;
+};
+};
+outputfield[j]='\0';
+j++;
+*number=brojac;
+return j;
+};
+
+

@@ -1,0 +1,32 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+
+char *SamoDuplikati(char *ulazni_niz){
+	char *p;
+	char *help;
+	int i=0,j,k=0,bb;
+	p=(char *)malloc(strlen(ulazni_niz)+1);
+	help=(char *)malloc(strlen(ulazni_niz)+1);
+	while(*(ulazni_niz+i)!='\0'){
+		bb=0;
+		*(help+i)=*(ulazni_niz+i);
+		for(j=0; j<=i; j++){
+			if(*(help+i)==*(ulazni_niz+j))bb++;
+		}
+		if(bb>1){ 
+			*(p+k)=*(help+i);
+			k++;
+		}
+		i++;
+	}
+	*(p+k+1)='\0';
+	return p;
+}
+
+
+
+
+	
+	
+	

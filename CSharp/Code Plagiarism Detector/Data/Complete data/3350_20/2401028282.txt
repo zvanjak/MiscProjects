@@ -1,0 +1,33 @@
+typedef struct{
+	int redni_br;
+	char prezime[20+1];
+	int bodovi;
+} natjecatelj;
+
+
+int najbolji(FILE *f){
+	natjecatelj temp;	//privremena varijabla
+	int RedniBr=0, i, maxBod=0;
+	long velicina, BrZapisa;
+	
+	
+	fseek(f,0,SEEK_END); // pozicioniranje na kraj datoteke
+	velicina=ftell(f);	//velicina datoteke
+	BrZapisa=velicina/sizeof(temp); //broj zapisa u datoteci
+	
+	fseek(f,0,SEEK_SET);
+
+	for(i=1;i<=BrZapisa;i++){
+		fread(&temp,sizeof(temp),1,f);
+		if (temp.redni_br==0){
+			//fseek(f,1,SEEK_CUR); //ovo neide, jer se kod citanja datoteke polozaj pomaknuo na sljedeci zapis
+			continue;
+		}
+		else if(temp.bodovi>maxBod){
+			maxBod=temp.bodovi;
+			RedniBr=i;
+		}
+	}
+	
+	return RedniBr;
+}

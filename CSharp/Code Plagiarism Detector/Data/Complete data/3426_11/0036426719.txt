@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main () {
+	int mr, ms, p, q, i, j, c, d, brojac, stupci, flag;
+	int a[20][5];
+	brojac = 0;
+	stupci = 0;
+	do {
+		scanf ("%d %d", &mr, &ms);
+	} while ((mr < 1 || mr > 20) && (ms < 1 || ms > 5));
+	scanf ("%d %d", &p, &q);
+	for (c=0; c<mr; c++) {
+		if (c%2==0) {
+			for (d=0; d<ms; d++) {
+				a[c][d]=p;
+			}
+		}
+		else {
+			for (d=0; d<ms; d++) {
+				a[c][d]=q;
+			}
+		}
+	}
+	do {
+		scanf ("%d %d", &i, &j);
+		a[i][j]=0;
+		brojac++;
+	} while (i<mr && j<ms);
+	for (d=0; d<ms; d++) {
+		flag = 1;
+		for (c=0; c<mr; c++) {
+			if (a[c][d] == 0) flag = 0;
+			if (flag && c==(mr-1)) stupci++;
+		}
+	}			
+	printf ("%d %d", brojac-1, stupci);
+	return 0;
+}

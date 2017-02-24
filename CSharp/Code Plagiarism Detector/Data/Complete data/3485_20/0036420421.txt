@@ -1,0 +1,80 @@
+class CjelobrojniNiz {
+	
+public:
+	int brelem;
+	int *podaci;
+
+	int SviJednaki;
+
+	CjelobrojniNiz (int *niz, int n) {
+		int prvi;
+		int z=1;
+		int i;
+		podaci=(int *)malloc(n*sizeof(int));
+		for (i=0;i<n;i++) {
+			podaci[i]=niz[i];
+		}
+		brelem=n;
+		prvi=podaci[0];
+		for (i=0;i<n;i++) {
+			if (podaci[i]!=prvi) {
+				z=0;
+				break;
+			}
+		}
+		SviJednaki=z;
+	}
+
+	CjelobrojniNiz (const CjelobrojniNiz &copy) {
+		int i;
+		brelem=copy.brelem;
+		podaci=(int *)malloc(brelem*sizeof(int));
+		for (i=0;i<brelem;i++) {
+			podaci[i]=copy.podaci[i];
+		}
+		SviJednaki=copy.SviJednaki;
+	}
+
+		
+	int Usporedi (CjelobrojniNiz niz) {
+		int i;
+		if (niz.brelem!=brelem) return 0;
+		for (i=0;i<brelem;i++) {
+			if (niz.podaci[i]!=podaci[i]) return 0;
+		}
+		return 1;
+	}
+
+	int *VratiRazliku (CjelobrojniNiz niz, int* n) {
+		int prije, j, z, i, br=0;
+		int *novi;
+		novi=(int *)malloc(sizeof(int));
+		prije=podaci[0];
+		for (i=0;i<brelem;i++) {
+			j=0;
+			z=1;
+			if (i!=0 && podaci[i]==prije) {
+				prije=podaci[i];
+				continue;
+			}
+			while (niz.podaci[j]<=podaci[i]) {
+				if (niz.podaci[j]==podaci[i]) {
+					z=0;
+					break;
+				}
+				j++;
+			}
+			if (z) {
+				br=br+1;
+				novi=(int *)realloc (novi,(br+1)*sizeof(int));
+				novi[br-1]=podaci[i];
+			}
+			prije=podaci[i];
+		}
+		*n=br;
+		return novi;
+	}
+	~CjelobrojniNiz() {
+		free(podaci);
+	}
+};

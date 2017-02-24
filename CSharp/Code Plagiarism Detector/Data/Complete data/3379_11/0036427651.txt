@@ -1,0 +1,16 @@
+#include <stdio.h>
+int main () { 
+	int	a,b,c,d,e,s,z;
+	scanf("%d", &z);
+	a=z/10000;
+	b=z%10000/1000;
+	c=z%1000/100;
+	d=z%100/10;
+	e=z%10;
+	s=e+d+c+b+a;
+	if (z % s ==0) {
+	printf("%d", z-s);
+	} else { printf("%d", z/s);
+	}
+	return 0;
+}

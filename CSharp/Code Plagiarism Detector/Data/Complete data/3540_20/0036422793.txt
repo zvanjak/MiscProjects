@@ -1,0 +1,31 @@
+int izbaci (zapis **glava) {
+	int BrStud;
+	zapis *p, *r, *pom;
+	BrStud = 0;
+	if (*glava == NULL)
+		return 0;
+
+	else {
+		p= *glava; r = NULL;
+		do {
+			if (p->prosjek < 2.0) {
+				BrStud++;
+				if (r == NULL) {
+					pom = p;
+					p = p->sljed;
+					*glava = p;
+					free (pom);
+				} else {
+					pom = p;
+					p = p->sljed;
+					r->sljed = p;
+					free (pom);
+				}
+			} else {
+				r = p;
+				p = p->sljed;
+			}
+		} while (p!= NULL);
+	}
+	return BrStud;
+}

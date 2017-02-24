@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+    int n, i, br, broj=1;
+    double sum=1, temp=0;
+    
+    scanf("%d", &n);
+    
+    if (n>=1 && n<=30) {
+             for (i=1; i<=n; i++) {
+                 if ((i%2)==0) {
+                               for (br=1; br<=i; br++)
+                                   broj *= br;
+                                   sum += (1./broj); broj=1;
+                 } else {
+                        for (br=1; br<=i; br++)
+                            broj *=br;
+                            sum -= (1./broj);
+                            broj=1;
+                 }
+             }
+    printf ("%.12f\n", (1./sum));
+    } else {
+
+           printf("n nije valjan\n");
+
+     }
+return 0;
+}

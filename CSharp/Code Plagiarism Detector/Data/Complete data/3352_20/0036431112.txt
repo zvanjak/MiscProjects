@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int veci_od(FILE *f, int n){
+	struct natjecatelj{
+    int redni_br;
+    char prezime[20+1];
+    int bodovi;
+};
+    struct natjecatelj t;
+    int ret = 0;
+
+    fseek(f, 0, SEEK_SET);
+    while( fread(&t, sizeof(t), 1, f)==1 ){
+        if ( t.redni_br != 0 )
+            if ( t.bodovi >= n )
+                ret++;
+    }
+    return ret;   
+}

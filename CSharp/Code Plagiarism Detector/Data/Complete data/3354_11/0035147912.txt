@@ -1,0 +1,31 @@
+#include<stdio.h>
+void main(){
+     char a,b,c;
+     int n,m,k;
+     
+     scanf("%c %c %c", &a, &b, &c);
+
+     if (a> 65-1 && a< 122+1)
+          n=1;
+     else if (a> 48-1 && a< 57+1)
+          n=0;
+
+     if (b> 65-1 && b< 122+1)
+          m=1;
+     else if (b> 48-1 && b< 57+1)
+          m=0;
+
+     if (c> 65-1 && c< 122-1)
+          k=1;
+     else if (c> 48-1 && c< 57+1)
+          k=0;
+
+     if ((n==m) && ((n!=k) || (m!=k) ))
+          printf("%c", c);
+     else if ((n==k) && ((n!=m) || (k!=m) ))
+          printf("%c", b);
+     else if ((m==k) && ((m!=n) || (k!=n) ))
+          printf("%c", a);
+     else
+          printf("Nema uljeza!");
+}

@@ -1,0 +1,45 @@
+#include <stdio.h>
+
+int main (){
+	int mr, red, stup,v, n, brojac=0, i, j;
+	float suma=0, pom, a[10][10];
+
+
+	do
+	scanf("%d", &mr);
+	while (mr <1 || mr >10);
+
+	for (red=0; red<mr;red++){
+		for(stup=0; stup<mr; stup++){
+			scanf("%f", &a[red][stup]);
+		}
+	}
+
+	do{
+	scanf("%d %d", &i, &j);
+	if (i>=0 && i<=(mr-1) && j>=0 && j<=(mr - 1)){
+        pom=a[i][j];
+		a[i][j]=a[j][i];
+		a[j][i]=pom;
+		brojac++;
+	}
+	}while (i>=0 && i<mr && j>=0 & j< mr);
+
+
+
+
+
+	scanf("%d", &n);
+	if (n>=0 && n<=(mr-1)){
+		for(v=0; v<mr; v++){
+			suma+=a[n][v];
+		}
+	}else{
+		suma=-1;
+	}
+
+	printf("%d %f", brojac, suma);
+
+
+	return 0;
+}

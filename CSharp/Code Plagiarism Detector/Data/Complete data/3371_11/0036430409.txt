@@ -1,0 +1,13 @@
+#include <stdio.h>
+int main() {
+int x;
+scanf ("%d", &x);
+if ((x<10000) && (x>999)) {
+x = (x%2) ? x : x + 1 ;
+x = (x%20) >= 10 ? x : x + 10 ;
+x = (x%200) >= 100 ? x : x + 100 ;
+x = (x%2000) >= 1000 ? x : x + 1000;
+printf ("%d", x);
+}
+return 0;
+}

@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int suma, nr;
+
+int main( void )
+{
+	int curr;
+	
+	for( ;; )
+	{
+		scanf( "%d", &curr );
+		if( !curr )
+			break;
+		if( curr < 0 )
+			curr = -curr;
+		
+		while( curr )
+		{
+			nr++;
+			suma += ( curr % 10 );
+			curr /= 10;
+		}
+	}
+
+	printf ("%d %d", nr, suma );
+
+	return 0;
+}
+			
+	

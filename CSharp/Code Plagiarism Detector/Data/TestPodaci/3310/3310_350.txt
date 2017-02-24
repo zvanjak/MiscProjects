@@ -1,0 +1,27 @@
+int veci_od(FILE *f, int granica)
+{		
+	typedef struct 
+	{
+	char naziv[30+1];
+	char autor[20+1];
+	int prodano;
+	} podaci;
+	
+	int brojac=0, i;
+	podaci podatak[100];
+
+//printf("%d", sizeof(podatak));
+
+fseek(f, 0, SEEK_SET);
+fread(podatak, sizeof (podatak), 1, f);
+for (i=0 ; i<br_zapisa; i++)
+	{
+		if (podatak[i].naziv != NULL)
+		{
+		if (podatak[i].prodano >= granica)
+		{
+			brojac ++;
+		}}
+	}
+return brojac;
+}

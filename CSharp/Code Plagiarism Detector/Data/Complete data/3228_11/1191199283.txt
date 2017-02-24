@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+	int n, i;
+	float pi = 0.0;
+
+	scanf("%d", &n);
+
+	if(n>=1&&n<=100)
+	{
+		for(i=1; i<=n; i++)
+		{
+			pi+=pow(-1,i+1)*1/pow(i, 2);
+		}
+
+		pi*=12;
+		pi=sqrt(pi);
+
+		printf("pi iznosi %.12f\n",pi);
+	}
+	else
+	{
+		printf("n nije valjan\n");
+	}
+
+	return 0;
+}

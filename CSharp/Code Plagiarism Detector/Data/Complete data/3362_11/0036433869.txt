@@ -1,0 +1,12 @@
+#include <stdio.h>
+int main() {
+int a, b, c, d, e, broj;
+scanf("%d", &broj);
+a = (broj % 10);
+b = (broj / 10) % 10;
+c = (broj / 100) % 10;
+d = (broj / 1000) % 10;
+e = d + (10 * c) + (100 * b) + (1000 * a);
+printf("%d", e);
+return 0;
+}

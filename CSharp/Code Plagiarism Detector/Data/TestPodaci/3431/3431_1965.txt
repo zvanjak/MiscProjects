@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main()
+{
+	int znakovi[100], sump=0, sumn=0;
+	char temp;
+	int i, j;
+	for (i=0; i<100; i++) {
+		scanf("%c", &temp);
+		if( temp <= '9' && temp >= '0' ) {
+			znakovi[i] = temp - 48;
+		} else if (temp >= 'a' && temp <= 'f') {
+			znakovi[i] = temp - 87;
+		} else if (temp >= 'A' && temp <= 'F') {
+			znakovi[i] = temp - 55;
+		/*} else if (temp == '\n') {
+			i--;
+			continue;*/
+		} else break;
+	}
+
+	for (j=0; j<i; j++) {
+		if (znakovi[j]%2 == 0) sump+=znakovi[j];
+		else sumn += znakovi[j];
+	}
+
+	printf("%d", sump-sumn);
+
+	return 0;
+}

@@ -1,0 +1,22 @@
+int* napraviPolje(int*A, int Na, int *B, int Nb, int* Nc){
+	int *C,m=0,pom,i;
+	C=NULL;
+	for(i=0;i<Na;i++){
+		pom=A[i]/10;
+		if(pom!=0){
+			if((pom/10)==0){
+				C=(int*) realloc(C,(m+1)*sizeof(int));
+				C[m]=A[i];m++;}
+		}
+	}
+	for(i=0;i<Nb;i++){
+		pom=B[i]/10;
+		if(pom!=0){
+			if((pom/10)==0){
+				C=(int*) realloc(C,(m+1)*sizeof(int));
+				C[m]=B[i];m++;}
+		}
+	}
+	*Nc=m;
+	return C;
+}

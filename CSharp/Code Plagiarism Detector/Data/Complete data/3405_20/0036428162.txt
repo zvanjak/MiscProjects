@@ -1,0 +1,27 @@
+char * SvakiDrugi (char *ulazni_niz) {
+	char *izlazni;
+	int i=0, j=0;
+	if(*ulazni_niz== '\0' || *ulazni_niz==' ') {
+		*izlazni='\0';
+		return izlazni ;
+		}
+		
+	else {
+		
+		while(1) {
+			if (*(ulazni_niz+j) == '\0' || *(ulazni_niz+j-1) == '\0') {
+				*(izlazni+ i)='\0';
+				break;
+				}
+			
+			
+			*(izlazni+ i)= *(ulazni_niz+j) ;
+			i++;
+			j+=2;
+		
+			}
+		}
+	
+		
+	return izlazni;
+	}

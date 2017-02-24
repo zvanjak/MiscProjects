@@ -1,0 +1,11 @@
+double sumareda(int N)
+{
+	double s;
+	kontrola();
+	if (N==1) return 1./15;
+	else
+	{
+		s = 1./((4*N - 1)*(4*N + 1));
+		return s + sumareda(N-1);
+	}
+}

@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+main(){
+int a=0,nijep=0,i=0,najvp=0;
+
+for(;;){
+scanf("%d",&a);
+if (a<=2){break;}
+	for(i=2;i<a;++i){
+		if(a%i==0){nijep=1;}
+	}
+
+	if((nijep==0)&&(a>najvp)){najvp=a;}
+nijep=0;
+}
+
+printf("%d",najvp);
+
+
+
+return 0;
+}

@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+    float broj,buf,q=0;
+    double nbroj;
+    
+    scanf("%f", &broj);
+    
+    if(broj!=(int)broj)return 0;
+    
+    while(broj>0){
+                  buf=(int)broj%10;
+                  broj=(int)broj/10;
+                  if( (int)buf%2!=0 && buf!=0 ) {
+                      nbroj=nbroj+ pow(10.0,q)*buf;
+                      q++;}
+                  }
+    
+    if(broj<0) nbroj=broj;
+    printf("%.0f",nbroj);
+
+}

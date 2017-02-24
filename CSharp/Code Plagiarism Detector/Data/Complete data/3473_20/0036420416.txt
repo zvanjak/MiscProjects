@@ -1,0 +1,16 @@
+Krug fun4 (Pravokutnik p)
+{
+	double x,y,r;
+	Tocka dl;	
+	dl = p.getDLkut();	
+
+	x = p.getSirina();
+	y = p.getVisina();
+
+	Tocka _srediste ((dl.X + x)/2, (dl.Y + y)/2);	
+	r = sqrt ( pow((x/2),2) + pow((y/2),2) );	
+
+	Krug _krug (_srediste, r);
+	return	_krug;
+}
+

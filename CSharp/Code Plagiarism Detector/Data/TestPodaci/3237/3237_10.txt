@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+
+	int n, i; 
+	double s=0., suma=0., x, pi;
+
+
+	//printf("Upisi prirodan broj iz intervala [1,30]:");
+	scanf("%d", &n);
+
+	if ((n>0)&&(n<31))
+	{
+		for (i=1; i<=n; i++){
+			x= pow (i, 6);
+			s=1./x;
+			suma = suma + s;}
+
+		pi= pow (945*suma, 1./6);
+		printf("%.12f", pi);
+	}
+	else {
+	printf("n nije valjan");
+	}
+	
+	return 0;
+}
+

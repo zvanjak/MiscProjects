@@ -1,0 +1,40 @@
+class RazlPolje{
+	int MAX;
+	int *polje;	
+	int pok;
+public:
+	RazlPolje(){MAX=10;polje=new int [MAX];pok=-1;}
+	int Dodaj (int broj){
+		int i;
+		if (pok==MAX-1)
+			return 0;
+		for (i=0;i<=pok;i++)
+			if (polje[i]==broj)
+				return 1;
+		pok++;
+		polje[pok]=broj;		
+		return 1;        
+	}
+
+	int Izbaci (int broj){
+		int i,j;
+		for (i=0;i<=pok;i++)
+			if (polje[i]==broj){
+				for (j=i;j<=pok-1;j++)
+					polje[j]=polje[j+1];
+				pok--;
+				return 1;
+			}
+		return 0;
+	}
+
+	int SumaPolja(){
+		int suma=0,i;
+		for (i=0;i<=pok;i++){
+			suma+=polje[i];
+		}
+		return suma;
+	}
+
+	~RazlPolje(){delete []polje;};
+};

@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main () {
+	int c,i,b;
+	while (c!=-1) {
+		scanf("%d", &c);
+		if (c!=-1) {
+			scanf("%d", &b);
+			for (i = 0; i < b ; i++) {
+				printf("%d ", c);
+			}	
+		}
+	}
+	return 0;
+}

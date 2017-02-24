@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main () {
+    
+    int i, n;
+    double suma_clanova=0., pi=0.;
+    
+    scanf("%d", &n);  
+    
+    if (n<1 || n>500) {printf("n nije valjan");} else
+    {
+       for (i=1; i<=n; i++)
+           if (i % 2 == 0) suma_clanova = suma_clanova - 1.0/(2*i -1);
+              else suma_clanova = suma_clanova + 1.0/(2*i -1);
+    
+    pi= 4*suma_clanova; 
+    printf("%.12lf", pi);
+    
+    }
+
+ return 0;   
+}
+

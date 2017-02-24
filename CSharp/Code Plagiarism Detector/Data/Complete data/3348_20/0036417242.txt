@@ -1,0 +1,12 @@
+double sumareda (int N){
+    int i = N;
+    double zbroj = 0;
+    kontrola();
+    if (i < 1) 
+      return 0;
+    zbroj = (1.0/((4*N-1)*(4*N+1)));
+    if (i == 1) 
+      return zbroj;
+    zbroj = zbroj + sumareda (i-1);
+    return zbroj;
+}

@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <string.h>
+
+void spoji(char *ime, char *prezime, char *jmbag, char *izlazni){
+	char ime2[20], prezime2[20], jmbag2[20],jmbag3[7]={'0','0','0','0','0','0'};
+int i=0,j=0,k=0,l=0,e=0,f=0,g=0,h=0;
+for (i=0;i<19;i++){
+	if (ime[i]!=' ') {ime2[j]=ime[i];
+						j++;}
+	;
+}
+for (k=0;k<19;k++){
+	if (prezime[k]!=' ') {prezime2[l]=prezime[k];
+						l++;}
+	;
+}
+for (e=0;e<19;e++){
+	if (jmbag[e]!=' ') {jmbag2[f]=jmbag[e];
+						f++;}
+	;
+}
+h=strlen(jmbag2)-1;
+if ((jmbag2[h]>'0') && (jmbag2[h]<'9')) jmbag3[5]=jmbag2[h];
+if ((jmbag2[h-1]>'0') && (jmbag2[h-1]<'9')) jmbag3[4]=jmbag2[h-1];
+if ((jmbag2[h-2]>'0') && (jmbag2[h-2]<'9')) jmbag3[3]=jmbag2[h-2];
+if ((jmbag2[h-3]>'0') && (jmbag2[h-3]<'9')) jmbag3[2]=jmbag2[h-3];
+if ((jmbag2[h-4]>'0') && (jmbag2[h-4]<'9')) jmbag3[1]=jmbag2[h-4];
+if ((jmbag2[h-5]>'0') && (jmbag2[h-5]<'9')) jmbag3[0]=jmbag2[h-5];
+strcat(izlazni,prezime2);
+strcat(izlazni,", ");
+strcat(izlazni,ime2);
+strcat(izlazni,": ");
+strcat(izlazni, jmbag3);
+
+}

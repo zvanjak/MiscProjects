@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <ctype.h>
+
+
+int main( void )
+{
+	int veliko = 1;
+	char tmp;
+
+	for( ;; )
+	{
+		scanf( "%c", &tmp );
+		if( tmp == '.' )
+			break;
+		if( tmp == ' ' || tmp == ',' )
+		{
+			veliko = 1;
+			continue;
+		}
+		
+		if( veliko )
+			tmp = toupper( tmp );
+		else
+			tmp = tolower( tmp );
+		veliko = 0;
+
+		printf( "%c", tmp );
+	}
+
+	printf(".");
+ 
+	return 0;
+}

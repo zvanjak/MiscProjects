@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main () {
+	int broj, djeljitelj = 1000;
+	scanf ("%d", &broj);
+	while (djeljitelj > 0) {
+		if ((broj / djeljitelj) % 2 != 0) {
+			broj = broj - (broj / djeljitelj) * djeljitelj;
+			djeljitelj /= 10;
+		}
+		else 
+			djeljitelj = 0;
+	}
+	/* if (broj != 0) */
+	    printf ("%d", broj);
+	return 0;
+}

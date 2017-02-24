@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+
+void main() {
+char recenica[100+1],nova[100+1],pom[100+1];
+char *rec;
+int i,br;
+
+
+scanf("%[^.]",recenica);
+strcat(recenica,".");
+
+strcpy(pom,recenica); 
+strlwr(pom);
+if(islower(pom[0])) pom[0]-=32;
+
+rec=&pom[0];
+
+br=0;
+do{
+
+if(*rec!=' '&& *rec!=','){
+nova[br++]=*rec;
+
+} else {
+for(;((*rec==' ') || (*rec==',')); rec++);
+*rec-=32;
+nova[br++]=*rec;
+
+
+}
+++rec;
+
+} while((*rec!='.'));
+nova[br]='\0';
+strcat(nova,".");
+printf("%s",nova);
+
+
+}

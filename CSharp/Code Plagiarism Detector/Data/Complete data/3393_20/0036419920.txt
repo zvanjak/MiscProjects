@@ -1,0 +1,64 @@
+int* napraviPolje(int *A, int Na, int *B, int Nb, int *Nc)
+{
+	int i,cc=0,t,x;
+	int *ret;
+
+	for(i=0;i<Na;i++)
+	{
+		t=*(A+i);
+
+		if(t<0)
+			t=-t;
+
+		if(t>9&&t<100)
+			cc++;
+
+	}
+
+	for(i=0;i<Nb;i++)
+	{
+		t=*(B+i);
+
+		if(t<0)
+			t=-t;
+
+		if(t>9&&t<100)
+			cc++;
+	}
+
+	ret=(int*)malloc(cc*sizeof(int));
+
+	
+	for(i=0,x=0;i<Na;i++)
+	{
+		t=*(A+i);
+
+		if(t<0)
+			t=-t;
+
+		if(t>9&&t<100)
+		{
+			*(ret+x)=*(A+i);
+			x++;
+		}
+
+	}
+
+	for(i=0;i<Nb;i++)
+	{
+		t=*(B+i);
+
+		if(t<0)
+			t=-t;
+
+		if(t>9&&t<100)
+		{
+			*(ret+x)=*(B+i);
+			x++;
+		}
+
+	}
+	
+	*Nc=cc;
+	return ret;
+}

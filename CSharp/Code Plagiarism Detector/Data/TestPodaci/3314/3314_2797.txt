@@ -1,0 +1,12 @@
+#include<stdio.h>
+int veci_od(FILE *f,int granica){
+    int brojac=0;
+    struct zapis{
+        char naziv[30+1];
+        char autor[20+1]; 
+        int prodano;} doc;
+        while((fscanf(f,"%31s%21s%d",doc.naziv,doc.autor,&doc.prodano)==3)){
+            if(doc.prodano>=granica)brojac++;
+        }
+        return brojac;
+}

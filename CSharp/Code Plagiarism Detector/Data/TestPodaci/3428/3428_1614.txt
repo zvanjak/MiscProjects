@@ -1,0 +1,41 @@
+#include <stdio.h>
+int main ( ){
+int polje[20][5];
+int varijabla, i, sred_red, mr, ms,j;
+int u;
+do{
+scanf("%d %d ", &mr, &ms);
+}while((mr<=1 || mr>20)|| (ms<=1 || ms>5));
+for (i=0;i<mr;i++){
+for (j=0;j<ms;j++){
+scanf("%d",&polje[i][j]);
+}
+}
+if (mr%2!=0){
+sred_red=mr/2;
+
+for (i=0;i<sred_red;i++){
+for (j=0;j<ms;j++){
+if (polje[i][j]==polje[mr-1-i][j]){
+varijabla=1;
+}else {
+varijabla=0;
+}
+}
+}
+if (varijabla==1)
+printf("jest");
+else printf("nije");
+}
+else {
+u=1;
+for (i=0;i<mr;i++)
+for (j=0;j<ms;j++){
+	if ((i%2==0) && (j%2==0)){
+u=u*polje[i][j];
+	}
+}
+printf("%d", u);
+}
+return 0;
+}

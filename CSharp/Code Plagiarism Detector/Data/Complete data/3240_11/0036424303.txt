@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <math.h>
+int main () {
+	int a, i, x, j, w, z, l, c, h, g;
+	scanf("%d", &a);
+	if (a<=0)
+	printf ("n nije pozitivan");
+	else {{
+	x=a/10; i=0; 
+	while (x!=0) {
+		x/=10;
+		i+=1;
+	}}
+	i=i+1;
+	w=a/(pow(10,(i-1)));
+	printf ("%d ", w);
+	l=a;
+	for (j=i; j>2; j--) {
+		h=a/(pow(10,(j-2))); g=(a/(pow(10,j-1)));
+		c=h-g*10;
+		printf ("%d ",c);}
+		l=a%10;
+	if (a>9)
+		printf("%d", l);}
+	return 0;
+}

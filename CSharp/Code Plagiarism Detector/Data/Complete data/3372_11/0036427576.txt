@@ -1,0 +1,15 @@
+#include<stdio.h>
+int main()
+{int a=1,x,y=0,i=1;
+while ((a<1000)||(a>9999)||(a<0)) scanf("%d",&a);
+while (a>=1) {
+	x=a %10;
+	if (x==9)x=0;
+	if (x % 2 !=0)x=x+1;
+	y+=x*i;
+	i*=10;
+	a/=10;
+	}
+printf("%d",y);
+return 0;
+}

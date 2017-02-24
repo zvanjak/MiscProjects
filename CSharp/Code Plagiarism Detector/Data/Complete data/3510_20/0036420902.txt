@@ -1,0 +1,122 @@
+typedef struct {
+  char ime[20+1];
+  char prezime[30+1];
+  char jmbag[10+1];
+  int ocjena;
+} tip;
+
+typedef struct n {
+  tip element;
+  struct n *sljed;
+} atom;
+
+int brojElementa(atom *glava)
+{
+  atom *tmp=glava;
+  unsigned int i=0;
+  
+  for(;tmp!=NULL;tmp=tmp->sljed)i++;
+
+  return i;
+}
+
+int dodaj (atom **glavap, tip element)
+{
+  atom *tmp;
+  
+  if ( (tmp=(atom *)malloc(sizeof(atom)))==NULL)
+    return 0;
+  
+  memset(tmp,0x0,sizeof(atom));
+    
+  strncpy((tmp->element).ime,element.ime,sizeof((tmp->element).ime)-1);
+  strncpy((tmp->element).prezime,element.prezime,sizeof((tmp->element).prezime)-1);
+  strncpy((tmp->element).jmbag,element.jmbag,sizeof((tmp->element).jmbag)-1);
+  (tmp->element).ocjena=element.ocjena;
+  
+  tmp->sljed=*glavap;
+  *glavap=tmp;
+  
+  return 1;
+}
+
+int maksOcjena(atom *glava)
+{
+  int max=-1;
+  atom *tmp=glava;
+  
+  while(tmp!=NULL)
+  {
+    if(tmp==glava)
+      max=(tmp->element).ocjena;
+    
+    else if ((tmp->element).ocjena>max)
+      max=(tmp->element).ocjena;
+    
+    tmp=tmp->sljed;
+  }
+  return max;
+}
+
+float prosjOcjena(atom *glava)
+{
+  float pros=0;
+  unsigned int num=0;
+  
+  atom *tmp=glava;
+  
+  while(tmp!=NULL)
+  {
+    pros+=(tmp->element).ocjena;
+    
+    tmp=tmp->sljed;
+    num++;
+  }
+  
+  if(num==0)
+    return (float)-1;
+  else   
+    return (float)(pros/num);
+}
+
+int izbaciImePocinjeS (atom **glavap, char *imePocetak)
+{
+  atom *tmp, *prev;
+  unsigned int i=0;
+  
+  tmp=*glavap;
+  
+  while(tmp!=NULL)
+  {
+    if(tmp==*glavap && strlen((tmp->element).ime) >= strlen(imePocetak))
+    {
+      if (strncmp( (tmp->element).ime, imePocetak, strlen(imePocetak) ) == 0)
+      {
+      *glavap=tmp->sljed;
+      free(tmp);
+      tmp=*glavap;
+      i++;
+      }
+    }
+    else if (strlen((tmp->element).ime)>=strlen(imePocetak))
+    {
+      if(strncmp((tmp->element).ime,imePocetak,strlen(imePocetak))==0)
+      {
+      prev->sljed=tmp->sljed;
+      free(tmp);
+      tmp=prev->sljed;
+      i++;
+      }
+    }
+    else 
+    {
+      prev=tmp;
+      tmp=tmp->sljed;
+    }
+  }
+  
+  return i;
+}
+  
+    
+

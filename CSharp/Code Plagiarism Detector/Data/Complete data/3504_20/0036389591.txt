@@ -1,0 +1,123 @@
+typedef struct {
+	char ime[20+1];
+	char prezime[30+1];
+	char jmbag[10+1];
+	int ocjena;
+} tip;
+
+// Atom
+struct at {
+  tip element;
+  struct at *sljed; 
+};
+typedef struct at atom;
+
+// Prototipovi funkcija
+//
+int brojElementa (atom *glava);
+int dodaj (atom **glavap, tip element);
+int minOcjena (atom *glava);
+float prosjOcjena (atom *glava);
+int izbaciImeSadrzi (atom **glavap, char *imePodniz);
+
+// Broj elemenata u listi
+//
+int brojElementa (atom *glava) {
+
+	atom *p;
+	int broj = 0;
+
+	// prebroj sve elemente
+	for (p = glava; p != NULL; p = p->sljed) {
+		broj++;
+	}
+
+	return broj;
+}
+
+// Dodavanje u listu 
+//
+int dodaj (atom **glavap, tip element) {
+	
+	atom *novi;
+	
+	novi = (atom *) malloc (sizeof(atom));
+	if ( novi == NULL )
+		return 0;
+
+	novi->element = element;
+	
+	// Dodavanje na pocetak liste
+	novi->sljed = *glavap;
+	*glavap = novi;
+	
+	return 1;
+
+}
+
+// Minimalna ocjena, ako je lista prazna vraca -1
+//
+int minOcjena (atom *glava) {
+
+	atom *p;
+	int mino;	// minimalna ocjena
+
+	p = glava;
+	if (p == NULL)	// lista je prazna
+		return -1;
+
+	mino = p->element.ocjena;
+
+	// prodji kroz listu i pronadji najmanju ocjenu
+	for (; p != NULL; p = p->sljed) {
+		if (mino > p->element.ocjena)
+			mino = p->element.ocjena;
+	}
+
+	return mino;
+}
+
+// Prosjecna ocjena, ako je lista prazna vraca -1
+//
+float prosjOcjena (atom *glava) {
+
+	atom *p;
+	float suma = 0.;	// zbroj svih ocjena
+	int broj = 0;		// broj elemenata
+
+	p = glava;
+	if (p == NULL)		// lista je prazna
+		return -1.;
+
+	// prodji kroz listu, zbroji sve ocjene i prebroj elemente
+	for (; p != NULL; p = p->sljed) {
+		suma += (float) p->element.ocjena;
+		broj++;
+	}
+
+	return (float) (suma / broj);
+}
+
+// Izbaci element iz liste ako ime sadrzi zadani podniz (velika i
+// mala slova se razlikuju). Vraca broj izbacenih elemenata.
+//
+int izbaciImeSadrzi (atom **glavap, char *imePodniz) {
+
+	atom *p;
+	int broj = 0;
+
+	for (; *glavap;) {
+		if ( strstr((*glavap)->element.ime, imePodniz) != NULL ) {
+			p = *glavap;
+			*glavap = (*glavap)->sljed;
+			free (p);
+			broj++;
+		}
+		else
+		{
+			glavap = &((*glavap)->sljed);
+		}
+	}
+
+	return broj;
+}

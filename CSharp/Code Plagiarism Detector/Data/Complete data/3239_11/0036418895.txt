@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+	long i,j,s;
+	long d,g;
+	scanf ("%ld%ld", &d, &g);
+	if (d<0 || g<0 || d>g) {
+		printf("D i G nisu valjani");
+		return 0;
+	}
+
+	for (i=d; i<=g; i++) {
+		if (i%2) continue;
+		s = 0;
+		for (j=0; j<=i; j+=2) s+= j;
+
+		if (i>d+1) printf(" ");
+		printf("%ld", s);
+	}
+
+	return 0;
+}

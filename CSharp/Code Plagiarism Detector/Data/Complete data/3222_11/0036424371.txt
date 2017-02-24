@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <math.h>
+int main ()
+{
+	unsigned int n, z, i, x;
+	scanf ("%d", &n);
+	x=n;
+	z= n%10;
+	for (i=1; i<=40; i++)
+	{
+		if (x!=n) printf ("%d ", n);
+		if (n%13 == 0) break;
+		n= n+z;
+	}
+	printf ("%d", i-1);
+	return 0;
+}

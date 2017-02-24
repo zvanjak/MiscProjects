@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main()
+{
+    long i, m, n, faktm = 1, faktn = 1, faktrazlike = 1, uk;
+
+    scanf("%d %d",  &n, &m);
+    if(m == 0 || m == n){
+        printf("0");
+        return -1;
+    }
+    for(i = 1; i<=m; i++)
+        faktm *= i;
+    for(i = 1; i<=n; i++)
+        faktn *= i;
+    for(i = 1; i<=(n-m); i++)
+        faktrazlike *= i;
+    uk = faktn / (faktm * faktrazlike);
+
+    printf("%d", uk);
+    return 0;
+}

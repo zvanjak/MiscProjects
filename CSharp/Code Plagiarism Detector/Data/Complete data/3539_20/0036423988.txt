@@ -1,0 +1,17 @@
+float prosjek (zapis *glava) {
+    zapis * next = glava;
+    float pro=0.0,suma=0.0;
+    int n=0;
+    while ( next != NULL ) {
+    	suma+=next->pros;
+     	n++;
+      	next=next->sljed; 	   
+    }
+    pro=suma/n;
+    next = glava;
+    while ( next != NULL ) {
+		if ( next->pros < pro ) next->pros=0.0;
+  		next = next->sljed;      	 
+    }      
+    return pro;
+}

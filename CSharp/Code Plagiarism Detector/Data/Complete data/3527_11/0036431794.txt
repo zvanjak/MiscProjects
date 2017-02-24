@@ -1,0 +1,10 @@
+int izbaciDuplikate (char * ulazni){
+    int broj=0,m,n,s;
+for(m=0;ulazni[m]!='\0';m++)
+       for(n=m+1;ulazni[n]!='\0';n++)
+          if(ulazni[m]==ulazni[n]){
+             broj=broj+1;
+             for(s=n;ulazni[s]!='\0';s++)
+                ulazni[s]=ulazni[s+1];
+             n=n-1;}
+		  return broj;}

@@ -1,0 +1,25 @@
+#include <stdio.h>
+int main () {
+	int a,b,broj,pom ,prvaZnamenka ,drugaZnamenka ,trecaZnamenka ,cetvrtaZnamenka ,
+		petaZnamenka ,sumaZnamenki;
+	scanf ("%d", &broj);
+	pom=broj;
+	if (broj>=10000 && broj<=99999){
+	 prvaZnamenka= broj%10;
+	broj/=10;
+		drugaZnamenka=broj%10;
+		broj/=10;
+		trecaZnamenka=broj%10;
+		broj/=10;
+		cetvrtaZnamenka=broj%10;
+		broj/=10;
+		petaZnamenka=broj%10;
+			
+sumaZnamenki=prvaZnamenka+drugaZnamenka+trecaZnamenka+cetvrtaZnamenka+petaZnamenka;
+	 if(pom%sumaZnamenki !=0){
+a=pom/sumaZnamenki;
+printf("%d",a);
+	 }else{
+		 b=pom-sumaZnamenki;
+		 printf("%d", b);
+}}return 0;}

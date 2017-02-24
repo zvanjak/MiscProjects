@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+char *SvakiDrugi (char *ulazni_niz)
+{
+int dulj;
+int i;
+char *niz;
+dulj = strlen(ulazni_niz);
+niz = (char *)malloc(sizeof(char)*(dulj/2+1));
+if(dulj/2)dulj++;
+for(i=0;i<dulj;i+=2){
+        niz[i/2] = ulazni_niz[i];
+        }
+niz[i/2] = '\0';
+return niz;
+}

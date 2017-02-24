@@ -1,0 +1,21 @@
+char *Spoji(char *niz1,char *niz2) {
+		int dn1, dn2, ud, i;
+		char a[2],b[2];
+		char *novi;
+		dn1=strlen(niz1);
+		dn2=strlen(niz2);
+		ud=dn1+dn2;
+		novi= (char *)(malloc(ud*sizeof(char)));
+		novi[0] = '\0';
+		a[1]='\0';
+		b[1]='\0';
+		for(i=0; i < ((dn1<=dn2)?dn1:dn2); i++) {
+			a[0]=niz1[i];
+			strcat(novi, a);
+			b[0]=niz2[i];
+			strcat(novi, b);
+		}
+		if (dn1<dn2) strcat(novi, &niz2[i]); 
+		else strcat(novi, &niz1[i]);
+		return novi;
+}

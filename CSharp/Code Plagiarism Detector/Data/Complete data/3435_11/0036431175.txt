@@ -1,0 +1,19 @@
+#include <stdio.h>
+int main() {
+	int n,m;
+	int gornji_f=1, donji_f=1,dfl=1,dfr=1;
+	int i,rezultat;
+
+	scanf ("%d %d", &n, &m);
+	if (!m || m==n) printf ("0");
+	else { 
+		if (!n) gornji_f=1;
+		else {for (i=1;i<=n;i++) gornji_f*=i;}
+		for (i=1;i<=m;i++) dfl*=i;
+		for (i=1;i<=(n-m);i++) dfr*=i;
+		donji_f=dfl*dfr;
+		rezultat=gornji_f/donji_f;
+		printf ("%d", rezultat);
+	}
+	return 0;
+}

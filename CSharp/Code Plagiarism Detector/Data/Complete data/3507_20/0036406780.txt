@@ -1,0 +1,16 @@
+int Sortirano(cvor *glava)
+    {
+        if((glava->lijevo == NULL) && (glava->desno == NULL)){
+                return 1;
+            }else if((glava->lijevo != NULL) && (glava->desno != NULL)){
+                if(glava->id < glava->lijevo->id) return 0;
+                else if(glava->id > glava->desno->id) return 0;
+                else return Sortirano(glava->lijevo) && Sortirano(glava->desno);
+            }else if((glava->lijevo != NULL) && (glava->desno == NULL)){
+                if(glava->id < glava->lijevo->id) return 0;
+                else return Sortirano(glava->lijevo);
+            }else if((glava->lijevo == NULL) && (glava->desno != NULL)){
+                if(glava->id > glava->desno->id) return 0;
+                else return Sortirano(glava->desno);
+            }
+    }

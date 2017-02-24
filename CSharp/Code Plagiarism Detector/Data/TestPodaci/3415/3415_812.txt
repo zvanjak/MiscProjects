@@ -1,0 +1,24 @@
+#include<stdio.h>
+int main(void)
+{
+    char operacije[30];
+    char op;
+    int a,b,suma=0,i=0,j,ostaj;
+    do{
+        ostaj=1;
+        scanf("%d %d %c",&a,&b,&op);
+        if(op=='+') suma+=a+b;
+        else if(op=='-') suma+=a-b;
+        else if(op=='*') suma+=a*b;
+        else if(op=='%' && b!=0) suma+=a%b;
+        else if(op=='/' && b!=0) suma+=a/b;
+        if(op=='+' || op=='-' || op=='*' || op=='%' || op=='/') operacije[i++]=op;
+        else ostaj=0;
+    } while(ostaj);
+    printf("%d ",suma);
+    for(j=0; j<i; ++j) {
+        printf("%c",operacije[j]);
+        if(j<i-1) printf(" ");
+    }
+    return 0;
+}        

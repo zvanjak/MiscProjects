@@ -1,0 +1,20 @@
+Red* VratiBrojeve(Red *red) {
+     Red  *red1 = new Red();
+     Red backup;
+     int broj_zn,znamenka,i,broj;
+     while (red->SkiniIzReda(&broj_zn)) {
+           backup.DodajURed(broj_zn);
+           broj=0;
+           for (i=0;i<broj_zn;i++)  {
+               red->SkiniIzReda(&znamenka);
+               backup.DodajURed(znamenka);
+               broj*=10;
+               broj+=znamenka;
+           }
+           red1->DodajURed(broj);
+     }
+     while (backup.SkiniIzReda(&znamenka)) {
+           red->DodajURed(znamenka);
+     }
+     return red1;           
+}

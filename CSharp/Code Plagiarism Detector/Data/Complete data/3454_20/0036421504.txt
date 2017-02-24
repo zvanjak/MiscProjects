@@ -1,0 +1,44 @@
+class RazlPolje{
+private:
+	int *polje;
+	int brElem;
+public:
+    RazlPolje(){
+	polje = (int *) malloc(0);
+	brElem = 0;
+	}
+	int Dodaj(int Broj){
+	int exist=0, i;
+	for (i=0; i<brElem; i++)
+	if (polje[i] == Broj) exist=1;
+	if (!exist){
+	brElem++;
+	realloc(polje, brElem * sizeof(int));
+	if (polje==NULL) return 0;
+	polje[brElem -1] = Broj;
+		}
+	return 1;
+	}
+	int Izbaci(int Broj){
+	int i, pozit=-1;
+	for (i=0; i<brElem; i++)
+	if (polje[i] == Broj){
+	pozit = i;
+	break;
+	}
+    if (pozit == -1) return 0;
+	for (i=pozit; i<(brElem - 1); i++)
+	polje[i] = polje[i+1];
+    realloc(polje, (--brElem)*sizeof(int));
+    return 1;
+	}
+	int SumaPolja(){
+	int i, suma=0;
+	for (i=0; i<brElem; i++)
+    suma+=polje[i];
+	return suma;
+	}
+	~RazlPolje(){
+	free(polje);
+	}
+};

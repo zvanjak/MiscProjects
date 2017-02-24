@@ -1,0 +1,24 @@
+#include<stdio.h>
+#include<math.h>
+int broj,ilog,i,zn,br;
+int main()
+{
+scanf("%d",&broj);
+if(broj<0)
+{
+printf("n nije pozitivan");
+return 0;
+}
+ilog=(int)log10(broj*1.);
+zn=(int)pow(10.,ilog);
+br=broj/zn;
+printf("%d",br) ;
+for(i=ilog;i>=1;i--)
+{broj=broj-zn*br;
+zn=(int)pow(10.,i-1);
+br=broj/zn;
+printf(" %d",br);
+}
+
+return 0;
+}

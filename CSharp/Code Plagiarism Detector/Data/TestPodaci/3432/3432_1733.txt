@@ -1,0 +1,21 @@
+
+#include <stdio.h>
+#define MAX 100
+
+int main () {
+	int x[MAX], i, j, brojac=0, z;
+	for(i=0; i<MAX; i++) {
+		scanf("%d", &x[i]);
+		if(x[i]==-1) break;
+		brojac++;
+	}
+	for(i=0; i<brojac; i++) {
+		if(i%2==1) {
+			z=x[i];
+			for(j=0; j<z; j++) {
+				printf("%d ", x[i-1]);
+			}
+		}
+	}
+	return 0;
+}

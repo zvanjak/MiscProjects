@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int veci_od(FILE *f, int n) {
+
+struct natjecatelj {
+	int		redni_br;
+	char	prezime[20+1];
+	int		bodovi;
+};
+typedef struct natjecatelj zapis; 
+  
+zapis z;
+  int Br=0;
+	
+  while (fread (&z, sizeof(zapis), 1, f) == 1)  
+  {
+	  if((z.redni_br > 0)&&(z.bodovi >= n))
+		  Br++;                           
+  }										  
+  return Br;
+  }

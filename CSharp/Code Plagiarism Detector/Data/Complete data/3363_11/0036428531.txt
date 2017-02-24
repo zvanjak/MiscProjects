@@ -1,0 +1,29 @@
+include <stdio.> //za printf i scanf
+int main <>
+{
+int x, y, rezultat;
+char operacija;
+//učitavanje
+do
+{
+printf ( " Upiši izraz u obliku \"x operacija y\"");
+scanf (" %d %c %d ", &x, &operacija, &y);
+if(operacija != '+' && operacija != '-' && operacija != '*' && operacija != '/' && operacija != '%' )
+printf ( " Neispravna \n " );
+return -1;
+}
+}
+while ( x < 0 || y < 0 ); // piše da treba učitati prirodne brojeve, pa provjerava jesu li veći od nule // obavljanje operacije
+if ( operacija == '+' ) 
+rezultat = x + y;
+else if ( operacija == '-' ) 
+rezultat = x - y;
+else if ( operacija == '*' )
+rezultat = x * y;
+else if ( operacija == '/' )
+rezultat = x / y;
+else if ( operacija == '%' )
+rezultat = x % y;
+printf ( " rezultat je : %d\n ", rezultat );
+return 0;
+}

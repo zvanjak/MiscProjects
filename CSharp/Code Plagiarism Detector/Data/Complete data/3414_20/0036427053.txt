@@ -1,0 +1,21 @@
+char *brojeve_u_znakove(int *polje, int duljina) {
+	int i, broj, newn=0;
+	char *niznak=NULL;
+	if(duljina==0) {
+		niznak = (char *) realloc (niznak, (newn+1)*sizeof(char) );
+		niznak[newn]='\0';
+		return niznak;
+	}
+	for(i=0; i<duljina; i++) {
+		broj= *(polje+i);
+		while(broj >= 1) {
+			niznak = (char *) realloc (niznak, (newn+1)*sizeof(char) );
+			niznak[newn]=(char)(broj%10)+48;
+			broj/=10;
+			newn++;
+		}
+	}
+	
+	niznak[newn]='\0';
+	return niznak;
+}

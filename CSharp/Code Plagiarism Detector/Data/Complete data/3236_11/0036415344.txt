@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <math.h>
+int main () {
+    int n;
+    float x,q,f,y,z,r,v,b,i;
+     scanf("%d",&n);
+        if (n<1 || n>100){
+        printf("n nije valjan");
+        }else {
+              scanf("%f",&x);
+        }if (x<=0 || x>=2){
+        printf("x nije valjan");
+}
+return 0;
+}

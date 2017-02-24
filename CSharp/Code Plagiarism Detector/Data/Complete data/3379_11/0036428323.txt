@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main () {
+	long int broj, a, b , c, d ,e, suma ;
+	scanf ("%d", &broj);
+	a = broj%10;
+	b = (broj/10)%10;
+	c = (broj/100)%10;
+	d = (broj/1000)%10;
+	e = (broj/10000)%10;
+	suma = a+b+c+d+e;
+	if (broj%suma) printf ("%d",broj/suma);
+	else printf ("%d",broj-suma);
+	return 0;
+}

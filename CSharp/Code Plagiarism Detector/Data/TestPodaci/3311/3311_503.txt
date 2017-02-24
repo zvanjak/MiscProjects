@@ -1,0 +1,19 @@
+float prosjek (FILE *f){
+	float pr;
+	int zbr = 0, i = 0;
+
+	struct album{
+		char naziv [30+1];
+		char autor [20+1];
+		int prodano;
+	};
+        struct album zapis;
+
+	fseek(f,0,SEEK_SET);
+	while(fread(&zapis,sizeof(zapis),1,f)){
+		i++;
+		zbr += zapis.prodano;
+	}
+	pr = float(zbr / i);
+	return pr;
+}

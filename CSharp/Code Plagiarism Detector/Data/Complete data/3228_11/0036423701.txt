@@ -1,0 +1,20 @@
+#include<stdio.h>  
+#include<math.h>
+int main() {
+	long double pi,clan=1.0,zbroj=1.0;
+	int predznak=-1,i=2;
+	int n;
+	scanf("%d", &n);
+	if(n<1 || n>100)
+		printf("n nije valjan\n");
+	else	{{for(i; i<=n; i++)
+			{
+			clan=(long double)predznak/(i*i);
+			zbroj+=clan;
+			predznak= -predznak;
+	}	
+	}
+	pi=(long double)pow(zbroj*12, 1./2);
+	printf("%1.12f\n", pi);}
+	return 0;
+}

@@ -1,0 +1,19 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+	int n, i;
+	double s=0,pi;
+		scanf("%d",&n);
+	if(n<1 || n>100)
+		printf("n nije valjan");
+	else
+	{
+		for(i=0;i<n;i++)
+			s+=(pow(-1,(i+2)))*(1/(pow((i+1),2)));
+		pi=sqrt(12*s);
+		printf("%.12lf",pi);
+	}
+	
+	return 0;
+}

@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+main() {
+	int i,n; float x; double rj=0;
+	scanf("%d",&n);
+	if (n<2 || n>100) {
+		printf ("n nije valjan");
+		exit(1);
+	}
+	else {
+	scanf ("%f",&x);
+	if (x<=0.f || x>=2.f) {
+		printf ("x nije valjan");
+		exit (2);
+	}
+	else {
+		for (i=1;i<=n;i++) {
+			(i%2==1) ? (rj+=pow((x-1),(double)i)/i) : (rj-=pow((x-1),(double)i)/i); 
+			}
+		}
+	}
+	printf ("%d %.5f %.12lf",n,x,rj);
+return 0;
+}

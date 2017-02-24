@@ -1,0 +1,46 @@
+class SortRazlPolje
+{
+public:
+int Dodaj(int Broj);
+int *VratiSortPolje(int &n);
+SortRazlPolje();
+~SortRazlPolje();
+
+private:
+int *_p, _size;
+};
+
+SortRazlPolje::SortRazlPolje()
+{
+_p=NULL;
+_size=0;
+}
+
+SortRazlPolje::~SortRazlPolje()
+{
+if (_size>0) delete[] _p;
+}
+
+int SortRazlPolje::Dodaj(int Broj)
+{
+int i,n=1,*rez;
+for (i=0;i<_size && _p[i]<=Broj;++i) if (_p[i]==Broj) n=0;
+if (!n) return 1;
+
+_p = (int *) realloc ((void *) _p, (++_size)*sizeof(int));
+if (_p==NULL) return 0;
+
+for (i=_size-2;i>=0 && _p[i] > Broj;--i) _p[i+1]=_p[i]; 
+_p[i+1]=Broj;
+return 1;
+}
+
+int *SortRazlPolje::VratiSortPolje(int &n)
+{
+if (!_size) {n=0;return NULL;}
+int *nju = new int[_size],i;
+if (nju==NULL) {n=0;return NULL;}
+for (i=0;i<_size;++i) nju[i]=_p[i];
+n=_size;
+return nju;
+}

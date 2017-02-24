@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main() {
+int x,s;
+s=0;
+scanf("%d",&x);
+if ((x<250)||(x>950)) s=(x%10)+(x/10)%10+x/100;
+else if ((x>=250)&&(x<=950)) {
+if ((x%10)%2=1) s=s+x%10;
+if (((x/10)%10)%2=1) s=s+(x/10)%10;
+if ((x/100)%2=1) s=s+x/100; }
+printf("%d",s);
+return 0;
+}
+  

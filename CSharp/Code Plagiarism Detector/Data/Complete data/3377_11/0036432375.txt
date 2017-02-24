@@ -1,0 +1,45 @@
+#include <stdio.h>
+
+int main () 
+
+{
+
+	int k, x,a,b,c,p,z;
+
+	scanf("%d", &k);
+
+	scanf("%d", &x);
+
+	p=1;c=0;a=0;b=0;z=4;
+
+	while (z>0)
+
+	{
+
+		a=k%10;
+
+		b=x%10;
+
+		k=k/10;
+
+		x=x/10;
+
+		if (a==1) 
+
+			if (b!=9) c=c+(b+1)*p;
+
+			else c=c;
+
+		else c=c+b*p;
+
+		p=p*10;
+
+		z=z-1;
+
+	}
+
+	printf ("%d", c);
+
+	return 0;
+
+}

@@ -1,0 +1,18 @@
+#include <stdio.h>
+int main () {
+    int x, parni, neparni;
+    parni=0;
+    neparni=0;
+    do{
+    scanf("%d",&x);
+    if(x>0){
+         if(x%2==0)
+           parni+=1;
+         else
+           neparni+=1;
+           }
+           }      
+    while(x!=0);
+    printf("%d %d",parni,neparni);
+    return 0;
+}

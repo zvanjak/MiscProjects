@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+	char a;
+	int b,d,i,c=0,brojac=0;
+	char polje[1000];
+	do {
+		scanf ("%c%d",&a,&b);
+		brojac=brojac+1;
+		for (i=0;i<b;i++){
+			polje[c]=a;
+			++c;
+			}
+		
+		}
+	while (b!=(-1) || brojac==100);
+	for (d=0;d<c;d++)
+		printf ("%c ",polje[d]);
+	return 0;
+}

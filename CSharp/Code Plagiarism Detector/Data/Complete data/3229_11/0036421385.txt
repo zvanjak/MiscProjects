@@ -1,0 +1,26 @@
+#include <stdio.h>
+int main()
+{
+float n;
+double broj=0;
+int i,k,p=2;
+scanf("%f", &n);
+if (((n-(int)n)!=0) || (!(n>=1 && n<=30))) 
+ printf("n nije valjan");
+else 
+ {
+   if (n==1)
+	   broj=1;
+   else
+	   for(i=3; i<=n; i++)
+		{
+		 broj=broj+1./p;
+		 p=-(p*i);
+		}	
+   if (n==2)
+	   printf("%.12f", 0);
+   else 
+	   printf("%.12f", 1./broj);
+ }
+return 0;
+}

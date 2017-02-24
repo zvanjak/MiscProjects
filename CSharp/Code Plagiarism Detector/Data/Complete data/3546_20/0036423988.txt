@@ -1,0 +1,21 @@
+Stog* PrepisiRedUStog(Red *red)
+{
+  int pomocna,pomocna2;
+  Stog *pomocni;
+  if (red->SkiniIzReda(&pomocna))
+    pomocni=PrepisiRedUStog(red);
+  else
+    return new Stog;
+  red->DodajURed(pomocna);
+  pomocna2=pomocna;
+  for (int i=0;i<red->Prebroji()-1;i++)             
+  {                                                            
+    red->SkiniIzReda(&pomocna2);
+    red->DodajURed(pomocna2);
+  }
+  for (int i=pomocna-1;i>1;i--)
+      if (!(pomocna%i))
+      return pomocni;
+  pomocni->Stavi(pomocna);
+  return pomocni;
+}   

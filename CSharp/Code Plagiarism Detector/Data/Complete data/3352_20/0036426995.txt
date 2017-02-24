@@ -1,0 +1,19 @@
+int veci_od(FILE *f, int n)
+{
+	struct natjecatelj bla;
+	int x=0,i=1;
+	while(fseek(f,(long)(i-1)*sizeof(struct natjecatelj), SEEK_SET)==0)
+	{
+		fread(&bla,sizeof(struct natjecatelj),1, f);
+		if(bla.redni_br==0)
+		{
+			i++;
+		}
+		else if(bla.bodovi>=n)
+		{
+			i++;
+			x++;
+		}
+	}
+	return x;
+}

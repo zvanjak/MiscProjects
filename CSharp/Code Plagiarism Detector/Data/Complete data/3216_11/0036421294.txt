@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+
+main (){
+
+	int ulaz,prosti,x,i,pola;
+	prosti = 0;
+	scanf("%i", &ulaz);
+	if (ulaz>2){
+	do {
+		pola=ulaz/2;
+		x=0;
+		for (i=2;(i<=pola);i++){
+			
+			if ((ulaz%i)==0) x=1;
+		}
+		if (x==0) prosti++;
+		x=0;
+		scanf("%i", &ulaz); }
+	while (ulaz>2);}
+	
+printf("%i", prosti);
+
+return 0;
+}

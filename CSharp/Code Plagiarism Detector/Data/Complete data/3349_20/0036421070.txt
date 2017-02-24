@@ -1,0 +1,15 @@
+         double sumareda(double x, int N)
+                  { double suma,pom;
+                  int kont;
+                    kont=kontrola();
+                         if(!N)
+                         { 
+                            return 0;
+                         }
+                         pom=pow((x-1),N);
+                         pom=pom*pow(-1.,(N+1));
+                         pom=pom/N;
+                         suma =pom + sumareda(x,(N-1));
+                  return suma;
+                  }
+   

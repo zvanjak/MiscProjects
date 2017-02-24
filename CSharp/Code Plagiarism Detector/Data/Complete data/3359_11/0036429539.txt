@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main() {
+	int broj,umnozak;
+    scanf("%d",&broj);
+	if ((broj <=9999) &&(broj >=1000)) {
+		umnozak=(broj/1000)*(broj%1000/100)*(broj%100/10)*(broj%10);
+		if (umnozak%2){
+			printf ("%d",broj/1000);
+		}else {
+			printf ("%d", broj%10);
+		} 
+	}
+	return 0;
+}

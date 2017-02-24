@@ -1,0 +1,21 @@
+#include<stdio.h>
+int main()
+{
+int n,i,p=1;
+double sum=0;
+scanf("%d",&n);
+if((n>=1)&&(n<=100))
+{
+for(i=1;i<=n;i++)
+{
+sum=sum+p*(double)1/(double)i;
+p=p*(-1);
+}
+printf("%.12f",sum);
+}
+else
+{
+printf("n nije valjan");
+}
+return 0;
+}

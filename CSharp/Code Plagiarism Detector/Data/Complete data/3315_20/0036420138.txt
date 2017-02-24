@@ -1,0 +1,13 @@
+#include <stdio.h>
+float prosjek (FILE *f){
+	float s=0;
+	int prodano;
+	int n=0;
+	char naziv[30+1],autor[20+1];
+ while (fscanf(f,"%s%s%d\n",naziv,autor,&prodano)==3){
+		 ++n;
+		 s=s+prodano;
+ }
+                 
+ return ((float)(s)/n);
+}

@@ -1,0 +1,18 @@
+Ekipa StvoriISortiraj(char *naziv)
+{
+	int i, j;
+
+	// ovdje se poziva konstruktor koji alocira memoriju za naziv ekipe
+	Ekipa novi(naziv);
+
+	novi.Napuni();
+
+	// sortiranje, uZlazno: 1, 2, 3 ...
+	for(i=0; i<11-1; ++i)
+		for(j=0; j<11-i-1; ++j)
+			if(novi[j+1].VratiBroj()<novi[j].VratiBroj())
+				novi.Zamijeni(j+1, j);
+
+	return novi;
+	// problem je sto se ovdje zove destruktor koji obrise naziv ekipe
+}

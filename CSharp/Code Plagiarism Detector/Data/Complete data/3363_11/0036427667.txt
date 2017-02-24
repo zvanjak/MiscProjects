@@ -1,0 +1,22 @@
+#include <stdio.h>
+int main(){
+	int a,b,rez;
+	char c;
+	scanf("%d %d %c", &a,&b,&c);
+	if (c=='+')
+	{rez=a+b;}
+	else if (c=='*')
+	{rez=a*b;}
+	else if (c=='-')
+	{rez=a-b;}
+	else if (c=='%')
+	{rez=a%b;}
+	else if (c=='/')
+	{rez=a/b;}
+	else {printf ("Neispravna");
+	return 0;
+	}
+	printf ("%d",rez);
+	return 0;
+	}
+

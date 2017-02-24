@@ -1,0 +1,60 @@
+int izbacinaj(zapis **glava){
+	zapis *current;
+	zapis *high, *low;
+	zapis *high_prev, *low_prev, *prev;
+	if(*glava==NULL)
+		return 0;
+	high=low=high_prev=low_prev=prev=current=*glava;
+	current = (*glava)->sljed;
+	while(current!=NULL)
+	{
+		if((current->pros)<(low->pros))
+		{
+			low_prev=prev;
+			low=current;
+		}
+		if((current->pros)>(high->pros))
+		{
+			high_prev=prev;
+			high=current;
+		}
+		prev=current;
+        current=current->sljed;
+	}
+
+	if(low==high)
+	{
+		*glava=(*glava)->sljed;
+		free(low);
+		return 1;
+	}
+
+	if(low==*glava)
+	{
+		high_prev->sljed=high->sljed;
+		free(high);
+		*glava=(*glava)->sljed;
+		free(low);
+		return 2;
+	}
+	else if (high==*glava)
+	{
+		low_prev->sljed=low->sljed;
+		free(low);
+		*glava=(*glava)->sljed;
+		free(high);
+		return 2;
+	} 
+	else
+	{
+		low_prev->sljed=low->sljed;
+		if (low==high_prev)
+		{
+			high_prev=low_prev;
+		}
+		free(low);
+		high_prev->sljed=high->sljed;
+		free(high);
+		return 2;
+	}
+}

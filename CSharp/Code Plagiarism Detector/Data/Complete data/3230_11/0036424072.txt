@@ -1,0 +1,20 @@
+#include <stdio.h>
+int main(){
+	int n,i;
+	double fakt,e;
+	scanf("%d",&n);
+	if ((n<1)||(n>30)){
+        printf("n nije valjan");
+	}
+	else{
+        e=1;
+		fakt=1.;
+		for(i=1;i<=n-1;i++){
+			fakt=fakt*i;
+            e=e+(1./fakt);
+		}
+	printf("%.12f",e);		
+	}
+	
+	return 0;
+}

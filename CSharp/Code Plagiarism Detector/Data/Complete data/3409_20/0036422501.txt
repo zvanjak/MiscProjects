@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+char *IzbaciPresjek(char *niz1, char *niz2)
+{
+	char nizp[255]={0};
+	char nizk[255];
+	unsigned int i,j=0;
+
+	for(i=0;i<strlen(niz2);i++)
+		nizp[niz2[i]]++;
+	
+	for(i=0;i<strlen(niz1);i++)		
+	if ((nizp[niz1[i]])==0)
+	{	
+		nizk[j]=niz1[i];
+		j++;
+	}
+
+	nizk[j]='\0';
+
+	return &nizk[0];
+}

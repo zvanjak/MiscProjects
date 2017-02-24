@@ -1,0 +1,23 @@
+int najbolji( FILE *f){
+
+	struct{
+		int redni_br;
+		char prezime[21];
+		int bodovi;
+	}nat;
+	
+	int max = -1, maxbr = 0;
+
+	fseek( f, 0, SEEK_SET );
+
+	while( fread( &nat, sizeof(nat), 1, f ) == 1 ){
+		if( nat.redni_br == 0 ) continue;
+
+		if( nat.bodovi > max ){
+			max = nat.bodovi;
+			maxbr = nat.redni_br;
+		}
+	}
+
+	return maxbr;
+}

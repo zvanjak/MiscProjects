@@ -1,0 +1,55 @@
+#include <stdio.h>
+
+int main()
+{
+ #define maxr 20
+#define maxs 5
+ int mr, ms;
+ int p,q;
+ int x,y,i,j, brojac, brojac2, brojac3;
+ int r,k;
+ int matrica[maxr][maxs];
+ brojac=0;
+ brojac2=0;
+ brojac3=0;
+ 
+ do{
+       scanf("%d %d", &mr,&ms);
+ }while (!((mr>=1 && mr<=20) && (ms>=1 && ms<=5))) ;
+ 
+ scanf("%d %d",&p,&q);
+ 
+ for (x=0; x<mr; x+=1){
+     if (!(x%2)){
+        for(y=0; y<ms;y+=1)
+                 matrica[x][y]=p;
+     }else{
+          for(y=0; y<ms;y+=1)
+                 matrica[x][y]=q;
+     }
+     
+}
+
+
+
+do{
+       scanf("%d %d", &i, &j);
+       if ((i>=0 && i<mr) && (j>=0 && j<ms)){
+          matrica[i][j]=0;
+          brojac+=1;
+       }
+}while (((i>=0 && i<mr) && (j>=0 && j<ms)));
+ 
+ for(r=0; r<ms; r+=1){
+          for (k=0; k<mr; k+=1){
+              if (matrica[k][r]==0)
+                 brojac2+=1;                 
+          }
+          if (brojac2==0)
+                 brojac3+=1;
+          brojac2=0;
+
+}
+printf("%d %d", brojac, brojac3);
+return 0;
+}

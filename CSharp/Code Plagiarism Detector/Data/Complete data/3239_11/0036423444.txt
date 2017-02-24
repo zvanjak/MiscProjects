@@ -1,0 +1,20 @@
+#include<stdio.h>
+int main () {
+	int D, G, suma = 0, i , N;
+		scanf("%d %d",&D,&G);
+	if (D > 0 && G > 0 && G > D){
+		scanf("%d",&N);
+		if(N>=D && N<=G){
+			for(i=1; i<=N; i++){
+			if(i%2==0)	
+                            suma = suma + i;
+			}
+		printf("D=%d G=%d N=%d suma=%d",D,G,N,suma);
+		} else {
+			printf("\nBroj N = %d nije iz intervala [%d , %d].",N,D,G);
+		}
+	} else {
+        printf("\nD i G nisu valjani");
+	}	
+	return 0;
+}

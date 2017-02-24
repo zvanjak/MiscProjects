@@ -1,0 +1,15 @@
+veci_od (FILE* f,int granica){
+struct album temp;
+int br=0;
+
+fseek (f,0,SEEK_SET);
+
+while ((fread(&temp,sizeof(temp),1,f)!=0)){
+	if (temp.prodano>=granica)
+				br++;
+                    
+	}
+	
+return br;
+}
+	

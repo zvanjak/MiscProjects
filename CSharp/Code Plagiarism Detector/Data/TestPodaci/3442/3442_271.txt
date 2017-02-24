@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main()
+{
+	int n,a=0,b=0,i;
+	scanf("%d",&n);
+	for(i=0;i<=n;i++)
+	{
+		a+=i*i;
+	}
+	for(i=1;i<n;i++)
+	{
+		b+=2*i;
+	}
+	printf("%d",(a-b));
+}

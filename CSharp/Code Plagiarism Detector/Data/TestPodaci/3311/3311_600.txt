@@ -1,0 +1,17 @@
+float prosjek(FILE *f)
+{
+struct album svi;
+int broj,i,s=0;
+float prs;
+fseek(f, 0L, SEEK_END);
+broj = ftell(f) / sizeof(svi);
+fseek(f, 0L, SEEK_SET);
+
+for (i=0;i<broj;i++)
+{
+fread(&svi, sizeof(svi), 1, f);
+s=s+svi.prodano;
+}
+prs=s/broj;
+return prs;
+}

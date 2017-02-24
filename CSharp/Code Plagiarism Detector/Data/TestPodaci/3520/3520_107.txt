@@ -1,0 +1,21 @@
+int RemoveAllDigits (char *inputField, char *outputField, int *number) 
+{
+int i, j = 0;
+
+*number = 0;
+
+if (inputField == NULL) {
+outputField = NULL;
+return 0;
+}
+
+for (i = 0; inputField [i] != '\0'; i++) {
+if (isdigit (inputField [i])) /* ili (!isalpha (inputField [i]) && isalnum (inputField [i])) */
+(*number)++;
+else outputField [j++] = inputField [i];
+}
+
+outputField [j] = '\0';
+
+return (strlen (outputField) );
+}

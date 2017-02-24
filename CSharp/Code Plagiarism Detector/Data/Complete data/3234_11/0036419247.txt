@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <math.h>
+
+int main ()
+{
+	int n, i;
+	double suma = 0;
+	double pi;
+
+	scanf ("%d", &n);
+
+	// n E [1, 100]
+	if (n < 1 || n > 100)
+	{
+		printf ("n nije valjan");
+		return 1;
+	}
+
+	for (i = 1; i <= n; i++)
+		suma += (double) 1 / (i * i);
+
+	// suma = PI * PI / 6
+	// PI * PI / 6 = suma
+	// PI * PI = 6 * suma
+	// PI = sqrt (6 * suma)
+	pi = sqrt (suma * 6);
+
+	printf ("%.12lf", pi);
+
+	return 0;
+}

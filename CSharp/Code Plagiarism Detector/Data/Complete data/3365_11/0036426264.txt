@@ -1,0 +1,26 @@
+#include <stdio.h>
+int main () {
+	int broj,znam1,znam2,znam3,suma;
+	scanf("%d",&broj);
+	if ((broj>=100) && (broj<=999)) {
+		if ((broj<250) || (broj>950)) {
+			znam1=broj/100;
+			znam2=(broj%100)/10;
+			znam3=broj%10;
+			suma=znam1+znam2+znam3;
+			printf("%d \n",suma);
+		}
+		else {
+			if (((broj/100)%2)!= 0) znam1=broj/100;
+			else znam1=0;
+			if ((((broj%100)/10)%2)!= 0) znam2=(broj%100)/10;
+			else znam2=0;
+			if (((broj%10)%2)!= 0) znam3=broj%10;
+			else znam3=0;
+			suma=znam1+znam2+znam3;
+			printf("%d \n",suma);
+		}
+	}
+
+	return 0;
+}

@@ -1,0 +1,21 @@
+void OOPStogURedListom(atom2 **glava, atom2 **rep, Stog *stog)
+{
+	int element;
+	Stog stogic2;
+
+	if(!(*glava))
+	{
+		while(stog->Skini(&element))
+		{
+			stogic2.Stavi(element);
+		}
+		stog=&stogic2;
+	}
+
+
+	if(stog->Skini(&element))
+	{
+		DodajURed(element, &(*glava), &(*rep));
+		OOPStogURedListom(&(*glava), &(*rep), stog);
+	}
+}

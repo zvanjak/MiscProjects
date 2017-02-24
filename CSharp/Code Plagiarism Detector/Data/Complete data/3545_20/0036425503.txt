@@ -1,0 +1,6 @@
+void PrepisiStogURed( Stog *stog, Red *red ) {
+   Stog pomocni;
+   int el;
+   while( stog->Skini( &el ) ) pomocni.Stavi( el );
+   while( pomocni.Skini( &el ) ) red->DodajURed( el );
+}

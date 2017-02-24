@@ -1,0 +1,6 @@
+int Najgore(cvor *glava){
+    if (glava==NULL) return 0;
+    if ((glava->lijevo) && (glava->desno)) return 0;
+    if (!(glava->lijevo) && !(glava->desno)) return 1;
+    return (Najgore(glava->lijevo)+Najgore(glava->desno));
+}

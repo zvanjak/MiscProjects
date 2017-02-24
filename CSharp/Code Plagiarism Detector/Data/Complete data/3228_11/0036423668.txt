@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <math.h>
+
+int main ()
+{
+	int n, i;
+	float niz = 1;
+
+	scanf ("%d", &n);
+
+	if ((n<=0)||(n>100))
+		printf("n nije valjan\n");
+	else
+	{
+		for (i=2; i<=n; i++)
+		{
+			if (i%2==0)
+				niz = niz - 1./ (pow (i,2));
+			else
+				niz = niz + 1./ (pow (i,2));
+		}
+		
+		niz = pow (niz* 12,0.5);
+		printf ("%.12f", niz);
+	}
+
+	return 0;
+}

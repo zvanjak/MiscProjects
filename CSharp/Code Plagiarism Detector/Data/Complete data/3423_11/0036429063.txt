@@ -1,0 +1,60 @@
+#include <stdio.h>
+#define MAXR 20
+#define MAXS 5
+int main () {
+	int matrica[MAXR][MAXS],red,stup,i,j,brstup=0,brred=0,prost=1,n;
+	do {
+        scanf ("%d %d", &red, &stup);
+	} while (red<1 || red>20 || stup<1 ||stup>5);
+	for (i=0; i<red; i++) {
+		for (j=0; j<stup; j++) {
+            scanf ("%d", &matrica[i][j]);
+		}
+	}
+	for (i=0; i<red; i++) {
+		for (j=0; j<stup; j++) {
+			if (matrica[i][j]==2) {
+				brred++;
+				break;
+			}
+			if (matrica[i][j]==1 || (matrica[i][j]%2)==0) {
+				prost=0;
+			} else {
+				prost=1;
+				for (n=2; n<(matrica[i][j]/2); n++) {
+					if ((matrica[i][j]%n)==0) {
+						prost=0;
+					}
+				}
+			}
+			if (prost) {
+				brred++;
+				break;
+			}
+		}
+	}
+	for (j=0; j<stup; j++) {
+		for (i=0; i<red; i++) {
+            if (matrica[i][j]==2) {
+				brstup++;
+				break;
+			}
+			if (matrica[i][j]==1 || (matrica[i][j]%2)==0) {
+				prost=0;
+			} else {
+				prost=1;
+				for (n=2; n<(matrica[i][j]/2); n++) {
+					if ((matrica[i][j]%n)==0) {
+						prost=0;
+					}
+				}
+			}
+			if (prost) {
+				brstup++;
+				break;
+			}
+		}
+	}
+	printf ("%d %d", brred,brstup);
+	return 0;
+}

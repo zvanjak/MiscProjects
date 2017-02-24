@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+    float nf;
+    double rez;
+    int n,i;
+    
+    scanf("%f",&nf);
+    n = (int) nf;
+    if (n!=nf || n<1 || n>30) printf("n nije valjan");
+    else
+    {
+        for(i=0;i<n;i++) rez=rez+pow(-1,i)*(double)(1/pow(2,i));
+    printf("%.12f",rez);
+    }
+    
+    return 0;
+    
+}

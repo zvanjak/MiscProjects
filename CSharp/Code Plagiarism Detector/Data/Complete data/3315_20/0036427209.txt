@@ -1,0 +1,14 @@
+float prosjek (FILE *f){
+    int suma=0, n=0;
+    float pros;
+    struct zapis{
+     char naziv[30+1],autor[20+1];
+     int prodano;
+     }z;
+    while (fscanf(f, "%s %s %d", &z.naziv, &z.autor, &z.prodano)==3){
+         suma+=z.prodano;
+         n++;
+         }
+    pros=(float) suma/n;
+return pros;
+}

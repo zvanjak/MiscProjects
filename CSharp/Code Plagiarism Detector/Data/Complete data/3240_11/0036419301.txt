@@ -1,0 +1,51 @@
+#include<stdio.h>
+
+#include<math.h>
+
+ 
+
+int main()
+
+{     int n,broj,broj2,z,i,j;
+
+ 
+
+      scanf("%d",&n);
+
+ 
+
+      broj=n;
+
+      broj2=n;
+
+      if (n<1) printf("n nije pozitivan");
+
+      else {while (broj>0){
+
+                                   i=0;
+
+                                   while (broj2>0) {
+
+                                                           i++;
+
+                                                           z=broj2%10;
+
+                                                           broj2/=10;
+
+                                                           }
+
+                                   printf("%d ",z);
+
+                                   j=pow(10,i-1);
+
+                                   broj=broj%j;
+
+                                   broj2=broj;
+
+                                   }
+
+            }
+
+      return 0;
+
+}

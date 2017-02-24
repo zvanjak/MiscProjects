@@ -1,0 +1,16 @@
+int najbolji(FILE *f){
+int max,maxn;
+struct natjecatelj podaci;
+fread(&podaci,sizeof(podaci),1,f);
+if(!podaci.redni_br){
+max=podaci.bodovi;
+maxn=podaci.redni_br;
+}
+while(fread(&podaci,sizeof(podaci),1,f)!=EOF){
+if(podaci.bodovi>max){
+max=podaci.bodovi;
+maxn=podaci.redni_br;
+}
+}
+return maxn;
+}

@@ -1,0 +1,30 @@
+int *napraviPolje(int *A, int Na, int *B, int Nb, int *Nc) {
+int i;
+int j;
+int max;
+int *C;
+*Nc=0;
+max=B[0];
+
+for (i=1;i<Nb;i++){
+        if(B[i]>max){
+                max=B[i];
+}
+}
+for (i=0; i<Na; i++){
+        if(A[i]>max){
+                (*Nc)++;
+}
+}
+
+C=(int *)malloc(*Nc * sizeof(int));
+
+j=0;
+for (i=0; i<Na; i++) {
+        if(A[i]>max){
+                C[j++]=A[i];
+}
+}
+
+return C;
+}

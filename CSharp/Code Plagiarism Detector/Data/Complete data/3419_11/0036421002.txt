@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <math.h>
+#define MAXRED 20
+#define MAXSTUP 5
+
+int main(){
+        int mr, ms, i, j, max;
+        int maxi = 0;
+        int maxj = 0;
+        int mat[MAXRED][MAXSTUP];
+
+        do{
+                scanf("%d %d",&mr, &ms);
+        }while( mr < 1 || mr > 20 || ms < 1 || ms > 5);
+
+        for(i = 0; i < mr; i++)
+                for(j = 0; j < ms; j++){
+                        scanf("%d",&mat[i][j]);
+                        mat[i][j] = abs(mat[i][j]);
+                }
+
+        max = mat[0][0];
+
+        for(i = 0; i <= mr-1 ; i++)
+                for(j = 0; j <= ms-1; j++)                             
+                        if(max < mat[i][j]){
+                                max = mat[i][j];
+                                maxi = i;
+                                maxj = j;
+                        }
+
+        printf("%d %d", maxi, maxj);
+
+        return 0;
+}

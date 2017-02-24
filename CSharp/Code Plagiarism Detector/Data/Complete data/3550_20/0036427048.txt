@@ -1,0 +1,19 @@
+int izbacinaj(zapis **glava) {
+
+	zapis *tmp,*a,*b;
+	float max=0.,min=100.;
+	int sol=0;
+	
+	tmp = *glava;
+	while (tmp) {
+		if (tmp->pros > max) { max = tmp->pros; a = tmp;}
+		if (tmp->pros < min) { min = tmp->pros; b = tmp;}
+		tmp = tmp->sljed;
+	}
+	while (*glava) {
+		if (*glava == a) { tmp = *glava; *glava = (*glava)->sljed; free(tmp); ++sol; }
+		else if (*glava == b) { tmp = *glava; *glava = (*glava)->sljed; free(tmp); ++sol; }
+		else glava = &((*glava)->sljed);
+	}
+	return sol;
+}

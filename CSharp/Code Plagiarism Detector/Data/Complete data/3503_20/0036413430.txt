@@ -1,0 +1,8 @@
+#include <stdio.h>
+
+int ModElementa (cvor *glava, char *naziv)
+{
+	if (glava == NULL) return 0;
+	if (glava->naziv == naziv) return 1+ModElementa(glava->lijevo, naziv)+ModElementa(glava->desno, naziv);
+	return ModElementa(glava->lijevo,naziv)+ModElementa(glava->desno, naziv);
+}

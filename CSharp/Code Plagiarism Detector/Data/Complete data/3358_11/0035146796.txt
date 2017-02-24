@@ -1,0 +1,73 @@
+#include <stdio.h>
+
+int main(){
+	int a,b,c,d,e;
+	int temp1,temp2,temp3,temp4,temp5;
+	int broj, suma;
+
+	scanf ("%d",&broj);
+
+	a=broj/10000;
+	b=(broj/1000)%10;
+	c=(broj/100)%10;
+	d=(broj/10)%10;
+	e=broj%10;
+
+	suma=0;
+	
+	if ((a==e)&&(b==d)){
+		if(!(a%2)){
+			temp1=a+e;
+		}
+		else{
+			temp1=0;
+		}
+		if(!(b%2)){
+			temp2=b+d;
+		}
+		else{
+			temp2=0;
+		}
+		if(!(c%2)){
+			temp3=c;
+		}
+		else{
+			temp3=0;
+		}
+		suma=temp1+temp2+temp3;
+	}
+	else{
+		if(a%2){
+			temp1=a;
+		}
+		else{
+			temp1=0;
+		}
+		if(b%2){
+			temp2=b;
+		}
+		else{
+			temp2=0;
+		}
+		if(c%2){
+			temp3=c;
+		}
+		else{
+			temp3=0;
+		}
+		if(d%2){
+			temp4=d;
+		}
+		else{
+			temp4=0;
+		}
+		if(e%2){
+			temp5=e;
+		}
+		else{
+			temp5=0;
+		}
+		suma=temp1+temp2+temp3+temp4+temp5;
+	}
+	printf ("%d",suma);
+}

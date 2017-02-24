@@ -1,0 +1,32 @@
+#include <stdio.h>
+int main(){
+ char hex_znam;
+ int i = 0,parni = 0,neparni = 0;
+	  do{
+	       scanf("%c",&hex_znam);
+		 if (hex_znam==10) 
+			 scanf("%c",&hex_znam);
+		 if ((hex_znam>='0')&&(hex_znam<='9')){
+			if (hex_znam%2){
+				neparni+=hex_znam-'0';
+			}else{
+				parni+=hex_znam-'0';
+			}
+		 }else if ((hex_znam>='A')&&(hex_znam<='F')){
+			if (hex_znam%2){
+				parni+=hex_znam-'A'+10;
+			}else{
+				neparni+=hex_znam-'A'+10;
+			}
+		 }else if ((hex_znam>='a')&&(hex_znam<='f')){
+			if (hex_znam % 2){
+				parni+=hex_znam-'a'+10;
+			}else{
+				neparni+=hex_znam-'a'+10;
+			}
+		 }else break;
+	     i++;
+	  }while (i<100);
+printf("%d",parni-neparni);
+return 0;
+}

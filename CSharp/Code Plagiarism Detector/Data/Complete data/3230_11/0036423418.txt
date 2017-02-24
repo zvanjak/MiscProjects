@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main()
+{	int n, i=0, f=1;
+	double e=0;
+	scanf ("%d", &n);
+	if (n>=1 && n<=20) { 
+		do 
+		{
+		e+=1./f;
+		i++;
+		f*=i;
+		}
+		while (i<n);
+	printf ("%.12f", e);
+	} else printf ("n nije valjan");
+return 0;
+}

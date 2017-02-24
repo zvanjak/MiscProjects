@@ -1,0 +1,16 @@
+char *IzbaciPresjek(char *niz1,char *niz2){
+char *novi;int k,i,j;char prazan[]="";
+	novi=(char *) malloc(sizeof(niz1));
+	 k=0;
+	if (strlen(niz1)==0) return (prazan);
+	if (strlen(niz2)==0) return (niz1);
+	for (i=0;i<=(strlen(niz2));i++){
+		for(j=0;j<=(strlen(niz1));j++){
+			if (niz2[i]!=niz1[j]) {novi[k++]=niz1[j];}
+		}
+		niz1=novi;
+		
+		k=0;
+	}
+	return niz1;
+}

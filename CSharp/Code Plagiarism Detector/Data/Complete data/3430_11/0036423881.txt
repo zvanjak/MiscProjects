@@ -1,0 +1,47 @@
+// 
+// Autor: Marin PESIC 
+// JMBAG: 003623881
+// Naslov: II domaca zadaca
+//
+
+//#include "stdafx.h"
+#include <stdio.h>
+#include <conio.h>
+int main()
+{
+char a[100];
+int i=0, n=0, t=1;
+
+do {
+	scanf("%c",&a[i]); 
+	if(isalpha(a[i]) || isspace(a[i])) 
+	++i; 
+	
+	if(a[i] == '.'){ 
+		n = i-1;
+	break;
+	}
+} while(i<100);
+
+for (i=0;i<n;i++){
+	a[i] = tolower(a[i]); 
+}
+for(i=0;i<n;i++){
+
+	if(a[i] != a[n-i]) 
+{
+	t = 0;
+
+	break;
+}
+
+}
+
+if (t) printf("DA"); 
+else printf("NE");
+
+return 0;
+}
+
+
+

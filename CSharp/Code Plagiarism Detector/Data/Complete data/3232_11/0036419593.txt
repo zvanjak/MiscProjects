@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <math.h>
+
+int main () {
+	int x,y=0;
+	float n;
+	double rez=0;
+	scanf ("%f", &n);
+	x=(int)n;
+	if ((n<1) || (n>30) || (x!=n)) {
+		printf("n nije valjan");
+		return 0;
+	}
+	for (; y < x ; y++) {
+		rez+=1/(pow(2,y));
+	}
+	printf("%1.12f", rez);
+	return 0;
+}

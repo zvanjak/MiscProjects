@@ -1,0 +1,32 @@
+void dodaj(FILE *f) {
+	struct natjecatelj {
+                int redni_br;
+		char prezime[20+1];
+		int bodovi;
+	} fajl;
+	
+	int maxbod;
+	int najnat;
+	
+	fseek(f, 0L, SEEK_SET);
+	fread(&fajl, sizeof(fajl), 1, f);
+	maxbod = fajl.bodovi;
+	najnat = fajl.redni_br;
+	
+	while (fread(&fajl, sizeof(fajl), 1, f) == 1) {
+		if ((maxbod < fajl.bodovi) && (fajl.redni_br != 0)) {
+			maxbod = fajl.bodovi;
+			najnat = fajl.redni_br;
+		}
+	}
+	
+	fseek(f, (najnat-1)*sizeof(fajl), SEEK_SET);
+	fread(&fajl, sizeof(fajl), 1, f);
+	
+	fajl.bodovi += 10;
+	
+	fseek(f, (najnat-1)*sizeof(fajl), SEEK_SET);
+	fwrite(&fajl, sizeof(fajl), 1, f);
+
+	return;
+}

@@ -1,0 +1,15 @@
+int niz(int i)
+{
+    int n;
+    kontrola();
+    if (i<0) return 0;
+    if (i<3)
+    {
+    return 1;   
+            } 
+    if(2<i)
+    {           
+    n=niz(i-1)+niz(i-2)+niz(i-3);
+}
+return n;
+    }

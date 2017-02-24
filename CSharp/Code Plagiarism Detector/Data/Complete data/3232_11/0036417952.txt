@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <math.h>
+int main(){
+	int n,k;
+    double  x,s;
+	s=0;
+	x=0;
+	scanf("%d",&n);
+	if((n>30)||(n<1)){
+		printf("n nije valjan");
+	}
+	else{
+		for(k=0;k<=(n-1);k++){
+			x=1./pow(2.,k);
+			s=s+x;
+		}
+		
+		printf("%.12f",s);
+	
+		}
+		return 0;
+	}

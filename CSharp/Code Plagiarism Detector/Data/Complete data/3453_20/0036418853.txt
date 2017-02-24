@@ -1,0 +1,61 @@
+class SortRazlPolje {
+private:
+	int polje[100];
+	int nel;
+	int TraziElem(int element);
+
+public:
+	SortRazlPolje();
+	~SortRazlPolje();
+	int Dodaj(int broj);
+	int *VratiSortPolje(int &n);
+};
+
+SortRazlPolje::SortRazlPolje() {
+	nel = 0;
+	polje[0] = 0;
+}
+
+SortRazlPolje::~SortRazlPolje() {
+}
+
+int SortRazlPolje::Dodaj(int broj) {
+	int r;
+	
+	if (nel>=100)
+		return 0;
+	r = TraziElem(broj);
+	if (r==0)
+		polje[nel++] = broj;
+
+	return 1;
+}
+
+int SortRazlPolje::TraziElem(int element) {
+	int i;
+
+	for (i=0; i<nel; ++i) 
+		if (polje[i]==element)
+			return 1;
+	return 0;
+}
+
+int *SortRazlPolje::VratiSortPolje(int &n) {
+	int i, j, pom;
+	
+	n = nel;
+	
+	if (n==0)
+		return NULL;
+
+	for (i=0; i<n-1; ++i) {
+		for(j=0; j<n-1-i; ++j) {
+			if (polje[j+1] > polje[j]) {
+				pom = polje[j+1];
+				polje[j+1] = polje[j];
+				polje[j] = pom;
+			}
+		}
+	}
+	return polje;
+}

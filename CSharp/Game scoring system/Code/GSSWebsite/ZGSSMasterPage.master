@@ -1,0 +1,33 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="ZGSSMasterPage.master.cs" Inherits="ZGSSMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Untitled Page</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div style="text-align: left">
+      &nbsp;<asp:HyperLink ID="HyperLink2" runat="server" ImageUrl="~/Data/AmberEvans_small.jpg"
+        NavigateUrl="http://www.trashyweb.com/gals/amberevans/rearviewmaid/gal.html">HyperLink</asp:HyperLink>
+      <asp:HyperLink ID="HyperLink3" runat="server" ImageUrl="~/Data/RockiRoads_small.jpg"
+        NavigateUrl="http://www.xfreehosting.com/lesbian/danis/rocky/index6.htm">HyperLink</asp:HyperLink>
+      <asp:HyperLink ID="HyperLink4" runat="server" ImageUrl="~/Data/ChaseyLain_small.JPG"
+        NavigateUrl="http://www2.xfreehosting.com/hardcore/jill/Chasey/index14.htm">HyperLink</asp:HyperLink><br />
+    </div>
+    <div style="text-align: center">
+      <span style="font-size: 16pt"><span style="color: #0000ff"><span style="font-family: Tahoma">
+        <strong><em>Zvonin Game Scoring System</em></strong>
+        <br />
+      </span></span></span>
+      <br />
+      <asp:Button ID="cmdHome" runat="server" Text="Home" Width="69px" OnClick="cmdHome_Click" PostBackUrl="Default.aspx" /><br />
+    <div style="text-align: right">
+      &nbsp;</div>
+    </div>
+        <asp:contentplaceholder id="contentMainPage" runat="server">
+        </asp:contentplaceholder>
+    </form>
+</body>
+</html>

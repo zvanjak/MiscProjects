@@ -1,0 +1,55 @@
+void izbaciUljeza (char ulazni[]) {
+	int i=0, j, n, brojac, duljina, pom1;
+	char pom ;
+	int brM=0, brV=0, brZ=0;
+	while (ulazni[i]!='\0') {
+		if (ulazni[i]>='a' && ulazni[i]<='z') {
+			brM++;
+		}
+		if (ulazni[i]>='A' && ulazni[i]<='Z') {
+			brV++;
+		}
+		if (ulazni[i]>='0' && ulazni[i]<='9') {
+			brZ++;
+		}
+		i++;
+		
+	}
+	duljina=brM+brV+brZ;
+	n=i;
+	i=0;
+	if (brM<brV && brM<brZ) {
+	while (ulazni[i]!='\0') {
+			if (ulazni[i]>='a' && ulazni[i]<='z')
+			ulazni[i]=toupper(ulazni[i]);
+			i++;
+		}
+	}
+
+if (brV<brM && brV<brZ) {
+	while (ulazni[i]!='\0') {
+           if (ulazni[i]>='A' && ulazni[i]<='Z')
+           ulazni[i]=tolower(ulazni[i]);
+		   i++;
+		}
+	}
+if (brZ<brM && brZ<brV) {
+	for (i=0;i<duljina;i++) {
+		if (ulazni[i]>='0' && ulazni[i]<='9') {
+			for (j=i+1;j<duljina;j++) {
+				if (ulazni[j]<'0' || ulazni[j]>'9') {
+					pom=ulazni[i];
+					ulazni[i]=ulazni[j];
+					ulazni[j]=pom;
+					break;
+				}
+			}
+		}
+	}
+ulazni[duljina-brZ]='\0';
+}
+}
+
+
+		
+

@@ -1,0 +1,31 @@
+// Mihej Komar, 1.09 :: Druga domaca zadaca
+
+#include <stdio.h>
+
+int main () {
+	int gotov = 0, a, b, sum = 0, i = 0, n;
+	char znak[25];
+	
+	while (!gotov) {
+		scanf ("%d %d %c", &a, &b, &znak[i]);
+		if (znak[i]=='+')
+			sum += a+b;
+		else if (znak[i]=='-')
+			sum += a-b;
+		else if (znak[i]=='*')
+			sum += a*b;
+		else if (znak[i]=='/') {
+            if (b!=0) sum += a/b;
+		}
+		else if (znak[i]=='%') {
+			if (b!=0) sum += a%b;
+		}
+		else 
+			gotov = 1;
+		i++;
+	}
+	n = i - 1;
+	printf ("%d", sum);
+	for (i=0; i<n; i++)
+		printf (" %c", znak[i]);
+}

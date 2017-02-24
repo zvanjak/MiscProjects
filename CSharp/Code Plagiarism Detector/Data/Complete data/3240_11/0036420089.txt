@@ -1,0 +1,61 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+	int i, v, n, zn[10];
+	scanf("%d", &n);
+	if (n > 0) {
+		if (n>1000000000) {
+			zn[9]=n/1000000000;
+			goto oznaka;
+		} else {
+oznaka:	
+			for (i=0; i<9; i++) {			
+			zn[i]=n%(int)(pow(10, i+1));
+			for (v=i-1; v>=0; v--) {
+				zn[i]-=zn[v];
+			}
+			zn[i]/=(pow(10, i));
+		}
+		for (i=0; i<=10; i++) {
+		    if (n>=pow(10, i) && n<pow(10, i+1)) {
+		        switch (i) {
+		          case 0:
+		              printf("%d", zn[0]);
+		              break;
+                  case 1:
+                      printf("%d %d", zn[1], zn[0]);
+                      break;
+                  case 2:
+                      printf("%d %d %d", zn[2], zn[1], zn[0]);
+                      break;
+                  case 3:
+                      printf("%d %d %d %d", zn[3], zn[2], zn[1], zn[0]);
+                      break;
+                  case 4:
+                      printf("%d %d %d %d %d", zn[4], zn[3], zn[2], zn[1], zn[0]);
+                      break;
+                  case 5:
+                      printf("%d %d %d %d %d %d", zn[5], zn[4], zn[3], zn[2], zn[1], zn[0]);
+                      break;
+                  case 6:
+                      printf("%d %d %d %d %d %d %d", zn[6], zn[5], zn[4], zn[3], zn[2], zn[1], zn[0]);
+                      break;
+                  case 7:
+                      printf("%d %d %d %d %d %d %d %d", zn[7], zn[6], zn[5], zn[4], zn[3], zn[2], zn[1], zn[0]);
+                      break;
+                  case 8:
+                      printf("%d %d %d %d %d %d %d %d %d", zn[8], zn[7], zn[6], zn[5], zn[4], zn[3], zn[2], zn[1], zn[0]);
+                      break;
+                  case 9:
+                      printf("%d %d %d %d %d %d %d %d %d %d", zn[9], zn[8], zn[7], zn[6], zn[5], zn[4], zn[3], zn[2], zn[1], zn[0]);
+                      break;
+                  }		                    
+			}
+		} 
+		}
+	} else {
+		printf("n nije pozitivan");
+	}
+	return 0;
+}

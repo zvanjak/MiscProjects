@@ -1,0 +1,34 @@
+Red* VratiBrojeve(Red *red) {
+	Red *moj_red = new Red();
+	Red *copy_red= new Red();
+	int i=1,j,k,bla,temp,suma,znj,eks,zblj;
+	while (i) {
+			suma=0;
+			i=red->SkiniIzReda(&j);
+			if (i==0) break;
+			
+			
+			bla=copy_red->DodajURed(j);
+			eks=j;
+			
+					for (k=0;k<j;k++){
+						bla=red->SkiniIzReda(&temp);
+						
+						bla=copy_red->DodajURed(temp);
+						int pot=1;
+						for (zblj=1;zblj<eks;zblj++)
+						{pot*=10;}
+						eks--;
+						if (temp)
+						suma=suma + temp*pot;}
+						znj=moj_red->DodajURed(suma);
+						
+							
+							
+	}
+	i=1;
+	while(i) {
+		i=copy_red->SkiniIzReda(&j);
+		bla=red->DodajURed(j);}
+			return moj_red;
+}

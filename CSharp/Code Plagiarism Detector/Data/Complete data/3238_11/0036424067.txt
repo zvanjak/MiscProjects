@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<math.h>
+
+int main()
+{
+	int n,i;
+  	double suma=0, pi;
+	scanf("%d", &n);
+	if (n<1||n>25)
+	{ printf("n nije valjan");}
+	else 
+	{	
+		for(i=1;i<=n; i++)
+		{
+		suma=suma + (1./(pow(i,8)));
+		}	
+		pi=9450*suma;
+		pi=pow(pi,0.125);
+		printf("%.12lf",pi);
+		
+	}
+	return 0;
+}

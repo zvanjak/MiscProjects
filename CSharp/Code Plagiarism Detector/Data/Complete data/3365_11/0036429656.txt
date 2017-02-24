@@ -1,0 +1,19 @@
+#include<stdio.h>
+int main()
+{
+ int z,i,j,k,s;
+ scanf("%d",&z);
+ s=0;
+ i=z/100;
+ j=(z/10)%10;
+ k=z%10;
+ if (z<250 || z>950) s=i+j+k;
+ if (z>250 && z<950)
+ {
+	 if ((i%2)==1) s=s+i;
+         if ((j%2)==1) s=s+j;
+	 if ((k%2)==1) s=s+k;
+ }
+ printf("%d",s);
+ return 0;
+}

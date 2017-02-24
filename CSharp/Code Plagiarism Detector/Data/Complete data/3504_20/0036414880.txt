@@ -1,0 +1,106 @@
+typedef struct {
+	
+	char ime [20 + 1];
+    char prezime [30 + 1];
+    char jmbag [10 + 1];
+    int ocjena;
+	
+} tip;
+
+typedef struct at {
+	
+	tip element;
+	struct at *sljed;
+		
+} atom;
+
+int brojElementa (atom *glava) {
+	
+	atom *pom; int brelem = 0;
+	for (pom = glava; pom != NULL; pom = pom->sljed) brelem++;
+  
+ 	return brelem;
+	
+}
+
+int dodaj (atom **glavap, tip element) {
+	
+	atom *novi;
+  
+	if ((novi = (atom *) malloc(sizeof(atom))) == NULL) return 0;
+  
+	strcpy ((novi->element).ime, element.ime);
+	strcpy ((novi->element).prezime, element.prezime);
+	strcpy ((novi->element).jmbag, element.jmbag);
+	(novi->element).ocjena = element.ocjena;
+  	novi->sljed = *glavap;
+	*glavap = novi;
+  	return 1;
+	
+}
+
+int minOcjena (atom *glava) {
+	
+	atom *pom; int min;
+  
+	if (glava == NULL) return -1;
+  
+	min = (glava->element).ocjena;
+	for (pom = glava; pom != NULL; pom = pom->sljed) 
+    	if ((pom->element).ocjena < min) min = (pom->element).ocjena;
+  
+	return min;
+		
+}
+
+float prosjOcjena (atom *glava) {
+	
+	atom *pom; int zbroj = 0; int br = 0;
+  
+	if (glava == NULL) return -1;
+  
+	for (pom = glava; pom != NULL; pom = pom->sljed) {
+    	br++; zbroj += (pom->element).ocjena;
+	}
+  
+	return ((float) zbroj / br);
+	
+}
+
+int izbaciImeSadrzi (atom **glavap, char *imePodniz){
+	
+	atom *pom, *pom2; int br = 0;
+
+	for (pom = *glavap; pom != NULL; ) {
+		
+		if (strcmp(pom->element.ime, imePodniz) == 0){
+			
+			if ( pom == *glavap ) { 
+				
+			pom2 = (*glavap)->sljed;
+			free(*glavap);
+			*glavap = pom2;
+			pom = pom2;
+		    br++;
+				
+				
+			} else { 
+					
+				for (pom2 = *glavap; pom2->sljed != pom; pom2 = pom2->sljed);
+		      	pom2->sljed = pom->sljed;
+		      	free (pom);
+		      	pom = pom2->sljed;
+		      	br++;
+				
+			}
+					
+			
+		}
+		
+		else pom = pom->sljed;
+		
+	}
+	
+return br;
+	
+}

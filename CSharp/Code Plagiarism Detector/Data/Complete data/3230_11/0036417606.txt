@@ -1,0 +1,14 @@
+#include<stdio.h>
+int main() {
+	int n, i;
+	double fakt=1., e=1.;
+	scanf("%d", &n);
+	if(n>=1&&n<=30) { 
+		for(i=1; i<=n; i++) {
+          fakt=fakt*i;
+		  e=e+1/fakt;}
+	printf("%14.13g", e);
+	}
+	else printf("n nije valjan");
+	return 0;
+}

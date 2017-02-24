@@ -1,0 +1,15 @@
+#include<stdio.h>
+int main()
+{
+int n,i=0;
+scanf("%d",&n);
+do
+{
+n=n+n%10;
+printf("%d ",n);
+i++;
+}
+while((n%13!=0)&&(i<40));
+printf("%d",i);
+return 0;
+}

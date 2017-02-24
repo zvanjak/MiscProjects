@@ -1,0 +1,15 @@
+int najbolji(FILE *f) {
+	int rednibrojulaz, bodoviulaz;
+	char prezime[21];
+	int pomocna = 0;
+	int rednibr = 1;
+	while(fread(&rednibrojulaz, sizeof(int), 1, f) == 1 && fread(prezime, sizeof(prezime), 1, f) == 1 && fread(&bodoviulaz, sizeof(int), 1, f) == 1) {
+		if(rednibrojulaz != 0) {
+			if(bodoviulaz > pomocna) {
+				pomocna = bodoviulaz;
+				rednibr = rednibrojulaz;
+			}
+		}
+	}
+	return rednibr;
+}

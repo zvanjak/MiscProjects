@@ -1,0 +1,58 @@
+#include <stdio.h>
+
+int main ()
+
+{
+
+char a, b;
+
+int c,d,e;
+
+scanf ("%c %c", &a, &b);
+
+if (a=='A') 
+a=58;
+
+	if (a=='B')
+	a=59;
+
+		if (a=='C')
+		a=60;
+
+			if (a=='D')
+			a=61;
+
+				if (a=='E')
+				a=62;
+
+					if (a=='F')
+					a=63;
+
+
+if (b=='A')
+b=58;
+
+	if (b=='B')
+	b=59;
+
+		if (b=='C')
+		b=60;
+
+			if (b=='D')
+			b=61;
+
+				if (b=='E')
+				b=62;
+
+					if (b=='F')
+					b=63;
+
+c = (a-48) * 16;
+d = (b-48);
+e = c + d;
+
+printf ("%d ", e);
+
+return 0;
+
+}

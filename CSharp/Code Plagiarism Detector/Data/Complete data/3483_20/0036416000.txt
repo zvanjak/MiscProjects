@@ -1,0 +1,37 @@
+class Komprimiranje
+{
+  private:
+          int *_point;
+          int _NumEle;
+  
+  public:
+         Komprimiranje (int *prvi, int NEle)
+         {
+          _point = prvi;
+          _NumEle = NEle;
+         }
+         
+         int UkupnaSuma () 
+         {
+           int suma = 0;
+           
+           for (int i = 0; i <= _NumEle - 2 ; i += 2) {
+               suma += _point [i] * _point [i+1];
+           }
+           
+           return suma;
+         
+         }
+         
+         int UkupniBrojElemenata (int vrijednost)
+         {
+           int val = 0;
+           
+           for (int i= 0; i <= (_NumEle - 2); i+=2) { 
+             if (_point [i] == vrijednost) continue;
+             val += _point [i+1];
+           }
+
+           return val;
+         }
+};

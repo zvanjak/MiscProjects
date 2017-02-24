@@ -1,0 +1,11 @@
+#include <stdio.h> 
+int main() { 
+char a,b; 
+scanf ("%c %c", &a,&b); 
+if ((a>64)&&(b<71)) a=a-55; 
+else a=a-48; 
+if ((b>64)&&(b<71)) b=b-55; 
+else b=b-48; 
+printf ("%d",((a*16)+b)); 
+return 0; 
+}

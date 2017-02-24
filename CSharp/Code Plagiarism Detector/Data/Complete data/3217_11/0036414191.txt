@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<math.h>
+
+int main() {
+
+int a, z[10], i, j, b,c=0,x=0,s=0;
+do{
+scanf ("%d", &a);
+i=0;j=0;b=0;
+while (a != 0) {
+z[i] = a%10;
+a /= 10;
+i++;
+}
+b=i;
+while (j<i)
+{
+b--;
+a += z[j]*pow(10,b);
+j++;
+}
+if (a > 0) {
+x=log10((double)a);
+for(s=pow(10,x); s>0; s/=10) {
+b = (a/s)%10;
+printf("%d ",  b); } }
+
+}while (a>=0);
+
+return 0;
+}

@@ -1,0 +1,6 @@
+char *rStrchr(char *niz, char c){
+	kontrola();
+	if (*niz=='\0') return NULL;
+	if (*niz==c) return niz;
+	rStrchr(++niz,c);
+}

@@ -1,0 +1,11 @@
+float prosjek(FILE *f) {
+int brz=0,prodano=0;
+float sum=0;
+char album[31]="",autor[21]="";
+
+while (fscanf(f,"%s %s %d",album,autor,&prodano)==3) {
+	sum+=prodano;
+	brz++;
+}
+return (sum/brz);
+}

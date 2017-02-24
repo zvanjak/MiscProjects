@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<math.h>
+main(){
+	int i,z;
+	float n,a;
+	double suma=0,pi,x;
+	scanf("%f",&n);
+	a=n-(int)n;
+	if(n>=0 && n<=100 && a==0)
+	{
+		for(i=1;i<=n;i++)
+		{
+			z=i*i;
+			suma=suma+(1./z);
+		}
+		x=suma*6;
+		pi=sqrt(x);
+		printf("%.12lf",pi);
+	}
+	else
+		printf("n nije valjan");
+}

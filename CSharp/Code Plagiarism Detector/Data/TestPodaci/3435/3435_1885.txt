@@ -1,0 +1,26 @@
+#include<stdio.h>
+int main(){
+   int i,m,n,k,br,nz;
+   float rez;
+   br=1; nz=1;
+   scanf("%d %d",&n,&m);
+   k=m;
+   if (n>=m) {
+	   if (m!=0 && m!=n){
+			for(i=1; i<=k; i++){
+			   br=br*n;
+			   nz=nz*m;
+			   m--;
+			   n--;
+		   }
+   
+   
+   rez=br/nz;
+	   }
+	   else rez=0;
+   
+   printf("%.0f",rez);
+   }		   
+ 
+return 0;
+}

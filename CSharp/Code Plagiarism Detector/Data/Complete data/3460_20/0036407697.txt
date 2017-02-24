@@ -1,0 +1,43 @@
+#include <stdlib.h>
+#include <stdio.h>
+
+class DinamickoPolje1
+{
+public:
+	DinamickoPolje1();										// defaultni konstruktor
+	DinamickoPolje1(int inMaxBrojElem);	// konstruktor
+	~DinamickoPolje1();									// destruktor
+
+	void	PostaviNovuVelicinu(int NoviBrojElem);
+
+	void	PostaviElement(int Indeks, int Vrijednost);
+	int		DohvatiElement(int Indeks);
+	void	DodajElementNaKraj(int Vrijednost);
+
+	int		BrojElemenata();
+	void	IspisiElemente();
+
+private:
+	int		*_Podaci;
+	
+	int		_BrojElem;						// koliko stvarno ima elemenata u polju
+	int		_MaxBrojElemenata;		// koliki je maksimalni raspolozivi prostor
+};
+
+
+
+
+void FuncMinMax (DinamickoPolje &polje, int *Max, int *Min) {
+    int max=0;
+	int min=0;
+	int i;
+	
+		max = polje.DohvatiElement(0);
+		min = polje.DohvatiElement(0);
+		for (i=0; i<polje.BrojElemenata(); i++) {
+			if (polje.DohvatiElement(i) > max) {max=polje.DohvatiElement(i);*Max=max;}
+			if (polje.DohvatiElement(i)  < min) {min=polje.DohvatiElement(i);*Min=min;}
+		}
+
+
+}

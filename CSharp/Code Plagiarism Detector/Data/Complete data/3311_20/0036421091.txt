@@ -1,0 +1,22 @@
+float prosjek(FILE *f)
+{
+	struct album a;
+	int br_albuma = 0, br_primjeraka = 0;
+	float prosjek = 0;
+
+	if (f)
+	{
+		while (fread(&a, sizeof(struct album), 1, f))
+		{
+			br_albuma++;
+			br_primjeraka += a.prodano;
+		}
+
+		if (br_albuma && br_primjeraka)
+		{
+			prosjek = (float) br_primjeraka / (float) br_albuma;
+		}
+	}
+
+	return prosjek;
+}

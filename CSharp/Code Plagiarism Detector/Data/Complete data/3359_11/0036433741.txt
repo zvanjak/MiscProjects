@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() {
+    
+    int broj;   
+    int a,b,c,d;
+    
+    scanf("%d",&broj);
+    
+    a = broj / 1000;
+    b = (broj % 1000) / 100;
+    c = (broj % 100) / 10;
+    d = broj % 10;
+
+    if ( (a * b * c * d ) % 2 ) printf("%d",a);
+    else printf("%d",d);
+    
+    return 0;
+}

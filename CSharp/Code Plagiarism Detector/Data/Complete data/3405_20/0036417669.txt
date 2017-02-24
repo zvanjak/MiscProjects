@@ -1,0 +1,22 @@
+char *SvakiDrugi(char *ulazni_niz){
+	int duljina,i,n,novi;
+	char *p;
+	duljina=strlen(ulazni_niz);
+	if(duljina%2==0){
+		novi=duljina/2;
+	} else {
+		novi=(duljina/2)+1;
+	}
+	if (ulazni_niz==NULL || ulazni_niz[0]=='\0'){ 
+        return NULL;
+	}
+	p=(char *)malloc((novi+1)*sizeof(char));
+	n=0;
+	for(i=0;i<duljina;i++){
+		if(i%2==0){
+		p[n]=ulazni_niz[i];
+		n++;}
+	p[n]='\0';
+	}
+	return p;
+}

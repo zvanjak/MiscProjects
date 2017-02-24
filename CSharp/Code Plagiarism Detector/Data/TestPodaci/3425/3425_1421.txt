@@ -1,0 +1,42 @@
+#include <stdio.h>
+#define MIN 1
+#define MAX 10
+
+
+void main() {
+	int mat[MAX][MAX];
+	int pom,suma=0;
+	int brojac=0;
+
+	int mr,br,bs,i,j,n;
+	
+	do {
+	scanf("%d", &mr);
+	} while (mr < MIN || mr > MAX);
+	
+	for (br=0; br<mr; br++) {
+		for (bs=0; bs<mr; bs++) {
+			scanf("%d", &mat[br][bs]);}
+	}
+
+	do {	
+		scanf ("%d %d", &i,&j);
+	
+	if ((i>=0 && i<mr) && (j>=0 && j<mr)) {
+	pom = mat[i][j];
+	mat[i][j] = mat [j][i];
+	mat[j][i] = pom;
+	brojac++;
+	}
+
+	} while ((i>=0 && i<mr) && (j>=0 && j<mr));
+
+	scanf("%d", &n);
+	if (n<0 || n>=mr) 
+		suma= -1;
+	else {	for (bs=0; bs<mr; bs++) 
+		suma += mat[n][bs];
+	}
+
+	printf("%d %d",brojac, suma);
+}

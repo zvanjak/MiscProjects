@@ -1,0 +1,29 @@
+char *SamoSuglasnici(char *ulazni_niz) {
+	char *c; 
+	char s;
+	int i,br=0;
+	c=(char *) malloc(sizeof (char));	
+	if (ulazni_niz==NULL || *ulazni_niz=='\0') return 0;
+			
+		for (i=0; ulazni_niz[i]!=0; i++) {
+			if (isdigit(ulazni_niz[i])) continue;
+			if (isalpha(ulazni_niz[i])) {
+				s=ulazni_niz[i];
+				s=tolower(s);
+				switch (s) {
+					case 'a':
+					case 'e':
+					case 'i':
+					case 'o':
+					case 'u': continue;
+					default: br++;
+						c=(char*)realloc(c, br*sizeof(char));
+						c[br-1]=ulazni_niz[i];
+						
+				}				
+			}
+			
+		}
+		c[br]='\0';
+		return c;
+}

@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+	int n,i,predz;
+	double x,lnx=0,fakt;
+       	scanf("%d",&n);
+	if ((n<1)||(n>100)) printf("n nije valjan");
+	else{ scanf("%lf",&x);
+     	if((x<=0)||(x>=2)) printf("x nije valjan");
+	else{ predz=1;
+	     fakt=x-1;
+	for(i=1;i<=n;i++){
+     lnx+=predz*fakt/i;
+		 fakt*=(x-1);
+		predz*=-1;
+		}
+printf("%d %.5f %.12f",n,x,lnx);
+	}}
+	
+	return 0;}

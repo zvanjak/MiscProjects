@@ -1,0 +1,55 @@
+int izbaciZ(zapis **glava)
+{
+    zapis       *iter = *glava,
+                *prethodni = NULL,
+                *tmp = NULL;
+    
+    float       ukupan_broj_studenata = 0, 
+                zbroj_prosjeka_svih_studenata = 0, 
+                ukupan_prosjek;
+                
+    int         broj_izbacenih = 0;
+                
+    
+    while (iter != NULL)
+    {
+          zbroj_prosjeka_svih_studenata += iter->pros;
+          ukupan_broj_studenata++;
+          iter = iter->sljed;
+    }
+    
+    ukupan_prosjek = zbroj_prosjeka_svih_studenata / ukupan_broj_studenata;
+    
+    iter = *glava;
+    
+    while (iter != NULL)
+    {
+        if ( (iter->spol == 'Z') && (iter->pros < ukupan_prosjek) )
+        {
+            broj_izbacenih++;
+            
+            if (prethodni != NULL)
+            {
+                tmp = iter;
+                iter = iter->sljed;
+                prethodni->sljed = iter;
+                free(tmp);
+            }
+            
+            else 
+            {
+                tmp = *glava;
+                *glava = (*glava)->sljed;
+                iter = *glava;
+                free(tmp);
+            }
+            
+            continue;
+        }
+        
+        prethodni = iter;
+        iter = iter->sljed;
+    }
+    
+    return broj_izbacenih;
+}

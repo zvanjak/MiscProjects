@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+	int n,i;
+	double z=0,p=1;
+	scanf("%i",&n);
+	if ((n>0)&&(n<=100)) {
+		for (i=1;i<=n;i++) {
+			z=z+p/(i*i);
+			p=-p;
+		}
+		z=sqrt(z*12);
+		printf("%.12lf",z);
+	}
+	else printf("n nije valjan");
+	return 0;
+}

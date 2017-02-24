@@ -1,0 +1,22 @@
+char *SamoSuglasnici(char *ulazni_niz){
+	char *novi=NULL;
+	char c;
+	int i=0;
+	if(!ulazni_niz) return NULL;
+	else{
+		while(*ulazni_niz!='\0'){
+			if(isalpha(*ulazni_niz)){
+				c=*ulazni_niz;
+				toupper(c);
+				if(c!='A' && c!='E' && c!='I' && c!='O' && c!='U'){
+						novi=(char *)realloc(novi,(i+1)*sizeof(char));
+						*(novi+i)=*ulazni_niz;
+						++i;
+				}
+			}
+			++ulazni_niz;
+		}
+		*(novi+i)='\0';
+	}
+	return novi;
+}

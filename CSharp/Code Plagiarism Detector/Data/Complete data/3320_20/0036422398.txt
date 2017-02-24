@@ -1,0 +1,9 @@
+int rmax(int *polje, int N){
+	int kontrola();
+	if (N>=0){
+		if (*(polje)>rmax(polje+1, N-1))
+
+			return *(polje);
+
+	 }
+}

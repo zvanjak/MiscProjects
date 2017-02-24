@@ -1,0 +1,38 @@
+#include<stdio.h>
+
+
+int main(){
+  int broj,a, b, c, d, e, f;
+  scanf("%d", &broj);
+  if (broj>0){									
+		a=broj/1000;							
+		b=broj%1000;							
+		c=b/100;								
+		d=b%100;								
+		e=d/10;
+		f=broj%10;	
+		if(c==0||e==0||f==0){printf("0"); return 0;}
+if (a%2==0){printf("%d",a);}
+if(c%2==0&&c!=0){printf("%d", c);}
+if(e%2==0&&e!=0){printf("%d", e);}
+if(f%2==0&&f!=0){printf("%d", f);}
+
+		}
+	if (broj<0){broj=-broj;
+		a=broj/1000;
+		b=broj%1000;
+		c=b/100;
+		d=b%100;
+		e=d/10;
+		f=broj%10;
+		
+		if(c==0||e==0||f==0){printf("0"); return 0;}
+		if((a%2==0||c%2==0||e%2==0||f%2==0)){printf("-");}
+		if (a%2==0){printf("%d",a);}
+		if(c%2==0&&c!=0){printf("%d", c);}
+		if(e%2==0&&e!=0){printf("%d", e);}
+		if(f%2==0&&f!=0){printf("%d", f);}
+		
+		}
+		return 0;
+  }

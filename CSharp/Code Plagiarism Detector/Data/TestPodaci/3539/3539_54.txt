@@ -1,0 +1,15 @@
+float prosjek(zapis *glava){
+	float suma=0,prosjek;
+	float brojac=0;
+	zapis *p;
+	p=glava;
+	if(p==NULL)return 0;
+	while(p!=NULL){
+suma=suma + p->pros;
+brojac++;
+	p=p->sljed;}
+	prosjek=suma/brojac;
+	p=glava;
+	while(p!=NULL){if(p->pros<prosjek){p->pros=0.0;}
+	p=p->sljed;}
+	return prosjek;}

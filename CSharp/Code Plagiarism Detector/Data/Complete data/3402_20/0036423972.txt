@@ -1,0 +1,26 @@
+#include <malloc.h>
+#include <stdio.h>
+
+int* napraviPolje(int *A, int Na, int a, int b, int* Nc) {
+	int elem, broj;
+	int *C = NULL, n;
+	
+	if (b < a || a <= 0)
+		return 0;
+	
+	n = 0;
+	for (elem = 0; elem < Na; elem++) {
+		for (broj = a; broj <= b; broj++)
+			if ((A[elem] % broj) == 0)
+				break;
+		if (broj <= b) {
+			n++;
+			C = realloc(C, n * sizeof(int));
+			C[n - 1] = A[elem];
+		}
+	}
+	
+	*Nc = n;
+	
+	return C;
+}

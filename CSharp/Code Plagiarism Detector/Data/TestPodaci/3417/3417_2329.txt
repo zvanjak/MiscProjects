@@ -1,0 +1,26 @@
+#include<stdio.h>
+char ucase(char a){
+     return (a>='a')?a-32:a;
+}
+char lcase(char a){
+     return (a<='Z')?a+32:a;
+}
+int sam(char a){
+     a=lcase(a);
+     return a=='a'||a=='e'||a=='i'||a=='o'||a=='u'; 
+}
+int main()
+{
+      char a,rijec[22],nrijec[42];
+      int l=0,i;
+      while(scanf("%c",&a)&&(a>='a'&&a<='z'||a>='A'&&a<='z'))
+           if(sam(a)==0) nrijec[l]=rijec[l++]=ucase(a); 
+      if(l==0) printf("-1");
+      else{
+        for(i=0;i<l;++i)
+            nrijec[l*2-i-1]=lcase(rijec[i]);
+        nrijec[l*2]='\0';
+        printf("%s",nrijec);
+      }
+      return 0;
+} 

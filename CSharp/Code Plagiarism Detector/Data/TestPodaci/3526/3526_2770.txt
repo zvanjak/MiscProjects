@@ -1,0 +1,76 @@
+#include <stdio.h>
+
+void maxaps(int *prvamat, int *drugamat, int brRedPrva, int brStupPrva, int
+maxStupPrva , int brRedDruga, int brStupDruga, int maxStupDruga, int niz[])
+{
+    int je_inverz = 0;
+    int i,j, k,l, m, n, c, max, min;
+    int detected = 0;
+
+    if (brStupPrva == brRedDruga)
+    {
+       for (i=0; i<brRedPrva; i++)
+       {
+           for (j=0; j<brStupDruga; j++)
+           {
+               c = 0;
+               for (l=0; l<brStupPrva; l++)
+               {
+                   c = c + prvamat[i*maxStupPrva+l] * drugamat[l*maxStupDruga+j];
+               }
+
+               if (i==j)
+               {
+                 if (c!=1)
+                 {
+                   detected = 1;
+                   je_inverz = 0;
+                   break;
+                 }
+               }
+               else
+               {
+                 if (c!=0)
+                 {
+                   detected = 1;
+                   je_inverz = 0;
+                   break;
+                 }
+               }
+           }
+           if (detected==1) break;
+       }
+
+       if (detected==0) je_inverz = 1;
+    }
+    else
+    {
+      je_inverz = 0;
+    }
+    
+    if (je_inverz==1)
+    {
+      for (i=0; i<brRedPrva; i++)
+      {
+        max = 0;
+        for (j=0; j<brStupPrva; j++)
+        {
+          if (abs(prvamat[i*maxStupPrva+j])>max) max = abs(prvamat[i*maxStupPrva+j]);
+        }
+        niz[i] = max;
+      }
+    }
+    else
+    {
+      for (i=0; i<brRedPrva; i++)
+      {
+        min = 9999999;
+        for (j=0; j<brStupPrva; j++)
+        {
+          if (prvamat[i*maxStupPrva+j]<min) min = prvamat[i*maxStupPrva+j];
+        }
+        niz[i] = min;
+      }
+
+    }
+}

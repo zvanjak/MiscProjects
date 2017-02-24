@@ -1,0 +1,18 @@
+Red *VratiBrojeve(Red *red) {
+	Red tmp,*sol = new Red;
+	int x,n,num;
+	
+	while (red->SkiniIzReda(&n)) {
+		tmp.DodajURed(n);
+		num=0;
+		for (int i=0;i<n;++i) {
+			red->SkiniIzReda(&x);
+			tmp.DodajURed(x);
+			num = num*10 + x;
+		}
+		sol->DodajURed(num);
+	}
+	while (tmp.SkiniIzReda(&x)) red->DodajURed(x);
+	
+	return sol;
+}

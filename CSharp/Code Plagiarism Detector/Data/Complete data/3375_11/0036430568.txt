@@ -1,0 +1,24 @@
+#include <stdio.h>
+int main (void)  {
+	int broj,x;
+	scanf("%d",&broj);
+	x=broj;
+	if ((broj>999&&broj<10000)||(broj>-10000&&broj<-999)){
+		if (broj<0)
+		broj=-broj;
+			if (broj/1000%2){
+			broj=broj-broj/1000*1000;
+				if (broj/100%2){
+				broj=broj-broj/100*100;
+					if (broj/10%2){
+					broj=broj-broj/10*10;
+						if (broj%2)
+						broj=0;
+				}
+			}
+		}
+	if (x<0)printf("%d",-broj);
+	else printf("%d",broj);
+	}
+	return 0;
+}

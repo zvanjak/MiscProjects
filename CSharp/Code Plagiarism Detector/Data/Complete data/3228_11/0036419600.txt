@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <math.h>
+int main (){
+int n,i;
+double k,h=0,kv,fin;
+scanf ("%d", &n);
+if (n<1 || n>100) {
+    printf ("n nije valjan");}
+else {
+    for (i=1 ;i<=n;i++){
+        k=i;
+        if (i%2 == 0) h=h-1./(k*k);
+		         else h=h+1./(k*k);
+    }
+kv=h*12;
+fin=pow(kv,(1./2));
+printf ("%.12lf",fin);
+}
+return 0;
+}

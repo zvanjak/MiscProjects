@@ -1,0 +1,29 @@
+int *Find3Max(int *pz, int n) {
+
+  int *r;
+  int i,j, pom[3], min;
+
+  if(n<3) return NULL;
+
+  r = (int*)malloc(3*sizeof(int));
+
+  min=pz[0];
+
+  for(i=0;i<n;i++){
+      if(pz[i]<min){
+      min=pz[i];
+    }
+  }
+  r[0]=r[1]=r[2]=min;
+
+  for(j=0;j<3;j++){
+    for(i=0;i<n;i++){
+      if((pz[i]>r[j])&&(i!=pom[0])&&(i!=pom[1])&&(i!=pom[2]))
+        {
+          r[j]=pz[i];
+          pom[j]=i;
+        }
+    }
+  }
+  return r;
+ }

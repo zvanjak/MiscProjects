@@ -1,0 +1,14 @@
+#include<stdio.h>
+int main ()
+{int b,p=0,n=0;
+scanf("%d",&b);
+while(b!=0)
+	{if(b>0)
+		{if(b%2==0)
+			p+=1;
+		 if(b%2==1)
+			 n+=1;}
+				scanf("%d",&b);}
+printf("%d %d",p,n);
+return 0;
+}

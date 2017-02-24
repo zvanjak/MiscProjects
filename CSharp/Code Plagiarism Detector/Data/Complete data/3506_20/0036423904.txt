@@ -1,0 +1,30 @@
+	struct cv{
+	int id;
+	char naziv[15];
+	struct cv *lijevo;
+	struct cv *desno;
+	};
+	typedef struct cv cvor;
+	
+	int Razina(cvor *glava, int id, int *razina)
+	{
+		if(glava == NULL) return 0;
+			else
+			{
+				if(glava->id == id)
+				{
+					return 1;
+				}
+				else
+				{
+						if(id < glava->id)
+						{
+							return((*razina) + Razina(glava->lijevo, id, &razina ));												}					
+						else 
+						{
+							return((*razina) + Razina(glava->desno, id, &razina));										
+						}
+				}
+			
+			}			
+	}

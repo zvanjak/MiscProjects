@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <string.h>
+
+void ubaci (char * niz, char * podniz, int i)
+{int j, k;
+char temp [100]={0}; 
+	if (i<0 || i>strlen(niz))
+ strupr(niz);
+else 
+{strncat(temp, niz, i);
+ strcat(temp, podniz);
+ for(j=i, k=strlen(temp);  j<strlen(niz)+i+1;j++, k++)
+	 temp[k]=niz[j];
+strcpy(niz, temp);
+}
+
+}

@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+char *SvakiDrugi(char *ulazni_niz){
+     char *novi_niz;
+     int i, j=0, n;
+     if(ulazni_niz[0]==NULL)return NULL;
+     else {
+          n=strlen(ulazni_niz);
+          novi_niz=(char *) malloc ((n+1) * sizeof (char));
+          for(i=0; i<n; i+=2) novi_niz[j++]=ulazni_niz[i];
+          novi_niz[j]='\0';
+          }
+     return novi_niz;
+}

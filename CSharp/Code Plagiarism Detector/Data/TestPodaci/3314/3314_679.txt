@@ -1,0 +1,14 @@
+int veci_od(FILE *f, int granica){
+int brojac=0;
+int n;
+struct album alb;
+while(n=fscanf("%s %s %d\n",&alb.naziv,&alb.autor,&alb.prodano) =! 0){
+if (n=-1)
+exit(1);
+if(alb.prodano >= granica)
+brojac++;
+
+}
+fclose (f);
+return brojac;
+}

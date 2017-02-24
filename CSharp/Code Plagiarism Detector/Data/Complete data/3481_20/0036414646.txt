@@ -1,0 +1,13 @@
+int Memoriraj(Radio& radio){
+int i=1;
+int ii;
+Stanica s;
+while(i<=6){
+        s = radio.TraziSljedecu();
+        if(strlen( s.RDS())>0){
+                if(s.Frekvencija() == radio.Dohvati(1).Frekvencija())break; 
+                        else radio.MemorirajStanicu(s,i++);
+                }
+        }
+return (i-1);
+}

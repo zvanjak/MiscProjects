@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main(){
+
+	int a, max, min, x=0;
+	scanf("%d", &a);
+	max = min = a;
+	while (x==0){
+	   scanf("%d", &a);
+	   if ((a > 0) && (a%4==0)) x=1;
+       if (a > max) max = a;
+	   if (a < min) min = a;
+	}
+	printf("%d %d", max, min);
+   return 0;
+}
+

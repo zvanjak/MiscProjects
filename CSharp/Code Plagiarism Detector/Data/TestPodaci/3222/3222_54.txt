@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main(){
+int n, pon, novin;
+        scanf("%d, %d, %d", &n, &novin, &pon);
+        pon=0; novin=0;
+        do{
+            novin=n+n%10;
+            n=novin;
+            pon++;
+            printf("%d\ ",n);  
+            } 
+        while(!((novin%13 == 0) || (pon==40)));           
+       /*printf("\nPostupak se je ponovio %d puta.\n", pon);*/
+       printf("%d", pon);
+/*system("PAUSE");*/
+return 0;
+}

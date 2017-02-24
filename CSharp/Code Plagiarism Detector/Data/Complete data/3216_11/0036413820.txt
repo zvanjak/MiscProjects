@@ -1,0 +1,25 @@
+#include<stdio.h>
+void main()
+{
+int n;
+int i,prost=0;
+int prostb;
+do
+{
+/*printf("Unesite broj:");*/
+scanf("%d",&n);
+for(i>2;i<(n-1);i++)
+{
+if(n%i==0)
+{
+prost=0;
+break;
+}
+else
+{
+prostb++;
+}
+}
+}while(n>2);
+printf("%d",prostb);
+}

@@ -1,0 +1,10 @@
+#include <stdio.h>
+#include <malloc.h>
+
+float *KreirajTablicuMnozenja(int n){
+	int i, j, *polje = (int *) malloc (n*n*sizeof(int));
+	for (i = 1; i <= n; i++)
+		for (j = 1; j <= n; j++)
+			*(polje + i*n + j) = i*j;
+	return polje;
+}

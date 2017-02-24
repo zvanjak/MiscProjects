@@ -1,0 +1,29 @@
+char *SamoSamoglasnici(char *ulazni_niz) {
+	
+	int i, n, poz = 0;
+	char novi_niz[30];
+
+	if ( (strlen(ulazni_niz) == 0) || (ulazni_niz == NULL) )
+		return NULL;
+
+	n = strlen(ulazni_niz) - 1;
+	
+	for (i = 0; i < n; i++) {
+		
+		switch (ulazni_niz[i]) {
+			case 'A': *(novi_niz + poz) = ulazni_niz[i]; poz++; 
+			case 'E': *(novi_niz + poz) = ulazni_niz[i]; poz++; 
+			case 'I': *(novi_niz + poz) = ulazni_niz[i]; poz++; 
+			case 'O': *(novi_niz + poz) = ulazni_niz[i]; poz++; 
+			case 'U': *(novi_niz + poz) = ulazni_niz[i]; poz++; 
+			case 'a': *(novi_niz + poz) = ulazni_niz[i]; poz++; 
+			case 'e': *(novi_niz + poz) = ulazni_niz[i]; poz++; 
+			case 'i': *(novi_niz + poz) = ulazni_niz[i]; poz++; 
+			case 'o': *(novi_niz + poz) = ulazni_niz[i]; poz++; 
+			case 'u': *(novi_niz + poz) = ulazni_niz[i]; poz++; 
+		}
+	}
+
+	return novi_niz;
+
+}

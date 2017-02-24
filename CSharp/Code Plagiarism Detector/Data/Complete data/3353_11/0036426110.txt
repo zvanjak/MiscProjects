@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <math.h>
+int main () {
+int broj, a, b, br, c, d, e, f, zbroj;
+    scanf ("%d", &broj);
+    scanf("%d", &br);  
+    if (br > 0 && br < 5)
+      { if (br == 1)
+          {a = broj / 10;
+          zbroj = a;}
+       if (br == 2)
+          {a = broj / 100;
+          b = broj % 10;  
+          zbroj = 10 * a + b;}
+       if (br == 3) 
+         { a = broj / 1000;
+          b = broj % 100;  
+          zbroj = a * 100 + b;}
+       if (br == 4)
+         { b = broj % 1000;  
+          zbroj = b;}
+}
+ else 
+ {
+    c = broj / 1000;
+    d = (broj % 1000) / 100;
+    e = ((broj % 1000) % 100) / 10;
+    f = (((broj % 1000) % 100) % 10);
+    zbroj = c + d + e + f;
+  }
+printf("%d ",zbroj);
+return 0;
+}

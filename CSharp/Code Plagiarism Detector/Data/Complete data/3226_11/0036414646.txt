@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <math.h>
+float n;
+double brojnik,nazivnik,g,suma,k,i;
+int main() {
+        suma=0;
+	scanf("%f",&n);
+        k=floor(n);
+	g=n-k;
+	if (n<1||n>1000||!(g==0)) printf("n nije valjan");
+	else {
+	for (i=2; i<n+2; i=i+1) {
+	   nazivnik=((i-1)*(i+1));
+            brojnik=1/nazivnik;
+	     suma=suma+brojnik;
+		}
+	printf("%.12lf",suma);
+		
+	}
+	return 0;}

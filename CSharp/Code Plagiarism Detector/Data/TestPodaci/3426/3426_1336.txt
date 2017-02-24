@@ -1,0 +1,32 @@
+#include <stdio.h> 
+#define MAXR 20 
+#define MAXS 5 
+int main () { 
+     int mr, ms, i, j, p, q, a, b, mat[MAXR][MAXS], brojac=0, msbn=0; 
+do { 
+          scanf("%d %d", &mr, &ms); 
+     } while (mr<1||mr>20||ms<1||ms>5); 
+scanf ("%d %d", &p, &q); 
+     for (a=0; a<mr; a++) { 
+        if (a%2==0) 
+           for (b=0; b<ms; b++) 
+            mat[a][b]=p; 
+        else 
+           for (b=0; b<ms; b++) 
+            mat[a][b]=q; 
+     } 
+scanf ("%d %d", &i, &j); 
+     while (i>=0  &&  i<mr &&  j>=0 && j<ms){ 
+         mat[i][j]=0; 
+         scanf ("%d %d",&i,&j); 
+           brojac++;} 
+ 
+for (i=0; i<ms; i++){ 
+ for (j=0; j<mr; j++){ 
+  if (mat[j][i]==0){ 
+  msbn++;  
+  break;}}}            
+ 
+printf ("%d %d", brojac, ms-msbn); 
+return 0; 
+}

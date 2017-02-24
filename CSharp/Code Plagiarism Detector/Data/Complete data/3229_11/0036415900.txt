@@ -1,0 +1,50 @@
+#include <stdio.h>
+
+int main () {
+
+	int i, j;
+	float rez, e, m, n; 
+	float a[31], b[31];
+
+	rez = 0;
+	
+	scanf ("%f", &n);
+
+	if (n / (int)n != 1 || n < 1 || n > 30) {
+		printf ("n nije valjan");
+	}
+	else{
+
+		m = n;
+
+		a[0] = 1;
+		
+		for (j = m; j >= 1; j--){
+		
+				a[j] = 1;
+		
+			for (i = 1; i <= n; i++)
+				a[j] *= i;
+		
+			n--;
+		}
+
+		for (i = 0; i < m; i++){
+
+			if (i%2 == 0) b[i] = 1 / a[i];
+		
+			else b[i] = -1 / a[i];
+
+			rez += b[i];
+
+		}
+
+		e = 1 / rez;
+
+		printf ("%.12f", e);
+
+	}
+
+	return 0;
+
+}

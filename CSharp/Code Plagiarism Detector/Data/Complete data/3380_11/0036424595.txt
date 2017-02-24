@@ -1,0 +1,20 @@
+#include <stdio.h>
+  int main (){
+      int x,x1,x2,x3,x4,x5,k,a,b;
+      scanf("%d",&x);
+      x1 = x/100;
+      x2 = x - x1*100;
+      x3 = x1*x1;
+      x4 = x2/10;
+      x5 = x2 - x4*10;
+      if(x2 == x3){
+            k = x5*100 + x4*10 + x1;
+            printf("\n %d",k);}
+      else{ 
+           if(x >= 150 && x <= 450){ a=1;
+            printf("\n %d",a);}
+           if(x >= 451 && x <= 700){ b=7;
+            printf("\n %d",b);}
+           if(x <= 149 || x >= 701)printf("\n %d",x1+x4+x5);}
+           return 0;
+           }

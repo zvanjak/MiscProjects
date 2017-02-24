@@ -1,0 +1,18 @@
+Ekipa StvoriISortiraj(char *naziv){
+
+	Ekipa ekipa(naziv);
+	ekipa.Napuni();
+		
+	int i,j, min;
+	for (i = 0; i < 10; i++) {
+		min = i;
+	    for (j = i+1; j < 11;  j++) {
+			if (ekipa[j].VratiBroj() < ekipa[min].VratiBroj()) 
+				min = j;
+		}		
+		if (min!=i)
+			ekipa.Zamijeni(i , min);					
+	}
+	return ekipa;
+
+}

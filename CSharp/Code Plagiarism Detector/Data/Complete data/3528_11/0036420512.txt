@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <string.h>
+
+
+int zamijeni (char *ulazni, char *prvi, char *drugi)
+{
+	int br, vel1, vel2;
+	vel1=strlen(prvi);
+	vel2=strlen(drugi);
+
+
+	br=0;
+do
+{
+	if ((strstr(ulazni, prvi))==NULL) br=0;
+	else {
+		br++;
+		strncpy((strstr(ulazni, prvi)), drugi, vel2);
+		}
+	
+	}while ((strstr(ulazni, prvi))!=NULL);
+
+return br;
+
+
+}

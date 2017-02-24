@@ -1,0 +1,13 @@
+int br_prodanih(FILE *f, char *autor)
+{
+    char fnaziv[30 + 1];
+    char fautor[20 + 1];
+    int fprodano;
+    int ret = 0;
+    
+    while(fscanf(f, "%s %s %d\n", fnaziv, fautor, &fprodano) == 3)
+        if(strcmp(fautor, autor) == 0)
+            ret += fprodano;
+            
+    return ret;
+}

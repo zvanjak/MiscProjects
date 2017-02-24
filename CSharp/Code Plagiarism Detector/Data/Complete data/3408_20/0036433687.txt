@@ -1,0 +1,33 @@
+char *Spoji(char *niz1, char *niz2)
+{
+     int brojac=0;
+     int duljina_niz_1=0;
+     int duljina_niz_2=0;
+     int temp1=0;
+     int temp2=0;
+     int iteracija=0;
+     char *niiz;  
+     brojac=strlen(niz1);
+     duljina_niz_1=brojac;
+     brojac=strlen(niz2);
+     duljina_niz_2=brojac;
+     brojac=duljina_niz_1+duljina_niz_2;
+     niiz=(char *)malloc((brojac+1) * sizeof(char));     
+     while (iteracija<brojac)
+     {
+           if (temp1<duljina_niz_1)
+           {
+           *(niiz+iteracija)=*(niz1+temp1);
+                      iteracija++;
+                      temp1++;
+           }
+           if (temp2<duljina_niz_2)
+           {
+           *(niiz+iteracija)=*(niz2+temp2);
+                      iteracija++;
+                      temp2++;
+           }
+      }   
+       *(niiz+iteracija)='\0';     
+     return niiz;    
+}          

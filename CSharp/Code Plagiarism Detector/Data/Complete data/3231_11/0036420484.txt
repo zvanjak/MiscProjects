@@ -1,0 +1,15 @@
+#include<stdio.h>
+#include<math.h>
+main(){
+float n,x,y,S;
+int i;
+scanf("%f",&n);
+x=n-(int)(n);
+if(n<1 || n>30 || x>0)
+printf("\nn nije valjan");
+else{
+y=pow(-0.5,n);
+S=-(y-1)/1.5;
+printf("\n%.12f",S);
+}
+}

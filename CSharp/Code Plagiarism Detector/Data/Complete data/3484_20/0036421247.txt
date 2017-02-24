@@ -1,0 +1,113 @@
+class CjelobrojniNiz {
+private:
+
+	int *_niz;
+	int _n;
+
+public:
+
+	int VecinaJednaka;
+	CjelobrojniNiz (const CjelobrojniNiz& niz) 
+	{
+		int i;
+		_niz = new int[niz._n];
+		_n=niz._n;
+		for (i=0; i<_n ; i++) 
+		{
+			_niz[i]=niz._niz[i];
+		}
+	}
+	CjelobrojniNiz (int* niz, int n) 
+	{	
+		int a,max=0;
+		int i,j,m=0;
+		_niz= new int[n];
+		_n=n;
+		for (i=0; i<n; i++) 
+		{
+			_niz[i]=niz[i];
+		}
+		for (i=0;i<n;i++) 
+		{
+			if (max >= m) m=max;
+			max=0;
+			a=niz[i];
+			for (j=0 ; j<n ; j++) {
+				if (a==niz[j]) max++;
+			}	
+		}
+		if ( m > (n/2) ) VecinaJednaka=1; else VecinaJednaka=0;
+	}
+	
+	int Usporedi(CjelobrojniNiz niz) 
+	{
+		int k=1,i;
+		if (_n != niz._n) return 0;
+		else 
+			for (i=0 ; i<_n ; i++) 
+			{
+				if (_niz[i] != niz._niz[i]) k=0;
+			}
+		return k;
+	}
+
+	~CjelobrojniNiz () {
+		delete []_niz;
+	}
+
+	int* VratiPresjek (CjelobrojniNiz niz,int* n) 
+	{
+		int i=0,j=0,k=0,b=0,a;
+		int *niz1;
+		niz1 =new int[niz._n+_n];
+		if (_niz[i]<=niz._niz[j]) 
+		{
+			niz1[b]=_niz[i];
+			i++;
+		}
+		else 
+		{
+			niz1[b]=niz._niz[j];
+			j++;
+		}
+		a=niz1[b];
+		b++;
+		while ( (i<_n) && (j<niz._n)) 
+		{
+			if (_niz[i] <= niz._niz[j])
+			{
+				if (_niz[i] != a)
+				{
+					niz1[b]=_niz[i];
+					a=niz1[b];
+					b++;
+				}
+				i++;
+			}
+			else
+			{
+				if (niz._niz[j] != a)
+				{
+				niz1[b]=niz._niz[j];
+				a=niz1[b];
+			    b++;
+				}
+				j++;
+			}
+			
+		}
+		--b;
+		for (i;i<_n;i++)
+		{
+			if (niz1[b] != _niz[i]) niz1[++b]=_niz[i];
+		}
+		for (j;j<niz._n;j++)
+		{
+			if (niz1[b] != niz._niz[j]) niz1[++b]=niz._niz[j];
+		}
+		++b;
+		*n=b;
+		return niz1;
+	}
+		
+};

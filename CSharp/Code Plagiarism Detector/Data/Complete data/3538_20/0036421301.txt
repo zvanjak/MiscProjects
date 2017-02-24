@@ -1,0 +1,19 @@
+Red* VratiBrojeve (Red *red){
+	Red *Pom=new Red;
+	Red *Rezultat=new Red;
+	int n,broj=0,i;
+	while(red->SkiniIzReda(&n)){                 
+		Pom->DodajURed(n);
+		while (n>0){
+			n--;
+			if (red->SkiniIzReda(&i))
+				broj=broj*10+i;
+		}
+		Rezultat->DodajURed(broj);
+		broj=0;
+	}
+	while (Pom->SkiniIzReda(&i))
+		red->DodajURed(i);
+	free(Pom);
+	return Rezultat;
+}	

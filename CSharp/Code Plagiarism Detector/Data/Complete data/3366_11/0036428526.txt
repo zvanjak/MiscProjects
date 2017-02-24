@@ -1,0 +1,12 @@
+#include <stdio.h>
+int main()
+{int b,a;
+scanf("%d",&b);
+a=0;
+a=a+b%10;
+b=b/10;
+a=a+b%10*8;
+b=b/10;
+a=a+b%10*64;
+printf("%d",a);
+return 0;}

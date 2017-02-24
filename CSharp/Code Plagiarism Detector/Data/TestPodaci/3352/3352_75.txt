@@ -1,0 +1,14 @@
+int veci_od(FILE *f, int n)
+{
+	int brojac=0;
+	struct natjecatelj{
+		int redni_br;
+		char prezime[20+1];
+		int bodovi;
+	};
+	struct natjecatelj z;
+	while (fread (&z, sizeof(z), 1, f))
+		if (z.bodovi >= n && z.redni_br != 0)
+			brojac++;
+	return brojac;
+}

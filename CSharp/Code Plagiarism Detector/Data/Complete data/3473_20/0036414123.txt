@@ -1,0 +1,9 @@
+Krug fun4( Pravokutnik p ) {
+   double x = p.getSirina()/2;
+   double y = p.getVisina()/2;
+   Tocka S = p.getDLkut();
+   S.X += x;
+   S.Y += y;
+
+   return Krug( S, hypot( x, y ) );
+}

@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+
+void main() {
+	int prvi, drugi;
+	int suma;
+	int i, bod;
+
+
+	do 
+		scanf("%d %d", &prvi, &drugi);
+
+	while (((prvi < 1000) || (prvi > 9999)) || ((drugi < 1000) || (drugi > 9999)));
+
+
+	if ( ( prvi % 10 ) == ( drugi / 1000) ) {
+		bod = 1;
+		suma = prvi % 10;
+		
+		for (i=100; i<100000; i=i*10) {
+
+			if ( ((prvi % i) / (i / 10)) == ( (drugi % (100000/i)) / (10000/i) )){
+				
+				bod += 1;
+				suma += (prvi % i) / (i / 10);
+
+			}
+		}
+	} else printf("%d", prvi - drugi);
+
+	if (bod == 4) 
+		printf("%d", suma);
+	else if (bod != 4)
+		printf("%d", prvi - drugi);
+}

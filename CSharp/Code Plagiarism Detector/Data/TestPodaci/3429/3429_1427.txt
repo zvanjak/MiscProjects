@@ -1,0 +1,26 @@
+#include <stdio.h>
+int main () {
+int polje[20][5];
+int y=0, z=0;
+int i,j,br,bs;
+
+do {
+scanf("%d %d",&br,&bs);}
+while (!(br>=1 && br<=20) || !(bs>=1 && br<=5));
+
+for (i=0;i<br;i++){
+for (j=0;j<bs;j++){
+scanf("%d",&polje[i][j]);}
+}
+
+for (i=0;i<br;i++) {
+	for (j=0;j<bs;j++) { 
+		if (polje[i][j]%2==0) {y++; break;}}}
+
+for (j=0;j<bs;j++) {
+	for (i=0;i<br;i++) { 
+		if (polje[i][j]%2==1) {z++; break;}}}
+
+printf("%d %d",y,z);
+return 0;
+}

@@ -1,0 +1,21 @@
+#include<stdio.h>
+
+int main () {
+	int A, d, B, A1;
+	int n=0;
+	scanf("%d %d %d" , &A, &d, &B);
+	if((d>0) && (A<B)) {
+		do {
+			A1=A+d;
+			printf("%d " , A1);
+			A=A1;
+			n=n+1;
+    		}
+		while(A1<B);
+	printf("%d" , n);
+	}
+else if(A>B) {
+	printf("%d" , n);
+	}
+	return 0;
+}

@@ -1,0 +1,42 @@
+int promijenimbr(zapis **glava, int starimbr, int novimbr)
+
+{
+
+zapis *pom1, *pom2, *pom3, *pom4, *i, *pamti;
+
+pom1=*glava;
+
+pom3=*glava;
+
+pamti=NULL;
+
+for (i=*glava; i->slijed; i=i->slijed){
+
+if (i->matbr<novimbr)pom3=i;
+
+pom4=pom3->slijed;
+
+if (i->matbr<starimbr) pom1=i;
+
+if (i->matbr==starimbr)pamti=i;
+
+pom2=pamti->slijed;
+
+}
+
+if (pamti==NULL) return 0;
+
+else {
+pamti->matbr=novimbr;
+}
+
+pom1->slijed=pom2;
+
+pamti->slijed=pom4;
+
+if ((pom3) != (*glava))pom3->slijed=pamti;
+else *glava=pamti;
+
+return 1;
+
+}

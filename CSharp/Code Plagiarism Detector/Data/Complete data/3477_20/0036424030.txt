@@ -1,0 +1,52 @@
+class Recenica
+{
+private:
+    int _brojZnakova;
+	char *_miro;
+public:
+	Recenica ();
+	~Recenica();
+void UcitajZnak (char znak);
+int PrebrojiZareze();
+int PrebrojiRijeci();
+
+};
+
+Recenica::Recenica ()
+{
+		_brojZnakova = 0;
+		_miro = NULL;
+}
+Recenica::~Recenica ()
+{
+	free (_miro);
+}
+void Recenica::UcitajZnak (char znak)
+{
+	_brojZnakova++;
+	_miro = (char*) realloc (_miro, _brojZnakova*sizeof(char));
+    _miro[_brojZnakova-1] = znak;
+}
+int Recenica::PrebrojiZareze ()
+{
+	int i, broj = 0;
+	for (i=0; i < _brojZnakova; i++)
+	{
+		if (_miro[i] == ',')
+			broj++;
+	}
+	return broj;
+}
+int Recenica::PrebrojiRijeci()
+{
+    int broj = 0, i;
+
+	if (! (_miro == NULL))
+		if (isalpha(_miro[0]))
+			broj++;
+
+	for (i = 1; i < _brojZnakova; i++)
+		if (!isalpha(_miro[i-1]) && isalpha(_miro[i]))
+			broj++;
+	return broj;
+}

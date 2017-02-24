@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int main(){
+int brRed=0, brStup=0,i,j,tmp;
+int matrica[20][5];
+int max,max_stup,max_red;
+
+	/*Ucitavamo broj redaka i stupaca*/
+	while(brRed<1||brRed>20||brStup<1||brStup>5){
+		scanf("%d %d",&brRed,&brStup);
+	}
+
+	/*Upisujemo elemente u matricu*/
+	for(i=0;i<brRed;i++){
+		for(j=0;j<brStup;j++){
+			scanf("%d",&matrica[i][j]);
+		}
+	}
+
+	/*Trazimo najveci element po apsolutnoj vrijednosti*/
+	/*Pretpostavimo najveci element = prvi element*/
+	max=(matrica[0][0]<0)?(-matrica[0][0]):(matrica[0][0]);
+	max_red=0;
+	max_stup=0;
+
+	for(i=0;i<brRed;i++){
+		for(j=0;j<brStup;j++){
+			if(matrica[i][j]<0){tmp=-matrica[i][j];}else{tmp=matrica[i][j];};
+			if(tmp>max){
+				max=matrica[i][j];
+				max_red=i;
+				max_stup=j;
+			}
+		}
+	}
+	
+	printf("%d %d",max_red,max_stup);
+	return 0;
+}

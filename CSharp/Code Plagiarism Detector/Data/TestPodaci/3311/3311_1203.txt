@@ -1,0 +1,17 @@
+float prosjek (FILE *f) {
+    int brojac = 0;
+	int suma = 0;
+	float prosjecno;
+struct album {
+	char naziv [30+1];
+	char autor [20+1];
+	int prodano;
+} zapis;
+
+while (fread(&zapis, sizeof(zapis), 1,  f) == 1) {
+	brojac++;
+	suma = suma + zapis.prodano;
+}
+prosjecno = suma / (float)brojac;
+return prosjecno;
+}

@@ -1,0 +1,15 @@
+void obrni(zapis **glava)
+{
+if(*glava==0) return;
+zapis *p1,*p2,*p3;
+p1=0;
+p2=*glava;
+while(p2)
+{
+p3=p2->sljed;
+p2->sljed=p1;
+p1=p2;
+p2=p3;
+}
+*glava=p1;
+}

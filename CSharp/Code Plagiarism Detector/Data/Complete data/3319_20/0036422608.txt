@@ -1,0 +1,18 @@
+void dodaj(FILE *f) {
+    int red = 0, bodovi = 0, i = 0, n;
+    struct natjecatelj osoba;
+    
+    fseek(f, 0L, SEEK_END);
+    n = ftell(f) / sizeof(osoba);
+    fseek(f, 0L, SEEK_SET);
+    
+    for (i = 0; i < n; i++) {
+        fread(&osoba, sizeof(osoba), 1, f);
+        if (osoba.bodovi > bodovi && osoba.redni_br != 0) {
+                         red = osoba.redni_br;
+                         bodovi = osoba.bodovi;
+                         bodovi=bodovi+10;
+                         }
+        }
+    return red;
+}

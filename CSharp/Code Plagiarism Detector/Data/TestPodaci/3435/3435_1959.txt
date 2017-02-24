@@ -1,0 +1,20 @@
+#include <stdio.h>
+int fakt (int n) {
+int i;
+int f;
+for (f=1, i=1; i<=n; i++)
+f=f*i;
+return f;
+}
+
+int main () {
+int n, m, npovrhm;
+scanf ("%d %d", &n, &m);
+if (m==0 || m==n) {
+printf ("0");
+}else {
+npovrhm= fakt(n)/(fakt(m)*fakt(n-m));
+printf ("%d", npovrhm);
+}
+return 0;
+}

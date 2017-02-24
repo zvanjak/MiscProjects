@@ -1,0 +1,13 @@
+Stog *RedListomUOOPStog(atom2* glava, atom2* rep) {
+ Stog *tmp;
+    int spremi;
+    
+    if (SkiniIzReda(&spremi, &glava, &rep)) { 
+        tmp = RedListomUOOPStog(glava, rep);
+        tmp->Stavi(spremi);} 
+    else {Stog *tmp2 = new Stog();
+        return tmp2;}
+    
+    return tmp;
+        
+}

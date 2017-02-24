@@ -1,0 +1,24 @@
+#include<stdio.h>
+
+int main () {
+	int in = 0;
+	double ln2 = 1;
+
+	scanf("%d", &in);
+
+	if (in >= 1 || in <= 100) {
+		int i;
+		for (i = 2; i <= in; i++) {
+			if (i % 2 == 0) {
+				ln2 -= 1./i;
+			} else {
+				ln2 += 1./i;
+			}
+		}
+		printf("%.12f", ln2);
+	} else {
+		printf("n nije valjan");
+	}
+        fflush(stdout);
+	return 0;
+}

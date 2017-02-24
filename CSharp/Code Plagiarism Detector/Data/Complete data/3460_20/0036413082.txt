@@ -1,0 +1,12 @@
+void FuncMinMax (DinamickoPolje &polje, int *Max, int *Min)
+{
+int minimalni = polje.DohvatiElement(0), maximalni = polje.DohvatiElement(0);
+for (int i=1; i<polje.BrojElemenata(); i++){
+if (polje.DohvatiElement(i)<minimalni) 
+minimalni = polje.DohvatiElement(i);
+if (polje.DohvatiElement(i) >maximalni)
+maximalni = polje.DohvatiElement(i);
+}
+*Max = maximalni;
+*Min = minimalni;
+}

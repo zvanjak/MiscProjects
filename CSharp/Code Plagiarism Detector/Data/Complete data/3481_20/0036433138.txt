@@ -1,0 +1,13 @@
+int Memoriraj(Radio& radio){
+	int i, mem=0;
+	Stanica tmp;
+	while(1){
+		if(memo>=6) return mem;
+		tmp=radio.TraziSljedecu();
+		for(i=1;i<mem;i++)
+			if(tmp == radio.Dohvati(i)) return mem;
+		if(tmp.RDS() != "")
+			MemorirajStanicu(tmp, ++mem);
+	}
+	return memo;
+}

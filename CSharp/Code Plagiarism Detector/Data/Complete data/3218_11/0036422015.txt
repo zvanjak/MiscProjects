@@ -1,0 +1,22 @@
+#include<stdio.h>
+int main(){
+	int i,n,s=0,prost=1,d=1,max=1;
+	do{
+		scanf("%d",&n);
+		for(i=2;i<n;i++){
+				if(n%i==0)
+					prost=0;
+		}
+		if(prost && n>2){
+			d=0;
+			if(n>max)
+				max=n;	
+		}
+		prost=1;
+	}while(n>2);
+	if(max>1)
+		printf("%d",max);
+	if (d)
+		printf("%d",s);
+return 0;
+}

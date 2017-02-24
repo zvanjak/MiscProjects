@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <conio.h>
+
+main()
+{
+	int a,x,y,z,t,um;
+	scanf("%d",&a);
+	x=a/1000;
+	y=(a-(x*1000))/100;
+	z=(a-(x*1000)-(y*100))/10;
+	t=a-x*1000-y*100-z*10;
+	um=x*y*z*t;
+	if(um%2==1)
+		printf("%d",x);
+	else
+		printf("%d",t);
+}

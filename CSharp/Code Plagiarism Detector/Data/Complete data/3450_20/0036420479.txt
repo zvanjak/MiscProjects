@@ -1,0 +1,35 @@
+class Predstava {
+private:
+	float _pocetak;
+	float _kraj;
+	int _maxBrojKarata;
+	int _prodanoKarata;
+
+public:
+	Predstava();
+	Predstava(float pocetak, float kraj, int maxBrojKarata);
+	void ProdajKartu();
+	float Trajanje();
+	int ProdanoKarata();
+	int PreostaloKarata();
+};
+
+int Predstava::PreostaloKarata(){ return _maxBrojKarata-_prodanoKarata; }
+void Predstava::ProdajKartu() {if (PreostaloKarata()>0) _prodanoKarata++;}
+float Predstava::Trajanje() {return _kraj-_pocetak;}
+int Predstava::ProdanoKarata() {return _prodanoKarata;}
+
+Predstava::Predstava(float pocetak, float kraj, int maxBrojKarata){
+_pocetak=pocetak;
+_kraj=kraj;
+_maxBrojKarata=maxBrojKarata;
+_prodanoKarata=0;
+}
+
+Predstava::Predstava(){
+
+_pocetak=8.0;
+_kraj=10.0;
+_maxBrojKarata=100;
+_prodanoKarata=0;
+}

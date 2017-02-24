@@ -1,0 +1,13 @@
+int BrojClanova(Red *red){
+	Red clan;
+    int counter=0;
+    int elem;
+    while(red->SkiniIzReda(&elem)){ 
+		clan.DodajURed(elem);
+        counter++;
+    }
+	while(clan.SkiniIzReda(&elem)){ 
+		red->DodajURed(elem);
+    }
+    return counter;
+}

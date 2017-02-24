@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+char in[7], i;
+
+int main(){
+  scanf("%s", in);
+  for (i = 0; i < 4; i++)
+    if (!( (in[i] - '0') % 2 )) in[i]++;
+  printf("%s\n", in);
+  return 0;
+}

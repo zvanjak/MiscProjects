@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <math.h>
+
+int main () {
+	int a;
+	double i,b,j,k,s=0;
+
+	scanf("%d",&a);
+	if (a>=1 && a<=100){
+		for (i=1;i<=a;i++){
+			j=1/pow(i,2);
+			s+=j;
+		}
+		k=s*6;
+		b=sqrt(k);
+		printf("%.12f",b);
+	}
+	else {
+	printf("n nije valjan");
+	}
+	return 0;
+}

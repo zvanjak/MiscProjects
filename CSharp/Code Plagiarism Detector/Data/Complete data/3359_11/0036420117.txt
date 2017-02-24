@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+	int broj, a, b, c, d, umn;
+	
+	scanf("%d", &broj);
+	
+	a = broj / 1000;
+	b = (broj /100) % 10;
+	c = (broj / 10) % 10;
+	d = broj % 10;
+	
+	umn = a * b * c * d;
+	if (!(umn%2)) {
+		printf("%d\n", d);	
+	} else {
+		printf("%d\n", a);	
+	} 
+	return 0;
+}

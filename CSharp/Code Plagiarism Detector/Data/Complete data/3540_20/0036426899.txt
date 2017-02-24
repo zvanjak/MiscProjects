@@ -1,0 +1,22 @@
+int izbaci( zapis **glava )
+{
+    int br=0;
+    zapis *i, *tmp;
+    for( i=*glava;i!=NULL;i=i->sljed )
+    {
+        if (i->sljed->pros<2.0)
+        {
+            tmp=i->sljed;
+            i->sljed=i->sljed->sljed;
+            free(tmp);
+            br++;
+        }
+    }
+    if (*glava!=NULL)
+    if ((*glava)->pros<2.0)
+    {
+        *glava=(*glava)->sljed;
+        br++;
+    }
+    return br;
+}

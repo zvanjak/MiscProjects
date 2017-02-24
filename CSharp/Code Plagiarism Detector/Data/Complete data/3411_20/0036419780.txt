@@ -1,0 +1,27 @@
+char *BezDuplikata(char *ulazni_niz){
+char *novi_niz;
+int n,i,j=0,flag,k=0;
+if(ulazni_niz==NULL||ulazni_niz[0]=='\0') return NULL;
+n=strlen(ulazni_niz);
+novi_niz=(char*)malloc(sizeof(char));
+novi_niz[j]=ulazni_niz[0];
+for(i=1;i<n;i++)
+{
+	flag=0;
+	for(k=0;k<j;k++)
+	{
+		if (ulazni_niz[i]==novi_niz[k])
+		flag=1;
+	}
+	if(flag==0) 
+	{
+	j++;
+	novi_niz=(char*)realloc(novi_niz,(j+1)*sizeof(char));
+	novi_niz[j]=ulazni_niz[i];
+	}
+	}
+    j++;
+    novi_niz=(char*)realloc(novi_niz,(j+1)*sizeof(char));
+	novi_niz[j]='\0';
+	return novi_niz;
+}

@@ -1,0 +1,17 @@
+int RemoveAllDigits(char *inputField, char *outputField, int *number)
+{
+    char    *p = inputField,
+            *t = outputField;
+
+    int        len = 0;
+
+    *number = 0;
+
+    while(*p != NULL)
+    {
+        if ((*p < 0x30) || (*p > 0x39)) *t++ = *p++;
+        else { ++(*number); p++; }
+    }
+
+    return t - outputField;
+}

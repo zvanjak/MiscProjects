@@ -1,0 +1,13 @@
+#include<stdio.h>
+int main (){
+   int i, oktalni;
+   scanf("%d", &i);
+   if (i/10==0)
+     oktalni=i %10;
+   else if (i/100==0) 
+     oktalni=i %10 + ((i /10)%10)*8;
+   else if (i/1000==0)
+     oktalni=i %10 + ((i /10)%10)*8 + i/100*64;
+   printf("%d",oktalni);
+   return 0;
+}

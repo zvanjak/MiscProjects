@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+char *SvakiDrugi (char *ulazni_niz)
+{
+	char *izlazni_niz, *chr, len;
+	if (!ulazni_niz || !(*ulazni_niz)) return NULL;
+	len=strlen(ulazni_niz);
+	izlazni_niz=(char *)malloc(len/2+1*(len%2)+1);
+	chr=izlazni_niz;
+	while (*ulazni_niz)
+	{
+		*chr=*ulazni_niz;
+		chr++;
+		if (!*(ulazni_niz+1)) break;
+		ulazni_niz+=2;
+	}
+	*chr=0;
+	return izlazni_niz;
+}

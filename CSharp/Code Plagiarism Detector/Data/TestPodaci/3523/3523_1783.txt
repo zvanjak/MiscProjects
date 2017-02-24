@@ -1,0 +1,25 @@
+int izbaci (char * ulazni, char *podniz)
+{
+    int i=0,k=0,broj=0,j=0;
+    while(*(podniz+i)!='\0')
+    {
+        while(*(ulazni+j)!='\0')
+        {
+            if(*(podniz+i)==*(ulazni+j))
+            {
+                        broj++;
+                        k=j;
+                         while(*(ulazni+k)!='\0') 
+                            {
+                            *(ulazni+k) = *(ulazni + (k + 1));
+                            k++;
+                            }
+            }
+            j++;
+        }
+        j=0;
+        i++;
+    }
+    
+        return broj;
+    }

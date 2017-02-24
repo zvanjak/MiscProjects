@@ -1,0 +1,42 @@
+class SortRazlPolje{
+      public:
+             SortRazlPolje(){
+             _BrojElem=0;
+             _MaxBrojElem=100;
+             _Podaci=new int[_MaxBrojElem];
+             }
+             
+             int Dodaj(int Broj){ 
+             int i,a=0;
+             if (_BrojElem==_MaxBrojElem)
+             return 0;
+             for(i=0;i<_BrojElem;++i)
+             if(Broj==_Podaci[i]) a=1;
+             if (a==0){_Podaci[_BrojElem]=Broj;
+             ++_BrojElem;}
+             return 1;
+             }
+             
+             int *VratiSortPolje(int &n){
+             int i, j;
+             int pom;
+             if (_BrojElem){
+             for (i = 1; i <_BrojElem; i++) {
+             pom = _Podaci[i];
+             for (j = i; j >= 1 && _Podaci[j-1] < pom; j--)
+             _Podaci[j] = _Podaci[j-1];
+             _Podaci[j] = pom;}
+             n=_BrojElem;
+            
+             return _Podaci;}
+             else 
+             return NULL;
+  }
+             ~SortRazlPolje(){
+                                delete []_Podaci;
+                              }    
+      private:
+              int _BrojElem;
+              int _MaxBrojElem;
+              int *_Podaci;       
+             };

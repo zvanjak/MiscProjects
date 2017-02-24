@@ -1,0 +1,16 @@
+Krug fun4(Pravokutnik p)
+{
+	Tocka dlkut2;
+	dlkut2=p.getDLkut();
+	double sirina2, visina2, radijus;
+
+	sirina2=p.getSirina();
+	visina2=p.getVisina();
+	
+	Tocka srediste(dlkut2.X + (0.5*sirina2), dlkut2.Y + (0.5*visina2));
+
+	radijus=Udaljenost(dlkut2,srediste);
+
+	Krug k(srediste, radijus);
+	return k;
+}

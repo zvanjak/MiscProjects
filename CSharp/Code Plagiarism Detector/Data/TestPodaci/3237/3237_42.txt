@@ -1,0 +1,19 @@
+#include<stdio.h>
+#include<math.h>
+
+int main(){
+	int i;
+	float n;
+	double pi, x, s=0;
+	scanf("%f", &n);
+	if ((n<1)||(n>30)||(n!=(int)(n)))
+		printf("n nije valjan");
+	else {
+		for(i=1; i<=n; i++)
+			s=s+(1./(i*i*i*i*i*i));
+			x=(945*s);
+			pi=pow(x, 1./6);
+			printf("%.12lf", pi);
+	}
+	return 0;
+}

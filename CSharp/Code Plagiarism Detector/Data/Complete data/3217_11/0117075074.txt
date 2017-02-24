@@ -1,0 +1,43 @@
+#include<stdio.h>
+void main(){
+int a, pocetak;
+	while(1){
+		/*printf("Ucitaj broj: ");*/
+		scanf("%d",&a);
+		if (a>=0){	
+			/*printf("%d ",a);*/
+			pocetak = 1;
+			while(a>0){
+				if(a%10 != 0 && pocetak == 1)
+					pocetak = 1;
+				if(a%10 != 0 || pocetak == 0){
+					pocetak = 0;
+					printf("%d",a%10);
+				}
+				a=a/10;
+			}
+			printf(" ");
+		}
+		else
+			break;
+	}
+}
+/*#include<stdio.h>
+void main(){
+int a;
+	while(1){
+		//printf("Ucitaj broj: ");
+		scanf("%d",&a);
+		if (a>=0){	
+			//printf("%d ",a);
+			while(a>0){
+				printf("%d",a%10);
+				a=a/10;
+			}
+			//printf("\n");
+                        printf(" ");
+		}
+		else
+			break;
+	}
+}*/

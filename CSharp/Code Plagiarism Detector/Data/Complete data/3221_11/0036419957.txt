@@ -1,0 +1,17 @@
+#include<stdio.h>
+int main(){
+	int A,d,B,brojclanova;
+	brojclanova=0;
+	//printf("Unesi A ");
+		scanf("%d",&A);
+	//printf("Unesi d ");
+		scanf("%d",&d);
+	//printf("Unesi B ");
+		scanf("%d",&B);
+	for(A==0;A<=B;A+d,brojclanova++){
+		A=A+d;
+		printf(" %d", A);}
+	printf(" %d", brojclanova);
+	//system("pause");
+	return 0;
+}

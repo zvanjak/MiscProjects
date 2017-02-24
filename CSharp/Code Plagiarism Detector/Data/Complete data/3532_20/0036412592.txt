@@ -1,0 +1,12 @@
+Stog *noviOdNeparnih(Stog *stog){
+  Stog *novi=new Stog();
+  Stog *pom=new Stog();
+  int x;
+  while(stog->Skini(&x)!=0) pom->Stavi(x);
+  while(pom->Skini (&x)!=0) {
+    stog->Stavi(x);
+	if(x%2) novi->Stavi(x);
+  }
+  delete pom;
+  return novi;
+}

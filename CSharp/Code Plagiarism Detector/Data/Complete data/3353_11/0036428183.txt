@@ -1,0 +1,18 @@
+#include <stdio.h>
+int main () {
+	int n,m,z1,z2,z3,z4,x;
+	scanf("%d",&n);
+	scanf("%d",&m);
+	z1 = n % 10;
+	z2 = (n / 10) % 10;
+	z3 = (n / 100) % 10;
+	z4 = n / 1000;
+	if ((m >= 1) && (m <= 4)) {
+		if (m == 1) {x = z2 + 10*z3 + 100*z4;};
+		if (m == 2) {x = z1 + 10*z3 + 100*z4;};
+		if (m == 3) {x = z1 + 10*z2 + 100*z4;};
+		if (m == 4) {x = z1 + 10*z2 + 100*z3;};
+	} else {x = z1 + z2 + z3 + z4;};
+	printf("%d",x);
+	return 0;
+}

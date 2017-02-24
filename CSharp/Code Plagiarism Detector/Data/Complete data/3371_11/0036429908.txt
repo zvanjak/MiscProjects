@@ -1,0 +1,27 @@
+# include <stdio.h>
+int main(){
+	int broj, broj1, broj2, a, b, c, d;
+	scanf ("%d", &broj);
+	broj1 = broj;
+	a =  broj % 10;
+	broj = broj /10;
+    b = broj % 10;
+	broj = broj / 10;
+	c =  broj % 10;
+	d =  broj / 10;
+	if ((a % 2 == 0)&&(b % 2 == 0)&&(c % 2 == 0)&&(d % 2 == 0))
+		printf ("%d", broj1);
+	else{
+	if (d % 2 == 0)
+		d = d + 1;
+	if (c % 2 == 0)
+		c = c + 1;
+	if (b % 2 == 0)
+		b = b + 1;
+	if (a % 2 == 0)
+		a = a + 1;
+	broj2 = d * 1000 + c * 100 + b * 10 + a;
+	printf ("%d", broj2);
+	}
+	return 0;
+}

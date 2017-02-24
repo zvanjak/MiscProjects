@@ -1,0 +1,49 @@
+#include <stdio.h>
+int main () {
+	int i,n,br,o,ajde,j;
+	
+	char a[40], b[100];
+	i=0;n=0;br=0;o=0;
+ajde=0;j=0;
+	do
+	{
+		
+	scanf("%c",&a[i]);
+	
+
+	if (( a[i]>= 65 && a[i] <= 90) || (a[i]>= 97 && a[i]<=122) ) ajde=1; else ajde=0;
+i++;
+
+j++;
+	}
+	while (ajde == 1 );
+	
+
+
+for (n=0;n<(j-1);n++ ){
+		if ((a[n]=='a') ||(a[n]=='e') ||(a[n]=='i') ||(a[n]=='o') ||(a[n]=='u') ||
+			(a[n]=='A') ||(a[n]=='E') ||(a[n]=='I') ||(a[n]=='O') ||(a[n]=='U' || (a[n]==32)) ); else {
+			b[o]=a[n];
+			o++;}}
+
+
+	for (n=0;n<o;n++){
+		br++;
+		if (b[n]>='A' && b[n]<='Z'); else b[n]-=32;}
+
+	
+
+
+	for (n=br,i=br-1;n<(2*br+1);n++,i--){
+	b[n]=b[i]+32;
+	}
+
+	for (i=0;i<o*2;i++){
+	printf("%c",b[i]);}
+
+	
+	
+	
+	return 0;
+
+}

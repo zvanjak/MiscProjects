@@ -1,0 +1,14 @@
+double sumareda (double x , int N)
+{
+	double suma=0,a;
+	kontrola();
+		if(N<=0)
+		{
+			return 0;
+		}
+		else
+		{
+			a=pow(x,N);
+			return suma+((pow(-1,N+1)*a)/N)+sumareda(x,N-1);
+        }
+}

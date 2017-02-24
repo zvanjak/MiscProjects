@@ -1,0 +1,11 @@
+#include<stdio.h>
+int main(){
+	int n,suma1=0,suma2=0,rez,i;
+	scanf("%d",&n);
+	for(i=0;i<=n;i++)
+		suma1+=i*i;
+	for(i=1;i<n;i++)
+		suma2+=2*i;
+	rez= suma1 - suma2;
+	printf("%d",rez);
+}

@@ -1,0 +1,38 @@
+#include<stdio.h>
+
+int main ()
+{
+    int prva[20][20], druga[20][20], i, j, velmat;
+    scanf("%d",&velmat);
+    for (i=0;i<velmat;i++)
+    {
+        for (j=0;j<velmat;j++)
+        {
+            scanf("%d",&prva[i][j]);
+        }
+    }
+    for (i=0;i<velmat;i++)
+    {
+        for (j=0;j<velmat;j++)
+        {
+            scanf("%d",&druga[i][j]);
+        }
+    }
+    for (i=0;i<velmat;i++)
+    {
+        for (j=0;j<velmat;j++)
+        {
+            if (prva[i][j]==1)
+                 
+                 druga[i][j]=i+j;
+        }
+    }
+    for (i=0;i<velmat;i++)
+    {
+        for (j=0;j<velmat;j++)
+        {
+            printf("%d ",druga[i][j]);
+        }
+    }
+    return 0;
+}

@@ -1,0 +1,15 @@
+void UmetniPrijePrvogNeparnog (Stog *stog, int broj) {
+	int element;
+	if (!(stog->Skini(&element))) {
+		stog->Stavi(broj);
+		return;
+	}
+	if (element % 2) {
+		stog->Stavi(element);
+		stog->Stavi(broj);
+		return;
+	}
+	UmetniPrijePrvogNeparnog (stog, broj);
+	stog->Stavi(element);
+	return;
+}

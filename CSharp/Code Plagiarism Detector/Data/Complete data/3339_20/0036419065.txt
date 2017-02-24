@@ -1,0 +1,7 @@
+int rBrojParnih(int *polje,int n){
+	int p=0;
+	kontrola();
+	if ((n-1)>0){
+	if ((n-2)>0)p=rBrojParnih(polje,n-1);
+	if (!(polje[n-1]%2))p++;}
+	return p;}

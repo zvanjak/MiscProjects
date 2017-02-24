@@ -1,0 +1,38 @@
+Red *VratiBrojeve(Red *red)
+{
+  int r[100], n=0, c, i, x, broj, m, p=1, j;
+  Red *k = new Red;
+  r[0] = 0;
+
+  // presnimi red u r
+  do {
+    c = red->SkiniIzReda(&r[n]);
+    ++n;
+  }
+  while(c);
+
+  // vrati red u class
+  n = n-1;
+  for(i=0;i<n;i++)
+    red->DodajURed(r[i]);
+
+  i=0;
+  do {
+  x = r[i];
+  broj = 0;
+  for(c=0; c<x; c++)
+  {
+    m = r[i+c+1];
+    for(j=0;j<(x-c-1);j++)
+      p=p*10;
+    broj = broj + (m*p);
+    p=1;
+  }
+  i=i+x+1;
+  k->DodajURed(broj);
+
+  } while(i<n);
+
+  return k;
+
+}

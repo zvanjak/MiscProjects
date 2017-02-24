@@ -1,0 +1,21 @@
+char *BezDuplikata (char *ulazni_niz){
+	int brojac[128]={0};
+	int ulaznibr=0, izlaznibr=0;
+	char *izlazni_niz, c;
+	izlazni_niz=NULL;
+
+	if (ulazni_niz==NULL) return izlazni_niz;
+	if (*ulazni_niz==0) return izlazni_niz;
+
+	do{
+		c=*(ulazni_niz+ulaznibr);
+		if (brojac[c]==0){
+			brojac[c]++;
+			izlazni_niz = (char *) realloc(izlazni_niz, (izlaznibr+1)*sizeof(char));
+			*(izlazni_niz+izlaznibr)=c;
+			izlaznibr++;
+		}
+		ulaznibr++;
+	}while(c!=0);
+	return izlazni_niz;
+}

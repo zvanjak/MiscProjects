@@ -1,0 +1,36 @@
+class Komprimiranje {
+private:
+	int _elem;
+	int *_niz;
+public:
+	Komprimiranje(int *niz, int elem);
+	int BrojRazlicitihElemenata();
+	int UkupniBrojElemenata(int vrijednost);
+};
+
+Komprimiranje::Komprimiranje(int *niz, int elem) {
+	_niz = niz;
+	_elem = elem;
+}
+
+int Komprimiranje::BrojRazlicitihElemenata() {
+	int i, n = 0;
+	int u[100] = {0};
+	
+	for (i = 0; i < _elem; i+=2)
+		u[_niz[i]] = 1;
+	
+	for (i = 0; i < 100; i++)
+		if (u[i]) n++;
+	
+	return (n);
+}
+
+int Komprimiranje::UkupniBrojElemenata(int vrijednost) {
+	int i, n = 0;
+	
+	for (i = 0; i < _elem; i++)
+		if (_niz[i++] == vrijednost) n += _niz[i];
+	
+	return (n);
+}

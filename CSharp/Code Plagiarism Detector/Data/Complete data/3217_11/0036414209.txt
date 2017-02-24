@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <math.h>
+
+int main () {
+	int i,n,k,duljina,novi;
+
+	do{
+		scanf("%d", &n);
+		if(n<0) continue;
+		duljina=(int)log10(n);
+		k=duljina;
+		novi=0;
+	
+	for(i=0;i<duljina;i++) {
+		novi+=n%10*(int)pow(10,k);
+		k--;
+		n/=10;
+		}
+	novi+=n%10;
+	printf("%d ",novi);
+	
+	}
+	while(n>=0);
+	return 0;
+}
+

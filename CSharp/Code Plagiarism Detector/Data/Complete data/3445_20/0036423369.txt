@@ -1,0 +1,58 @@
+class Kosarica {
+
+private:
+	
+	float *polje;
+	int MAXPOLJE;
+	int vrh;
+
+	void povecajpolje() {
+		float *pom = new float[MAXPOLJE+10];
+		int i;
+		for ( i=0; i<MAXPOLJE; i++ )
+			pom[i] = polje[i];
+		delete []polje;
+		polje = pom;
+		MAXPOLJE += 10;
+	}
+
+public:
+	
+	Kosarica() {
+		vrh = 0;
+		MAXPOLJE = 10;
+		polje = new float[MAXPOLJE];
+	}
+
+	void DodajProizvod ( float cijena ) {
+		if ( vrh > MAXPOLJE - 1 )
+			povecajpolje();
+		polje[vrh] = cijena;
+		vrh++;
+	}
+
+	float UkupnaCijena() {
+		int i;
+		float suma = 0;
+		for ( i = 0; i < vrh; i++ )
+			suma += polje[i];
+		return suma;
+	}
+
+	float NajskupljiProizvod() {
+		if ( !vrh )
+			return 0;
+		int i;
+		float pom;
+		pom = polje[0];
+		for ( i = 0; i < vrh; i++ )
+			if ( polje[i] > pom )
+				pom = polje[i];
+		return pom;
+	}
+
+	~Kosarica() {
+		delete []polje;
+	}
+
+};

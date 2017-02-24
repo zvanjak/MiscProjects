@@ -1,0 +1,76 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+void ConvertToXML(char *inputField, char *outputField) {
+	int br=1, gl=1, i=1, j=0, k=0, a=0, b=1, c;
+	char pom1[100];
+	char pom2[100];
+	char pom3[100];
+    while(gl) {
+		if(b==1) {
+			strcpy(outputField, "<osoba>\n");
+		} 
+		else {
+			strcat(outputField, "<osoba>\n");
+		}
+		a=0;
+		while(i) {
+			if(inputField[br] != '#') {
+				pom1[a] = inputField[br];
+			}
+			else {
+				i=0;
+				pom1[a] = '\0';
+				j=1;
+			}
+			a++;
+			br++;
+		}
+		a=0;
+		while(j) {
+			if(inputField[br] != '#') {
+				pom2[a] = inputField[br];
+			}
+			else {
+				j=0;
+				pom2[a] = '\0';
+				k=1;
+			}
+			a++;
+			br++;
+		}
+		a=0;
+		while(k) {
+			if(inputField[br] != '#') {
+				pom3[a] = inputField[br];
+			}
+			else {
+				k=0;
+				pom3[a] = '\0';
+				c = br + 1;
+				if(inputField[c] == '\0'){
+					gl=0;
+				}
+			}
+			a++;
+			br++;
+		}
+		strcat(outputField, "<ime>");
+		strcat(outputField, pom1);
+		strcat(outputField, "</ime>\n");
+		strcat(outputField, "<prezime>");
+		strcat(outputField, pom2);
+		strcat(outputField, "</prezime>\n");
+		strcat(outputField, "<jmbg>");
+		strcat(outputField, pom3);
+		strcat(outputField, "</jmbg>\n");
+		strcat(outputField, "</osoba>\n");
+		i=1;
+		j=0;
+		k=0;
+		a=0;
+		br+=2;
+		b++;
+	}
+}

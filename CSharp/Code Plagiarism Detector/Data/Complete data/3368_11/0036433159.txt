@@ -1,0 +1,40 @@
+#include<stdio.h>
+int main(){
+int a;
+char b,c;
+scanf("%d",&a);
+if(a>0){
+	if(a<16||a>255)
+		printf("Izvan intervala");
+	else{
+		b=a%16;
+		c=a/16;
+                if(b==10)
+		b='A';
+		if(b==11)
+		b='B';
+		if(b==12)
+		b='C';
+		if(b==13)
+		b='D';
+		if(b==14)
+		b='E';
+		if(b==15)
+		b='F';
+		if(c==10)
+		c='A';
+		if(c==11)
+		c='B';
+		if(c==12)
+		c='C';
+		if(c==13)
+		c='D';
+		if(c==14)
+		c='E';
+		if(c==15)
+		c='F';
+		printf("%c%c",b,c);
+	}
+}
+return 0;
+}

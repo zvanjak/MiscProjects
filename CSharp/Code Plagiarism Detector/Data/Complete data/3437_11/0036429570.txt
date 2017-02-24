@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+
+int main(){
+int polje[42]={0},i=0, j=1;
+do {
+   scanf("%d %d", &polje[i], &polje[i+1]);
+   i+=2;
+   j++;
+} while((polje[i-2]<50)&&(j<=21));
+j=i-2;
+for (i=0; i<j; i+=2) {
+                     if  (polje[i+1]>polje[i+3]) printf ("Pada "); else if (polje[i+1]<polje[i+3]) printf("Raste "); else printf("Ravan ");
+                     }
+return 0;
+}

@@ -1,0 +1,17 @@
+int Memoriraj(Radio &radio){
+    Stanica temp[2];
+    int n=0;
+    while(n<6){
+        temp[0] = radio.TraziSljedecu();
+        temp[1] = radio.Dohvati(1);
+        if (temp[0] == temp[1]){
+            break;    
+        }else{
+            if(strcmp(temp[0].RDS(), "")){
+                radio.MemorirajStanicu(temp[0], n+1);
+                n++;    
+            }
+        }
+    }
+    return n;
+}

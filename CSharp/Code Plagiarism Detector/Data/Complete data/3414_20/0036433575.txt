@@ -1,0 +1,21 @@
+char *brojeve_u_znakove(int *polje, int duljina){
+	int i,broj,k=0;
+	char *ret=(char *)malloc(sizeof(char));
+	
+	ret[0]=0;
+
+	for(i=0;i<duljina;i++){
+		broj=polje[i];
+		while(broj!=0){
+
+			ret[k++]='0'+(broj%10);
+			broj/=10;
+			ret=(char*)realloc(ret,(k+1)*sizeof(char));
+			ret[k]=0;
+		}
+	}
+	
+	return ret;
+	
+
+}

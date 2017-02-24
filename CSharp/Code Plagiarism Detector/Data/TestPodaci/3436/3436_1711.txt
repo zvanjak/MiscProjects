@@ -1,0 +1,39 @@
+#include<stdio.h>
+#define MAX 20
+int main(){
+	
+	int i, j, n, b1=1,b2=1,d1=1,d2=1,z=0;
+	char p[MAX][MAX]={0},c[2]={0}, d[2]={0};
+	char niz[400];
+	scanf("%d%s", &n,&niz[z]);
+	for(i=0;i<n;i++){
+       for(j=0;j<n;j++){
+           p[i][j]=niz[z];
+           z++;
+       }
+    }
+
+		d[0]=p[0][0];
+	d[1]=p[0][n-1];
+	for (i=0; i<n; i++) {
+		b1=1;
+		b2=1;
+		c[0]=p[i][0];
+		c[1]=p[0][i];
+		if (!(d[0]==p[i][i])) d1=0;
+		if (!(d[1]==p[i][n-i-1])) d2=0;
+		for (j=0; j<n; j++)
+		{
+		if (!(c[0]==p[i][j])) b1=0;
+		if (!(c[1]==p[j][i])) b2=0;
+		}
+		if (b1==1) {printf("%c", c[0]); break;} else
+		if (b2==1) {printf("%c", c[1]); break;} 
+		
+	
+	}
+	if (!(b1||b2)){if (d1==1) {printf("%c", d[0]);} else
+		if (d2==1) {printf("%c", d[1]);}}
+		return 0;
+		
+}

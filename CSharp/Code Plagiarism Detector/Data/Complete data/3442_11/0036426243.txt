@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main ()
+{
+	int i, pr = 0, dr = 0, raz = 0, n;
+
+	scanf("%d", &n);
+
+	for(i = 0; i <= n; i++) pr += i*i;
+	for(i = 1; i <= n-1; i++) dr += 2*i;
+
+	raz = pr - dr;
+
+	printf("%d", raz);
+
+	return 0;
+}
+
+
+

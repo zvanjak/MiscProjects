@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+#define DIM 21
+
+int main() {
+	int x[DIM], y[DIM];
+	int i, j, z;
+
+	for (i=0; i<DIM; i++) {
+		scanf("%d %d", &x[i], &y[i]);
+		if (x[i]==50 || i==20)
+			break; }
+
+	for (j=0, z=1; j<i, z<=i; j++, z++) {
+		if (y[j]==y[z])
+			printf("Ravan ");
+		if (y[j]<y[z])
+			printf("Raste ");
+		if (y[j]>y[z])
+			printf("Pada "); }
+
+	return 0;
+}

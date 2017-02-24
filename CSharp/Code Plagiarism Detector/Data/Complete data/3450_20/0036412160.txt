@@ -1,0 +1,10 @@
+    Predstava (float pocetak, float kraj, int maxBrojKarata) {
+        _pocetak=pocetak;
+        _kraj=kraj;
+        _maxBrojKarata= maxBrojKarata;
+    }
+    float Trajanje (){return _pocetak-_kraj;}
+    void ProdajKartu() {_ProdanoKarata++;}
+    int ProdanoKarata() {return _ProdanoKarata;} 
+    int PreostaloKarata () {return _maxBrojKarata-_ProdanoKarata;)
+};

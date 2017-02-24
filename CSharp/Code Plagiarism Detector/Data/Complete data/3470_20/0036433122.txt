@@ -1,0 +1,20 @@
+bool fun2(Pravokutnik p,Krug k){
+        Tocka *t1,*t2,*t3,*t4;
+        t1=new Tocka(p.getDLkut().X,p.getDLkut().Y+p.getVisina());
+        t2=new Tocka(p.getDLkut().X+p.getSirina(),p.getDLkut().Y);
+        t3=new Tocka(p.getDLkut().X+p.getSirina(),p.getDLkut().Y+p.getVisina());
+        t4=new Tocka(p.getDLkut().X,p.getDLkut().Y);
+        if(k.Sadrzi(*t1)&&k.Sadrzi(*t2)&&k.Sadrzi(*t3)&&k.Sadrzi(*t4)){
+        delete t1;
+        delete t2;
+        delete t3;
+        delete t4;
+        return true;
+        }
+       
+        delete t1;
+        delete t2;
+        delete t3;
+        delete t4;
+        return false;
+}

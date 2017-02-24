@@ -1,0 +1,9 @@
+float *KreirajMatricu(int n,float *p,int m){
+   float *k;
+   int i,j;
+   k=(float *)malloc(n*m*4);
+   for(i=0;i<m;i++)
+      for(j=0;j<n;j++)
+         *(k+i*n+j)=pow(p[j],i);
+   return k;
+   }

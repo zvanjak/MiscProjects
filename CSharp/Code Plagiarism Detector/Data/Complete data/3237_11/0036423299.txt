@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <math.h>
+int main ()  {
+
+	int brojac, n;
+	double x, y, pi, z, m;
+	x = 0;
+	
+
+	scanf("%d", &n);
+
+	if ((n<1) || (n>30)) printf("n nije valjan");
+
+	else {
+
+	for (brojac = 1; brojac <= n ; brojac += 1) {
+
+		m = pow (brojac, 6);
+	    x += 1/m;
+		
+	}
+
+	y = x * 945;
+
+	z = 1./6.;
+
+	pi = pow (y, z);
+
+	printf("%.12f",pi); 
+	
+	}
+
+
+	return 0;
+
+}

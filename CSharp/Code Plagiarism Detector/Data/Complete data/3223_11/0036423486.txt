@@ -1,0 +1,20 @@
+/*zadatak 1*/
+#include<stdio.h>
+int main () {
+	int x,y, min, max;
+	scanf("%d", &x);
+	min=x;
+	max=x;
+	if ((x>0) && (x%4==0)) printf("%d %d \n", max,min);/*slucaj da je odmah prvi ucitani broj djeljiv s 4*/
+	else {
+	do {
+		scanf("%d", &x);
+		if (x<min) min=x;
+		if (x>max) max=x;
+		if ((x>0) && (x%4==0)) y=0;
+		else y=1;
+	}while (y);
+	printf("%d %d \n", max,min);
+	}
+	return 0;
+}

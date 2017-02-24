@@ -1,0 +1,6 @@
+int rStrlen(char *a) 
+{  
+    kontrola();  
+    if (*a == 0) return 0;  
+    return(1 + rStrlen(a + 1));  
+}  

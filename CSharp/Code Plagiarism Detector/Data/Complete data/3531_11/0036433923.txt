@@ -1,0 +1,25 @@
+void zamijeni (char * ulazni, int *broj){
+	int p=0,slovo=0,broji=0,printa=0,i,j,a,naj;
+		for (i=0;*(ulazni+i);i++) {
+			if (isprint(*(ulazni+i))) {
+				if (isalnum(*(ulazni+i))) if (isalpha(*(ulazni+i))){
+					if (p==0) {
+						*(ulazni+i)=toupper(*(ulazni+i));
+						p++;
+					slovo++;}
+					else {*(ulazni+i)=tolower(*(ulazni+i));
+					slovo++;}}
+				else {
+					for (a=i;*(ulazni+a+1) >47 && *(ulazni+a+1) <58;)	{
+						for (j=i;*(ulazni+j);j++) *(ulazni+j) = *(ulazni+j+1);
+						broji++;}
+					*(ulazni+a)='!';
+				broji++;}
+				else {*(ulazni+i)='?';
+				printa++;}}}
+		naj=slovo;
+		if (naj<broji){ if (broji<printa) naj=printa;
+		else naj=broji;}
+		else if (naj<printa) naj=printa;
+		*broj=naj;
+}

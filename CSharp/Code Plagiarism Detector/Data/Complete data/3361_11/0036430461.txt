@@ -1,0 +1,9 @@
+#include<stdio.h>
+int main(){
+	int x,y,z;
+	scanf("%d",&x);
+	y=x/100;
+	z=x%100;
+	if(((y+z)%y)==0){printf("Jest");}
+	         else{printf("Nije");}
+	return 0;}

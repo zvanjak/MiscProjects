@@ -1,0 +1,16 @@
+float prosjek(zapis *glava)
+{
+float prosj=0;
+int n=0;
+zapis *pom;
+if (glava==NULL)
+return 0;
+for(pom=glava;pom!=NULL;pom=pom->sljed)
+{prosj=prosj + pom->pros;
+n++;}
+prosj=prosj/n;
+for(pom=glava;pom!=NULL;pom=pom->sljed)
+{if( pom->pros<prosj)
+pom->pros=0.0;}
+return prosj;
+}

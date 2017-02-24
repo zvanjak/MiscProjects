@@ -1,0 +1,19 @@
+#include<stdio.h>
+#include<math.h>
+#define PI 3.1415926538979323846
+void main() {
+    int n;
+	double k;
+	
+	scanf("%d",&n);
+	if ((n<1) || (n>30))  printf("n nije valjan\n");
+	else { 
+		k=(PI*PI*PI*PI*PI*PI)/945.;
+	
+		printf("%.12f\n",k );
+	}
+	
+	
+
+
+}

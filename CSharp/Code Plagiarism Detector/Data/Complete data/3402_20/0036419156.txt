@@ -1,0 +1,25 @@
+int* napraviPolje (int *A, int Na, int a, int b, int *Nc){
+    int i, j, br;
+	int *C;
+
+	if (a > b) return 0;
+
+	*Nc = 0;
+	for (j=0; j<Na; j++)
+		for (i=a; i<=b; i++)
+			if (A[j]%i == 0){
+				(*Nc)++;
+				break;
+			}
+
+	C = (int*) (malloc (*Nc * sizeof(int)) );
+
+	for (j=0, br=0; j<Na; j++)
+		for (i=a; i<=b; i++)
+			if (A[j]%i == 0){
+				C[br++] = A[j];
+				break;
+			}
+
+	return C;
+}

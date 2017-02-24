@@ -1,0 +1,21 @@
+void dodaj(FILE *f){
+struct bla{
+       int redni_br;
+       char prezime[20+1];
+       int bodovi;
+}natjecatelj,n1;
+int max=0;
+int pos=0;
+
+fseek(f, 0L, SEEK_SET);
+while (fread(&natjecatelj, sizeof(natjecatelj), 1, f) == 1)
+      if ((natjecatelj.bodovi>=max) && (natjecatelj.redni_br != 0)){
+         max=natjecatelj.bodovi;
+         n1=natjecatelj;
+         pos=ftell(f);
+      }
+fseek(f,pos-sizeof(n1),SEEK_SET);
+n1.bodovi+=10;
+fwrite(&n1,sizeof(n1),1,f);
+return;
+}

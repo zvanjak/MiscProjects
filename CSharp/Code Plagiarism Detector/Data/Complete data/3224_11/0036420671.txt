@@ -1,0 +1,15 @@
+#include  "stdio.h"
+int main()
+{
+   int i,n=0;
+   double  suma,pi=0,a=8,b=4,c=1;
+   scanf ("%d", &n);
+   if (n<1 || n>400)  printf ("n nije valjan");
+   else {
+	for (i=1;i<=n;i++)
+	{suma = (c/((b * i - c)*(b * i +c)));
+	pi= pi + suma;}
+  pi = -(pi*a-b);
+	printf ("%.8lf",pi);}
+	
+}

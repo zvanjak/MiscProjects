@@ -1,0 +1,19 @@
+#include<stdio.h>
+int main()
+{
+	float a, d, b;
+	int brojac=0;
+
+	scanf("%f %f %f", &a,&d,&b);
+	if((a<b)&&(d>0))
+	{
+		do{
+			a+=d;
+			printf("%f ",a);
+			brojac++;
+		}while(a<=b);
+		printf("%d", brojac);
+	}
+	else printf("%d",brojac);
+	return 0;
+}

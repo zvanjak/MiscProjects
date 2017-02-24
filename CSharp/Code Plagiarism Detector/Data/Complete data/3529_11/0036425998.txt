@@ -1,0 +1,29 @@
+void spoji (char *ime, char *prezime, char *JMBAG, char *izlazni) {
+   int i, n;
+   char nule[6+1]="\0";
+   
+   while (isspace(ime[0]))
+      ime++;
+   while (isspace(prezime[0]))
+      prezime++;
+   while (isspace(JMBAG[0]))
+      JMBAG++;
+      
+   n = strlen (ime);
+   while (isspace(ime[n-1]))
+      ime[n-- - 1] = 0;
+   n = strlen (prezime);
+   while (isspace(prezime[n-1]))
+      prezime[n-- - 1] = 0;
+   n = strlen (JMBAG);
+   while (isspace(JMBAG[n-1]))
+      JMBAG[n-- - 1] = 0;
+   
+   if (strlen (JMBAG) > 6) JMBAG += strlen (JMBAG) - 6;
+   for (i=0; i<6-strlen(JMBAG); i++) {
+      nule[i] = '0';
+      nule[i+1] = '\0';
+   }
+   
+   sprintf (izlazni, "%s, %s: %s%s", prezime, ime, nule, JMBAG);
+}

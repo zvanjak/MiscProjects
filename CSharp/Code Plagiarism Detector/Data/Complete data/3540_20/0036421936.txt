@@ -1,0 +1,16 @@
+int izbaci (zapis **glavap) {
+zapis *pom;
+int brst = 0;
+for (;*glavap;){
+  if ((*glavap)&&((*glavap)->pros < 2.0)) {
+     pom = *glavap;
+     *glavap = (*glavap)->sljed;
+     free (pom);
+     brst++;
+  } 
+  else { 
+  glavap = &((*glavap)->sljed);
+ }
+}
+return brst;
+}

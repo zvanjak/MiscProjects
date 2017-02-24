@@ -1,0 +1,18 @@
+#include<stdio.h>
+
+int main(){
+      int osat,nsat,bsat;
+      float bpla,npla,sat;
+      scanf("%d %d %d", &osat, &nsat, &bsat);
+      if (osat<nsat){
+         sat= bsat*0.9;
+         } else if (osat>nsat){
+                  sat= bsat*1.15;
+                  } else sat=bsat;
+      bpla=osat*sat;
+      if (bpla>6000){
+         npla= bpla*0.70;
+         } else npla=bpla*0.80;
+      printf("%.2f", npla);
+      return 0;
+}

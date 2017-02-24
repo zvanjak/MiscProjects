@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+	int i,n;
+	double x,s=0;
+	scanf("%d", &n);
+	if(n<0 || n>100) printf("n nije valjan");
+	else{
+		scanf("%lf",&x);
+		if(x<=0 || x>=2) printf("x nije valjan");
+		else{
+			for(i=1;i<=n;i++) s+=(pow(x-1,i)*pow(-1,i+1))/i;
+			printf("%d %.5lf %.12lf",n,x,s);
+		}
+	}
+	return 0;
+}

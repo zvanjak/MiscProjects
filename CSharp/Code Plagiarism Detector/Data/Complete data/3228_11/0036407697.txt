@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <math.h>
+
+int main () {
+
+	int n,i;
+	double suma,suma1;
+	suma=0;
+	suma1=0;
+	
+scanf ("%i", &n);
+
+if (n >= 1 && n <= 100) {
+
+	for (i=1; i<=n; i++) {
+	
+			 suma1 =  -((pow(-1,i))/(pow(i,2)));
+
+		suma += suma1;
+
+	}
+
+	printf ("%.12f\n",suma);
+	
+}
+
+else {
+
+	printf ("n nije valjan\n");
+	
+}
+
+	return 0;
+}

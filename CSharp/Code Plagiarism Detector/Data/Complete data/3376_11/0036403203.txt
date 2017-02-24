@@ -1,0 +1,81 @@
+#include <stdio.h>
+int main () {
+	
+	int broj, tis, sto, des, jed, knbr;
+	/*printf ("Unesi cetveroznamenkasti broj! \n");*/
+	scanf ("%d", &broj);
+	if (broj >= 1000 && broj <= 9999) {
+		tis = broj / 1000;
+		sto = (broj / 100) % 10;
+		des = (broj / 10) % 10;
+		jed = broj % 10;
+		if (tis % 2 != 0 && sto % 2 != 0 && des % 2 != 0 && jed % 2 != 0) {
+			knbr = broj;
+			printf ("%d" , knbr);
+		}
+		if (tis % 2 != 0 && sto % 2 != 0 && des % 2 != 0 && jed % 2 == 0) {
+			knbr = tis * 1000 + sto * 100 + des * 10;
+			printf ("%d" , knbr);
+		}
+		if (tis % 2 != 0 && sto % 2 != 0 && des % 2 == 0 && jed % 2 != 0) {
+			knbr = tis * 1000 + sto * 100 + jed;
+			printf ("%d" , knbr);
+		}
+		if (tis % 2 != 0 && sto % 2 != 0 && des % 2 == 0 && jed % 2 == 0) {
+			knbr = tis * 1000 + sto * 100;
+			printf ("%d" , knbr);
+		}
+		if (tis % 2 != 0 && sto % 2 == 0 && des % 2 != 0 && jed % 2 != 0) {
+			knbr = tis * 1000 + des * 10 + jed;
+			printf ("%d" , knbr);
+		}
+		if (tis % 2 != 0 && sto % 2 == 0 && des % 2 != 0 && jed % 2 == 0) {
+			knbr = tis * 1000 + des * 10;
+			printf ("%d" , knbr);
+		}
+		if (tis % 2 != 0 && sto % 2 == 0 && des % 2 == 0 && jed % 2 != 0) {
+			knbr = tis * 1000 + jed;
+			printf ("%d" , knbr);
+		}
+		if (tis % 2 != 0 && sto % 2 == 0 && des % 2 == 0 && jed % 2 == 0) {
+			knbr = tis * 1000;
+			printf ("%d" , knbr);
+		}
+		if (tis % 2 == 0 && sto % 2 != 0 && des % 2 != 0 && jed % 2 != 0) {
+			knbr = sto * 100 + des * 10 + jed;
+			printf ("%d" , knbr);
+		}
+		if (tis % 2 == 0 && sto % 2 != 0 && des % 2 != 0 && jed % 2 == 0) {
+			knbr = sto * 100 + des *10;
+			printf ("%d" , knbr);
+		}
+		if (tis % 2 == 0 && sto % 2 != 0 && des % 2 == 0 && jed % 2 != 0) {
+			knbr = sto * 100 + jed;
+			printf ("%d" , knbr);
+		}
+		if (tis % 2 == 0 && sto % 2 != 0 && des % 2 == 0 && jed % 2 == 0) {
+			knbr = sto * 100;
+			printf ("%d" , knbr);
+		}
+		if (tis % 2 == 0 && sto % 2 == 0 && des % 2 != 0 && jed % 2 != 0) {
+			knbr = des * 10 + jed;
+			printf ("%d" , knbr);
+		}
+		if (tis % 2 == 0 && sto % 2 == 0 && des % 2 != 0 && jed % 2 == 0) {
+			knbr = des * 10;
+			printf ("%d" , knbr);
+		}
+		if (tis % 2 == 0 && sto % 2 == 0 && des % 2 == 0 && jed % 2 != 0) {
+			knbr = jed;
+			printf ("%d" , knbr);
+		}
+		if (tis % 2 == 0 && sto % 2 == 0 && des % 2 == 0 && jed % 2 == 0) {
+			knbr = 0;
+			printf ("%d" , knbr);
+		}
+	}
+	else {
+		printf (" Krivi unos!! \n ");
+	}
+	return 0;
+}

@@ -1,0 +1,71 @@
+#include <stdio.h>
+#define max 100
+int main()
+{
+	char unos[max+1];
+	int i=0,j,k=0,o=0;
+		do
+		{
+		fflush(stdin);
+		i++;
+		scanf("%c",&unos[i]);
+		}
+		while (unos[i]!='.');
+
+	
+		j=0;
+		do
+		{
+			++j;	
+			if ((unos[j]==' ')||(unos[j]=='\n'))k++;
+		}
+		while((unos[j]==' ')||(unos[j]=='\n'));
+
+	for(j=1;j<=i;j++)
+			unos[j]=unos[j+k];
+
+		j=i-k;
+		do
+		{
+					
+			if ((unos[j]==' ')||(unos[j]=='\n')) o++;
+			--j;
+		}
+		while((unos[j]==' ')||(unos[j]=='\n'));
+		unos[j+1]='.';
+
+	for(j=1;j<=i;j++)
+		if ((unos[j]>='A')&&(unos[j]<='Z')) unos[j]+=32;
+
+
+	for(j=1;j<=i;j++)
+	{
+		if (unos[j]==',')
+		{
+				if ((unos[j-1]>='a')&&(unos[j-1]<='z')) unos[j-1]-=32;
+				if ((unos[j+1]>='a')&&(unos[j+1]<='z')) unos[j+1]-=32;
+				if ((unos[j+1]==' ')&&(unos[j+2]>='a')&&(unos[j+2]<='z')) unos[j+2]-=32;
+				
+		}
+		if (unos[j]==' ')
+				{
+				if ((unos[j-1]>='a')&&(unos[j-1]<='z')) unos[j-1]-=32;
+				if ((unos[j+1]>='a')&&(unos[j+1]<='z')) unos[j+1]-=32;
+				}
+		if (unos[j]=='.') 
+			if ((unos[j-1]>='a')&&(unos[j-1]<='z')) unos[j-1]-=32;
+		if ((unos[1]>='a')&&(unos[1]<='z')) unos[1]-=32;
+
+	}	
+		
+		for(j=1;j<=i-k-o;j++)
+		printf("%c",unos[j]);
+
+
+		
+
+
+
+
+	return 0;
+}

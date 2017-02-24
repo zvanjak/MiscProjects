@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main () {
+	int x,i=0,c=0,n,r;
+	int po[100];
+	do {
+		scanf("%d",&x);
+		if (x==-1) break;
+		else { po[i]=x;
+		i++;}}
+	while (i<100);
+	n=i;
+	for(i=0,c=1;i<n && c<n;i+=2,c+=2) {
+		for(r=0;r<po[c];r++){
+			printf("%d ", po[i]);}}
+	return 0;
+}

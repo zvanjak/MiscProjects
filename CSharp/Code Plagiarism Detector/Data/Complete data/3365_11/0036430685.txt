@@ -1,0 +1,12 @@
+#include<stdio.h>
+int main(){
+   int a,k,i,rez1=0,rez2=0;
+   scanf("%d",&a);
+   for(i=a;i>0;i/=10){
+       rez1+=k=i%10;
+       if(k%2) rez2+=k;
+   }
+   if(a>=250&&a<=950) printf("%d",rez2);
+   else printf("%d",rez1);
+   return 0;
+}

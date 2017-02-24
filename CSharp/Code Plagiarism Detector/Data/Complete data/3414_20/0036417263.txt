@@ -1,0 +1,15 @@
+char *brojeve_u_znakove(int *polje, int duljina) {
+	int i,x,y=0;
+	char *s;
+	s=(char*)malloc(duljina*10*sizeof(char));
+	for(i=0;i<duljina;i++) {
+		x=polje[i];
+		while(x>0) {
+			s[y]=x%10+48;
+			x=x/10;
+			y++;
+		}
+	}
+	s[y]=0;
+	return s;
+}

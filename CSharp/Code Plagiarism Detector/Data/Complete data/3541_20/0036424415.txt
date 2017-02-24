@@ -1,0 +1,72 @@
+int izbaciZ(zapis **glava)
+{
+	zapis *p;
+	zapis *prethodni;
+	zapis *ovaj;
+	float prosjek=0.0f;
+	long int n=0;
+	long int n1=0;
+	unsigned short int interrupt=0;
+
+
+
+	for (p=*glava; p!=NULL; p=p->sljed)
+	{
+		prosjek += p->pros;
+		n +=1;
+	}
+
+	prosjek = prosjek / n;
+
+	prethodni = NULL;
+	if (*glava == NULL) return 0;
+	for (p=*glava; p!=NULL; p=p->sljed)
+	{
+		if (interrupt)
+		{
+			p = *glava;
+			if (p == NULL) return n1;
+			interrupt = 0;
+		}
+
+		if (p->pros<prosjek && (p->spol=='Z' || p->spol=='z'))
+		{
+			if (prethodni != NULL)
+			{
+				prethodni->sljed = p->sljed;
+				free(p);
+				p = prethodni;
+				n1 += 1;
+			}
+			else
+			{
+				ovaj = p->sljed;
+				free(*glava);
+				*glava = ovaj;
+				p = *glava;
+				interrupt = 1;
+				n1 += 1;
+
+				if (p!=NULL && p->sljed == NULL)
+				{
+					prethodni = NULL;
+
+					if (p->pros<prosjek && (p->spol=='Z' || p->spol=='z'))
+					{
+						ovaj = p->sljed;
+						free(*glava);
+						*glava = ovaj;
+						p = *glava;
+						interrupt = 1;
+						n1 += 1;
+					}
+
+					return n1;
+				}
+			}
+		}
+		else
+			prethodni = p;
+	}
+	return n1;
+}

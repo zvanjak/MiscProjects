@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+int x, zz, bz;
+int main(void){
+  bz=0; zz=0;
+  for (scanf("%d", &x); x!=0;scanf("%d", &x)){
+     if (x<0) x=x*-1;
+     while (x>=1) {zz+=x%10; bz+=1; x=x/10;}}    
+printf("%d %d", bz,zz);
+
+return 0;}

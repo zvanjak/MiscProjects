@@ -1,0 +1,11 @@
+int br_prodanih(FILE *f, char *autor)
+{
+struct album alb;
+
+	int ukupno=0;
+	fseek(f, 0L, SEEK_SET);
+	while(fread(&alb,sizeof(alb),1,f)==1)
+		if(strcmp(alb.autor,autor))
+			ukupno+=alb.prodano;
+	return ukupno;
+}

@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main(){
+	int x1,y1,x2,y2,n=0;
+	
+	scanf("%d", &x1);
+	scanf("%d", &y1);
+	
+
+	do{
+		scanf("%d", &x2);
+		scanf("%d", &y2);
+		n++;
+		
+			if(y1>y2){
+			printf("Raste ");
+			}
+			else if(y1=y2){
+			printf("Ravan ");
+			}
+			else printf("Pada ");
+			
+				x1=x2;
+				y1=y2;
+			
+	}
+	while(x1>50 || n>21);
+	
+
+return 0;
+}	

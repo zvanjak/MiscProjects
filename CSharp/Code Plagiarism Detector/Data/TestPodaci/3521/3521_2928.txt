@@ -1,0 +1,33 @@
+void ConvertToXML(char *inputField, char *outputField){
+    char a[100];
+    char *p=outputField;
+    int i,j;
+    
+    while(1){
+    char ime[25]={0}, prezime[25]={0},jmbg[25]={0};
+    
+    for(i=0;inputField[i]!='\n' && inputField[i];i++)
+       a[i]=inputField[i];
+    a[i]=0;
+    inputField+=i+1;
+    if (i==0) return;
+    for(i=1;a[i]!='#';i++)
+       ime[i-1]=a[i];
+    for(j=i+1;a[j]!='#';j++)
+       prezime[j-i-1]=a[j];
+    for(i=j+1;a[i]!='#';i++)
+       jmbg[i-j-1]=a[i];
+    p=strcpy(p,"<osoba>\n<ime>");
+    p=strcat(p,ime);
+    p=strcat(p,"</ime>\n<prezime>");
+    p=strcat(p,prezime);
+    p=strcat(p,"</prezime>\n<jmbg>");
+    p=strcat(p,jmbg);
+    p=strcat(p,"</jmbg>\n</osoba>\n");
+    while(*(++p));
+    
+    
+    }
+    return;
+
+}  

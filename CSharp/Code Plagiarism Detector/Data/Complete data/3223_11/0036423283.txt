@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+	int maks, mini, n;
+	scanf("%d",&n);
+    maks=n;
+	mini=n;
+	if(n<=0 || n%4) {
+	    do {
+        scanf("%d",&n);
+		if(n<mini) mini=n;
+		else if(n>maks) maks=n;
+		}while(n<=0 || n%4);
+	}
+	printf("%d %d",maks,mini);
+	return 0;
+}

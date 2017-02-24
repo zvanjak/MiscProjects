@@ -1,0 +1,96 @@
+class CjelobrojniNiz{
+private:
+	int *niz;
+	int brCl;
+public:
+	bool VecinaJednaka;
+	CjelobrojniNiz(int *nNiz,int nbrCl){
+		int i;
+        niz=new int[nbrCl];
+		brCl=nbrCl;
+		for (i=0;i<brCl;i++)
+			niz[i]=nNiz[i];
+
+		int tmpBr=0;
+		int maxBr=0;
+
+		for (i=0;i<brCl-1;i++){
+			tmpBr=1;
+			if (niz[i]==niz[i-1]) continue;
+			for (int t=i+1;t<brCl;t++)
+				if (niz[i]==niz[t]) tmpBr++;
+			if (tmpBr>maxBr) maxBr=tmpBr;
+		}
+		VecinaJednaka=(maxBr>(brCl/2));
+	}
+	~CjelobrojniNiz(){
+		delete [] niz;
+	}
+
+	bool Usporedi(CjelobrojniNiz nNiz){
+		sort();
+		nNiz.sort();
+        if (brCl!=nNiz.brCl) return 0;
+		for (int i=0;i<brCl;i++){
+            if (niz[i]!=nNiz.niz[i]) return 0;}
+	    return 1;
+    }
+	int VratiMin(int *polje,int n){
+		int min=polje[0];
+		for (int i=1;i<n;i++)
+			if (polje[i]<min) min=polje[i];
+		return min;
+	}
+	int VratiMax(int *polje,int n){
+		int max=polje[0];
+		for (int i=1;i<n;i++)
+			if (polje[i]>max) max=polje[i];
+		return max;
+	}
+	bool JeliIn(int *polje,int n,int koji){
+		for (int i=0;i<n;i++)
+			if(polje[i]==koji) return true;
+		return false;
+	}
+	void sort(){
+		bool zamjena=true;
+		while(zamjena){
+			zamjena=false;
+			for(int i=0;i<brCl-1;i++)
+				if(niz[i]>niz[i+1]){
+					zamjena=true;
+					int tmp=niz[i];
+					niz[i]=niz[i+1];
+					niz[i+1]=tmp;
+				}
+		}
+	}
+	int *VratiPresjek(CjelobrojniNiz nNiz,int *brojac){
+		int min1=VratiMin(niz,brCl);
+		int max1=VratiMax(niz,brCl);
+		int min2=VratiMin(nNiz.niz,nNiz.brCl);
+		int max2=VratiMax(nNiz.niz,nNiz.brCl);
+		int min=(min1>min2)?min1:min2;
+		int max=(max1<max2)?max1:max2;
+		
+		int i;
+		int *tmp=new int[brCl+nNiz.brCl];
+		int br=0;
+		for (i=0;i<brCl;i++){
+			if(niz[i]>=min && niz[i]<=max && !JeliIn(tmp,br,niz[i]) && 
+			JeliIn(nNiz.niz,nNiz.brCl,niz[i])){
+				tmp[br]=niz[i];
+				br++;
+			}
+		}
+		for (i=0;i<nNiz.brCl;i++){
+			if(nNiz.niz[i]>=min && nNiz.niz[i]<=max && !JeliIn(tmp,br,nNiz.niz[i]) && JeliIn(niz,brCl,nNiz.niz[i])){
+				tmp[br]=nNiz.niz[i];
+				br++;
+			}
+		}
+		*brojac=br;
+		return tmp;
+
+	}
+};

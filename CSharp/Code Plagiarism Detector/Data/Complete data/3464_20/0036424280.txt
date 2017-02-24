@@ -1,0 +1,56 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include <string.h>
+
+class Kartica
+{
+private:
+     int _ukupniIznos;
+     int _dozvoljeniMinus;
+public:
+    Kartica(){
+    _ukupniIznos=0;
+    _dozvoljeniMinus=0;
+
+    }
+    Kartica(int ukupniIznos, int dozvoljeniMinus){
+    _ukupniIznos=ukupniIznos;
+    _dozvoljeniMinus=dozvoljeniMinus;
+
+    }
+    int MaxIznosZaDignuti(){
+    
+    return(_ukupniIznos+_dozvoljeniMinus);
+    }
+
+     void StaviNovac(int iznos)
+     {
+     _ukupniIznos+=iznos;
+     }
+
+     int DigniNovac(int iznos)
+     {
+         if(iznos>MaxIznosZaDignuti()) {return 0;}
+      if (iznos>_ukupniIznos) {
+        _ukupniIznos=_ukupniIznos-iznos; 
+         return 2; }
+      if (iznos<=_ukupniIznos) { 
+        _ukupniIznos=_ukupniIznos-iznos; 
+         return 1;}
+         return 0;
+     }
+};
+
+void main()
+{
+int b;
+Kartica a(300,150);
+b=a.DigniNovac(300);
+printf("%d",b);
+b=a.DigniNovac(300);
+printf("\n%d",b);
+b=a.MaxIznosZaDignuti();
+a.StaviNovac(100);
+b=a.MaxIznosZaDignuti();
+printf("\n%d",b);
+}

@@ -1,0 +1,28 @@
+int izbaciZ (zapis **glava) {
+    float suma = 0, prosjek = 0, n = 0;
+    int  izbaceno = 0;
+    zapis *pom = *glava;
+            
+    // racunanje prosjeka
+    for (pom = *glava; pom != NULL; pom = pom->sljed) {
+          suma = suma + pom->pros;
+          n++;
+          }
+    prosjek = suma / n;
+    printf ("\n%f %f %f\n", suma, n, prosjek);
+    
+    // izbacivanje van
+    do {
+        if (*glava) {
+            if (((*glava)->pros < prosjek) && ((*glava)->spol == 'Z')) {
+                zapis *p = *glava;
+                *glava = (*glava)->sljed;
+                free (p);
+                izbaceno++;
+            } else {
+                glava = &((*glava)->sljed);
+            }
+        }
+    } while (*glava);
+    return izbaceno;
+}

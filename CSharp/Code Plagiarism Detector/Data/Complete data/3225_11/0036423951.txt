@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <math.h>
+int main () {
+	int n,i;
+	double a,b=0,x;
+	scanf ("%d", &n);
+	if ((n<1) || (n>100))
+		printf ("n nije valjan\n");
+	else
+	{
+		scanf ("%f",&x);
+		if ((x<0) || (x>2))
+			printf ("x nije valjan");
+		else
+		{
+			for (i=1; i<=n; i=i+1)
+			{
+				a=pow(x-1,i);
+				b=b+a/i;
+			}
+			printf ("%.12f\n",b);
+		}
+	}
+	return 0;
+}

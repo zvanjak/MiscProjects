@@ -1,0 +1,30 @@
+#include <stdio.h>
+int main()
+{
+    int i, j, m[20][20], n, produkt=1, parno=0;
+    do
+    scanf("%d",  &n);
+    while ((n<0) || (n>20));
+    for(i=0; i<n; i++){
+             for(j=0; j<n; j++)
+                      scanf("%d", &m[i][j]); 
+                      }
+    for(i=0; i<n; i+2){
+             for(j=0; j<n; j+2)
+                      if (!(m[i][j]%2)) parno=1;
+                      else {parno=0;
+                            goto pas;}
+                      }
+   pas: if (parno){
+                for(i=0; i<n; i++){
+                         for(j=0; j<n; j++)
+                                  if (i==j) produkt *= m[i][j];}
+    }
+    else{
+        for(i=0; i<n; i++){
+               for(j=0; j<n; j++)
+                    if (i+j==n-1) produkt *= m[i][j];}
+                    }
+    printf("%d", produkt);  
+    return 0;
+}

@@ -1,0 +1,23 @@
+void ubaci (char *niz, char *podniz, int i)
+{
+	int niz1, niz2;
+
+	niz1 = (int)strlen(niz);
+    niz2 = (int)strlen(podniz);
+	char temp1[100] = {'\0'};
+	
+	if (i<0 || i>niz1)
+	{
+		while(*niz)
+		{*niz = toupper(*niz);
+		niz++;}
+	}
+
+	else {
+		strcpy(temp1, &niz[i]);
+		strcpy(&niz[i], podniz);
+		strcat(niz, temp1);
+		niz[niz1 + niz2] = '\0';
+	}
+
+}

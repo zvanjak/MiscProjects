@@ -1,0 +1,18 @@
+int Najgore( cvor *glava ) {
+	cvor *temp = glava;
+	if (temp == NULL) return 0;
+
+	while (temp != NULL) {
+		//printf("ID: %d\n", temp->id);
+		if (temp->lijevo != NULL)
+			if (temp->desno != NULL)
+				return 0;
+			else
+				temp = temp->lijevo;
+		else
+			temp = temp->desno;
+	}
+	
+	return 1;
+}
+

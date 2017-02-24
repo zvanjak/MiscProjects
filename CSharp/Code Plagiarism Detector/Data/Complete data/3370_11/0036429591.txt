@@ -1,0 +1,50 @@
+# include <stdio.h>
+
+int main () {
+
+unsigned int broj1, broj2, x, y, w, z, a, b;
+
+scanf ("%d %d", &broj1, &broj2);
+
+y = broj1 % 10;
+
+x = broj1 / 10;
+
+z = broj2 % 10;
+
+w = broj2 / 10;
+
+a=0;
+
+b=0;
+
+if ((x == z) || (x == w)) a=x;
+
+if ((y == z) || (y == w)) b=y;
+
+
+if (a==b) 
+
+{
+
+if (a==0) 
+
+printf("Nema");
+
+else
+
+printf("%d%", a);
+
+}
+
+else if (a==0)
+
+printf("%d", b);
+
+else if (b==0)
+
+printf("%d", a);
+
+return 0;
+
+}

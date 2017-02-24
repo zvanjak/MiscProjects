@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main () {
+	int i,n;
+	float x=0, pi;
+	scanf("%d",&n);
+	if (n<1 || n>100) printf("n nije valjan\n");
+	else {
+		for(i=1;i<=n;i++) x=x+(float)1/((4*i-1)*(4*i+1));
+		pi=4-8*x;
+		printf("%.8f\n",pi);
+	}
+	return 0;
+}

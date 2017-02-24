@@ -1,0 +1,41 @@
+int izbacinaj(zapis **glava)
+{int br=1;
+	zapis *pomoc,*najv,*najm,*brisi;
+float veci,manji;
+pomoc=(*glava);
+
+	if((pomoc)==NULL)return 0;
+if ((pomoc->sljed)==NULL){free(*glava);
+							return 1;}
+veci=pomoc->pros;
+manji=veci;
+for(;pomoc!=NULL;pomoc=pomoc->sljed)
+{if(pomoc->pros>=veci){najv=pomoc;
+						veci=pomoc->pros;}
+if(pomoc->pros<=manji){najm=pomoc;
+						manji=pomoc->pros;}
+}
+pomoc=(zapis *)malloc(sizeof(zapis));
+brisi=pomoc;
+pomoc->sljed=(*glava);
+for(;pomoc!=NULL;pomoc=pomoc->sljed)
+{if((br==1)&&((pomoc->sljed)==najv)){*glava=najv;	
+									break;}
+br=0;
+if((pomoc->sljed)==najv){(pomoc->sljed)=(najv->sljed);
+						break;}
+}
+pomoc=brisi;
+br++;
+for(;pomoc!=NULL;pomoc=pomoc->sljed)
+{if((br==1)&&((pomoc->sljed)==najm)){*glava=najm;	
+									break;}
+br=0;
+if((pomoc->sljed)==najm){(pomoc->sljed)=(najm->sljed);
+						break;}
+}
+free(brisi);
+free(najv);
+free(najm);
+return 2;
+}

@@ -1,0 +1,12 @@
+#include<stdio.h>
+#include<string.h>
+int br_prodanih(FILE *f, char *autor);
+{
+    char autor1[20+1],naziv[30+1];
+    int prodano,s=0;
+    do {
+        fscanf(f,"%s%s%d",autor,naziv,prodano);
+        if (!strcmp(autor,autor1)) s+=prodano;
+    } while (!feof(f));
+    return s;
+}

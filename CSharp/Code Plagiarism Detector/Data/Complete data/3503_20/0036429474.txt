@@ -1,0 +1,12 @@
+int ModElementa(cvor *glava, char *naziv) {
+	int pojavljivanjaL, pojavljivanjaD;
+	
+	if (glava == NULL) return 0;
+	pojavljivanjaD = ModElementa(glava->desno, naziv);
+	pojavljivanjaL = ModElementa(glava->lijevo, naziv);
+	if (strcmp(glava->naziv, naziv) == 0) {
+		return pojavljivanjaD + pojavljivanjaL + 1;
+	} else {
+		return pojavljivanjaD + pojavljivanjaL;
+	}
+}

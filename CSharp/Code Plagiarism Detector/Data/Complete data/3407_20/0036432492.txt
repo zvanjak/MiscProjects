@@ -1,0 +1,19 @@
+char *SamoSamoglasnici(char *ulazni_niz){
+    char *noviniz = NULL, tmp;
+    int i = 0, j = 0;
+    while(ulazni_niz[i+1] != '\0'){
+         if(isalpha(ulazni_niz[i])){
+              tmp = ulazni_niz[i];
+              tmp = tolower(tmp);
+              if((tmp == 'a') || (tmp == 'e') || (tmp == 'i') || (tmp == 'o') || (tmp == 'u')){
+                    noviniz = (char *)realloc(noviniz, sizeof(tmp));
+                    noviniz[j] = ulazni_niz[i];
+                    j++;
+                    noviniz = (char *)realloc(noviniz, sizeof(tmp));
+                    noviniz[j] = '\0';
+                    }
+              }
+          i++;
+    }
+    return noviniz;
+}

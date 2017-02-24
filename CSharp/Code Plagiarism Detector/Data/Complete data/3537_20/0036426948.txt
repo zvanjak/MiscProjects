@@ -1,0 +1,12 @@
+int BrojClanova(Red *red){
+	int m, n = 0;
+	Red polje;
+	while(red->SkiniIzReda(&m) != 0){
+     	polje.DodajURed(m);
+		n++;
+		}
+	while(polje.SkiniIzReda(&m) != 0){
+		red->DodajURed(m);
+		}
+	return n;
+}

@@ -1,0 +1,48 @@
+#include<stdio.h>
+#define MAX 100
+int main () {
+    char rec[MAX+1], x;
+    int i;
+    for (i=0; i<=MAX; i++) {
+        scanf("%c", &x);
+        if (x=='.') {
+           rec[i]=x;
+           break;
+           }
+        if (x>='A' && x<='Z' || x>='a' && x<='z' || x==' ' || x==',') {
+                   rec[i]=x;
+                   }
+        else i--;
+        }
+    for (i=0; i<=MAX; i++) {
+        if (rec[i]>='A' && rec[i]<='Z')
+                        rec[i]+=32;
+                        }
+    for (i=0; i<=MAX; i++) {
+        if (rec[0]>='a' && rec[0]<='z')
+           rec[0]-=32;
+        if (rec[i]==32) {
+                        if (rec[i-1]>='a' && rec[i-1]<='z')
+                           rec[i-1]-=32;
+                        if (rec[i+1]>='a' && rec[i+1]<='z')
+                           rec[i+1]-=32;
+                           }
+        if (rec[i]=='.') {
+                        if (rec[i-1]>='a' && rec[i-1]<='z')
+                           rec[i-1]-=32;
+                           }
+        if (rec[i]==',') {
+                        if (rec[i+1]>='a' && rec[i+1]<='z')
+                           rec[i+1]-=32;
+                        if (rec[i-1]>='a' && rec[i-1]<='z')
+                           rec[i-1]-=32;
+                           }
+                           }
+    i=-1;
+    do {
+        i++;
+        printf ("%c", rec[i]);
+        }
+    while (rec[i]!='.');
+    return 0;
+}

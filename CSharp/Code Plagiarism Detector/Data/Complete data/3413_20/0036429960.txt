@@ -1,0 +1,28 @@
+char *brojeve_u_znakove(int *polje, int duljina){
+	static char c[100];
+	int i,x=0,j,pom;
+	if(duljina!=0){
+		for(i=0;i<duljina;i++){
+			pom=*(polje++);
+			j=x;
+			if(pom==0)
+				x+=2;
+			else
+				x+=int(log10(double(pom)))+2;
+			for(;j<x;j++){
+				if(x-j-1>0){
+				c[j]=pom/int(pow(double (10),double (x-j-2)))+48;
+				pom=pom%int(pow(double (10),double (x-j-2)));
+				}
+				else{
+					c[j]=32;
+					if(i==duljina-1)
+						c[j]='\0';
+				}
+			}
+		}
+	}
+	else c[0]='\0';
+
+	return (c);
+}

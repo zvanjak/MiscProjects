@@ -1,0 +1,23 @@
+char *Spoji(char *niz1,char *niz2){
+    int l1,l2,a=0,b=0,c=0;
+    char *niz;
+    l1=strlen(niz1);
+    l2=strlen(niz2);
+    niz=(char *)malloc((l1+l2+1)*sizeof(char));
+    while(l1!=0 || l2!=0){
+        if(l1!=0){
+        niz[c]=niz1[a];
+        c++;
+        a++;
+        l1--;
+        }
+        if(l2!=0){
+        niz[c]=niz2[b];
+        c++;
+        b++;
+        l2--;
+        }
+    }
+    niz[c]='\0';
+    return &niz[0];
+}

@@ -1,0 +1,8 @@
+double sumareda(double x,int N){
+    double xsad;
+    kontrola();
+    if(N==1)return x;
+    xsad=(pow(x,(2*(double)N-1)))/(2*(double)N-1);
+    N--;
+    return (xsad + sumareda(x,N));
+}  

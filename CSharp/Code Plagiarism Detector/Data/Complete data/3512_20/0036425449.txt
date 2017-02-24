@@ -1,0 +1,121 @@
+typedef struct {
+	char ime[20+1];
+	char prezime[30+1];
+	char jmbag[10+1];
+	int  ocjena;
+
+} tip;
+ 
+struct atom {
+	tip element;
+	struct atom *sljed;
+};
+
+
+int brojElementa(atom *glava)
+{	int i;
+	for(i=0;glava->sljed!=NULL;glava=glava->sljed,i++);
+	return i;
+}
+int dodaj (atom **glavap, tip element)
+{
+	atom *pom;
+	if(pom=(atom*)malloc(sizeof(atom)))
+	{
+		pom->sljed=*glavap;
+		pom->element=element;
+		*glavap=pom;
+		return 1;
+	}
+	else return 0;
+}
+int minOcjena(atom *glava)
+{
+	int min;
+	if(glava)
+	{
+		min=glava->element.ocjena;
+		for(;glava!=NULL;glava=glava->sljed) if(glava->element.ocjena>min) min=glava->element.ocjena;
+		return min;
+	}
+	else return -1;
+}
+int izbaciPrezimeSadrzi (atom **glavap, char *prezimePodniz)
+{
+	int i,j,br=0,pom_br=0;
+	atom *pomocni=*glavap;
+	atom *pomo;
+	while(pomocni!=NULL)
+	{
+		for(j=0,i=0;i<31;i++)
+		{
+			if(pomocni->element.prezime[i]==prezimePodniz[j])
+			{
+				pom_br++;
+				if(pom_br==strlen(prezimePodniz)) 
+				{
+					br++;
+					if(*glavap==pomocni)
+					{ 
+						*glavap=pomocni->sljed;
+						free(pomocni);
+						pomocni=*glavap;
+						break;
+					}
+					pomo->sljed=pomocni->sljed;
+					free(pomocni);
+					pomocni=pomo->sljed;
+					break;
+				}
+			}
+			else 
+			{
+				pom_br=0;
+				j=0;
+			}
+		}
+		if(pom_br!=strlen(prezimePodniz)) 
+		{
+			pomo=pomocni;
+			pomocni=pomocni->sljed;
+		}
+	}	
+		
+	return br;
+}
+int izbaciPrezimePocinjeS (atom **glavap, char * prezimePocetak)
+{	
+	unsigned i,j,br=0;
+	atom *pomocni=*glavap;
+	atom *pomo;
+	while(pomocni!=NULL)
+	{
+		for(i=0,j=0;i<strlen(prezimePocetak);i++)
+		{
+			if(pomocni->element.prezime[i]!=prezimePocetak[j++]) break;
+		}
+		if(i==strlen(prezimePocetak)-1)
+		{
+			if(pomocni==*glavap)
+			{
+				*glavap=pomocni->sljed;
+				free(pomocni);
+				br++;
+				pomocni=*glavap;
+			}
+			else
+			{
+				pomo->sljed=pomocni->sljed;
+				free(pomocni);
+				br++;
+				pomocni=pomo->sljed;
+			}
+		}
+		else
+		{
+			pomo=pomocni;
+			pomocni=pomocni->sljed;
+		}
+	}
+	return br;
+}

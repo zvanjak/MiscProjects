@@ -1,0 +1,21 @@
+#include <stdio.h>
+int main(){
+	int A,d=0,B=0,br,cl=0;
+	scanf("%d %d %d",&A,&d,&B);
+	cl=A;
+	if(A>B)
+	{
+		printf("0");	
+	}
+	else
+	{
+	while(cl<=B)
+	{
+		cl=cl+d;
+		if (cl<=B)
+		printf("%d ",cl);
+	}	
+	printf("%d",cl);
+	}	
+return 0;
+}

@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <math.h>
+int main () {
+
+  int i, n, y=0;
+  float pi=0, x=0;
+  
+  scanf ("%d", &n);
+  if (n>=1 && n<=25) {
+	for (i = 0; i<=n; i++) {
+		
+		y++;
+		pi=pi+x;
+		x=1/(y*y*y*y*y*y*y*y);
+	
+	}
+	pi=pi*9450;
+	pi=(sqrt(sqrt(sqrt(pi))));
+	printf ("%.12f", pi);
+  
+  } else {
+	  
+	  printf ("n nije valjan");
+	  }
+ 
+  return 0;
+}

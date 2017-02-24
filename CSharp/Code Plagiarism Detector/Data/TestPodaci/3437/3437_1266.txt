@@ -1,0 +1,29 @@
+#include<stdio.h>
+int main(){
+	int i,br=0;
+	int polje[44];
+
+	for(i=0;i<44;i++){
+		
+	scanf("%d",&polje[i]);
+	br++;
+	if(i%2==0){
+		if(polje[i]==50){
+			scanf("%d",&polje[++i]);
+			br++;
+			goto kraj;
+		}
+	}
+	}
+kraj:
+		for(i=0;i<br-2;i=i+2){
+			if(polje[i+1]==polje[i+3])
+				printf("Ravan ");
+			else if(polje[i+1]<polje[i+3])
+				printf("Raste ");
+			else if(polje[i+1]>polje[i+3])
+				printf("Pada ");
+		}
+
+		return 0;
+}

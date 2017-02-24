@@ -1,0 +1,32 @@
+int izbacinaj(zapis **glava) {
+    zapis **gl2,*p;
+    float najb=0.0,najl;
+    int br=0;
+    
+    if (*glava==NULL) return 0;
+    for(p=*glava;p!=NULL;p=p->sljed){
+              if ((p->pros)>najb) najb=p->pros;
+    }
+    najl = najb;
+    for(p=*glava;p!=NULL;p=p->sljed){
+              if ((p->pros)<najl) najl=p->pros;
+    }
+    gl2 = glava;
+    for(;(*glava)&&(*glava)->pros!=najb;glava=&((*glava)->sljed));
+    if(*glava){
+        p=*glava;
+        *glava=(*glava)->sljed;
+        free(p);
+        br++;
+    }
+    glava = gl2;
+    for(;(*glava)&&(*glava)->pros!=najl;glava=&((*glava)->sljed));
+    if(*glava){
+        p=*glava;
+        *glava=(*glava)->sljed;
+        free(p);
+        br++;
+    }
+    
+    return br;
+}

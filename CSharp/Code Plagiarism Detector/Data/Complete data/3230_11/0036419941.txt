@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<math.h>
+int main() {
+	long int fakt;
+	int n, i;
+	double e, red, br;
+	scanf("%d",&n);
+	red=1;
+	fakt=1;
+	if ((n<1) || (n>30)) {
+		printf("n nije valjan");
+	} else {
+		for (i=1;i<=n;i=i+1) {
+			fakt=fakt*i;
+			br=1./fakt;
+			red=red+br;
+		}
+	
+		e=red;
+		printf("%.12lf",e);
+}
+	return 0;
+}

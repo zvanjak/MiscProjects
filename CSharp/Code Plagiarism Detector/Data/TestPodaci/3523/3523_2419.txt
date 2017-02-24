@@ -1,0 +1,14 @@
+int izbaci (char *ulazni, char *podniz) {
+	int count=0,i,j,j2;
+	for(i=0;i<strlen(podniz);++i)
+		for(j=0;j<strlen(ulazni);++j){
+			while(*(podniz+i)==*(ulazni+j)){
+										for(j2=j;j2<(strlen(ulazni)-1);++j2)
+											*(ulazni+j2)=*(ulazni+j2+1);
+										*(ulazni+j2)='\0';
+										++count;
+			}
+		}
+	return count;
+
+}

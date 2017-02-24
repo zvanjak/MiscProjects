@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main(){
+
+int k,x,rj;
+
+scanf("%d %d",&k,&x);
+
+if (k/1000) rj=(1+x/1000)%10; else rj=x/1000;
+if ((k/100)%10) rj=rj*10 + (1+(x/100)%10)%10; else rj=rj*10+(x/100)%10;
+if ((k/10)%10) rj=rj*10 + (1+(x/10)%10)%10; else rj=rj*10+(x/10)%10;
+if (k%10) rj=rj*10 + (1+x%10)%10; else rj=rj*10+x%10;
+
+printf("%d\n",rj);
+
+return 0;
+}

@@ -1,0 +1,17 @@
+double fun1(Trokut t, Pravokutnik p, Krug k){
+	
+	double TrokPov , PravPov, KrugPov, MaxPov;
+	
+	TrokPov = t.Povrsina();
+	PravPov = p.Povrsina();
+	KrugPov = k.Povrsina();
+	
+	MaxPov = TrokPov;
+
+	if(PravPov > MaxPov)
+		MaxPov = PravPov;
+	if (KrugPov > MaxPov)
+		MaxPov = KrugPov;
+
+	return MaxPov;
+}

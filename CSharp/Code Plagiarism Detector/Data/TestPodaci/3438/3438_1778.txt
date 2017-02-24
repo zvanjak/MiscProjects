@@ -1,0 +1,26 @@
+#include <stdio.h>
+#define MAX 100
+int main () {
+char niz[MAX];
+int i, j, x=1, pom=0, k;
+do {
+scanf("%c", &niz[x]);
+if(niz[x]=='.'){
+break;
+}
+x++;
+}
+while(x<MAX);
+do {
+scanf("%d %d", &i, &j);
+if(i<=x && j<=x) {
+pom=niz[i];
+niz[i]=niz[j];
+niz[j]=pom;
+}
+}
+while(i<=x && j<=x);
+for(k=1;k<x;k++)
+printf("%c ", niz[k]);
+return 0;
+}

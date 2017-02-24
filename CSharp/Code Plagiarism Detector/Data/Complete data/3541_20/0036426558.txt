@@ -1,0 +1,44 @@
+float izracunajProsjek( zapis **glava )
+{
+    zapis *temp;
+    float uk = 0;
+    float brojIh = 0;
+    for( temp = *glava; temp != NULL; temp = temp->sljed )
+    {
+        brojIh += 1.0;
+        uk += temp->pros;
+    }
+    return uk / brojIh;
+}
+int izbaci1( zapis **glava, float prosjek )
+{
+    zapis *del, *pom;
+    if( (*glava)->pros < prosjek && (*glava)->spol == 'Z' )
+    {
+        
+        del = *glava;
+        (*glava) = del->sljed;
+        free(del);
+        return 1;
+    }
+    for( pom = *glava; pom->sljed != NULL; pom = pom->sljed )
+    {
+        if( pom->sljed->pros < prosjek && pom->sljed->spol=='Z')
+        {
+            del = pom->sljed;
+            pom->sljed = del->sljed;
+            free(del);
+            return 1;
+        }
+    }
+    return 0;
+}
+int izbaciZ( zapis **glava )
+{
+    if( (*glava) == NULL ) return 0;
+    float pr = izracunajProsjek( glava );
+    int cnt = 0;
+    while( izbaci1( glava, pr ) == 1 )
+        cnt++;
+    return cnt;
+}

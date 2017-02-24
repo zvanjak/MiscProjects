@@ -1,0 +1,5 @@
+float niz( int i ) {
+   kontrola();
+   if( i < 3 ) return i+1.0;
+   return niz(i-3)+(niz(i-1)+niz(i-2))/2.0;
+}

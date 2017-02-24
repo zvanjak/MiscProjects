@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main()
+{
+    int D,G,n,N,S;
+    S=0;
+    scanf("%d",&D);
+    scanf("%d",&G);
+    if ((D>0) && (G>0) && (G>D))
+        for(N=D;N<=G;N++){
+           for(n=0;n<=N;n=n+2)
+              S+=n;
+           printf("%d ",S);
+           n=0;
+           S=0;
+         }
+    else
+      printf("D i G nisu valjani");
+  /*system("PAUSE");*/
+ return 0;
+}

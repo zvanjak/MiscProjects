@@ -1,0 +1,19 @@
+int Memoriraj(Radio& radio) {
+	
+	Stanica a,b;
+	int i;
+	
+	a = radio.TraziSljedecu();
+	b = a;
+	i=0;
+	do {
+		if (strcmp("",b.RDS())!=0) {
+			i++;
+			radio.MemorirajStanicu(b,i);
+		}
+		b = radio.TraziSljedecu();
+		if (a==b) break;
+	} while (i < 6);
+	
+	return i;
+}

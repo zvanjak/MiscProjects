@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <math.h>
+int main (){
+	int n,i;
+	double suma=1;
+	double nazivnik=1;
+	scanf("%d",&n);
+	if(n>=1&&n<=30){
+		for(i=1;i<=n;i=i+1){
+		nazivnik=pow(2,i);
+		suma=suma+1/nazivnik;
+	}
+	printf("%.12f",suma);
+	}
+	else{
+		printf("n nije valjan\n");
+	}return 0;
+}

@@ -1,0 +1,7 @@
+int br_prodanih( FILE *f, char *autor ) {
+   char a[31], b[21];
+   int k, ret = 0;
+   while( fscanf( f, "%s%s%d", a, b, &k ) == 3 )
+      if( !strcmp( b, autor ) ) ret += k;
+   return ret;
+}

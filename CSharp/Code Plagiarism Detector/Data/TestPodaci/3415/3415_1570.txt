@@ -1,0 +1,27 @@
+#include<stdio.h>
+int main () {
+int br=0,i,rez=0,a[20],b[20];
+char c[20];
+for (i=0; i<20; i++){
+    scanf("%d %d %c",&a[i],&b[i],&c[i]);
+    br=br+1;
+    if (!(c[i]=='+' || c[i]=='-' || c[i]=='*' || c[i]=='/' || c[i]=='%'))
+    break;
+    }
+for(i=0; i<(br-1); i++){
+    if (c[i]=='+')
+        rez=rez+(a[i]+b[i]);
+    if (c[i]=='-')
+        rez=rez+(a[i]-b[i]);
+    if (c[i]=='*')
+        rez=rez+(a[i]*b[i]);
+    if (c[i]=='/')
+        rez=rez+(a[i]/b[i]);
+    if (c[i]=='%')
+        rez=rez+(a[i]%b[i]);
+}
+printf("%d ",rez);
+for (i=0; i<(br-1); i++)
+    printf("%c ",c[i]);        
+return 0;
+}

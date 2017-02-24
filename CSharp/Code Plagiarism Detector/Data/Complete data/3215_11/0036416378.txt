@@ -1,0 +1,21 @@
+#include <stdio.h>
+void main (){ 
+int brpar=0, brnep=0, nep[100], par[100], broj=-1;
+
+while (broj!=0){
+    scanf("%d", &broj);
+       if (broj>0){
+           if (broj%2==0){
+               par[brpar]=broj;
+               brpar++;}         
+       else if (broj%2!=0){
+           nep[brnep]=broj;
+           brnep++;
+       }
+     }    
+   }
+ 
+   printf("%d %d",brpar, brnep);
+
+        
+}     

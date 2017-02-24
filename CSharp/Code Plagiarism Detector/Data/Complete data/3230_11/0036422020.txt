@@ -1,0 +1,24 @@
+/* pipizad2.cpp : Defines the entry point for the console application.
+*/
+
+#include <stdio.h>
+
+main()
+{
+	int n,i,f=1;
+	float e=1.;
+	{ 
+/*		printf("Unesi broj clanova: "); */
+		scanf("%d",&n);
+		if ((n < 1) || (n > 20)) printf("n nije valjan");
+		else {
+			for (i=1;i<n;i++) {
+				f = f * i;
+				e = e + (1. / f);
+			}
+/*		printf("\n e= %.12f",e); */
+                printf("%.12f", e);
+		}
+	}
+}
+

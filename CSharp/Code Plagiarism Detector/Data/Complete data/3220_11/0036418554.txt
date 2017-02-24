@@ -1,0 +1,22 @@
+#include<stdio.h>
+int main (){
+    int x,broj,i,n;
+    i=1;
+    n=0;   
+    scanf("%d",&broj);
+    if(broj<0)
+	    printf("%d",broj);
+    else if (broj>0){
+	    while(broj!=0){
+		     x=broj%10;
+		     broj=broj/10;
+		     if((x%2)!=0 && x!=0){
+			     n=n+x*i;
+			     i=i*10;
+		     }
+	    } printf("%d%",n);
+    }
+    else
+	     printf("0");
+	return 0;
+}

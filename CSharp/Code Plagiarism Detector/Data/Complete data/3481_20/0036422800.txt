@@ -1,0 +1,18 @@
+int Memoriraj(Radio& radio)
+{
+    int nStanica=0;
+    float first_freq=-1;
+
+    for (;nStanica != 6;)
+    {
+        Stanica s=radio.TraziSljedecu();
+
+        if (first_freq < 0) first_freq=s.Frekvencija();
+        else if (s.Frekvencija() == first_freq) break; 
+
+        if (s.RDS()[0] == 0) continue;
+        radio.MemorirajStanicu(s,++nStanica);
+    }
+
+    return nStanica;
+}

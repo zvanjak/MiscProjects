@@ -1,0 +1,21 @@
+# include <stdio.h>
+
+int main () {
+
+	int d, g, sum=0;
+	scanf ("%d %d", &d, &g);
+	
+	if (d<0 || g<0 || d>=g)
+		printf ("D i G nisu valjani");
+	
+	else {
+		for (;d<=g;d++) {
+			if (d%2==0)
+				sum+=d;
+			}
+		printf ("%d", sum); 
+		}
+
+	return 0;
+
+}

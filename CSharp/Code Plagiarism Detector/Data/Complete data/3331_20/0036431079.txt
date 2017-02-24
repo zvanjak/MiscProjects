@@ -1,0 +1,20 @@
+float *KreirajMatricu(int n, float *p,int m)
+{
+	float* mx;
+	int y,x;
+
+	mx = (float*)malloc(m * n * sizeof(float));
+	if(!mx)
+		return mx;
+
+	for(y = 0; y < m; ++y)
+		for(x = 0; x < n; ++x)
+		{
+			if(!y)
+				mx[y * n + x] = 1.0f;
+			else
+				mx[y * n + x] = mx[(y-1) * n + x] * p[x];
+		}
+
+	return mx;
+}

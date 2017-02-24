@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int izbaciDuplikate (char *ulazni) {
+	int br_izbacenih = 0;
+	char znakovi[100] = {0};
+	char *c = ulazni;
+
+	while (*c) {
+		znakovi[*c-30]++;
+		if (znakovi[*c-30] > 1) {
+			br_izbacenih++;
+			*c = '\0';
+		} else {
+			/*	pomicanje znakova za br_izbacenih */
+			*(c-br_izbacenih) = *c;
+			if (br_izbacenih != 0) *c = '\0';
+		}
+		c++;
+	}
+	
+	return br_izbacenih;
+}

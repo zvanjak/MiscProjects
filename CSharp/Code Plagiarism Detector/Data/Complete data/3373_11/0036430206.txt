@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main()
+{
+	int x,y,oktx,okty;
+	//printf("Ucitajte dva troznamenkasta pozitivna  cijela dekadska broja:");
+	scanf("%d %d",&x,&y);
+	if(x>99 && x<1000 && y>99 && y<1000)
+	{
+		oktx=(x%8)+10*((x/8)%8)+100*((x/64)%8)+1000*((x/512)%8);
+		okty=(y%8)+10*((y/8)%8)+100*((y/64)%8)+1000*((y/512)%8);
+		if(x<y) printf("%d\n",oktx);
+		else if(y<x) printf("%d\n",okty);
+		else printf("%d\n",oktx);
+	}
+	return 0;
+}

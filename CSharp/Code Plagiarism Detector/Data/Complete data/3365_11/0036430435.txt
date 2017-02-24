@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main(void){
+
+short int n, suma1=0,suma2=0;
+
+scanf("%d", &n);
+
+if((n>249)&&(n<951))
+
+{suma1=(n%10)+((n/10)%10)+((n/100)%10);
+
+printf("%d",suma1);}
+
+else
+
+{suma2=n<250&&n>950?(n%10)+((n/10)%10)+((n/100)%10):((n%10)%2?n%10:0)+(((n/10)%10)%2?(n/10)%10:0)+(((n/100)%10)%2?(n/100)%10:0);
+
+printf("%d\n", suma2);}
+
+ 
+
+ 
+
+return 0;
+
+}
+

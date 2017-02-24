@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+/*
+int moj_rand(){
+    return rand()*rand()+1;
+}
+*/
+
+char *StvoriNiz(char *poljeznakova, int duljina, int n){
+	int sl_br,i;
+    char *p;
+	p=(char*)malloc(n*sizeof(char));
+	for(i=0;i<n;i=i+1){
+		sl_br=moj_rand()%duljina;
+		*(p+i)=poljeznakova[sl_br];
+	}
+	p[i]='\0';
+	return p;
+}
+
+
+

@@ -1,0 +1,26 @@
+#include<stdio.h>
+int main () {
+    int a, b;
+    char c;
+    float rez;
+    scanf("%d %d %c", &a, &b, &c);
+    if (c == '+'){
+          rez = a + b;
+          printf("%f", rez);
+    }else if (c == '*') {
+          rez = a * b;
+          printf("%f", rez);
+    }else if ( c == '-') {
+          rez = b - a;
+          printf("%f", rez);
+    }else if (( c == '/')&&(b !=0)) {
+          rez = a / b;
+          printf("%f", rez);
+    }else if ((c == '%')&&(b != 0)) {
+          rez = a % b;
+          printf("%f", rez);
+    }else {  
+          printf("Neispravna");
+          }
+    return 0;
+}

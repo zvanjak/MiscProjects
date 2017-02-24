@@ -1,0 +1,54 @@
+class Skup
+{
+private:
+	float *_elementi;
+	int _brojElemenata;
+
+public:
+	Skup();
+	Skup(int brojElemenata);
+	void Dodaj(float element);
+	float BrojElemenata();
+	int BrojPojavljivanja(float element);
+	~Skup();
+};
+
+Skup::Skup()
+{
+	_elementi = (float *) malloc(10 * sizeof(float));
+	_brojElemenata = 0;
+}
+
+Skup::Skup(int brojElemenata)
+{
+	_elementi = (float *) malloc(brojElemenata * sizeof(float));
+	_brojElemenata = 0;
+}
+
+Skup::~Skup()
+{
+	delete []_elementi;
+}
+
+void Skup::Dodaj(float element)
+{
+	_elementi[_brojElemenata] = element;
+	_brojElemenata++;
+}
+
+float Skup::BrojElemenata()
+{
+	return (float) _brojElemenata;
+}
+
+int Skup::BrojPojavljivanja(float element)
+{
+	int i=0;
+	int j=0;
+	while(*(_elementi + i)){
+		if(*(_elementi + i) == element)
+			j++;
+		i++;
+	}
+	return j;
+}

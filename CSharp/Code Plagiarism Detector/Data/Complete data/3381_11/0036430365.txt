@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+	float k1,k2;
+	int xa, ya, xb, yb, xc, yc, xd, yd;
+	scanf("%d %d %d %d %d %d %d %d",&xa,&ya,&xb,&yb,&xc,&yc,&xd,&yd);
+	k1=(yd-yb)/(xd-xb);
+	k2=(yc-ya)/(xc-xa);
+	if ( xd-xb==0 || xc-xa==0 ) {
+		printf("%c",75);
+	} else if ((k1*k2)==(-1)) {
+				printf("%c",82);
+	} else {
+		printf("%c",67);
+	}
+	return 0;
+}

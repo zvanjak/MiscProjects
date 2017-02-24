@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main (){
+	int mat [20][5];
+	int i, sim, j, x, brred, brstup;
+
+	do{
+	scanf ("%d %d",&brred, &brstup);
+	} while ((brred < 1) || (brred >20) || (brstup < 1) || (brstup > 5));
+
+	for (i=0;i<brred;i++)
+		for (j=0;j<brstup;j++)
+			scanf ("%d", &mat[i][j]);
+
+	if (brred%2==1){
+		sim=1;
+		for (i=0; i<(brred/2); i++)
+			for (j=0; j<brstup; j++)
+				if (mat[i][j] != mat[brred-1-i][j]) sim=0;
+		if (sim==1) printf ("Jest");
+		else printf ("Nije");
+	}else {
+		x=1;
+		for (i=0;i<brred;i=i+2)
+			for (j=0;j<brstup;j=j+2)
+				x = x * mat[i][j];
+		printf ("%d",x);
+	}
+return 0;
+}

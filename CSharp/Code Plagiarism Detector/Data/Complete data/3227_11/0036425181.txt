@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main()
+{
+int n,i;
+float rez=0.;
+scanf ("%d", &n);
+ if ((n>=1)&&(n<=500))
+ {
+	 for (i=1;i<=n;i++)
+	 {
+		 if (i%2==0)
+		 {
+			 rez-=1./((2*i)-1);
+		 }else{
+			 rez+=1./((2*i)-1);
+		 }
+	 }
+	 printf("%.12f", rez);
+ }else{
+	 printf("n nije valjan\n");
+ }
+ return 0;
+}

@@ -1,0 +1,14 @@
+#include<stdio.h>
+int main(){
+ int brojac,min,max;
+ scanf("%d",&brojac);
+ min=brojac;
+ max=brojac;
+ while(!((brojac>0)&&(brojac%4==0))){
+  scanf("%d",&brojac);
+  if(min>brojac)min=brojac;
+  if(max<brojac)max=brojac;
+ }
+ printf("%d %d",max,min);
+ return 0;
+}

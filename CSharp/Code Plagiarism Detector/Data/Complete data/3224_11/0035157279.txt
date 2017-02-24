@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main ()
+{	
+	int n,i;
+	float pi,o;
+	float clan[400];
+	n=0; o=1; pi=0;
+	scanf("%d", &n);
+	if ((n>0) && (n<401)) 
+		{
+			for (i=0; i<n; i++)
+				{
+					
+					clan[i]=1 / ( (4*o-1) * (4*o+1) );
+					pi=(pi+clan[i]);
+					++o;
+				}
+
+					{
+						pi=(((pi*8)-4)*-1);
+					}}
+	else 
+		printf("n nije valjan");
+
+	printf("%.8f\n",pi);
+	return (0) ;
+}

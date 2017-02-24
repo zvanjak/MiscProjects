@@ -1,0 +1,108 @@
+typedef struct {
+	  char ime[20+1];
+      char prezime[30+1];
+      char jmbag[10+1];
+      int  ocjena;
+} tip;
+
+typedef struct at {
+	tip element;
+	struct at *sljed;
+}atom;
+
+int dodaj(atom **glavap,tip element){
+	atom *novi;
+	novi=(atom*) malloc(sizeof(atom));
+	if(novi==NULL) 
+		return 0;
+	else
+		novi->element=element;
+		novi->sljed = *glavap;
+		*glavap = novi;
+	return 1;
+}
+
+int brojElementa(atom *glava) {
+	atom *p;
+	int n=0;
+	for(p=glava; p!=NULL; p=p->sljed)
+		n++;
+	return n;
+}
+
+int minOcjena(atom *glava){
+	atom *p;
+	int min;
+	if(glava==NULL)
+		return -1;
+	else{
+		min=(glava->element).ocjena;
+		for(p=glava; p!=NULL; p=p->sljed) {
+			if((p->element).ocjena < min)
+				min = (p->element).ocjena;
+		}
+	}
+	return min;
+}
+
+int izbaciPrezimeSadrzi(atom **glavap, char *prezimePodniz) {
+	atom *p, *pp;
+	char *k;
+	int n=0;
+	if(*glavap==NULL)
+		return 0;
+	else {
+		for(p=*glavap; p!=NULL;p=p->sljed ) {
+			if((k=strstr((p->element).prezime, prezimePodniz))!=NULL) {
+				n++;
+				/*brisanje s pocetka liste*/
+				if(p==*glavap) {
+					pp=(*glavap)->sljed;
+					free(*glavap);
+					*glavap = pp;
+					p=pp;
+				}
+				else {/*brisanje nakon nekog clana, treba naci prethodni clan onomu kojeg brisemo*/
+					for(pp=*glavap; pp->sljed!=p; pp=pp->sljed);
+					pp->sljed=p->sljed; /*povezi prethodni sa sljedbenikom izbrisanog*/
+					free (p);
+					p=pp;  
+				}
+			}
+		}
+	}
+	return n;
+} 
+
+int izbaciPrezimePocinjeS (atom **glavap, char *prezimePocetak)
+{
+ atom *p, *pp;
+ int n = 0, m;
+ m = strlen (prezimePocetak);
+ 
+ for (p = *glavap; p != NULL;p=p->sljed ) {
+ 
+     if ((strncmp ((p->element).prezime, prezimePocetak, m) == 0) &&
+         (strlen ((p->element).prezime) >= m)) {
+			 n++;
+         
+         if (p == *glavap) {
+               pp = (*glavap)->sljed;
+               free (*glavap);
+       *glavap = pp;
+       p = pp;
+       
+         }
+         
+          else {   
+       for (pp = *glavap; pp->sljed != p; pp = pp->sljed);
+       pp->sljed = p->sljed;
+       free (p);
+       p = pp;
+       
+          }
+     }
+ }
+
+ return n;
+} 

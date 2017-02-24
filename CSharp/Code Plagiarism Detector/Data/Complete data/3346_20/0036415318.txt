@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+double sumareda (double x, int n)
+{
+
+	double suma = 0;
+
+	kontrola ();
+
+	if (n == 0)
+		return 0;
+	
+	suma +=pow (x, 2*n-1) / (2*n-1);
+
+	return suma + sumareda (x, n - 1);
+}

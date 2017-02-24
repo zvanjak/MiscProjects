@@ -1,0 +1,19 @@
+char *brojeve_u_znakove(int *polje, int duljina){
+	int i, j, sve=0, pomoc, broj;
+	char *niz, *niz2;
+	if (duljina == 0) return NULL;
+	niz= (char *) malloc (0*sizeof(char));
+	niz2=niz;
+	for (i=0; i<duljina; i++){
+		pomoc=polje[i];
+		sve+=1+(int)(log10(pomoc));
+		niz=(char *) realloc (niz, (sve+1)*sizeof(char));
+		for (j=0; j<log10(pomoc); j++){
+			broj=(pomoc% (int)(pow(10, j+1)))/(pow(10,j));
+			*niz2= (char) (broj + 48);
+			niz2++;
+		}
+	}
+	*niz2='\0';
+	return niz;
+}

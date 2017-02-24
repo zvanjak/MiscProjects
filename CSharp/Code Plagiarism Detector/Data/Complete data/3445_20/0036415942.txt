@@ -1,0 +1,41 @@
+class Kosarica {
+        public:
+        Kosarica(){
+                _BrEl=0;
+                _MaxBrEl=10;
+                _Proizvodi= new float[_MaxBrEl];
+                }
+        void ProsiriPolje(int NoviBrEl){
+                float *Pom=new float[NoviBrEl];
+                for(int i=0;i<_MaxBrEl;i++)
+                        Pom[i]=_Proizvodi[i];
+                delete []_Proizvodi;
+                _Proizvodi=Pom;
+                _MaxBrEl=NoviBrEl;
+        }
+        void DodajProizvod (float Cijena){
+                if(_BrEl==_MaxBrEl)ProsiriPolje(_BrEl+1);
+                _Proizvodi[_BrEl]=Cijena;
+                _BrEl++;
+        }
+        float UkupnaCijena(){
+                float Suma=0;
+                for(int i=0;i<_BrEl;i++)Suma+=_Proizvodi[i];
+                return Suma;
+        }
+        float NajskupljiProizvod(){
+                int max=0;
+                for(int i=0;i<_BrEl;i++)
+                        if(_Proizvodi[i]>_Proizvodi[max])max=i;
+                return _Proizvodi[max];
+        }
+
+        ~Kosarica(){
+                delete[]_Proizvodi;
+        }
+        private:
+        float		*_Proizvodi;
+	
+	int		_BrEl;
+	int		_MaxBrEl;
+};

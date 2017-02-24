@@ -1,0 +1,27 @@
+class Komprimiranje {
+public:
+	Komprimiranje(){
+		_Polje=NULL;
+		_Brel=0;
+	}
+	Komprimiranje (int* polje,int brel) {
+		_Polje=polje;
+		_Brel=brel;
+	}
+	int UkupnaSuma(){
+		int i,j,suma=0;
+		if(_Brel%2) throw "broj elemenata nije paran!";
+		for(i=0,j=1;i<_Brel;i+=2,j+=2) suma+=_Polje[i]*_Polje[j];
+		return suma;
+	}
+	int UkupniBrojElemenata(int vrijednost){
+		int i,j,suma=0;
+		if(_Brel%2) throw "broj elemenata nije paran!";
+		for(i=0,j=1;i<_Brel;i+=2,j+=2) 
+			if(_Polje[i]!=vrijednost) suma+=_Polje[j];
+		return suma;
+	}
+private:
+	int* _Polje;
+	int _Brel;
+};

@@ -1,0 +1,17 @@
+int info (FILE *f, int broj) {
+	struct natjecatelj datoteka;
+	int m, i;
+	fseek (f, 0, SEEK_END);
+	m=ftell (f)/sizeof (datoteka); 
+	fseek (f, 0, SEEK_SET);
+
+	if (broj>=m)
+		return -1;
+	fseek(f,(broj-1)*sizeof(datoteka),SEEK_SET);
+	fread(&datoteka,sizeof(datoteka),1,f);
+	if(!datoteka.redni_broj)
+		return -1;
+	if(datoteka.bodovi>=100)
+		return 1;
+	else return 0;
+}

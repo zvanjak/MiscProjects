@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <math.h>
+
+int main (){
+	int n, i;
+	double red=0.0, pi;
+	scanf("%d", &n);
+	if (n<1 || n>30) printf("n nije valjan");
+	else {
+		for (i=1;i<=n;i++) red += pow(pow(i,6),-1);
+		printf("%.12lf", pow(945*red,1./6));
+	}
+	return 0;
+}

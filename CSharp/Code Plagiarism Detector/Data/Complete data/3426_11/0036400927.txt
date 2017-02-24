@@ -1,0 +1,62 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main () {
+    int mr, ms, i, j, p, q, z=0, x;
+    int mat [20][5];
+    
+    
+    do {
+    scanf ("%d %d", &mr, &ms);
+    }
+    while (((mr<1)||(mr>20))||((ms<1)||(ms>5)));
+    x=ms;
+
+         scanf ("%d %d", &p, &q);
+ 
+ for (i=0; i<mr; i++) {
+     for (j=0; j<ms; j++) {
+   if ((i%2)==0)  mat[i][j]=p;
+    else if ((i%2)==1) mat[i][j]=q;
+     }
+     }
+
+for (i=0; i<mr; i++) {
+     for (j=0; j<ms; j++){
+     printf("%d ", mat[i][j]);
+     
+     }
+     }
+
+
+
+do {
+    if (z!=0) {
+              mat[i][j]=0;
+              }
+              scanf ("%d %d", &i, &j);
+    z++;
+    }
+    while (((i<mr)&&(i>=0))&&((j<ms)&&(j>=0)));
+
+
+
+     
+for (j=0; j<ms; j++) {
+     for (i=0; i<mr; i++){
+     if (mat[i][j]==0){ 
+                        x=x-1; break;}
+     }
+     }
+printf ("%d, %d", z-1, x);
+     
+     for (i=0; i<mr; i++) {
+     for (j=0; j<ms; j++){
+     printf("%d ", mat[i][j]);
+     if (j==(ms-1)) printf ("\n");
+     }
+     }
+     
+
+return 0;
+}

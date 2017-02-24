@@ -1,0 +1,17 @@
+void obrni(zapis **glava){
+ if(*glava==0) return;
+ zapis *pok1,
+   *pok2,
+   *pok3;
+ pok1=0;
+ pok2=*glava;
+ 
+ while(pok2){
+  pok3=pok2->sljed;
+  pok2->sljed=pok1;
+  pok1=pok2;
+  pok2=pok3;
+ }
+ *glava=pok1;
+}
+

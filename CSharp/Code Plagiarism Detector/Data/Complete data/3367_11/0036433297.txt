@@ -1,0 +1,12 @@
+#include<stdio.h>
+
+int main()
+{unsigned char a, b, x, y;
+scanf("%c %c", &a, &b);
+if (a>=65 && a<=70)  x=(a&0x0f)+9;
+else  x=a&0x0f;
+if (b>=65 && b<=70)  y=(b&0x0f)+9;
+else  y=b&0x0f;
+printf("%d",x*16+y);
+return 0;
+}

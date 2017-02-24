@@ -1,0 +1,12 @@
+float prosjek(FILE *f){
+   int broj = 0;
+   int suma = 0;
+   struct album a;
+   fseek(f, 0, SEEK_SET);
+   while ( !feof(f) ){
+      fread(&a, sizeof(a), 1, f);
+      if ( feof(f) ) break;
+      broj++;        suma += a.prodano;
+   }
+   return 1.0 * suma / broj;
+} 

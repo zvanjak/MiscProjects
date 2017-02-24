@@ -1,0 +1,56 @@
+#include <stdio.h>
+#define N (n-1)
+
+int main(void)
+{
+    long int x[50]={0};
+    int i=0,n=0,j=0,br=0;
+    int umnozak=1;
+    
+    do
+    {
+       	scanf("%d",&x[n]);
+        n++;
+    }
+    while(n<50 && x[N]>0);
+   
+    if(N%2)
+	for(i=0;i<=N/2;i++)
+	   {
+		   if(x[i]!=x[N-1-i])
+		   {
+			   printf("Nije");
+			   return 0;
+		   }
+		   else
+		   {
+			   printf("Jest");
+			   return 0;
+		   }
+	   }
+    else
+	   for(i=0;i<N;i++)
+	   {
+		   umnozak *=x[i];
+		   
+		   if(x[i]==1)
+		   {
+			   br++;
+			   continue;
+		   }
+
+			for(j=2;j<=(x[i])-1;j++)
+			   
+				 if(x[i]%j==0)
+				 {
+					 br++;
+					 break;
+				 }
+					       		   
+	   }
+
+	   printf("%d %d",umnozak,N-br);
+
+	return 0;
+}
+    

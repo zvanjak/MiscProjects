@@ -1,0 +1,10 @@
+char *rStrchr(char *niz, char c)
+{
+	if(*niz == '\0')
+		return NULL;
+
+	if(*niz == c)
+		return niz;
+	
+	return rStrchr(niz+1, c);
+}

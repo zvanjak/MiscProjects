@@ -1,0 +1,41 @@
+#include <stdio.h>
+int main()
+{
+	int polje [50], element, broj=0,i,j,check=0, produkt=1, prost=1, broj_prostih=0;
+	for (i=0;i<50;i++){
+		scanf("%d", &element);
+		if (element<=0)break;
+		else polje [i]=element;
+		broj++;
+	}
+	if (broj%2)
+	{
+		for(i=0; i < broj/2 ;i++)
+		{
+			if (polje [i]!=polje[broj-1-i])
+			{
+				check=1;
+				break;
+			}
+		}
+		if (check) printf("Nije");
+		else printf("Jest");
+	}
+	else 
+	{
+		for(i=0; i < broj; i++) produkt*=polje[i];
+		for(i=0; i < broj; i++)
+		{
+			prost=1;
+			for ( j = 2; j <= polje[i]-1; j++) {
+				if(! (polje[i] % j)) { 
+					prost = 0; 
+					break;
+				}
+			}
+			if (prost && polje[i]!=1) broj_prostih++;
+		}
+		printf("%d %d", produkt, broj_prostih);
+	}
+	return 0;
+}

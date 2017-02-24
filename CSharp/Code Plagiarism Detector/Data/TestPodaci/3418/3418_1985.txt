@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <malloc.h>
+
+
+int main()
+{
+	int n;
+	int i;
+	int * polje;
+	int index, value;
+	int operations = 0, zeros= 0;
+	scanf("%d",&n);
+	while ((n<1) || (n>100))
+	{
+		scanf("%d", &n);
+	}
+	polje = (int *) malloc(n*sizeof(int));
+	for (i = 0; i<n; i++)
+	{
+		scanf("%d", &(*(polje+i)));
+	}
+	scanf("%d", &index);
+	
+	while ((index >=0 ) && (index <n))
+	{
+		scanf("%d", &value);
+		if (value != 0)
+		{
+			*(polje + index) /= value;
+			operations++;
+		}
+		scanf("%d", &index);
+	}
+	for (i=0; i<n; i++)
+	{
+			if (*(polje+i)== 0)
+		{
+			zeros++;
+		}
+	}
+	printf("%d %d",  zeros, operations);
+}

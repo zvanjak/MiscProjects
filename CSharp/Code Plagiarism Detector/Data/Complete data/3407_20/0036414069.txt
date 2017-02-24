@@ -1,0 +1,28 @@
+char *SamoSamoglasnici (char *ulazni_niz)
+{
+	int n,i,brojac=0,a=0;
+	char *p;
+	if(*ulazni_niz=='\0' || *ulazni_niz==NULL) return NULL;
+
+	n=strlen(ulazni_niz);
+	for(i=0;i<n;i++)
+	{
+		if(ulazni_niz[i]==65 || ulazni_niz[i]==69 || ulazni_niz[i]==73 || ulazni_niz[i]==79 || ulazni_niz[i]==85 || ulazni_niz[i]==97 || ulazni_niz[i]==101 || ulazni_niz[i]== 105 || ulazni_niz[i]== 111 || ulazni_niz[i]== 117)
+		{
+			brojac++;
+		}
+	}
+
+	p=(char *) malloc (brojac*sizeof(char));
+	
+	for(i=0;i<n;i++)
+	{
+		if(ulazni_niz[i]==65 || ulazni_niz[i]==69 || ulazni_niz[i]==73 || ulazni_niz[i]==79 || ulazni_niz[i]==85 || ulazni_niz[i]==97 || ulazni_niz[i]==101 || ulazni_niz[i]== 105 || ulazni_niz[i]== 111 || ulazni_niz[i]== 117)
+		{
+			p[a]=ulazni_niz[i];
+			a++;
+		}
+	}
+	p[a]='\0';
+	return p;
+}

@@ -1,0 +1,24 @@
+# include <stdio.h>
+int main(){
+int broj;
+int suma;
+int x1;
+int x2;
+int x3;
+
+scanf("%d", &broj);
+x1=broj/100;
+x2=(broj%100)/10;
+x3=broj%10;
+suma=0;
+
+if (broj<250 || broj>950)
+suma=x1+x2+x3;
+else
+{
+if (x1 % 2) suma=suma+x1;
+if (x2 % 2) suma=suma+x2;
+if (x3 % 2) suma=suma+x3; }
+printf("%d", suma);
+return 0;
+}

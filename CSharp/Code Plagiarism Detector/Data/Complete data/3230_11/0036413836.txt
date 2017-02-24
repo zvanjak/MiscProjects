@@ -1,0 +1,30 @@
+#include <stdio.h>
+main() {
+int n = 0;
+int a;
+int valid = 0;
+double e;
+double fakt;
+fakt = 1.;
+e=0;
+
+while( valid == 0 ) {
+scanf("%d", &n);
+valid = 1;
+if( n < 1 ) {
+printf("n nije valjan");
+valid = 0;
+}
+if( n > 30 ) {
+printf("n nije valjan");
+valid = 0;
+}
+}
+for( a = 1; a <= n; a++ )       
+fakt = fakt * a;
+fakt = 1 / fakt;
+e = 1+fakt;
+printf("%.12f", e);
+                         
+}
+return 0;

@@ -1,0 +1,25 @@
+#include <stdio.h>
+int main ()
+{
+	char c1,c2,c3,c4,c5,c6;
+	int b,s;
+	scanf("%c %c %c %c %c %c", &c1, &c2, &c3, &c4, &c5, &c6);
+	b=0;
+	s=0;
+	if ((c1>='a'&& c1<='z') || (c1>='A' && c1<='Z'))
+	{
+if ((c2>='a'&& c2<='z') || (c2>='A' && c2<='Z')) s=s+1;
+if ((c3>='a'&& c3<='z') || (c3>='A' && c3<='Z')) s=s+1;
+if ((c4>='a'&& c4<='z') || (c4>='A' && c4<='Z')) s=s+1;
+if ((c5>='a'&& c5<='z') || (c5>='A' && c5<='Z')) s=s+1;
+if ((c6>='a'&& c6<='z') || (c6>='A' && c6<='Z')) s=s+1;
+if (c2>='0'&& c2<='9') b=b+1;
+if (c3>='0'&& c3<='9') b=b+1;
+if (c4>='0'&& c4<='9') b=b+1;
+if (c5>='0'&& c5<='9') b=b+1;
+if (c6>='0'&& c6<='9') b=b+1;
+if (s>=1 && b>=1) printf ("Jest"); else printf ("Nije");
+	}
+	else printf ("Nije");
+	return 0;
+}

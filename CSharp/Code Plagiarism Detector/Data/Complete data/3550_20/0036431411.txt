@@ -1,0 +1,66 @@
+int izbacinaj(zapis **glava) {
+        zapis *prijemin = NULL;
+
+
+        zapis *prije = NULL;
+        /////////////////////////////// TRAZI MINIMUM /////////////////////////////
+        int elecount = 0;
+        zapis *element = *glava;
+        float min = *glava ? (*glava)->pros : 0;
+        while (element) {
+                if (element->pros < min) {
+                        min = element->pros;
+                        prijemin = prije;
+                } 
+                prije = element;
+                element = element->sljed;
+                elecount ++;
+        }
+        if (!elecount) return 0;
+        if (elecount == 1) {
+                *glava = NULL;
+                // delete glava; <== ali nismo sigurni kako je u sluzbenom rjesenju alocirano (sa malloc ili new) pa bolje nista ne raditi da ne bi slucajno krepavalo
+                return 1;
+        }
+        if (elecount > 1) {
+                if (!prijemin)
+                        (*glava) = (*glava)->sljed;
+                else if (prijemin->sljed)
+                        prijemin->sljed = prijemin->sljed->sljed;
+        }
+
+
+        //////////////////////////TRAZI MAKSIMUM//////////////////////////
+        elecount = 0;
+        element = *glava;
+        float max = *glava ? (*glava)->pros : 0; zapis *prijemax = NULL;
+        prije = NULL;
+        while (element) {
+                if (element->pros > max) {
+                        max = element->pros;
+                        prijemax = prije;
+                }
+
+                prije = element;
+                element = element->sljed;
+                elecount ++;
+        }
+
+        if (elecount == 1) {
+                *glava = NULL;
+                // delete glava; <== ali nismo sigurni kako je u sluzbenom rjesenju alocirano (sa malloc ili new) pa bolje nista ne raditi da ne bi slucajno krepavalo
+        }
+        if (elecount > 1) {
+                if (!prijemax)
+                        (*glava) = (*glava)->sljed;
+                else if (prijemax->sljed)
+                        prijemax->sljed = prijemax->sljed->sljed;
+
+        }
+
+
+
+
+        ///////////////////////// GOTOVO ////////////////////////
+        return 2;
+}

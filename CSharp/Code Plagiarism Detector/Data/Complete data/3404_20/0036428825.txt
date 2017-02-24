@@ -1,0 +1,26 @@
+int* napraviPolje(int *A, int Na, int a, int b, int* Nc)
+{
+	int i;
+	int ispitivac, kazalo;
+	int *c=0;
+	(*Nc)=0;
+	if(a>b)
+		return 0;
+	for(i=0;i<Na;i++)
+	{
+		kazalo=0;
+		for(ispitivac=a;ispitivac<=b;ispitivac++)
+		{
+			if(*A % ispitivac == 0)
+				kazalo++;
+		}
+		if(kazalo == 0)
+		{	
+			(*Nc)++;
+			c=(int *) realloc (c, (*Nc) * sizeof(int));
+			*(c + (*Nc) -1) = (*A);
+		}
+	A++;
+	}
+return c;
+}

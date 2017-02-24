@@ -1,0 +1,17 @@
+int *napraviPolje (int *A, int Na, int *B, int Nb, int *Nc){
+	int *p=NULL;
+	int i, min, broj=0;
+	min=*B;
+	for (i=1; i<Nb; i++){
+		if (min>*(B+i)) min=*(B+i);
+	}
+	for (i=0; i<Na; i++){
+		if (*(A+i)>min){
+			p =(int *) realloc (p, sizeof(int)* (1+broj));
+			*(p+broj)=*(A+i);
+			broj++;
+		}
+	}
+	*Nc=broj;
+	return p;
+}

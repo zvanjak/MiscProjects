@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+int main(void)
+{
+	int x, i, j, k, l;
+
+	scanf("%d", &x);
+
+	i = x / 1000;
+	j = (x / 100) % 10;
+	k = (x / 10) % 10;
+	l = x % 10;
+
+	if (i % 2 != 0)
+	{
+		if (j % 2 != 0)
+		{
+			if (k % 2 != 0)
+			{
+				if (l % 2 != 0)
+				{
+					x = 0;
+					printf ("%d", x);
+				}
+				else
+				{x %= 10;
+				printf("%d", x);
+				}
+			}
+			else
+			{x %= 100;
+			printf("%d", x);
+			}
+		}
+		else
+		{x %= 1000;
+		printf("%d", x);
+		}
+	}
+	else printf("%d", x);
+
+	return 0;
+}

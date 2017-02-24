@@ -1,0 +1,15 @@
+int Kolikounutar(kruznica &kruz, Tocka poljetocaka[], int n) {
+int suma=0, i;
+float xx,xy,sx,sy,r,d;
+tocka T1;
+sx = kruz.getcenterX();
+sy = kruz.getcenterY();
+r = kruz.getradius();
+for (i=0; i<n; i++) {
+   T1= poljetocaka[i];
+   xx=T1.getX();
+   xy=T1.getY();
+   d=sqrt((sx-xx)*(sx-xx)+(sy-xy)*(sy-xy));
+   if (d<r) suma++;};
+return suma;
+};

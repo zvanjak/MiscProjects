@@ -1,0 +1,47 @@
+#include<stdio.h>
+
+int main()
+{
+int mr, ms, mat[21][6], i, j;
+int broj_parne=0, broj_neparne=0;
+
+	do
+	{
+		scanf("%d %d", &mr, &ms);
+	}while(((mr<1) || (mr>20)) && ((ms<1) || (ms>5)));
+
+	for(i=0; i<mr; i++)
+	{
+		for(j=0; j<ms; j++)
+		{
+			scanf("%d", &mat[i][j]);
+		}
+	}
+
+	for(i=0; i<mr; i++)
+	{
+		for(j=0; j<ms; j++)
+		{
+			if(mat[i][j]%2==0)
+			{
+			broj_parne+=1;
+			j=ms-1;
+			}
+		}
+	}
+
+	for(j=0; j<ms; j++)
+	{
+		for(i=0; i<mr; i++)
+		{
+			if(mat[i][j]%2!=0)
+			{
+			broj_neparne+=1;
+			i=ms-1;
+			}
+		}
+	}
+
+printf("%d %d", broj_parne, broj_neparne);
+return 0;
+}

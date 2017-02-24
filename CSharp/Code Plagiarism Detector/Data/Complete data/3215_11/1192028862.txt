@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main () {
+ int br=1, par=0, nepar=0;
+ while (br != 0) {
+       scanf ("%d", &br);
+       if ( br > 0){
+            if (br%2==0) {++par;}
+            else if (br%2 != 0) {++nepar;}
+            }
+       }
+ printf ("%d %d", par, nepar);
+ return 0;
+}

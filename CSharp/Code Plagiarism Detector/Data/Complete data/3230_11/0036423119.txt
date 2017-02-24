@@ -1,0 +1,15 @@
+#include <stdio.h>
+main(){
+int i,j,n;
+long double e,pomocna;
+scanf("%d", &n);
+e=1;
+pomocna = 1.;
+if ((n<1) || (n>30) ) printf("n nije valjan");
+else {
+	for (i=1; i <= n; i++){
+		for (j=1; j<=i; j++) pomocna = pomocna * j;			
+		e = e + 1./pomocna;
+		pomocna = 1.;}
+printf("%.12f", e);}
+return 0;}

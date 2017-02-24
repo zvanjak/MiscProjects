@@ -1,0 +1,24 @@
+void azuriraj(FILE *f, int redni_br, int bodovi)
+{
+	struct natjecatelj nat;
+	int nasao = 0, broj_nat = 0;
+
+	f = fopen("nat.dat", "r+b");
+
+	while(!nasao)
+	{
+		fread(&nat, sizeof(nat), 1, f);
+		if(feof(f)) break;
+
+		if(nat.redni_br == redni_br)
+		{
+			fseek(f, broj_nat*sizeof(nat), SEEK_SET);
+			nat.bodovi = bodovi;
+			fwrite(&nat, sizeof(nat), 1, f);
+			nasao = !nasao;
+		}
+		broj_nat++;
+	}
+
+	fclose(f);
+}

@@ -1,0 +1,47 @@
+#include <stdio.h>
+
+#define DIM 100
+
+int main() {
+	int i=0, j=0, suma=0, broj[DIM];
+	int sumap=0, suman=0;
+	char heks[DIM];
+
+	for (i=0; i<DIM; i++) {
+		scanf("%c", &heks[i]);
+		if (heks[i]>='0' && heks[i]<='9' || heks[i]>='A' && heks[i]<='F' || heks[i]>='a' && heks[i]<='f')
+			continue;
+		else
+			break; }
+
+	if (i==0)
+		printf("%d", suma);
+
+	else {
+		for (j=0; j<i; j++) {
+			if (heks[j]=='A' || heks[j]=='a')
+				broj[j]=10;
+			if (heks[j]=='B' || heks[j]=='b')
+				broj[j]=11;
+			if (heks[j]=='C' || heks[j]=='c')
+				broj[j]=12;
+			if (heks[j]=='D' || heks[j]=='d')
+				broj[j]=13;
+			if (heks[j]=='E' || heks[j]=='e')
+				broj[j]=14;
+			if (heks[j]=='F' || heks[j]=='f')
+				broj[j]=15;
+			if (heks[j]>='0' && heks[j]<='9')
+				broj[j]=heks[j]-48; }
+
+		for (j=0; j<i; j++) {
+			if (broj[j]%2==0)
+				sumap+=broj[j];
+			if (broj[j]%2==1)
+				suman+=broj[j]; }
+
+		suma=sumap-suman;
+		printf("%d", suma, sumap, suman); }
+
+	return 0;
+}

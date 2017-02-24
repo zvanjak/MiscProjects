@@ -1,0 +1,46 @@
+int *Find3Max(int *p, int n){
+	int *r,a1,a2,a3,b;
+	int i;
+
+	if(n<3)
+		return NULL;
+	r=(int *)malloc(3*sizeof(int));
+	a1=p[0];
+	a2=p[1];
+	a3=p[2];
+
+	if(a1>a3){
+		b=a3;
+		a3=a1;
+		a1=b;
+	}
+	if(a1>a2){
+		b=a2;
+		a2=a1;
+		a1=b;
+	}
+	if(a2>a3){
+		b=a3;
+		a3=a2;
+		a2=b;
+	}
+
+	for(i=3;i<n;++i)
+		if(p[i]>a1){
+			a1=p[i];
+			if(a1>a3){
+				b=a3;
+				a3=a1;
+				a1=b;
+			}
+			if(a1>a2){
+				b=a2;
+				a2=a1;
+				a1=b;
+			}
+		}
+	r[0]=a3;
+	r[1]=a2;
+	r[2]=a1;
+	return r;
+}

@@ -1,0 +1,54 @@
+class Kosarica {
+    public:
+        Kosarica();
+        void DodajProizvod(float cijena);
+        float ProsjecnaCijena();
+        float NajjeftinijiProizvod();
+        ~Kosarica();
+        
+        
+    private:
+        float *_niz;
+        int _broj_pod;
+        int _max_pod;
+        float _suma;
+};
+
+Kosarica::Kosarica(){
+    _broj_pod=0;
+    _max_pod=100;
+    _suma=0;
+    _niz=(float *)malloc(sizeof(float)*_max_pod);
+}
+
+void Kosarica::DodajProizvod(float cijena) {
+    _niz[_broj_pod]=cijena;
+    _broj_pod++;
+    if (_broj_pod==_max_pod) {
+        _niz=(float *)realloc(_niz,_max_pod+1);
+        _max_pod=_max_pod+1;
+    }
+    _suma+=cijena;
+}
+
+float Kosarica::ProsjecnaCijena() {
+    return (_suma/_broj_pod);
+
+}
+
+
+float Kosarica::NajjeftinijiProizvod() {
+    int i=0;
+    float min=_niz[i];
+    for (i=1; i<_broj_pod; i++) {
+        if (_niz[i]<=min) min=_niz[i];
+    }
+    return min;
+}
+
+Kosarica::~Kosarica() {
+    
+    free(_niz);
+    
+}
+    

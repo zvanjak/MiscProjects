@@ -1,0 +1,25 @@
+#include<stdio.h>
+int main()
+{
+	char p[100];
+	int x[100],i,n,snep=0,spar=0,rez;
+	for (i=0;i<100;i++)
+		x[i]=16;
+	i=-1;
+	do {
+		i++;
+		scanf("%c",&p[i]);
+		if (p[i]>=48 && p[i]<=57) x[i]=p[i]-'0';
+		else if (p[i]>=65 && p[i]<=70) x[i]=p[i]-55;
+		else if (p[i]>=97 && p[i]<=102) x[i]=p[i]-87;
+	} while (x[i]>=0 && x[i]<=15 && i<100);
+	n=i;
+	for(i=0;i<n;i++)
+	{
+		if (x[i]%2) snep=snep+x[i];
+		else spar=spar+x[i];
+	}
+	rez=spar-snep;
+	printf("%d",rez);
+	return 0;
+}

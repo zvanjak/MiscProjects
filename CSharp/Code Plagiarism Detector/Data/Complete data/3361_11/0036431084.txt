@@ -1,0 +1,13 @@
+#include <stdio.h> 
+int main () {
+	int broj;
+	scanf ("%d", &broj);
+	if (broj>=1000 && broj<=9999)
+	{
+if ((broj/100 + (broj - (broj/100)*100)) % (broj/100) == 0)
+printf ("Jest");
+else
+printf ("Nije");}
+	else{
+		return 0;}
+}

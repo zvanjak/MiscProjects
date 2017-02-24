@@ -1,0 +1,38 @@
+void spoji(char * ime, char *prezime, char *JMBAG, char *izlazni){
+	int zadnji, i=0,j=0, razmakPrije=0,znamenki=0, flag=1, dulj=0;
+	for (i=0, j=0; prezime[i]; i++){
+		if (prezime[i]!=' ') {
+			izlazni[j]=prezime[i];
+			zadnji=j;
+			j++;
+		}
+	}
+	izlazni[++zadnji]='\0';
+	strcat(izlazni, ", ");
+	for (i=0,j=zadnji+2; ime[i];i++){
+		if (ime[i]!=' ') {
+			izlazni[j]=ime[i];
+			zadnji=j;
+			j++;
+		}
+	}
+	izlazni[++zadnji]='\0';
+	strcat(izlazni, ": ");
+	for(i=0;i<strlen(JMBAG);i++){
+		if (JMBAG[i]==' '&&flag)
+			razmakPrije++;
+		if (isdigit(JMBAG[i])){
+			znamenki++;
+			flag=0;
+		}
+	}
+	dulj=strlen(izlazni);
+	if (znamenki<6) {
+		for (i=0;i<6-znamenki;i++) strcpy(izlazni+strlen(izlazni), "0");
+		strncpy(izlazni+dulj+6-znamenki, JMBAG+razmakPrije,znamenki);
+	}
+	else {
+		strncpy(izlazni+dulj, JMBAG+razmakPrije+znamenki-6,6);
+	}
+	*(izlazni+dulj+6)='\0';
+}

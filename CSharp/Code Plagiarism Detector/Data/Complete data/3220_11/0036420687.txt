@@ -1,0 +1,48 @@
+#include<stdio.h>
+int main()
+{
+int a,b,c,d,z,x,y,e,f,g,h;          /*deklaracija varijabli*/
+scanf("%d",&z);                     /*unos broja*/
+if(z<0)                             /*provjera je li broj z<0*/
+      {
+      goto ispis;
+      }
+a=z/1000;                           /*izracun 1 znamenke*/
+x=z%1000;                           
+b=x/100;                            /*izracun 2 znamenke*/
+y=x%100;
+c=y/10;                             /*izracun 3 znamenke*/
+d=y%10;                             /*izracun 4 znamenke*/
+e=a+48;
+f=b+48;
+g=c+48;
+h=d+48;
+if(a%2==0)
+         {
+         e=32;
+         }
+if(b%2==0)
+         {
+         f=32;                       /*brisanje nepotrebnih znamenki*/
+         }
+if(c%2==0)
+         {
+         g=32;
+         }
+if(d%2==0)
+         {
+         h=32;
+         }
+if((a%2==0)&&(b%2==0)&&(c%2==0)&&(d%2==0))
+         {
+         z=0;
+         goto ispis;
+         }
+printf("%c%c%c%c",e,f,g,h);      /*ispis za broj>0*/
+goto kraj;
+ispis:printf("%d",z);                  /*ispis za broj<0*/
+kraj:return 0;
+}
+
+
+

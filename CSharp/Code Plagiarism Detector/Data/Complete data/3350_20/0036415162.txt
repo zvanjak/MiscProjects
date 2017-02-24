@@ -1,0 +1,19 @@
+int najbolji(FILE *f){
+
+    int zapis, bod = 0, rbr = 0, i = 0;
+    struct natjecatelj najbolji;
+    
+    fseek(f, 0L, SEEK_END);
+    zapis = ftell(f) / sizeof(najbolji);
+    fseek(f, 0L, SEEK_SET);
+    
+    for (i = 0; i < zapis; i++){
+        fread(&najbolji, sizeof(najbolji), 1, f);
+
+			if ((najbolji.bodovi > bod)&&(najbolji.redni_br != 0)){
+				bod = najbolji.bodovi;
+				rbr = najbolji.redni_br;
+			}
+        }
+    return rbr;
+} 

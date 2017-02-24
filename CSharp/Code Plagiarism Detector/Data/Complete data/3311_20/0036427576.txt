@@ -1,0 +1,12 @@
+#include<stdio.h>
+float prosjek(FILE *f){
+	int brojac=0,suma=0;
+	struct {
+		char naziv[30+1];
+        char autor[20+1];
+		int prodano;}album;
+		while(fread(&album,sizeof(album),1,f)==1){
+			brojac++;
+			suma+=album.prodano;}
+		return ((float)suma)/brojac;
+}

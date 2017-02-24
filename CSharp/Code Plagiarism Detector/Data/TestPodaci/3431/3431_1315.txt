@@ -1,0 +1,42 @@
+#include <stdio.h>
+int main () {
+	int i,sump=0,sumn=0;
+	char polje[100];
+	for (i=0; i<100; i++) {
+	scanf("%c", &polje[i]);
+	if ((polje[i]<'0') || 
+		((polje[i]>'9') && (polje[i]<'A')) || 
+		((polje[i]>'F') && (polje[i]<'a')) || 
+		(polje[i]>'f')) { 
+			polje[i]='\0';
+			break;
+		}
+	}
+	i=0;
+	while (polje[i] !='\0') {
+		if (polje[i]<'A') {
+			if (polje[i]%2) sumn=sumn+polje[i]-'0';
+			else sump=sump+polje[i]-'0';
+		}
+		else {
+			switch (polje[i]) {
+				case 'A':
+				case 'a': sump+=10; break;
+				case 'B':
+				case 'b': sumn+=11; break;
+				case 'C':
+				case 'c': sump+=12; break;
+				case 'D':
+				case 'd': sumn+=13; break;
+				case 'E':
+				case 'e': sump+=14; break;
+				case 'F':
+				case 'f': sumn+=15; break;
+				default: break;
+			}
+		}
+		i++;
+	}
+	printf("%d",sump-sumn);
+	return 0;
+}

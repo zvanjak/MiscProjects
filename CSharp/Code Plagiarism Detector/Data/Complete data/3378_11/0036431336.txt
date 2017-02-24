@@ -1,0 +1,15 @@
+# include <stdio.h>
+int main() 
+{
+int oh, nh, bh;
+float b, n;
+printf ("Unesi broj odradenih sati, broj nominalnih sati i brutto cijenu sata u kunama \n");
+scanf ("%d, %d, %d", &oh, &nh, &bh); 
+b=bh;
+if (oh<nh) b=0.9*bh;
+if (oh>nh) b=1.15*bh;
+if ((b*oh)>6000) n=0.7*b*oh;
+else n=0.8*b*oh;
+printf ("%.2f", n);
+return 0;
+}

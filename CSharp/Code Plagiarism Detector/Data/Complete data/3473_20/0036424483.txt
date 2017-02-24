@@ -1,0 +1,32 @@
+Krug funk4(Pravokutnik p)
+
+{
+
+     double a,b,x1,y1,xs,ys,r;
+
+     a=p.getVisina();
+
+     b=p.getSirina();
+
+     x1=p.getDLkut().X;
+
+     y1=p.getDLkut().Y;
+
+ 
+
+     r=(sqrt(a*a + b*b))/2;
+
+     xs=x1+(a/2);
+
+     ys=y1+(b/2);
+
+    
+
+     Tocka s(xs,ys);
+
+     Krug k(s,r);
+
+     return k;
+
+}
+

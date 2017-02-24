@@ -1,0 +1,19 @@
+#include <stdio.h>
+main()
+{
+int i, n;
+float a;
+a=1;
+scanf("%d", &n);
+if(n<1 || n>100)
+printf("\nn nije valjan");
+else{
+for (i=2; i<=n; i++){
+if(i%2==0)
+a=a-1/i;
+else
+a=a+1/i;
+}
+printf("\n %f", a);
+}
+}

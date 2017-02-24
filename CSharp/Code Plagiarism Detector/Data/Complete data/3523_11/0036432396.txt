@@ -1,0 +1,15 @@
+int izbaci(char *ulazni, char *podniz)
+{
+   int i,j;
+   int c=0, n=0;
+   for(i=0;podniz[i];i++)
+	   for(j=0;ulazni[j];j++)
+		   if (podniz[i]==ulazni[j])
+			{
+				for(n=j;ulazni[n];n++)
+				   ulazni[n]=ulazni[n+1];
+				j--;
+				c++;
+			}
+    return  c;
+}

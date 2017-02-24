@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <malloc.h>
+#include <stdlib.h>
+
+int *napraviPolje (int*A, int Na, int a, int b, int *Nc)
+{
+	int i,j;
+	int *c;
+	*Nc=0;
+        if(a>b)return 0;
+	c=(int*)(malloc (Na*sizeof(int)));
+	if(!c)return(0);
+	
+	for(i=0;i<Na;i++){
+		for(j=a;j<b+1;j++){
+			if(A[i]%j==0){
+			*Nc=*Nc+1;
+			*c=A[i];
+			c++;
+			break;
+			}
+		}
+	}
+	return c;
+}

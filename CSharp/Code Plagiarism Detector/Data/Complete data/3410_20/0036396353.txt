@@ -1,0 +1,15 @@
+char *StvoriNiz(char *poljeznakova, int duljina, int n) {
+        int i;
+        char *noviNiz = (char *) malloc ((n+1)*sizeof(char));
+
+
+        if (noviNiz == NULL)
+                return (NULL);
+
+        for (i=0; i<n; i++)
+                *(noviNiz+i) = *(poljeznakova + moj_rand ()%duljina);
+
+        *(noviNiz+i) = '\0';
+
+        return (noviNiz);
+}

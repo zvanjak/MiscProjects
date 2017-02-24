@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main()
+{
+  int j,d,s,t,u,x;
+  scanf("%d",x);
+  j=x%10;
+  x=x/10;
+  d=x%10;
+  x=x/10;
+  s=x%10;
+  x=x/10;
+  t=x%10;
+  u=j*d*s*t;
+  if (u%2) printf("%d", t);
+  else printf("%d", j);
+  return 0;
+}

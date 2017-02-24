@@ -1,0 +1,20 @@
+void AritSred_StdDev(DinamickoPolje &polje, float *ArSred, float *StdDev) {
+
+	int i;
+	*ArSred = 0;
+
+	for (i=0; i<polje.BrojElemenata(); i++) {
+		*ArSred += polje.DohvatiElement(i);	
+	}
+
+	*ArSred /= (float) polje.BrojElemenata();
+
+	*StdDev = 0;
+	
+	for (i=0; i<polje.BrojElemenata(); i++) {
+		*StdDev += (*ArSred - polje.DohvatiElement(i)) * (*ArSred - polje.DohvatiElement(i));
+	}
+	
+	*StdDev /= (polje.BrojElemenata()*(polje.BrojElemenata()-1));
+	*StdDev = sqrt(*StdDev);
+}

@@ -1,0 +1,14 @@
+int veci_od (FILE *f, int n){
+	int c=0,brojac=0;
+	struct natjecatelj buffer;
+	
+	fread(&buffer,sizeof(buffer),1,f);
+	if(buffer.redni_br==0) {c=1;}
+	if(c==0){
+		if(buffer.bodovi>=n) brojac++;
+		while(fread(&buffer,sizeof(buffer),1,f)){
+			if(buffer.bodovi>=n) brojac++;
+		}
+	}
+	return brojac;
+}

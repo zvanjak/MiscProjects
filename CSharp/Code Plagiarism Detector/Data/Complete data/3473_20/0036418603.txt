@@ -1,0 +1,6 @@
+Krug fun4(Pravokutnik p) {
+    Tocka srediste(p.getSirina() / 2 + p.getDLkut().X, p.getVisina() / 2 + p.getDLkut().Y);
+    double r = sqrt(p.getSirina() * p.getSirina() + p.getVisina() * p.getVisina()) / 2;
+    Krug kruznica(srediste, r);
+    return kruznica;
+}

@@ -1,0 +1,15 @@
+int *napraviPolje(int *A,int Na,int *B,int Nb,int *Nc){
+int broj=0;
+int *c;
+int i,min=B[0];
+for(i=1;i<Nb;i++)
+        if(B[i] < min)min = B[i];
+for(i=0;i<Na;i++)
+        if(A[i] < min)broj++;
+c = (int *)malloc(sizeof(int)*broj);
+*Nc = broj;
+broj = 0;
+for(i = 0;i < Na;i++)
+        if(A[i] < min)c[broj++] = A[i];
+return c;
+}

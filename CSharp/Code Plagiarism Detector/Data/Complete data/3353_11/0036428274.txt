@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include <math.h>
+int main () {
+	int broj, m;
+	scanf ("%d%d", &broj, &m);
+	if (m>=1 && m<=4)
+		broj = (broj % (int) pow (10, (m-1))) + (int) (broj / pow (10, m)) * (int) pow (10, (m-1));
+	else
+		broj = broj / 1000 + broj % 10 + ((broj / 100) % 10) + ((broj % 100) / 10);
+	printf("%d", broj);
+	return 0;
+}

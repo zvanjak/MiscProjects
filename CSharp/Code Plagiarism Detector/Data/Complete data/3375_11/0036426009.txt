@@ -1,0 +1,26 @@
+#include <stdio.h>
+int main(){
+	int x,y,a;
+	scanf("%d",&x);
+	if (x>=1000 && x<=9999 || x>=-9999 && x<=-1000) {
+		a=0;
+		
+		y=x/1000;
+		if (y%2!=0 && a==0){x=x-1000*y;}else{a=1;}
+		
+		y=x/100;
+		if (y%2!=0 && a==0){x=x-100*y;}else{a=1;}
+		
+		y=x/10;
+		if (y%2!=0 && a==0){x=x-10*y;}else{a=1;}
+		
+		y=x/1;
+		if (y%2!=0 && a==0){x=x-1*y;}else{a=1;}
+
+		
+		printf("%d",x);
+	}
+
+	return 0;
+
+}

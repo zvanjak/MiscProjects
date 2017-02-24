@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <math.h>
+
+double fja(double x)
+{
+	double eNaMinus1;
+	double t1;
+	double t2;
+
+	eNaMinus1 = exp(-1.);
+	t1 = sin(x + eNaMinus1);
+	t2 = sin(exp(t1));
+	return cos(pow(eNaMinus1, t2));		
+}
+
+int main()
+{
+	double deltax;
+	float x[52];
+	double aproks[52];
+	int n, i;
+
+	scanf("%lf", &deltax);
+	for(n = 0;;n++)
+	{
+		scanf("%f", &x[n]);
+		if(x[n] == 0.0) break;
+	}
+
+	for(i = 0; i < n; i++)
+		aproks[i] = ( fja(x[i] + deltax) - fja(x[i]) ) / deltax;
+	
+	for(i = 0; i < n; i++)
+		printf("%.2lf ", atan(aproks[i]));
+	
+	return 0;
+}

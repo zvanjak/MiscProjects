@@ -1,0 +1,7 @@
+int rStrlen (char *niz)
+{
+  int broj=0;
+  kontrola();
+  if (*niz!=0) broj=1+rStrlen(niz+1);
+  return broj;
+}

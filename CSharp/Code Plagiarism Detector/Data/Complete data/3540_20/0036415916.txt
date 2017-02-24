@@ -1,0 +1,31 @@
+int izbaci(zapis **glava)
+{
+	zapis *p, *pp;
+	int br=0;
+	if(*glava==NULL) return 0; //lista je prazna
+	//izbacivanje elemenata sa pocetka liste
+	while(*glava && ((*glava)->pros < 2.0))
+	{
+		p=*glava;
+		*glava=(*glava)->sljed;
+		free(p);
+		br++;
+	}
+
+	if(*glava)
+	{
+		p=*glava;
+		while(p->sljed)
+		{
+			if(p->sljed->pros < 2.0)
+			{
+				pp=p->sljed;
+				p->sljed=p->sljed->sljed;
+				free(pp);
+				br++;
+			}
+			else p=p->sljed;
+		}
+	}
+	return br;
+}

@@ -1,0 +1,16 @@
+void obrni (zapis **glava){
+	if (*glava!=NULL){
+	zapis *p,*s,*r;
+	s=NULL;
+	r=*glava;
+	p=r->sljed;
+	do {
+		r->sljed=s;
+		s=r;
+		r=p;
+		p=p->sljed;
+	}while (p!=NULL);
+	r->sljed=s;
+	*glava=r;
+	}
+}

@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <math.h>
+int main (){
+	int n,i;
+	long double pi,red,p;
+	/*printf("Upisite broj clanova reda:\n");*/
+	scanf("%d", &n);
+	if ((n>=1) && (n<=25)) {
+		red=1;
+		for (i=2;i<n;i++) {
+			red=red+(1/(pow(i,8)));
+		}
+		p=red*9450;
+		for (i=1;i<4;i++) { 
+			p=sqrt(p);
+		}
+		pi=p;
+		/*printf("\npi=%0.12f\n", pi);*/
+                printf ("%.12f", pi);
+	}
+	else /*printf("n nije valjan!\n");*/ printf("n nije valjan");
+	return 0;
+}

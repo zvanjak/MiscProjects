@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main(){
+	int d, g, i, n, j;
+
+	scanf("%d %d", &d, &g);
+
+	if (d > 0 && g > 0 && g > d){
+		for (i=d; i<=g; i++){
+			n = 0;
+			for (j=2; j<=i; j+=2)
+				n += j; 
+			printf("%d ", n);
+		}
+	}
+	else
+		printf("D i G nisu valjani");
+
+	return 0;
+}

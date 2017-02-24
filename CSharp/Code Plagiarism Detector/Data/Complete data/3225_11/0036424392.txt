@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include<math.h>
+int main(){
+	int n, br;
+	double red=0, clan;
+	scanf("%d",&n);
+	if (!(n>=1) || !(n<=400)) 
+	{printf("n nije valjan");}	
+	else {
+		for (br=1; br<=n; br=br+1){
+		clan=1./pow((2*br-1),2);
+		red=red+clan;};
+	red=sqrt(red*8);
+    printf("%1.12f",red);
+	}
+return 0;
+}

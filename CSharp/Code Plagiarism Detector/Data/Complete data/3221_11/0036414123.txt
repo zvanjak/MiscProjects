@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main( void ) {
+   int A, d, B, cnt;
+   scanf( "%d%d%d", &A, &d, &B );
+
+   for( cnt = 0; A <= B; ++cnt ) {
+      A += d;
+      printf( "%d ", A );
+   }
+
+   printf( "%d\n", cnt );
+   return 0;
+}

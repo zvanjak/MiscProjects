@@ -1,0 +1,11 @@
+Ekipa StvoriISortiraj(char *naziv){
+	Ekipa m(naziv);
+	m.Napuni();
+	Nogometas t;
+	for(int w=0;w<11;w++){
+		for(int q=0;q<11;q++){
+			t=m.operator [](q);
+			if(w+1==t.VratiBroj()) m.Zamijeni(w,q);}}
+		
+	return m;
+}

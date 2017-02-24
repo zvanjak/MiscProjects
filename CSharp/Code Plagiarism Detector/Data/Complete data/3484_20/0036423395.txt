@@ -1,0 +1,89 @@
+class CjelobrojniNiz {
+
+private:
+	int *niz;
+	int BrCl;	
+	int j;		
+public:
+	bool VecinaJednaka;
+		
+	CjelobrojniNiz (int *nniz, int nBrCl){			
+		niz=new int[nBrCl];
+		BrCl=nBrCl;
+		int i=0;
+		for (i=0; i<BrCl; i++)					
+			this->niz[i]=nniz[i];
+			
+		int tempBrMax=0;			
+		int tempBr;					
+
+		for (i=1; i<BrCl; i++){						
+			tempBr=1;
+			if (niz[i-1]==niz[i]){
+			for (int t=i+1; t<BrCl; t++)
+				if (niz[t]==niz[i])tempBr++;
+			if (tempBr>tempBrMax) tempBrMax=tempBr;
+			}
+		if (tempBrMax>(BrCl/2)) VecinaJednaka=true;
+		else VecinaJednaka=false;
+			}
+		}
+		
+		CjelobrojniNiz(const CjelobrojniNiz &niz1){		
+			niz=new int[niz1.BrCl];
+			for (int i=0; i<(niz1.BrCl); i++)
+				this->niz[i]=niz1.niz[i];
+			
+		}
+
+		~CjelobrojniNiz(){									
+			delete []niz;
+		}
+
+		int Usporedi (CjelobrojniNiz niz1) {				
+			if ((BrCl)!=(niz1.BrCl)) return 0;
+			for (int i=0; i<BrCl; i++)
+				if (niz[i]!=niz1.niz[i]) return 0;
+			return 1;
+		}
+
+
+		int Imali (int* nNiz, int j, int n){						
+			int i=0;
+			for (i=0; i<j; i++)								
+				if (nNiz[i]==n) return 0;
+			return 1;
+		}
+
+		int *VratiPresjek (CjelobrojniNiz niz1, int *n){	
+		int t=0;j=0;
+		int *nNiz=new int[BrCl+niz1.BrCl];
+		for (int i=0; i<(BrCl+niz1.BrCl); ){
+				
+		if (niz[i]==niz1.niz[t]){								 
+			if (Imali(nNiz, j, niz[i])) {nNiz[j]=niz[i];j++;}	
+			i++; t++;
+			if (i>=BrCl) i--;
+			if (t>=niz1.BrCl) t--;
+					
+		}
+		if (niz[i]<niz1.niz[t]) {
+			while ((niz[i]<niz1.niz[t])&&(i<BrCl)) i++;
+			if ((niz[i]==niz1.niz[t])&&(Imali(nNiz, j, niz[i]))) {
+				nNiz[j]=niz[i];j++;
+			}
+			t++;
+			if (t>=niz1.BrCl) {*n=j;return nNiz;}
+		}
+		if (niz[i]>niz1.niz[t]){
+			while ((niz[i]>niz1.niz[t])&&(t<niz1.BrCl)) t++;
+		if ((niz[i]==niz1.niz[t])&&(Imali(nNiz, j, niz[i]))) {
+			nNiz[j]=niz1.niz[t];j++;
+		}
+			i++;
+			if (i>=BrCl) {*n=j;return nNiz;}
+				}
+			}
+			
+		}
+		};

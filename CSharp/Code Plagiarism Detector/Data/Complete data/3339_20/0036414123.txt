@@ -1,0 +1,5 @@
+int rBrojParnih(int *polje, int n) {
+   kontrola();
+   if( n == 0 ) return 0;
+   return !(*polje&1) + rBrojParnih( polje+1, n-1 );
+}

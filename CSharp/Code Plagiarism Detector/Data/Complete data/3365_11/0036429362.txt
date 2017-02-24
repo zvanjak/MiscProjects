@@ -1,0 +1,23 @@
+#include<stdio.h>
+int main()
+{
+int a=0,b,c,d,e;
+while (a<100 && a>999) scanf("%d",&a);
+if(a>=250 || a<=950){
+b = a/100;
+c = a/10 - 10*b;
+d = a - (100*b + 10*c);
+if(b%2==0) b=1;
+if(c%2==0) c=1;
+if(d%2==0) d=1;
+e = b*c*d;
+}
+else{
+b = a/100;
+c = a/10 - 10*b;
+d = a - (100*b + 10*c);
+e = b*c*d;
+}
+printf("%d",e);
+return 0;
+}

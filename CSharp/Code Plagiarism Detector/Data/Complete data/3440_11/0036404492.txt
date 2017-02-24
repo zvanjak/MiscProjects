@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+#define MAXSTUP 20
+
+int main()
+{
+	int i, j, n;
+
+	int m1[MAXSTUP][MAXSTUP];
+	int m2[MAXSTUP][MAXSTUP];
+
+	scanf("%d", &n);
+
+	for(i = 0; i != n; ++i)
+		for(j = 0; j != n; ++j)
+			scanf("%d", &m1[i][j]);
+
+	for(i = 0; i != n; ++i)
+		for(j = 0; j != n; ++j)
+			scanf("%d", &m2[i][j]);
+
+	for(i = 0; i != n; ++i) {
+		for(j = 0; j != n; ++j) {
+			if( m1[i][j] == 1 )
+				m2[i][j] = i + j;
+		}
+	}
+
+	for(i = 0; i != n; ++i)
+		for(j = 0; j != n; ++j)
+			printf("%d ", m2[i][j]);
+
+}

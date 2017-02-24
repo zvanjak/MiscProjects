@@ -1,0 +1,87 @@
+class CjelobrojniNiz {
+private:
+	int *polje;
+	int brojelem;
+
+public:
+	int VecinaJednaka;
+
+	CjelobrojniNiz(int *adresa, int broj)
+	{
+		int i,j, brojac=0;
+		brojelem = broj;
+		VecinaJednaka = 0;	
+		polje = (int*) malloc(sizeof(int)*brojelem);
+		for (i=0;i<brojelem;i++)	
+		{
+			polje[i] = adresa[i];
+		}
+		for (i=0;i<brojelem-1;i++)
+		{
+			brojac = 0;
+			for (j=i+1;j<brojelem;j++)
+			{
+				if (polje[i]==polje[j])
+				{
+					brojac++;
+				}
+				if (brojac > (brojelem/2))
+					VecinaJednaka = 1;
+			}
+		}
+	}
+
+	int Usporedi (CjelobrojniNiz niz)
+	{
+		int i, retval = 1;
+		if (this->brojelem != niz.brojelem)
+			retval = 0;
+		else 
+		{
+			for (i=0;i<brojelem;i++)
+			{
+				if(this->polje[i]!=niz.polje[i])
+					retval = 0;
+			}
+		}
+		return retval;
+	}
+
+	int * VratiPresjek(CjelobrojniNiz niz, int *n)
+	{
+		int *presjek;
+		int i,j, pok = -1, presjekelem = 1, dodaj = 1,k,ima=0;
+		presjek = (int*) malloc(sizeof(int));
+
+		for (i=0;i<this->brojelem;i++)
+		{
+			for (j=0;j<niz.brojelem;j++)
+			{
+				if (this->polje[i] == niz.polje[j])
+				{
+					for (k=0;k<presjekelem;k++)
+					{
+						if (this->polje[i] == presjek[k])
+							ima = 1;
+					}
+					if (ima == 0)
+					{
+						pok++;
+						presjekelem++;
+						presjek = (int*) realloc (presjek, presjekelem);
+						presjek[pok] = this->polje[i];
+						
+					}
+				}
+			}
+		}
+
+		*n = presjekelem -1;
+		return presjek;
+	}
+	
+	~CjelobrojniNiz()
+	{
+		free (polje);
+	}
+};

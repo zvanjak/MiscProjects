@@ -1,0 +1,21 @@
+#include<stdio.h>
+void main () {
+   int a, b, d, i=0, n, br=0;
+    
+    
+        scanf("%d %d",&a, &b);
+        do
+            scanf("%d", &d);
+        while(d<=0);
+        if (a>b)
+        printf("%d ", i);
+        else if (a<b){
+            n=(b-a)/d+2;
+            for(i=2; i<=n; i++){
+                printf("%d ", a+(i-1)*d);
+                br++;
+            }printf("%d", br);
+        }
+    
+    
+}                

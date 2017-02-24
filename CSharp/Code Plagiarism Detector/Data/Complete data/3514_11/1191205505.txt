@@ -1,0 +1,57 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+#define PI 3.14159
+
+
+struct t
+{
+	double x;
+	double y;
+};
+
+
+int main()
+{
+    struct t prva, druga, treca, cetvrta;
+    double d1, d2, d3, d4, x1, y1, r, fi, kut;
+    double P;
+    scanf("%lf", &prva.x);
+    scanf("%lf", &prva.y);
+    scanf("%lf", &druga.x);
+    scanf("%lf", &druga.y);
+    scanf("%lf", &treca.x);
+    scanf("%lf", &treca.y);
+    scanf("%lf", &cetvrta.x);
+    scanf("%lf", &cetvrta.y);
+    d1=pow((pow((druga.x-prva.x),2)+pow((druga.y-prva.y), 2)), 0.5);
+    d2=pow((pow((treca.x-druga.x),2)+pow((treca.y-druga.y), 2)), 0.5);
+    d3=pow((pow((cetvrta.x-treca.x),2)+pow((cetvrta.y-treca.y), 2)), 0.5);
+    d4=pow((pow((prva.x-cetvrta.x),2)+pow((prva.y-cetvrta.y), 2)), 0.5);
+    if(d1==d2 && d2==d3 && d3==d4 && d4==d1)
+    {
+              P=d1*d2;
+              printf("%.2lf", P);
+              return 0;
+    } else {
+           x1=(prva.x+druga.x+treca.x+cetvrta.x)/4;
+           y1=(prva.y+druga.y+treca.y+cetvrta.y)/4;
+           r=pow((x1*x1+y1*y1),0.5);
+           if(y1==0 && x1>0)
+                fi=PI/2;
+           else if (y1==0 && x1<0)
+                fi=-PI/2;
+           else if (y1==0 && x1==0)
+                fi=0;
+           else
+           {
+               kut=y1/x1;
+               kut=atan(kut);
+               fi=kut;
+           }
+           printf("%.2lf %.2lf", r, fi);
+    }
+    return 0;
+}
+               
+                   

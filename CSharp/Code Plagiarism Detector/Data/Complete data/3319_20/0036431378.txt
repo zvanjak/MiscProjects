@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+void dodaj(FILE *f) {
+	struct {
+		int redni_br;
+		char prezime[20+1];
+		int bodovi;
+	} natjecatelj;
+	
+	int max_bodova;
+	int max_redni;
+	
+	fseek(f, 0L, SEEK_SET);
+	fread(&natjecatelj, sizeof(natjecatelj), 1, f);
+	max_bodova = natjecatelj.bodovi;
+	max_redni = natjecatelj.redni_br;
+	
+	while (fread(&natjecatelj, sizeof(natjecatelj), 1, f) == 1) {
+		if ((max_bodova < natjecatelj.bodovi) && (natjecatelj.redni_br != 0)) {
+			max_bodova = natjecatelj.bodovi;
+			max_redni = natjecatelj.redni_br;
+		}
+	}
+	
+	fseek(f, (max_redni-1)*sizeof(natjecatelj), SEEK_SET);
+	fread(&natjecatelj, sizeof(natjecatelj), 1, f);
+	
+	natjecatelj.bodovi += 10;
+	
+	fseek(f, (max_redni-1)*sizeof(natjecatelj), SEEK_SET);
+	fwrite(&natjecatelj, sizeof(natjecatelj), 1, f);
+
+	return;
+}

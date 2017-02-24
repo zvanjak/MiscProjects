@@ -1,0 +1,12 @@
+Red *PrepisiStogURed(Stog *stog){
+    Stog *pom=new Stog();
+    Red *r=new Red();
+    int a;
+    while(stog->Skini(&a))
+    pom->Stavi(a);
+    while(pom->Skini(&a)) 
+    r->DodajURed(a);
+   
+    delete pom;
+    return r;
+}

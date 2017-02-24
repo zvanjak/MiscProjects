@@ -1,0 +1,27 @@
+int JelSeSijeku (Kruznica &k1, Kruznica &k2) {
+	float x1, x2, y1, y2, r1, r2, d, zbroj, razlika;
+
+	x1 = k1.GetCenterX();
+	x2 = k2.GetCenterX();
+	y1 = k1.GetCenterY();
+	y2 = k2.GetCenterY();
+	r1 = k1.GetRadius();
+	r2 = k2.GetRadius();
+
+	d = sqrt (pow ((x2-x1), 2) +pow ((y2-y1), 2));
+
+	zbroj = r1+r2;
+	razlika = fabs(r1-r2);
+
+	if ( (d > zbroj) || (d < razlika) || ( (d==0) && (razlika!=0) ))
+		return 0;
+
+	else if ( ((d!=0) && (d==razlika)) || (d==zbroj))
+		return 1;
+
+	else if ( (d==0) && (razlika==0))
+		return 3;
+
+	else
+		return 2;
+}

@@ -1,0 +1,21 @@
+float prosjek(zapis *glava){
+	float prosjek=0;
+	float zbroj=0;
+	float brojac=0;
+	zapis *pom=glava;
+	while(pom){
+		zbroj+=pom->pros;
+		brojac++;
+		pom=pom->sljed;
+	}
+	if(!brojac) return 0;
+         prosjek=zbroj/brojac;
+	pom=glava;
+	while(pom){
+		if((pom->pros)<prosjek){
+			pom->pros=0.0;
+		}
+		pom=pom->sljed;
+	}
+	return prosjek;
+}

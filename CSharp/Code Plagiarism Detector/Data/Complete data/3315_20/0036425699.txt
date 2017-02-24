@@ -1,0 +1,10 @@
+float prosjek(f) {
+	float i=0.,suma=0.;
+		struct {
+			char naziv[30+1];
+			char autor[20+1];
+			int prodano; } red;
+		while ( fscanf(f,"%s %s %d",red.naziv,red.autor,&red.prodano)==3 ) {
+			suma+=red.prodano;	++i;	}
+	
+		return (float)suma/i; }

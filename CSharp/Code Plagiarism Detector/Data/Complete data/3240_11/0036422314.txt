@@ -1,0 +1,19 @@
+#include <stdio.h>
+int main()
+{
+	long int n,m=0;
+	int x[20],i,j;
+	scanf("%d", &n);
+	i=-1;
+	if (n>0){
+		while(n>0){
+			++i;
+			x[i]=n%10;
+			n/=10;			
+		}for(j=i; j>0; --j){
+			printf("%d ", x[j]);
+		}printf("%d\n",x[0]);
+	}else
+		printf("n nije pozitivan\n");
+	return 0;
+}

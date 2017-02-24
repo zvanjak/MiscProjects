@@ -1,0 +1,24 @@
+char *SamoSamoglasnici(char *ulazni_niz){
+	int i,k,z;
+	char *novi,c;
+	z=0;
+	if(ulazni_niz==NULL||ulazni_niz=='\0')return NULL;
+	k=strlen(ulazni_niz);
+	
+	novi=(char*) malloc(sizeof(char));
+	for(i=0;i<k;i++){
+		
+			c=ulazni_niz[i];
+			if((c=='a')||(c=='i')||(c=='e')||(c=='o')||(c=='u')||(c=='I')||(c=='A')||(c=='E')||(c=='O')||(c=='U')){
+				novi[z]=ulazni_niz[i];
+				z++;
+				novi=(char*)realloc(novi,(z+1)*sizeof (char));
+				
+			
+		}
+		
+	}novi[z]='\0';
+	
+	return novi;
+
+}

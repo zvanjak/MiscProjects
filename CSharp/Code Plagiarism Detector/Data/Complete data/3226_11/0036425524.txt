@@ -1,0 +1,20 @@
+# include <stdio.h>
+
+int main ()
+{
+	int i,n;
+	double k=0;
+
+	scanf("%d", &n);
+
+	if (n<1 || n >1000)
+		printf("n nije valjan");
+	else	
+	{
+		for (i=1; i<=n; i++)
+			k+=(double)1/(i*(i+2));
+
+		printf("%2.12f",k);
+	}
+	return 0;
+}

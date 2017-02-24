@@ -1,0 +1,25 @@
+char *BezDuplikata (char *ulazni_niz) {
+	int uvjet=0, n, i, m=0;
+	char provjeri[128]={0}, *niz;
+	
+	if (ulazni_niz==NULL) return (NULL);
+
+	for (n=0; *(ulazni_niz+n)>=0 && *(ulazni_niz+n)<=127; n++)  {
+		if (*(ulazni_niz+n)!=0) uvjet=5;}
+	
+
+	if (!uvjet) return (NULL);
+
+	for (i=0; i<n; i++) {
+		if  (!provjeri[*(ulazni_niz+i)]){ m++;
+			provjeri[*(ulazni_niz+i)]=1;}}
+
+	niz= (char *) malloc (m * sizeof (char));
+	m=0;
+	for (i=0; i<n; i++) {
+		if (provjeri[*(ulazni_niz+i)]) {
+			*(niz+m)=*(ulazni_niz+i); m++;
+			provjeri[*(ulazni_niz+i)]=0;}}
+
+	return niz;
+}

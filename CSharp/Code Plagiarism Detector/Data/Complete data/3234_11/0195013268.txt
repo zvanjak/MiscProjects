@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+	int i;
+	double f,n,suma=0,pi;
+	scanf("%lf",&f);
+	n=(int)f;
+	if ((n<1)||(n>100))
+		printf("n nije valjan \n");
+	else if (n!=f)
+		printf("n nije valjan \n");
+	else {
+		for (i=1;i<=n;i++)
+			suma=suma+(1./(pow(i,2)));
+		pi=sqrt(suma*6);
+		printf("%.12lf.",pi);
+	}
+}

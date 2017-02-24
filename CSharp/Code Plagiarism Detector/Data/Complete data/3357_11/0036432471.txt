@@ -1,0 +1,20 @@
+#include<stdio.h>
+
+int main() {
+   int a, b, c, d, e,f, c1, d1, e1,f1;
+   scanf("%d %d", &a, &b);
+     c=a/1000;
+     d=(a-c*1000)/100;
+     e=(a-c*1000-d*100)/10;
+     f=(a-c*1000-d*100-e*10);
+     c1=b/1000;
+     d1=(b-c1*1000)/100;
+     e1=(b-c1*1000-d1*100)/10;
+     f1=(b-c1*1000-d1*100-e1*10);    
+      if((c==f1)&&(d==e1)&&(e==d1)&&(f==c1))
+        printf("%d",c+d+e+f);                                      
+      else
+        printf("%d",a-b);
+ 
+return 0;
+}

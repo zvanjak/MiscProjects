@@ -1,0 +1,15 @@
+int *napraviPolje(int *A,int Na,int a,int b,int *Nc){
+    int i,j,djeljiv;
+    int *vracam;
+    if (a>b) return NULL;
+    *Nc=0;
+    vracam=(int *)malloc(Na*4);
+    for(i=0;i<Na;i++){
+       djeljiv=0;
+       for(j=a;j<=b && !djeljiv;j++)
+          if(A[i]%j==0) djeljiv=1;
+       if (j==b+1 && djeljiv) vracam[(*Nc)++]=A[i];
+       }
+    vracam=(int *)realloc(vracam,(*Nc)*4);
+    return vracam;
+    }

@@ -1,0 +1,22 @@
+float prosjek(zapis *glava) {
+    float ukpros = 0.0;
+    int ukbr = 0;
+    zapis *pom = glava;
+    if (pom == NULL) return 0;
+
+    while (pom) {
+        ukbr++;
+        ukpros += pom->pros;
+        pom = pom->sljed;
+    }
+
+    ukpros /= ukbr;
+    pom = glava;
+
+    while (pom) {
+        if (pom->pros < ukpros) pom->pros = 0.0;
+        pom = pom->sljed;
+    }
+
+    return ukpros;
+}

@@ -1,0 +1,33 @@
+#include <stdio.h>
+int main (){
+    int a;
+    char b,c;
+    int hex,hex2;
+    scanf("%d",&a);
+    
+    if((a>=16)&&(a<=255))
+       {      
+      
+      hex=a/16;
+      hex2=(a%16)%16;
+       if((hex>=10)&&(hex<=15)){
+       b=hex+55;
+       }
+       else{
+            b=hex+48;
+            }
+       if((hex2>=10)&&(hex2<=15)){
+       c=hex2+55;
+       }
+       else{
+            c=hex2+48;
+            }
+       }
+                         
+     else
+    printf("Izvan intervala");
+    
+    printf("%c%c",b,c);
+    return 0;
+    
+}

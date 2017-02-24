@@ -1,0 +1,18 @@
+#include<stdio.h>
+int main () {
+    int n, i, g = 0;
+    int rez1 = 1, rez2 = 0, rez = 0;
+    do {
+        scanf ("%d", &n);
+        if (n >= 2)
+            g = 1;
+    }
+    while (g != 1);
+    for (i = 2; i <= n; i++)
+        rez1 = rez1 * (i-1);
+    for (i = 0; i <= n; i++)
+        rez2 = rez2 + (i*i);
+    rez = rez1 + rez2;
+    printf ("%d", rez);
+    return 0;
+}

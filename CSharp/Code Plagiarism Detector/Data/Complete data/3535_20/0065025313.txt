@@ -1,0 +1,14 @@
+void staviNaDno (Stog *stog, int broj){
+	int novibroj;
+	Stog pomocni;
+
+	while(stog->Skini(&novibroj)){
+		pomocni.Stavi(novibroj);
+	}
+
+	stog->Stavi(broj);
+
+	while(pomocni.Skini(&novibroj)){
+		stog->Stavi(novibroj);
+	}
+}

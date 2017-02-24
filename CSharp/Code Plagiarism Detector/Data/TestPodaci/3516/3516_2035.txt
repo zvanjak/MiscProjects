@@ -1,0 +1,49 @@
+#define _USE_MATH_DEFINES
+#include <stdio.h>
+#include <math.h>
+
+double f(double x)
+{
+	double rez;
+	rez = x + (1 / M_E);	/* x + 1/e */
+	rez = sin(rez); 			/* sin rez */
+	rez = exp(rez);				/* e na rez */
+	rez = sin(rez);				/* sin rez */
+	rez = pow(cos(1/M_E), rez); /* cos(1/e) na rez */
+	return rez;
+}	
+
+double deriviraj(double x, double delta)
+{
+	double rez;
+	rez = f(x+delta) - f(x);
+	rez = rez / delta;
+	return rez;
+}
+
+void main()
+{
+	double delta_x;
+	double ulazni[50];
+	double derivacije[50];
+	double kutevi[50];
+	float temp;
+	int i = 0, j = 0;
+	
+	(scanf("%lf", &delta_x) ? 1 : exit(1));
+	while(1)
+	{
+		(scanf("%f", &temp) ? 1 : exit(1));
+		if(temp == 0.0)
+			break;
+		ulazni[i++] = (double) temp;
+	}
+	
+	for(j = 0; j < i; j++)
+	{
+		derivacije[j] = deriviraj(ulazni[j], delta_x);
+		kutevi[j] = atan(derivacije[j]);
+		printf("%.2lf ", kutevi[j]);
+	}
+}
+	

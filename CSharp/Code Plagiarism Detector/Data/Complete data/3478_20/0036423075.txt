@@ -1,0 +1,15 @@
+Ekipa StvoriISortiraj(char *naziv) {
+	Ekipa nova(naziv);
+	nova.Napuni();
+	Nogometas n1, n2;
+	
+	for (int i = 0; i < 11; i++)
+		for (int j = i+1; j < 11; j++) {
+			n1 = nova[i]; n2 = nova[j];
+			if (n1.VratiBroj() > n2.VratiBroj()) {
+				nova.Zamijeni(i, j);
+			}
+		}
+	
+	return nova;
+}

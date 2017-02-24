@@ -1,0 +1,15 @@
+int najbolji(FILE *f)
+{
+	int rbr = 0;
+	int maxb = 0;
+	struct natjecatelj nat;
+
+	while(fread(&nat, sizeof(struct natjecatelj), 1, f))
+	{
+		if(nat.bodovi > maxb)
+			rbr = nat.redni_br;
+			maxb = nat.bodovi;
+		fseek(f, nat.redni_br * sizeof(struct natjecatelj), SEEK_SET);
+	}
+	return rbr;
+}

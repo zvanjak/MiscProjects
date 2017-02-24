@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#define KOMPNIZ 100
+#define MAX1 1000
+
+int main() {
+    
+    int i=0,j=0,k=0,br=0,ix=0,a=0,b=0,par=0;
+    int niz[KOMPNIZ],niz1[MAX1];
+    
+    do{
+        scanf ("%d",&niz[i]);
+        i= i + 1;
+        br=i;
+    }while ( (i<KOMPNIZ) && (niz[i-1]!=-1));
+    
+    ix=0;
+	a=0;
+	
+	if (br%2==0) 
+    {
+		par=br-2;
+	} 
+    else
+    {
+		par=br-1;
+	}
+    
+    do {
+        for (i=a,j=(a+1); a<(par); )
+        {
+            for (k=ix,b=0;k<(ix+niz[a+1]);k++){
+                niz1[k]=niz[a];
+				b++;	
+                                               }
+			ix+=b;
+			a=a+2;
+        }
+    }while ((ix<MAX1)&&(a!=(par)));
+    
+    for (j=0; j<=(ix-1); j++) {
+        printf ("%d ",niz1[j]);
+                               } 	
+  return 0;
+}

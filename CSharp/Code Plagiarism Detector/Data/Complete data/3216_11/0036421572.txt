@@ -1,0 +1,21 @@
+#include <stdio.h>
+void main(){	
+	int n,s,k,i,p;
+	p=1;
+	n=10;
+	s=0;
+	while (n>2){
+		/*printf("unesi n:");*/
+		scanf("%d", &n);
+		k=n/2;
+		if (n==1) break;
+		for (i=2; i<=k; i++){
+			p=1;
+			if (n%i==0){p=0;
+			break;
+			}
+				}
+		if (p==1) s++;
+		}
+	printf("%d", s);
+}

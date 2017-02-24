@@ -1,0 +1,24 @@
+char *SvakiDrugi(char *ulazni_niz)
+{
+    int i = 0;
+    char znak[2];
+    char *ret = (char *)malloc(sizeof(char));
+    
+    strcpy(ret, "\0");
+    
+    if((ulazni_niz == NULL) || (ulazni_niz[0] == '\0'))
+        return(NULL);
+    
+    while(1)
+    {
+        if(ulazni_niz[i] == '\0')
+            break;
+        if(!(i % 2))
+        {
+            znak[0] = ulazni_niz[i];
+            znak[1] = '\0';
+            ret = strcat(ret, znak);
+        }
+        i++;
+    }
+    return(ret);}

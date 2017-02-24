@@ -1,0 +1,58 @@
+class CjelobrojniNiz {
+  int n;
+  int * polje;
+public:
+  int VecinaJednaka;
+
+  CjelobrojniNiz( int * niz, int n ) {
+     polje = new int[n];
+     this->n = n;
+
+     for( int i = 0; i < n; ++i )
+        polje[i] = niz[i];
+
+     VecinaJednaka = 0;
+     for( int i = 0; i < n; ++i ) {
+        int cnt = 0;
+        for( int j = 0; j < n; ++j )
+           if( polje[i] == polje[j] )
+              ++cnt;
+        if( cnt > n/2 ) VecinaJednaka = 1;
+     }
+  }
+  CjelobrojniNiz( const CjelobrojniNiz &drugi ) {
+     VecinaJednaka = drugi.VecinaJednaka;
+     n = drugi.n;
+     polje = new int[n];
+     for( int i = 0; i < n; ++i )
+        polje[i] = drugi.polje[i];
+  }
+
+  ~CjelobrojniNiz() { delete polje; }
+
+  int Usporedi( CjelobrojniNiz niz ) {
+     if( niz.n != n ) return 0;
+     for( int i = 0; i < n; ++i )
+        if( polje[i] != niz.polje[i] )
+           return 0;
+     return 1;
+  }
+
+  int * VratiPresjek( CjelobrojniNiz niz, int *n ) {
+     int a = 0, b = 0;
+
+     int * presjek = new int[this->n];
+     *n = 0;
+
+     while( a < this->n && b < niz.n ) {
+        int manji = polje[a];
+        if( niz.polje[b] < manji ) manji = niz.polje[b];
+
+        if( polje[a] == niz.polje[b] ) presjek[(*n)++] = polje[a];
+
+        while( a < this->n && polje[a] == manji ) ++a;
+        while( b < niz.n && niz.polje[b] == manji ) ++b;
+     }
+     return presjek;
+  }
+};

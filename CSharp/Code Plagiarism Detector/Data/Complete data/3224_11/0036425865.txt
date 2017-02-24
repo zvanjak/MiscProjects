@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <math.h>
+int main (){
+	int n,i;
+	double pi=0,p=0;
+	scanf("%d",&n);
+	if ((n<1)||(n>400))
+	printf("n nije valjan");
+	else {
+		for(i=1;i<=n;i++)
+		pi+=(1./(16*pow(i,2)-1));
+		p=-1*((8*pi)-4);
+		printf("%.8f",p);
+	}
+return 0;
+}

@@ -1,0 +1,11 @@
+#include<stdio.h>
+
+int main(void){
+    int broj,lijevi,desni;
+    scanf("%d",&broj);
+    lijevi=broj/100;
+    desni=broj%100;
+    if(!((lijevi+desni)%lijevi)) printf("Jest");
+    else printf("Nije");
+    return 0;
+}    

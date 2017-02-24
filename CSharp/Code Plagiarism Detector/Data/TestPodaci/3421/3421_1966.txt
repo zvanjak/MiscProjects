@@ -1,0 +1,36 @@
+#include <stdio.h>
+#define MAX 100
+#include <ctype.h> 
+int main () {
+	char polje[MAX];
+	int i=0,j=0, k=0, h=0,broj;
+	printf("Upisite recenicu \n");
+	do {
+		scanf("%c", &polje[i]);
+		broj=i+1;
+		i++;
+			}while (i<MAX && polje[i-1]!='.');
+	for (j=0;j<broj;j++){
+		if (polje[j]>=65&&polje[j]<=90){
+			polje[j]+=32;
+					}
+	}
+	for (k=0;k<broj;k++){
+		if (polje[k]==32) {
+			polje[k+1]-=32;
+		}
+	}
+	for (h=0;h<broj;h++){
+		if(polje[0]>=97&&polje[0]<=122){
+            polje[0]-=32;		
+		}
+		if(polje[h]==32||polje[h]==44){
+			continue;}
+		printf("%c", polje[h]);
+	}
+
+
+	
+	
+	return 0;
+}

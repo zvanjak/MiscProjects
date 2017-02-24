@@ -1,0 +1,11 @@
+void PrepisiStogURed (Stog *stog, Red *red) {
+        int k, d;
+	d = stog->Skini (&k);
+	if (d==NULL)
+		return;
+	PrepisiStogURed (stog, red);
+	if (!(k % 2))
+		red->DodajURed (k);
+	else
+		stog->Stavi (k);
+}

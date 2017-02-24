@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <conio.h>
+main(){
+int i,n;
+double fakt=1.,clan,rec=1.;
+scanf("%d",&n);
+if(n<1||n>30){ printf("n nije valjan");getche();return 0;}
+else {for(i=1;i<=n;i++){fakt*=i;
+     clan=(i%2!=0)? (-(1./(fakt))):(clan=1./(fakt));
+     rec+=clan;}}
+printf("%.12lf",1./rec);
+getche();
+return 0;}

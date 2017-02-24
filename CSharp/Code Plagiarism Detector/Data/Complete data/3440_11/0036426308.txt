@@ -1,0 +1,16 @@
+#include <stdio.h>
+ int main() {
+int a, i, j, kmatrica [20][20], matrica[20][20];
+
+scanf("%d", &a);
+
+for (i=0;i<a;i++){
+ for (j=0;j<a;j++){
+ if (kmatrica [i][j] == 1) {matrica[i][j] = i+j; printf("%d", matrica[i][j]);}
+ else printf ("%d", matrica [i][j]);
+}
+}
+return 0;
+}
+  
+ 

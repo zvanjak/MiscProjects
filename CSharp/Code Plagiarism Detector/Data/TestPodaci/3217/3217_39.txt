@@ -1,0 +1,22 @@
+#include <stdio.h>
+main (){
+    int i,j,k,a,br, broj[300], brojevi[300];
+i = 0;
+k = 0;
+scanf("%d", &br);
+while (br>0){
+    brojevi[i] = br;
+    i++;
+    scanf("%d", &br);}
+for (j = 0; j< i; j++) {
+    k = 0;
+    while(brojevi[j]){
+        broj[k] = brojevi[j] % 10;
+        brojevi[j] = brojevi[j] / 10;
+        k++;}
+    for (a = 0; a < k; a = a + 1 )
+printf("%d", broj[a]);
+    if (j < i-1) printf(" ");
+}
+
+return 0;}

@@ -1,0 +1,19 @@
+#include <stdio.h>
+int main(){
+	int predznak,i,n;
+	double e,suma,nazivnik;
+	scanf("%d",&n);
+	predznak = 1;
+	suma = 0;
+	nazivnik = 1;
+	if (n>=1 && n<=30){
+		for (i=1;i<=n;i++){
+			suma = suma + ((1/nazivnik)*predznak);
+			predznak*=(-1);
+			nazivnik*=i;
+		}
+		e=(1/suma);
+		printf("%.12f",e);
+	}else printf("n nije valjan");
+	return 0;
+}

@@ -1,0 +1,25 @@
+int najbolji(FILE *f)
+{
+	int redni, bd;
+	struct natjecatelj{
+		int redni_br;
+		char prezime[20+1];
+		int bodovi;
+	}zapis;
+
+	do {
+		fread(&zapis, sizeof(zapis), 1, f);
+		bd = zapis.bodovi;
+		redni = zapis.redni_br;
+	} while (redni = 0);
+	
+	while (fread(&zapis, sizeof(zapis), 1, f) != EOF) {
+		if (zapis.redni_br != 0 && zapis.bodovi > bd) {
+			bd = zapis.bodovi;
+			redni = zapis.redni_br;
+		}
+	}
+
+	return redni;
+
+}

@@ -1,0 +1,18 @@
+#include <stdio.h>
+int main(){
+    int broj, a, b, c, d, e;
+    scanf("%d", &broj);
+    if (broj<=99999 && broj >=10000){
+        a=broj % 10;
+        b=((broj % 100)-a)/10;
+        c=((broj % 1000)-a-b)/100;
+        d=((broj % 10000)-a-b-c)/1000;
+        e=((broj % 100000)-a-b-c-d)/10000;
+        if (broj%(a+b+c+d+e)==0){
+           printf("%d\n", broj-(a+b+c+d+e));
+        }else{
+           printf("%d\n", broj/(a+b+c+d+e));
+        }
+    }
+    return 0;
+}

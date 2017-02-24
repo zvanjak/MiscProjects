@@ -1,0 +1,27 @@
+#include<stdio.h>
+int main()
+{
+	int n,i;
+	double x=0;
+	scanf ("%d",&n);
+	if ((n>=1)&&(n<=100))
+	{
+		for (i=1; i<=n; i++)
+		{
+			if(i%2==0)
+			{
+				x+=(-1)*1./i;
+			}
+			else
+			{
+				x+=1./i;
+			}
+		}
+	printf("%.12lf",x);
+	}
+	else
+	{
+		printf ("n nije valjan");
+	}
+	return 0;
+	}

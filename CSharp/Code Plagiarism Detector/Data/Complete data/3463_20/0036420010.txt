@@ -1,0 +1,20 @@
+int Unutra( float x, float y, Kvadrat &kvad ) {
+float x1 = kvad.GetX();
+float y2 = kvad.GetY();
+float x2 = x1 + kvad.GetDuljinaStranice();
+float y1 = y2 - kvad.GetDuljinaStranice();
+
+return x > x1 && x < x2 && y > y1 && y < y2;
+}
+
+int JeLiUnutra( Kruznica &kruz, Kvadrat &kvad ) {
+float x0 = kruz.GetCenterX();
+float y0 = kruz.GetCenterY();
+float r = kruz.GetRadius();
+
+return 
+Unutra( x0-r, y0, kvad ) &&
+Unutra( x0+r, y0, kvad ) &&
+Unutra( x0, y0-r, kvad ) &&
+Unutra( x0, y0+r, kvad );
+}
