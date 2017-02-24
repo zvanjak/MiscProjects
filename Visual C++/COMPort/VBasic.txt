@@ -1,0 +1,150 @@
+
+Option Compare Database
+Option Explicit
+Public Const ParallelPrinter = True
+
+Public CommDisplay As Control
+Public CommPrinter As Control
+
+Private PrinterHandle As Long
+Private lpBytesWritten As Long
+Public Const GENERIC_WRITE = &H40000000
+Public Const GENERIC_READ = &H80000000
+Const FILE_ATTRIBUTE_NORMAL = &H80
+Const CREATE_ALWAYS = 2
+Const OPEN_ALWAYS = 4
+Const OPEN_EXISTING = 3
+Const INVALID_HANDLE_VALUE = -1
+Declare Function ReadFile Lib "kernel32" ( _
+        ByVal hFile As Long, lpBuffer As Any, ByVal nNumberOfBytesToRead As
+Long, _
+        lpNumberOfBytesRead As Long, ByVal lpOverlapped As Long) As Long
+Declare Function CloseHandle Lib "kernel32" (ByVal hObject As Long) As Long
+Declare Function WriteFile Lib "kernel32" ( _
+        ByVal hFile As Long, ByVal lpBuffer As String, _
+        ByVal nNumberOfBytesToWrite As Long, _
+        lpNumberOfBytesWritten As Long, ByVal lpOverlapped As Long) As Long
+Declare Function CreateFile Lib "kernel32" Alias "CreateFileA" ( _
+        ByVal lpFileName As String, _
+        ByVal dwDesiredAccess As Long, ByVal dwShareMode As Long, _
+        ByVal lpSecurityAttributes As Long, _
+        ByVal dwCreationDisposition As Long, _
+        ByVal dwFlagsAndAttributes As Long, ByVal hTemplateFile As Long) _
+        As Long
+Declare Function FlushFileBuffers Lib "kernel32" (ByVal hFile As Long) As
+Long
+Type COMMTIMEOUTS
+  ReadIntervalTimeout As Long
+  ReadTotalTimeoutMultiplier As Long
+  ReadTotalTimeoutConstant As Long
+  WriteTotalTimeoutMultiplier As Long
+  WriteTotalTimeoutConstant As Long
+End Type
+Declare Function GetCommTimeouts Lib "kernel32" (ByVal hFile As Long,
+Timeouts As COMMTIMEOUTS) As Long
+Declare Function SetCommTimeouts Lib "kernel32" (ByVal hFile As Long,
+Timeouts As COMMTIMEOUTS) As Long
+Private Timeouts As COMMTIMEOUTS
+
+Public Sub OpenPort()
+  On Error Resume Next
+  CommDisplay.PortOpen = True
+  If ParallelPrinter Then
+    If Val(Forms!Flogin.PrinterHandle) <= 0 Then
+
+      PrinterHandle = CreateFile("LPT1", GENERIC_READ + GENERIC_WRITE, 0, 0,
+OPEN_EXISTING, 0, 0)
+      If PrinterHandle = INVALID_HANDLE_VALUE Then
+        MsgBox "Ne mogu pristupiti pisaèu!", vbCritical
+      End If
+      GetCommTimeouts PrinterHandle, Timeouts
+      Timeouts.ReadIntervalTimeout = 50
+      Timeouts.ReadTotalTimeoutConstant = 50
+      Timeouts.ReadTotalTimeoutMultiplier = 50
+      Timeouts.WriteTotalTimeoutConstant = 50
+      Timeouts.WriteTotalTimeoutMultiplier = 50
+      SetCommTimeouts PrinterHandle, Timeouts
+    Else
+      PrinterHandle = Forms!Flogin.PrinterHandle
+    End If
+  Else
+    CommPrinter.PortOpen = True
+  End If
+End Sub
+
+Public Sub ClosePort()
+  On Error Resume Next
+  CommDisplay.PortOpen = False
+  If ParallelPrinter Then
+    CloseHandle PrinterHandle
+    Forms!Flogin.PrinterHandle = 0
+  Else
+    CommPrinter.PortOpen = False
+  End If
+End Sub
+
+Function CodePageCro() As String
+  CodePageCro = Chr$(&H1B) & Chr$(&H52) & Chr$(&HB)
+End Function
+Function CodePageUS() As String
+  CodePageUS = Chr$(&H1B) & Chr$(&H52) & Chr$(&H0)
+End Function
+Public Sub ClearDisplay()
+  On Error Resume Next
+  'CommDisplay.Output = Chr$(27) & "@"
+  'CommDisplay.Output = Chr$(12)
+  'CommDisplay.Output = Chr$(27) & "QA" & Chr$(13)
+  CommDisplay.Output = Chr$(&H1B) & "@"
+  CommDisplay.Output = Chr$(&HC) & CodePageCro
+  'CommDisplay.Output = Chr$(&H1B) & Chr$(&H52) & Chr$(&HB)
+  Err = 0
+End Sub
+
+Public Sub TopLine(ByVal S As String)
+  On Error Resume Next
+  'CommDisplay.Output = Chr$(27) & "QA" & C1250ToUs(s) & vbCr
+  CommDisplay.Output = Chr$(&H1F) & Chr$(&H24) & Chr$(1) & Chr$(1) &
+Chr$(&H18) & Left(C1250ToUs(S), 20)
+  Err = 0
+End Sub
+
+Public Sub BottomLine(ByVal S As String)
+  On Error Resume Next
+  'CommDisplay.Output = Chr$(27) & "QB" & C1250ToUs(s) & vbCr
+  S = Left$(S, 20)
+  S = Translate(S, Chr$(144), CodePageUS & Chr$(144) & CodePageCro)
+  CommDisplay.Output = Chr$(&H1F) & Chr$(&H24) & Chr$(1) & Chr$(2) &
+Chr$(&H18) & S
+End Sub
+
+Public Sub PrinterOnline()
+  On Error Resume Next
+  'If Not ParallelPrinter Then
+    'CommPrinter.OutBufferCount = 0
+    'CommPrinter.Output = Chr$(17)
+  'End If
+End Sub
+
+Public Sub PrinterOffline()
+  On Error Resume Next
+  'If Not ParallelPrinter Then
+  '  'CommPrinter.Output = Chr$(19)
+  'End If
+End Sub
+
+Public Sub OutputLine(S As String)
+  On Error Resume Next
+  'Debug.Print C1250ToUs(S)
+  If ParallelPrinter Then
+    WriteFile PrinterHandle, C1250ToUs(S) & vbCrLf, Len(S) + 2,
+lpBytesWritten, 0
+  Else
+    CommPrinter.Output = C1250ToUs(S) & vbCrLf
+  End If
+End Sub
+--------------------------------------------------
+Vedran Mornar
+Department of applied mathematics
+Faculty of electrical engineering and computing
+Zagreb, Croatia
+
