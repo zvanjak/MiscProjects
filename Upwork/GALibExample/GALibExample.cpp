@@ -373,7 +373,12 @@ struct MyGenome : public GAGenome
 		return *this;
 	}
 
-	int MyGenome::equal(const GAGenome& g) const
+	int operator==(const GAGenome& orig)
+	{
+		return this->equal(orig);
+	}
+
+	int equal(const GAGenome& g) const
 	{
 		MyGenome& genome = (MyGenome&)g;
 		return ((*floatVal == *genome.floatVal) && (*boolVars== *genome.boolVars));
