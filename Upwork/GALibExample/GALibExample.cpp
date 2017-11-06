@@ -299,6 +299,9 @@ struct MyGenome : public GAGenome
 		crossover(Cross);
 		mutator(Mutate);
 		std::cout << "mutator == " << mutr << std::endl;
+
+		floatVal = nullptr;
+		boolVars = nullptr;
 	}
 
 	// we'll use values passed in T to initialize our variables for optimization
@@ -529,22 +532,18 @@ int main()
 	GASimpleGA ga(genome);
 	GASigmaTruncationScaling scaling;
 
-	int popsize = 50;
-	int ngen = 100;
-	float pmut = 0.01;
-	float pcross = 0.6;
-
-	ga.populationSize(popsize);
-	ga.nGenerations(ngen);
-	ga.pMutation(pmut);
-	ga.pCrossover(pcross);
+	ga.populationSize(INPUT.GA_INPUT.pop_sz);
+	ga.nGenerations(INPUT.GA_INPUT.generations);
+	ga.pMutation(INPUT.GA_INPUT.np_mutation);
+	ga.pCrossover(INPUT.GA_INPUT.xover);
 	ga.scaling(scaling);
 	ga.scoreFrequency(10);
-	ga.flushFrequency(50);
+	ga.flushFrequency(INPUT.GA_INPUT.flushfreq);
+
+	// this sets the seed for genetic algorithm. Fixed number would always result in same sequence (good for testing). In real life, that seed should be random
 	ga.evolve(15);
 
 	// Dump the results of the GA to the screen.
-
 	genome = ga.statistics().bestIndividual();
 	std::cout << "the ga found an optimum at the point: ";
 	std::cout << genome << std::endl;
