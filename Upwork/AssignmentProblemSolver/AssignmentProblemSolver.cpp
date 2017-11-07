@@ -4,28 +4,72 @@
 #include "stdafx.h"
 
 #include <stdio.h>
+#include <string>
+#include <vector>
 
+#include <fstream>
+#include <iostream>
+#include <sstream>
+
+class Project
+{
+public:
+	std::string _name;
+	std::string _priority;
+	std::string _role;
+	int			_level;
+	int			_weekTime[66];
+};
 
 int main()
 {
-	FILE *fp;
-	fopen_s(&fp, "Data/Projects.csv", "r");
-	char buff[501];
-	char project[50];
+	std::vector<Project> _listProjects;
 
-	int line = 0;
-	while(fgets(buff, 500, fp) )
+	std::ifstream inFile("Projects.csv");
+	if (!inFile.bad())
 	{
-	//	printf("%s", buff);
+		std::vector<std::string>   result;
+		std::string                line;
 
-		if( line > 1 )		// first two lines are header related
+		std::stringstream          lineStream;
+		std::string                cell;
+
+		// reading first two lines with headers
+		std::getline(inFile, line);
+		std::getline(inFile, line);
+
+		while (std::getline(inFile, line))
 		{
-			sscanf_s(buff, "%[^,]s", project, 50);
-			printf("%s\n", project);
+			int		tokenCount = 0;
+			Project	newProject;
+
+			std::istringstream iss(line);
+			std::string token;
+			while (std::getline(iss, token, ','))
+			{
+				switch (tokenCount)
+				{
+				case 0: newProject._name = token; break;
+				case 1: newProject._priority = token; break;
+				case 2: newProject._role = token; break;
+				case 3: newProject._level = atoi(token.c_str()); break;
+				default:
+					int weekNum = tokenCount - 4;
+					newProject._weekTime[weekNum] = atoi(token.c_str());
+					break;
+				}
+
+				tokenCount++;
+			}
+			_listProjects.push_back(newProject);
 		}
 
-		++line;
+		for (auto p = begin(_listProjects); p != end(_listProjects); p++)
+		{
+			std::cout << p->_name << " " << p->_role << std::endl;
+		}
 	}
-    return 0;
+
+	return 0;
 }
 
