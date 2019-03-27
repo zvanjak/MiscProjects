@@ -1568,7 +1568,7 @@ int	CheckUSTable( enum KLASA nClass, int Index )
 			ret = FALSE;
 	}
 	else
- 		if( USTable[lGlobIndex]->nClass != nClass )
+		if( USTable[lGlobIndex]->nClass != nClass )
 			ret = FALSE;
 
 	return	ret;
